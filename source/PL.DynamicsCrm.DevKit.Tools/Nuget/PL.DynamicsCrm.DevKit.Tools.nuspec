@@ -14,11 +14,11 @@
     <tags>PL; Dynamics; Dynamics365; CRM; CLI; DevKit; Coverage</tags>
   </metadata>
   <files>
-    <file src="..\bin\Release\PL.DynamicsCrm.DevKit.Tools.exe" target="tools\PL.DynamicsCrm.DevKit.Tools.exe" />
-    <file src="..\bin\Release\Microsoft.VisualStudio.Coverage.Analysis.dll" target="tools\Microsoft.VisualStudio.Coverage.Analysis.dll" />
-    <file src="..\bin\Release\Microsoft.VisualStudio.Coverage.Interop.dll" target="tools\Microsoft.VisualStudio.Coverage.Interop.dll" />
-    <file src="..\bin\Release\Microsoft.VisualStudio.Coverage.Symbols.dll" target="tools\Microsoft.VisualStudio.Coverage.Symbols.dll" />
-    <file src="..\bin\Release\NUglify.dll" target="tools\NUglify.dll" />
+    <file src="..\Release\PL.DynamicsCrm.DevKit.Tools.exe" target="tools\PL.DynamicsCrm.DevKit.Tools.exe" />
+    <file src="..\Release\Microsoft.VisualStudio.Coverage.Analysis.dll" target="tools\Microsoft.VisualStudio.Coverage.Analysis.dll" />
+    <file src="..\Release\Microsoft.VisualStudio.Coverage.Interop.dll" target="tools\Microsoft.VisualStudio.Coverage.Interop.dll" />
+    <file src="..\Release\Microsoft.VisualStudio.Coverage.Symbols.dll" target="tools\Microsoft.VisualStudio.Coverage.Symbols.dll" />
+    <file src="..\Release\NUglify.dll" target="tools\NUglify.dll" />
     <file src="..\license\LICENSE.txt" target="license\LICENSE.txt" />
   </files>
 </package>

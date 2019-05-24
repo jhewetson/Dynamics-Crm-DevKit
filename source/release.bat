@@ -1,7 +1,7 @@
 @echo off
 set /p VERSION=<version.txt
 echo ************************************************************
-echo Building solution: DEPLOY - version: %VERSION%
+echo Building solution: DEPLOY RELEASE MODE - version: %VERSION%
 echo ************************************************************
 set MsBuild=""
 if exist "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\15.0\Bin\MSBuild.exe" (
@@ -18,8 +18,6 @@ if %MsBuild%=="" (
 	)
 
 	call %MsBuild% /nologo /noautorsp /verbosity:minimal -p:Configuration=Release -target:Clean;Build PL.DynamicsCrm.DevKit.sln
-	call %MsBuild% /nologo /noautorsp /verbosity:minimal -p:Configuration=Release -target:Clean;Build PL.DynamicsCrm.DevKit.Analyzers\PL.DynamicsCrm.DevKit.Analyzers.csproj
-	call %MsBuild% /nologo /noautorsp /verbosity:minimal -p:Configuration=Release -target:Clean;Build PL.DynamicsCrm.DevKit.Tools.sln
 
 	cd PL.DynamicsCrm.DevKit.Tools\Nuget
 	call pack.bat
