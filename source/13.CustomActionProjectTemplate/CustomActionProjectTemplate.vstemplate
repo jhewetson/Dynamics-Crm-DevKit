@@ -14,6 +14,10 @@
     <EnableLocationBrowseButton>false</EnableLocationBrowseButton>
     <EnableEditOfLocationField>false</EnableEditOfLocationField>
     <CreateInPlace>true</CreateInPlace>
+    <LanguageTag>CSharp</LanguageTag>
+    <PlatformTag>Windows</PlatformTag>
+    <ProjectTypeTag>Library</ProjectTypeTag>
+    <ProjectTypeTag>PL.DynamicsCrm.DevKit</ProjectTypeTag>
   </TemplateData>
   <TemplateContent>
     <Project File="ProjectTemplate.csproj" ReplaceParameters="true">

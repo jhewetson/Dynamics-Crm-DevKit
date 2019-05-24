@@ -45,7 +45,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>Release\</OutputPath>
     <DefineConstants>
@@ -189,6 +189,7 @@
       <Link>Nuget\version.txt</Link>
     </Content>
     <Content Include="license\LICENSE.txt" />
+    <Content Include="Nuget\nuget.exe" />
     <Content Include="Release\CmdLine.dll" />
     <Content Include="Release\Microsoft.Crm.Sdk.Proxy.dll" />
     <Content Include="Release\Microsoft.IdentityModel.Clients.ActiveDirectory.dll" />
@@ -206,7 +207,6 @@
     </None>
     <None Include="App.config" />
     <None Include="Nuget\pack.bat" />
-    <None Include="Nuget\PL.DynamicsCrm.DevKit.Cli.1.3.0.nupkg" />
     <None Include="Nuget\PL.DynamicsCrm.DevKit.Cli.nuspec" />
     <None Include="packages.config" />
     <EmbeddedResource Include="..\PL.DynamicsCrm.DevKit.Wizard\data\WebApi.js">
@@ -235,9 +235,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Nuget\nuget.exe" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
