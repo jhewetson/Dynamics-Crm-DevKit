@@ -1,966 +1,699 @@
-﻿///<reference path='devkit.intellisense.js' />
-Rocket.FormAccount = function (executionContext, defaultWebResourceName) {
-	var account = intellisense.Form;
-	account.Utility = intellisense.Utility;
-	var tab = {};
-	tab.SUMMARY_TAB = {
-		///<field name='AddTabStateChange' type='Function'></field>
-		AddTabStateChange: intellisense.FunctionTabAddTabStateChange,
-		///<field name='DisplayState' type='OptionSet.TabDisplayState'>[GetSet] a value that indicates whether the tab is collapsed or expanded.</field>
-		DisplayState: '',
-		///<field name='Focus' type='Function'></field>
-		Focus: intellisense.FunctionControlFocus,
-		///<field name='Label' type='String'>[GetSet] the tab label.</field>
-		Label: '',
-		///<field name='Name' type='String'>[Get] returns the name of the tab.</field>
-		Name: '',
-		///<field name='Parent' type='Object'>[Get] returns the formContext.ui object containing the tab.</field>
-		Parent: '',
-		///<field name='Visible' type='Boolean'>[GetSet] a value that indicates whether the tab is currently visible or not.</field>
-		Visible: '',
-		///<field name='RemoveTabStateChange' type='Function'></field>
-		RemoveTabStateChange: intellisense.FunctionTabRemoveTabStateChange,
-		///<field name='Section' type='Object'>A section contains methods to manage how it appears as well as accessing the tab that contains the section.</field>
-		Section: {
-			ACCOUNT_INFORMATION: intellisense.FormSection,
-			ADDRESS: intellisense.FormSection,
-			MapSection: intellisense.FormSection,
-			SOCIAL_PANE_TAB: intellisense.FormSection,
-			Summary_section_6: intellisense.FormSection,
-			SUMMARY_TAB_section_6: intellisense.FormSection
+﻿///<reference path='devkit.d.ts' />
+declare namespace Rocket {
+	namespace FormAccount {
+		interface Header {
+			/** Type the number of employees that work at the account for use in marketing segmentation and demographic analysis. */
+			NumberOfEmployees: DevKit.Form.Controls.ControlInteger;
+			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Type the annual revenue for the account, used as an indicator in financial performance analysis. */
+			Revenue: DevKit.Form.Controls.ControlMoney;
 		}
-	};
-	tab.DETAILS_TAB = {
-		///<field name='AddTabStateChange' type='Function'></field>
-		AddTabStateChange: intellisense.FunctionTabAddTabStateChange,
-		///<field name='DisplayState' type='OptionSet.TabDisplayState'>[GetSet] a value that indicates whether the tab is collapsed or expanded.</field>
-		DisplayState: '',
-		///<field name='Focus' type='Function'></field>
-		Focus: intellisense.FunctionControlFocus,
-		///<field name='Label' type='String'>[GetSet] the tab label.</field>
-		Label: '',
-		///<field name='Name' type='String'>[Get] returns the name of the tab.</field>
-		Name: '',
-		///<field name='Parent' type='Object'>[Get] returns the formContext.ui object containing the tab.</field>
-		Parent: '',
-		///<field name='Visible' type='Boolean'>[GetSet] a value that indicates whether the tab is currently visible or not.</field>
-		Visible: '',
-		///<field name='RemoveTabStateChange' type='Function'></field>
-		RemoveTabStateChange: intellisense.FunctionTabRemoveTabStateChange,
-		///<field name='Section' type='Object'>A section contains methods to manage how it appears as well as accessing the tab that contains the section.</field>
-		Section: {
-			COMPANY_PROFILE: intellisense.FormSection,
-			DETAILS_TAB_section_6: intellisense.FormSection,
-			CONTACT_PREFERENCES: intellisense.FormSection,
-			BILLING: intellisense.FormSection,
-			SHIPPING: intellisense.FormSection,
-			ChildAccounts: intellisense.FormSection
+		interface tab_SUMMARY_TAB_Sections {
+			ACCOUNT_INFORMATION: DevKit.Form.Controls.ControlSection;
+			ADDRESS: DevKit.Form.Controls.ControlSection;
+			MapSection: DevKit.Form.Controls.ControlSection;
+			SOCIAL_PANE_TAB: DevKit.Form.Controls.ControlSection;
+			Summary_section_6: DevKit.Form.Controls.ControlSection;
+			SUMMARY_TAB_section_6: DevKit.Form.Controls.ControlSection;
 		}
-	};
-	var body = {
-		///<field name='Tab' type='Object'>A tab is a group of sections on a page</field>
-		Tab: tab,
-		///<field name='Address1_Composite' type='String'></field>
-		Address1_Composite: intellisense.FieldString,
-		///<field name='Address1_FreightTermsCode' type='OptionSet'></field>
-		Address1_FreightTermsCode: intellisense.FieldOptionSet,
-		///<field name='Address1_ShippingMethodCode' type='OptionSet'></field>
-		Address1_ShippingMethodCode: intellisense.FieldOptionSet,
-		///<field name='CreditLimit' type='Money'></field>
-		CreditLimit: intellisense.FieldNumber,
-		///<field name='CreditOnHold' type='Boolean'></field>
-		CreditOnHold: intellisense.FieldBoolean,
-		///<field name='Description' type='String'></field>
-		Description: intellisense.FieldString,
-		///<field name='DoNotBulkEMail' type='Boolean'></field>
-		DoNotBulkEMail: intellisense.FieldBoolean,
-		///<field name='DoNotEMail' type='Boolean'></field>
-		DoNotEMail: intellisense.FieldBoolean,
-		///<field name='DoNotFax' type='Boolean'></field>
-		DoNotFax: intellisense.FieldBoolean,
-		///<field name='DoNotPhone' type='Boolean'></field>
-		DoNotPhone: intellisense.FieldBoolean,
-		///<field name='DoNotPostalMail' type='Boolean'></field>
-		DoNotPostalMail: intellisense.FieldBoolean,
-		///<field name='EMailAddress1' type='String'></field>
-		EMailAddress1: intellisense.FieldString,
-		///<field name='Fax' type='String'></field>
-		Fax: intellisense.FieldString,
-		///<field name='FollowEmail' type='Boolean'></field>
-		FollowEmail: intellisense.FieldBoolean,
-		///<field name='IndustryCode' type='OptionSet'></field>
-		IndustryCode: intellisense.FieldOptionSet,
-		///<field name='Name' type='String'></field>
-		Name: intellisense.FieldString,
-		///<field name='OwnershipCode' type='OptionSet'></field>
-		OwnershipCode: intellisense.FieldOptionSet,
-		///<field name='ParentAccountId' type='Lookup'></field>
-		ParentAccountId: intellisense.FieldLookup,
-		///<field name='PaymentTermsCode' type='OptionSet'></field>
-		PaymentTermsCode: intellisense.FieldOptionSet,
-		///<field name='PreferredContactMethodCode' type='OptionSet'></field>
-		PreferredContactMethodCode: intellisense.FieldOptionSet,
-		///<field name='PrimaryContactId' type='Lookup'></field>
-		PrimaryContactId: intellisense.FieldLookup,
-		///<field name='SIC' type='String'></field>
-		SIC: intellisense.FieldString,
-		///<field name='Telephone1' type='String'></field>
-		Telephone1: intellisense.FieldString,
-		///<field name='TickerSymbol' type='String'></field>
-		TickerSymbol: intellisense.FieldString,
-		///<field name='TransactionCurrencyId' type='Lookup'></field>
-		TransactionCurrencyId: intellisense.FieldLookup,
-		///<field name='WebSiteURL' type='String'></field>
-		WebSiteURL: intellisense.FieldString,
-		///<field name='YomiName' type='String'></field>
-		YomiName: intellisense.FieldString
-	};
-	account.Body = body;
-	var header = {
-		///<field name='NumberOfEmployees' type='Integer'></field>
-		NumberOfEmployees: intellisense.FieldNumber,
-		///<field name='OwnerId' type='Lookup'></field>
-		OwnerId: intellisense.FieldLookup,
-		///<field name='Revenue' type='Money'></field>
-		Revenue: intellisense.FieldNumber
-	};
-	account.Header = header;
-	var footer = {
+		interface tab_DETAILS_TAB_Sections {
+			COMPANY_PROFILE: DevKit.Form.Controls.ControlSection;
+			DETAILS_TAB_section_6: DevKit.Form.Controls.ControlSection;
+			CONTACT_PREFERENCES: DevKit.Form.Controls.ControlSection;
+			BILLING: DevKit.Form.Controls.ControlSection;
+			SHIPPING: DevKit.Form.Controls.ControlSection;
+			ChildAccounts: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_SUMMARY_TAB extends DevKit.Form.Controls.IControlTab {
+			Section: tab_SUMMARY_TAB_Sections;
+		}
+		interface tab_DETAILS_TAB extends DevKit.Form.Controls.IControlTab {
+			Section: tab_DETAILS_TAB_Sections;
+		}
+		interface Tabs {
+			SUMMARY_TAB: tab_SUMMARY_TAB;
+			DETAILS_TAB: tab_DETAILS_TAB;
+		}
+		interface Body {
+			Tab: Tabs;
+			mapcontrol: DevKit.Form.Controls.ControlMap;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			ActionCards: DevKit.Form.Controls.ControlActionCards;
+			Contacts: DevKit.Form.Controls.ControlGrid;
+			ChildAccounts: DevKit.Form.Controls.ControlGrid;
+			/** Shows the complete primary address. */
+			Address1_Composite: DevKit.Form.Controls.ControlString;
+			/** Select the freight terms for the primary address to make sure shipping orders are processed correctly. */
+			Address1_FreightTermsCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Select a shipping method for deliveries sent to this address. */
+			Address1_ShippingMethodCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type the credit limit of the account. This is a useful reference when you address invoice and accounting issues with the customer. */
+			CreditLimit: DevKit.Form.Controls.ControlMoney;
+			/** Select whether the credit for the account is on hold. This is a useful reference while addressing the invoice and accounting issues with the customer. */
+			CreditOnHold: DevKit.Form.Controls.ControlBoolean;
+			/** Type additional information to describe the account, such as an excerpt from the company's website. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Select whether the account allows bulk email sent through campaigns. If Do Not Allow is selected, the account can be added to marketing lists, but is excluded from email. */
+			DoNotBulkEMail: DevKit.Form.Controls.ControlBoolean;
+			/** Select whether the account allows direct email sent from Microsoft Dynamics 365. */
+			DoNotEMail: DevKit.Form.Controls.ControlBoolean;
+			/** Select whether the account allows faxes. If Do Not Allow is selected, the account will be excluded from fax activities distributed in marketing campaigns. */
+			DoNotFax: DevKit.Form.Controls.ControlBoolean;
+			/** Select whether the account allows phone calls. If Do Not Allow is selected, the account will be excluded from phone call activities distributed in marketing campaigns. */
+			DoNotPhone: DevKit.Form.Controls.ControlBoolean;
+			/** Select whether the account allows direct mail. If Do Not Allow is selected, the account will be excluded from letter activities distributed in marketing campaigns. */
+			DoNotPostalMail: DevKit.Form.Controls.ControlBoolean;
+			/** Type the primary email address for the account. */
+			EMailAddress1: DevKit.Form.Controls.ControlString;
+			/** Type the fax number for the account. */
+			Fax: DevKit.Form.Controls.ControlString;
+			/** Information about whether to allow following email activity like opens, attachment views and link clicks for emails sent to the account. */
+			FollowEmail: DevKit.Form.Controls.ControlBoolean;
+			/** Select the account's primary industry for use in marketing segmentation and demographic analysis. */
+			IndustryCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type the company or business name. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Select the account's ownership structure, such as public or private. */
+			OwnershipCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Choose the parent account associated with this account to show parent and child businesses in reporting and analytics. */
+			ParentAccountId: DevKit.Form.Controls.ControlLookup;
+			/** Select the payment terms to indicate when the customer needs to pay the total amount. */
+			PaymentTermsCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Select the preferred method of contact. */
+			PreferredContactMethodCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Choose the primary contact for the account to provide quick access to contact details. */
+			PrimaryContactId: DevKit.Form.Controls.ControlLookup;
+			contactquickform: DevKit.Form.Controls.ControlQuickView;
+			/** Type the Standard Industrial Classification (SIC) code that indicates the account's primary industry of business, for use in marketing segmentation and demographic analysis. */
+			SIC: DevKit.Form.Controls.ControlString;
+			/** Type the main phone number for this account. */
+			Telephone1: DevKit.Form.Controls.ControlString;
+			/** Type the stock exchange symbol for the account to track financial performance of the company. You can click the code entered in this field to access the latest trading information from MSN Money. */
+			TickerSymbol: DevKit.Form.Controls.ControlString;
+			/** Choose the local currency for the record to make sure budgets are reported in the correct currency. */
+			TransactionCurrencyId: DevKit.Form.Controls.ControlLookup;
+			/** Type the account's website URL to get quick details about the company profile. */
+			WebSiteURL: DevKit.Form.Controls.ControlString;
+			/** Type the phonetic spelling of the company name, if specified in Japanese, to make sure the name is pronounced correctly in phone calls and other communications. */
+			YomiName: DevKit.Form.Controls.ControlString;
+		}
+		interface Footer {
 
-	};
-	account.Footer = footer;
-	var quickForm = {
-		contactquickform: intellisense.FormQuickView
-	};
-	account.QuickForm = quickForm;
-	var navigation = {
-		navRelationships: intellisense.FormNavigation,
-		navAddresses: intellisense.FormNavigation,
-		navSubAccts: intellisense.FormNavigation,
-		navCampaignsInSFA: intellisense.FormNavigation,
-		navAsyncOperations: intellisense.FormNavigation,
-		navProcessSessions: intellisense.FormNavigation,
-		nav_devkit_account_devkit_webapi_Customer: intellisense.FormNavigation
-	};
-	account.Navigation = navigation;
-	account.OptionSet = {};
-	///<field name='AccountCategoryCode' type='PickList'></field>
-	account.OptionSet.AccountCategoryCode = {
-		///<field name='Preferred_Customer' type='PickListValue'>Preferred_Customer = 1</field>
-		Preferred_Customer: 1,
-		///<field name='Standard' type='PickListValue'>Standard = 2</field>
-		Standard: 2
-	};
-	///<field name='AccountClassificationCode' type='PickList'></field>
-	account.OptionSet.AccountClassificationCode = {
-		///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-		Default_Value: 1
-	};
-	///<field name='AccountRatingCode' type='PickList'></field>
-	account.OptionSet.AccountRatingCode = {
-		///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-		Default_Value: 1
-	};
-	///<field name='Address1_AddressTypeCode' type='PickList'></field>
-	account.OptionSet.Address1_AddressTypeCode = {
-		///<field name='Bill_To' type='PickListValue'>Bill_To = 1</field>
-		Bill_To: 1,
-		///<field name='Ship_To' type='PickListValue'>Ship_To = 2</field>
-		Ship_To: 2,
-		///<field name='Primary' type='PickListValue'>Primary = 3</field>
-		Primary: 3,
-		///<field name='Other' type='PickListValue'>Other = 4</field>
-		Other: 4
-	};
-	///<field name='Address1_FreightTermsCode' type='PickList'></field>
-	account.OptionSet.Address1_FreightTermsCode = {
-		///<field name='FOB' type='PickListValue'>FOB = 1</field>
-		FOB: 1,
-		///<field name='No_Charge' type='PickListValue'>No_Charge = 2</field>
-		No_Charge: 2
-	};
-	///<field name='Address1_ShippingMethodCode' type='PickList'></field>
-	account.OptionSet.Address1_ShippingMethodCode = {
-		///<field name='Airborne' type='PickListValue'>Airborne = 1</field>
-		Airborne: 1,
-		///<field name='DHL' type='PickListValue'>DHL = 2</field>
-		DHL: 2,
-		///<field name='FedEx' type='PickListValue'>FedEx = 3</field>
-		FedEx: 3,
-		///<field name='UPS' type='PickListValue'>UPS = 4</field>
-		UPS: 4,
-		///<field name='Postal_Mail' type='PickListValue'>Postal_Mail = 5</field>
-		Postal_Mail: 5,
-		///<field name='Full_Load' type='PickListValue'>Full_Load = 6</field>
-		Full_Load: 6,
-		///<field name='Will_Call' type='PickListValue'>Will_Call = 7</field>
-		Will_Call: 7
-	};
-	///<field name='Address2_AddressTypeCode' type='PickList'></field>
-	account.OptionSet.Address2_AddressTypeCode = {
-		///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-		Default_Value: 1
-	};
-	///<field name='Address2_FreightTermsCode' type='PickList'></field>
-	account.OptionSet.Address2_FreightTermsCode = {
-		///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-		Default_Value: 1
-	};
-	///<field name='Address2_ShippingMethodCode' type='PickList'></field>
-	account.OptionSet.Address2_ShippingMethodCode = {
-		///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-		Default_Value: 1
-	};
-	///<field name='BusinessTypeCode' type='PickList'></field>
-	account.OptionSet.BusinessTypeCode = {
-		///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-		Default_Value: 1
-	};
-	///<field name='CustomerSizeCode' type='PickList'></field>
-	account.OptionSet.CustomerSizeCode = {
-		///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-		Default_Value: 1
-	};
-	///<field name='CustomerTypeCode' type='PickList'></field>
-	account.OptionSet.CustomerTypeCode = {
-		///<field name='Competitor' type='PickListValue'>Competitor = 1</field>
-		Competitor: 1,
-		///<field name='Consultant' type='PickListValue'>Consultant = 2</field>
-		Consultant: 2,
-		///<field name='Customer' type='PickListValue'>Customer = 3</field>
-		Customer: 3,
-		///<field name='Investor' type='PickListValue'>Investor = 4</field>
-		Investor: 4,
-		///<field name='Partner' type='PickListValue'>Partner = 5</field>
-		Partner: 5,
-		///<field name='Influencer' type='PickListValue'>Influencer = 6</field>
-		Influencer: 6,
-		///<field name='Press' type='PickListValue'>Press = 7</field>
-		Press: 7,
-		///<field name='Prospect' type='PickListValue'>Prospect = 8</field>
-		Prospect: 8,
-		///<field name='Reseller' type='PickListValue'>Reseller = 9</field>
-		Reseller: 9,
-		///<field name='Supplier' type='PickListValue'>Supplier = 10</field>
-		Supplier: 10,
-		///<field name='Vendor' type='PickListValue'>Vendor = 11</field>
-		Vendor: 11,
-		///<field name='Other' type='PickListValue'>Other = 12</field>
-		Other: 12
-	};
-	///<field name='IndustryCode' type='PickList'></field>
-	account.OptionSet.IndustryCode = {
-		///<field name='Accounting' type='PickListValue'>Accounting = 1</field>
-		Accounting: 1,
-		///<field name='Agriculture_and_Non_petrol_Natural_Resource_Extraction' type='PickListValue'>Agriculture_and_Non_petrol_Natural_Resource_Extraction = 2</field>
-		Agriculture_and_Non_petrol_Natural_Resource_Extraction: 2,
-		///<field name='Broadcasting_Printing_and_Publishing' type='PickListValue'>Broadcasting_Printing_and_Publishing = 3</field>
-		Broadcasting_Printing_and_Publishing: 3,
-		///<field name='Brokers' type='PickListValue'>Brokers = 4</field>
-		Brokers: 4,
-		///<field name='Building_Supply_Retail' type='PickListValue'>Building_Supply_Retail = 5</field>
-		Building_Supply_Retail: 5,
-		///<field name='Business_Services' type='PickListValue'>Business_Services = 6</field>
-		Business_Services: 6,
-		///<field name='Consulting' type='PickListValue'>Consulting = 7</field>
-		Consulting: 7,
-		///<field name='Consumer_Services' type='PickListValue'>Consumer_Services = 8</field>
-		Consumer_Services: 8,
-		///<field name='Design_Direction_and_Creative_Management' type='PickListValue'>Design_Direction_and_Creative_Management = 9</field>
-		Design_Direction_and_Creative_Management: 9,
-		///<field name='Distributors_Dispatchers_and_Processors' type='PickListValue'>Distributors_Dispatchers_and_Processors = 10</field>
-		Distributors_Dispatchers_and_Processors: 10,
-		///<field name='Doctors_Offices_and_Clinics' type='PickListValue'>Doctors_Offices_and_Clinics = 11</field>
-		Doctors_Offices_and_Clinics: 11,
-		///<field name='Durable_Manufacturing' type='PickListValue'>Durable_Manufacturing = 12</field>
-		Durable_Manufacturing: 12,
-		///<field name='Eating_and_Drinking_Places' type='PickListValue'>Eating_and_Drinking_Places = 13</field>
-		Eating_and_Drinking_Places: 13,
-		///<field name='Entertainment_Retail' type='PickListValue'>Entertainment_Retail = 14</field>
-		Entertainment_Retail: 14,
-		///<field name='Equipment_Rental_and_Leasing' type='PickListValue'>Equipment_Rental_and_Leasing = 15</field>
-		Equipment_Rental_and_Leasing: 15,
-		///<field name='Financial' type='PickListValue'>Financial = 16</field>
-		Financial: 16,
-		///<field name='Food_and_Tobacco_Processing' type='PickListValue'>Food_and_Tobacco_Processing = 17</field>
-		Food_and_Tobacco_Processing: 17,
-		///<field name='Inbound_Capital_Intensive_Processing' type='PickListValue'>Inbound_Capital_Intensive_Processing = 18</field>
-		Inbound_Capital_Intensive_Processing: 18,
-		///<field name='Inbound_Repair_and_Services' type='PickListValue'>Inbound_Repair_and_Services = 19</field>
-		Inbound_Repair_and_Services: 19,
-		///<field name='Insurance' type='PickListValue'>Insurance = 20</field>
-		Insurance: 20,
-		///<field name='Legal_Services' type='PickListValue'>Legal_Services = 21</field>
-		Legal_Services: 21,
-		///<field name='Non_Durable_Merchandise_Retail' type='PickListValue'>Non_Durable_Merchandise_Retail = 22</field>
-		Non_Durable_Merchandise_Retail: 22,
-		///<field name='Outbound_Consumer_Service' type='PickListValue'>Outbound_Consumer_Service = 23</field>
-		Outbound_Consumer_Service: 23,
-		///<field name='Petrochemical_Extraction_and_Distribution' type='PickListValue'>Petrochemical_Extraction_and_Distribution = 24</field>
-		Petrochemical_Extraction_and_Distribution: 24,
-		///<field name='Service_Retail' type='PickListValue'>Service_Retail = 25</field>
-		Service_Retail: 25,
-		///<field name='SIG_Affiliations' type='PickListValue'>SIG_Affiliations = 26</field>
-		SIG_Affiliations: 26,
-		///<field name='Social_Services' type='PickListValue'>Social_Services = 27</field>
-		Social_Services: 27,
-		///<field name='Special_Outbound_Trade_Contractors' type='PickListValue'>Special_Outbound_Trade_Contractors = 28</field>
-		Special_Outbound_Trade_Contractors: 28,
-		///<field name='Specialty_Realty' type='PickListValue'>Specialty_Realty = 29</field>
-		Specialty_Realty: 29,
-		///<field name='Transportation' type='PickListValue'>Transportation = 30</field>
-		Transportation: 30,
-		///<field name='Utility_Creation_and_Distribution' type='PickListValue'>Utility_Creation_and_Distribution = 31</field>
-		Utility_Creation_and_Distribution: 31,
-		///<field name='Vehicle_Retail' type='PickListValue'>Vehicle_Retail = 32</field>
-		Vehicle_Retail: 32,
-		///<field name='Wholesale' type='PickListValue'>Wholesale = 33</field>
-		Wholesale: 33
-	};
-	///<field name='OwnershipCode' type='PickList'></field>
-	account.OptionSet.OwnershipCode = {
-		///<field name='Public' type='PickListValue'>Public = 1</field>
-		Public: 1,
-		///<field name='Private' type='PickListValue'>Private = 2</field>
-		Private: 2,
-		///<field name='Subsidiary' type='PickListValue'>Subsidiary = 3</field>
-		Subsidiary: 3,
-		///<field name='Other' type='PickListValue'>Other = 4</field>
-		Other: 4
-	};
-	///<field name='PaymentTermsCode' type='PickList'></field>
-	account.OptionSet.PaymentTermsCode = {
-		///<field name='Net_30' type='PickListValue'>Net_30 = 1</field>
-		Net_30: 1,
-		///<field name='_2_10_Net_30' type='PickListValue'>_2_10_Net_30 = 2</field>
-		_2_10_Net_30: 2,
-		///<field name='Net_45' type='PickListValue'>Net_45 = 3</field>
-		Net_45: 3,
-		///<field name='Net_60' type='PickListValue'>Net_60 = 4</field>
-		Net_60: 4
-	};
-	///<field name='PreferredAppointmentDayCode' type='PickList'></field>
-	account.OptionSet.PreferredAppointmentDayCode = {
-		///<field name='Sunday' type='PickListValue'>Sunday = 0</field>
-		Sunday: 0,
-		///<field name='Monday' type='PickListValue'>Monday = 1</field>
-		Monday: 1,
-		///<field name='Tuesday' type='PickListValue'>Tuesday = 2</field>
-		Tuesday: 2,
-		///<field name='Wednesday' type='PickListValue'>Wednesday = 3</field>
-		Wednesday: 3,
-		///<field name='Thursday' type='PickListValue'>Thursday = 4</field>
-		Thursday: 4,
-		///<field name='Friday' type='PickListValue'>Friday = 5</field>
-		Friday: 5,
-		///<field name='Saturday' type='PickListValue'>Saturday = 6</field>
-		Saturday: 6
-	};
-	///<field name='PreferredAppointmentTimeCode' type='PickList'></field>
-	account.OptionSet.PreferredAppointmentTimeCode = {
-		///<field name='Morning' type='PickListValue'>Morning = 1</field>
-		Morning: 1,
-		///<field name='Afternoon' type='PickListValue'>Afternoon = 2</field>
-		Afternoon: 2,
-		///<field name='Evening' type='PickListValue'>Evening = 3</field>
-		Evening: 3
-	};
-	///<field name='PreferredContactMethodCode' type='PickList'></field>
-	account.OptionSet.PreferredContactMethodCode = {
-		///<field name='Any' type='PickListValue'>Any = 1</field>
-		Any: 1,
-		///<field name='Email' type='PickListValue'>Email = 2</field>
-		Email: 2,
-		///<field name='Phone' type='PickListValue'>Phone = 3</field>
-		Phone: 3,
-		///<field name='Fax' type='PickListValue'>Fax = 4</field>
-		Fax: 4,
-		///<field name='Mail' type='PickListValue'>Mail = 5</field>
-		Mail: 5
-	};
-	///<field name='ShippingMethodCode' type='PickList'></field>
-	account.OptionSet.ShippingMethodCode = {
-		///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-		Default_Value: 1
-	};
-	///<field name='StateCode' type='PickList'></field>
-	account.OptionSet.StateCode = {
-		///<field name='Active' type='PickListValue'>Active = 0</field>
-		Active: 0,
-		///<field name='Inactive' type='PickListValue'>Inactive = 1</field>
-		Inactive: 1
-	};
-	///<field name='StatusCode' type='PickList'></field>
-	account.OptionSet.StatusCode = {
-		///<field name='Active' type='PickListValue'>Active = 1</field>
-		Active: 1,
-		///<field name='Inactive' type='PickListValue'>Inactive = 2</field>
-		Inactive: 2
-	};
-	///<field name='TerritoryCode' type='PickList'></field>
-	account.OptionSet.TerritoryCode = {
-		///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-		Default_Value: 1
-	};
-	return account;
-};
-Rocket.AccountApi = function (entity) {
-	return {
-		///<field name='AccountCategoryCode' type='OptionSet'>Edm.Int32 - this.OptionSet.AccountCategoryCode</field>
-		AccountCategoryCode: intellisense.EntityValue,
-		///<field name='AccountClassificationCode' type='OptionSet'>Edm.Int32 - this.OptionSet.AccountClassificationCode</field>
-		AccountClassificationCode: intellisense.EntityValue,
-		///<field name='AccountId' type='Uniqueidentifier'>Edm.Guid</field>
-		AccountId: intellisense.EntityValue,
-		///<field name='AccountNumber' type='String'>Edm.String</field>
-		AccountNumber: intellisense.EntityValue,
-		///<field name='AccountRatingCode' type='OptionSet'>Edm.Int32 - this.OptionSet.AccountRatingCode</field>
-		AccountRatingCode: intellisense.EntityValue,
-		///<field name='Address1_AddressId' type='Uniqueidentifier'>Edm.Guid</field>
-		Address1_AddressId: intellisense.EntityValue,
-		///<field name='Address1_AddressTypeCode' type='OptionSet'>Edm.Int32 - this.OptionSet.Address1_AddressTypeCode</field>
-		Address1_AddressTypeCode: intellisense.EntityValue,
-		///<field name='Address1_City' type='String'>Edm.String</field>
-		Address1_City: intellisense.EntityValue,
-		///<field name='Address1_Composite' type='Memo'>ReadOnly - Edm.String</field>
-		Address1_Composite: intellisense.EntityValue,
-		///<field name='Address1_Country' type='String'>Edm.String</field>
-		Address1_Country: intellisense.EntityValue,
-		///<field name='Address1_County' type='String'>Edm.String</field>
-		Address1_County: intellisense.EntityValue,
-		///<field name='Address1_Fax' type='String'>Edm.String</field>
-		Address1_Fax: intellisense.EntityValue,
-		///<field name='Address1_FreightTermsCode' type='OptionSet'>Edm.Int32 - this.OptionSet.Address1_FreightTermsCode</field>
-		Address1_FreightTermsCode: intellisense.EntityValue,
-		///<field name='Address1_Latitude' type='Double'>Edm.Double</field>
-		Address1_Latitude: intellisense.EntityValue,
-		///<field name='Address1_Line1' type='String'>Edm.String</field>
-		Address1_Line1: intellisense.EntityValue,
-		///<field name='Address1_Line2' type='String'>Edm.String</field>
-		Address1_Line2: intellisense.EntityValue,
-		///<field name='Address1_Line3' type='String'>Edm.String</field>
-		Address1_Line3: intellisense.EntityValue,
-		///<field name='Address1_Longitude' type='Double'>Edm.Double</field>
-		Address1_Longitude: intellisense.EntityValue,
-		///<field name='Address1_Name' type='String'>Edm.String</field>
-		Address1_Name: intellisense.EntityValue,
-		///<field name='Address1_PostalCode' type='String'>Edm.String</field>
-		Address1_PostalCode: intellisense.EntityValue,
-		///<field name='Address1_PostOfficeBox' type='String'>Edm.String</field>
-		Address1_PostOfficeBox: intellisense.EntityValue,
-		///<field name='Address1_PrimaryContactName' type='String'>Edm.String</field>
-		Address1_PrimaryContactName: intellisense.EntityValue,
-		///<field name='Address1_ShippingMethodCode' type='OptionSet'>Edm.Int32 - this.OptionSet.Address1_ShippingMethodCode</field>
-		Address1_ShippingMethodCode: intellisense.EntityValue,
-		///<field name='Address1_StateOrProvince' type='String'>Edm.String</field>
-		Address1_StateOrProvince: intellisense.EntityValue,
-		///<field name='Address1_Telephone1' type='String'>Edm.String</field>
-		Address1_Telephone1: intellisense.EntityValue,
-		///<field name='Address1_Telephone2' type='String'>Edm.String</field>
-		Address1_Telephone2: intellisense.EntityValue,
-		///<field name='Address1_Telephone3' type='String'>Edm.String</field>
-		Address1_Telephone3: intellisense.EntityValue,
-		///<field name='Address1_UPSZone' type='String'>Edm.String</field>
-		Address1_UPSZone: intellisense.EntityValue,
-		///<field name='Address1_UTCOffset' type='Integer'>Edm.Int32</field>
-		Address1_UTCOffset: intellisense.EntityValue,
-		///<field name='Address2_AddressId' type='Uniqueidentifier'>Edm.Guid</field>
-		Address2_AddressId: intellisense.EntityValue,
-		///<field name='Address2_AddressTypeCode' type='OptionSet'>Edm.Int32 - this.OptionSet.Address2_AddressTypeCode</field>
-		Address2_AddressTypeCode: intellisense.EntityValue,
-		///<field name='Address2_City' type='String'>Edm.String</field>
-		Address2_City: intellisense.EntityValue,
-		///<field name='Address2_Composite' type='Memo'>ReadOnly - Edm.String</field>
-		Address2_Composite: intellisense.EntityValue,
-		///<field name='Address2_Country' type='String'>Edm.String</field>
-		Address2_Country: intellisense.EntityValue,
-		///<field name='Address2_County' type='String'>Edm.String</field>
-		Address2_County: intellisense.EntityValue,
-		///<field name='Address2_Fax' type='String'>Edm.String</field>
-		Address2_Fax: intellisense.EntityValue,
-		///<field name='Address2_FreightTermsCode' type='OptionSet'>Edm.Int32 - this.OptionSet.Address2_FreightTermsCode</field>
-		Address2_FreightTermsCode: intellisense.EntityValue,
-		///<field name='Address2_Latitude' type='Double'>Edm.Double</field>
-		Address2_Latitude: intellisense.EntityValue,
-		///<field name='Address2_Line1' type='String'>Edm.String</field>
-		Address2_Line1: intellisense.EntityValue,
-		///<field name='Address2_Line2' type='String'>Edm.String</field>
-		Address2_Line2: intellisense.EntityValue,
-		///<field name='Address2_Line3' type='String'>Edm.String</field>
-		Address2_Line3: intellisense.EntityValue,
-		///<field name='Address2_Longitude' type='Double'>Edm.Double</field>
-		Address2_Longitude: intellisense.EntityValue,
-		///<field name='Address2_Name' type='String'>Edm.String</field>
-		Address2_Name: intellisense.EntityValue,
-		///<field name='Address2_PostalCode' type='String'>Edm.String</field>
-		Address2_PostalCode: intellisense.EntityValue,
-		///<field name='Address2_PostOfficeBox' type='String'>Edm.String</field>
-		Address2_PostOfficeBox: intellisense.EntityValue,
-		///<field name='Address2_PrimaryContactName' type='String'>Edm.String</field>
-		Address2_PrimaryContactName: intellisense.EntityValue,
-		///<field name='Address2_ShippingMethodCode' type='OptionSet'>Edm.Int32 - this.OptionSet.Address2_ShippingMethodCode</field>
-		Address2_ShippingMethodCode: intellisense.EntityValue,
-		///<field name='Address2_StateOrProvince' type='String'>Edm.String</field>
-		Address2_StateOrProvince: intellisense.EntityValue,
-		///<field name='Address2_Telephone1' type='String'>Edm.String</field>
-		Address2_Telephone1: intellisense.EntityValue,
-		///<field name='Address2_Telephone2' type='String'>Edm.String</field>
-		Address2_Telephone2: intellisense.EntityValue,
-		///<field name='Address2_Telephone3' type='String'>Edm.String</field>
-		Address2_Telephone3: intellisense.EntityValue,
-		///<field name='Address2_UPSZone' type='String'>Edm.String</field>
-		Address2_UPSZone: intellisense.EntityValue,
-		///<field name='Address2_UTCOffset' type='Integer'>Edm.Int32</field>
-		Address2_UTCOffset: intellisense.EntityValue,
-		///<field name='Aging30' type='Money'>ReadOnly - Edm.Decimal</field>
-		Aging30: intellisense.EntityValue,
-		///<field name='Aging30_Base' type='Money'>ReadOnly - Edm.Decimal</field>
-		Aging30_Base: intellisense.EntityValue,
-		///<field name='Aging60' type='Money'>ReadOnly - Edm.Decimal</field>
-		Aging60: intellisense.EntityValue,
-		///<field name='Aging60_Base' type='Money'>ReadOnly - Edm.Decimal</field>
-		Aging60_Base: intellisense.EntityValue,
-		///<field name='Aging90' type='Money'>ReadOnly - Edm.Decimal</field>
-		Aging90: intellisense.EntityValue,
-		///<field name='Aging90_Base' type='Money'>ReadOnly - Edm.Decimal</field>
-		Aging90_Base: intellisense.EntityValue,
-		///<field name='BusinessTypeCode' type='OptionSet'>Edm.Int32 - this.OptionSet.BusinessTypeCode</field>
-		BusinessTypeCode: intellisense.EntityValue,
-		///<field name='CreatedBy' type='Lookup'>ReadOnly - Edm.Guid</field>
-		CreatedBy: intellisense.EntityValue,
-		///<field name='CreatedByExternalParty' type='Lookup'>ReadOnly - Edm.Guid</field>
-		CreatedByExternalParty: intellisense.EntityValue,
-		///<field name='CreatedOn_UtcDateAndTime' type='DateTime'>ReadOnly - Edm.DateTimeOffset</field>
-		CreatedOn_UtcDateAndTime: intellisense.EntityValue,
-		///<field name='CreatedOnBehalfBy' type='Lookup'>ReadOnly - Edm.Guid</field>
-		CreatedOnBehalfBy: intellisense.EntityValue,
-		///<field name='CreditLimit' type='Money'>Edm.Decimal</field>
-		CreditLimit: intellisense.EntityValue,
-		///<field name='CreditLimit_Base' type='Money'>ReadOnly - Edm.Decimal</field>
-		CreditLimit_Base: intellisense.EntityValue,
-		///<field name='CreditOnHold' type='Boolean'>Edm.Boolean</field>
-		CreditOnHold: intellisense.EntityValue,
-		///<field name='CustomerSizeCode' type='OptionSet'>Edm.Int32 - this.OptionSet.CustomerSizeCode</field>
-		CustomerSizeCode: intellisense.EntityValue,
-		///<field name='CustomerTypeCode' type='OptionSet'>Edm.Int32 - this.OptionSet.CustomerTypeCode</field>
-		CustomerTypeCode: intellisense.EntityValue,
-		///<field name='Description' type='Memo'>Edm.String</field>
-		Description: intellisense.EntityValue,
-		///<field name='DoNotBulkEMail' type='Boolean'>Edm.Boolean</field>
-		DoNotBulkEMail: intellisense.EntityValue,
-		///<field name='DoNotBulkPostalMail' type='Boolean'>Edm.Boolean</field>
-		DoNotBulkPostalMail: intellisense.EntityValue,
-		///<field name='DoNotEMail' type='Boolean'>Edm.Boolean</field>
-		DoNotEMail: intellisense.EntityValue,
-		///<field name='DoNotFax' type='Boolean'>Edm.Boolean</field>
-		DoNotFax: intellisense.EntityValue,
-		///<field name='DoNotPhone' type='Boolean'>Edm.Boolean</field>
-		DoNotPhone: intellisense.EntityValue,
-		///<field name='DoNotPostalMail' type='Boolean'>Edm.Boolean</field>
-		DoNotPostalMail: intellisense.EntityValue,
-		///<field name='DoNotSendMM' type='Boolean'>Edm.Boolean</field>
-		DoNotSendMM: intellisense.EntityValue,
-		///<field name='EMailAddress1' type='String'>Edm.String</field>
-		EMailAddress1: intellisense.EntityValue,
-		///<field name='EMailAddress2' type='String'>Edm.String</field>
-		EMailAddress2: intellisense.EntityValue,
-		///<field name='EMailAddress3' type='String'>Edm.String</field>
-		EMailAddress3: intellisense.EntityValue,
-		///<field name='EntityImageId' type='Uniqueidentifier'>ReadOnly - Edm.Guid</field>
-		EntityImageId: intellisense.EntityValue,
-		///<field name='ExchangeRate' type='Decimal'>ReadOnly - Edm.Decimal</field>
-		ExchangeRate: intellisense.EntityValue,
-		///<field name='Fax' type='String'>Edm.String</field>
-		Fax: intellisense.EntityValue,
-		///<field name='FollowEmail' type='Boolean'>Edm.Boolean</field>
-		FollowEmail: intellisense.EntityValue,
-		///<field name='FtpSiteURL' type='String'>Edm.String</field>
-		FtpSiteURL: intellisense.EntityValue,
-		///<field name='ImportSequenceNumber' type='Integer'>Edm.Int32</field>
-		ImportSequenceNumber: intellisense.EntityValue,
-		///<field name='IndustryCode' type='OptionSet'>Edm.Int32 - this.OptionSet.IndustryCode</field>
-		IndustryCode: intellisense.EntityValue,
-		///<field name='IsPrivate' type='Boolean'>ReadOnly - Edm.Boolean</field>
-		IsPrivate: intellisense.EntityValue,
-		///<field name='LastOnHoldTime_UtcDateAndTime' type='DateTime'>Edm.DateTimeOffset</field>
-		LastOnHoldTime_UtcDateAndTime: intellisense.EntityValue,
-		///<field name='LastUsedInCampaign_UtcDateOnly' type='DateTime'>Edm.DateTimeOffset</field>
-		LastUsedInCampaign_UtcDateOnly: intellisense.EntityValue,
-		///<field name='MarketCap' type='Money'>Edm.Decimal</field>
-		MarketCap: intellisense.EntityValue,
-		///<field name='MarketCap_Base' type='Money'>ReadOnly - Edm.Decimal</field>
-		MarketCap_Base: intellisense.EntityValue,
-		///<field name='MarketingOnly' type='Boolean'>Edm.Boolean</field>
-		MarketingOnly: intellisense.EntityValue,
-		///<field name='MasterId' type='Lookup'>ReadOnly - Edm.Guid</field>
-		MasterId: intellisense.EntityValue,
-		///<field name='Merged' type='Boolean'>ReadOnly - Edm.Boolean</field>
-		Merged: intellisense.EntityValue,
-		///<field name='ModifiedBy' type='Lookup'>ReadOnly - Edm.Guid</field>
-		ModifiedBy: intellisense.EntityValue,
-		///<field name='ModifiedByExternalParty' type='Lookup'>ReadOnly - Edm.Guid</field>
-		ModifiedByExternalParty: intellisense.EntityValue,
-		///<field name='ModifiedOn_UtcDateAndTime' type='DateTime'>ReadOnly - Edm.DateTimeOffset</field>
-		ModifiedOn_UtcDateAndTime: intellisense.EntityValue,
-		///<field name='ModifiedOnBehalfBy' type='Lookup'>ReadOnly - Edm.Guid</field>
-		ModifiedOnBehalfBy: intellisense.EntityValue,
-		///<field name='Name' type='String'>Edm.String</field>
-		Name: intellisense.EntityValue,
-		///<field name='NumberOfEmployees' type='Integer'>Edm.Int32</field>
-		NumberOfEmployees: intellisense.EntityValue,
-		///<field name='OnHoldTime' type='Integer'>ReadOnly - Edm.Int32</field>
-		OnHoldTime: intellisense.EntityValue,
-		///<field name='OverriddenCreatedOn_UtcDateOnly' type='DateTime'>Edm.DateTimeOffset</field>
-		OverriddenCreatedOn_UtcDateOnly: intellisense.EntityValue,
-		///<field name='OwnerId_systemuser' type='Lookup'></field>
-		OwnerId_systemuser: intellisense.EntityValue,
-		///<field name='OwnerId_team' type='Lookup'></field>
-		OwnerId_team: intellisense.EntityValue,
-		///<field name='OwnershipCode' type='OptionSet'>Edm.Int32 - this.OptionSet.OwnershipCode</field>
-		OwnershipCode: intellisense.EntityValue,
-		///<field name='OwningBusinessUnit' type='Lookup'>ReadOnly - Edm.Guid</field>
-		OwningBusinessUnit: intellisense.EntityValue,
-		///<field name='OwningTeam' type='Lookup'>ReadOnly - Edm.Guid</field>
-		OwningTeam: intellisense.EntityValue,
-		///<field name='OwningUser' type='Lookup'>ReadOnly - Edm.Guid</field>
-		OwningUser: intellisense.EntityValue,
-		///<field name='ParentAccountId' type='Lookup'>Edm.Guid</field>
-		ParentAccountId: intellisense.EntityValue,
-		///<field name='ParticipatesInWorkflow' type='Boolean'>Edm.Boolean</field>
-		ParticipatesInWorkflow: intellisense.EntityValue,
-		///<field name='PaymentTermsCode' type='OptionSet'>Edm.Int32 - this.OptionSet.PaymentTermsCode</field>
-		PaymentTermsCode: intellisense.EntityValue,
-		///<field name='PreferredAppointmentDayCode' type='OptionSet'>Edm.Int32 - this.OptionSet.PreferredAppointmentDayCode</field>
-		PreferredAppointmentDayCode: intellisense.EntityValue,
-		///<field name='PreferredAppointmentTimeCode' type='OptionSet'>Edm.Int32 - this.OptionSet.PreferredAppointmentTimeCode</field>
-		PreferredAppointmentTimeCode: intellisense.EntityValue,
-		///<field name='PreferredContactMethodCode' type='OptionSet'>Edm.Int32 - this.OptionSet.PreferredContactMethodCode</field>
-		PreferredContactMethodCode: intellisense.EntityValue,
-		///<field name='PreferredSystemUserId' type='Lookup'>Edm.Guid</field>
-		PreferredSystemUserId: intellisense.EntityValue,
-		///<field name='PrimaryContactId' type='Lookup'>Edm.Guid</field>
-		PrimaryContactId: intellisense.EntityValue,
-		///<field name='PrimarySatoriId' type='String'>Edm.String</field>
-		PrimarySatoriId: intellisense.EntityValue,
-		///<field name='PrimaryTwitterId' type='String'>Edm.String</field>
-		PrimaryTwitterId: intellisense.EntityValue,
-		///<field name='ProcessId' type='Uniqueidentifier'>Edm.Guid</field>
-		ProcessId: intellisense.EntityValue,
-		///<field name='Revenue' type='Money'>Edm.Decimal</field>
-		Revenue: intellisense.EntityValue,
-		///<field name='Revenue_Base' type='Money'>ReadOnly - Edm.Decimal</field>
-		Revenue_Base: intellisense.EntityValue,
-		///<field name='SharesOutstanding' type='Integer'>Edm.Int32</field>
-		SharesOutstanding: intellisense.EntityValue,
-		///<field name='ShippingMethodCode' type='OptionSet'>Edm.Int32 - this.OptionSet.ShippingMethodCode</field>
-		ShippingMethodCode: intellisense.EntityValue,
-		///<field name='SIC' type='String'>Edm.String</field>
-		SIC: intellisense.EntityValue,
-		///<field name='SLAId' type='Lookup'>Edm.Guid</field>
-		SLAId: intellisense.EntityValue,
-		///<field name='SLAInvokedId' type='Lookup'>ReadOnly - Edm.Guid</field>
-		SLAInvokedId: intellisense.EntityValue,
-		///<field name='StageId' type='Uniqueidentifier'>Edm.Guid</field>
-		StageId: intellisense.EntityValue,
-		///<field name='StateCode' type='OptionSet'>Edm.Int32 - this.OptionSet.StateCode</field>
-		StateCode: intellisense.EntityValue,
-		///<field name='StatusCode' type='OptionSet'>Edm.Int32 - this.OptionSet.StatusCode</field>
-		StatusCode: intellisense.EntityValue,
-		///<field name='StockExchange' type='String'>Edm.String</field>
-		StockExchange: intellisense.EntityValue,
-		///<field name='Telephone1' type='String'>Edm.String</field>
-		Telephone1: intellisense.EntityValue,
-		///<field name='Telephone2' type='String'>Edm.String</field>
-		Telephone2: intellisense.EntityValue,
-		///<field name='Telephone3' type='String'>Edm.String</field>
-		Telephone3: intellisense.EntityValue,
-		///<field name='TerritoryCode' type='OptionSet'>Edm.Int32 - this.OptionSet.TerritoryCode</field>
-		TerritoryCode: intellisense.EntityValue,
-		///<field name='TickerSymbol' type='String'>Edm.String</field>
-		TickerSymbol: intellisense.EntityValue,
-		///<field name='TimeSpentByMeOnEmailAndMeetings' type='String'>ReadOnly - Edm.String</field>
-		TimeSpentByMeOnEmailAndMeetings: intellisense.EntityValue,
-		///<field name='TimeZoneRuleVersionNumber' type='Integer'>Edm.Int32</field>
-		TimeZoneRuleVersionNumber: intellisense.EntityValue,
-		///<field name='TransactionCurrencyId' type='Lookup'>Edm.Guid</field>
-		TransactionCurrencyId: intellisense.EntityValue,
-		///<field name='TraversedPath' type='String'>Edm.String</field>
-		TraversedPath: intellisense.EntityValue,
-		///<field name='UTCConversionTimeZoneCode' type='Integer'>Edm.Int32</field>
-		UTCConversionTimeZoneCode: intellisense.EntityValue,
-		///<field name='VersionNumber' type='BigInt'>ReadOnly - </field>
-		VersionNumber: intellisense.EntityValue,
-		///<field name='WebSiteURL' type='String'>Edm.String</field>
-		WebSiteURL: intellisense.EntityValue,
-		///<field name='YomiName' type='String'>Edm.String</field>
-		YomiName: intellisense.EntityValue,
-		///<field name='Entity' type='Object'></field>
-		Entity: null,
-		///<field name='EntityName' type='String'></field>
-		EntityName: null,
-		///<field name='EntityCollectionName' type='String'></field>
-		EntityCollectionName: null,
-		///<field name='OptionSet' type='Object'></field>
-		OptionSet: {
-			///<field name='AccountCategoryCode' type='PickList'></field>
-			AccountCategoryCode: {
-				///<field name='Preferred_Customer' type='PickListValue'>Preferred_Customer = 1</field>
-				Preferred_Customer: 1,
-				///<field name='Standard' type='PickListValue'>Standard = 2</field>
-				Standard: 2
-			},
-			///<field name='AccountClassificationCode' type='PickList'></field>
-			AccountClassificationCode: {
-				///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-				Default_Value: 1
-			},
-			///<field name='AccountRatingCode' type='PickList'></field>
-			AccountRatingCode: {
-				///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-				Default_Value: 1
-			},
-			///<field name='Address1_AddressTypeCode' type='PickList'></field>
-			Address1_AddressTypeCode: {
-				///<field name='Bill_To' type='PickListValue'>Bill_To = 1</field>
-				Bill_To: 1,
-				///<field name='Ship_To' type='PickListValue'>Ship_To = 2</field>
-				Ship_To: 2,
-				///<field name='Primary' type='PickListValue'>Primary = 3</field>
-				Primary: 3,
-				///<field name='Other' type='PickListValue'>Other = 4</field>
-				Other: 4
-			},
-			///<field name='Address1_FreightTermsCode' type='PickList'></field>
-			Address1_FreightTermsCode: {
-				///<field name='FOB' type='PickListValue'>FOB = 1</field>
-				FOB: 1,
-				///<field name='No_Charge' type='PickListValue'>No_Charge = 2</field>
-				No_Charge: 2
-			},
-			///<field name='Address1_ShippingMethodCode' type='PickList'></field>
-			Address1_ShippingMethodCode: {
-				///<field name='Airborne' type='PickListValue'>Airborne = 1</field>
-				Airborne: 1,
-				///<field name='DHL' type='PickListValue'>DHL = 2</field>
-				DHL: 2,
-				///<field name='FedEx' type='PickListValue'>FedEx = 3</field>
-				FedEx: 3,
-				///<field name='UPS' type='PickListValue'>UPS = 4</field>
-				UPS: 4,
-				///<field name='Postal_Mail' type='PickListValue'>Postal_Mail = 5</field>
-				Postal_Mail: 5,
-				///<field name='Full_Load' type='PickListValue'>Full_Load = 6</field>
-				Full_Load: 6,
-				///<field name='Will_Call' type='PickListValue'>Will_Call = 7</field>
-				Will_Call: 7
-			},
-			///<field name='Address2_AddressTypeCode' type='PickList'></field>
-			Address2_AddressTypeCode: {
-				///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-				Default_Value: 1
-			},
-			///<field name='Address2_FreightTermsCode' type='PickList'></field>
-			Address2_FreightTermsCode: {
-				///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-				Default_Value: 1
-			},
-			///<field name='Address2_ShippingMethodCode' type='PickList'></field>
-			Address2_ShippingMethodCode: {
-				///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-				Default_Value: 1
-			},
-			///<field name='BusinessTypeCode' type='PickList'></field>
-			BusinessTypeCode: {
-				///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-				Default_Value: 1
-			},
-			///<field name='CustomerSizeCode' type='PickList'></field>
-			CustomerSizeCode: {
-				///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-				Default_Value: 1
-			},
-			///<field name='CustomerTypeCode' type='PickList'></field>
-			CustomerTypeCode: {
-				///<field name='Competitor' type='PickListValue'>Competitor = 1</field>
-				Competitor: 1,
-				///<field name='Consultant' type='PickListValue'>Consultant = 2</field>
-				Consultant: 2,
-				///<field name='Customer' type='PickListValue'>Customer = 3</field>
-				Customer: 3,
-				///<field name='Investor' type='PickListValue'>Investor = 4</field>
-				Investor: 4,
-				///<field name='Partner' type='PickListValue'>Partner = 5</field>
-				Partner: 5,
-				///<field name='Influencer' type='PickListValue'>Influencer = 6</field>
-				Influencer: 6,
-				///<field name='Press' type='PickListValue'>Press = 7</field>
-				Press: 7,
-				///<field name='Prospect' type='PickListValue'>Prospect = 8</field>
-				Prospect: 8,
-				///<field name='Reseller' type='PickListValue'>Reseller = 9</field>
-				Reseller: 9,
-				///<field name='Supplier' type='PickListValue'>Supplier = 10</field>
-				Supplier: 10,
-				///<field name='Vendor' type='PickListValue'>Vendor = 11</field>
-				Vendor: 11,
-				///<field name='Other' type='PickListValue'>Other = 12</field>
-				Other: 12
-			},
-			///<field name='IndustryCode' type='PickList'></field>
-			IndustryCode: {
-				///<field name='Accounting' type='PickListValue'>Accounting = 1</field>
-				Accounting: 1,
-				///<field name='Agriculture_and_Non_petrol_Natural_Resource_Extraction' type='PickListValue'>Agriculture_and_Non_petrol_Natural_Resource_Extraction = 2</field>
-				Agriculture_and_Non_petrol_Natural_Resource_Extraction: 2,
-				///<field name='Broadcasting_Printing_and_Publishing' type='PickListValue'>Broadcasting_Printing_and_Publishing = 3</field>
-				Broadcasting_Printing_and_Publishing: 3,
-				///<field name='Brokers' type='PickListValue'>Brokers = 4</field>
-				Brokers: 4,
-				///<field name='Building_Supply_Retail' type='PickListValue'>Building_Supply_Retail = 5</field>
-				Building_Supply_Retail: 5,
-				///<field name='Business_Services' type='PickListValue'>Business_Services = 6</field>
-				Business_Services: 6,
-				///<field name='Consulting' type='PickListValue'>Consulting = 7</field>
-				Consulting: 7,
-				///<field name='Consumer_Services' type='PickListValue'>Consumer_Services = 8</field>
-				Consumer_Services: 8,
-				///<field name='Design_Direction_and_Creative_Management' type='PickListValue'>Design_Direction_and_Creative_Management = 9</field>
-				Design_Direction_and_Creative_Management: 9,
-				///<field name='Distributors_Dispatchers_and_Processors' type='PickListValue'>Distributors_Dispatchers_and_Processors = 10</field>
-				Distributors_Dispatchers_and_Processors: 10,
-				///<field name='Doctors_Offices_and_Clinics' type='PickListValue'>Doctors_Offices_and_Clinics = 11</field>
-				Doctors_Offices_and_Clinics: 11,
-				///<field name='Durable_Manufacturing' type='PickListValue'>Durable_Manufacturing = 12</field>
-				Durable_Manufacturing: 12,
-				///<field name='Eating_and_Drinking_Places' type='PickListValue'>Eating_and_Drinking_Places = 13</field>
-				Eating_and_Drinking_Places: 13,
-				///<field name='Entertainment_Retail' type='PickListValue'>Entertainment_Retail = 14</field>
-				Entertainment_Retail: 14,
-				///<field name='Equipment_Rental_and_Leasing' type='PickListValue'>Equipment_Rental_and_Leasing = 15</field>
-				Equipment_Rental_and_Leasing: 15,
-				///<field name='Financial' type='PickListValue'>Financial = 16</field>
-				Financial: 16,
-				///<field name='Food_and_Tobacco_Processing' type='PickListValue'>Food_and_Tobacco_Processing = 17</field>
-				Food_and_Tobacco_Processing: 17,
-				///<field name='Inbound_Capital_Intensive_Processing' type='PickListValue'>Inbound_Capital_Intensive_Processing = 18</field>
-				Inbound_Capital_Intensive_Processing: 18,
-				///<field name='Inbound_Repair_and_Services' type='PickListValue'>Inbound_Repair_and_Services = 19</field>
-				Inbound_Repair_and_Services: 19,
-				///<field name='Insurance' type='PickListValue'>Insurance = 20</field>
-				Insurance: 20,
-				///<field name='Legal_Services' type='PickListValue'>Legal_Services = 21</field>
-				Legal_Services: 21,
-				///<field name='Non_Durable_Merchandise_Retail' type='PickListValue'>Non_Durable_Merchandise_Retail = 22</field>
-				Non_Durable_Merchandise_Retail: 22,
-				///<field name='Outbound_Consumer_Service' type='PickListValue'>Outbound_Consumer_Service = 23</field>
-				Outbound_Consumer_Service: 23,
-				///<field name='Petrochemical_Extraction_and_Distribution' type='PickListValue'>Petrochemical_Extraction_and_Distribution = 24</field>
-				Petrochemical_Extraction_and_Distribution: 24,
-				///<field name='Service_Retail' type='PickListValue'>Service_Retail = 25</field>
-				Service_Retail: 25,
-				///<field name='SIG_Affiliations' type='PickListValue'>SIG_Affiliations = 26</field>
-				SIG_Affiliations: 26,
-				///<field name='Social_Services' type='PickListValue'>Social_Services = 27</field>
-				Social_Services: 27,
-				///<field name='Special_Outbound_Trade_Contractors' type='PickListValue'>Special_Outbound_Trade_Contractors = 28</field>
-				Special_Outbound_Trade_Contractors: 28,
-				///<field name='Specialty_Realty' type='PickListValue'>Specialty_Realty = 29</field>
-				Specialty_Realty: 29,
-				///<field name='Transportation' type='PickListValue'>Transportation = 30</field>
-				Transportation: 30,
-				///<field name='Utility_Creation_and_Distribution' type='PickListValue'>Utility_Creation_and_Distribution = 31</field>
-				Utility_Creation_and_Distribution: 31,
-				///<field name='Vehicle_Retail' type='PickListValue'>Vehicle_Retail = 32</field>
-				Vehicle_Retail: 32,
-				///<field name='Wholesale' type='PickListValue'>Wholesale = 33</field>
-				Wholesale: 33
-			},
-			///<field name='OwnershipCode' type='PickList'></field>
-			OwnershipCode: {
-				///<field name='Public' type='PickListValue'>Public = 1</field>
-				Public: 1,
-				///<field name='Private' type='PickListValue'>Private = 2</field>
-				Private: 2,
-				///<field name='Subsidiary' type='PickListValue'>Subsidiary = 3</field>
-				Subsidiary: 3,
-				///<field name='Other' type='PickListValue'>Other = 4</field>
-				Other: 4
-			},
-			///<field name='PaymentTermsCode' type='PickList'></field>
-			PaymentTermsCode: {
-				///<field name='Net_30' type='PickListValue'>Net_30 = 1</field>
-				Net_30: 1,
-				///<field name='_2_10_Net_30' type='PickListValue'>_2_10_Net_30 = 2</field>
-				_2_10_Net_30: 2,
-				///<field name='Net_45' type='PickListValue'>Net_45 = 3</field>
-				Net_45: 3,
-				///<field name='Net_60' type='PickListValue'>Net_60 = 4</field>
-				Net_60: 4
-			},
-			///<field name='PreferredAppointmentDayCode' type='PickList'></field>
-			PreferredAppointmentDayCode: {
-				///<field name='Sunday' type='PickListValue'>Sunday = 0</field>
-				Sunday: 0,
-				///<field name='Monday' type='PickListValue'>Monday = 1</field>
-				Monday: 1,
-				///<field name='Tuesday' type='PickListValue'>Tuesday = 2</field>
-				Tuesday: 2,
-				///<field name='Wednesday' type='PickListValue'>Wednesday = 3</field>
-				Wednesday: 3,
-				///<field name='Thursday' type='PickListValue'>Thursday = 4</field>
-				Thursday: 4,
-				///<field name='Friday' type='PickListValue'>Friday = 5</field>
-				Friday: 5,
-				///<field name='Saturday' type='PickListValue'>Saturday = 6</field>
-				Saturday: 6
-			},
-			///<field name='PreferredAppointmentTimeCode' type='PickList'></field>
-			PreferredAppointmentTimeCode: {
-				///<field name='Morning' type='PickListValue'>Morning = 1</field>
-				Morning: 1,
-				///<field name='Afternoon' type='PickListValue'>Afternoon = 2</field>
-				Afternoon: 2,
-				///<field name='Evening' type='PickListValue'>Evening = 3</field>
-				Evening: 3
-			},
-			///<field name='PreferredContactMethodCode' type='PickList'></field>
-			PreferredContactMethodCode: {
-				///<field name='Any' type='PickListValue'>Any = 1</field>
-				Any: 1,
-				///<field name='Email' type='PickListValue'>Email = 2</field>
-				Email: 2,
-				///<field name='Phone' type='PickListValue'>Phone = 3</field>
-				Phone: 3,
-				///<field name='Fax' type='PickListValue'>Fax = 4</field>
-				Fax: 4,
-				///<field name='Mail' type='PickListValue'>Mail = 5</field>
-				Mail: 5
-			},
-			///<field name='ShippingMethodCode' type='PickList'></field>
-			ShippingMethodCode: {
-				///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-				Default_Value: 1
-			},
-			///<field name='StateCode' type='PickList'></field>
-			StateCode: {
-				///<field name='Active' type='PickListValue'>Active = 0</field>
-				Active: 0,
-				///<field name='Inactive' type='PickListValue'>Inactive = 1</field>
-				Inactive: 1
-			},
-			///<field name='StatusCode' type='PickList'></field>
-			StatusCode: {
-				///<field name='Active' type='PickListValue'>Active = 1</field>
-				Active: 1,
-				///<field name='Inactive' type='PickListValue'>Inactive = 2</field>
-				Inactive: 2
-			},
-			///<field name='TerritoryCode' type='PickList'></field>
-			TerritoryCode: {
-				///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-				Default_Value: 1
-			}
 		}
-	};
-};
+		interface Navigation {
+			navRelationships: DevKit.Form.Controls.ControlNavigationItem,
+			navAddresses: DevKit.Form.Controls.ControlNavigationItem,
+			navSubAccts: DevKit.Form.Controls.ControlNavigationItem,
+			navCampaignsInSFA: DevKit.Form.Controls.ControlNavigationItem,
+			navAsyncOperations: DevKit.Form.Controls.ControlNavigationItem,
+			navProcessSessions: DevKit.Form.Controls.ControlNavigationItem,
+			nav_devkit_account_devkit_webapi_Customer: DevKit.Form.Controls.ControlNavigationItem
+		}
+		interface Process extends DevKit.Form.Controls.IControlProcess {
+		}
+	}
+	class FormAccount extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form Account
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form Account */
+		Body: Rocket.FormAccount.Body;
+		/** The Footer section of form Account */
+		Footer: Rocket.FormAccount.Footer;
+		/** The Header section of form Account */
+		Header: Rocket.FormAccount.Header;
+		/** The Navigation of form Account */
+		Navigation: Rocket.FormAccount.Navigation;
+		/** The Process of form Account */
+		Process: Rocket.FormAccount.Process;
+	}
+	class AccountApi {
+		/**
+		* PL.DynamicsCrm.DevKit AccountApi
+		* @param entity The entity object
+		*/
+		constructor(entity?: any);
+		/**
+		 * Get the value of alias
+		 * @param alias the alias value
+		 * @param isMultiOptionSet true if the alias is multi OptionSet
+		 */
+		getAliasedValue(alias: string, isMultiOptionSet?: boolean): any;
+		/**
+		 * Get the formatted value of alias
+		 * @param alias the alias value
+		 * @param isMultiOptionSet true if the alias is multi OptionSet
+		 */
+		getAliasedFormattedValue(alias: string, isMultiOptionSet?: boolean): string;
+		/** The entity object */
+		Entity: any;
+		/** The entity name */
+		EntityName: string;
+		/** The entity collection name */
+		EntityCollectionName: string;
+		/** The @odata.etag is then used to build a cache of the response that is dependant on the fields that are retrieved */
+		"@odata.etag": string;
+		/** Select a category to indicate whether the customer account is standard or preferred. */
+		AccountCategoryCode: DevKit.WebApi.OptionSetValue;
+		/** Select a classification code to indicate the potential value of the customer account based on the projected return on investment, cooperation level, sales cycle length or other criteria. */
+		AccountClassificationCode: DevKit.WebApi.OptionSetValue;
+		/** Unique identifier of the account. */
+		AccountId: DevKit.WebApi.GuidValue;
+		/** Type an ID number or code for the account to quickly search and identify the account in system views. */
+		AccountNumber: DevKit.WebApi.StringValue;
+		/** Select a rating to indicate the value of the customer account. */
+		AccountRatingCode: DevKit.WebApi.OptionSetValue;
+		/** Unique identifier for address 1. */
+		Address1_AddressId: DevKit.WebApi.GuidValue;
+		/** Select the primary address type. */
+		Address1_AddressTypeCode: DevKit.WebApi.OptionSetValue;
+		/** Type the city for the primary address. */
+		Address1_City: DevKit.WebApi.StringValue;
+		/** Shows the complete primary address. */
+		Address1_Composite: DevKit.WebApi.StringValueReadonly;
+		/** Type the country or region for the primary address. */
+		Address1_Country: DevKit.WebApi.StringValue;
+		/** Type the county for the primary address. */
+		Address1_County: DevKit.WebApi.StringValue;
+		/** Type the fax number associated with the primary address. */
+		Address1_Fax: DevKit.WebApi.StringValue;
+		/** Select the freight terms for the primary address to make sure shipping orders are processed correctly. */
+		Address1_FreightTermsCode: DevKit.WebApi.OptionSetValue;
+		/** Type the latitude value for the primary address for use in mapping and other applications. */
+		Address1_Latitude: DevKit.WebApi.DoubleValue;
+		/** Type the first line of the primary address. */
+		Address1_Line1: DevKit.WebApi.StringValue;
+		/** Type the second line of the primary address. */
+		Address1_Line2: DevKit.WebApi.StringValue;
+		/** Type the third line of the primary address. */
+		Address1_Line3: DevKit.WebApi.StringValue;
+		/** Type the longitude value for the primary address for use in mapping and other applications. */
+		Address1_Longitude: DevKit.WebApi.DoubleValue;
+		/** Type a descriptive name for the primary address, such as Corporate Headquarters. */
+		Address1_Name: DevKit.WebApi.StringValue;
+		/** Type the ZIP Code or postal code for the primary address. */
+		Address1_PostalCode: DevKit.WebApi.StringValue;
+		/** Type the post office box number of the primary address. */
+		Address1_PostOfficeBox: DevKit.WebApi.StringValue;
+		/** Type the name of the main contact at the account's primary address. */
+		Address1_PrimaryContactName: DevKit.WebApi.StringValue;
+		/** Select a shipping method for deliveries sent to this address. */
+		Address1_ShippingMethodCode: DevKit.WebApi.OptionSetValue;
+		/** Type the state or province of the primary address. */
+		Address1_StateOrProvince: DevKit.WebApi.StringValue;
+		/** Type the main phone number associated with the primary address. */
+		Address1_Telephone1: DevKit.WebApi.StringValue;
+		/** Type a second phone number associated with the primary address. */
+		Address1_Telephone2: DevKit.WebApi.StringValue;
+		/** Type a third phone number associated with the primary address. */
+		Address1_Telephone3: DevKit.WebApi.StringValue;
+		/** Type the UPS zone of the primary address to make sure shipping charges are calculated correctly and deliveries are made promptly, if shipped by UPS. */
+		Address1_UPSZone: DevKit.WebApi.StringValue;
+		/** Select the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address. */
+		Address1_UTCOffset: DevKit.WebApi.IntegerValue;
+		/** Unique identifier for address 2. */
+		Address2_AddressId: DevKit.WebApi.GuidValue;
+		/** Select the secondary address type. */
+		Address2_AddressTypeCode: DevKit.WebApi.OptionSetValue;
+		/** Type the city for the secondary address. */
+		Address2_City: DevKit.WebApi.StringValue;
+		/** Shows the complete secondary address. */
+		Address2_Composite: DevKit.WebApi.StringValueReadonly;
+		/** Type the country or region for the secondary address. */
+		Address2_Country: DevKit.WebApi.StringValue;
+		/** Type the county for the secondary address. */
+		Address2_County: DevKit.WebApi.StringValue;
+		/** Type the fax number associated with the secondary address. */
+		Address2_Fax: DevKit.WebApi.StringValue;
+		/** Select the freight terms for the secondary address to make sure shipping orders are processed correctly. */
+		Address2_FreightTermsCode: DevKit.WebApi.OptionSetValue;
+		/** Type the latitude value for the secondary address for use in mapping and other applications. */
+		Address2_Latitude: DevKit.WebApi.DoubleValue;
+		/** Type the first line of the secondary address. */
+		Address2_Line1: DevKit.WebApi.StringValue;
+		/** Type the second line of the secondary address. */
+		Address2_Line2: DevKit.WebApi.StringValue;
+		/** Type the third line of the secondary address. */
+		Address2_Line3: DevKit.WebApi.StringValue;
+		/** Type the longitude value for the secondary address for use in mapping and other applications. */
+		Address2_Longitude: DevKit.WebApi.DoubleValue;
+		/** Type a descriptive name for the secondary address, such as Corporate Headquarters. */
+		Address2_Name: DevKit.WebApi.StringValue;
+		/** Type the ZIP Code or postal code for the secondary address. */
+		Address2_PostalCode: DevKit.WebApi.StringValue;
+		/** Type the post office box number of the secondary address. */
+		Address2_PostOfficeBox: DevKit.WebApi.StringValue;
+		/** Type the name of the main contact at the account's secondary address. */
+		Address2_PrimaryContactName: DevKit.WebApi.StringValue;
+		/** Select a shipping method for deliveries sent to this address. */
+		Address2_ShippingMethodCode: DevKit.WebApi.OptionSetValue;
+		/** Type the state or province of the secondary address. */
+		Address2_StateOrProvince: DevKit.WebApi.StringValue;
+		/** Type the main phone number associated with the secondary address. */
+		Address2_Telephone1: DevKit.WebApi.StringValue;
+		/** Type a second phone number associated with the secondary address. */
+		Address2_Telephone2: DevKit.WebApi.StringValue;
+		/** Type a third phone number associated with the secondary address. */
+		Address2_Telephone3: DevKit.WebApi.StringValue;
+		/** Type the UPS zone of the secondary address to make sure shipping charges are calculated correctly and deliveries are made promptly, if shipped by UPS. */
+		Address2_UPSZone: DevKit.WebApi.StringValue;
+		/** Select the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address. */
+		Address2_UTCOffset: DevKit.WebApi.IntegerValue;
+		/** For system use only. */
+		Aging30: DevKit.WebApi.MoneyValueReadonly;
+		/** The base currency equivalent of the aging 30 field. */
+		Aging30_Base: DevKit.WebApi.MoneyValueReadonly;
+		/** For system use only. */
+		Aging60: DevKit.WebApi.MoneyValueReadonly;
+		/** The base currency equivalent of the aging 60 field. */
+		Aging60_Base: DevKit.WebApi.MoneyValueReadonly;
+		/** For system use only. */
+		Aging90: DevKit.WebApi.MoneyValueReadonly;
+		/** The base currency equivalent of the aging 90 field. */
+		Aging90_Base: DevKit.WebApi.MoneyValueReadonly;
+		/** Select the legal designation or other business type of the account for contracts or reporting purposes. */
+		BusinessTypeCode: DevKit.WebApi.OptionSetValue;
+		/** Shows who created the record. */
+		CreatedBy: DevKit.WebApi.LookupValueReadonly;
+		/** Shows the external party who created the record. */
+		CreatedByExternalParty: DevKit.WebApi.LookupValueReadonly;
+		/** Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options. */
+		CreatedOn_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValueReadonly;
+		/** Shows who created the record on behalf of another user. */
+		CreatedOnBehalfBy: DevKit.WebApi.LookupValueReadonly;
+		/** Type the credit limit of the account. This is a useful reference when you address invoice and accounting issues with the customer. */
+		CreditLimit: DevKit.WebApi.MoneyValue;
+		/** Shows the credit limit converted to the system's default base currency for reporting purposes. */
+		CreditLimit_Base: DevKit.WebApi.MoneyValueReadonly;
+		/** Select whether the credit for the account is on hold. This is a useful reference while addressing the invoice and accounting issues with the customer. */
+		CreditOnHold: DevKit.WebApi.BooleanValue;
+		/** Select the size category or range of the account for segmentation and reporting purposes. */
+		CustomerSizeCode: DevKit.WebApi.OptionSetValue;
+		/** Select the category that best describes the relationship between the account and your organization. */
+		CustomerTypeCode: DevKit.WebApi.OptionSetValue;
+		/** Type additional information to describe the account, such as an excerpt from the company's website. */
+		Description: DevKit.WebApi.StringValue;
+		/** Select whether the account allows bulk email sent through campaigns. If Do Not Allow is selected, the account can be added to marketing lists, but is excluded from email. */
+		DoNotBulkEMail: DevKit.WebApi.BooleanValue;
+		/** Select whether the account allows bulk postal mail sent through marketing campaigns or quick campaigns. If Do Not Allow is selected, the account can be added to marketing lists, but will be excluded from the postal mail. */
+		DoNotBulkPostalMail: DevKit.WebApi.BooleanValue;
+		/** Select whether the account allows direct email sent from Microsoft Dynamics 365. */
+		DoNotEMail: DevKit.WebApi.BooleanValue;
+		/** Select whether the account allows faxes. If Do Not Allow is selected, the account will be excluded from fax activities distributed in marketing campaigns. */
+		DoNotFax: DevKit.WebApi.BooleanValue;
+		/** Select whether the account allows phone calls. If Do Not Allow is selected, the account will be excluded from phone call activities distributed in marketing campaigns. */
+		DoNotPhone: DevKit.WebApi.BooleanValue;
+		/** Select whether the account allows direct mail. If Do Not Allow is selected, the account will be excluded from letter activities distributed in marketing campaigns. */
+		DoNotPostalMail: DevKit.WebApi.BooleanValue;
+		/** Select whether the account accepts marketing materials, such as brochures or catalogs. */
+		DoNotSendMM: DevKit.WebApi.BooleanValue;
+		/** Type the primary email address for the account. */
+		EMailAddress1: DevKit.WebApi.StringValue;
+		/** Type the secondary email address for the account. */
+		EMailAddress2: DevKit.WebApi.StringValue;
+		/** Type an alternate email address for the account. */
+		EMailAddress3: DevKit.WebApi.StringValue;
+		/** Shows the default image for the record. */
+		EntityImage: DevKit.WebApi.StringValue;
+		EntityImage_Timestamp: DevKit.WebApi.BigIntValueReadonly;
+		EntityImage_URL: DevKit.WebApi.StringValueReadonly;
+		/** For internal use only. */
+		EntityImageId: DevKit.WebApi.GuidValueReadonly;
+		/** Shows the conversion rate of the record's currency. The exchange rate is used to convert all money fields in the record from the local currency to the system's default currency. */
+		ExchangeRate: DevKit.WebApi.DecimalValueReadonly;
+		/** Type the fax number for the account. */
+		Fax: DevKit.WebApi.StringValue;
+		/** Information about whether to allow following email activity like opens, attachment views and link clicks for emails sent to the account. */
+		FollowEmail: DevKit.WebApi.BooleanValue;
+		/** Type the URL for the account's FTP site to enable users to access data and share documents. */
+		FtpSiteURL: DevKit.WebApi.StringValue;
+		/** Unique identifier of the data import or data migration that created this record. */
+		ImportSequenceNumber: DevKit.WebApi.IntegerValue;
+		/** Select the account's primary industry for use in marketing segmentation and demographic analysis. */
+		IndustryCode: DevKit.WebApi.OptionSetValue;
+		IsPrivate: DevKit.WebApi.BooleanValueReadonly;
+		/** Contains the date and time stamp of the last on hold time. */
+		LastOnHoldTime_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValue;
+		/** Shows the date when the account was last included in a marketing campaign or quick campaign. */
+		LastUsedInCampaign_UtcDateOnly: DevKit.WebApi.UtcDateOnlyValue;
+		/** Type the market capitalization of the account to identify the company's equity, used as an indicator in financial performance analysis. */
+		MarketCap: DevKit.WebApi.MoneyValue;
+		/** Shows the market capitalization converted to the system's default base currency. */
+		MarketCap_Base: DevKit.WebApi.MoneyValueReadonly;
+		/** Whether is only for marketing */
+		MarketingOnly: DevKit.WebApi.BooleanValue;
+		MasterAccountIdName: DevKit.WebApi.StringValueReadonly;
+		/** Shows the master account that the account was merged with. */
+		MasterId: DevKit.WebApi.LookupValueReadonly;
+		/** Shows whether the account has been merged with another account. */
+		Merged: DevKit.WebApi.BooleanValueReadonly;
+		/** Shows who last updated the record. */
+		ModifiedBy: DevKit.WebApi.LookupValueReadonly;
+		/** Shows the external party who modified the record. */
+		ModifiedByExternalParty: DevKit.WebApi.LookupValueReadonly;
+		/** Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options. */
+		ModifiedOn_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValueReadonly;
+		/** Shows who created the record on behalf of another user. */
+		ModifiedOnBehalfBy: DevKit.WebApi.LookupValueReadonly;
+		/** Type the company or business name. */
+		Name: DevKit.WebApi.StringValue;
+		/** Type the number of employees that work at the account for use in marketing segmentation and demographic analysis. */
+		NumberOfEmployees: DevKit.WebApi.IntegerValue;
+		/** Shows how long, in minutes, that the record was on hold. */
+		OnHoldTime: DevKit.WebApi.IntegerValueReadonly;
+		/** Date and time that the record was migrated. */
+		OverriddenCreatedOn_UtcDateOnly: DevKit.WebApi.UtcDateOnlyValue;
+		/** Enter the user who is assigned to manage the record. This field is updated every time the record is assigned to a different user */
+		OwnerId_systemuser: DevKit.WebApi.LookupValue;
+		/** Enter the team who is assigned to manage the record. This field is updated every time the record is assigned to a different team */
+		OwnerId_team: DevKit.WebApi.LookupValue;
+		/** Select the account's ownership structure, such as public or private. */
+		OwnershipCode: DevKit.WebApi.OptionSetValue;
+		/** Shows the business unit that the record owner belongs to. */
+		OwningBusinessUnit: DevKit.WebApi.LookupValueReadonly;
+		/** Unique identifier of the team who owns the account. */
+		OwningTeam: DevKit.WebApi.LookupValueReadonly;
+		/** Unique identifier of the user who owns the account. */
+		OwningUser: DevKit.WebApi.LookupValueReadonly;
+		/** Choose the parent account associated with this account to show parent and child businesses in reporting and analytics. */
+		ParentAccountId: DevKit.WebApi.LookupValue;
+		/** For system use only. Legacy Microsoft Dynamics CRM 3.0 workflow data. */
+		ParticipatesInWorkflow: DevKit.WebApi.BooleanValue;
+		/** Select the payment terms to indicate when the customer needs to pay the total amount. */
+		PaymentTermsCode: DevKit.WebApi.OptionSetValue;
+		/** Select the preferred day of the week for service appointments. */
+		PreferredAppointmentDayCode: DevKit.WebApi.OptionSetValue;
+		/** Select the preferred time of day for service appointments. */
+		PreferredAppointmentTimeCode: DevKit.WebApi.OptionSetValue;
+		/** Select the preferred method of contact. */
+		PreferredContactMethodCode: DevKit.WebApi.OptionSetValue;
+		/** Choose the preferred service representative for reference when you schedule service activities for the account. */
+		PreferredSystemUserId: DevKit.WebApi.LookupValue;
+		/** Choose the primary contact for the account to provide quick access to contact details. */
+		PrimaryContactId: DevKit.WebApi.LookupValue;
+		/** Primary Satori ID for Account */
+		PrimarySatoriId: DevKit.WebApi.StringValue;
+		/** Primary Twitter ID for Account */
+		PrimaryTwitterId: DevKit.WebApi.StringValue;
+		/** Shows the ID of the process. */
+		ProcessId: DevKit.WebApi.GuidValue;
+		/** Type the annual revenue for the account, used as an indicator in financial performance analysis. */
+		Revenue: DevKit.WebApi.MoneyValue;
+		/** Shows the annual revenue converted to the system's default base currency. The calculations use the exchange rate specified in the Currencies area. */
+		Revenue_Base: DevKit.WebApi.MoneyValueReadonly;
+		/** Type the number of shares available to the public for the account. This number is used as an indicator in financial performance analysis. */
+		SharesOutstanding: DevKit.WebApi.IntegerValue;
+		/** Select a shipping method for deliveries sent to the account's address to designate the preferred carrier or other delivery option. */
+		ShippingMethodCode: DevKit.WebApi.OptionSetValue;
+		/** Type the Standard Industrial Classification (SIC) code that indicates the account's primary industry of business, for use in marketing segmentation and demographic analysis. */
+		SIC: DevKit.WebApi.StringValue;
+		/** Choose the service level agreement (SLA) that you want to apply to the Account record. */
+		SLAId: DevKit.WebApi.LookupValue;
+		/** Last SLA that was applied to this case. This field is for internal use only. */
+		SLAInvokedId: DevKit.WebApi.LookupValueReadonly;
+		SLAName: DevKit.WebApi.StringValueReadonly;
+		/** Shows the ID of the stage. */
+		StageId: DevKit.WebApi.GuidValue;
+		/** Shows whether the account is active or inactive. Inactive accounts are read-only and can't be edited unless they are reactivated. */
+		StateCode: DevKit.WebApi.OptionSetValue;
+		/** Select the account's status. */
+		StatusCode: DevKit.WebApi.OptionSetValue;
+		/** Type the stock exchange at which the account is listed to track their stock and financial performance of the company. */
+		StockExchange: DevKit.WebApi.StringValue;
+		/** Type the main phone number for this account. */
+		Telephone1: DevKit.WebApi.StringValue;
+		/** Type a second phone number for this account. */
+		Telephone2: DevKit.WebApi.StringValue;
+		/** Type a third phone number for this account. */
+		Telephone3: DevKit.WebApi.StringValue;
+		/** Select a region or territory for the account for use in segmentation and analysis. */
+		TerritoryCode: DevKit.WebApi.OptionSetValue;
+		/** Type the stock exchange symbol for the account to track financial performance of the company. You can click the code entered in this field to access the latest trading information from MSN Money. */
+		TickerSymbol: DevKit.WebApi.StringValue;
+		/** Total time spent for emails (read and write) and meetings by me in relation to account record. */
+		TimeSpentByMeOnEmailAndMeetings: DevKit.WebApi.StringValueReadonly;
+		/** For internal use only. */
+		TimeZoneRuleVersionNumber: DevKit.WebApi.IntegerValue;
+		/** Choose the local currency for the record to make sure budgets are reported in the correct currency. */
+		TransactionCurrencyId: DevKit.WebApi.LookupValue;
+		/** For internal use only. */
+		TraversedPath: DevKit.WebApi.StringValue;
+		/** Time zone code that was in use when the record was created. */
+		UTCConversionTimeZoneCode: DevKit.WebApi.IntegerValue;
+		/** Version number of the account. */
+		VersionNumber: DevKit.WebApi.BigIntValueReadonly;
+		/** Type the account's website URL to get quick details about the company profile. */
+		WebSiteURL: DevKit.WebApi.StringValue;
+		/** Type the phonetic spelling of the company name, if specified in Japanese, to make sure the name is pronounced correctly in phone calls and other communications. */
+		YomiName: DevKit.WebApi.StringValue;
+	}
+}
+declare namespace OptionSet {
+	namespace Account {
+		enum AccountCategoryCode {
+			/** 1 */
+			Preferred_Customer,
+			/** 2 */
+			Standard
+		}
+		enum AccountClassificationCode {
+			/** 1 */
+			Default_Value
+		}
+		enum AccountRatingCode {
+			/** 1 */
+			Default_Value
+		}
+		enum Address1_AddressTypeCode {
+			/** 1 */
+			Bill_To,
+			/** 2 */
+			Ship_To,
+			/** 3 */
+			Primary,
+			/** 4 */
+			Other
+		}
+		enum Address1_FreightTermsCode {
+			/** 1 */
+			FOB,
+			/** 2 */
+			No_Charge
+		}
+		enum Address1_ShippingMethodCode {
+			/** 1 */
+			Airborne,
+			/** 2 */
+			DHL,
+			/** 3 */
+			FedEx,
+			/** 4 */
+			UPS,
+			/** 5 */
+			Postal_Mail,
+			/** 6 */
+			Full_Load,
+			/** 7 */
+			Will_Call
+		}
+		enum Address2_AddressTypeCode {
+			/** 1 */
+			Default_Value
+		}
+		enum Address2_FreightTermsCode {
+			/** 1 */
+			Default_Value
+		}
+		enum Address2_ShippingMethodCode {
+			/** 1 */
+			Default_Value
+		}
+		enum BusinessTypeCode {
+			/** 1 */
+			Default_Value
+		}
+		enum CustomerSizeCode {
+			/** 1 */
+			Default_Value
+		}
+		enum CustomerTypeCode {
+			/** 1 */
+			Competitor,
+			/** 2 */
+			Consultant,
+			/** 3 */
+			Customer,
+			/** 4 */
+			Investor,
+			/** 5 */
+			Partner,
+			/** 6 */
+			Influencer,
+			/** 7 */
+			Press,
+			/** 8 */
+			Prospect,
+			/** 9 */
+			Reseller,
+			/** 10 */
+			Supplier,
+			/** 11 */
+			Vendor,
+			/** 12 */
+			Other
+		}
+		enum IndustryCode {
+			/** 1 */
+			Accounting,
+			/** 2 */
+			Agriculture_and_Non_petrol_Natural_Resource_Extraction,
+			/** 3 */
+			Broadcasting_Printing_and_Publishing,
+			/** 4 */
+			Brokers,
+			/** 5 */
+			Building_Supply_Retail,
+			/** 6 */
+			Business_Services,
+			/** 7 */
+			Consulting,
+			/** 8 */
+			Consumer_Services,
+			/** 9 */
+			Design_Direction_and_Creative_Management,
+			/** 10 */
+			Distributors_Dispatchers_and_Processors,
+			/** 11 */
+			Doctors_Offices_and_Clinics,
+			/** 12 */
+			Durable_Manufacturing,
+			/** 13 */
+			Eating_and_Drinking_Places,
+			/** 14 */
+			Entertainment_Retail,
+			/** 15 */
+			Equipment_Rental_and_Leasing,
+			/** 16 */
+			Financial,
+			/** 17 */
+			Food_and_Tobacco_Processing,
+			/** 18 */
+			Inbound_Capital_Intensive_Processing,
+			/** 19 */
+			Inbound_Repair_and_Services,
+			/** 20 */
+			Insurance,
+			/** 21 */
+			Legal_Services,
+			/** 22 */
+			Non_Durable_Merchandise_Retail,
+			/** 23 */
+			Outbound_Consumer_Service,
+			/** 24 */
+			Petrochemical_Extraction_and_Distribution,
+			/** 25 */
+			Service_Retail,
+			/** 26 */
+			SIG_Affiliations,
+			/** 27 */
+			Social_Services,
+			/** 28 */
+			Special_Outbound_Trade_Contractors,
+			/** 29 */
+			Specialty_Realty,
+			/** 30 */
+			Transportation,
+			/** 31 */
+			Utility_Creation_and_Distribution,
+			/** 32 */
+			Vehicle_Retail,
+			/** 33 */
+			Wholesale
+		}
+		enum OwnershipCode {
+			/** 1 */
+			Public,
+			/** 2 */
+			Private,
+			/** 3 */
+			Subsidiary,
+			/** 4 */
+			Other
+		}
+		enum PaymentTermsCode {
+			/** 1 */
+			Net_30,
+			/** 2 */
+			_2_10_Net_30,
+			/** 3 */
+			Net_45,
+			/** 4 */
+			Net_60
+		}
+		enum PreferredAppointmentDayCode {
+			/** 0 */
+			Sunday,
+			/** 1 */
+			Monday,
+			/** 2 */
+			Tuesday,
+			/** 3 */
+			Wednesday,
+			/** 4 */
+			Thursday,
+			/** 5 */
+			Friday,
+			/** 6 */
+			Saturday
+		}
+		enum PreferredAppointmentTimeCode {
+			/** 1 */
+			Morning,
+			/** 2 */
+			Afternoon,
+			/** 3 */
+			Evening
+		}
+		enum PreferredContactMethodCode {
+			/** 1 */
+			Any,
+			/** 2 */
+			Email,
+			/** 3 */
+			Phone,
+			/** 4 */
+			Fax,
+			/** 5 */
+			Mail
+		}
+		enum ShippingMethodCode {
+			/** 1 */
+			Default_Value
+		}
+		enum StateCode {
+			/** 0 */
+			Active,
+			/** 1 */
+			Inactive
+		}
+		enum StatusCode {
+			/** 1 */
+			Active,
+			/** 2 */
+			Inactive
+		}
+		enum TerritoryCode {
+			/** 1 */
+			Default_Value
+		}
+	}
+}
 //{'JsForm':['Account'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':false}

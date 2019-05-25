@@ -306,6 +306,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
                         var j = 0;
                         foreach (var e in entities)
                         {
+                            if (crmAttribute.EntityName == "audit" && e == "externalparty") continue;
                             webApiCodeIntellisense += string.Format(@function, navigations[j], comment);
                             j++;
                         }

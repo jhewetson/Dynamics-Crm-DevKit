@@ -72,6 +72,22 @@
     <Content Include="entities\Account.webapi.js">
       <DependentUpon>Account.js</DependentUpon>
     </Content>
+    <Content Include="entities\ACIViewMapper.js" />
+    <Content Include="entities\ACIViewMapper.webapi.js">
+      <DependentUpon>ACIViewMapper.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ActionCard.js" />
+    <Content Include="entities\ActionCard.webapi.js">
+      <DependentUpon>ActionCard.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ActionCardUserSettings.js" />
+    <Content Include="entities\ActionCardUserSettings.webapi.js">
+      <DependentUpon>ActionCardUserSettings.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ActionCardUserState.js" />
+    <Content Include="entities\ActionCardUserState.webapi.js">
+      <DependentUpon>ActionCardUserState.js</DependentUpon>
+    </Content>
     <Content Include="entities\ActivityMimeAttachment.form.js">
       <DependentUpon>ActivityMimeAttachment.js</DependentUpon>
     </Content>
@@ -83,12 +99,248 @@
     <Content Include="entities\ActivityParty.webapi.js">
       <DependentUpon>ActivityParty.js</DependentUpon>
     </Content>
+    <Content Include="entities\ActivityPointer.js" />
+    <Content Include="entities\ActivityPointer.webapi.js">
+      <DependentUpon>ActivityPointer.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AdvancedSimilarityRule.js" />
+    <Content Include="entities\AdvancedSimilarityRule.webapi.js">
+      <DependentUpon>AdvancedSimilarityRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Annotation.js" />
+    <Content Include="entities\Annotation.webapi.js">
+      <DependentUpon>Annotation.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AnnualFiscalCalendar.js" />
+    <Content Include="entities\AnnualFiscalCalendar.webapi.js">
+      <DependentUpon>AnnualFiscalCalendar.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AppConfig.js" />
+    <Content Include="entities\AppConfig.webapi.js">
+      <DependentUpon>AppConfig.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AppConfigInstance.js" />
+    <Content Include="entities\AppConfigInstance.webapi.js">
+      <DependentUpon>AppConfigInstance.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AppConfigMaster.js" />
+    <Content Include="entities\AppConfigMaster.webapi.js">
+      <DependentUpon>AppConfigMaster.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ApplicationFile.js" />
+    <Content Include="entities\ApplicationFile.webapi.js">
+      <DependentUpon>ApplicationFile.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AppModule.js" />
+    <Content Include="entities\AppModule.webapi.js">
+      <DependentUpon>AppModule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AppModuleComponent.js" />
+    <Content Include="entities\AppModuleComponent.webapi.js">
+      <DependentUpon>AppModuleComponent.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AppModuleMetadata.js" />
+    <Content Include="entities\AppModuleMetadata.webapi.js">
+      <DependentUpon>AppModuleMetadata.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AppModuleMetadataDependency.js" />
+    <Content Include="entities\AppModuleMetadataDependency.webapi.js">
+      <DependentUpon>AppModuleMetadataDependency.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AppModuleMetadataOperationLog.js" />
+    <Content Include="entities\AppModuleMetadataOperationLog.webapi.js">
+      <DependentUpon>AppModuleMetadataOperationLog.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AppModuleRoles.js" />
+    <Content Include="entities\AppModuleRoles.webapi.js">
+      <DependentUpon>AppModuleRoles.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Appointment.js" />
+    <Content Include="entities\Appointment.webapi.js">
+      <DependentUpon>Appointment.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AsyncOperation.js" />
+    <Content Include="entities\AsyncOperation.webapi.js">
+      <DependentUpon>AsyncOperation.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Attachment.js" />
+    <Content Include="entities\Attachment.webapi.js">
+      <DependentUpon>Attachment.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AttributeMap.js" />
+    <Content Include="entities\AttributeMap.webapi.js">
+      <DependentUpon>AttributeMap.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Audit.js" />
+    <Content Include="entities\Audit.webapi.js">
+      <DependentUpon>Audit.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AuthorizationServer.js" />
+    <Content Include="entities\AuthorizationServer.webapi.js">
+      <DependentUpon>AuthorizationServer.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AzureServiceConnection.js" />
+    <Content Include="entities\AzureServiceConnection.webapi.js">
+      <DependentUpon>AzureServiceConnection.js</DependentUpon>
+    </Content>
+    <Content Include="entities\BulkDeleteFailure.js" />
+    <Content Include="entities\BulkDeleteFailure.webapi.js">
+      <DependentUpon>BulkDeleteFailure.js</DependentUpon>
+    </Content>
+    <Content Include="entities\BulkDeleteOperation.js" />
+    <Content Include="entities\BulkDeleteOperation.webapi.js">
+      <DependentUpon>BulkDeleteOperation.js</DependentUpon>
+    </Content>
+    <Content Include="entities\BusinessDataLocalizedLabel.js" />
+    <Content Include="entities\BusinessDataLocalizedLabel.webapi.js">
+      <DependentUpon>BusinessDataLocalizedLabel.js</DependentUpon>
+    </Content>
+    <Content Include="entities\BusinessProcessFlowInstance.js" />
+    <Content Include="entities\BusinessProcessFlowInstance.webapi.js">
+      <DependentUpon>BusinessProcessFlowInstance.js</DependentUpon>
+    </Content>
+    <Content Include="entities\BusinessUnit.js" />
+    <Content Include="entities\BusinessUnit.webapi.js">
+      <DependentUpon>BusinessUnit.js</DependentUpon>
+    </Content>
+    <Content Include="entities\BusinessUnitMap.js" />
+    <Content Include="entities\BusinessUnitMap.webapi.js">
+      <DependentUpon>BusinessUnitMap.js</DependentUpon>
+    </Content>
+    <Content Include="entities\BusinessUnitNewsArticle.js" />
+    <Content Include="entities\BusinessUnitNewsArticle.webapi.js">
+      <DependentUpon>BusinessUnitNewsArticle.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Calendar.js" />
+    <Content Include="entities\Calendar.webapi.js">
+      <DependentUpon>Calendar.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CalendarRule.js" />
+    <Content Include="entities\CalendarRule.webapi.js">
+      <DependentUpon>CalendarRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CallbackRegistration.js" />
+    <Content Include="entities\CallbackRegistration.webapi.js">
+      <DependentUpon>CallbackRegistration.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CanvasApp.js" />
+    <Content Include="entities\CanvasApp.webapi.js">
+      <DependentUpon>CanvasApp.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CardType.js" />
+    <Content Include="entities\CardType.webapi.js">
+      <DependentUpon>CardType.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Category.js" />
+    <Content Include="entities\Category.webapi.js">
+      <DependentUpon>Category.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelAccessProfile.js" />
+    <Content Include="entities\ChannelAccessProfile.webapi.js">
+      <DependentUpon>ChannelAccessProfile.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelAccessProfileEntityAccessLevel.js" />
+    <Content Include="entities\ChannelAccessProfileEntityAccessLevel.webapi.js">
+      <DependentUpon>ChannelAccessProfileEntityAccessLevel.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelAccessProfileRule.js" />
+    <Content Include="entities\ChannelAccessProfileRule.webapi.js">
+      <DependentUpon>ChannelAccessProfileRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelAccessProfileRuleItem.js" />
+    <Content Include="entities\ChannelAccessProfileRuleItem.webapi.js">
+      <DependentUpon>ChannelAccessProfileRuleItem.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelProperty.js" />
+    <Content Include="entities\ChannelProperty.webapi.js">
+      <DependentUpon>ChannelProperty.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelPropertyGroup.js" />
+    <Content Include="entities\ChannelPropertyGroup.webapi.js">
+      <DependentUpon>ChannelPropertyGroup.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ClientUpdate.js" />
+    <Content Include="entities\ClientUpdate.webapi.js">
+      <DependentUpon>ClientUpdate.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ColumnMapping.js" />
+    <Content Include="entities\ColumnMapping.webapi.js">
+      <DependentUpon>ColumnMapping.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ComplexControl.js" />
+    <Content Include="entities\ComplexControl.webapi.js">
+      <DependentUpon>ComplexControl.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Connection.js" />
+    <Content Include="entities\Connection.webapi.js">
+      <DependentUpon>Connection.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ConnectionRole.js" />
+    <Content Include="entities\ConnectionRole.webapi.js">
+      <DependentUpon>ConnectionRole.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ConnectionRoleAssociation.js" />
+    <Content Include="entities\ConnectionRoleAssociation.webapi.js">
+      <DependentUpon>ConnectionRoleAssociation.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ConnectionRoleObjectTypeCode.js" />
+    <Content Include="entities\ConnectionRoleObjectTypeCode.webapi.js">
+      <DependentUpon>ConnectionRoleObjectTypeCode.js</DependentUpon>
+    </Content>
     <Content Include="entities\Contact.form.js">
       <DependentUpon>Contact.js</DependentUpon>
     </Content>
     <Content Include="entities\Contact.js" />
     <Content Include="entities\Contact.webapi.js">
       <DependentUpon>Contact.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ConvertRule.js" />
+    <Content Include="entities\ConvertRule.webapi.js">
+      <DependentUpon>ConvertRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ConvertRuleItem.js" />
+    <Content Include="entities\ConvertRuleItem.webapi.js">
+      <DependentUpon>ConvertRuleItem.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CustomControl.js" />
+    <Content Include="entities\CustomControl.webapi.js">
+      <DependentUpon>CustomControl.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CustomControlDefaultConfig.js" />
+    <Content Include="entities\CustomControlDefaultConfig.webapi.js">
+      <DependentUpon>CustomControlDefaultConfig.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CustomControlResource.js" />
+    <Content Include="entities\CustomControlResource.webapi.js">
+      <DependentUpon>CustomControlResource.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CustomerAddress.js" />
+    <Content Include="entities\CustomerAddress.webapi.js">
+      <DependentUpon>CustomerAddress.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CustomerRelationship.js" />
+    <Content Include="entities\CustomerRelationship.webapi.js">
+      <DependentUpon>CustomerRelationship.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DataPerformance.js" />
+    <Content Include="entities\DataPerformance.webapi.js">
+      <DependentUpon>DataPerformance.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DelveActionHub.js" />
+    <Content Include="entities\DelveActionHub.webapi.js">
+      <DependentUpon>DelveActionHub.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Dependency.js" />
+    <Content Include="entities\Dependency.webapi.js">
+      <DependentUpon>Dependency.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DependencyFeature.js" />
+    <Content Include="entities\DependencyFeature.webapi.js">
+      <DependentUpon>DependencyFeature.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DependencyNode.js" />
+    <Content Include="entities\DependencyNode.webapi.js">
+      <DependentUpon>DependencyNode.js</DependentUpon>
     </Content>
     <Content Include="entities\devkit_CustomActivity.form.js">
       <DependentUpon>devkit_CustomActivity.js</DependentUpon>
@@ -97,6 +349,42 @@
     <Content Include="entities\devkit_CustomActivity.webapi.js">
       <DependentUpon>devkit_CustomActivity.js</DependentUpon>
     </Content>
+    <Content Include="entities\devkit_devkit_webapi_contact.js" />
+    <Content Include="entities\devkit_devkit_webapi_contact.webapi.js">
+      <DependentUpon>devkit_devkit_webapi_contact.js</DependentUpon>
+    </Content>
+    <Content Include="entities\devkit_processwebapi1.js" />
+    <Content Include="entities\devkit_processwebapi1.webapi.js">
+      <DependentUpon>devkit_processwebapi1.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DisplayString.js" />
+    <Content Include="entities\DisplayString.webapi.js">
+      <DependentUpon>DisplayString.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DisplayStringMap.js" />
+    <Content Include="entities\DisplayStringMap.webapi.js">
+      <DependentUpon>DisplayStringMap.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DocumentIndex.js" />
+    <Content Include="entities\DocumentIndex.webapi.js">
+      <DependentUpon>DocumentIndex.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DocumentTemplate.js" />
+    <Content Include="entities\DocumentTemplate.webapi.js">
+      <DependentUpon>DocumentTemplate.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DuplicateRecord.js" />
+    <Content Include="entities\DuplicateRecord.webapi.js">
+      <DependentUpon>DuplicateRecord.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DuplicateRule.js" />
+    <Content Include="entities\DuplicateRule.webapi.js">
+      <DependentUpon>DuplicateRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DuplicateRuleCondition.js" />
+    <Content Include="entities\DuplicateRuleCondition.webapi.js">
+      <DependentUpon>DuplicateRuleCondition.js</DependentUpon>
+    </Content>
     <Content Include="entities\Email.form.js">
       <DependentUpon>Email.js</DependentUpon>
     </Content>
@@ -104,6 +392,186 @@
     <Content Include="entities\Email.webapi.js">
       <DependentUpon>Email.js</DependentUpon>
     </Content>
+    <Content Include="entities\EmailHash.js" />
+    <Content Include="entities\EmailHash.webapi.js" />
+    <Content Include="entities\EmailSearch.js" />
+    <Content Include="entities\EmailSearch.webapi.js" />
+    <Content Include="entities\EmailServerProfile.js" />
+    <Content Include="entities\EmailServerProfile.webapi.js" />
+    <Content Include="entities\EmailSignature.js" />
+    <Content Include="entities\EmailSignature.webapi.js" />
+    <Content Include="entities\EntityDataProvider.js" />
+    <Content Include="entities\EntityDataProvider.webapi.js" />
+    <Content Include="entities\EntityDataSource.js" />
+    <Content Include="entities\EntityDataSource.webapi.js" />
+    <Content Include="entities\EntityMap.js" />
+    <Content Include="entities\EntityMap.webapi.js" />
+    <Content Include="entities\ExchangeSyncIdMapping.js" />
+    <Content Include="entities\ExchangeSyncIdMapping.webapi.js" />
+    <Content Include="entities\ExpanderEvent.js" />
+    <Content Include="entities\ExpanderEvent.webapi.js" />
+    <Content Include="entities\ExpiredProcess.js" />
+    <Content Include="entities\ExpiredProcess.webapi.js" />
+    <Content Include="entities\ExternalParty.js" />
+    <Content Include="entities\ExternalParty.webapi.js" />
+    <Content Include="entities\ExternalPartyItem.js" />
+    <Content Include="entities\ExternalPartyItem.webapi.js" />
+    <Content Include="entities\Fax.js" />
+    <Content Include="entities\Fax.webapi.js" />
+    <Content Include="entities\Feedback.js" />
+    <Content Include="entities\Feedback.webapi.js" />
+    <Content Include="entities\FieldPermission.js" />
+    <Content Include="entities\FieldPermission.webapi.js" />
+    <Content Include="entities\FieldSecurityProfile.js" />
+    <Content Include="entities\FieldSecurityProfile.webapi.js" />
+    <Content Include="entities\FileAttachment.js" />
+    <Content Include="entities\FileAttachment.webapi.js" />
+    <Content Include="entities\FilterTemplate.js" />
+    <Content Include="entities\FilterTemplate.webapi.js" />
+    <Content Include="entities\FixedMonthlyFiscalCalendar.js" />
+    <Content Include="entities\FixedMonthlyFiscalCalendar.webapi.js" />
+    <Content Include="entities\GlobalSearchConfiguration.js" />
+    <Content Include="entities\GlobalSearchConfiguration.webapi.js" />
+    <Content Include="entities\Goal.js" />
+    <Content Include="entities\Goal.webapi.js" />
+    <Content Include="entities\GoalRollupQuery.js" />
+    <Content Include="entities\GoalRollupQuery.webapi.js" />
+    <Content Include="entities\HierarchyRule.js" />
+    <Content Include="entities\HierarchyRule.webapi.js" />
+    <Content Include="entities\HierarchySecurityConfiguration.js" />
+    <Content Include="entities\HierarchySecurityConfiguration.webapi.js" />
+    <Content Include="entities\holidaywrapper.js" />
+    <Content Include="entities\holidaywrapper.webapi.js" />
+    <Content Include="entities\ImageDescriptor.js" />
+    <Content Include="entities\ImageDescriptor.webapi.js" />
+    <Content Include="entities\Import.js" />
+    <Content Include="entities\Import.webapi.js" />
+    <Content Include="entities\ImportData.js" />
+    <Content Include="entities\ImportData.webapi.js" />
+    <Content Include="entities\ImportEntityMapping.js" />
+    <Content Include="entities\ImportEntityMapping.webapi.js" />
+    <Content Include="entities\ImportFile.js" />
+    <Content Include="entities\ImportFile.webapi.js" />
+    <Content Include="entities\ImportJob.js" />
+    <Content Include="entities\ImportJob.webapi.js" />
+    <Content Include="entities\ImportLog.js" />
+    <Content Include="entities\ImportLog.webapi.js" />
+    <Content Include="entities\ImportMap.js" />
+    <Content Include="entities\ImportMap.webapi.js" />
+    <Content Include="entities\IntegrationStatus.js" />
+    <Content Include="entities\IntegrationStatus.webapi.js" />
+    <Content Include="entities\InteractionForEmail.js" />
+    <Content Include="entities\InteractionForEmail.webapi.js" />
+    <Content Include="entities\InternalAddress.js" />
+    <Content Include="entities\InternalAddress.webapi.js" />
+    <Content Include="entities\InterProcessLock.js" />
+    <Content Include="entities\InterProcessLock.webapi.js" />
+    <Content Include="entities\InvalidDependency.js" />
+    <Content Include="entities\InvalidDependency.webapi.js" />
+    <Content Include="entities\IsvConfig.js" />
+    <Content Include="entities\IsvConfig.webapi.js" />
+    <Content Include="entities\KbArticle.js" />
+    <Content Include="entities\KbArticle.webapi.js" />
+    <Content Include="entities\KbArticleComment.js" />
+    <Content Include="entities\KbArticleComment.webapi.js" />
+    <Content Include="entities\KbArticleTemplate.js" />
+    <Content Include="entities\KbArticleTemplate.webapi.js" />
+    <Content Include="entities\KnowledgeArticle.js" />
+    <Content Include="entities\KnowledgeArticle.webapi.js" />
+    <Content Include="entities\KnowledgeArticlesCategories.js" />
+    <Content Include="entities\KnowledgeArticlesCategories.webapi.js" />
+    <Content Include="entities\KnowledgeArticleViews.js" />
+    <Content Include="entities\KnowledgeArticleViews.webapi.js" />
+    <Content Include="entities\KnowledgeBaseRecord.js" />
+    <Content Include="entities\KnowledgeBaseRecord.webapi.js" />
+    <Content Include="entities\KnowledgeSearchModel.js" />
+    <Content Include="entities\KnowledgeSearchModel.webapi.js" />
+    <Content Include="entities\LanguageLocale.js" />
+    <Content Include="entities\LanguageLocale.webapi.js" />
+    <Content Include="entities\LanguageProvisioningState.js" />
+    <Content Include="entities\LanguageProvisioningState.webapi.js" />
+    <Content Include="entities\Letter.js" />
+    <Content Include="entities\Letter.webapi.js" />
+    <Content Include="entities\License.js" />
+    <Content Include="entities\License.webapi.js" />
+    <Content Include="entities\LocalConfigStore.js" />
+    <Content Include="entities\LocalConfigStore.webapi.js" />
+    <Content Include="entities\LookUpMapping.js" />
+    <Content Include="entities\LookUpMapping.webapi.js" />
+    <Content Include="entities\Mailbox.js" />
+    <Content Include="entities\Mailbox.webapi.js" />
+    <Content Include="entities\MailboxStatistics.js" />
+    <Content Include="entities\MailboxStatistics.webapi.js" />
+    <Content Include="entities\MailboxTrackingCategory.js" />
+    <Content Include="entities\MailboxTrackingCategory.webapi.js" />
+    <Content Include="entities\MailboxTrackingFolder.js" />
+    <Content Include="entities\MailboxTrackingFolder.webapi.js" />
+    <Content Include="entities\MailMergeTemplate.js" />
+    <Content Include="entities\MailMergeTemplate.webapi.js" />
+    <Content Include="entities\MetadataDifference.js" />
+    <Content Include="entities\MetadataDifference.webapi.js" />
+    <Content Include="entities\Metric.js" />
+    <Content Include="entities\Metric.webapi.js" />
+    <Content Include="entities\MobileOfflineProfile.js" />
+    <Content Include="entities\MobileOfflineProfile.webapi.js" />
+    <Content Include="entities\MobileOfflineProfileItem.js" />
+    <Content Include="entities\MobileOfflineProfileItem.webapi.js" />
+    <Content Include="entities\MobileOfflineProfileItemAssociation.js" />
+    <Content Include="entities\MobileOfflineProfileItemAssociation.webapi.js" />
+    <Content Include="entities\MonthlyFiscalCalendar.js" />
+    <Content Include="entities\MonthlyFiscalCalendar.webapi.js" />
+    <Content Include="entities\msdyn_componentlayer.js" />
+    <Content Include="entities\msdyn_componentlayer.webapi.js" />
+    <Content Include="entities\msdyn_componentlayerdatasource.js" />
+    <Content Include="entities\msdyn_componentlayerdatasource.webapi.js" />
+    <Content Include="entities\msdyn_Connector.js" />
+    <Content Include="entities\msdyn_Connector.webapi.js" />
+    <Content Include="entities\msdyn_odatav4ds.js" />
+    <Content Include="entities\msdyn_odatav4ds.webapi.js" />
+    <Content Include="entities\msdyn_solutioncomponentdatasource.js" />
+    <Content Include="entities\msdyn_solutioncomponentdatasource.webapi.js" />
+    <Content Include="entities\msdyn_solutioncomponentsummary.js" />
+    <Content Include="entities\msdyn_solutioncomponentsummary.webapi.js" />
+    <Content Include="entities\msdyn_solutionhistory.js" />
+    <Content Include="entities\msdyn_solutionhistory.webapi.js" />
+    <Content Include="entities\msdyn_solutionhistorydatasource.js" />
+    <Content Include="entities\msdyn_solutionhistorydatasource.webapi.js" />
+    <Content Include="entities\MultiEntitySearch.js" />
+    <Content Include="entities\MultiEntitySearch.webapi.js" />
+    <Content Include="entities\MultiEntitySearchEntities.js" />
+    <Content Include="entities\MultiEntitySearchEntities.webapi.js" />
+    <Content Include="entities\MultiSelectAttributeOptionValues.js" />
+    <Content Include="entities\MultiSelectAttributeOptionValues.webapi.js" />
+    <Content Include="entities\NavigationSetting.js" />
+    <Content Include="entities\NavigationSetting.webapi.js" />
+    <Content Include="entities\NewProcess.js" />
+    <Content Include="entities\NewProcess.webapi.js" />
+    <Content Include="entities\Notification.js" />
+    <Content Include="entities\Notification.webapi.js" />
+    <Content Include="entities\OfficeDocument.js" />
+    <Content Include="entities\OfficeDocument.webapi.js" />
+    <Content Include="entities\OfficeGraphDocument.js" />
+    <Content Include="entities\OfficeGraphDocument.webapi.js" />
+    <Content Include="entities\OfflineCommandDefinition.js" />
+    <Content Include="entities\OfflineCommandDefinition.webapi.js" />
+    <Content Include="entities\Organization.js" />
+    <Content Include="entities\Organization.webapi.js" />
+    <Content Include="entities\OrganizationStatistic.js" />
+    <Content Include="entities\OrganizationStatistic.webapi.js" />
+    <Content Include="entities\OrganizationUI.js" />
+    <Content Include="entities\OrganizationUI.webapi.js" />
+    <Content Include="entities\OrgInsightsMetric.js" />
+    <Content Include="entities\OrgInsightsMetric.webapi.js" />
+    <Content Include="entities\OrgInsightsNotification.js" />
+    <Content Include="entities\OrgInsightsNotification.webapi.js" />
+    <Content Include="entities\Owner.js" />
+    <Content Include="entities\Owner.webapi.js" />
+    <Content Include="entities\OwnerMapping.js" />
+    <Content Include="entities\OwnerMapping.webapi.js" />
+    <Content Include="entities\PartnerApplication.js" />
+    <Content Include="entities\PartnerApplication.webapi.js" />
+    <Content Include="entities\PersonalDocumentTemplate.js" />
+    <Content Include="entities\PersonalDocumentTemplate.webapi.js" />
     <Content Include="entities\PhoneCall.form.js">
       <DependentUpon>PhoneCall.js</DependentUpon>
     </Content>
@@ -111,6 +579,228 @@
     <Content Include="entities\PhoneCall.webapi.js">
       <DependentUpon>PhoneCall.js</DependentUpon>
     </Content>
+    <Content Include="entities\PickListMapping.js" />
+    <Content Include="entities\PickListMapping.webapi.js" />
+    <Content Include="entities\PluginAssembly.js" />
+    <Content Include="entities\PluginAssembly.webapi.js" />
+    <Content Include="entities\PluginTraceLog.js" />
+    <Content Include="entities\PluginTraceLog.webapi.js" />
+    <Content Include="entities\PluginType.js" />
+    <Content Include="entities\PluginType.webapi.js" />
+    <Content Include="entities\PluginTypeStatistic.js" />
+    <Content Include="entities\PluginTypeStatistic.webapi.js" />
+    <Content Include="entities\Position.js" />
+    <Content Include="entities\Position.webapi.js" />
+    <Content Include="entities\Post.js" />
+    <Content Include="entities\Post.webapi.js" />
+    <Content Include="entities\PostComment.js" />
+    <Content Include="entities\PostComment.webapi.js" />
+    <Content Include="entities\PostFollow.js" />
+    <Content Include="entities\PostFollow.webapi.js" />
+    <Content Include="entities\PostLike.js" />
+    <Content Include="entities\PostLike.webapi.js" />
+    <Content Include="entities\PostRegarding.js" />
+    <Content Include="entities\PostRegarding.webapi.js" />
+    <Content Include="entities\PostRole.js" />
+    <Content Include="entities\PostRole.webapi.js" />
+    <Content Include="entities\PrincipalAttributeAccessMap.js" />
+    <Content Include="entities\PrincipalAttributeAccessMap.webapi.js" />
+    <Content Include="entities\PrincipalEntityMap.js" />
+    <Content Include="entities\PrincipalEntityMap.webapi.js" />
+    <Content Include="entities\PrincipalObjectAccess.js" />
+    <Content Include="entities\PrincipalObjectAccess.webapi.js" />
+    <Content Include="entities\PrincipalObjectAccessReadSnapshot.js" />
+    <Content Include="entities\PrincipalObjectAccessReadSnapshot.webapi.js" />
+    <Content Include="entities\PrincipalObjectAttributeAccess.js" />
+    <Content Include="entities\PrincipalObjectAttributeAccess.webapi.js" />
+    <Content Include="entities\PrincipalSyncAttributeMap.js" />
+    <Content Include="entities\PrincipalSyncAttributeMap.webapi.js" />
+    <Content Include="entities\Privilege.js" />
+    <Content Include="entities\Privilege.webapi.js" />
+    <Content Include="entities\PrivilegeObjectTypeCodes.js" />
+    <Content Include="entities\PrivilegeObjectTypeCodes.webapi.js" />
+    <Content Include="entities\ProcessSession.js" />
+    <Content Include="entities\ProcessSession.webapi.js" />
+    <Content Include="entities\ProcessStage.js" />
+    <Content Include="entities\ProcessStage.webapi.js" />
+    <Content Include="entities\ProcessTrigger.js" />
+    <Content Include="entities\ProcessTrigger.webapi.js" />
+    <Content Include="entities\Publisher.js" />
+    <Content Include="entities\Publisher.webapi.js" />
+    <Content Include="entities\PublisherAddress.js" />
+    <Content Include="entities\PublisherAddress.webapi.js" />
+    <Content Include="entities\QuarterlyFiscalCalendar.js" />
+    <Content Include="entities\QuarterlyFiscalCalendar.webapi.js" />
+    <Content Include="entities\Queue.js" />
+    <Content Include="entities\Queue.webapi.js" />
+    <Content Include="entities\QueueItem.js" />
+    <Content Include="entities\QueueItem.webapi.js" />
+    <Content Include="entities\QueueItemCount.js" />
+    <Content Include="entities\QueueItemCount.webapi.js" />
+    <Content Include="entities\QueueMemberCount.js" />
+    <Content Include="entities\QueueMemberCount.webapi.js" />
+    <Content Include="entities\QueueMembership.js" />
+    <Content Include="entities\QueueMembership.webapi.js" />
+    <Content Include="entities\RecommendedDocument.js" />
+    <Content Include="entities\RecommendedDocument.webapi.js" />
+    <Content Include="entities\RecordCountSnapshot.js" />
+    <Content Include="entities\RecordCountSnapshot.webapi.js" />
+    <Content Include="entities\RecurrenceRule.js" />
+    <Content Include="entities\RecurrenceRule.webapi.js" />
+    <Content Include="entities\RecurringAppointmentMaster.js" />
+    <Content Include="entities\RecurringAppointmentMaster.webapi.js" />
+    <Content Include="entities\RelationshipRole.js" />
+    <Content Include="entities\RelationshipRole.webapi.js" />
+    <Content Include="entities\RelationshipRoleMap.js" />
+    <Content Include="entities\RelationshipRoleMap.webapi.js" />
+    <Content Include="entities\ReplicationBacklog.js" />
+    <Content Include="entities\ReplicationBacklog.webapi.js" />
+    <Content Include="entities\Report.js" />
+    <Content Include="entities\Report.webapi.js" />
+    <Content Include="entities\ReportCategory.js" />
+    <Content Include="entities\ReportCategory.webapi.js" />
+    <Content Include="entities\ReportEntity.js" />
+    <Content Include="entities\ReportEntity.webapi.js" />
+    <Content Include="entities\ReportLink.js" />
+    <Content Include="entities\ReportLink.webapi.js" />
+    <Content Include="entities\ReportVisibility.js" />
+    <Content Include="entities\ReportVisibility.webapi.js" />
+    <Content Include="entities\RibbonClientMetadata.js" />
+    <Content Include="entities\RibbonClientMetadata.webapi.js" />
+    <Content Include="entities\RibbonCommand.js" />
+    <Content Include="entities\RibbonCommand.webapi.js" />
+    <Content Include="entities\RibbonContextGroup.js" />
+    <Content Include="entities\RibbonContextGroup.webapi.js" />
+    <Content Include="entities\RibbonCustomization.js" />
+    <Content Include="entities\RibbonCustomization.webapi.js" />
+    <Content Include="entities\RibbonDiff.js" />
+    <Content Include="entities\RibbonDiff.webapi.js" />
+    <Content Include="entities\RibbonRule.js" />
+    <Content Include="entities\RibbonRule.webapi.js" />
+    <Content Include="entities\RibbonTabToCommandMap.js" />
+    <Content Include="entities\RibbonTabToCommandMap.webapi.js" />
+    <Content Include="entities\Role.js" />
+    <Content Include="entities\Role.webapi.js" />
+    <Content Include="entities\RolePrivileges.js" />
+    <Content Include="entities\RolePrivileges.webapi.js" />
+    <Content Include="entities\RoleTemplate.js" />
+    <Content Include="entities\RoleTemplate.webapi.js" />
+    <Content Include="entities\RoleTemplatePrivileges.js" />
+    <Content Include="entities\RoleTemplatePrivileges.webapi.js" />
+    <Content Include="entities\RollupField.js" />
+    <Content Include="entities\RollupField.webapi.js" />
+    <Content Include="entities\RollupJob.js" />
+    <Content Include="entities\RollupJob.webapi.js" />
+    <Content Include="entities\RollupProperties.js" />
+    <Content Include="entities\RollupProperties.webapi.js" />
+    <Content Include="entities\RoutingRule.js" />
+    <Content Include="entities\RoutingRule.webapi.js" />
+    <Content Include="entities\RoutingRuleItem.js" />
+    <Content Include="entities\RoutingRuleItem.webapi.js" />
+    <Content Include="entities\RuntimeDependency.js" />
+    <Content Include="entities\RuntimeDependency.webapi.js" />
+    <Content Include="entities\SavedOrgInsightsConfiguration.js" />
+    <Content Include="entities\SavedOrgInsightsConfiguration.webapi.js" />
+    <Content Include="entities\SavedQuery.js" />
+    <Content Include="entities\SavedQuery.webapi.js" />
+    <Content Include="entities\SavedQueryVisualization.js" />
+    <Content Include="entities\SavedQueryVisualization.webapi.js" />
+    <Content Include="entities\SdkMessage.js" />
+    <Content Include="entities\SdkMessage.webapi.js" />
+    <Content Include="entities\SdkMessageFilter.js" />
+    <Content Include="entities\SdkMessageFilter.webapi.js" />
+    <Content Include="entities\SdkMessagePair.js" />
+    <Content Include="entities\SdkMessagePair.webapi.js" />
+    <Content Include="entities\SdkMessageProcessingStep.js" />
+    <Content Include="entities\SdkMessageProcessingStep.webapi.js" />
+    <Content Include="entities\SdkMessageProcessingStepImage.js" />
+    <Content Include="entities\SdkMessageProcessingStepImage.webapi.js" />
+    <Content Include="entities\SdkMessageProcessingStepSecureConfig.js" />
+    <Content Include="entities\SdkMessageProcessingStepSecureConfig.webapi.js" />
+    <Content Include="entities\SdkMessageRequest.js" />
+    <Content Include="entities\SdkMessageRequest.webapi.js" />
+    <Content Include="entities\SdkMessageRequestField.js" />
+    <Content Include="entities\SdkMessageRequestField.webapi.js" />
+    <Content Include="entities\SdkMessageResponse.js" />
+    <Content Include="entities\SdkMessageResponse.webapi.js" />
+    <Content Include="entities\SdkMessageResponseField.js" />
+    <Content Include="entities\SdkMessageResponseField.webapi.js" />
+    <Content Include="entities\SemiAnnualFiscalCalendar.js" />
+    <Content Include="entities\SemiAnnualFiscalCalendar.webapi.js" />
+    <Content Include="entities\ServiceEndpoint.js" />
+    <Content Include="entities\ServiceEndpoint.webapi.js" />
+    <Content Include="entities\SharedObjectsForRead.js" />
+    <Content Include="entities\SharedObjectsForRead.webapi.js" />
+    <Content Include="entities\SharePointData.js" />
+    <Content Include="entities\SharePointData.webapi.js" />
+    <Content Include="entities\SharePointDocument.js" />
+    <Content Include="entities\SharePointDocument.webapi.js" />
+    <Content Include="entities\SharePointDocumentLocation.js" />
+    <Content Include="entities\SharePointDocumentLocation.webapi.js" />
+    <Content Include="entities\SharePointSite.js" />
+    <Content Include="entities\SharePointSite.webapi.js" />
+    <Content Include="entities\SimilarityRule.js" />
+    <Content Include="entities\SimilarityRule.webapi.js" />
+    <Content Include="entities\SiteMap.js" />
+    <Content Include="entities\SiteMap.webapi.js" />
+    <Content Include="entities\SLA.js" />
+    <Content Include="entities\SLA.webapi.js" />
+    <Content Include="entities\SLAItem.js" />
+    <Content Include="entities\SLAItem.webapi.js" />
+    <Content Include="entities\SLAKPIInstance.js" />
+    <Content Include="entities\SLAKPIInstance.webapi.js" />
+    <Content Include="entities\SocialActivity.js" />
+    <Content Include="entities\SocialActivity.webapi.js" />
+    <Content Include="entities\SocialInsightsConfiguration.js" />
+    <Content Include="entities\SocialInsightsConfiguration.webapi.js" />
+    <Content Include="entities\SocialProfile.js" />
+    <Content Include="entities\SocialProfile.webapi.js" />
+    <Content Include="entities\Solution.js" />
+    <Content Include="entities\Solution.webapi.js" />
+    <Content Include="entities\SolutionComponent.js" />
+    <Content Include="entities\SolutionComponent.webapi.js" />
+    <Content Include="entities\SolutionComponentDefinition.js" />
+    <Content Include="entities\SolutionComponentDefinition.webapi.js" />
+    <Content Include="entities\SolutionHistoryData.js" />
+    <Content Include="entities\SolutionHistoryData.webapi.js" />
+    <Content Include="entities\SqlEncryptionAudit.js" />
+    <Content Include="entities\SqlEncryptionAudit.webapi.js" />
+    <Content Include="entities\StatusMap.js" />
+    <Content Include="entities\StatusMap.webapi.js" />
+    <Content Include="entities\StringMap.js" />
+    <Content Include="entities\StringMap.webapi.js" />
+    <Content Include="entities\Subject.js" />
+    <Content Include="entities\Subject.webapi.js" />
+    <Content Include="entities\Subscription.js" />
+    <Content Include="entities\Subscription.webapi.js" />
+    <Content Include="entities\SubscriptionClients.js" />
+    <Content Include="entities\SubscriptionClients.webapi.js" />
+    <Content Include="entities\SubscriptionManuallyTrackedObject.js" />
+    <Content Include="entities\SubscriptionManuallyTrackedObject.webapi.js" />
+    <Content Include="entities\SubscriptionStatisticsOffline.js" />
+    <Content Include="entities\SubscriptionStatisticsOffline.webapi.js" />
+    <Content Include="entities\SubscriptionStatisticsOutlook.js" />
+    <Content Include="entities\SubscriptionStatisticsOutlook.webapi.js" />
+    <Content Include="entities\SubscriptionSyncEntryOffline.js" />
+    <Content Include="entities\SubscriptionSyncEntryOffline.webapi.js" />
+    <Content Include="entities\SubscriptionSyncEntryOutlook.js" />
+    <Content Include="entities\SubscriptionSyncEntryOutlook.webapi.js" />
+    <Content Include="entities\SubscriptionSyncInfo.js" />
+    <Content Include="entities\SubscriptionSyncInfo.webapi.js" />
+    <Content Include="entities\SubscriptionTrackingDeletedObject.js" />
+    <Content Include="entities\SubscriptionTrackingDeletedObject.webapi.js" />
+    <Content Include="entities\SuggestionCardTemplate.js" />
+    <Content Include="entities\SuggestionCardTemplate.webapi.js" />
+    <Content Include="entities\SyncAttributeMapping.js" />
+    <Content Include="entities\SyncAttributeMapping.webapi.js" />
+    <Content Include="entities\SyncAttributeMappingProfile.js" />
+    <Content Include="entities\SyncAttributeMappingProfile.webapi.js" />
+    <Content Include="entities\SyncError.js" />
+    <Content Include="entities\SyncError.webapi.js" />
+    <Content Include="entities\SystemApplicationMetadata.js" />
+    <Content Include="entities\SystemApplicationMetadata.webapi.js" />
+    <Content Include="entities\SystemForm.js" />
+    <Content Include="entities\SystemForm.webapi.js" />
     <Content Include="entities\SystemUser.form.js">
       <DependentUpon>SystemUser.js</DependentUpon>
     </Content>
@@ -118,6 +808,20 @@
     <Content Include="entities\SystemUser.webapi.js">
       <DependentUpon>SystemUser.js</DependentUpon>
     </Content>
+    <Content Include="entities\SystemUserBusinessUnitEntityMap.js" />
+    <Content Include="entities\SystemUserBusinessUnitEntityMap.webapi.js" />
+    <Content Include="entities\SystemUserLicenses.js" />
+    <Content Include="entities\SystemUserLicenses.webapi.js" />
+    <Content Include="entities\SystemUserManagerMap.js" />
+    <Content Include="entities\SystemUserManagerMap.webapi.js" />
+    <Content Include="entities\SystemUserPrincipals.js" />
+    <Content Include="entities\SystemUserPrincipals.webapi.js" />
+    <Content Include="entities\SystemUserProfiles.js" />
+    <Content Include="entities\SystemUserProfiles.webapi.js" />
+    <Content Include="entities\SystemUserRoles.js" />
+    <Content Include="entities\SystemUserRoles.webapi.js" />
+    <Content Include="entities\SystemUserSyncMappingProfiles.js" />
+    <Content Include="entities\SystemUserSyncMappingProfiles.webapi.js" />
     <Content Include="entities\Task.form.js">
       <DependentUpon>Task.js</DependentUpon>
     </Content>
@@ -125,6 +829,88 @@
     <Content Include="entities\Task.webapi.js">
       <DependentUpon>Task.js</DependentUpon>
     </Content>
+    <Content Include="entities\Team.js" />
+    <Content Include="entities\Team.webapi.js" />
+    <Content Include="entities\TeamMembership.js" />
+    <Content Include="entities\TeamMembership.webapi.js" />
+    <Content Include="entities\TeamProfiles.js" />
+    <Content Include="entities\TeamProfiles.webapi.js" />
+    <Content Include="entities\TeamRoles.js" />
+    <Content Include="entities\TeamRoles.webapi.js" />
+    <Content Include="entities\TeamSyncAttributeMappingProfiles.js" />
+    <Content Include="entities\TeamSyncAttributeMappingProfiles.webapi.js" />
+    <Content Include="entities\TeamTemplate.js" />
+    <Content Include="entities\TeamTemplate.webapi.js" />
+    <Content Include="entities\Template.js" />
+    <Content Include="entities\Template.webapi.js" />
+    <Content Include="entities\Territory.js" />
+    <Content Include="entities\Territory.webapi.js" />
+    <Content Include="entities\TextAnalyticsEntityMapping.js" />
+    <Content Include="entities\TextAnalyticsEntityMapping.webapi.js" />
+    <Content Include="entities\Theme.js" />
+    <Content Include="entities\Theme.webapi.js" />
+    <Content Include="entities\TimeStampDateMapping.js" />
+    <Content Include="entities\TimeStampDateMapping.webapi.js" />
+    <Content Include="entities\TimeZoneDefinition.js" />
+    <Content Include="entities\TimeZoneDefinition.webapi.js" />
+    <Content Include="entities\TimeZoneLocalizedName.js" />
+    <Content Include="entities\TimeZoneLocalizedName.webapi.js" />
+    <Content Include="entities\TimeZoneRule.js" />
+    <Content Include="entities\TimeZoneRule.webapi.js" />
+    <Content Include="entities\TraceAssociation.js" />
+    <Content Include="entities\TraceAssociation.webapi.js" />
+    <Content Include="entities\TraceLog.js" />
+    <Content Include="entities\TraceLog.webapi.js" />
+    <Content Include="entities\TraceRegarding.js" />
+    <Content Include="entities\TraceRegarding.webapi.js" />
+    <Content Include="entities\TransactionCurrency.js" />
+    <Content Include="entities\TransactionCurrency.webapi.js" />
+    <Content Include="entities\TransformationMapping.js" />
+    <Content Include="entities\TransformationMapping.webapi.js" />
+    <Content Include="entities\TransformationParameterMapping.js" />
+    <Content Include="entities\TransformationParameterMapping.webapi.js" />
+    <Content Include="entities\TranslationProcess.js" />
+    <Content Include="entities\TranslationProcess.webapi.js" />
+    <Content Include="entities\UnresolvedAddress.js" />
+    <Content Include="entities\UnresolvedAddress.webapi.js" />
+    <Content Include="entities\UntrackedEmail.js" />
+    <Content Include="entities\UntrackedEmail.webapi.js" />
+    <Content Include="entities\UserApplicationMetadata.js" />
+    <Content Include="entities\UserApplicationMetadata.webapi.js" />
+    <Content Include="entities\UserEntityInstanceData.js" />
+    <Content Include="entities\UserEntityInstanceData.webapi.js" />
+    <Content Include="entities\UserEntityUISettings.js" />
+    <Content Include="entities\UserEntityUISettings.webapi.js" />
+    <Content Include="entities\UserFiscalCalendar.js" />
+    <Content Include="entities\UserFiscalCalendar.webapi.js" />
+    <Content Include="entities\UserForm.js" />
+    <Content Include="entities\UserForm.webapi.js" />
+    <Content Include="entities\UserMapping.js" />
+    <Content Include="entities\UserMapping.webapi.js" />
+    <Content Include="entities\UserQuery.js" />
+    <Content Include="entities\UserQuery.webapi.js" />
+    <Content Include="entities\UserQueryVisualization.js" />
+    <Content Include="entities\UserQueryVisualization.webapi.js" />
+    <Content Include="entities\UserSearchFacet.js" />
+    <Content Include="entities\UserSearchFacet.webapi.js" />
+    <Content Include="entities\UserSettings.js" />
+    <Content Include="entities\UserSettings.webapi.js" />
+    <Content Include="entities\WebResource.js" />
+    <Content Include="entities\WebResource.webapi.js" />
+    <Content Include="entities\WebWizard.js" />
+    <Content Include="entities\WebWizard.webapi.js" />
+    <Content Include="entities\WizardAccessPrivilege.js" />
+    <Content Include="entities\WizardAccessPrivilege.webapi.js" />
+    <Content Include="entities\WizardPage.js" />
+    <Content Include="entities\WizardPage.webapi.js" />
+    <Content Include="entities\Workflow.js" />
+    <Content Include="entities\Workflow.webapi.js" />
+    <Content Include="entities\WorkflowDependency.js" />
+    <Content Include="entities\WorkflowDependency.webapi.js" />
+    <Content Include="entities\WorkflowLog.js" />
+    <Content Include="entities\WorkflowLog.webapi.js" />
+    <Content Include="entities\WorkflowWaitSubscription.js" />
+    <Content Include="entities\WorkflowWaitSubscription.webapi.js" />
     <Content Include="html\HelloWorld.html" />
     <Content Include="test\devkit_WebApi.test.js">
       <DependentUpon>devkit_WebApi.test.html</DependentUpon>
@@ -163,34 +949,499 @@
     <TypeScriptCompile Include="entities\Account.d.ts">
       <DependentUpon>Account.js</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ACIViewMapper.d.ts">
+      <DependentUpon>ACIViewMapper.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ActionCard.d.ts">
+      <DependentUpon>ActionCard.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ActionCardUserSettings.d.ts">
+      <DependentUpon>ActionCardUserSettings.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ActionCardUserState.d.ts">
+      <DependentUpon>ActionCardUserState.js</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="entities\ActivityMimeAttachment.d.ts">
       <DependentUpon>ActivityMimeAttachment.js</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="entities\ActivityParty.d.ts">
       <DependentUpon>ActivityParty.js</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ActivityPointer.d.ts">
+      <DependentUpon>ActivityPointer.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AdvancedSimilarityRule.d.ts">
+      <DependentUpon>AdvancedSimilarityRule.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Annotation.d.ts">
+      <DependentUpon>Annotation.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AnnualFiscalCalendar.d.ts">
+      <DependentUpon>AnnualFiscalCalendar.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AppConfig.d.ts">
+      <DependentUpon>AppConfig.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AppConfigInstance.d.ts">
+      <DependentUpon>AppConfigInstance.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AppConfigMaster.d.ts">
+      <DependentUpon>AppConfigMaster.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ApplicationFile.d.ts">
+      <DependentUpon>ApplicationFile.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AppModule.d.ts">
+      <DependentUpon>AppModule.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AppModuleComponent.d.ts">
+      <DependentUpon>AppModuleComponent.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AppModuleMetadata.d.ts">
+      <DependentUpon>AppModuleMetadata.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AppModuleMetadataDependency.d.ts">
+      <DependentUpon>AppModuleMetadataDependency.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AppModuleMetadataOperationLog.d.ts">
+      <DependentUpon>AppModuleMetadataOperationLog.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AppModuleRoles.d.ts">
+      <DependentUpon>AppModuleRoles.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Appointment.d.ts">
+      <DependentUpon>Appointment.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AsyncOperation.d.ts">
+      <DependentUpon>AsyncOperation.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Attachment.d.ts">
+      <DependentUpon>Attachment.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AttributeMap.d.ts">
+      <DependentUpon>AttributeMap.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Audit.d.ts">
+      <DependentUpon>Audit.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AuthorizationServer.d.ts">
+      <DependentUpon>AuthorizationServer.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AzureServiceConnection.d.ts">
+      <DependentUpon>AzureServiceConnection.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\BulkDeleteFailure.d.ts">
+      <DependentUpon>BulkDeleteFailure.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\BulkDeleteOperation.d.ts">
+      <DependentUpon>BulkDeleteOperation.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\BusinessDataLocalizedLabel.d.ts">
+      <DependentUpon>BusinessDataLocalizedLabel.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\BusinessProcessFlowInstance.d.ts">
+      <DependentUpon>BusinessProcessFlowInstance.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\BusinessUnit.d.ts">
+      <DependentUpon>BusinessUnit.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\BusinessUnitMap.d.ts">
+      <DependentUpon>BusinessUnitMap.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\BusinessUnitNewsArticle.d.ts">
+      <DependentUpon>BusinessUnitNewsArticle.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Calendar.d.ts">
+      <DependentUpon>Calendar.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\CalendarRule.d.ts">
+      <DependentUpon>CalendarRule.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\CallbackRegistration.d.ts">
+      <DependentUpon>CallbackRegistration.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\CanvasApp.d.ts">
+      <DependentUpon>CanvasApp.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\CardType.d.ts">
+      <DependentUpon>CardType.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Category.d.ts">
+      <DependentUpon>Category.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ChannelAccessProfile.d.ts">
+      <DependentUpon>ChannelAccessProfile.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ChannelAccessProfileEntityAccessLevel.d.ts">
+      <DependentUpon>ChannelAccessProfileEntityAccessLevel.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ChannelAccessProfileRule.d.ts">
+      <DependentUpon>ChannelAccessProfileRule.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ChannelAccessProfileRuleItem.d.ts">
+      <DependentUpon>ChannelAccessProfileRuleItem.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ChannelProperty.d.ts">
+      <DependentUpon>ChannelProperty.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ChannelPropertyGroup.d.ts">
+      <DependentUpon>ChannelPropertyGroup.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ClientUpdate.d.ts">
+      <DependentUpon>ClientUpdate.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ColumnMapping.d.ts">
+      <DependentUpon>ColumnMapping.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ComplexControl.d.ts">
+      <DependentUpon>ComplexControl.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Connection.d.ts">
+      <DependentUpon>Connection.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ConnectionRole.d.ts">
+      <DependentUpon>ConnectionRole.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ConnectionRoleAssociation.d.ts">
+      <DependentUpon>ConnectionRoleAssociation.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ConnectionRoleObjectTypeCode.d.ts">
+      <DependentUpon>ConnectionRoleObjectTypeCode.js</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="entities\Contact.d.ts">
       <DependentUpon>Contact.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ConvertRule.d.ts">
+      <DependentUpon>ConvertRule.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ConvertRuleItem.d.ts">
+      <DependentUpon>ConvertRuleItem.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\CustomControl.d.ts">
+      <DependentUpon>CustomControl.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\CustomControlDefaultConfig.d.ts">
+      <DependentUpon>CustomControlDefaultConfig.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\CustomControlResource.d.ts">
+      <DependentUpon>CustomControlResource.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\CustomerAddress.d.ts">
+      <DependentUpon>CustomerAddress.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\CustomerRelationship.d.ts">
+      <DependentUpon>CustomerRelationship.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DataPerformance.d.ts">
+      <DependentUpon>DataPerformance.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DelveActionHub.d.ts">
+      <DependentUpon>DelveActionHub.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Dependency.d.ts">
+      <DependentUpon>Dependency.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DependencyFeature.d.ts">
+      <DependentUpon>DependencyFeature.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DependencyNode.d.ts">
+      <DependentUpon>DependencyNode.js</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="entities\devkit.d.ts" />
     <TypeScriptCompile Include="entities\devkit_CustomActivity.d.ts">
       <DependentUpon>devkit_CustomActivity.js</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\devkit_devkit_webapi_contact.d.ts">
+      <DependentUpon>devkit_devkit_webapi_contact.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\devkit_processwebapi1.d.ts">
+      <DependentUpon>devkit_processwebapi1.js</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="entities\devkit_WebApi.d.ts">
       <DependentUpon>devkit_WebApi.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DisplayString.d.ts">
+      <DependentUpon>DisplayString.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DisplayStringMap.d.ts">
+      <DependentUpon>DisplayStringMap.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DocumentIndex.d.ts">
+      <DependentUpon>DocumentIndex.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DocumentTemplate.d.ts">
+      <DependentUpon>DocumentTemplate.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DuplicateRecord.d.ts">
+      <DependentUpon>DuplicateRecord.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DuplicateRule.d.ts">
+      <DependentUpon>DuplicateRule.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DuplicateRuleCondition.d.ts">
+      <DependentUpon>DuplicateRuleCondition.js</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="entities\Email.d.ts">
       <DependentUpon>Email.js</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\EmailHash.d.ts" />
+    <TypeScriptCompile Include="entities\EmailSearch.d.ts" />
+    <TypeScriptCompile Include="entities\EmailServerProfile.d.ts" />
+    <TypeScriptCompile Include="entities\EmailSignature.d.ts" />
+    <TypeScriptCompile Include="entities\EntityDataProvider.d.ts" />
+    <TypeScriptCompile Include="entities\EntityDataSource.d.ts" />
+    <TypeScriptCompile Include="entities\EntityMap.d.ts" />
+    <TypeScriptCompile Include="entities\ExchangeSyncIdMapping.d.ts" />
+    <TypeScriptCompile Include="entities\ExpanderEvent.d.ts" />
+    <TypeScriptCompile Include="entities\ExpiredProcess.d.ts" />
+    <TypeScriptCompile Include="entities\ExternalParty.d.ts" />
+    <TypeScriptCompile Include="entities\ExternalPartyItem.d.ts" />
+    <TypeScriptCompile Include="entities\Fax.d.ts" />
+    <TypeScriptCompile Include="entities\Feedback.d.ts" />
+    <TypeScriptCompile Include="entities\FieldPermission.d.ts" />
+    <TypeScriptCompile Include="entities\FieldSecurityProfile.d.ts" />
+    <TypeScriptCompile Include="entities\FileAttachment.d.ts" />
+    <TypeScriptCompile Include="entities\FilterTemplate.d.ts" />
+    <TypeScriptCompile Include="entities\FixedMonthlyFiscalCalendar.d.ts" />
+    <TypeScriptCompile Include="entities\GlobalSearchConfiguration.d.ts" />
+    <TypeScriptCompile Include="entities\Goal.d.ts" />
+    <TypeScriptCompile Include="entities\GoalRollupQuery.d.ts" />
+    <TypeScriptCompile Include="entities\HierarchyRule.d.ts" />
+    <TypeScriptCompile Include="entities\HierarchySecurityConfiguration.d.ts" />
+    <TypeScriptCompile Include="entities\holidaywrapper.d.ts" />
+    <TypeScriptCompile Include="entities\ImageDescriptor.d.ts" />
+    <TypeScriptCompile Include="entities\Import.d.ts" />
+    <TypeScriptCompile Include="entities\ImportData.d.ts" />
+    <TypeScriptCompile Include="entities\ImportEntityMapping.d.ts" />
+    <TypeScriptCompile Include="entities\ImportFile.d.ts" />
+    <TypeScriptCompile Include="entities\ImportJob.d.ts" />
+    <TypeScriptCompile Include="entities\ImportLog.d.ts" />
+    <TypeScriptCompile Include="entities\ImportMap.d.ts" />
+    <TypeScriptCompile Include="entities\IntegrationStatus.d.ts" />
+    <TypeScriptCompile Include="entities\InteractionForEmail.d.ts" />
+    <TypeScriptCompile Include="entities\InternalAddress.d.ts" />
+    <TypeScriptCompile Include="entities\InterProcessLock.d.ts" />
+    <TypeScriptCompile Include="entities\InvalidDependency.d.ts" />
+    <TypeScriptCompile Include="entities\IsvConfig.d.ts" />
+    <TypeScriptCompile Include="entities\KbArticle.d.ts" />
+    <TypeScriptCompile Include="entities\KbArticleComment.d.ts" />
+    <TypeScriptCompile Include="entities\KbArticleTemplate.d.ts" />
+    <TypeScriptCompile Include="entities\KnowledgeArticle.d.ts" />
+    <TypeScriptCompile Include="entities\KnowledgeArticlesCategories.d.ts" />
+    <TypeScriptCompile Include="entities\KnowledgeArticleViews.d.ts" />
+    <TypeScriptCompile Include="entities\KnowledgeBaseRecord.d.ts" />
+    <TypeScriptCompile Include="entities\KnowledgeSearchModel.d.ts" />
+    <TypeScriptCompile Include="entities\LanguageLocale.d.ts" />
+    <TypeScriptCompile Include="entities\LanguageProvisioningState.d.ts" />
+    <TypeScriptCompile Include="entities\Letter.d.ts" />
+    <TypeScriptCompile Include="entities\License.d.ts" />
+    <TypeScriptCompile Include="entities\LocalConfigStore.d.ts" />
+    <TypeScriptCompile Include="entities\LookUpMapping.d.ts" />
+    <TypeScriptCompile Include="entities\Mailbox.d.ts" />
+    <TypeScriptCompile Include="entities\MailboxStatistics.d.ts" />
+    <TypeScriptCompile Include="entities\MailboxTrackingCategory.d.ts" />
+    <TypeScriptCompile Include="entities\MailboxTrackingFolder.d.ts" />
+    <TypeScriptCompile Include="entities\MailMergeTemplate.d.ts" />
+    <TypeScriptCompile Include="entities\MetadataDifference.d.ts" />
+    <TypeScriptCompile Include="entities\Metric.d.ts" />
+    <TypeScriptCompile Include="entities\MobileOfflineProfile.d.ts" />
+    <TypeScriptCompile Include="entities\MobileOfflineProfileItem.d.ts" />
+    <TypeScriptCompile Include="entities\MobileOfflineProfileItemAssociation.d.ts" />
+    <TypeScriptCompile Include="entities\MonthlyFiscalCalendar.d.ts" />
+    <TypeScriptCompile Include="entities\msdyn_componentlayer.d.ts" />
+    <TypeScriptCompile Include="entities\msdyn_componentlayerdatasource.d.ts" />
+    <TypeScriptCompile Include="entities\msdyn_Connector.d.ts" />
+    <TypeScriptCompile Include="entities\msdyn_odatav4ds.d.ts" />
+    <TypeScriptCompile Include="entities\msdyn_solutioncomponentdatasource.d.ts" />
+    <TypeScriptCompile Include="entities\msdyn_solutioncomponentsummary.d.ts" />
+    <TypeScriptCompile Include="entities\msdyn_solutionhistory.d.ts" />
+    <TypeScriptCompile Include="entities\msdyn_solutionhistorydatasource.d.ts" />
+    <TypeScriptCompile Include="entities\MultiEntitySearch.d.ts" />
+    <TypeScriptCompile Include="entities\MultiEntitySearchEntities.d.ts" />
+    <TypeScriptCompile Include="entities\MultiSelectAttributeOptionValues.d.ts" />
+    <TypeScriptCompile Include="entities\NavigationSetting.d.ts" />
+    <TypeScriptCompile Include="entities\NewProcess.d.ts" />
+    <TypeScriptCompile Include="entities\Notification.d.ts" />
+    <TypeScriptCompile Include="entities\OfficeDocument.d.ts" />
+    <TypeScriptCompile Include="entities\OfficeGraphDocument.d.ts" />
+    <TypeScriptCompile Include="entities\OfflineCommandDefinition.d.ts" />
+    <TypeScriptCompile Include="entities\Organization.d.ts" />
+    <TypeScriptCompile Include="entities\OrganizationStatistic.d.ts" />
+    <TypeScriptCompile Include="entities\OrganizationUI.d.ts" />
+    <TypeScriptCompile Include="entities\OrgInsightsMetric.d.ts" />
+    <TypeScriptCompile Include="entities\OrgInsightsNotification.d.ts" />
+    <TypeScriptCompile Include="entities\Owner.d.ts" />
+    <TypeScriptCompile Include="entities\OwnerMapping.d.ts" />
+    <TypeScriptCompile Include="entities\PartnerApplication.d.ts" />
+    <TypeScriptCompile Include="entities\PersonalDocumentTemplate.d.ts" />
     <TypeScriptCompile Include="entities\PhoneCall.d.ts">
       <DependentUpon>PhoneCall.js</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PickListMapping.d.ts" />
+    <TypeScriptCompile Include="entities\PluginAssembly.d.ts" />
+    <TypeScriptCompile Include="entities\PluginTraceLog.d.ts" />
+    <TypeScriptCompile Include="entities\PluginType.d.ts" />
+    <TypeScriptCompile Include="entities\PluginTypeStatistic.d.ts" />
+    <TypeScriptCompile Include="entities\Position.d.ts" />
+    <TypeScriptCompile Include="entities\Post.d.ts" />
+    <TypeScriptCompile Include="entities\PostComment.d.ts" />
+    <TypeScriptCompile Include="entities\PostFollow.d.ts" />
+    <TypeScriptCompile Include="entities\PostLike.d.ts" />
+    <TypeScriptCompile Include="entities\PostRegarding.d.ts" />
+    <TypeScriptCompile Include="entities\PostRole.d.ts" />
+    <TypeScriptCompile Include="entities\PrincipalAttributeAccessMap.d.ts" />
+    <TypeScriptCompile Include="entities\PrincipalEntityMap.d.ts" />
+    <TypeScriptCompile Include="entities\PrincipalObjectAccess.d.ts" />
+    <TypeScriptCompile Include="entities\PrincipalObjectAccessReadSnapshot.d.ts" />
+    <TypeScriptCompile Include="entities\PrincipalObjectAttributeAccess.d.ts" />
+    <TypeScriptCompile Include="entities\PrincipalSyncAttributeMap.d.ts" />
+    <TypeScriptCompile Include="entities\Privilege.d.ts" />
+    <TypeScriptCompile Include="entities\PrivilegeObjectTypeCodes.d.ts" />
+    <TypeScriptCompile Include="entities\ProcessSession.d.ts" />
+    <TypeScriptCompile Include="entities\ProcessStage.d.ts" />
+    <TypeScriptCompile Include="entities\ProcessTrigger.d.ts" />
+    <TypeScriptCompile Include="entities\Publisher.d.ts" />
+    <TypeScriptCompile Include="entities\PublisherAddress.d.ts" />
+    <TypeScriptCompile Include="entities\QuarterlyFiscalCalendar.d.ts" />
+    <TypeScriptCompile Include="entities\Queue.d.ts" />
+    <TypeScriptCompile Include="entities\QueueItem.d.ts" />
+    <TypeScriptCompile Include="entities\QueueItemCount.d.ts" />
+    <TypeScriptCompile Include="entities\QueueMemberCount.d.ts" />
+    <TypeScriptCompile Include="entities\QueueMembership.d.ts" />
+    <TypeScriptCompile Include="entities\RecommendedDocument.d.ts" />
+    <TypeScriptCompile Include="entities\RecordCountSnapshot.d.ts" />
+    <TypeScriptCompile Include="entities\RecurrenceRule.d.ts" />
+    <TypeScriptCompile Include="entities\RecurringAppointmentMaster.d.ts" />
+    <TypeScriptCompile Include="entities\RelationshipRole.d.ts" />
+    <TypeScriptCompile Include="entities\RelationshipRoleMap.d.ts" />
+    <TypeScriptCompile Include="entities\ReplicationBacklog.d.ts" />
+    <TypeScriptCompile Include="entities\Report.d.ts" />
+    <TypeScriptCompile Include="entities\ReportCategory.d.ts" />
+    <TypeScriptCompile Include="entities\ReportEntity.d.ts" />
+    <TypeScriptCompile Include="entities\ReportLink.d.ts" />
+    <TypeScriptCompile Include="entities\ReportVisibility.d.ts" />
+    <TypeScriptCompile Include="entities\RibbonClientMetadata.d.ts" />
+    <TypeScriptCompile Include="entities\RibbonCommand.d.ts" />
+    <TypeScriptCompile Include="entities\RibbonContextGroup.d.ts" />
+    <TypeScriptCompile Include="entities\RibbonCustomization.d.ts" />
+    <TypeScriptCompile Include="entities\RibbonDiff.d.ts" />
+    <TypeScriptCompile Include="entities\RibbonRule.d.ts" />
+    <TypeScriptCompile Include="entities\RibbonTabToCommandMap.d.ts" />
+    <TypeScriptCompile Include="entities\Role.d.ts" />
+    <TypeScriptCompile Include="entities\RolePrivileges.d.ts" />
+    <TypeScriptCompile Include="entities\RoleTemplate.d.ts" />
+    <TypeScriptCompile Include="entities\RoleTemplatePrivileges.d.ts" />
+    <TypeScriptCompile Include="entities\RollupField.d.ts" />
+    <TypeScriptCompile Include="entities\RollupJob.d.ts" />
+    <TypeScriptCompile Include="entities\RollupProperties.d.ts" />
+    <TypeScriptCompile Include="entities\RoutingRule.d.ts" />
+    <TypeScriptCompile Include="entities\RoutingRuleItem.d.ts" />
+    <TypeScriptCompile Include="entities\RuntimeDependency.d.ts" />
+    <TypeScriptCompile Include="entities\SavedOrgInsightsConfiguration.d.ts" />
+    <TypeScriptCompile Include="entities\SavedQuery.d.ts" />
+    <TypeScriptCompile Include="entities\SavedQueryVisualization.d.ts" />
+    <TypeScriptCompile Include="entities\SdkMessage.d.ts" />
+    <TypeScriptCompile Include="entities\SdkMessageFilter.d.ts" />
+    <TypeScriptCompile Include="entities\SdkMessagePair.d.ts" />
+    <TypeScriptCompile Include="entities\SdkMessageProcessingStep.d.ts" />
+    <TypeScriptCompile Include="entities\SdkMessageProcessingStepImage.d.ts" />
+    <TypeScriptCompile Include="entities\SdkMessageProcessingStepSecureConfig.d.ts" />
+    <TypeScriptCompile Include="entities\SdkMessageRequest.d.ts" />
+    <TypeScriptCompile Include="entities\SdkMessageRequestField.d.ts" />
+    <TypeScriptCompile Include="entities\SdkMessageResponse.d.ts" />
+    <TypeScriptCompile Include="entities\SdkMessageResponseField.d.ts" />
+    <TypeScriptCompile Include="entities\SemiAnnualFiscalCalendar.d.ts" />
+    <TypeScriptCompile Include="entities\ServiceEndpoint.d.ts" />
+    <TypeScriptCompile Include="entities\SharedObjectsForRead.d.ts" />
+    <TypeScriptCompile Include="entities\SharePointData.d.ts" />
+    <TypeScriptCompile Include="entities\SharePointDocument.d.ts" />
+    <TypeScriptCompile Include="entities\SharePointDocumentLocation.d.ts" />
+    <TypeScriptCompile Include="entities\SharePointSite.d.ts" />
+    <TypeScriptCompile Include="entities\SimilarityRule.d.ts" />
+    <TypeScriptCompile Include="entities\SiteMap.d.ts" />
+    <TypeScriptCompile Include="entities\SLA.d.ts" />
+    <TypeScriptCompile Include="entities\SLAItem.d.ts" />
+    <TypeScriptCompile Include="entities\SLAKPIInstance.d.ts" />
+    <TypeScriptCompile Include="entities\SocialActivity.d.ts" />
+    <TypeScriptCompile Include="entities\SocialInsightsConfiguration.d.ts" />
+    <TypeScriptCompile Include="entities\SocialProfile.d.ts" />
+    <TypeScriptCompile Include="entities\Solution.d.ts" />
+    <TypeScriptCompile Include="entities\SolutionComponent.d.ts" />
+    <TypeScriptCompile Include="entities\SolutionComponentDefinition.d.ts" />
+    <TypeScriptCompile Include="entities\SolutionHistoryData.d.ts" />
+    <TypeScriptCompile Include="entities\SqlEncryptionAudit.d.ts" />
+    <TypeScriptCompile Include="entities\StatusMap.d.ts" />
+    <TypeScriptCompile Include="entities\StringMap.d.ts" />
+    <TypeScriptCompile Include="entities\Subject.d.ts" />
+    <TypeScriptCompile Include="entities\Subscription.d.ts" />
+    <TypeScriptCompile Include="entities\SubscriptionClients.d.ts" />
+    <TypeScriptCompile Include="entities\SubscriptionManuallyTrackedObject.d.ts" />
+    <TypeScriptCompile Include="entities\SubscriptionStatisticsOffline.d.ts" />
+    <TypeScriptCompile Include="entities\SubscriptionStatisticsOutlook.d.ts" />
+    <TypeScriptCompile Include="entities\SubscriptionSyncEntryOffline.d.ts" />
+    <TypeScriptCompile Include="entities\SubscriptionSyncEntryOutlook.d.ts" />
+    <TypeScriptCompile Include="entities\SubscriptionSyncInfo.d.ts" />
+    <TypeScriptCompile Include="entities\SubscriptionTrackingDeletedObject.d.ts" />
+    <TypeScriptCompile Include="entities\SuggestionCardTemplate.d.ts" />
+    <TypeScriptCompile Include="entities\SyncAttributeMapping.d.ts" />
+    <TypeScriptCompile Include="entities\SyncAttributeMappingProfile.d.ts" />
+    <TypeScriptCompile Include="entities\SyncError.d.ts" />
+    <TypeScriptCompile Include="entities\SystemApplicationMetadata.d.ts" />
+    <TypeScriptCompile Include="entities\SystemForm.d.ts" />
     <TypeScriptCompile Include="entities\SystemUser.d.ts">
       <DependentUpon>SystemUser.js</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SystemUserBusinessUnitEntityMap.d.ts" />
+    <TypeScriptCompile Include="entities\SystemUserLicenses.d.ts" />
+    <TypeScriptCompile Include="entities\SystemUserManagerMap.d.ts" />
+    <TypeScriptCompile Include="entities\SystemUserPrincipals.d.ts" />
+    <TypeScriptCompile Include="entities\SystemUserProfiles.d.ts" />
+    <TypeScriptCompile Include="entities\SystemUserRoles.d.ts" />
+    <TypeScriptCompile Include="entities\SystemUserSyncMappingProfiles.d.ts" />
     <TypeScriptCompile Include="entities\Task.d.ts">
       <DependentUpon>Task.js</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Team.d.ts" />
+    <TypeScriptCompile Include="entities\TeamMembership.d.ts" />
+    <TypeScriptCompile Include="entities\TeamProfiles.d.ts" />
+    <TypeScriptCompile Include="entities\TeamRoles.d.ts" />
+    <TypeScriptCompile Include="entities\TeamSyncAttributeMappingProfiles.d.ts" />
+    <TypeScriptCompile Include="entities\TeamTemplate.d.ts" />
+    <TypeScriptCompile Include="entities\Template.d.ts" />
+    <TypeScriptCompile Include="entities\Territory.d.ts" />
+    <TypeScriptCompile Include="entities\TextAnalyticsEntityMapping.d.ts" />
+    <TypeScriptCompile Include="entities\Theme.d.ts" />
+    <TypeScriptCompile Include="entities\TimeStampDateMapping.d.ts" />
+    <TypeScriptCompile Include="entities\TimeZoneDefinition.d.ts" />
+    <TypeScriptCompile Include="entities\TimeZoneLocalizedName.d.ts" />
+    <TypeScriptCompile Include="entities\TimeZoneRule.d.ts" />
+    <TypeScriptCompile Include="entities\TraceAssociation.d.ts" />
+    <TypeScriptCompile Include="entities\TraceLog.d.ts" />
+    <TypeScriptCompile Include="entities\TraceRegarding.d.ts" />
+    <TypeScriptCompile Include="entities\TransactionCurrency.d.ts" />
+    <TypeScriptCompile Include="entities\TransformationMapping.d.ts" />
+    <TypeScriptCompile Include="entities\TransformationParameterMapping.d.ts" />
+    <TypeScriptCompile Include="entities\TranslationProcess.d.ts" />
+    <TypeScriptCompile Include="entities\UnresolvedAddress.d.ts" />
+    <TypeScriptCompile Include="entities\UntrackedEmail.d.ts" />
+    <TypeScriptCompile Include="entities\UserApplicationMetadata.d.ts" />
+    <TypeScriptCompile Include="entities\UserEntityInstanceData.d.ts" />
+    <TypeScriptCompile Include="entities\UserEntityUISettings.d.ts" />
+    <TypeScriptCompile Include="entities\UserFiscalCalendar.d.ts" />
+    <TypeScriptCompile Include="entities\UserForm.d.ts" />
+    <TypeScriptCompile Include="entities\UserMapping.d.ts" />
+    <TypeScriptCompile Include="entities\UserQuery.d.ts" />
+    <TypeScriptCompile Include="entities\UserQueryVisualization.d.ts" />
+    <TypeScriptCompile Include="entities\UserSearchFacet.d.ts" />
+    <TypeScriptCompile Include="entities\UserSettings.d.ts" />
+    <TypeScriptCompile Include="entities\WebResource.d.ts" />
+    <TypeScriptCompile Include="entities\WebWizard.d.ts" />
+    <TypeScriptCompile Include="entities\WizardAccessPrivilege.d.ts" />
+    <TypeScriptCompile Include="entities\WizardPage.d.ts" />
+    <TypeScriptCompile Include="entities\Workflow.d.ts" />
+    <TypeScriptCompile Include="entities\WorkflowDependency.d.ts" />
+    <TypeScriptCompile Include="entities\WorkflowLog.d.ts" />
+    <TypeScriptCompile Include="entities\WorkflowWaitSubscription.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\PL.DynamicsCrm.DevKit.Analyzers.1.5.0\analyzers\dotnet\cs\PL.DynamicsCrm.DevKit.Analyzers.dll" />

@@ -202,6 +202,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
                         var j = 0;
                         foreach (var e in entities)
                         {
+                            if (crmAttribute.EntityName == "audit" && e == "externalparty") continue;
                             webApiCode += $"\t\t\t{navigations[j]}: {{ b: \"{navigations[j]}\", a: \"_{crmAttribute.LogicalName}_value\", c: \"{collections[j]}\", d: \"{entities[j]}\" }},\r\n";
                             j++;
                         }

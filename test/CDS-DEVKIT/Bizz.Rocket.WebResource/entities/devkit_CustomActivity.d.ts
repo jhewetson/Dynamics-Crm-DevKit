@@ -1,323 +1,285 @@
-﻿///<reference path='devkit.intellisense.js' />
-Rocket.FormCustomActivity = function (executionContext, defaultWebResourceName) {
-	var devkit_customactivity = intellisense.Form;
-	devkit_customactivity.Utility = intellisense.Utility;
-	var tab = {};
-	tab.CCC = {
-		///<field name='AddTabStateChange' type='Function'></field>
-		AddTabStateChange: intellisense.FunctionTabAddTabStateChange,
-		///<field name='DisplayState' type='OptionSet.TabDisplayState'>[GetSet] a value that indicates whether the tab is collapsed or expanded.</field>
-		DisplayState: '',
-		///<field name='Focus' type='Function'></field>
-		Focus: intellisense.FunctionControlFocus,
-		///<field name='Label' type='String'>[GetSet] the tab label.</field>
-		Label: '',
-		///<field name='Name' type='String'>[Get] returns the name of the tab.</field>
-		Name: '',
-		///<field name='Parent' type='Object'>[Get] returns the formContext.ui object containing the tab.</field>
-		Parent: '',
-		///<field name='Visible' type='Boolean'>[GetSet] a value that indicates whether the tab is currently visible or not.</field>
-		Visible: '',
-		///<field name='RemoveTabStateChange' type='Function'></field>
-		RemoveTabStateChange: intellisense.FunctionTabRemoveTabStateChange,
-		///<field name='Section' type='Object'>A section contains methods to manage how it appears as well as accessing the tab that contains the section.</field>
-		Section: {
-			AAA: intellisense.FormSection,
-			BBB: intellisense.FormSection
+﻿///<reference path='devkit.d.ts' />
+declare namespace Rocket {
+	namespace FormCustomActivity {
+		interface Header {
+			/** Unique identifier of the user or team who owns the activity. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Priority of the activity. */
+			PriorityCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Scheduled end time of the activity. */
+			ScheduledEnd: DevKit.Form.Controls.ControlDateTime;
+			/** Status of the activity. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
 		}
-	};
-	var body = {
-		///<field name='Tab' type='Object'>A tab is a group of sections on a page</field>
-		Tab: tab,
-		///<field name='OwnerId' type='Lookup'></field>
-		OwnerId: intellisense.FieldLookup,
-		///<field name='RegardingObjectId' type='Lookup'></field>
-		RegardingObjectId: intellisense.FieldLookup,
-		///<field name='Subject' type='String'></field>
-		Subject: intellisense.FieldString
-	};
-	devkit_customactivity.Body = body;
-	var header = {
-		///<field name='OwnerId' type='Lookup'></field>
-		OwnerId: intellisense.FieldLookup,
-		///<field name='PriorityCode' type='OptionSet'></field>
-		PriorityCode: intellisense.FieldOptionSet,
-		///<field name='ScheduledEnd' type='DateTime'></field>
-		ScheduledEnd: intellisense.FieldDateTime,
-		///<field name='StateCode' type='OptionSet'></field>
-		StateCode: intellisense.FieldOptionSet
-	};
-	devkit_customactivity.Header = header;
-	var footer = {
-
-	};
-	devkit_customactivity.Footer = footer;
-	var quickForm = {
-
-	};
-	devkit_customactivity.QuickForm = quickForm;
-	var navigation = {
-
-	};
-	devkit_customactivity.Navigation = navigation;
-	devkit_customactivity.OptionSet = {};
-	///<field name='Community' type='PickList'></field>
-	devkit_customactivity.OptionSet.Community = {
-		///<field name='Facebook' type='PickListValue'>Facebook = 1</field>
-		Facebook: 1,
-		///<field name='Twitter' type='PickListValue'>Twitter = 2</field>
-		Twitter: 2,
-		///<field name='Other' type='PickListValue'>Other = 0</field>
-		Other: 0
-	};
-	///<field name='DeliveryPriorityCode' type='PickList'></field>
-	devkit_customactivity.OptionSet.DeliveryPriorityCode = {
-		///<field name='Low' type='PickListValue'>Low = 0</field>
-		Low: 0,
-		///<field name='Normal' type='PickListValue'>Normal = 1</field>
-		Normal: 1,
-		///<field name='High' type='PickListValue'>High = 2</field>
-		High: 2
-	};
-	///<field name='InstanceTypeCode' type='PickList'></field>
-	devkit_customactivity.OptionSet.InstanceTypeCode = {
-		///<field name='Not_Recurring' type='PickListValue'>Not_Recurring = 0</field>
-		Not_Recurring: 0,
-		///<field name='Recurring_Master' type='PickListValue'>Recurring_Master = 1</field>
-		Recurring_Master: 1,
-		///<field name='Recurring_Instance' type='PickListValue'>Recurring_Instance = 2</field>
-		Recurring_Instance: 2,
-		///<field name='Recurring_Exception' type='PickListValue'>Recurring_Exception = 3</field>
-		Recurring_Exception: 3,
-		///<field name='Recurring_Future_Exception' type='PickListValue'>Recurring_Future_Exception = 4</field>
-		Recurring_Future_Exception: 4
-	};
-	///<field name='PriorityCode' type='PickList'></field>
-	devkit_customactivity.OptionSet.PriorityCode = {
-		///<field name='Low' type='PickListValue'>Low = 0</field>
-		Low: 0,
-		///<field name='Normal' type='PickListValue'>Normal = 1</field>
-		Normal: 1,
-		///<field name='High' type='PickListValue'>High = 2</field>
-		High: 2
-	};
-	///<field name='StateCode' type='PickList'></field>
-	devkit_customactivity.OptionSet.StateCode = {
-		///<field name='Open' type='PickListValue'>Open = 0</field>
-		Open: 0,
-		///<field name='Completed' type='PickListValue'>Completed = 1</field>
-		Completed: 1,
-		///<field name='Canceled' type='PickListValue'>Canceled = 2</field>
-		Canceled: 2,
-		///<field name='Scheduled' type='PickListValue'>Scheduled = 3</field>
-		Scheduled: 3
-	};
-	///<field name='StatusCode' type='PickList'></field>
-	devkit_customactivity.OptionSet.StatusCode = {
-		///<field name='Open' type='PickListValue'>Open = 1</field>
-		Open: 1,
-		///<field name='Completed' type='PickListValue'>Completed = 2</field>
-		Completed: 2,
-		///<field name='Canceled' type='PickListValue'>Canceled = 3</field>
-		Canceled: 3,
-		///<field name='Scheduled' type='PickListValue'>Scheduled = 4</field>
-		Scheduled: 4
-	};
-	return devkit_customactivity;
-};
-Rocket.devkit_CustomActivityApi = function (entity) {
-	return {
-		///<field name='ActivityAdditionalParams' type='Memo'>Edm.String</field>
-		ActivityAdditionalParams: intellisense.EntityValue,
-		///<field name='ActivityId' type='Uniqueidentifier'>Edm.Guid</field>
-		ActivityId: intellisense.EntityValue,
-		///<field name='ActualDurationMinutes' type='Integer'>Edm.Int32</field>
-		ActualDurationMinutes: intellisense.EntityValue,
-		///<field name='ActualEnd_UtcDateAndTime' type='DateTime'>Edm.DateTimeOffset</field>
-		ActualEnd_UtcDateAndTime: intellisense.EntityValue,
-		///<field name='ActualStart_UtcDateAndTime' type='DateTime'>Edm.DateTimeOffset</field>
-		ActualStart_UtcDateAndTime: intellisense.EntityValue,
-		///<field name='Community' type='OptionSet'>Edm.Int32 - this.OptionSet.Community</field>
-		Community: intellisense.EntityValue,
-		///<field name='CreatedBy' type='Lookup'>ReadOnly - Edm.Guid</field>
-		CreatedBy: intellisense.EntityValue,
-		///<field name='CreatedOn_UtcDateAndTime' type='DateTime'>ReadOnly - Edm.DateTimeOffset</field>
-		CreatedOn_UtcDateAndTime: intellisense.EntityValue,
-		///<field name='CreatedOnBehalfBy' type='Lookup'>ReadOnly - Edm.Guid</field>
-		CreatedOnBehalfBy: intellisense.EntityValue,
-		///<field name='DeliveryLastAttemptedOn_UtcDateAndTime' type='DateTime'>ReadOnly - Edm.DateTimeOffset</field>
-		DeliveryLastAttemptedOn_UtcDateAndTime: intellisense.EntityValue,
-		///<field name='DeliveryPriorityCode' type='OptionSet'>Edm.Int32 - this.OptionSet.DeliveryPriorityCode</field>
-		DeliveryPriorityCode: intellisense.EntityValue,
-		///<field name='Description' type='Memo'>Edm.String</field>
-		Description: intellisense.EntityValue,
-		///<field name='ExchangeItemId' type='String'>Edm.String</field>
-		ExchangeItemId: intellisense.EntityValue,
-		///<field name='ExchangeRate' type='Decimal'>ReadOnly - Edm.Decimal</field>
-		ExchangeRate: intellisense.EntityValue,
-		///<field name='ExchangeWebLink' type='String'>Edm.String</field>
-		ExchangeWebLink: intellisense.EntityValue,
-		///<field name='ImportSequenceNumber' type='Integer'>Edm.Int32</field>
-		ImportSequenceNumber: intellisense.EntityValue,
-		///<field name='InstanceTypeCode' type='OptionSet'>ReadOnly - Edm.Int32 - this.OptionSet.InstanceTypeCode</field>
-		InstanceTypeCode: intellisense.EntityValue,
-		///<field name='IsBilled' type='Boolean'>Edm.Boolean</field>
-		IsBilled: intellisense.EntityValue,
-		///<field name='IsMapiPrivate' type='Boolean'>Edm.Boolean</field>
-		IsMapiPrivate: intellisense.EntityValue,
-		///<field name='IsRegularActivity' type='Boolean'>ReadOnly - Edm.Boolean</field>
-		IsRegularActivity: intellisense.EntityValue,
-		///<field name='IsWorkflowCreated' type='Boolean'>Edm.Boolean</field>
-		IsWorkflowCreated: intellisense.EntityValue,
-		///<field name='LastOnHoldTime_UtcDateAndTime' type='DateTime'>Edm.DateTimeOffset</field>
-		LastOnHoldTime_UtcDateAndTime: intellisense.EntityValue,
-		///<field name='LeftVoiceMail' type='Boolean'>Edm.Boolean</field>
-		LeftVoiceMail: intellisense.EntityValue,
-		///<field name='ModifiedBy' type='Lookup'>ReadOnly - Edm.Guid</field>
-		ModifiedBy: intellisense.EntityValue,
-		///<field name='ModifiedOn_UtcDateAndTime' type='DateTime'>ReadOnly - Edm.DateTimeOffset</field>
-		ModifiedOn_UtcDateAndTime: intellisense.EntityValue,
-		///<field name='ModifiedOnBehalfBy' type='Lookup'>ReadOnly - Edm.Guid</field>
-		ModifiedOnBehalfBy: intellisense.EntityValue,
-		///<field name='OnHoldTime' type='Integer'>ReadOnly - Edm.Int32</field>
-		OnHoldTime: intellisense.EntityValue,
-		///<field name='OverriddenCreatedOn_UtcDateOnly' type='DateTime'>Edm.DateTimeOffset</field>
-		OverriddenCreatedOn_UtcDateOnly: intellisense.EntityValue,
-		///<field name='OwnerId_systemuser' type='Lookup'></field>
-		OwnerId_systemuser: intellisense.EntityValue,
-		///<field name='OwnerId_team' type='Lookup'></field>
-		OwnerId_team: intellisense.EntityValue,
-		///<field name='OwningBusinessUnit' type='Lookup'>ReadOnly - Edm.Guid</field>
-		OwningBusinessUnit: intellisense.EntityValue,
-		///<field name='OwningTeam' type='Lookup'>ReadOnly - Edm.Guid</field>
-		OwningTeam: intellisense.EntityValue,
-		///<field name='OwningUser' type='Lookup'>ReadOnly - Edm.Guid</field>
-		OwningUser: intellisense.EntityValue,
-		///<field name='PostponeActivityProcessingUntil_UtcDateAndTime' type='DateTime'>ReadOnly - Edm.DateTimeOffset</field>
-		PostponeActivityProcessingUntil_UtcDateAndTime: intellisense.EntityValue,
-		///<field name='PriorityCode' type='OptionSet'>Edm.Int32 - this.OptionSet.PriorityCode</field>
-		PriorityCode: intellisense.EntityValue,
-		///<field name='ProcessId' type='Uniqueidentifier'>Edm.Guid</field>
-		ProcessId: intellisense.EntityValue,
-		///<field name='RegardingObjectId' type='Lookup'>Edm.Guid</field>
-		regardingobjectid_account_devkit_customactivity: intellisense.EntityValue,
-		///<field name='RegardingObjectId' type='Lookup'>Edm.Guid</field>
-		regardingobjectid_contact_devkit_customactivity: intellisense.EntityValue,
-		///<field name='RegardingObjectId' type='Lookup'>Edm.Guid</field>
-		regardingobjectid_devkit_webapi_devkit_customactivity: intellisense.EntityValue,
-		///<field name='RegardingObjectId' type='Lookup'>Edm.Guid</field>
-		regardingobjectid_new_interactionforemail_devkit_customactivity: intellisense.EntityValue,
-		///<field name='RegardingObjectId' type='Lookup'>Edm.Guid</field>
-		regardingobjectid_knowledgearticle_devkit_customactivity: intellisense.EntityValue,
-		///<field name='RegardingObjectId' type='Lookup'>Edm.Guid</field>
-		regardingobjectid_knowledgebaserecord_devkit_customactivity: intellisense.EntityValue,
-		///<field name='ScheduledDurationMinutes' type='Integer'>Edm.Int32</field>
-		ScheduledDurationMinutes: intellisense.EntityValue,
-		///<field name='ScheduledEnd_UtcDateAndTime' type='DateTime'>Edm.DateTimeOffset</field>
-		ScheduledEnd_UtcDateAndTime: intellisense.EntityValue,
-		///<field name='ScheduledStart_UtcDateAndTime' type='DateTime'>Edm.DateTimeOffset</field>
-		ScheduledStart_UtcDateAndTime: intellisense.EntityValue,
-		///<field name='SenderMailboxId' type='Lookup'>ReadOnly - Edm.Guid</field>
-		SenderMailboxId: intellisense.EntityValue,
-		///<field name='SentOn_UtcDateAndTime' type='DateTime'>ReadOnly - Edm.DateTimeOffset</field>
-		SentOn_UtcDateAndTime: intellisense.EntityValue,
-		///<field name='SeriesId' type='Uniqueidentifier'>ReadOnly - Edm.Guid</field>
-		SeriesId: intellisense.EntityValue,
-		///<field name='SLAId' type='Lookup'>Edm.Guid</field>
-		SLAId: intellisense.EntityValue,
-		///<field name='SLAInvokedId' type='Lookup'>ReadOnly - Edm.Guid</field>
-		SLAInvokedId: intellisense.EntityValue,
-		///<field name='SortDate_UtcDateAndTime' type='DateTime'>Edm.DateTimeOffset</field>
-		SortDate_UtcDateAndTime: intellisense.EntityValue,
-		///<field name='StageId' type='Uniqueidentifier'>Edm.Guid</field>
-		StageId: intellisense.EntityValue,
-		///<field name='StateCode' type='OptionSet'>Edm.Int32 - this.OptionSet.StateCode</field>
-		StateCode: intellisense.EntityValue,
-		///<field name='StatusCode' type='OptionSet'>Edm.Int32 - this.OptionSet.StatusCode</field>
-		StatusCode: intellisense.EntityValue,
-		///<field name='Subject' type='String'>Edm.String</field>
-		Subject: intellisense.EntityValue,
-		///<field name='TimeZoneRuleVersionNumber' type='Integer'>Edm.Int32</field>
-		TimeZoneRuleVersionNumber: intellisense.EntityValue,
-		///<field name='TransactionCurrencyId' type='Lookup'>Edm.Guid</field>
-		TransactionCurrencyId: intellisense.EntityValue,
-		///<field name='TraversedPath' type='String'>Edm.String</field>
-		TraversedPath: intellisense.EntityValue,
-		///<field name='UTCConversionTimeZoneCode' type='Integer'>Edm.Int32</field>
-		UTCConversionTimeZoneCode: intellisense.EntityValue,
-		///<field name='VersionNumber' type='BigInt'>ReadOnly - </field>
-		VersionNumber: intellisense.EntityValue,
-		///<field name='Entity' type='Object'></field>
-		Entity: null,
-		///<field name='EntityName' type='String'></field>
-		EntityName: null,
-		///<field name='EntityCollectionName' type='String'></field>
-		EntityCollectionName: null,
-		///<field name='OptionSet' type='Object'></field>
-		OptionSet: {
-			///<field name='Community' type='PickList'></field>
-			Community: {
-				///<field name='Facebook' type='PickListValue'>Facebook = 1</field>
-				Facebook: 1,
-				///<field name='Twitter' type='PickListValue'>Twitter = 2</field>
-				Twitter: 2,
-				///<field name='Other' type='PickListValue'>Other = 0</field>
-				Other: 0
-			},
-			///<field name='DeliveryPriorityCode' type='PickList'></field>
-			DeliveryPriorityCode: {
-				///<field name='Low' type='PickListValue'>Low = 0</field>
-				Low: 0,
-				///<field name='Normal' type='PickListValue'>Normal = 1</field>
-				Normal: 1,
-				///<field name='High' type='PickListValue'>High = 2</field>
-				High: 2
-			},
-			///<field name='InstanceTypeCode' type='PickList'></field>
-			InstanceTypeCode: {
-				///<field name='Not_Recurring' type='PickListValue'>Not_Recurring = 0</field>
-				Not_Recurring: 0,
-				///<field name='Recurring_Master' type='PickListValue'>Recurring_Master = 1</field>
-				Recurring_Master: 1,
-				///<field name='Recurring_Instance' type='PickListValue'>Recurring_Instance = 2</field>
-				Recurring_Instance: 2,
-				///<field name='Recurring_Exception' type='PickListValue'>Recurring_Exception = 3</field>
-				Recurring_Exception: 3,
-				///<field name='Recurring_Future_Exception' type='PickListValue'>Recurring_Future_Exception = 4</field>
-				Recurring_Future_Exception: 4
-			},
-			///<field name='PriorityCode' type='PickList'></field>
-			PriorityCode: {
-				///<field name='Low' type='PickListValue'>Low = 0</field>
-				Low: 0,
-				///<field name='Normal' type='PickListValue'>Normal = 1</field>
-				Normal: 1,
-				///<field name='High' type='PickListValue'>High = 2</field>
-				High: 2
-			},
-			///<field name='StateCode' type='PickList'></field>
-			StateCode: {
-				///<field name='Open' type='PickListValue'>Open = 0</field>
-				Open: 0,
-				///<field name='Completed' type='PickListValue'>Completed = 1</field>
-				Completed: 1,
-				///<field name='Canceled' type='PickListValue'>Canceled = 2</field>
-				Canceled: 2,
-				///<field name='Scheduled' type='PickListValue'>Scheduled = 3</field>
-				Scheduled: 3
-			},
-			///<field name='StatusCode' type='PickList'></field>
-			StatusCode: {
-				///<field name='Open' type='PickListValue'>Open = 1</field>
-				Open: 1,
-				///<field name='Completed' type='PickListValue'>Completed = 2</field>
-				Completed: 2,
-				///<field name='Canceled' type='PickListValue'>Canceled = 3</field>
-				Canceled: 3,
-				///<field name='Scheduled' type='PickListValue'>Scheduled = 4</field>
-				Scheduled: 4
-			}
+		interface tab_CCC_Sections {
+			AAA: DevKit.Form.Controls.ControlSection;
+			BBB: DevKit.Form.Controls.ControlSection;
 		}
-	};
-};
+		interface tab_CCC extends DevKit.Form.Controls.IControlTab {
+			Section: tab_CCC_Sections;
+		}
+		interface Tabs {
+			CCC: tab_CCC;
+		}
+		interface Body {
+			Tab: Tabs;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Blind Carbon-copy (bcc) recipients of the activity. */
+			BCC: DevKit.Form.Controls.ControlLookup;
+			/** Carbon-copy (cc) recipients of the activity. */
+			CC: DevKit.Form.Controls.ControlLookup;
+			/** Person who the activity is from. */
+			From: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier of the user or team who owns the activity. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier of the object with which the activity is associated. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Subject associated with the activity. */
+			Subject: DevKit.Form.Controls.ControlString;
+			/** Person who is the receiver of the activity. */
+			To: DevKit.Form.Controls.ControlLookup;
+		}
+		interface Footer {
+
+		}
+		interface Navigation {
+
+		}
+		interface Process extends DevKit.Form.Controls.IControlProcess {
+		}
+	}
+	class FormCustomActivity extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form CustomActivity
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form CustomActivity */
+		Body: Rocket.FormCustomActivity.Body;
+		/** The Footer section of form CustomActivity */
+		Footer: Rocket.FormCustomActivity.Footer;
+		/** The Header section of form CustomActivity */
+		Header: Rocket.FormCustomActivity.Header;
+		/** The Navigation of form CustomActivity */
+		Navigation: Rocket.FormCustomActivity.Navigation;
+		/** The Process of form CustomActivity */
+		Process: Rocket.FormCustomActivity.Process;
+	}
+	class devkit_CustomActivityApi {
+		/**
+		* PL.DynamicsCrm.DevKit devkit_CustomActivityApi
+		* @param entity The entity object
+		*/
+		constructor(entity?: any);
+		/**
+		 * Get the value of alias
+		 * @param alias the alias value
+		 * @param isMultiOptionSet true if the alias is multi OptionSet
+		 */
+		getAliasedValue(alias: string, isMultiOptionSet?: boolean): any;
+		/**
+		 * Get the formatted value of alias
+		 * @param alias the alias value
+		 * @param isMultiOptionSet true if the alias is multi OptionSet
+		 */
+		getAliasedFormattedValue(alias: string, isMultiOptionSet?: boolean): string;
+		/** The entity object */
+		Entity: any;
+		/** The entity name */
+		EntityName: string;
+		/** The entity collection name */
+		EntityCollectionName: string;
+		/** The @odata.etag is then used to build a cache of the response that is dependant on the fields that are retrieved */
+		"@odata.etag": string;
+		/** Additional information provided by the external application as JSON. For internal use only. */
+		ActivityAdditionalParams: DevKit.WebApi.StringValue;
+		/** Unique identifier of the activity. */
+		ActivityId: DevKit.WebApi.GuidValue;
+		/** Actual duration of the activity in minutes. */
+		ActualDurationMinutes: DevKit.WebApi.IntegerValue;
+		/** Actual end time of the activity. */
+		ActualEnd_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValue;
+		/** Actual start time of the activity. */
+		ActualStart_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValue;
+		/** Shows how contact about the social activity originated, such as from Twitter or Facebook. This field is read-only. */
+		Community: DevKit.WebApi.OptionSetValue;
+		/** Unique identifier of the user who created the activity. */
+		CreatedBy: DevKit.WebApi.LookupValueReadonly;
+		/** Date and time when the activity was created. */
+		CreatedOn_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValueReadonly;
+		/** Unique identifier of the delegate user who created the activitypointer. */
+		CreatedOnBehalfBy: DevKit.WebApi.LookupValueReadonly;
+		/** Date and time when the delivery of the activity was last attempted. */
+		DeliveryLastAttemptedOn_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValueReadonly;
+		/** Priority of delivery of the activity to the email server. */
+		DeliveryPriorityCode: DevKit.WebApi.OptionSetValue;
+		/** Description of the activity. */
+		Description: DevKit.WebApi.StringValue;
+		/** The message id of activity which is returned from Exchange Server. */
+		ExchangeItemId: DevKit.WebApi.StringValue;
+		/** Exchange rate for the currency associated with the activitypointer with respect to the base currency. */
+		ExchangeRate: DevKit.WebApi.DecimalValueReadonly;
+		/** Shows the web link of Activity of type email. */
+		ExchangeWebLink: DevKit.WebApi.StringValue;
+		/** Sequence number of the import that created this record. */
+		ImportSequenceNumber: DevKit.WebApi.IntegerValue;
+		/** Type of instance of a recurring series. */
+		InstanceTypeCode: DevKit.WebApi.OptionSetValueReadonly;
+		/** Information regarding whether the activity was billed as part of resolving a case. */
+		IsBilled: DevKit.WebApi.BooleanValue;
+		/** For internal use only. */
+		IsMapiPrivate: DevKit.WebApi.BooleanValue;
+		/** Information regarding whether the activity is a regular activity type or event type. */
+		IsRegularActivity: DevKit.WebApi.BooleanValueReadonly;
+		/** Information regarding whether the activity was created from a workflow rule. */
+		IsWorkflowCreated: DevKit.WebApi.BooleanValue;
+		/** Contains the date and time stamp of the last on hold time. */
+		LastOnHoldTime_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValue;
+		/** Left the voice mail */
+		LeftVoiceMail: DevKit.WebApi.BooleanValue;
+		/** Unique identifier of user who last modified the activity. */
+		ModifiedBy: DevKit.WebApi.LookupValueReadonly;
+		/** Date and time when activity was last modified. */
+		ModifiedOn_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValueReadonly;
+		/** Unique identifier of the delegate user who last modified the activitypointer. */
+		ModifiedOnBehalfBy: DevKit.WebApi.LookupValueReadonly;
+		/** Shows how long, in minutes, that the record was on hold. */
+		OnHoldTime: DevKit.WebApi.IntegerValueReadonly;
+		/** Date and time that the record was migrated. */
+		OverriddenCreatedOn_UtcDateOnly: DevKit.WebApi.UtcDateOnlyValue;
+		/** Enter the user who is assigned to manage the record. This field is updated every time the record is assigned to a different user */
+		OwnerId_systemuser: DevKit.WebApi.LookupValue;
+		/** Enter the team who is assigned to manage the record. This field is updated every time the record is assigned to a different team */
+		OwnerId_team: DevKit.WebApi.LookupValue;
+		/** Unique identifier of the business unit that owns the activity. */
+		OwningBusinessUnit: DevKit.WebApi.LookupValueReadonly;
+		/** Unique identifier of the team that owns the activity. */
+		OwningTeam: DevKit.WebApi.LookupValueReadonly;
+		/** Unique identifier of the user that owns the activity. */
+		OwningUser: DevKit.WebApi.LookupValueReadonly;
+		/** For internal use only. */
+		PostponeActivityProcessingUntil_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValueReadonly;
+		/** Priority of the activity. */
+		PriorityCode: DevKit.WebApi.OptionSetValue;
+		/** Unique identifier of the Process. */
+		ProcessId: DevKit.WebApi.GuidValue;
+		/** Unique identifier of the object with which the activity is associated. */
+		regardingobjectid_account_devkit_customactivity: DevKit.WebApi.LookupValue;
+		/** Unique identifier of the object with which the activity is associated. */
+		regardingobjectid_account_devkit_customactivity: DevKit.WebApi.LookupValue;
+		/** Unique identifier of the object with which the activity is associated. */
+		regardingobjectid_account_devkit_customactivity: DevKit.WebApi.LookupValue;
+		/** Unique identifier of the object with which the activity is associated. */
+		regardingobjectid_account_devkit_customactivity: DevKit.WebApi.LookupValue;
+		/** Unique identifier of the object with which the activity is associated. */
+		regardingobjectid_account_devkit_customactivity: DevKit.WebApi.LookupValue;
+		/** Unique identifier of the object with which the activity is associated. */
+		regardingobjectid_account_devkit_customactivity: DevKit.WebApi.LookupValue;
+		RegardingObjectIdYomiName: DevKit.WebApi.StringValue;
+		/** Scheduled duration of the activity, specified in minutes. */
+		ScheduledDurationMinutes: DevKit.WebApi.IntegerValue;
+		/** Scheduled end time of the activity. */
+		ScheduledEnd_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValue;
+		/** Scheduled start time of the activity. */
+		ScheduledStart_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValue;
+		/** Unique identifier of the mailbox associated with the sender of the email message. */
+		SenderMailboxId: DevKit.WebApi.LookupValueReadonly;
+		/** Date and time when the activity was sent. */
+		SentOn_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValueReadonly;
+		/** Uniqueidentifier specifying the id of recurring series of an instance. */
+		SeriesId: DevKit.WebApi.GuidValueReadonly;
+		/** Choose the service level agreement (SLA) that you want to apply to the case record. */
+		SLAId: DevKit.WebApi.LookupValue;
+		/** Last SLA that was applied to this case. This field is for internal use only. */
+		SLAInvokedId: DevKit.WebApi.LookupValueReadonly;
+		SLAName: DevKit.WebApi.StringValueReadonly;
+		/** Shows the date and time by which the activities are sorted. */
+		SortDate_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValue;
+		/** Unique identifier of the Stage. */
+		StageId: DevKit.WebApi.GuidValue;
+		/** Status of the activity. */
+		StateCode: DevKit.WebApi.OptionSetValue;
+		/** Reason for the status of the activity. */
+		StatusCode: DevKit.WebApi.OptionSetValue;
+		/** Subject associated with the activity. */
+		Subject: DevKit.WebApi.StringValue;
+		/** For internal use only. */
+		TimeZoneRuleVersionNumber: DevKit.WebApi.IntegerValue;
+		/** Unique identifier of the currency associated with the activitypointer. */
+		TransactionCurrencyId: DevKit.WebApi.LookupValue;
+		/** For internal use only. */
+		TraversedPath: DevKit.WebApi.StringValue;
+		/** Time zone code that was in use when the record was created. */
+		UTCConversionTimeZoneCode: DevKit.WebApi.IntegerValue;
+		/** Version number of the activity. */
+		VersionNumber: DevKit.WebApi.BigIntValueReadonly;
+		/** The array of object that can cast object to ActivityPartyApi class */
+		ActivityParties: Array<any>;
+	}
+}
+declare namespace OptionSet {
+	namespace devkit_CustomActivity {
+		enum Community {
+			/** 1 */
+			Facebook,
+			/** 2 */
+			Twitter,
+			/** 0 */
+			Other
+		}
+		enum DeliveryPriorityCode {
+			/** 0 */
+			Low,
+			/** 1 */
+			Normal,
+			/** 2 */
+			High
+		}
+		enum InstanceTypeCode {
+			/** 0 */
+			Not_Recurring,
+			/** 1 */
+			Recurring_Master,
+			/** 2 */
+			Recurring_Instance,
+			/** 3 */
+			Recurring_Exception,
+			/** 4 */
+			Recurring_Future_Exception
+		}
+		enum PriorityCode {
+			/** 0 */
+			Low,
+			/** 1 */
+			Normal,
+			/** 2 */
+			High
+		}
+		enum StateCode {
+			/** 0 */
+			Open,
+			/** 1 */
+			Completed,
+			/** 2 */
+			Canceled,
+			/** 3 */
+			Scheduled
+		}
+		enum StatusCode {
+			/** 1 */
+			Open,
+			/** 2 */
+			Completed,
+			/** 3 */
+			Canceled,
+			/** 4 */
+			Scheduled
+		}
+	}
+}
 //{'JsForm':['Custom Activity'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

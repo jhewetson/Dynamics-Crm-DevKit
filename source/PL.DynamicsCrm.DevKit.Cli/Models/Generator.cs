@@ -1,4 +1,6 @@
-﻿namespace PL.DynamicsCrm.DevKit.Cli.Models
+﻿using System.Collections.Generic;
+
+namespace PL.DynamicsCrm.DevKit.Cli.Models
 {
     public class Generator
     {
@@ -8,5 +10,6 @@
         public string type { get; set; }
         public string crmversion { get; set; }
         public string usetypescriptdeclaration { get; set; }
+        public List<string> entities { get; set; }
     }
 }

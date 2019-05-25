@@ -1,720 +1,552 @@
-﻿///<reference path='devkit.intellisense.js' />
-Rocket.FormUser = function (executionContext, defaultWebResourceName) {
-	var systemuser = intellisense.Form;
-	systemuser.Utility = intellisense.Utility;
-	var tab = {};
-	tab.SUMMARY_TAB = {
-		///<field name='AddTabStateChange' type='Function'></field>
-		AddTabStateChange: intellisense.FunctionTabAddTabStateChange,
-		///<field name='DisplayState' type='OptionSet.TabDisplayState'>[GetSet] a value that indicates whether the tab is collapsed or expanded.</field>
-		DisplayState: '',
-		///<field name='Focus' type='Function'></field>
-		Focus: intellisense.FunctionControlFocus,
-		///<field name='Label' type='String'>[GetSet] the tab label.</field>
-		Label: '',
-		///<field name='Name' type='String'>[Get] returns the name of the tab.</field>
-		Name: '',
-		///<field name='Parent' type='Object'>[Get] returns the formContext.ui object containing the tab.</field>
-		Parent: '',
-		///<field name='Visible' type='Boolean'>[GetSet] a value that indicates whether the tab is currently visible or not.</field>
-		Visible: '',
-		///<field name='RemoveTabStateChange' type='Function'></field>
-		RemoveTabStateChange: intellisense.FunctionTabRemoveTabStateChange,
-		///<field name='Section' type='Object'>A section contains methods to manage how it appears as well as accessing the tab that contains the section.</field>
-		Section: {
-			onpremise_account_information: intellisense.FormSection,
-			online_account_information: intellisense.FormSection,
-			user_information: intellisense.FormSection,
-			SOCIAL_PANE_TAB: intellisense.FormSection,
-			teams_information: intellisense.FormSection,
-			organization_information: intellisense.FormSection,
-			queue_selection: intellisense.FormSection,
-			queue_information: intellisense.FormSection
-		}
-	};
-	tab.DETAILS_TAB = {
-		///<field name='AddTabStateChange' type='Function'></field>
-		AddTabStateChange: intellisense.FunctionTabAddTabStateChange,
-		///<field name='DisplayState' type='OptionSet.TabDisplayState'>[GetSet] a value that indicates whether the tab is collapsed or expanded.</field>
-		DisplayState: '',
-		///<field name='Focus' type='Function'></field>
-		Focus: intellisense.FunctionControlFocus,
-		///<field name='Label' type='String'>[GetSet] the tab label.</field>
-		Label: '',
-		///<field name='Name' type='String'>[Get] returns the name of the tab.</field>
-		Name: '',
-		///<field name='Parent' type='Object'>[Get] returns the formContext.ui object containing the tab.</field>
-		Parent: '',
-		///<field name='Visible' type='Boolean'>[GetSet] a value that indicates whether the tab is currently visible or not.</field>
-		Visible: '',
-		///<field name='RemoveTabStateChange' type='Function'></field>
-		RemoveTabStateChange: intellisense.FunctionTabRemoveTabStateChange,
-		///<field name='Section' type='Object'>A section contains methods to manage how it appears as well as accessing the tab that contains the section.</field>
-		Section: {
-			user_information_2: intellisense.FormSection,
-			mailing_address: intellisense.FormSection,
-			DirectReports: intellisense.FormSection
-		}
-	};
-	tab.ADMINISTRATION_TAB = {
-		///<field name='AddTabStateChange' type='Function'></field>
-		AddTabStateChange: intellisense.FunctionTabAddTabStateChange,
-		///<field name='DisplayState' type='OptionSet.TabDisplayState'>[GetSet] a value that indicates whether the tab is collapsed or expanded.</field>
-		DisplayState: '',
-		///<field name='Focus' type='Function'></field>
-		Focus: intellisense.FunctionControlFocus,
-		///<field name='Label' type='String'>[GetSet] the tab label.</field>
-		Label: '',
-		///<field name='Name' type='String'>[Get] returns the name of the tab.</field>
-		Name: '',
-		///<field name='Parent' type='Object'>[Get] returns the formContext.ui object containing the tab.</field>
-		Parent: '',
-		///<field name='Visible' type='Boolean'>[GetSet] a value that indicates whether the tab is currently visible or not.</field>
-		Visible: '',
-		///<field name='RemoveTabStateChange' type='Function'></field>
-		RemoveTabStateChange: intellisense.FunctionTabRemoveTabStateChange,
-		///<field name='Section' type='Object'>A section contains methods to manage how it appears as well as accessing the tab that contains the section.</field>
-		Section: {
-			administration: intellisense.FormSection,
-			e_mail_configuration: intellisense.FormSection
-		}
-	};
-	tab.MobileOfflineProfile_TAB = {
-		///<field name='AddTabStateChange' type='Function'></field>
-		AddTabStateChange: intellisense.FunctionTabAddTabStateChange,
-		///<field name='DisplayState' type='OptionSet.TabDisplayState'>[GetSet] a value that indicates whether the tab is collapsed or expanded.</field>
-		DisplayState: '',
-		///<field name='Focus' type='Function'></field>
-		Focus: intellisense.FunctionControlFocus,
-		///<field name='Label' type='String'>[GetSet] the tab label.</field>
-		Label: '',
-		///<field name='Name' type='String'>[Get] returns the name of the tab.</field>
-		Name: '',
-		///<field name='Parent' type='Object'>[Get] returns the formContext.ui object containing the tab.</field>
-		Parent: '',
-		///<field name='Visible' type='Boolean'>[GetSet] a value that indicates whether the tab is currently visible or not.</field>
-		Visible: '',
-		///<field name='RemoveTabStateChange' type='Function'></field>
-		RemoveTabStateChange: intellisense.FunctionTabRemoveTabStateChange,
-		///<field name='Section' type='Object'>A section contains methods to manage how it appears as well as accessing the tab that contains the section.</field>
-		Section: {
-			mobileofflineaccessinfo: intellisense.FormSection
-		}
-	};
-	var body = {
-		///<field name='Tab' type='Object'>A tab is a group of sections on a page</field>
-		Tab: tab,
-		///<field name='AccessMode' type='OptionSet'></field>
-		AccessMode: intellisense.FieldOptionSet,
-		///<field name='Address1_Composite' type='String'></field>
-		Address1_Composite: intellisense.FieldString,
-		///<field name='Address1_Fax' type='String'></field>
-		Address1_Fax: intellisense.FieldString,
-		///<field name='Address1_Telephone1' type='String'></field>
-		Address1_Telephone1: intellisense.FieldString,
-		///<field name='Address1_Telephone2' type='String'></field>
-		Address1_Telephone2: intellisense.FieldString,
-		///<field name='Address1_Telephone3' type='String'></field>
-		Address1_Telephone3: intellisense.FieldString,
-		///<field name='Address2_Composite' type='String'></field>
-		Address2_Composite: intellisense.FieldString,
-		///<field name='BusinessUnitId' type='Lookup'></field>
-		BusinessUnitId: intellisense.FieldLookup,
-		///<field name='CALType' type='OptionSet'></field>
-		CALType: intellisense.FieldOptionSet,
-		///<field name='DefaultMailbox' type='Lookup'></field>
-		DefaultMailbox: intellisense.FieldLookup,
-		///<field name='DomainName' type='String'></field>
-		DomainName: intellisense.FieldString,
-		///<field name='FullName' type='String'></field>
-		FullName: intellisense.FieldString,
-		///<field name='HomePhone' type='String'></field>
-		HomePhone: intellisense.FieldString,
-		///<field name='InternalEMailAddress' type='String'></field>
-		InternalEMailAddress: intellisense.FieldString,
-		///<field name='InviteStatusCode' type='OptionSet'></field>
-		InviteStatusCode: intellisense.FieldOptionSet,
-		///<field name='MobileAlertEMail' type='String'></field>
-		MobileAlertEMail: intellisense.FieldString,
-		///<field name='MobileOfflineProfileId' type='Lookup'></field>
-		MobileOfflineProfileId: intellisense.FieldLookup,
-		///<field name='MobilePhone' type='String'></field>
-		MobilePhone: intellisense.FieldString,
-		///<field name='ParentSystemUserId' type='Lookup'></field>
-		ParentSystemUserId: intellisense.FieldLookup,
-		///<field name='PersonalEMailAddress' type='String'></field>
-		PersonalEMailAddress: intellisense.FieldString,
-		///<field name='PositionId' type='Lookup'></field>
-		PositionId: intellisense.FieldLookup,
-		///<field name='PreferredAddressCode' type='OptionSet'></field>
-		PreferredAddressCode: intellisense.FieldOptionSet,
-		///<field name='PreferredPhoneCode' type='OptionSet'></field>
-		PreferredPhoneCode: intellisense.FieldOptionSet,
-		///<field name='QueueId' type='Lookup'></field>
-		QueueId: intellisense.FieldLookup,
-		///<field name='Title' type='String'></field>
-		Title: intellisense.FieldString,
-		///<field name='WindowsLiveID' type='String'></field>
-		WindowsLiveID: intellisense.FieldString,
-		///<field name='YomiFullName' type='String'></field>
-		YomiFullName: intellisense.FieldString
-	};
-	systemuser.Body = body;
-	var header = {
+﻿///<reference path='devkit.d.ts' />
+declare namespace Rocket {
+	namespace FormUser {
+		interface Header {
 
-	};
-	systemuser.Header = header;
-	var footer = {
-		///<field name='IsDisabled' type='Boolean'></field>
-		IsDisabled: intellisense.FieldBoolean
-	};
-	systemuser.Footer = footer;
-	var quickForm = {
-
-	};
-	systemuser.QuickForm = quickForm;
-	var navigation = {
-
-	};
-	systemuser.Navigation = navigation;
-	systemuser.OptionSet = {};
-	///<field name='AccessMode' type='PickList'></field>
-	systemuser.OptionSet.AccessMode = {
-		///<field name='Read_Write' type='PickListValue'>Read_Write = 0</field>
-		Read_Write: 0,
-		///<field name='Administrative' type='PickListValue'>Administrative = 1</field>
-		Administrative: 1,
-		///<field name='Read' type='PickListValue'>Read = 2</field>
-		Read: 2,
-		///<field name='Support_User' type='PickListValue'>Support_User = 3</field>
-		Support_User: 3,
-		///<field name='Non_interactive' type='PickListValue'>Non_interactive = 4</field>
-		Non_interactive: 4,
-		///<field name='Delegated_Admin' type='PickListValue'>Delegated_Admin = 5</field>
-		Delegated_Admin: 5
-	};
-	///<field name='Address1_AddressTypeCode' type='PickList'></field>
-	systemuser.OptionSet.Address1_AddressTypeCode = {
-		///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-		Default_Value: 1
-	};
-	///<field name='Address1_ShippingMethodCode' type='PickList'></field>
-	systemuser.OptionSet.Address1_ShippingMethodCode = {
-		///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-		Default_Value: 1
-	};
-	///<field name='Address2_AddressTypeCode' type='PickList'></field>
-	systemuser.OptionSet.Address2_AddressTypeCode = {
-		///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-		Default_Value: 1
-	};
-	///<field name='Address2_ShippingMethodCode' type='PickList'></field>
-	systemuser.OptionSet.Address2_ShippingMethodCode = {
-		///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-		Default_Value: 1
-	};
-	///<field name='CALType' type='PickList'></field>
-	systemuser.OptionSet.CALType = {
-		///<field name='Professional' type='PickListValue'>Professional = 0</field>
-		Professional: 0,
-		///<field name='Administrative' type='PickListValue'>Administrative = 1</field>
-		Administrative: 1,
-		///<field name='Basic' type='PickListValue'>Basic = 2</field>
-		Basic: 2,
-		///<field name='Device_Professional' type='PickListValue'>Device_Professional = 3</field>
-		Device_Professional: 3,
-		///<field name='Device_Basic' type='PickListValue'>Device_Basic = 4</field>
-		Device_Basic: 4,
-		///<field name='Essential' type='PickListValue'>Essential = 5</field>
-		Essential: 5,
-		///<field name='Device_Essential' type='PickListValue'>Device_Essential = 6</field>
-		Device_Essential: 6,
-		///<field name='Enterprise' type='PickListValue'>Enterprise = 7</field>
-		Enterprise: 7,
-		///<field name='Device_Enterprise' type='PickListValue'>Device_Enterprise = 8</field>
-		Device_Enterprise: 8,
-		///<field name='Sales' type='PickListValue'>Sales = 9</field>
-		Sales: 9,
-		///<field name='Service' type='PickListValue'>Service = 10</field>
-		Service: 10,
-		///<field name='Field_Service' type='PickListValue'>Field_Service = 11</field>
-		Field_Service: 11,
-		///<field name='Project_Service' type='PickListValue'>Project_Service = 12</field>
-		Project_Service: 12
-	};
-	///<field name='EmailRouterAccessApproval' type='PickList'></field>
-	systemuser.OptionSet.EmailRouterAccessApproval = {
-		///<field name='Empty' type='PickListValue'>Empty = 0</field>
-		Empty: 0,
-		///<field name='Approved' type='PickListValue'>Approved = 1</field>
-		Approved: 1,
-		///<field name='Pending_Approval' type='PickListValue'>Pending_Approval = 2</field>
-		Pending_Approval: 2,
-		///<field name='Rejected' type='PickListValue'>Rejected = 3</field>
-		Rejected: 3
-	};
-	///<field name='IncomingEmailDeliveryMethod' type='PickList'></field>
-	systemuser.OptionSet.IncomingEmailDeliveryMethod = {
-		///<field name='None' type='PickListValue'>None = 0</field>
-		None: 0,
-		///<field name='Microsoft_Dynamics_365_for_Outlook' type='PickListValue'>Microsoft_Dynamics_365_for_Outlook = 1</field>
-		Microsoft_Dynamics_365_for_Outlook: 1,
-		///<field name='Server_Side_Synchronization_or_Email_Router' type='PickListValue'>Server_Side_Synchronization_or_Email_Router = 2</field>
-		Server_Side_Synchronization_or_Email_Router: 2,
-		///<field name='Forward_Mailbox' type='PickListValue'>Forward_Mailbox = 3</field>
-		Forward_Mailbox: 3
-	};
-	///<field name='InviteStatusCode' type='PickList'></field>
-	systemuser.OptionSet.InviteStatusCode = {
-		///<field name='Invitation_Not_Sent' type='PickListValue'>Invitation_Not_Sent = 0</field>
-		Invitation_Not_Sent: 0,
-		///<field name='Invited' type='PickListValue'>Invited = 1</field>
-		Invited: 1,
-		///<field name='Invitation_Near_Expired' type='PickListValue'>Invitation_Near_Expired = 2</field>
-		Invitation_Near_Expired: 2,
-		///<field name='Invitation_Expired' type='PickListValue'>Invitation_Expired = 3</field>
-		Invitation_Expired: 3,
-		///<field name='Invitation_Accepted' type='PickListValue'>Invitation_Accepted = 4</field>
-		Invitation_Accepted: 4,
-		///<field name='Invitation_Rejected' type='PickListValue'>Invitation_Rejected = 5</field>
-		Invitation_Rejected: 5,
-		///<field name='Invitation_Revoked' type='PickListValue'>Invitation_Revoked = 6</field>
-		Invitation_Revoked: 6
-	};
-	///<field name='OutgoingEmailDeliveryMethod' type='PickList'></field>
-	systemuser.OptionSet.OutgoingEmailDeliveryMethod = {
-		///<field name='None' type='PickListValue'>None = 0</field>
-		None: 0,
-		///<field name='Microsoft_Dynamics_365_for_Outlook' type='PickListValue'>Microsoft_Dynamics_365_for_Outlook = 1</field>
-		Microsoft_Dynamics_365_for_Outlook: 1,
-		///<field name='Server_Side_Synchronization_or_Email_Router' type='PickListValue'>Server_Side_Synchronization_or_Email_Router = 2</field>
-		Server_Side_Synchronization_or_Email_Router: 2
-	};
-	///<field name='PreferredAddressCode' type='PickList'></field>
-	systemuser.OptionSet.PreferredAddressCode = {
-		///<field name='Mailing_Address' type='PickListValue'>Mailing_Address = 1</field>
-		Mailing_Address: 1,
-		///<field name='Other_Address' type='PickListValue'>Other_Address = 2</field>
-		Other_Address: 2
-	};
-	///<field name='PreferredEmailCode' type='PickList'></field>
-	systemuser.OptionSet.PreferredEmailCode = {
-		///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-		Default_Value: 1
-	};
-	///<field name='PreferredPhoneCode' type='PickList'></field>
-	systemuser.OptionSet.PreferredPhoneCode = {
-		///<field name='Main_Phone' type='PickListValue'>Main_Phone = 1</field>
-		Main_Phone: 1,
-		///<field name='Other_Phone' type='PickListValue'>Other_Phone = 2</field>
-		Other_Phone: 2,
-		///<field name='Home_Phone' type='PickListValue'>Home_Phone = 3</field>
-		Home_Phone: 3,
-		///<field name='Mobile_Phone' type='PickListValue'>Mobile_Phone = 4</field>
-		Mobile_Phone: 4
-	};
-	return systemuser;
-};
-Rocket.SystemUserApi = function (entity) {
-	return {
-		///<field name='AccessMode' type='OptionSet'>Edm.Int32 - this.OptionSet.AccessMode</field>
-		AccessMode: intellisense.EntityValue,
-		///<field name='ActiveDirectoryGuid' type='Uniqueidentifier'>ReadOnly - Edm.Guid</field>
-		ActiveDirectoryGuid: intellisense.EntityValue,
-		///<field name='Address1_AddressId' type='Uniqueidentifier'>Edm.Guid</field>
-		Address1_AddressId: intellisense.EntityValue,
-		///<field name='Address1_AddressTypeCode' type='OptionSet'>Edm.Int32 - this.OptionSet.Address1_AddressTypeCode</field>
-		Address1_AddressTypeCode: intellisense.EntityValue,
-		///<field name='Address1_City' type='String'>Edm.String</field>
-		Address1_City: intellisense.EntityValue,
-		///<field name='Address1_Composite' type='Memo'>ReadOnly - Edm.String</field>
-		Address1_Composite: intellisense.EntityValue,
-		///<field name='Address1_Country' type='String'>Edm.String</field>
-		Address1_Country: intellisense.EntityValue,
-		///<field name='Address1_County' type='String'>Edm.String</field>
-		Address1_County: intellisense.EntityValue,
-		///<field name='Address1_Fax' type='String'>Edm.String</field>
-		Address1_Fax: intellisense.EntityValue,
-		///<field name='Address1_Latitude' type='Double'>Edm.Double</field>
-		Address1_Latitude: intellisense.EntityValue,
-		///<field name='Address1_Line1' type='String'>Edm.String</field>
-		Address1_Line1: intellisense.EntityValue,
-		///<field name='Address1_Line2' type='String'>Edm.String</field>
-		Address1_Line2: intellisense.EntityValue,
-		///<field name='Address1_Line3' type='String'>Edm.String</field>
-		Address1_Line3: intellisense.EntityValue,
-		///<field name='Address1_Longitude' type='Double'>Edm.Double</field>
-		Address1_Longitude: intellisense.EntityValue,
-		///<field name='Address1_Name' type='String'>Edm.String</field>
-		Address1_Name: intellisense.EntityValue,
-		///<field name='Address1_PostalCode' type='String'>Edm.String</field>
-		Address1_PostalCode: intellisense.EntityValue,
-		///<field name='Address1_PostOfficeBox' type='String'>Edm.String</field>
-		Address1_PostOfficeBox: intellisense.EntityValue,
-		///<field name='Address1_ShippingMethodCode' type='OptionSet'>Edm.Int32 - this.OptionSet.Address1_ShippingMethodCode</field>
-		Address1_ShippingMethodCode: intellisense.EntityValue,
-		///<field name='Address1_StateOrProvince' type='String'>Edm.String</field>
-		Address1_StateOrProvince: intellisense.EntityValue,
-		///<field name='Address1_Telephone1' type='String'>Edm.String</field>
-		Address1_Telephone1: intellisense.EntityValue,
-		///<field name='Address1_Telephone2' type='String'>Edm.String</field>
-		Address1_Telephone2: intellisense.EntityValue,
-		///<field name='Address1_Telephone3' type='String'>Edm.String</field>
-		Address1_Telephone3: intellisense.EntityValue,
-		///<field name='Address1_UPSZone' type='String'>Edm.String</field>
-		Address1_UPSZone: intellisense.EntityValue,
-		///<field name='Address1_UTCOffset' type='Integer'>Edm.Int32</field>
-		Address1_UTCOffset: intellisense.EntityValue,
-		///<field name='Address2_AddressId' type='Uniqueidentifier'>Edm.Guid</field>
-		Address2_AddressId: intellisense.EntityValue,
-		///<field name='Address2_AddressTypeCode' type='OptionSet'>Edm.Int32 - this.OptionSet.Address2_AddressTypeCode</field>
-		Address2_AddressTypeCode: intellisense.EntityValue,
-		///<field name='Address2_City' type='String'>Edm.String</field>
-		Address2_City: intellisense.EntityValue,
-		///<field name='Address2_Composite' type='Memo'>ReadOnly - Edm.String</field>
-		Address2_Composite: intellisense.EntityValue,
-		///<field name='Address2_Country' type='String'>Edm.String</field>
-		Address2_Country: intellisense.EntityValue,
-		///<field name='Address2_County' type='String'>Edm.String</field>
-		Address2_County: intellisense.EntityValue,
-		///<field name='Address2_Fax' type='String'>Edm.String</field>
-		Address2_Fax: intellisense.EntityValue,
-		///<field name='Address2_Latitude' type='Double'>Edm.Double</field>
-		Address2_Latitude: intellisense.EntityValue,
-		///<field name='Address2_Line1' type='String'>Edm.String</field>
-		Address2_Line1: intellisense.EntityValue,
-		///<field name='Address2_Line2' type='String'>Edm.String</field>
-		Address2_Line2: intellisense.EntityValue,
-		///<field name='Address2_Line3' type='String'>Edm.String</field>
-		Address2_Line3: intellisense.EntityValue,
-		///<field name='Address2_Longitude' type='Double'>Edm.Double</field>
-		Address2_Longitude: intellisense.EntityValue,
-		///<field name='Address2_Name' type='String'>Edm.String</field>
-		Address2_Name: intellisense.EntityValue,
-		///<field name='Address2_PostalCode' type='String'>Edm.String</field>
-		Address2_PostalCode: intellisense.EntityValue,
-		///<field name='Address2_PostOfficeBox' type='String'>Edm.String</field>
-		Address2_PostOfficeBox: intellisense.EntityValue,
-		///<field name='Address2_ShippingMethodCode' type='OptionSet'>Edm.Int32 - this.OptionSet.Address2_ShippingMethodCode</field>
-		Address2_ShippingMethodCode: intellisense.EntityValue,
-		///<field name='Address2_StateOrProvince' type='String'>Edm.String</field>
-		Address2_StateOrProvince: intellisense.EntityValue,
-		///<field name='Address2_Telephone1' type='String'>Edm.String</field>
-		Address2_Telephone1: intellisense.EntityValue,
-		///<field name='Address2_Telephone2' type='String'>Edm.String</field>
-		Address2_Telephone2: intellisense.EntityValue,
-		///<field name='Address2_Telephone3' type='String'>Edm.String</field>
-		Address2_Telephone3: intellisense.EntityValue,
-		///<field name='Address2_UPSZone' type='String'>Edm.String</field>
-		Address2_UPSZone: intellisense.EntityValue,
-		///<field name='Address2_UTCOffset' type='Integer'>Edm.Int32</field>
-		Address2_UTCOffset: intellisense.EntityValue,
-		///<field name='ApplicationId' type='Uniqueidentifier'>Edm.Guid</field>
-		ApplicationId: intellisense.EntityValue,
-		///<field name='ApplicationIdUri' type='String'>ReadOnly - Edm.String</field>
-		ApplicationIdUri: intellisense.EntityValue,
-		///<field name='AzureActiveDirectoryObjectId' type='Uniqueidentifier'>ReadOnly - Edm.Guid</field>
-		AzureActiveDirectoryObjectId: intellisense.EntityValue,
-		///<field name='BusinessUnitId' type='Lookup'>Edm.Guid</field>
-		BusinessUnitId: intellisense.EntityValue,
-		///<field name='CalendarId' type='Lookup'>Edm.Guid</field>
-		CalendarId: intellisense.EntityValue,
-		///<field name='CALType' type='OptionSet'>Edm.Int32 - this.OptionSet.CALType</field>
-		CALType: intellisense.EntityValue,
-		///<field name='CreatedBy' type='Lookup'>ReadOnly - Edm.Guid</field>
-		CreatedBy: intellisense.EntityValue,
-		///<field name='CreatedOn_UtcDateAndTime' type='DateTime'>ReadOnly - Edm.DateTimeOffset</field>
-		CreatedOn_UtcDateAndTime: intellisense.EntityValue,
-		///<field name='CreatedOnBehalfBy' type='Lookup'>ReadOnly - Edm.Guid</field>
-		CreatedOnBehalfBy: intellisense.EntityValue,
-		///<field name='DefaultFiltersPopulated' type='Boolean'>ReadOnly - Edm.Boolean</field>
-		DefaultFiltersPopulated: intellisense.EntityValue,
-		///<field name='DefaultMailbox' type='Lookup'>ReadOnly - Edm.Guid</field>
-		DefaultMailbox: intellisense.EntityValue,
-		///<field name='DefaultOdbFolderName' type='String'>ReadOnly - Edm.String</field>
-		DefaultOdbFolderName: intellisense.EntityValue,
-		///<field name='DisabledReason' type='String'>ReadOnly - Edm.String</field>
-		DisabledReason: intellisense.EntityValue,
-		///<field name='DisplayInServiceViews' type='Boolean'>Edm.Boolean</field>
-		DisplayInServiceViews: intellisense.EntityValue,
-		///<field name='DomainName' type='String'>Edm.String</field>
-		DomainName: intellisense.EntityValue,
-		///<field name='EmailRouterAccessApproval' type='OptionSet'>Edm.Int32 - this.OptionSet.EmailRouterAccessApproval</field>
-		EmailRouterAccessApproval: intellisense.EntityValue,
-		///<field name='EmployeeId' type='String'>Edm.String</field>
-		EmployeeId: intellisense.EntityValue,
-		///<field name='EntityImageId' type='Uniqueidentifier'>ReadOnly - Edm.Guid</field>
-		EntityImageId: intellisense.EntityValue,
-		///<field name='ExchangeRate' type='Decimal'>ReadOnly - Edm.Decimal</field>
-		ExchangeRate: intellisense.EntityValue,
-		///<field name='FirstName' type='String'>Edm.String</field>
-		FirstName: intellisense.EntityValue,
-		///<field name='FullName' type='String'>ReadOnly - Edm.String</field>
-		FullName: intellisense.EntityValue,
-		///<field name='GovernmentId' type='String'>Edm.String</field>
-		GovernmentId: intellisense.EntityValue,
-		///<field name='HomePhone' type='String'>Edm.String</field>
-		HomePhone: intellisense.EntityValue,
-		///<field name='IdentityId' type='Integer'>ReadOnly - Edm.Int32</field>
-		IdentityId: intellisense.EntityValue,
-		///<field name='ImportSequenceNumber' type='Integer'>Edm.Int32</field>
-		ImportSequenceNumber: intellisense.EntityValue,
-		///<field name='IncomingEmailDeliveryMethod' type='OptionSet'>Edm.Int32 - this.OptionSet.IncomingEmailDeliveryMethod</field>
-		IncomingEmailDeliveryMethod: intellisense.EntityValue,
-		///<field name='InternalEMailAddress' type='String'>Edm.String</field>
-		InternalEMailAddress: intellisense.EntityValue,
-		///<field name='InviteStatusCode' type='OptionSet'>Edm.Int32 - this.OptionSet.InviteStatusCode</field>
-		InviteStatusCode: intellisense.EntityValue,
-		///<field name='IsActiveDirectoryUser' type='Boolean'>ReadOnly - Edm.Boolean</field>
-		IsActiveDirectoryUser: intellisense.EntityValue,
-		///<field name='IsDisabled' type='Boolean'>Edm.Boolean</field>
-		IsDisabled: intellisense.EntityValue,
-		///<field name='IsEmailAddressApprovedByO365Admin' type='Boolean'>ReadOnly - Edm.Boolean</field>
-		IsEmailAddressApprovedByO365Admin: intellisense.EntityValue,
-		///<field name='IsIntegrationUser' type='Boolean'>Edm.Boolean</field>
-		IsIntegrationUser: intellisense.EntityValue,
-		///<field name='IsLicensed' type='Boolean'>Edm.Boolean</field>
-		IsLicensed: intellisense.EntityValue,
-		///<field name='IsSyncWithDirectory' type='Boolean'>Edm.Boolean</field>
-		IsSyncWithDirectory: intellisense.EntityValue,
-		///<field name='JobTitle' type='String'>Edm.String</field>
-		JobTitle: intellisense.EntityValue,
-		///<field name='LastName' type='String'>Edm.String</field>
-		LastName: intellisense.EntityValue,
-		///<field name='LatestUpdateTime_UtcDateAndTime' type='DateTime'>ReadOnly - Edm.DateTimeOffset</field>
-		LatestUpdateTime_UtcDateAndTime: intellisense.EntityValue,
-		///<field name='MiddleName' type='String'>Edm.String</field>
-		MiddleName: intellisense.EntityValue,
-		///<field name='MobileAlertEMail' type='String'>Edm.String</field>
-		MobileAlertEMail: intellisense.EntityValue,
-		///<field name='MobileOfflineProfileId' type='Lookup'>Edm.Guid</field>
-		MobileOfflineProfileId: intellisense.EntityValue,
-		///<field name='MobilePhone' type='String'>Edm.String</field>
-		MobilePhone: intellisense.EntityValue,
-		///<field name='ModifiedBy' type='Lookup'>ReadOnly - Edm.Guid</field>
-		ModifiedBy: intellisense.EntityValue,
-		///<field name='ModifiedOn_UtcDateAndTime' type='DateTime'>ReadOnly - Edm.DateTimeOffset</field>
-		ModifiedOn_UtcDateAndTime: intellisense.EntityValue,
-		///<field name='ModifiedOnBehalfBy' type='Lookup'>ReadOnly - Edm.Guid</field>
-		ModifiedOnBehalfBy: intellisense.EntityValue,
-		///<field name='NickName' type='String'>Edm.String</field>
-		NickName: intellisense.EntityValue,
-		///<field name='OrganizationId' type='Uniqueidentifier'>ReadOnly - Edm.Guid</field>
-		OrganizationId: intellisense.EntityValue,
-		///<field name='OutgoingEmailDeliveryMethod' type='OptionSet'>Edm.Int32 - this.OptionSet.OutgoingEmailDeliveryMethod</field>
-		OutgoingEmailDeliveryMethod: intellisense.EntityValue,
-		///<field name='OverriddenCreatedOn_UtcDateOnly' type='DateTime'>Edm.DateTimeOffset</field>
-		OverriddenCreatedOn_UtcDateOnly: intellisense.EntityValue,
-		///<field name='ParentSystemUserId' type='Lookup'>Edm.Guid</field>
-		ParentSystemUserId: intellisense.EntityValue,
-		///<field name='PassportHi' type='Integer'>Edm.Int32</field>
-		PassportHi: intellisense.EntityValue,
-		///<field name='PassportLo' type='Integer'>Edm.Int32</field>
-		PassportLo: intellisense.EntityValue,
-		///<field name='PersonalEMailAddress' type='String'>Edm.String</field>
-		PersonalEMailAddress: intellisense.EntityValue,
-		///<field name='PhotoUrl' type='String'>Edm.String</field>
-		PhotoUrl: intellisense.EntityValue,
-		///<field name='PositionId' type='Lookup'>Edm.Guid</field>
-		PositionId: intellisense.EntityValue,
-		///<field name='PreferredAddressCode' type='OptionSet'>Edm.Int32 - this.OptionSet.PreferredAddressCode</field>
-		PreferredAddressCode: intellisense.EntityValue,
-		///<field name='PreferredEmailCode' type='OptionSet'>Edm.Int32 - this.OptionSet.PreferredEmailCode</field>
-		PreferredEmailCode: intellisense.EntityValue,
-		///<field name='PreferredPhoneCode' type='OptionSet'>Edm.Int32 - this.OptionSet.PreferredPhoneCode</field>
-		PreferredPhoneCode: intellisense.EntityValue,
-		///<field name='ProcessId' type='Uniqueidentifier'>Edm.Guid</field>
-		ProcessId: intellisense.EntityValue,
-		///<field name='QueueId' type='Lookup'>Edm.Guid</field>
-		QueueId: intellisense.EntityValue,
-		///<field name='Salutation' type='String'>Edm.String</field>
-		Salutation: intellisense.EntityValue,
-		///<field name='SetupUser' type='Boolean'>Edm.Boolean</field>
-		SetupUser: intellisense.EntityValue,
-		///<field name='SharePointEmailAddress' type='String'>Edm.String</field>
-		SharePointEmailAddress: intellisense.EntityValue,
-		///<field name='Skills' type='String'>Edm.String</field>
-		Skills: intellisense.EntityValue,
-		///<field name='StageId' type='Uniqueidentifier'>Edm.Guid</field>
-		StageId: intellisense.EntityValue,
-		///<field name='SystemUserId' type='Uniqueidentifier'>Edm.Guid</field>
-		SystemUserId: intellisense.EntityValue,
-		///<field name='TerritoryId' type='Lookup'>Edm.Guid</field>
-		TerritoryId: intellisense.EntityValue,
-		///<field name='TimeZoneRuleVersionNumber' type='Integer'>Edm.Int32</field>
-		TimeZoneRuleVersionNumber: intellisense.EntityValue,
-		///<field name='Title' type='String'>Edm.String</field>
-		Title: intellisense.EntityValue,
-		///<field name='TransactionCurrencyId' type='Lookup'>Edm.Guid</field>
-		TransactionCurrencyId: intellisense.EntityValue,
-		///<field name='TraversedPath' type='String'>Edm.String</field>
-		TraversedPath: intellisense.EntityValue,
-		///<field name='UserLicenseType' type='Integer'>Edm.Int32</field>
-		UserLicenseType: intellisense.EntityValue,
-		///<field name='UserPuid' type='String'>ReadOnly - Edm.String</field>
-		UserPuid: intellisense.EntityValue,
-		///<field name='UTCConversionTimeZoneCode' type='Integer'>Edm.Int32</field>
-		UTCConversionTimeZoneCode: intellisense.EntityValue,
-		///<field name='VersionNumber' type='BigInt'>ReadOnly - </field>
-		VersionNumber: intellisense.EntityValue,
-		///<field name='WindowsLiveID' type='String'>Edm.String</field>
-		WindowsLiveID: intellisense.EntityValue,
-		///<field name='YammerEmailAddress' type='String'>Edm.String</field>
-		YammerEmailAddress: intellisense.EntityValue,
-		///<field name='YammerUserId' type='String'>Edm.String</field>
-		YammerUserId: intellisense.EntityValue,
-		///<field name='YomiFirstName' type='String'>Edm.String</field>
-		YomiFirstName: intellisense.EntityValue,
-		///<field name='YomiFullName' type='String'>ReadOnly - Edm.String</field>
-		YomiFullName: intellisense.EntityValue,
-		///<field name='YomiLastName' type='String'>Edm.String</field>
-		YomiLastName: intellisense.EntityValue,
-		///<field name='YomiMiddleName' type='String'>Edm.String</field>
-		YomiMiddleName: intellisense.EntityValue,
-		///<field name='Entity' type='Object'></field>
-		Entity: null,
-		///<field name='EntityName' type='String'></field>
-		EntityName: null,
-		///<field name='EntityCollectionName' type='String'></field>
-		EntityCollectionName: null,
-		///<field name='OptionSet' type='Object'></field>
-		OptionSet: {
-			///<field name='AccessMode' type='PickList'></field>
-			AccessMode: {
-				///<field name='Read_Write' type='PickListValue'>Read_Write = 0</field>
-				Read_Write: 0,
-				///<field name='Administrative' type='PickListValue'>Administrative = 1</field>
-				Administrative: 1,
-				///<field name='Read' type='PickListValue'>Read = 2</field>
-				Read: 2,
-				///<field name='Support_User' type='PickListValue'>Support_User = 3</field>
-				Support_User: 3,
-				///<field name='Non_interactive' type='PickListValue'>Non_interactive = 4</field>
-				Non_interactive: 4,
-				///<field name='Delegated_Admin' type='PickListValue'>Delegated_Admin = 5</field>
-				Delegated_Admin: 5
-			},
-			///<field name='Address1_AddressTypeCode' type='PickList'></field>
-			Address1_AddressTypeCode: {
-				///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-				Default_Value: 1
-			},
-			///<field name='Address1_ShippingMethodCode' type='PickList'></field>
-			Address1_ShippingMethodCode: {
-				///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-				Default_Value: 1
-			},
-			///<field name='Address2_AddressTypeCode' type='PickList'></field>
-			Address2_AddressTypeCode: {
-				///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-				Default_Value: 1
-			},
-			///<field name='Address2_ShippingMethodCode' type='PickList'></field>
-			Address2_ShippingMethodCode: {
-				///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-				Default_Value: 1
-			},
-			///<field name='CALType' type='PickList'></field>
-			CALType: {
-				///<field name='Professional' type='PickListValue'>Professional = 0</field>
-				Professional: 0,
-				///<field name='Administrative' type='PickListValue'>Administrative = 1</field>
-				Administrative: 1,
-				///<field name='Basic' type='PickListValue'>Basic = 2</field>
-				Basic: 2,
-				///<field name='Device_Professional' type='PickListValue'>Device_Professional = 3</field>
-				Device_Professional: 3,
-				///<field name='Device_Basic' type='PickListValue'>Device_Basic = 4</field>
-				Device_Basic: 4,
-				///<field name='Essential' type='PickListValue'>Essential = 5</field>
-				Essential: 5,
-				///<field name='Device_Essential' type='PickListValue'>Device_Essential = 6</field>
-				Device_Essential: 6,
-				///<field name='Enterprise' type='PickListValue'>Enterprise = 7</field>
-				Enterprise: 7,
-				///<field name='Device_Enterprise' type='PickListValue'>Device_Enterprise = 8</field>
-				Device_Enterprise: 8,
-				///<field name='Sales' type='PickListValue'>Sales = 9</field>
-				Sales: 9,
-				///<field name='Service' type='PickListValue'>Service = 10</field>
-				Service: 10,
-				///<field name='Field_Service' type='PickListValue'>Field_Service = 11</field>
-				Field_Service: 11,
-				///<field name='Project_Service' type='PickListValue'>Project_Service = 12</field>
-				Project_Service: 12
-			},
-			///<field name='EmailRouterAccessApproval' type='PickList'></field>
-			EmailRouterAccessApproval: {
-				///<field name='Empty' type='PickListValue'>Empty = 0</field>
-				Empty: 0,
-				///<field name='Approved' type='PickListValue'>Approved = 1</field>
-				Approved: 1,
-				///<field name='Pending_Approval' type='PickListValue'>Pending_Approval = 2</field>
-				Pending_Approval: 2,
-				///<field name='Rejected' type='PickListValue'>Rejected = 3</field>
-				Rejected: 3
-			},
-			///<field name='IncomingEmailDeliveryMethod' type='PickList'></field>
-			IncomingEmailDeliveryMethod: {
-				///<field name='None' type='PickListValue'>None = 0</field>
-				None: 0,
-				///<field name='Microsoft_Dynamics_365_for_Outlook' type='PickListValue'>Microsoft_Dynamics_365_for_Outlook = 1</field>
-				Microsoft_Dynamics_365_for_Outlook: 1,
-				///<field name='Server_Side_Synchronization_or_Email_Router' type='PickListValue'>Server_Side_Synchronization_or_Email_Router = 2</field>
-				Server_Side_Synchronization_or_Email_Router: 2,
-				///<field name='Forward_Mailbox' type='PickListValue'>Forward_Mailbox = 3</field>
-				Forward_Mailbox: 3
-			},
-			///<field name='InviteStatusCode' type='PickList'></field>
-			InviteStatusCode: {
-				///<field name='Invitation_Not_Sent' type='PickListValue'>Invitation_Not_Sent = 0</field>
-				Invitation_Not_Sent: 0,
-				///<field name='Invited' type='PickListValue'>Invited = 1</field>
-				Invited: 1,
-				///<field name='Invitation_Near_Expired' type='PickListValue'>Invitation_Near_Expired = 2</field>
-				Invitation_Near_Expired: 2,
-				///<field name='Invitation_Expired' type='PickListValue'>Invitation_Expired = 3</field>
-				Invitation_Expired: 3,
-				///<field name='Invitation_Accepted' type='PickListValue'>Invitation_Accepted = 4</field>
-				Invitation_Accepted: 4,
-				///<field name='Invitation_Rejected' type='PickListValue'>Invitation_Rejected = 5</field>
-				Invitation_Rejected: 5,
-				///<field name='Invitation_Revoked' type='PickListValue'>Invitation_Revoked = 6</field>
-				Invitation_Revoked: 6
-			},
-			///<field name='OutgoingEmailDeliveryMethod' type='PickList'></field>
-			OutgoingEmailDeliveryMethod: {
-				///<field name='None' type='PickListValue'>None = 0</field>
-				None: 0,
-				///<field name='Microsoft_Dynamics_365_for_Outlook' type='PickListValue'>Microsoft_Dynamics_365_for_Outlook = 1</field>
-				Microsoft_Dynamics_365_for_Outlook: 1,
-				///<field name='Server_Side_Synchronization_or_Email_Router' type='PickListValue'>Server_Side_Synchronization_or_Email_Router = 2</field>
-				Server_Side_Synchronization_or_Email_Router: 2
-			},
-			///<field name='PreferredAddressCode' type='PickList'></field>
-			PreferredAddressCode: {
-				///<field name='Mailing_Address' type='PickListValue'>Mailing_Address = 1</field>
-				Mailing_Address: 1,
-				///<field name='Other_Address' type='PickListValue'>Other_Address = 2</field>
-				Other_Address: 2
-			},
-			///<field name='PreferredEmailCode' type='PickList'></field>
-			PreferredEmailCode: {
-				///<field name='Default_Value' type='PickListValue'>Default_Value = 1</field>
-				Default_Value: 1
-			},
-			///<field name='PreferredPhoneCode' type='PickList'></field>
-			PreferredPhoneCode: {
-				///<field name='Main_Phone' type='PickListValue'>Main_Phone = 1</field>
-				Main_Phone: 1,
-				///<field name='Other_Phone' type='PickListValue'>Other_Phone = 2</field>
-				Other_Phone: 2,
-				///<field name='Home_Phone' type='PickListValue'>Home_Phone = 3</field>
-				Home_Phone: 3,
-				///<field name='Mobile_Phone' type='PickListValue'>Mobile_Phone = 4</field>
-				Mobile_Phone: 4
-			}
 		}
-	};
-};
+		interface tab_SUMMARY_TAB_Sections {
+			onpremise_account_information: DevKit.Form.Controls.ControlSection;
+			online_account_information: DevKit.Form.Controls.ControlSection;
+			user_information: DevKit.Form.Controls.ControlSection;
+			SOCIAL_PANE_TAB: DevKit.Form.Controls.ControlSection;
+			teams_information: DevKit.Form.Controls.ControlSection;
+			organization_information: DevKit.Form.Controls.ControlSection;
+			queue_selection: DevKit.Form.Controls.ControlSection;
+			queue_information: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_DETAILS_TAB_Sections {
+			user_information_2: DevKit.Form.Controls.ControlSection;
+			mailing_address: DevKit.Form.Controls.ControlSection;
+			DirectReports: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_ADMINISTRATION_TAB_Sections {
+			administration: DevKit.Form.Controls.ControlSection;
+			e_mail_configuration: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_MobileOfflineProfile_TAB_Sections {
+			mobileofflineaccessinfo: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_SUMMARY_TAB extends DevKit.Form.Controls.IControlTab {
+			Section: tab_SUMMARY_TAB_Sections;
+		}
+		interface tab_DETAILS_TAB extends DevKit.Form.Controls.IControlTab {
+			Section: tab_DETAILS_TAB_Sections;
+		}
+		interface tab_ADMINISTRATION_TAB extends DevKit.Form.Controls.IControlTab {
+			Section: tab_ADMINISTRATION_TAB_Sections;
+		}
+		interface tab_MobileOfflineProfile_TAB extends DevKit.Form.Controls.IControlTab {
+			Section: tab_MobileOfflineProfile_TAB_Sections;
+		}
+		interface Tabs {
+			SUMMARY_TAB: tab_SUMMARY_TAB;
+			DETAILS_TAB: tab_DETAILS_TAB;
+			ADMINISTRATION_TAB: tab_ADMINISTRATION_TAB;
+			MobileOfflineProfile_TAB: tab_MobileOfflineProfile_TAB;
+		}
+		interface Body {
+			Tab: Tabs;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			TeamsSubGrid: DevKit.Form.Controls.ControlGrid;
+			PrivateQueuesSubGrid: DevKit.Form.Controls.ControlGrid;
+			DirectReports: DevKit.Form.Controls.ControlGrid;
+			/** Type of user. */
+			AccessMode: DevKit.Form.Controls.ControlOptionSet;
+			/** Shows the complete primary address. */
+			Address1_Composite: DevKit.Form.Controls.ControlString;
+			/** Fax number for address 1. */
+			Address1_Fax: DevKit.Form.Controls.ControlString;
+			/** First telephone number associated with address 1. */
+			Address1_Telephone1: DevKit.Form.Controls.ControlString;
+			/** Second telephone number associated with address 1. */
+			Address1_Telephone2: DevKit.Form.Controls.ControlString;
+			/** Third telephone number associated with address 1. */
+			Address1_Telephone3: DevKit.Form.Controls.ControlString;
+			/** Shows the complete secondary address. */
+			Address2_Composite: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the business unit with which the user is associated. */
+			BusinessUnitId: DevKit.Form.Controls.ControlLookup;
+			/** License type of user. */
+			CALType: DevKit.Form.Controls.ControlOptionSet;
+			/** Select the mailbox associated with this user. */
+			DefaultMailbox: DevKit.Form.Controls.ControlLookup;
+			/** Active Directory domain of which the user is a member. */
+			DomainName: DevKit.Form.Controls.ControlString;
+			/** Full name of the user. */
+			FullName: DevKit.Form.Controls.ControlString;
+			/** Home phone number for the user. */
+			HomePhone: DevKit.Form.Controls.ControlString;
+			/** Internal email address for the user. */
+			InternalEMailAddress: DevKit.Form.Controls.ControlString;
+			/** User invitation status. */
+			InviteStatusCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Mobile alert email address for the user. */
+			MobileAlertEMail: DevKit.Form.Controls.ControlString;
+			/** Items contained with a particular SystemUser. */
+			MobileOfflineProfileId: DevKit.Form.Controls.ControlLookup;
+			/** Mobile phone number for the user. */
+			MobilePhone: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the manager of the user. */
+			ParentSystemUserId: DevKit.Form.Controls.ControlLookup;
+			/** Personal email address of the user. */
+			PersonalEMailAddress: DevKit.Form.Controls.ControlString;
+			/** User's position in hierarchical security model. */
+			PositionId: DevKit.Form.Controls.ControlLookup;
+			/** Preferred address for the user. */
+			PreferredAddressCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Preferred phone number for the user. */
+			PreferredPhoneCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Unique identifier of the default queue for the user. */
+			QueueId: DevKit.Form.Controls.ControlLookup;
+			/** Title of the user. */
+			Title: DevKit.Form.Controls.ControlString;
+			/** Windows Live ID */
+			WindowsLiveID: DevKit.Form.Controls.ControlString;
+			/** Pronunciation of the full name of the user, written in phonetic hiragana or katakana characters. */
+			YomiFullName: DevKit.Form.Controls.ControlString;
+		}
+		interface Footer {
+			/** Information about whether the user is enabled. */
+			IsDisabled: DevKit.Form.Controls.ControlBoolean;
+		}
+		interface Navigation {
+
+		}
+		interface Process extends DevKit.Form.Controls.IControlProcess {
+		}
+	}
+	class FormUser extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form User
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form User */
+		Body: Rocket.FormUser.Body;
+		/** The Footer section of form User */
+		Footer: Rocket.FormUser.Footer;
+		/** The Header section of form User */
+		Header: Rocket.FormUser.Header;
+		/** The Navigation of form User */
+		Navigation: Rocket.FormUser.Navigation;
+		/** The Process of form User */
+		Process: Rocket.FormUser.Process;
+	}
+	class SystemUserApi {
+		/**
+		* PL.DynamicsCrm.DevKit SystemUserApi
+		* @param entity The entity object
+		*/
+		constructor(entity?: any);
+		/**
+		 * Get the value of alias
+		 * @param alias the alias value
+		 * @param isMultiOptionSet true if the alias is multi OptionSet
+		 */
+		getAliasedValue(alias: string, isMultiOptionSet?: boolean): any;
+		/**
+		 * Get the formatted value of alias
+		 * @param alias the alias value
+		 * @param isMultiOptionSet true if the alias is multi OptionSet
+		 */
+		getAliasedFormattedValue(alias: string, isMultiOptionSet?: boolean): string;
+		/** The entity object */
+		Entity: any;
+		/** The entity name */
+		EntityName: string;
+		/** The entity collection name */
+		EntityCollectionName: string;
+		/** The @odata.etag is then used to build a cache of the response that is dependant on the fields that are retrieved */
+		"@odata.etag": string;
+		/** Type of user. */
+		AccessMode: DevKit.WebApi.OptionSetValue;
+		/** Active Directory object GUID for the system user. */
+		ActiveDirectoryGuid: DevKit.WebApi.GuidValueReadonly;
+		/** Unique identifier for address 1. */
+		Address1_AddressId: DevKit.WebApi.GuidValue;
+		/** Type of address for address 1, such as billing, shipping, or primary address. */
+		Address1_AddressTypeCode: DevKit.WebApi.OptionSetValue;
+		/** City name for address 1. */
+		Address1_City: DevKit.WebApi.StringValue;
+		/** Shows the complete primary address. */
+		Address1_Composite: DevKit.WebApi.StringValueReadonly;
+		/** Country/region name in address 1. */
+		Address1_Country: DevKit.WebApi.StringValue;
+		/** County name for address 1. */
+		Address1_County: DevKit.WebApi.StringValue;
+		/** Fax number for address 1. */
+		Address1_Fax: DevKit.WebApi.StringValue;
+		/** Latitude for address 1. */
+		Address1_Latitude: DevKit.WebApi.DoubleValue;
+		/** First line for entering address 1 information. */
+		Address1_Line1: DevKit.WebApi.StringValue;
+		/** Second line for entering address 1 information. */
+		Address1_Line2: DevKit.WebApi.StringValue;
+		/** Third line for entering address 1 information. */
+		Address1_Line3: DevKit.WebApi.StringValue;
+		/** Longitude for address 1. */
+		Address1_Longitude: DevKit.WebApi.DoubleValue;
+		/** Name to enter for address 1. */
+		Address1_Name: DevKit.WebApi.StringValue;
+		/** ZIP Code or postal code for address 1. */
+		Address1_PostalCode: DevKit.WebApi.StringValue;
+		/** Post office box number for address 1. */
+		Address1_PostOfficeBox: DevKit.WebApi.StringValue;
+		/** Method of shipment for address 1. */
+		Address1_ShippingMethodCode: DevKit.WebApi.OptionSetValue;
+		/** State or province for address 1. */
+		Address1_StateOrProvince: DevKit.WebApi.StringValue;
+		/** First telephone number associated with address 1. */
+		Address1_Telephone1: DevKit.WebApi.StringValue;
+		/** Second telephone number associated with address 1. */
+		Address1_Telephone2: DevKit.WebApi.StringValue;
+		/** Third telephone number associated with address 1. */
+		Address1_Telephone3: DevKit.WebApi.StringValue;
+		/** United Parcel Service (UPS) zone for address 1. */
+		Address1_UPSZone: DevKit.WebApi.StringValue;
+		/** UTC offset for address 1. This is the difference between local time and standard Coordinated Universal Time. */
+		Address1_UTCOffset: DevKit.WebApi.IntegerValue;
+		/** Unique identifier for address 2. */
+		Address2_AddressId: DevKit.WebApi.GuidValue;
+		/** Type of address for address 2, such as billing, shipping, or primary address. */
+		Address2_AddressTypeCode: DevKit.WebApi.OptionSetValue;
+		/** City name for address 2. */
+		Address2_City: DevKit.WebApi.StringValue;
+		/** Shows the complete secondary address. */
+		Address2_Composite: DevKit.WebApi.StringValueReadonly;
+		/** Country/region name in address 2. */
+		Address2_Country: DevKit.WebApi.StringValue;
+		/** County name for address 2. */
+		Address2_County: DevKit.WebApi.StringValue;
+		/** Fax number for address 2. */
+		Address2_Fax: DevKit.WebApi.StringValue;
+		/** Latitude for address 2. */
+		Address2_Latitude: DevKit.WebApi.DoubleValue;
+		/** First line for entering address 2 information. */
+		Address2_Line1: DevKit.WebApi.StringValue;
+		/** Second line for entering address 2 information. */
+		Address2_Line2: DevKit.WebApi.StringValue;
+		/** Third line for entering address 2 information. */
+		Address2_Line3: DevKit.WebApi.StringValue;
+		/** Longitude for address 2. */
+		Address2_Longitude: DevKit.WebApi.DoubleValue;
+		/** Name to enter for address 2. */
+		Address2_Name: DevKit.WebApi.StringValue;
+		/** ZIP Code or postal code for address 2. */
+		Address2_PostalCode: DevKit.WebApi.StringValue;
+		/** Post office box number for address 2. */
+		Address2_PostOfficeBox: DevKit.WebApi.StringValue;
+		/** Method of shipment for address 2. */
+		Address2_ShippingMethodCode: DevKit.WebApi.OptionSetValue;
+		/** State or province for address 2. */
+		Address2_StateOrProvince: DevKit.WebApi.StringValue;
+		/** First telephone number associated with address 2. */
+		Address2_Telephone1: DevKit.WebApi.StringValue;
+		/** Second telephone number associated with address 2. */
+		Address2_Telephone2: DevKit.WebApi.StringValue;
+		/** Third telephone number associated with address 2. */
+		Address2_Telephone3: DevKit.WebApi.StringValue;
+		/** United Parcel Service (UPS) zone for address 2. */
+		Address2_UPSZone: DevKit.WebApi.StringValue;
+		/** UTC offset for address 2. This is the difference between local time and standard Coordinated Universal Time. */
+		Address2_UTCOffset: DevKit.WebApi.IntegerValue;
+		/** The identifier for the application. This is used to access data in another application. */
+		ApplicationId: DevKit.WebApi.GuidValue;
+		/** The URI used as a unique logical identifier for the external app. This can be used to validate the application. */
+		ApplicationIdUri: DevKit.WebApi.StringValueReadonly;
+		/** This is the application directory object Id. */
+		AzureActiveDirectoryObjectId: DevKit.WebApi.GuidValueReadonly;
+		/** Unique identifier of the business unit with which the user is associated. */
+		BusinessUnitId: DevKit.WebApi.LookupValue;
+		/** Fiscal calendar associated with the user. */
+		CalendarId: DevKit.WebApi.LookupValue;
+		/** License type of user. */
+		CALType: DevKit.WebApi.OptionSetValue;
+		/** Unique identifier of the user who created the user. */
+		CreatedBy: DevKit.WebApi.LookupValueReadonly;
+		/** Date and time when the user was created. */
+		CreatedOn_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValueReadonly;
+		/** Unique identifier of the delegate user who created the systemuser. */
+		CreatedOnBehalfBy: DevKit.WebApi.LookupValueReadonly;
+		/** Indicates if default outlook filters have been populated. */
+		DefaultFiltersPopulated: DevKit.WebApi.BooleanValueReadonly;
+		/** Select the mailbox associated with this user. */
+		DefaultMailbox: DevKit.WebApi.LookupValueReadonly;
+		/** Type a default folder name for the user's OneDrive For Business location. */
+		DefaultOdbFolderName: DevKit.WebApi.StringValueReadonly;
+		/** Reason for disabling the user. */
+		DisabledReason: DevKit.WebApi.StringValueReadonly;
+		/** Whether to display the user in service views. */
+		DisplayInServiceViews: DevKit.WebApi.BooleanValue;
+		/** Active Directory domain of which the user is a member. */
+		DomainName: DevKit.WebApi.StringValue;
+		/** Shows the status of the primary email address. */
+		EmailRouterAccessApproval: DevKit.WebApi.OptionSetValue;
+		/** Employee identifier for the user. */
+		EmployeeId: DevKit.WebApi.StringValue;
+		/** Shows the default image for the record. */
+		EntityImage: DevKit.WebApi.StringValue;
+		EntityImage_Timestamp: DevKit.WebApi.BigIntValueReadonly;
+		EntityImage_URL: DevKit.WebApi.StringValueReadonly;
+		/** For internal use only. */
+		EntityImageId: DevKit.WebApi.GuidValueReadonly;
+		/** Exchange rate for the currency associated with the systemuser with respect to the base currency. */
+		ExchangeRate: DevKit.WebApi.DecimalValueReadonly;
+		/** First name of the user. */
+		FirstName: DevKit.WebApi.StringValue;
+		/** Full name of the user. */
+		FullName: DevKit.WebApi.StringValueReadonly;
+		/** Government identifier for the user. */
+		GovernmentId: DevKit.WebApi.StringValue;
+		/** Home phone number for the user. */
+		HomePhone: DevKit.WebApi.StringValue;
+		/** For internal use only. */
+		IdentityId: DevKit.WebApi.IntegerValueReadonly;
+		/** Unique identifier of the data import or data migration that created this record. */
+		ImportSequenceNumber: DevKit.WebApi.IntegerValue;
+		/** Incoming email delivery method for the user. */
+		IncomingEmailDeliveryMethod: DevKit.WebApi.OptionSetValue;
+		/** Internal email address for the user. */
+		InternalEMailAddress: DevKit.WebApi.StringValue;
+		/** User invitation status. */
+		InviteStatusCode: DevKit.WebApi.OptionSetValue;
+		/** Information about whether the user is an AD user. */
+		IsActiveDirectoryUser: DevKit.WebApi.BooleanValueReadonly;
+		/** Information about whether the user is enabled. */
+		IsDisabled: DevKit.WebApi.BooleanValue;
+		/** Shows the status of approval of the email address by O365 Admin. */
+		IsEmailAddressApprovedByO365Admin: DevKit.WebApi.BooleanValueReadonly;
+		/** Check if user is an integration user. */
+		IsIntegrationUser: DevKit.WebApi.BooleanValue;
+		/** Information about whether the user is licensed. */
+		IsLicensed: DevKit.WebApi.BooleanValue;
+		/** Information about whether the user is synced with the directory. */
+		IsSyncWithDirectory: DevKit.WebApi.BooleanValue;
+		/** Job title of the user. */
+		JobTitle: DevKit.WebApi.StringValue;
+		/** Last name of the user. */
+		LastName: DevKit.WebApi.StringValue;
+		/** Time stamp of the latest update for the user */
+		LatestUpdateTime_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValueReadonly;
+		/** Middle name of the user. */
+		MiddleName: DevKit.WebApi.StringValue;
+		/** Mobile alert email address for the user. */
+		MobileAlertEMail: DevKit.WebApi.StringValue;
+		/** Items contained with a particular SystemUser. */
+		MobileOfflineProfileId: DevKit.WebApi.LookupValue;
+		/** Mobile phone number for the user. */
+		MobilePhone: DevKit.WebApi.StringValue;
+		/** Unique identifier of the user who last modified the user. */
+		ModifiedBy: DevKit.WebApi.LookupValueReadonly;
+		/** Date and time when the user was last modified. */
+		ModifiedOn_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValueReadonly;
+		/** Unique identifier of the delegate user who last modified the systemuser. */
+		ModifiedOnBehalfBy: DevKit.WebApi.LookupValueReadonly;
+		/** Nickname of the user. */
+		NickName: DevKit.WebApi.StringValue;
+		/** Unique identifier of the organization associated with the user. */
+		OrganizationId: DevKit.WebApi.GuidValueReadonly;
+		/** Outgoing email delivery method for the user. */
+		OutgoingEmailDeliveryMethod: DevKit.WebApi.OptionSetValue;
+		/** Date and time that the record was migrated. */
+		OverriddenCreatedOn_UtcDateOnly: DevKit.WebApi.UtcDateOnlyValue;
+		/** Unique identifier of the manager of the user. */
+		ParentSystemUserId: DevKit.WebApi.LookupValue;
+		/** For internal use only. */
+		PassportHi: DevKit.WebApi.IntegerValue;
+		/** For internal use only. */
+		PassportLo: DevKit.WebApi.IntegerValue;
+		/** Personal email address of the user. */
+		PersonalEMailAddress: DevKit.WebApi.StringValue;
+		/** URL for the Website on which a photo of the user is located. */
+		PhotoUrl: DevKit.WebApi.StringValue;
+		/** User's position in hierarchical security model. */
+		PositionId: DevKit.WebApi.LookupValue;
+		/** Preferred address for the user. */
+		PreferredAddressCode: DevKit.WebApi.OptionSetValue;
+		/** Preferred email address for the user. */
+		PreferredEmailCode: DevKit.WebApi.OptionSetValue;
+		/** Preferred phone number for the user. */
+		PreferredPhoneCode: DevKit.WebApi.OptionSetValue;
+		/** Shows the ID of the process. */
+		ProcessId: DevKit.WebApi.GuidValue;
+		/** Unique identifier of the default queue for the user. */
+		QueueId: DevKit.WebApi.LookupValue;
+		/** Salutation for correspondence with the user. */
+		Salutation: DevKit.WebApi.StringValue;
+		/** Check if user is a setup user. */
+		SetupUser: DevKit.WebApi.BooleanValue;
+		/** SharePoint Work Email Address */
+		SharePointEmailAddress: DevKit.WebApi.StringValue;
+		/** Skill set of the user. */
+		Skills: DevKit.WebApi.StringValue;
+		/** Shows the ID of the stage. */
+		StageId: DevKit.WebApi.GuidValue;
+		/** Unique identifier for the user. */
+		SystemUserId: DevKit.WebApi.GuidValue;
+		/** Unique identifier of the territory to which the user is assigned. */
+		TerritoryId: DevKit.WebApi.LookupValue;
+		/** For internal use only. */
+		TimeZoneRuleVersionNumber: DevKit.WebApi.IntegerValue;
+		/** Title of the user. */
+		Title: DevKit.WebApi.StringValue;
+		/** Unique identifier of the currency associated with the systemuser. */
+		TransactionCurrencyId: DevKit.WebApi.LookupValue;
+		/** For internal use only. */
+		TraversedPath: DevKit.WebApi.StringValue;
+		/** Shows the type of user license. */
+		UserLicenseType: DevKit.WebApi.IntegerValue;
+		/**  User PUID User Identifiable Information */
+		UserPuid: DevKit.WebApi.StringValueReadonly;
+		/** Time zone code that was in use when the record was created. */
+		UTCConversionTimeZoneCode: DevKit.WebApi.IntegerValue;
+		/** Version number of the user. */
+		VersionNumber: DevKit.WebApi.BigIntValueReadonly;
+		/** Windows Live ID */
+		WindowsLiveID: DevKit.WebApi.StringValue;
+		/** User's Yammer login email address */
+		YammerEmailAddress: DevKit.WebApi.StringValue;
+		/** User's Yammer ID */
+		YammerUserId: DevKit.WebApi.StringValue;
+		/** Pronunciation of the first name of the user, written in phonetic hiragana or katakana characters. */
+		YomiFirstName: DevKit.WebApi.StringValue;
+		/** Pronunciation of the full name of the user, written in phonetic hiragana or katakana characters. */
+		YomiFullName: DevKit.WebApi.StringValueReadonly;
+		/** Pronunciation of the last name of the user, written in phonetic hiragana or katakana characters. */
+		YomiLastName: DevKit.WebApi.StringValue;
+		/** Pronunciation of the middle name of the user, written in phonetic hiragana or katakana characters. */
+		YomiMiddleName: DevKit.WebApi.StringValue;
+	}
+}
+declare namespace OptionSet {
+	namespace SystemUser {
+		enum AccessMode {
+			/** 0 */
+			Read_Write,
+			/** 1 */
+			Administrative,
+			/** 2 */
+			Read,
+			/** 3 */
+			Support_User,
+			/** 4 */
+			Non_interactive,
+			/** 5 */
+			Delegated_Admin
+		}
+		enum Address1_AddressTypeCode {
+			/** 1 */
+			Default_Value
+		}
+		enum Address1_ShippingMethodCode {
+			/** 1 */
+			Default_Value
+		}
+		enum Address2_AddressTypeCode {
+			/** 1 */
+			Default_Value
+		}
+		enum Address2_ShippingMethodCode {
+			/** 1 */
+			Default_Value
+		}
+		enum CALType {
+			/** 0 */
+			Professional,
+			/** 1 */
+			Administrative,
+			/** 2 */
+			Basic,
+			/** 3 */
+			Device_Professional,
+			/** 4 */
+			Device_Basic,
+			/** 5 */
+			Essential,
+			/** 6 */
+			Device_Essential,
+			/** 7 */
+			Enterprise,
+			/** 8 */
+			Device_Enterprise,
+			/** 9 */
+			Sales,
+			/** 10 */
+			Service,
+			/** 11 */
+			Field_Service,
+			/** 12 */
+			Project_Service
+		}
+		enum EmailRouterAccessApproval {
+			/** 0 */
+			Empty,
+			/** 1 */
+			Approved,
+			/** 2 */
+			Pending_Approval,
+			/** 3 */
+			Rejected
+		}
+		enum IncomingEmailDeliveryMethod {
+			/** 0 */
+			None,
+			/** 1 */
+			Microsoft_Dynamics_365_for_Outlook,
+			/** 2 */
+			Server_Side_Synchronization_or_Email_Router,
+			/** 3 */
+			Forward_Mailbox
+		}
+		enum InviteStatusCode {
+			/** 0 */
+			Invitation_Not_Sent,
+			/** 1 */
+			Invited,
+			/** 2 */
+			Invitation_Near_Expired,
+			/** 3 */
+			Invitation_Expired,
+			/** 4 */
+			Invitation_Accepted,
+			/** 5 */
+			Invitation_Rejected,
+			/** 6 */
+			Invitation_Revoked
+		}
+		enum OutgoingEmailDeliveryMethod {
+			/** 0 */
+			None,
+			/** 1 */
+			Microsoft_Dynamics_365_for_Outlook,
+			/** 2 */
+			Server_Side_Synchronization_or_Email_Router
+		}
+		enum PreferredAddressCode {
+			/** 1 */
+			Mailing_Address,
+			/** 2 */
+			Other_Address
+		}
+		enum PreferredEmailCode {
+			/** 1 */
+			Default_Value
+		}
+		enum PreferredPhoneCode {
+			/** 1 */
+			Main_Phone,
+			/** 2 */
+			Other_Phone,
+			/** 3 */
+			Home_Phone,
+			/** 4 */
+			Mobile_Phone
+		}
+	}
+}
 //{'JsForm':['User'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

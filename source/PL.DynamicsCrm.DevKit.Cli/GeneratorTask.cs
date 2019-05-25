@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using Microsoft.Xrm.Sdk.Messages;
+using Microsoft.Xrm.Sdk.Metadata;
 using Microsoft.Xrm.Tooling.Connector;
 using PL.DynamicsCrm.DevKit.Cli.Models;
 using PL.DynamicsCrm.DevKit.Shared;
@@ -44,14 +47,46 @@ namespace PL.DynamicsCrm.DevKit.Cli
             CliLog.WriteLine(CliLog.ColorGreen, new string('*', CliLog.StarLength));
         }
 
+
+        public List<string> GetAllEntities()
+        {
+            var request = new RetrieveAllEntitiesRequest
+            {
+                EntityFilters = EntityFilters.Entity,
+                RetrieveAsIfPublished = true
+            };
+            var response = (RetrieveAllEntitiesResponse)CrmServiceClient.Execute(request);
+            var entities = new List<string>();
+            foreach (var entity in response.EntityMetadata)
+                entities.Add(entity.SchemaName);
+            entities.Sort();
+            return entities;
+        }
+
         private void GeneratorWebApi()
         {
+            //var list = GetAllEntities();
+            //var a = string.Empty;
+            //foreach (var entity in list)
+            //{
+            //    a += $"\t\t\"{entity}\",\r\n";
+            //}
+
             CliLog.WriteLine(CliLog.ColorGreen, "START GENERATOR - JS WEBAPI - TASKS");
             CliLog.WriteLine(CliLog.ColorGreen, new string('*', CliLog.StarLength));
             var entities = new List<string>();
-            var pattern = "*.webapi.js";
+            string[] files;
             var folder = $"{CurrentDirectory}\\{GeneratorJson.rootfolder}";
-            var files = Directory.GetFiles(folder, pattern);
+            if (GeneratorJson.entities.Count == 0)            {
+                var pattern = "*.webapi.js";
+
+                files = Directory.GetFiles(folder, pattern);
+            }
+            else
+            {
+                files = GeneratorJson.entities.Select(e => $"{folder}{e}.webapi.js").ToArray();
+            }
+
             foreach (var file in files)
             {
                 var fInfo = new FileInfo(file);
@@ -67,8 +102,14 @@ namespace PL.DynamicsCrm.DevKit.Cli
             var i = 1;
             foreach (var entity in entities)
             {
+//#if DEBUG
+//                if (entity != "Audit") continue;
+//#endif
                 GeneratorJsWebApi(entity, i, entities.Count);
                 i++;
+//#if DEBUG
+//                if (i == 50) break;
+//#endif
             }
             CliLog.WriteLine(CliLog.ColorGreen, new string('*', CliLog.StarLength));
             CliLog.WriteLine(CliLog.ColorGreen, "END GENERATOR - JS WEBAPI - TASKS");
@@ -76,17 +117,36 @@ namespace PL.DynamicsCrm.DevKit.Cli
 
         private void GeneratorJsWebApi(string entity, int i, int count)
         {
+            var isDebugWebApi = true;
+            var jsForm = new List<string>();
+            var isDebugForm = true;
+
             if (GeneratorJson.usetypescriptdeclaration == "true")
             {
+                if (!File.Exists($"{CurrentDirectory}\\{GeneratorJson.rootfolder}\\{entity}.js"))
+                {
+                    var text = string.Empty;
+                    text += "//@ts-check\r\n";
+                    text += $"///<reference path=\"{entity}.d.ts\" />\r\n";
+                    File.WriteAllText($"{CurrentDirectory}\\{GeneratorJson.rootfolder}\\{entity}.js", text, System.Text.Encoding.UTF8);
+                }
                 var fileTypeScriptDeclaration = $"{CurrentDirectory}\\{GeneratorJson.rootfolder}\\{entity}.d.ts";
-                var lines = File.ReadAllLines(fileTypeScriptDeclaration);
-                var json = lines[lines.Length - 1];
-                var comment = SimpleJson.DeserializeObject<CommentIntellisense>(json.Substring("//".Length).Replace("'", "\""));
+                if (File.Exists(fileTypeScriptDeclaration))
+                {
+                    var lines = File.ReadAllLines(fileTypeScriptDeclaration);
+                    var json = lines[lines.Length - 1];
+                    var comment = SimpleJson.DeserializeObject<CommentIntellisense>(json.Substring("//".Length).Replace("'", "\""));
+                    isDebugWebApi = comment.IsDebugWebApi;
+                    jsForm = comment.JsForm;
+                    isDebugForm = comment.IsDebugForm;
+                }
                 var parts = GeneratorJson.rootnamespace.Split(".".ToCharArray());
                 var projectName = parts.Length > 1 ? parts[1] : parts[0];
-                var jsWebApi = new JsWebApi(CrmServiceClient.OrganizationServiceProxy, projectName, entity, comment.IsDebugWebApi, comment.JsForm, comment.IsDebugForm);
+                var jsWebApi = new JsWebApi(CrmServiceClient.OrganizationServiceProxy, projectName, entity, isDebugWebApi, jsForm, isDebugForm);
                 jsWebApi.GeneratorCode();
-                var old = File.ReadAllText(fileTypeScriptDeclaration).Replace(" ", string.Empty).Replace("\r\n", string.Empty).Replace("\t", string.Empty);
+                var old = string.Empty;
+                if (File.Exists(fileTypeScriptDeclaration))
+                    old = File.ReadAllText(fileTypeScriptDeclaration).Replace(" ", string.Empty).Replace("\r\n", string.Empty).Replace("\t", string.Empty);
                 var @new = jsWebApi.WebApiCodeTypeScriptDeclaration.Replace(" ", string.Empty).Replace("\r\n", string.Empty).Replace("\t", string.Empty);
                 if (old != @new)
                 {
@@ -99,7 +159,9 @@ namespace PL.DynamicsCrm.DevKit.Cli
                 else
                     CliLog.WriteLine(CliLog.ColorCyan, string.Format("{0,0}|{1," + count.ToString().Length + "}", "", i) + ": No change ", CliLog.ColorGreen, entity, ".d.ts");
                 var fileWebApi = $"{CurrentDirectory}\\{GeneratorJson.rootfolder}\\{entity}.webapi.js";
-                old = File.ReadAllText(fileWebApi).Replace(" ", string.Empty).Replace("\r\n", string.Empty).Replace("\t", string.Empty);
+                old = string.Empty;
+                if (File.Exists(fileWebApi))
+                    old = File.ReadAllText(fileWebApi).Replace(" ", string.Empty).Replace("\r\n", string.Empty).Replace("\t", string.Empty);
                 @new = jsWebApi.WebApiCode.Replace(" ", string.Empty).Replace("\r\n", string.Empty).Replace("\t", string.Empty);
                 if (old != @new)
                 {

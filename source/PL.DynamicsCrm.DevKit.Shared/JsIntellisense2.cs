@@ -158,8 +158,10 @@ namespace PL.DynamicsCrm.DevKit.Shared
                     else
                     {
                         var navigations = crmAttribute.NavigationPropertyName.Split(";".ToCharArray());
-                        for (var j = 0; j < entities.Length; j++)
+                        var j = 0;
+                        foreach(var entity in entities)
                         {
+                            if (crmAttribute.EntityName == "audit" && entity == "externalparty") continue;
                             if (jdoc.Length > 0)
                                 _d_ts += $"\t\t/** {jdoc} */\r\n";
                             _d_ts += $"\t\t{navigations[j]}: DevKit.WebApi.LookupValue{Readonly};\r\n";
