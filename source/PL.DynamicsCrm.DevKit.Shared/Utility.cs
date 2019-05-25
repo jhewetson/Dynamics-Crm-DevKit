@@ -9,6 +9,30 @@ namespace PL.DynamicsCrm.DevKit.Shared
 {
     public static class Utility
     {
+        public static string GetSafeName(string name)
+        {
+            name = name.Replace(" ", "");
+            name = name.Replace("'", string.Empty);
+            name = name.Replace("-", "_");
+            name = name.Replace("(", string.Empty);
+            name = name.Replace(")", string.Empty);
+            name = name.Replace("/", string.Empty);
+            name = name.Replace("%", string.Empty);
+            name = name.Replace(",", string.Empty);
+            name = name.Replace("$", string.Empty);
+            name = name.Replace(".", string.Empty);
+            name = name.Replace("{", string.Empty);
+            name = name.Replace("}", string.Empty);
+            name = name.Replace(":", string.Empty);
+            name = name.Replace(";", string.Empty);
+            name = name.Replace("&", string.Empty);
+            name = name.Replace("=", string.Empty);
+            name = name.Replace("+", string.Empty);
+            name = name.Replace("-", string.Empty);
+            name = name.Replace(".", string.Empty);
+            return name;
+        }
+
         public static string ReadEmbeddedResource(string path)
         {
             try
@@ -34,6 +58,9 @@ namespace PL.DynamicsCrm.DevKit.Shared
                         return ReadEmbeddedResource(path);
                     case "PL.DynamicsCrm.DevKit.Wizard.data.OptionSet.js":
                         path = "PL.DynamicsCrm.DevKit.Cli.Data.OptionSet.js";
+                        return ReadEmbeddedResource(path);
+                    case "PL.DynamicsCrm.DevKit.Wizard.data.FormBase.js":
+                        path = "PL.DynamicsCrm.DevKit.Cli.Data.FormBase.js";
                         return ReadEmbeddedResource(path);
                 }
             }

@@ -191,7 +191,7 @@ declare namespace Rocket {
 			tCreatedOn: DevKit.Form.Controls.ControlTimer;
 			WebResource_WORDHELLO: DevKit.Form.Controls.ControlWebResource;
 			IFRAME_GoogleGoogle: DevKit.Form.Controls.ControlIFrame;
-			IFRAME_ACIWIDGET: DevKit.Form.Controls.ControlIFrame;
+			IFRAME_ACIWIDGET: DevKit.Form.Controls.ControlAciWidget;
 			gridSubGridParentWebApi: DevKit.Form.Controls.ControlGrid;
 			/** Unique identifier of the user who created the record. */
 			CreatedBy: DevKit.Form.Controls.ControlLookup;
@@ -220,7 +220,7 @@ declare namespace Rocket {
 			/** The name of the custom entity. */
 			devkit_Name: DevKit.Form.Controls.ControlString;
 			devkit_ParentWebApiId: DevKit.Form.Controls.ControlLookup;
-			devkit_ParentWebApiId_1: DevKit.Form.Controls.ControlLookup;
+			quickViewWebApi: DevKit.Form.Controls.ControlQuickView;
 			devkit_SingleLineofTextEmail: DevKit.Form.Controls.ControlString;
 			devkit_SingleLineofTextPhone: DevKit.Form.Controls.ControlString;
 			devkit_SingleLineofTextText: DevKit.Form.Controls.ControlString;
@@ -371,37 +371,47 @@ declare namespace Rocket {
 			nav_bpf_devkit_webapi_devkit_processwebapi1: DevKit.Form.Controls.ControlNavigationItem,
 			nav_devkit_devkit_webapi_contact: DevKit.Form.Controls.ControlNavigationItem
 		}
-		interface QuickForm {
+		interface ProcessProcessWebApi1 {
+			devkit_CustomerId: DevKit.Form.Controls.ControlLookup;
+			devkit_DecimalNumber: DevKit.Form.Controls.ControlDecimal;
+			devkit_FloatingPointNumber: DevKit.Form.Controls.ControlDouble;
+			devkit_MultipleLiniesofText: DevKit.Form.Controls.ControlString;
+			devkit_SingleLineofTextText: DevKit.Form.Controls.ControlString;
+			devkit_SingleLineofTextText_1: DevKit.Form.Controls.ControlString;
+			devkit_SingleOptionSetCode: DevKit.Form.Controls.ControlOptionSet;
+			devkit_UserLocalDateOnly: DevKit.Form.Controls.ControlDate;
+			devkit_WholeNumberNone: DevKit.Form.Controls.ControlInteger;
+			devkit_YesAndNo: DevKit.Form.Controls.ControlBoolean;
+			devkit_YesAndNoCalculated: DevKit.Form.Controls.ControlBoolean;
+			/** Owner Id */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
 		}
 		interface Process extends DevKit.Form.Controls.IControlProcess {
+			ProcessWebApi1: ProcessProcessWebApi1;
 		}
 	}
-    class FormWebApi extends DevKit.Form.IForm {
-        /**
-         * PL.DynamicsCrm.DevKit form WebApi
-         * @param executionContext the execution context.
-         * @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource".
-         */
-        constructor(executionContext: any, defaultWebResourceName?: string);
-        /** Utility functions/methods/objects for Dynamics 365 form */
-        Utility: DevKit.Form.Utility;
-        /** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
-        WebApi: DevKit.Form.WebApi;
-        /** The Body section of form WebApi */
-        Body: Rocket.FormWebApi.Body;
-        /** The Footer section of form WebApi */
-        Footer: Rocket.FormWebApi.Footer;
-        /** The Header section of form WebApi */
-        Header: Rocket.FormWebApi.Header;
-        /** The Navigation of form WebApi */
-        Navigation: Rocket.FormWebApi.Navigation;
-        /** The QuickForm of form WebApi */
-        QuickForm: Rocket.FormWebApi.QuickForm;
-        ///** The Composite of form WebApi */
-        //Composite: Rocket.FormWebApi.Composite;
-        /** The Process of form WebApi */
-        Process: Rocket.FormWebApi.Process;
-    }
+	class FormWebApi extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form WebApi
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form WebApi */
+		Body: Rocket.FormWebApi.Body;
+		/** The Footer section of form WebApi */
+		Footer: Rocket.FormWebApi.Footer;
+		/** The Header section of form WebApi */
+		Header: Rocket.FormWebApi.Header;
+		/** The Navigation of form WebApi */
+		Navigation: Rocket.FormWebApi.Navigation;
+		/** The Process of form WebApi */
+		Process: Rocket.FormWebApi.Process;
+		}
 	class devkit_WebApiApi {
 		/**
 		* PL.DynamicsCrm.DevKit devkit_WebApiApi

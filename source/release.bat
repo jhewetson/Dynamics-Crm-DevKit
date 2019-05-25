@@ -31,5 +31,8 @@ if %MsBuild%=="" (
 
 	cd ..\..
 	copy PL.DynamicsCrm.DevKit\Release\PL.DynamicsCrm.DevKit.vsix Published\%VERSION%\PL.DynamicsCrm.DevKit.%VERSION%.vsix
+
+    copy "C:\src\github\phuocle\Dynamics-Crm-DevKit\source\PL.DynamicsCrm.DevKit.Cli\Release\PL.DynamicsCrm.DevKit.Cli.exe" "C:\src\github\phuocle\Dynamics-Crm-DevKit\test\CDS-DEVKIT\packages\PL.DynamicsCrm.DevKit.Cli.1.5.0\tools\PL.DynamicsCrm.DevKit.Cli.exe" /y
+
 )
 exit

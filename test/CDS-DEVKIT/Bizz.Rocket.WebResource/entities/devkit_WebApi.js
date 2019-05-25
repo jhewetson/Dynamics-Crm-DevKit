@@ -3,8 +3,7 @@
 var formWebApi = (function () {
     function onLoad(executionContext) {
         var form = new Rocket.FormWebApi(executionContext, "");
-
-
+        form.Process.
 
 	}
     function onSave(executionContext) {

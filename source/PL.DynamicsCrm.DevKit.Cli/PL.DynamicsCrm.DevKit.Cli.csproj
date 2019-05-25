@@ -185,6 +185,9 @@
     <Compile Include="WorkflowTask.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="..\PL.DynamicsCrm.DevKit.Wizard\data\FormBase.js">
+      <Link>Data\FormBase.js</Link>
+    </EmbeddedResource>
     <Content Include="..\version.txt">
       <Link>Nuget\version.txt</Link>
     </Content>

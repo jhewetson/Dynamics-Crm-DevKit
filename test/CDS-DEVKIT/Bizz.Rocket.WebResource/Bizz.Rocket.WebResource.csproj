@@ -131,11 +131,11 @@
     </Content>
     <Content Include="test\SpecExtensions.js" />
     <Content Include="test\devkit_WebApi.test.html" />
+    <Content Include="xml\Account.form.xml" />
     <Content Include="xml\devkit_WebApi.form.xml" />
     <Content Include="xml\Email.form.xml" />
     <None Include="deploy.debug.bat" />
     <None Include="download.webresources.bat" />
-    <None Include="packages.config" />
     <Content Include="entities\devkit_WebApi.form.js">
       <DependentUpon>devkit_WebApi.js</DependentUpon>
     </Content>
@@ -148,9 +148,7 @@
     <None Include="entities\generator.webapi.bat" />
     <Content Include="test\package.json" />
     <Content Include="test\package-lock.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\packages\PL.DynamicsCrm.DevKit.Analyzers.1.4.0\analyzers\dotnet\cs\PL.DynamicsCrm.DevKit.Analyzers.dll" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\" />
@@ -193,6 +191,9 @@
     <TypeScriptCompile Include="entities\Task.d.ts">
       <DependentUpon>Task.js</DependentUpon>
     </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\PL.DynamicsCrm.DevKit.Analyzers.1.5.0\analyzers\dotnet\cs\PL.DynamicsCrm.DevKit.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />

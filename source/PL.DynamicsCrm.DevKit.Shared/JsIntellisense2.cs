@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Client;
@@ -63,7 +64,6 @@ namespace PL.DynamicsCrm.DevKit.Shared
             _d_ts = _d_ts.Replace("\"", "'");
             return _d_ts;
         }
-
         private string GetOptionSet_d_ts()
         {
             var _d_ts = string.Empty;
@@ -303,13 +303,12 @@ namespace PL.DynamicsCrm.DevKit.Shared
             var hasPartyList = Fields.Where(f => f.FieldType == AttributeTypeCode.PartyList).Any();
             if (hasPartyList)
             {
-                _d_ts += $"\t\t/** The array of object that can cast object to ActivityPartyApi class */\r\n";;
+                _d_ts += $"\t\t/** The array of object that can cast object to ActivityPartyApi class */\r\n"; ;
                 _d_ts += $"\t\tActivityParties: Array<any>;\r\n";
             }
             _d_ts += $"\t}}\r\n";
             return _d_ts;
         }
-
         private string GetForm_d_ts_Header(string formXml)
         {
             var xdoc = XDocument.Parse(formXml);
@@ -318,12 +317,12 @@ namespace PL.DynamicsCrm.DevKit.Shared
                            .Descendants("row")
                            .Descendants("cell")
                            .Descendants("control")
-                            select new IdName
-                            {
-                                Name = x?.Attribute("datafieldname")?.Value,
-                                Id = x?.Attribute("id").Value,
-                                ClassId = x?.Attribute("classid")?.Value
-                            }).ToList();
+                           select new IdName
+                           {
+                               Name = x?.Attribute("datafieldname")?.Value,
+                               Id = x?.Attribute("id").Value,
+                               ClassId = x?.Attribute("classid")?.Value?.ToUpper()
+                           }).ToList();
             headers = headers.OrderBy(x => x.Name).ToList();
             var _d_ts = Get_d_ts_ForListFields(headers);
             if (_d_ts.EndsWith(",\r\n")) _d_ts = _d_ts.TrimEnd(",\r\n".ToCharArray()) + "\r\n";
@@ -343,11 +342,10 @@ namespace PL.DynamicsCrm.DevKit.Shared
             _d_ts = _d_ts.TrimEnd(",\r\n".ToCharArray()) + "\r\n";
             return _d_ts;
         }
-
         private string GetForm_d_ts_Footer(string formXml)
         {
             var xdoc = XDocument.Parse(formXml);
-            var headers = (from x in xdoc.Descendants("footer")
+            var footers = (from x in xdoc.Descendants("footer")
                            .Descendants("rows")
                            .Descendants("row")
                            .Descendants("cell")
@@ -356,14 +354,68 @@ namespace PL.DynamicsCrm.DevKit.Shared
                            {
                                Name = x?.Attribute("datafieldname")?.Value,
                                Id = x?.Attribute("id").Value,
-                               ClassId = x?.Attribute("classid")?.Value
+                               ClassId = x?.Attribute("classid")?.Value?.ToUpper()
                            }).ToList();
-            headers = headers.OrderBy(x => x.Name).ToList();
-            var _d_ts = Get_d_ts_ForListFields(headers);
+            footers = footers.OrderBy(x => x.Name).ToList();
+            var _d_ts = Get_d_ts_ForListFields(footers);
             if (_d_ts.EndsWith(",\r\n")) _d_ts = _d_ts.TrimEnd(",\r\n".ToCharArray()) + "\r\n";
             return _d_ts;
         }
-
+        private string GetForm_d_ts_Process(string formXml)
+        {
+            var _d_ts = string.Empty;
+            var part1 = string.Empty;
+            foreach (var entity in Processes)
+            {
+                var xaml = entity.GetAttributeValue<string>("xaml");
+                var name = entity.GetAttributeValue<string>("name");
+                name = Utility.GetSafeName(name);
+                _d_ts += $"\t\tinterface Process{name} {{\r\n";
+                var xdoc = XDocument.Parse(xaml);
+                var ns = xdoc.Root?.GetNamespaceOfPrefix("mxswa");
+                var rows2 = from x in xdoc.Descendants(ns + "Workflow").Elements(ns + "ActivityReference")
+                            select new
+                            {
+                                DisplayName = x.Attribute("DisplayName")?.Value,
+                                InnerText = x.ToString()
+                            };
+                var fields = new List<IdName>();
+                foreach (var row in rows2)
+                {
+                    var arr = row.DisplayName.Split(" ".ToCharArray());
+                    if (arr.Length == 1) continue;
+                    const string pattern = @"DataFieldName=""\w*""";
+                    foreach (Match m in Regex.Matches(row.InnerText, pattern))
+                    {
+                        var array = m.Value.Split("=".ToCharArray());
+                        var fieldName = array[1].Substring(1, array[1].Length - 2);
+                        var field = new IdName
+                        {
+                            ClassId = ControlClassId.SINGLE_LINE_OF_TEXT,
+                            Name = fieldName,
+                            Id = null
+                        };
+                        fields.Add(field);
+                    }
+                }
+                fields = fields.OrderBy(f => f.Name).ToList();
+                _d_ts += Get_d_ts_ForListFields(fields);
+                _d_ts += $"\t\t}}\r\n";
+                part1 += $"\t\t\t{name}: Process{name};\r\n";
+            }
+            _d_ts += $"\t\tinterface Process extends DevKit.Form.Controls.IControlProcess {{\r\n";
+            _d_ts += part1;
+            _d_ts += $"\t\t}}\r\n";
+            return _d_ts;
+        }
+        private string GetForm_d_ts_Composite(string formXml)
+        {
+            return string.Empty;
+        }
+        private string GetForm_d_ts_QuickForm(string formXml)
+        {
+            return string.Empty;
+        }
         private string GetForm_d_ts_Body(string formXml)
         {
             var part1 = string.Empty;
@@ -413,19 +465,18 @@ namespace PL.DynamicsCrm.DevKit.Shared
                           .Descendants("row")
                           .Descendants("cell")
                           .Descendants("control")
-                          select new IdName
-                          {
-                              Name = x?.Attribute("datafieldname")?.Value,
-                              Id = x?.Attribute("id").Value,
-                              ClassId = x?.Attribute("classid")?.Value
-                          }).Distinct().ToList();
+                        select new IdName
+                        {
+                            Name = x?.Attribute("datafieldname")?.Value,
+                            Id = x?.Attribute("id").Value,
+                            ClassId = x?.Attribute("classid")?.Value?.ToUpper()
+                        }).Distinct().ToList();
             body = body.OrderBy(x => x.Name).ToList();
             _d_ts += Get_d_ts_ForListFields(body);
             if (_d_ts.EndsWith(",\r\n")) _d_ts = _d_ts.TrimEnd(",\r\n".ToCharArray()) + "\r\n";
             _d_ts += $"\t\t}}\r\n";
             return _d_ts;
         }
-
         private string Get_d_ts_ForListFields(List<IdName> list)
         {
             var _d_ts = string.Empty;
@@ -433,7 +484,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
             var previousCount = 0;
             foreach (var item in list)
             {
-                if (item.Name != null)
+                if (item.Name != null && ControlClassId.CONTROLS.Contains(item.ClassId))
                 {
                     var crmAttribute = Fields.FirstOrDefault(x => x.LogicalName == item.Name);
                     var name = crmAttribute.SchemaName;
@@ -506,40 +557,63 @@ namespace PL.DynamicsCrm.DevKit.Shared
                     }
                     else
                     {
-                        _d_ts += $"{jsdoc}\t\t\t{name}: DevKit.Form.Controls.???;\r\n";
+                        _d_ts += $"\t\t\t{item.Name}: DevKit.Form.Controls.ELSE1???;//{item.Id} - {item.ClassId} -- FOR DEBUG \r\n";
                     }
                 }
-                else if (item.Id.ToLower().StartsWith("IFRAME_".ToLower()))
+                else if (ControlClassId.VIRTUAL_CONTROLS.Contains(item.ClassId))
                 {
-                    _d_ts += $"\t\t\t{item.Id}: DevKit.Form.Controls.ControlIFrame;\r\n";
-                }
-                else if (item.Id.ToLower().StartsWith("WebResource_".ToLower()))
-                {
-                    _d_ts += $"\t\t\t{item.Id}: DevKit.Form.Controls.ControlWebResource;\r\n";
-                }
-                else if(item.Id.ToLower() == "notescontrol" && item.ClassId.ToLower() == ControlClassId.NOTE.ToLower())
-                {
-                    _d_ts += $"\t\t\t{item.Id}: DevKit.Form.Controls.ControlNote;\r\n";
-                }
-                else if(item.ClassId.ToLower() == ControlClassId.SUB_GRID.ToLower())
-                {
-                    _d_ts += $"\t\t\t{item.Id}: DevKit.Form.Controls.ControlGrid;\r\n";
-                }
-                else if (item.ClassId.ToLower() == ControlClassId.EMAIL_ENGAGEMENT_ACTIONS.ToLower())
-                {
-                    _d_ts += $"\t\t\t{item.Id}: DevKit.Form.Controls.ControlEmailEngagement;\r\n";
-                }
-                else if (item.ClassId.ToLower() == ControlClassId.EMAIL_RECIPIENT_ACTIVITY.ToLower())
-                {
-                    _d_ts += $"\t\t\t{item.Id}: DevKit.Form.Controls.ControlEmailRecipient;\r\n";
-                }
-                else if (item.ClassId.ToLower() == ControlClassId.TIMER.ToLower())
-                {
-                    _d_ts += $"\t\t\t{item.Id}: DevKit.Form.Controls.ControlTimer;\r\n";
+                    if (item.ClassId == ControlClassId.IFRAME)
+                    {
+                        _d_ts += $"\t\t\t{item.Id}: DevKit.Form.Controls.ControlIFrame;\r\n";
+                    }
+                    else if (item.ClassId == ControlClassId.WEB_RESOURCE)
+                    {
+                        _d_ts += $"\t\t\t{item.Id}: DevKit.Form.Controls.ControlWebResource;\r\n";
+                    }
+                    else if (item.Id.ToLower() == "notescontrol" && item.ClassId == ControlClassId.NOTE)
+                    {
+                        _d_ts += $"\t\t\t{item.Id}: DevKit.Form.Controls.ControlNote;\r\n";
+                    }
+                    else if (item.ClassId == ControlClassId.SUB_GRID)
+                    {
+                        _d_ts += $"\t\t\t{item.Id}: DevKit.Form.Controls.ControlGrid;\r\n";
+                    }
+                    else if (item.ClassId == ControlClassId.EMAIL_ENGAGEMENT_ACTIONS)
+                    {
+                        _d_ts += $"\t\t\t{item.Id}: DevKit.Form.Controls.ControlEmailEngagement;\r\n";
+                    }
+                    else if (item.ClassId == ControlClassId.EMAIL_RECIPIENT_ACTIVITY)
+                    {
+                        _d_ts += $"\t\t\t{item.Id}: DevKit.Form.Controls.ControlEmailRecipient;\r\n";
+                    }
+                    else if (item.ClassId == ControlClassId.TIMER)
+                    {
+                        _d_ts += $"\t\t\t{item.Id}: DevKit.Form.Controls.ControlTimer;\r\n";
+                    }
+                    else if (item.ClassId == ControlClassId.ACI_WIDGET)
+                    {
+                        _d_ts += $"\t\t\t{item.Id}: DevKit.Form.Controls.ControlAciWidget;\r\n";
+                    }
+                    else if (item.ClassId == ControlClassId.QUICK_VIEW_FORM)
+                    {
+                        _d_ts += $"\t\t\t{item.Id}: DevKit.Form.Controls.ControlQuickView;\r\n";
+                    }
+                    else if (item.ClassId == ControlClassId.MAP_CONTROL)
+                    {
+                        _d_ts += $"\t\t\t{item.Id}: DevKit.Form.Controls.ControlMap;\r\n";
+                    }
+                    else if (item.ClassId == ControlClassId.ACTION_CARDS)
+                    {
+                        _d_ts += $"\t\t\t{item.Id}: DevKit.Form.Controls.ControlActionCards;\r\n";
+                    }
+                    else
+                    {
+                        _d_ts += $"\t\t\t{item.Name}: DevKit.Form.Controls.ELSE2???;//{item.Id} - {item.ClassId} -- FOR DEBUG \r\n";
+                    }
                 }
                 else
                 {
-                    _d_ts += $"\t\t\t{item.Id}: DevKit.Form.Controls.???;\r\n";
+                    _d_ts += $"\t\t\t{item.Name}: DevKit.Form.Controls.ELSE3???;//{item.Id} - {item.ClassId} -- FOR DEBUG \r\n";
                 }
             }
             _d_ts = _d_ts.TrimEnd(",\r\n".ToCharArray()) + "\r\n";
@@ -552,7 +626,8 @@ namespace PL.DynamicsCrm.DevKit.Shared
             foreach (var form in ProcessForms)
             {
                 if (form.IsQuickCreate) continue;
-                _d_ts += $"\tnamespace Form{GetSafeName(form.Name)} {{\r\n";
+                _d_ts += $"\tnamespace Form{Utility.GetSafeName(form.Name)} {{\r\n";
+
                 var form_d_ts_Header = GetForm_d_ts_Header(form.FormXml);
                 if (form_d_ts_Header.Length > 0)
                 {
@@ -581,43 +656,78 @@ namespace PL.DynamicsCrm.DevKit.Shared
                     _d_ts += $"\t\t}}\r\n";
                 }
 
-                _d_ts += $"\t\tinterface QuickForm {{\r\n";
-                _d_ts += $"\t\t}}\r\n";
-                //_d_ts += $"\t\tinterface Composite {{\r\n";
-                //_d_ts += $"\t\t}}\r\n";
-                _d_ts += $"\t\tinterface Process extends DevKit.Form.Controls.IControlProcess {{\r\n";
-                _d_ts += $"\t\t}}\r\n";
+                var form_d_ts_QuickForm = GetForm_d_ts_QuickForm(form.FormXml);
+                if (form_d_ts_QuickForm.Length > 0)
+                {
+                    _d_ts += $"\t\tinterface QuickForm {{\r\n";
+                    _d_ts += form_d_ts_QuickForm;
+                    _d_ts += $"\t\t}}\r\n";
+                }
+
+                var form_d_ts_Composite = GetForm_d_ts_Composite(form.FormXml);
+                if (form_d_ts_Composite.Length > 0)
+                {
+                    _d_ts += form_d_ts_Composite;
+                }
+
+                var form_d_ts_Process = GetForm_d_ts_Process(form.FormXml);
+                if (form_d_ts_Process.Length > 0)
+                {
+                    _d_ts += form_d_ts_Process;
+                }
                 _d_ts += $"\t}}\r\n";
-                var formBase = Utility.ReadEmbeddedResource("PL.DynamicsCrm.DevKit.Wizard.data.FormBase.js");
-                formBase = formBase.Replace(@"{0}", GetSafeName(form.Name));
-                formBase = formBase.Replace(@"{1}", ProjectName);
+                var formBase = string.Empty;
+                var formName = Utility.GetSafeName(form.Name);
+                formBase += $"\tclass Form{formName} extends DevKit.Form.IForm {{\r\n";
+                formBase += $"\t\t/**\r\n";
+                formBase += $"\t\t* PL.DynamicsCrm.DevKit form {formName}\r\n";
+                formBase += $"\t\t* @param executionContext the execution context\r\n";
+                formBase += $"\t\t* @param defaultWebResourceName default resource name. E.g.: \"devkit_/resources/Resource\"\r\n";
+                formBase += $"\t\t*/\r\n";
+                formBase += $"\t\tconstructor(executionContext: any, defaultWebResourceName?: string);\r\n";
+                formBase += $"\t\t/** Utility functions/methods/objects for Dynamics 365 form */\r\n";
+                formBase += $"\t\tUtility: DevKit.Form.Utility;\r\n";
+                formBase += $"\t\t/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */\r\n";
+                formBase += $"\t\tWebApi: DevKit.Form.WebApi;\r\n";
+                if (form_d_ts_Body.Length > 0)
+                {
+                    formBase += $"\t\t/** The Body section of form {formName} */\r\n";
+                    formBase += $"\t\tBody: {ProjectName}.Form{formName}.Body;\r\n";
+                }
+                if (form_d_ts_Footer.Length > 0)
+                {
+                    formBase += $"\t\t/** The Footer section of form {formName} */\r\n";
+                    formBase += $"\t\tFooter: {ProjectName}.Form{formName}.Footer;\r\n";
+                }
+                if (form_d_ts_Header.Length > 0)
+                {
+                    formBase += $"\t\t/** The Header section of form {formName} */\r\n";
+                    formBase += $"\t\tHeader: {ProjectName}.Form{formName}.Header;\r\n";
+                }
+                if (form_d_ts_Navigation.Length > 0)
+                {
+                    formBase += $"\t\t/** The Navigation of form {formName} */\r\n";
+                    formBase += $"\t\tNavigation: {ProjectName}.Form{formName}.Navigation;\r\n";
+                }
+                if (form_d_ts_QuickForm.Length > 0)
+                {
+                    formBase += $"\t\t/** The QuickForm of form {formName} */\r\n";
+                    formBase += $"\t\tQuickForm: {ProjectName}.Form{formName}.QuickForm;\r\n";
+                }
+                if(form_d_ts_Composite.Length > 0)
+                {
+                    formBase += $"\t\t/** The Composite of form {formName} */\r\n";
+                    formBase += $"\t\tComposite: {ProjectName}.Form{formName}.Composite;\r\n";
+                }
+                if (form_d_ts_Process.Length > 0)
+                {
+                    formBase += $"\t\t/** The Process of form {formName} */\r\n";
+                    formBase += $"\t\tProcess: {ProjectName}.Form{formName}.Process;\r\n";
+                }
+                formBase += $"\t}}\r\n";
                 _d_ts += formBase;
             }
             return _d_ts;
-        }
-
-        private static string GetSafeName(string name)
-        {
-            name = name.Replace(" ", "");
-            name = name.Replace("'", string.Empty);
-            name = name.Replace("-", "_");
-            name = name.Replace("(", string.Empty);
-            name = name.Replace(")", string.Empty);
-            name = name.Replace("/", string.Empty);
-            name = name.Replace("%", string.Empty);
-            name = name.Replace(",", string.Empty);
-            name = name.Replace("$", string.Empty);
-            name = name.Replace(".", string.Empty);
-            name = name.Replace("{", string.Empty);
-            name = name.Replace("}", string.Empty);
-            name = name.Replace(":", string.Empty);
-            name = name.Replace(";", string.Empty);
-            name = name.Replace("&", string.Empty);
-            name = name.Replace("=", string.Empty);
-            name = name.Replace("+", string.Empty);
-            name = name.Replace("-", string.Empty);
-            name = name.Replace(".", string.Empty);
-            return name;
         }
     }
 }

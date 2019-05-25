@@ -1578,6 +1578,18 @@ declare namespace DevKit {
             interface ControlTimer {
 
             }
+            interface ControlMap {
+
+            }
+            interface ControlActionCards {
+
+            }
+            interface ControlQuickView {
+
+            }
+            interface ControlAciWidget {
+
+            }
         }
         abstract class IForm {
             /**

@@ -24,7 +24,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
                 foreach (var form in ProcessForms)
                 {
                     if (form.IsQuickCreate) continue;
-                    formIntellisense += $"{ProjectName}.Form{GetSafeName(form.Name)} = function (executionContext, defaultWebResourceName) {{\r\n";
+                    formIntellisense += $"{ProjectName}.Form{Utility.GetSafeName(form.Name)} = function (executionContext, defaultWebResourceName) {{\r\n";
                     formIntellisense += $"\tvar {EntityName.ToLower()} = intellisense.Form;\r\n";
                     formIntellisense += $"\t{EntityName.ToLower()}.Utility = intellisense.Utility;\r\n";
                     formIntellisense += $"\tvar tab = {{}};\r\n";
@@ -88,7 +88,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
                 foreach (var form in ProcessForms)
                 {
                     if (!form.IsQuickCreate) continue;
-                    formIntellisense += $"{ProjectName}.Form{GetSafeName(form.Name)} = function (executionContext, defaultWebResourceName) {{\r\n";
+                    formIntellisense += $"{ProjectName}.Form{Utility.GetSafeName(form.Name)} = function (executionContext, defaultWebResourceName) {{\r\n";
                     formIntellisense += $"\tvar {EntityName.ToLower()} = intellisense.FormQuickCreate;\r\n";
                     formIntellisense += $"\t{EntityName.ToLower()}.Utility = intellisense.Utility;\r\n";
                     formIntellisense += $"\t///<field name=\"section\" type=\"Object\"></field>\r\n";
@@ -98,7 +98,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
                             .Descendants("column").Descendants("sections").Descendants("section")
                                     select (string)x?.Attribute("name")).ToList();
                     foreach (var section in sections)
-                        formIntellisense += $"\t\t{GetSafeName(section)}: intellisense.FormSection,\r\n";
+                        formIntellisense += $"\t\t{Utility.GetSafeName(section)}: intellisense.FormSection,\r\n";
                     formIntellisense = formIntellisense.TrimEnd(",\r\n".ToCharArray()) + "\r\n";
                     formIntellisense += $"\t}}\r\n";
                     formIntellisense += $"\tvar body = {{\r\n";
@@ -369,30 +369,6 @@ namespace PL.DynamicsCrm.DevKit.Shared
         public bool IsJsWebApi { get; internal set; }
         public bool IsDebugWebApi { get; internal set; }
 
-        private static string GetSafeName(string name)
-        {
-            name = name.Replace(" ", "");
-            name = name.Replace("'", string.Empty);
-            name = name.Replace("-", "_");
-            name = name.Replace("(", string.Empty);
-            name = name.Replace(")", string.Empty);
-            name = name.Replace("/", string.Empty);
-            name = name.Replace("%", string.Empty);
-            name = name.Replace(",", string.Empty);
-            name = name.Replace("$", string.Empty);
-            name = name.Replace(".", string.Empty);
-            name = name.Replace("{", string.Empty);
-            name = name.Replace("}", string.Empty);
-            name = name.Replace(":", string.Empty);
-            name = name.Replace(";", string.Empty);
-            name = name.Replace("&", string.Empty);
-            name = name.Replace("=", string.Empty);
-            name = name.Replace("+", string.Empty);
-            name = name.Replace("-", string.Empty);
-            name = name.Replace(".", string.Empty);
-            return name;
-        }
-
         private string GetJsIntellisenseForm(string formXml)
         {
             var intellisense = string.Empty;
@@ -559,7 +535,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
             {
                 var xaml = entity.GetAttributeValue<string>("xaml");
                 var name = entity.GetAttributeValue<string>("name");
-                name = GetSafeName(name);
+                name = Utility.GetSafeName(name);
                 intellisense += $"\tvar _{name} = {{\r\n";
 
                 var xdoc = XDocument.Parse(xaml);

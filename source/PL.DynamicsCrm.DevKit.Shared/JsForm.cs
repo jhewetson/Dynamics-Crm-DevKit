@@ -281,30 +281,6 @@ namespace PL.DynamicsCrm.DevKit.Shared
             return code;
         }
 
-        private static string GetSafeName(string name)
-        {
-            name = name.Replace(" ", "");
-            name = name.Replace("'", string.Empty);
-            name = name.Replace("-", "_");
-            name = name.Replace("(", string.Empty);
-            name = name.Replace(")", string.Empty);
-            name = name.Replace("/", string.Empty);
-            name = name.Replace("%", string.Empty);
-            name = name.Replace(",", string.Empty);
-            name = name.Replace("$", string.Empty);
-            name = name.Replace(".", string.Empty);
-            name = name.Replace("{", string.Empty);
-            name = name.Replace("}", string.Empty);
-            name = name.Replace(":", string.Empty);
-            name = name.Replace(";", string.Empty);
-            name = name.Replace("&", string.Empty);
-            name = name.Replace("=", string.Empty);
-            name = name.Replace("+", string.Empty);
-            name = name.Replace("-", string.Empty);
-            name = name.Replace(".", string.Empty);
-            return name;
-        }
-
         private string GetJsFormBody(string formXml)
         {
             var xdoc = XDocument.Parse(formXml);
@@ -389,7 +365,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
             {
                 var xaml = entity.GetAttributeValue<string>("xaml");
                 var name = entity.GetAttributeValue<string>("name");
-                name = GetSafeName(name);
+                name = Utility.GetSafeName(name);
                 code += $"\t\tvar _{name} = {{\r\n";
 
                 var xdoc = XDocument.Parse(xaml);
@@ -464,7 +440,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
             code += $"///<reference path='[[{EntityName}]]' />\r\n";
             foreach (var form in processForms)
             {
-                code += $"var form{GetSafeName(form.Name)} = (function () {{\r\n";
+                code += $"var form{Utility.GetSafeName(form.Name)} = (function () {{\r\n";
                 code += $"\tfunction onLoad(executionContext) {{\r\n";
                 code += $"\t}}\r\n";
                 code += $"\tfunction onSave(executionContext) {{\r\n";
@@ -492,7 +468,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
             foreach (var form in processForms)
             {
                 if (form.IsQuickCreate) continue;
-                formCode += $"\t{ProjectName}.Form{GetSafeName(form.Name)} = function(executionContext, defaultWebResourceName) {{\r\n";
+                formCode += $"\t{ProjectName}.Form{Utility.GetSafeName(form.Name)} = function(executionContext, defaultWebResourceName) {{\r\n";
                 formCode += $"\t\tvar formContext = null;\r\n";
                 formCode += $"\t\tif (executionContext !== undefined) {{\r\n";
                 formCode += $"\t\t\tif (executionContext.getFormContext === undefined) {{\r\n";
@@ -565,7 +541,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
             foreach (var form in processForms)
             {
                 if (!form.IsQuickCreate) continue;
-                formCode += $"\t{ProjectName}.Form{GetSafeName(form.Name)} = function(executionContext, defaultWebResourceName) {{\r\n";
+                formCode += $"\t{ProjectName}.Form{Utility.GetSafeName(form.Name)} = function(executionContext, defaultWebResourceName) {{\r\n";
                 formCode += $"\t\tvar formContext = null;\r\n";
                 formCode += $"\t\tif (executionContext !== undefined)\r\n";
                 formCode += $"\t\t{{\r\n";

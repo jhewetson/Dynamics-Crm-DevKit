@@ -1,404 +1,467 @@
-﻿///<reference path='devkit.d.ts' />
-declare namespace Rocket {
-	namespace FormEmail {
-		interface Header {
-			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
-			OwnerId: DevKit.Form.Controls.ControlLookup;
-			/** Select the priority so that preferred customers or critical issues are handled quickly. */
-			PriorityCode: DevKit.Form.Controls.ControlOptionSet;
-			/** Enter the expected due date and time for the activity to be completed to provide details about when the email will be sent. */
-			ScheduledEnd: DevKit.Form.Controls.ControlDateTime;
-			/** Select the email's status. */
-			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+﻿///<reference path='devkit.intellisense.js' />
+Rocket.FormEmail = function (executionContext, defaultWebResourceName) {
+	var email = intellisense.Form;
+	email.Utility = intellisense.Utility;
+	var tab = {};
+	tab.Email = {
+		///<field name='AddTabStateChange' type='Function'></field>
+		AddTabStateChange: intellisense.FunctionTabAddTabStateChange,
+		///<field name='DisplayState' type='OptionSet.TabDisplayState'>[GetSet] a value that indicates whether the tab is collapsed or expanded.</field>
+		DisplayState: '',
+		///<field name='Focus' type='Function'></field>
+		Focus: intellisense.FunctionControlFocus,
+		///<field name='Label' type='String'>[GetSet] the tab label.</field>
+		Label: '',
+		///<field name='Name' type='String'>[Get] returns the name of the tab.</field>
+		Name: '',
+		///<field name='Parent' type='Object'>[Get] returns the formContext.ui object containing the tab.</field>
+		Parent: '',
+		///<field name='Visible' type='Boolean'>[GetSet] a value that indicates whether the tab is currently visible or not.</field>
+		Visible: '',
+		///<field name='RemoveTabStateChange' type='Function'></field>
+		RemoveTabStateChange: intellisense.FunctionTabRemoveTabStateChange,
+		///<field name='Section' type='Object'>A section contains methods to manage how it appears as well as accessing the tab that contains the section.</field>
+		Section: {
+			recipient_information: intellisense.FormSection,
+			email_description: intellisense.FormSection,
+			Regarding_information: intellisense.FormSection,
+			attachments: intellisense.FormSection,
+			emailengagementactions: intellisense.FormSection,
+			Emailrecipient_section_6: intellisense.FormSection,
+			tab_4_section_2: intellisense.FormSection
 		}
-		interface tab_Email_Sections {
-			recipient_information: DevKit.Form.Controls.ControlSection;
-			email_description: DevKit.Form.Controls.ControlSection;
-			Regarding_information: DevKit.Form.Controls.ControlSection;
-			attachments: DevKit.Form.Controls.ControlSection;
-			emailengagementactions: DevKit.Form.Controls.ControlSection;
-			Emailrecipient_section_6: DevKit.Form.Controls.ControlSection;
-			tab_4_section_2: DevKit.Form.Controls.ControlSection;
-		}
-		interface tab_Email extends DevKit.Form.Controls.IControlTab {
-			Section: tab_Email_Sections;
-		}
-		interface Tabs {
-			Email: tab_Email;
-		}
-		interface Body {
-			Tab: Tabs;
-			attachmentsGrid: DevKit.Form.Controls.ControlGrid;
-			emailengagementactionscontrol: DevKit.Form.Controls.ControlEmailEngagement;
-			emailrecipientactivitycontrol: DevKit.Form.Controls.ControlEmailRecipient;
-			/** Type the number of minutes spent creating and sending the email. The duration is used in reporting. */
-			ActualDurationMinutes: DevKit.Form.Controls.ControlInteger;
-			/** Enter the recipients that are included on the email distribution, but are not displayed to other recipients. */
-			bcc: DevKit.Form.Controls.ControlLookup;
-			/** Enter the recipients that should be copied on the email. */
-			cc: DevKit.Form.Controls.ControlLookup;
-			/** Type the greeting and message text of the email. */
-			Description: DevKit.Form.Controls.ControlString;
-			/** Enter the sender of the email. */
-			from: DevKit.Form.Controls.ControlLookup;
-			/** Choose the record that the email relates to. */
-			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
-			/** Type a short description about the objective or primary topic of the email. */
-			Subject: DevKit.Form.Controls.ControlString;
-			/** Enter the account, contact, lead, queue, or user recipients for the email. */
-			to: DevKit.Form.Controls.ControlLookup;
-		}
-		interface Footer {
-			/** For internal use only. Shows whether this email is followed. This is evaluated state which overrides user selection of follow email. */
-			IsEmailFollowed: DevKit.Form.Controls.ControlBoolean;
-			/** For internal use only. Shows whether this email Reminder is Set. */
-			IsEmailReminderSet: DevKit.Form.Controls.ControlBoolean;
-		}
-		interface Navigation {
+	};
+	var body = {
+		///<field name='Tab' type='Object'>A tab is a group of sections on a page</field>
+		Tab: tab,
+		///<field name='ActualDurationMinutes' type='Integer'></field>
+		ActualDurationMinutes: intellisense.FieldNumber,
+		///<field name='Description' type='String'></field>
+		Description: intellisense.FieldString,
+		///<field name='RegardingObjectId' type='Lookup'></field>
+		RegardingObjectId: intellisense.FieldLookup,
+		///<field name='Subject' type='String'></field>
+		Subject: intellisense.FieldString
+	};
+	email.Body = body;
+	var header = {
+		///<field name='OwnerId' type='Lookup'></field>
+		OwnerId: intellisense.FieldLookup,
+		///<field name='PriorityCode' type='OptionSet'></field>
+		PriorityCode: intellisense.FieldOptionSet,
+		///<field name='ScheduledEnd' type='DateTime'></field>
+		ScheduledEnd: intellisense.FieldDateTime,
+		///<field name='StatusCode' type='OptionSet'></field>
+		StatusCode: intellisense.FieldOptionSet
+	};
+	email.Header = header;
+	var footer = {
+		///<field name='IsEmailFollowed' type='Boolean'></field>
+		IsEmailFollowed: intellisense.FieldBoolean,
+		///<field name='IsEmailReminderSet' type='Boolean'></field>
+		IsEmailReminderSet: intellisense.FieldBoolean
+	};
+	email.Footer = footer;
+	var quickForm = {
 
+	};
+	email.QuickForm = quickForm;
+	var navigation = {
+
+	};
+	email.Navigation = navigation;
+	email.OptionSet = {};
+	///<field name='CorrelationMethod' type='PickList'></field>
+	email.OptionSet.CorrelationMethod = {
+		///<field name='None' type='PickListValue'>None = 0</field>
+		None: 0,
+		///<field name='Skipped' type='PickListValue'>Skipped = 1</field>
+		Skipped: 1,
+		///<field name='XHeader' type='PickListValue'>XHeader = 2</field>
+		XHeader: 2,
+		///<field name='InReplyTo' type='PickListValue'>InReplyTo = 3</field>
+		InReplyTo: 3,
+		///<field name='TrackingToken' type='PickListValue'>TrackingToken = 4</field>
+		TrackingToken: 4,
+		///<field name='ConversationIndex' type='PickListValue'>ConversationIndex = 5</field>
+		ConversationIndex: 5,
+		///<field name='SmartMatching' type='PickListValue'>SmartMatching = 6</field>
+		SmartMatching: 6,
+		///<field name='CustomCorrelation' type='PickListValue'>CustomCorrelation = 7</field>
+		CustomCorrelation: 7
+	};
+	///<field name='DeliveryPriorityCode' type='PickList'></field>
+	email.OptionSet.DeliveryPriorityCode = {
+		///<field name='Low' type='PickListValue'>Low = 0</field>
+		Low: 0,
+		///<field name='Normal' type='PickListValue'>Normal = 1</field>
+		Normal: 1,
+		///<field name='High' type='PickListValue'>High = 2</field>
+		High: 2
+	};
+	///<field name='EmailReminderStatus' type='PickList'></field>
+	email.OptionSet.EmailReminderStatus = {
+		///<field name='NotSet' type='PickListValue'>NotSet = 0</field>
+		NotSet: 0,
+		///<field name='ReminderSet' type='PickListValue'>ReminderSet = 1</field>
+		ReminderSet: 1,
+		///<field name='ReminderExpired' type='PickListValue'>ReminderExpired = 2</field>
+		ReminderExpired: 2,
+		///<field name='ReminderInvalid' type='PickListValue'>ReminderInvalid = 3</field>
+		ReminderInvalid: 3
+	};
+	///<field name='EmailReminderType' type='PickList'></field>
+	email.OptionSet.EmailReminderType = {
+		///<field name='If_I_do_not_receive_a_reply_by' type='PickListValue'>If_I_do_not_receive_a_reply_by = 0</field>
+		If_I_do_not_receive_a_reply_by: 0,
+		///<field name='If_the_email_is_not_opened_by' type='PickListValue'>If_the_email_is_not_opened_by = 1</field>
+		If_the_email_is_not_opened_by: 1,
+		///<field name='Remind_me_anyways_at' type='PickListValue'>Remind_me_anyways_at = 2</field>
+		Remind_me_anyways_at: 2
+	};
+	///<field name='Notifications' type='PickList'></field>
+	email.OptionSet.Notifications = {
+		///<field name='None' type='PickListValue'>None = 0</field>
+		None: 0,
+		///<field name='The_message_was_saved_as_a_Microsoft_Dynamics_365_email_record_but_not_all_the_attachments_could_be_saved_with_it_An_attachment_cannot_be_saved_if_it_is_blocked_or_if_its_file_type_is_invalid' type='PickListValue'>The_message_was_saved_as_a_Microsoft_Dynamics_365_email_record_but_not_all_the_attachments_could_be_saved_with_it_An_attachment_cannot_be_saved_if_it_is_blocked_or_if_its_file_type_is_invalid = 1</field>
+		The_message_was_saved_as_a_Microsoft_Dynamics_365_email_record_but_not_all_the_attachments_could_be_saved_with_it_An_attachment_cannot_be_saved_if_it_is_blocked_or_if_its_file_type_is_invalid: 1,
+		///<field name='Truncated_body' type='PickListValue'>Truncated_body = 2</field>
+		Truncated_body: 2
+	};
+	///<field name='PriorityCode' type='PickList'></field>
+	email.OptionSet.PriorityCode = {
+		///<field name='Low' type='PickListValue'>Low = 0</field>
+		Low: 0,
+		///<field name='Normal' type='PickListValue'>Normal = 1</field>
+		Normal: 1,
+		///<field name='High' type='PickListValue'>High = 2</field>
+		High: 2
+	};
+	///<field name='StateCode' type='PickList'></field>
+	email.OptionSet.StateCode = {
+		///<field name='Open' type='PickListValue'>Open = 0</field>
+		Open: 0,
+		///<field name='Completed' type='PickListValue'>Completed = 1</field>
+		Completed: 1,
+		///<field name='Canceled' type='PickListValue'>Canceled = 2</field>
+		Canceled: 2
+	};
+	///<field name='StatusCode' type='PickList'></field>
+	email.OptionSet.StatusCode = {
+		///<field name='Draft' type='PickListValue'>Draft = 1</field>
+		Draft: 1,
+		///<field name='Completed' type='PickListValue'>Completed = 2</field>
+		Completed: 2,
+		///<field name='Sent' type='PickListValue'>Sent = 3</field>
+		Sent: 3,
+		///<field name='Received' type='PickListValue'>Received = 4</field>
+		Received: 4,
+		///<field name='Canceled' type='PickListValue'>Canceled = 5</field>
+		Canceled: 5,
+		///<field name='Pending_Send' type='PickListValue'>Pending_Send = 6</field>
+		Pending_Send: 6,
+		///<field name='Sending' type='PickListValue'>Sending = 7</field>
+		Sending: 7,
+		///<field name='Failed' type='PickListValue'>Failed = 8</field>
+		Failed: 8
+	};
+	return email;
+};
+Rocket.EmailApi = function (entity) {
+	return {
+		///<field name='ActivityAdditionalParams' type='Memo'>Edm.String</field>
+		ActivityAdditionalParams: intellisense.EntityValue,
+		///<field name='ActivityId' type='Uniqueidentifier'>Edm.Guid</field>
+		ActivityId: intellisense.EntityValue,
+		///<field name='ActualDurationMinutes' type='Integer'>Edm.Int32</field>
+		ActualDurationMinutes: intellisense.EntityValue,
+		///<field name='ActualEnd_UtcDateOnly' type='DateTime'>Edm.DateTimeOffset</field>
+		ActualEnd_UtcDateOnly: intellisense.EntityValue,
+		///<field name='ActualStart_UtcDateOnly' type='DateTime'>Edm.DateTimeOffset</field>
+		ActualStart_UtcDateOnly: intellisense.EntityValue,
+		///<field name='AttachmentCount' type='Integer'>ReadOnly - Edm.Int32</field>
+		AttachmentCount: intellisense.EntityValue,
+		///<field name='AttachmentOpenCount' type='Integer'>Edm.Int32</field>
+		AttachmentOpenCount: intellisense.EntityValue,
+		///<field name='BaseConversationIndexHash' type='Integer'>Edm.Int32</field>
+		BaseConversationIndexHash: intellisense.EntityValue,
+		///<field name='Category' type='String'>Edm.String</field>
+		Category: intellisense.EntityValue,
+		///<field name='Compressed' type='Boolean'>ReadOnly - Edm.Boolean</field>
+		Compressed: intellisense.EntityValue,
+		///<field name='ConversationIndex' type='String'>ReadOnly - Edm.String</field>
+		ConversationIndex: intellisense.EntityValue,
+		///<field name='ConversationTrackingId' type='Uniqueidentifier'>Edm.Guid</field>
+		ConversationTrackingId: intellisense.EntityValue,
+		///<field name='CorrelationMethod' type='OptionSet'>ReadOnly - Edm.Int32 - this.OptionSet.CorrelationMethod</field>
+		CorrelationMethod: intellisense.EntityValue,
+		///<field name='CreatedBy' type='Lookup'>ReadOnly - Edm.Guid</field>
+		CreatedBy: intellisense.EntityValue,
+		///<field name='CreatedOn_UtcDateAndTime' type='DateTime'>ReadOnly - Edm.DateTimeOffset</field>
+		CreatedOn_UtcDateAndTime: intellisense.EntityValue,
+		///<field name='CreatedOnBehalfBy' type='Lookup'>ReadOnly - Edm.Guid</field>
+		CreatedOnBehalfBy: intellisense.EntityValue,
+		///<field name='DelayedEmailSendTime_UtcDateAndTime' type='DateTime'>Edm.DateTimeOffset</field>
+		DelayedEmailSendTime_UtcDateAndTime: intellisense.EntityValue,
+		///<field name='DeliveryAttempts' type='Integer'>Edm.Int32</field>
+		DeliveryAttempts: intellisense.EntityValue,
+		///<field name='DeliveryPriorityCode' type='OptionSet'>Edm.Int32 - this.OptionSet.DeliveryPriorityCode</field>
+		DeliveryPriorityCode: intellisense.EntityValue,
+		///<field name='DeliveryReceiptRequested' type='Boolean'>Edm.Boolean</field>
+		DeliveryReceiptRequested: intellisense.EntityValue,
+		///<field name='Description' type='Memo'>Edm.String</field>
+		Description: intellisense.EntityValue,
+		///<field name='DirectionCode' type='Boolean'>Edm.Boolean</field>
+		DirectionCode: intellisense.EntityValue,
+		///<field name='EmailReminderExpiryTime_UtcDateAndTime' type='DateTime'>Edm.DateTimeOffset</field>
+		EmailReminderExpiryTime_UtcDateAndTime: intellisense.EntityValue,
+		///<field name='EmailReminderStatus' type='OptionSet'>ReadOnly - Edm.Int32 - this.OptionSet.EmailReminderStatus</field>
+		EmailReminderStatus: intellisense.EntityValue,
+		///<field name='EmailReminderText' type='String'>Edm.String</field>
+		EmailReminderText: intellisense.EntityValue,
+		///<field name='EmailReminderType' type='OptionSet'>Edm.Int32 - this.OptionSet.EmailReminderType</field>
+		EmailReminderType: intellisense.EntityValue,
+		///<field name='EmailSender' type='Lookup'>ReadOnly - Edm.Guid</field>
+		emailsender_account: intellisense.EntityValue,
+		///<field name='EmailSender' type='Lookup'>ReadOnly - Edm.Guid</field>
+		emailsender_contact: intellisense.EntityValue,
+		///<field name='EmailSender' type='Lookup'>ReadOnly - Edm.Guid</field>
+		emailsender_queue: intellisense.EntityValue,
+		///<field name='EmailSender' type='Lookup'>ReadOnly - Edm.Guid</field>
+		emailsender_systemuser: intellisense.EntityValue,
+		///<field name='EmailTrackingId' type='Uniqueidentifier'>Edm.Guid</field>
+		EmailTrackingId: intellisense.EntityValue,
+		///<field name='ExchangeRate' type='Decimal'>ReadOnly - Edm.Decimal</field>
+		ExchangeRate: intellisense.EntityValue,
+		///<field name='FollowEmailUserPreference' type='Boolean'>Edm.Boolean</field>
+		FollowEmailUserPreference: intellisense.EntityValue,
+		///<field name='ImportSequenceNumber' type='Integer'>Edm.Int32</field>
+		ImportSequenceNumber: intellisense.EntityValue,
+		///<field name='InReplyTo' type='String'>ReadOnly - Edm.String</field>
+		InReplyTo: intellisense.EntityValue,
+		///<field name='IsBilled' type='Boolean'>Edm.Boolean</field>
+		IsBilled: intellisense.EntityValue,
+		///<field name='IsEmailFollowed' type='Boolean'>ReadOnly - Edm.Boolean</field>
+		IsEmailFollowed: intellisense.EntityValue,
+		///<field name='IsEmailReminderSet' type='Boolean'>ReadOnly - Edm.Boolean</field>
+		IsEmailReminderSet: intellisense.EntityValue,
+		///<field name='IsRegularActivity' type='Boolean'>ReadOnly - Edm.Boolean</field>
+		IsRegularActivity: intellisense.EntityValue,
+		///<field name='IsUnsafe' type='Integer'>ReadOnly - Edm.Int32</field>
+		IsUnsafe: intellisense.EntityValue,
+		///<field name='IsWorkflowCreated' type='Boolean'>Edm.Boolean</field>
+		IsWorkflowCreated: intellisense.EntityValue,
+		///<field name='LastOnHoldTime_UtcDateAndTime' type='DateTime'>Edm.DateTimeOffset</field>
+		LastOnHoldTime_UtcDateAndTime: intellisense.EntityValue,
+		///<field name='LastOpenedTime_UtcDateAndTime' type='DateTime'>Edm.DateTimeOffset</field>
+		LastOpenedTime_UtcDateAndTime: intellisense.EntityValue,
+		///<field name='LinksClickedCount' type='Integer'>Edm.Int32</field>
+		LinksClickedCount: intellisense.EntityValue,
+		///<field name='MessageId' type='String'>Edm.String</field>
+		MessageId: intellisense.EntityValue,
+		///<field name='MimeType' type='String'>Edm.String</field>
+		MimeType: intellisense.EntityValue,
+		///<field name='ModifiedBy' type='Lookup'>ReadOnly - Edm.Guid</field>
+		ModifiedBy: intellisense.EntityValue,
+		///<field name='ModifiedOn_UtcDateAndTime' type='DateTime'>ReadOnly - Edm.DateTimeOffset</field>
+		ModifiedOn_UtcDateAndTime: intellisense.EntityValue,
+		///<field name='ModifiedOnBehalfBy' type='Lookup'>ReadOnly - Edm.Guid</field>
+		ModifiedOnBehalfBy: intellisense.EntityValue,
+		///<field name='Notifications' type='OptionSet'>Edm.Int32 - this.OptionSet.Notifications</field>
+		Notifications: intellisense.EntityValue,
+		///<field name='OnHoldTime' type='Integer'>ReadOnly - Edm.Int32</field>
+		OnHoldTime: intellisense.EntityValue,
+		///<field name='OpenCount' type='Integer'>Edm.Int32</field>
+		OpenCount: intellisense.EntityValue,
+		///<field name='OverriddenCreatedOn_UtcDateOnly' type='DateTime'>Edm.DateTimeOffset</field>
+		OverriddenCreatedOn_UtcDateOnly: intellisense.EntityValue,
+		///<field name='OwnerId_systemuser' type='Lookup'></field>
+		OwnerId_systemuser: intellisense.EntityValue,
+		///<field name='OwnerId_team' type='Lookup'></field>
+		OwnerId_team: intellisense.EntityValue,
+		///<field name='OwningBusinessUnit' type='Lookup'>ReadOnly - Edm.Guid</field>
+		OwningBusinessUnit: intellisense.EntityValue,
+		///<field name='OwningTeam' type='Lookup'>ReadOnly - Edm.Guid</field>
+		OwningTeam: intellisense.EntityValue,
+		///<field name='OwningUser' type='Lookup'>ReadOnly - Edm.Guid</field>
+		OwningUser: intellisense.EntityValue,
+		///<field name='ParentActivityId' type='Lookup'>Edm.Guid</field>
+		ParentActivityId: intellisense.EntityValue,
+		///<field name='PostponeEmailProcessingUntil_UtcDateAndTime' type='DateTime'>ReadOnly - Edm.DateTimeOffset</field>
+		PostponeEmailProcessingUntil_UtcDateAndTime: intellisense.EntityValue,
+		///<field name='PriorityCode' type='OptionSet'>Edm.Int32 - this.OptionSet.PriorityCode</field>
+		PriorityCode: intellisense.EntityValue,
+		///<field name='ProcessId' type='Uniqueidentifier'>Edm.Guid</field>
+		ProcessId: intellisense.EntityValue,
+		///<field name='ReadReceiptRequested' type='Boolean'>Edm.Boolean</field>
+		ReadReceiptRequested: intellisense.EntityValue,
+		///<field name='RegardingObjectId' type='Lookup'>Edm.Guid</field>
+		regardingobjectid_account_email: intellisense.EntityValue,
+		///<field name='RegardingObjectId' type='Lookup'>Edm.Guid</field>
+		regardingobjectid_asyncoperation: intellisense.EntityValue,
+		///<field name='RegardingObjectId' type='Lookup'>Edm.Guid</field>
+		regardingobjectid_contact_email: intellisense.EntityValue,
+		///<field name='RegardingObjectId' type='Lookup'>Edm.Guid</field>
+		regardingobjectid_devkit_webapi_email: intellisense.EntityValue,
+		///<field name='RegardingObjectId' type='Lookup'>Edm.Guid</field>
+		regardingobjectid_knowledgearticle_email: intellisense.EntityValue,
+		///<field name='RegardingObjectId' type='Lookup'>Edm.Guid</field>
+		regardingobjectid_knowledgebaserecord_email: intellisense.EntityValue,
+		///<field name='ReminderActionCardId' type='Uniqueidentifier'>Edm.Guid</field>
+		ReminderActionCardId: intellisense.EntityValue,
+		///<field name='ReplyCount' type='Integer'>ReadOnly - Edm.Int32</field>
+		ReplyCount: intellisense.EntityValue,
+		///<field name='ScheduledDurationMinutes' type='Integer'>ReadOnly - Edm.Int32</field>
+		ScheduledDurationMinutes: intellisense.EntityValue,
+		///<field name='ScheduledEnd_UtcDateAndTime' type='DateTime'>Edm.DateTimeOffset</field>
+		ScheduledEnd_UtcDateAndTime: intellisense.EntityValue,
+		///<field name='ScheduledStart_UtcDateAndTime' type='DateTime'>Edm.DateTimeOffset</field>
+		ScheduledStart_UtcDateAndTime: intellisense.EntityValue,
+		///<field name='Sender' type='String'>Edm.String</field>
+		Sender: intellisense.EntityValue,
+		///<field name='SenderMailboxId' type='Lookup'>ReadOnly - Edm.Guid</field>
+		SenderMailboxId: intellisense.EntityValue,
+		///<field name='SendersAccount' type='Lookup'>ReadOnly - Edm.Guid</field>
+		SendersAccount: intellisense.EntityValue,
+		///<field name='SentOn_UtcDateAndTime' type='DateTime'>ReadOnly - Edm.DateTimeOffset</field>
+		SentOn_UtcDateAndTime: intellisense.EntityValue,
+		///<field name='SLAId' type='Lookup'>Edm.Guid</field>
+		SLAId: intellisense.EntityValue,
+		///<field name='SLAInvokedId' type='Lookup'>ReadOnly - Edm.Guid</field>
+		SLAInvokedId: intellisense.EntityValue,
+		///<field name='SortDate_UtcDateAndTime' type='DateTime'>Edm.DateTimeOffset</field>
+		SortDate_UtcDateAndTime: intellisense.EntityValue,
+		///<field name='StageId' type='Uniqueidentifier'>Edm.Guid</field>
+		StageId: intellisense.EntityValue,
+		///<field name='StateCode' type='OptionSet'>Edm.Int32 - this.OptionSet.StateCode</field>
+		StateCode: intellisense.EntityValue,
+		///<field name='StatusCode' type='OptionSet'>Edm.Int32 - this.OptionSet.StatusCode</field>
+		StatusCode: intellisense.EntityValue,
+		///<field name='Subcategory' type='String'>Edm.String</field>
+		Subcategory: intellisense.EntityValue,
+		///<field name='Subject' type='String'>Edm.String</field>
+		Subject: intellisense.EntityValue,
+		///<field name='SubmittedBy' type='String'>Edm.String</field>
+		SubmittedBy: intellisense.EntityValue,
+		///<field name='TemplateId' type='Lookup'>Edm.Guid</field>
+		TemplateId: intellisense.EntityValue,
+		///<field name='TimeZoneRuleVersionNumber' type='Integer'>Edm.Int32</field>
+		TimeZoneRuleVersionNumber: intellisense.EntityValue,
+		///<field name='ToRecipients' type='String'>Edm.String</field>
+		ToRecipients: intellisense.EntityValue,
+		///<field name='TrackingToken' type='String'>Edm.String</field>
+		TrackingToken: intellisense.EntityValue,
+		///<field name='TransactionCurrencyId' type='Lookup'>Edm.Guid</field>
+		TransactionCurrencyId: intellisense.EntityValue,
+		///<field name='TraversedPath' type='String'>Edm.String</field>
+		TraversedPath: intellisense.EntityValue,
+		///<field name='UTCConversionTimeZoneCode' type='Integer'>Edm.Int32</field>
+		UTCConversionTimeZoneCode: intellisense.EntityValue,
+		///<field name='VersionNumber' type='BigInt'>ReadOnly - </field>
+		VersionNumber: intellisense.EntityValue,
+		///<field name='Entity' type='Object'></field>
+		Entity: null,
+		///<field name='EntityName' type='String'></field>
+		EntityName: null,
+		///<field name='EntityCollectionName' type='String'></field>
+		EntityCollectionName: null,
+		///<field name='OptionSet' type='Object'></field>
+		OptionSet: {
+			///<field name='CorrelationMethod' type='PickList'></field>
+			CorrelationMethod: {
+				///<field name='None' type='PickListValue'>None = 0</field>
+				None: 0,
+				///<field name='Skipped' type='PickListValue'>Skipped = 1</field>
+				Skipped: 1,
+				///<field name='XHeader' type='PickListValue'>XHeader = 2</field>
+				XHeader: 2,
+				///<field name='InReplyTo' type='PickListValue'>InReplyTo = 3</field>
+				InReplyTo: 3,
+				///<field name='TrackingToken' type='PickListValue'>TrackingToken = 4</field>
+				TrackingToken: 4,
+				///<field name='ConversationIndex' type='PickListValue'>ConversationIndex = 5</field>
+				ConversationIndex: 5,
+				///<field name='SmartMatching' type='PickListValue'>SmartMatching = 6</field>
+				SmartMatching: 6,
+				///<field name='CustomCorrelation' type='PickListValue'>CustomCorrelation = 7</field>
+				CustomCorrelation: 7
+			},
+			///<field name='DeliveryPriorityCode' type='PickList'></field>
+			DeliveryPriorityCode: {
+				///<field name='Low' type='PickListValue'>Low = 0</field>
+				Low: 0,
+				///<field name='Normal' type='PickListValue'>Normal = 1</field>
+				Normal: 1,
+				///<field name='High' type='PickListValue'>High = 2</field>
+				High: 2
+			},
+			///<field name='EmailReminderStatus' type='PickList'></field>
+			EmailReminderStatus: {
+				///<field name='NotSet' type='PickListValue'>NotSet = 0</field>
+				NotSet: 0,
+				///<field name='ReminderSet' type='PickListValue'>ReminderSet = 1</field>
+				ReminderSet: 1,
+				///<field name='ReminderExpired' type='PickListValue'>ReminderExpired = 2</field>
+				ReminderExpired: 2,
+				///<field name='ReminderInvalid' type='PickListValue'>ReminderInvalid = 3</field>
+				ReminderInvalid: 3
+			},
+			///<field name='EmailReminderType' type='PickList'></field>
+			EmailReminderType: {
+				///<field name='If_I_do_not_receive_a_reply_by' type='PickListValue'>If_I_do_not_receive_a_reply_by = 0</field>
+				If_I_do_not_receive_a_reply_by: 0,
+				///<field name='If_the_email_is_not_opened_by' type='PickListValue'>If_the_email_is_not_opened_by = 1</field>
+				If_the_email_is_not_opened_by: 1,
+				///<field name='Remind_me_anyways_at' type='PickListValue'>Remind_me_anyways_at = 2</field>
+				Remind_me_anyways_at: 2
+			},
+			///<field name='Notifications' type='PickList'></field>
+			Notifications: {
+				///<field name='None' type='PickListValue'>None = 0</field>
+				None: 0,
+				///<field name='The_message_was_saved_as_a_Microsoft_Dynamics_365_email_record_but_not_all_the_attachments_could_be_saved_with_it_An_attachment_cannot_be_saved_if_it_is_blocked_or_if_its_file_type_is_invalid' type='PickListValue'>The_message_was_saved_as_a_Microsoft_Dynamics_365_email_record_but_not_all_the_attachments_could_be_saved_with_it_An_attachment_cannot_be_saved_if_it_is_blocked_or_if_its_file_type_is_invalid = 1</field>
+				The_message_was_saved_as_a_Microsoft_Dynamics_365_email_record_but_not_all_the_attachments_could_be_saved_with_it_An_attachment_cannot_be_saved_if_it_is_blocked_or_if_its_file_type_is_invalid: 1,
+				///<field name='Truncated_body' type='PickListValue'>Truncated_body = 2</field>
+				Truncated_body: 2
+			},
+			///<field name='PriorityCode' type='PickList'></field>
+			PriorityCode: {
+				///<field name='Low' type='PickListValue'>Low = 0</field>
+				Low: 0,
+				///<field name='Normal' type='PickListValue'>Normal = 1</field>
+				Normal: 1,
+				///<field name='High' type='PickListValue'>High = 2</field>
+				High: 2
+			},
+			///<field name='StateCode' type='PickList'></field>
+			StateCode: {
+				///<field name='Open' type='PickListValue'>Open = 0</field>
+				Open: 0,
+				///<field name='Completed' type='PickListValue'>Completed = 1</field>
+				Completed: 1,
+				///<field name='Canceled' type='PickListValue'>Canceled = 2</field>
+				Canceled: 2
+			},
+			///<field name='StatusCode' type='PickList'></field>
+			StatusCode: {
+				///<field name='Draft' type='PickListValue'>Draft = 1</field>
+				Draft: 1,
+				///<field name='Completed' type='PickListValue'>Completed = 2</field>
+				Completed: 2,
+				///<field name='Sent' type='PickListValue'>Sent = 3</field>
+				Sent: 3,
+				///<field name='Received' type='PickListValue'>Received = 4</field>
+				Received: 4,
+				///<field name='Canceled' type='PickListValue'>Canceled = 5</field>
+				Canceled: 5,
+				///<field name='Pending_Send' type='PickListValue'>Pending_Send = 6</field>
+				Pending_Send: 6,
+				///<field name='Sending' type='PickListValue'>Sending = 7</field>
+				Sending: 7,
+				///<field name='Failed' type='PickListValue'>Failed = 8</field>
+				Failed: 8
+			}
 		}
-		interface QuickForm {
-		}
-		interface Process extends DevKit.Form.Controls.IControlProcess {
-		}
-	}
-    class FormEmail extends DevKit.Form.IForm {
-        /**
-         * PL.DynamicsCrm.DevKit form Email
-         * @param executionContext the execution context.
-         * @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource".
-         */
-        constructor(executionContext: any, defaultWebResourceName?: string);
-        /** Utility functions/methods/objects for Dynamics 365 form */
-        Utility: DevKit.Form.Utility;
-        /** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
-        WebApi: DevKit.Form.WebApi;
-        /** The Body section of form Email */
-        Body: Rocket.FormEmail.Body;
-        /** The Footer section of form Email */
-        Footer: Rocket.FormEmail.Footer;
-        /** The Header section of form Email */
-        Header: Rocket.FormEmail.Header;
-        /** The Navigation of form Email */
-        Navigation: Rocket.FormEmail.Navigation;
-        /** The QuickForm of form Email */
-        QuickForm: Rocket.FormEmail.QuickForm;
-        ///** The Composite of form Email */
-        //Composite: Rocket.FormEmail.Composite;
-        /** The Process of form Email */
-        Process: Rocket.FormEmail.Process;
-    }
-	class EmailApi {
-		/**
-		* PL.DynamicsCrm.DevKit EmailApi
-		* @param entity The entity object
-		*/
-		constructor(entity?: any);
-		/**
-		 * Get the value of alias
-		 * @param alias the alias value
-		 * @param isMultiOptionSet true if the alias is multi OptionSet
-		 */
-		getAliasedValue(alias: string, isMultiOptionSet?: boolean): any;
-		/**
-		 * Get the formatted value of alias
-		 * @param alias the alias value
-		 * @param isMultiOptionSet true if the alias is multi OptionSet
-		 */
-		getAliasedFormattedValue(alias: string, isMultiOptionSet?: boolean): string;
-		/** The entity object */
-		Entity: any;
-		/** The entity name */
-		EntityName: string;
-		/** The entity collection name */
-		EntityCollectionName: string;
-		/** The @odata.etag is then used to build a cache of the response that is dependant on the fields that are retrieved */
-		"@odata.etag": string;
-		/** For internal use only. */
-		ActivityAdditionalParams: DevKit.WebApi.StringValue;
-		/** Unique identifier of the email activity. */
-		ActivityId: DevKit.WebApi.GuidValue;
-		/** Type the number of minutes spent creating and sending the email. The duration is used in reporting. */
-		ActualDurationMinutes: DevKit.WebApi.IntegerValue;
-		/** Enter the actual end date and time of the email. By default, it displays the date and time when the activity was completed or canceled, but can be edited to capture the actual time to create and send the email. */
-		ActualEnd_UtcDateOnly: DevKit.WebApi.UtcDateOnlyValue;
-		/** Enter the actual start date and time for the email. By default, it displays the date and time when the activity was created, but can be edited to capture the actual time to create and send the email. */
-		ActualStart_UtcDateOnly: DevKit.WebApi.UtcDateOnlyValue;
-		/** Shows the umber of attachments of the email message. */
-		AttachmentCount: DevKit.WebApi.IntegerValueReadonly;
-		/** Shows the number of times an email attachment has been viewed. */
-		AttachmentOpenCount: DevKit.WebApi.IntegerValue;
-		/** Hash of base of conversation index. */
-		BaseConversationIndexHash: DevKit.WebApi.IntegerValue;
-		/** Type a category to identify the email type, such as lead outreach, customer follow-up, or service alert, to tie the email to a business group or function. */
-		Category: DevKit.WebApi.StringValue;
-		/** Indicates if the body is compressed. */
-		Compressed: DevKit.WebApi.BooleanValueReadonly;
-		/** Identifier for all the email responses for this conversation. */
-		ConversationIndex: DevKit.WebApi.StringValueReadonly;
-		/** Conversation Tracking Id. */
-		ConversationTrackingId: DevKit.WebApi.GuidValue;
-		/** Shows how an email is matched to an existing email in Microsoft Dynamics 365. For system use only. */
-		CorrelationMethod: DevKit.WebApi.OptionSetValueReadonly;
-		/** Shows who created the record. */
-		CreatedBy: DevKit.WebApi.LookupValueReadonly;
-		/** Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options. */
-		CreatedOn_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValueReadonly;
-		/** Shows who created the record on behalf of another user. */
-		CreatedOnBehalfBy: DevKit.WebApi.LookupValueReadonly;
-		/** Enter the expected date and time when email will be sent. */
-		DelayedEmailSendTime_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValue;
-		/** Shows the count of the number of attempts made to send the email. The count is used as an indicator of email routing issues. */
-		DeliveryAttempts: DevKit.WebApi.IntegerValue;
-		/** Select the priority of delivery of the email to the email server. */
-		DeliveryPriorityCode: DevKit.WebApi.OptionSetValue;
-		/** Select whether the sender should receive confirmation that the email was delivered. */
-		DeliveryReceiptRequested: DevKit.WebApi.BooleanValue;
-		/** Type the greeting and message text of the email. */
-		Description: DevKit.WebApi.StringValue;
-		/** Select the direction of the email as incoming or outbound. */
-		DirectionCode: DevKit.WebApi.BooleanValue;
-		/** Shows the date and time when an email reminder expires. */
-		EmailReminderExpiryTime_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValue;
-		/** Shows the status of the email reminder. */
-		EmailReminderStatus: DevKit.WebApi.OptionSetValueReadonly;
-		/** For internal use only. */
-		EmailReminderText: DevKit.WebApi.StringValue;
-		/** Shows the type of the email reminder. */
-		EmailReminderType: DevKit.WebApi.OptionSetValue;
-		/** Shows the sender of the email. */
-		emailsender_account: DevKit.WebApi.LookupValueReadonly;
-		/** Shows the sender of the email. */
-		emailsender_contact: DevKit.WebApi.LookupValueReadonly;
-		/** Shows the sender of the email. */
-		emailsender_queue: DevKit.WebApi.LookupValueReadonly;
-		/** Shows the sender of the email. */
-		emailsender_systemuser: DevKit.WebApi.LookupValueReadonly;
-		/** Email Tracking Id. */
-		EmailTrackingId: DevKit.WebApi.GuidValue;
-		/** Shows the conversion rate of the record's currency. The exchange rate is used to convert all money fields in the record from the local currency to the system's default currency. */
-		ExchangeRate: DevKit.WebApi.DecimalValueReadonly;
-		/** Select whether the email allows following recipient activities sent from Microsoft Dynamics 365.This is user preference state which can be overridden by system evaluated state. */
-		FollowEmailUserPreference: DevKit.WebApi.BooleanValue;
-		/** Unique identifier of the data import or data migration that created this record. */
-		ImportSequenceNumber: DevKit.WebApi.IntegerValue;
-		/** Type the ID of the email message that this email activity is a response to. */
-		InReplyTo: DevKit.WebApi.StringValueReadonly;
-		/** Information regarding whether the email activity was billed as part of resolving a case. */
-		IsBilled: DevKit.WebApi.BooleanValue;
-		/** For internal use only. Shows whether this email is followed. This is evaluated state which overrides user selection of follow email. */
-		IsEmailFollowed: DevKit.WebApi.BooleanValueReadonly;
-		/** For internal use only. Shows whether this email Reminder is Set. */
-		IsEmailReminderSet: DevKit.WebApi.BooleanValueReadonly;
-		/** Information regarding whether the activity is a regular activity type or event type. */
-		IsRegularActivity: DevKit.WebApi.BooleanValueReadonly;
-		/** For internal use only. */
-		IsUnsafe: DevKit.WebApi.IntegerValueReadonly;
-		/** Indication if the email was created by a workflow rule. */
-		IsWorkflowCreated: DevKit.WebApi.BooleanValue;
-		/** Contains the date and time stamp of the last on hold time. */
-		LastOnHoldTime_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValue;
-		/** Shows the latest date and time when email was opened. */
-		LastOpenedTime_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValue;
-		/** Shows the number of times a link in an email has been clicked. */
-		LinksClickedCount: DevKit.WebApi.IntegerValue;
-		/** Unique identifier of the email message. Used only for email that is received. */
-		MessageId: DevKit.WebApi.StringValue;
-		/** MIME type of the email message data. */
-		MimeType: DevKit.WebApi.StringValue;
-		/** Shows who last updated the record. */
-		ModifiedBy: DevKit.WebApi.LookupValueReadonly;
-		/** Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options. */
-		ModifiedOn_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValueReadonly;
-		/** Shows who last updated the record on behalf of another user. */
-		ModifiedOnBehalfBy: DevKit.WebApi.LookupValueReadonly;
-		/** Select the notification code to identify issues with the email recipients or attachments, such as blocked attachments. */
-		Notifications: DevKit.WebApi.OptionSetValue;
-		/** Shows how long, in minutes, that the record was on hold. */
-		OnHoldTime: DevKit.WebApi.IntegerValueReadonly;
-		/** Shows the number of times an email has been opened. */
-		OpenCount: DevKit.WebApi.IntegerValue;
-		/** Date and time that the record was migrated. */
-		OverriddenCreatedOn_UtcDateOnly: DevKit.WebApi.UtcDateOnlyValue;
-		/** Enter the user who is assigned to manage the record. This field is updated every time the record is assigned to a different user */
-		OwnerId_systemuser: DevKit.WebApi.LookupValue;
-		/** Enter the team who is assigned to manage the record. This field is updated every time the record is assigned to a different team */
-		OwnerId_team: DevKit.WebApi.LookupValue;
-		/** Unique identifier of the business unit that owns the email activity. */
-		OwningBusinessUnit: DevKit.WebApi.LookupValueReadonly;
-		/** Unique identifier of the team who owns the email activity. */
-		OwningTeam: DevKit.WebApi.LookupValueReadonly;
-		/** Unique identifier of the user who owns the email activity. */
-		OwningUser: DevKit.WebApi.LookupValueReadonly;
-		/** Select the activity that the email is associated with. */
-		ParentActivityId: DevKit.WebApi.LookupValue;
-		/** For internal use only. */
-		PostponeEmailProcessingUntil_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValueReadonly;
-		/** Select the priority so that preferred customers or critical issues are handled quickly. */
-		PriorityCode: DevKit.WebApi.OptionSetValue;
-		/** Shows the ID of the process. */
-		ProcessId: DevKit.WebApi.GuidValue;
-		/** Indicates that a read receipt is requested. */
-		ReadReceiptRequested: DevKit.WebApi.BooleanValue;
-		/** Choose the record that the email relates to. */
-		regardingobjectid_account_email: DevKit.WebApi.LookupValue;
-		/** Choose the record that the email relates to. */
-		regardingobjectid_asyncoperation: DevKit.WebApi.LookupValue;
-		/** Choose the record that the email relates to. */
-		regardingobjectid_contact_email: DevKit.WebApi.LookupValue;
-		/** Choose the record that the email relates to. */
-		regardingobjectid_devkit_webapi_email: DevKit.WebApi.LookupValue;
-		/** Choose the record that the email relates to. */
-		regardingobjectid_knowledgearticle_email: DevKit.WebApi.LookupValue;
-		/** Choose the record that the email relates to. */
-		regardingobjectid_knowledgebaserecord_email: DevKit.WebApi.LookupValue;
-		/** Reminder Action Card Id. */
-		ReminderActionCardId: DevKit.WebApi.GuidValue;
-		/** Shows the number of replies received for an email. */
-		ReplyCount: DevKit.WebApi.IntegerValueReadonly;
-		/** Safe body text of the e-mail. */
-		SafeDescription: DevKit.WebApi.StringValueReadonly;
-		/** Scheduled duration of the email activity, specified in minutes. */
-		ScheduledDurationMinutes: DevKit.WebApi.IntegerValueReadonly;
-		/** Enter the expected due date and time for the activity to be completed to provide details about when the email will be sent. */
-		ScheduledEnd_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValue;
-		/** Enter the expected start date and time for the activity to provide details about the tentative time when the email activity must be initiated. */
-		ScheduledStart_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValue;
-		/** Sender of the email. */
-		Sender: DevKit.WebApi.StringValue;
-		/** Select the mailbox associated with the sender of the email message. */
-		SenderMailboxId: DevKit.WebApi.LookupValueReadonly;
-		/** Shows the parent account of the sender of the email. */
-		SendersAccount: DevKit.WebApi.LookupValueReadonly;
-		/** Shows the date and time that the email was sent. */
-		SentOn_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValueReadonly;
-		/** Choose the service level agreement (SLA) that you want to apply to the email record. */
-		SLAId: DevKit.WebApi.LookupValue;
-		/** Last SLA that was applied to this email. This field is for internal use only. */
-		SLAInvokedId: DevKit.WebApi.LookupValueReadonly;
-		SLAName: DevKit.WebApi.StringValueReadonly;
-		/** Shows the date and time by which the activities are sorted. */
-		SortDate_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValue;
-		/** Shows the ID of the stage. */
-		StageId: DevKit.WebApi.GuidValue;
-		/** Shows whether the email is open, completed, or canceled. Completed and canceled email is read-only and can't be edited. */
-		StateCode: DevKit.WebApi.OptionSetValue;
-		/** Select the email's status. */
-		StatusCode: DevKit.WebApi.OptionSetValue;
-		/** Type a subcategory to identify the email type and relate the activity to a specific product, sales region, business group, or other function. */
-		Subcategory: DevKit.WebApi.StringValue;
-		/** Type a short description about the objective or primary topic of the email. */
-		Subject: DevKit.WebApi.StringValue;
-		/** Shows the Microsoft Office Outlook account for the user who submitted the email to Microsoft Dynamics 365. */
-		SubmittedBy: DevKit.WebApi.StringValue;
-		/** For internal use only. ID for template used in email. */
-		TemplateId: DevKit.WebApi.LookupValue;
-		/** For internal use only. */
-		TimeZoneRuleVersionNumber: DevKit.WebApi.IntegerValue;
-		/** Shows the email addresses corresponding to the recipients. */
-		ToRecipients: DevKit.WebApi.StringValue;
-		/** Shows the tracking token assigned to the email to make sure responses are automatically tracked in Microsoft Dynamics 365. */
-		TrackingToken: DevKit.WebApi.StringValue;
-		/** Choose the local currency for the record to make sure budgets are reported in the correct currency. */
-		TransactionCurrencyId: DevKit.WebApi.LookupValue;
-		/** For internal use only. */
-		TraversedPath: DevKit.WebApi.StringValue;
-		/** Time zone code that was in use when the record was created. */
-		UTCConversionTimeZoneCode: DevKit.WebApi.IntegerValue;
-		/** Version number of the email message. */
-		VersionNumber: DevKit.WebApi.BigIntValueReadonly;
-		/** The array of object that can cast object to ActivityPartyApi class */
-		ActivityParties: Array<any>;
-	}
-}
-declare namespace OptionSet {
-	namespace Email {
-		enum CorrelationMethod {
-			/** 0 */
-			None,
-			/** 1 */
-			Skipped,
-			/** 2 */
-			XHeader,
-			/** 3 */
-			InReplyTo,
-			/** 4 */
-			TrackingToken,
-			/** 5 */
-			ConversationIndex,
-			/** 6 */
-			SmartMatching,
-			/** 7 */
-			CustomCorrelation
-		}
-		enum DeliveryPriorityCode {
-			/** 0 */
-			Low,
-			/** 1 */
-			Normal,
-			/** 2 */
-			High
-		}
-		enum EmailReminderStatus {
-			/** 0 */
-			NotSet,
-			/** 1 */
-			ReminderSet,
-			/** 2 */
-			ReminderExpired,
-			/** 3 */
-			ReminderInvalid
-		}
-		enum EmailReminderType {
-			/** 0 */
-			If_I_do_not_receive_a_reply_by,
-			/** 1 */
-			If_the_email_is_not_opened_by,
-			/** 2 */
-			Remind_me_anyways_at
-		}
-		enum Notifications {
-			/** 0 */
-			None,
-			/** 1 */
-			The_message_was_saved_as_a_Microsoft_Dynamics_365_email_record_but_not_all_the_attachments_could_be_saved_with_it_An_attachment_cannot_be_saved_if_it_is_blocked_or_if_its_file_type_is_invalid,
-			/** 2 */
-			Truncated_body
-		}
-		enum PriorityCode {
-			/** 0 */
-			Low,
-			/** 1 */
-			Normal,
-			/** 2 */
-			High
-		}
-		enum StateCode {
-			/** 0 */
-			Open,
-			/** 1 */
-			Completed,
-			/** 2 */
-			Canceled
-		}
-		enum StatusCode {
-			/** 1 */
-			Draft,
-			/** 2 */
-			Completed,
-			/** 3 */
-			Sent,
-			/** 4 */
-			Received,
-			/** 5 */
-			Canceled,
-			/** 6 */
-			Pending_Send,
-			/** 7 */
-			Sending,
-			/** 8 */
-			Failed
-		}
-	}
-}
+	};
+};
 //{'JsForm':['Email'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
