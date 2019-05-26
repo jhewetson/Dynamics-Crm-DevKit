@@ -63,23 +63,23 @@ declare namespace Rocket {
 		/** Unique identifier of the record that this service level agreement (SLA) key performance indicator (KPI) instance is associated with. */
 		regarding_account: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the record that this service level agreement (SLA) key performance indicator (KPI) instance is associated with. */
-		regarding_account: DevKit.WebApi.LookupValue;
+		regarding_activitypointer: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the record that this service level agreement (SLA) key performance indicator (KPI) instance is associated with. */
-		regarding_account: DevKit.WebApi.LookupValue;
+		regarding_appointment: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the record that this service level agreement (SLA) key performance indicator (KPI) instance is associated with. */
-		regarding_account: DevKit.WebApi.LookupValue;
+		regarding_contact: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the record that this service level agreement (SLA) key performance indicator (KPI) instance is associated with. */
-		regarding_account: DevKit.WebApi.LookupValue;
+		regarding_email: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the record that this service level agreement (SLA) key performance indicator (KPI) instance is associated with. */
-		regarding_account: DevKit.WebApi.LookupValue;
+		regarding_fax: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the record that this service level agreement (SLA) key performance indicator (KPI) instance is associated with. */
-		regarding_account: DevKit.WebApi.LookupValue;
+		regarding_letter: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the record that this service level agreement (SLA) key performance indicator (KPI) instance is associated with. */
-		regarding_account: DevKit.WebApi.LookupValue;
+		regarding_phonecall: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the record that this service level agreement (SLA) key performance indicator (KPI) instance is associated with. */
-		regarding_account: DevKit.WebApi.LookupValue;
+		regarding_socialactivity: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the record that this service level agreement (SLA) key performance indicator (KPI) instance is associated with. */
-		regarding_account: DevKit.WebApi.LookupValue;
+		regarding_task: DevKit.WebApi.LookupValue;
 		/** RegardingName */
 		RegardingIdName: DevKit.WebApi.StringValueReadonly;
 		/** Unique identifier of the SLA KPI Instance. */

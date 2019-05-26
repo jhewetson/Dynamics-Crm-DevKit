@@ -93,13 +93,13 @@ declare namespace Rocket {
 		/** Choose the record that the fax relates to. */
 		regardingobjectid_account_fax: DevKit.WebApi.LookupValue;
 		/** Choose the record that the fax relates to. */
-		regardingobjectid_account_fax: DevKit.WebApi.LookupValue;
+		regardingobjectid_contact_fax: DevKit.WebApi.LookupValue;
 		/** Choose the record that the fax relates to. */
-		regardingobjectid_account_fax: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_webapi_fax: DevKit.WebApi.LookupValue;
 		/** Choose the record that the fax relates to. */
-		regardingobjectid_account_fax: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgearticle_fax: DevKit.WebApi.LookupValue;
 		/** Choose the record that the fax relates to. */
-		regardingobjectid_account_fax: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgebaserecord_fax: DevKit.WebApi.LookupValue;
 		/** Shows the expected duration of the fax activity, in minutes. */
 		ScheduledDurationMinutes: DevKit.WebApi.IntegerValueReadonly;
 		/** Enter the expected due date and time. */

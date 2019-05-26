@@ -95,7 +95,7 @@ declare namespace Rocket {
 		/** Choose the user that the records created during the import job should be assigned to. */
 		recordsownerid_systemuser: DevKit.WebApi.LookupValue;
 		/** Choose the user that the records created during the import job should be assigned to. */
-		recordsownerid_systemuser: DevKit.WebApi.LookupValue;
+		recordsownerid_team: DevKit.WebApi.LookupValue;
 		/** Shows the columns that are mapped to a related record type (entity) of the primary record type (entity) included in the import file. */
 		RelatedEntityColumns: DevKit.WebApi.StringValue;
 		/** Shows the size of the import file, in kilobytes. */

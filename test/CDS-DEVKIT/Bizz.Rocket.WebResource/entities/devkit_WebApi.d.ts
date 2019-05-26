@@ -411,7 +411,7 @@ declare namespace Rocket {
 		Navigation: Rocket.FormWebApi.Navigation;
 		/** The Process of form WebApi */
 		Process: Rocket.FormWebApi.Process;
-		}
+	}
 	class devkit_WebApiApi {
 		/**
 		* PL.DynamicsCrm.DevKit devkit_WebApiApi

@@ -65,13 +65,13 @@ declare namespace Rocket {
 		/** Unique identifier of the parent site or location. */
 		parentsiteorlocation_sharepointdocumentlocation: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the parent site or location. */
-		parentsiteorlocation_sharepointdocumentlocation: DevKit.WebApi.LookupValue;
+		parentsiteorlocation_sharepointsite: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the SharePoint document location record is associated. */
 		regardingobjectid_account: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the SharePoint document location record is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_kbarticle: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the SharePoint document location record is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgearticle: DevKit.WebApi.LookupValue;
 		RegardingObjectIdYomiName: DevKit.WebApi.StringValue;
 		/** Relative URL of the SharePoint document location. */
 		RelativeUrl: DevKit.WebApi.StringValue;

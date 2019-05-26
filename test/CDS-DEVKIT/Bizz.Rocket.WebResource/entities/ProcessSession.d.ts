@@ -89,123 +89,123 @@ declare namespace Rocket {
 		/** Unique identifier of the object with which the dialog session is associated. */
 		regardingobjectid_account: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_annotation: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_appointment: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_businessunit: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_businessunitnewsarticle: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		channelaccessprofile_processsession: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		profileid: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_connection: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_connectionrole: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_contact: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_convertrule: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_customeraddress: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_customerrelationship: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_customactivity: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_processwebapi1: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_webapi: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_email: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_expiredprocess: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		externalparty_processsession: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		externalpartyitem_processsession: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_fax: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_goal: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_goalrollupquery: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_holidaywrapper: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_kbarticle: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_kbarticlecomment: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_kbarticletemplate: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgearticle: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgebaserecord: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_letter: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_mailbox: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_mailmergetemplate: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_metric: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_msdyn_connector: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_newprocess: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_phonecall: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_position: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_queue: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_queueitem: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_recurringappointmentmaster: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_relationshiprole: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_report: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_rollupfield: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_routingrule: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_routingruleitem: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_sharepointdocumentlocation: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_sharepointsite: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_sla: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_socialactivity: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_socialprofile: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_subject: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_systemuser: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_task: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_team: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_template: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_territory: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_theme: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_transactioncurrency: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_translationprocess: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the dialog session is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_usermapping: DevKit.WebApi.LookupValue;
 		RegardingObjectIdYomiName: DevKit.WebApi.StringValue;
 		/** Unique identifier of the user who started the dialog session. */
 		StartedBy: DevKit.WebApi.LookupValueReadonly;

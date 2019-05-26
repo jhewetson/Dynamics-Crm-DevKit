@@ -62,21 +62,21 @@ declare namespace Rocket {
 		/** The regarding object such as Account, Contact, Lead etc. that the folder relates to. */
 		regardingobjectid_account: DevKit.WebApi.LookupValue;
 		/** The regarding object such as Account, Contact, Lead etc. that the folder relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_asyncoperation: DevKit.WebApi.LookupValue;
 		/** The regarding object such as Account, Contact, Lead etc. that the folder relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_contact: DevKit.WebApi.LookupValue;
 		/** The regarding object such as Account, Contact, Lead etc. that the folder relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_customactivity: DevKit.WebApi.LookupValue;
 		/** The regarding object such as Account, Contact, Lead etc. that the folder relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_processwebapi1: DevKit.WebApi.LookupValue;
 		/** The regarding object such as Account, Contact, Lead etc. that the folder relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_webapi: DevKit.WebApi.LookupValue;
 		/** The regarding object such as Account, Contact, Lead etc. that the folder relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_holidaywrapper: DevKit.WebApi.LookupValue;
 		/** The regarding object such as Account, Contact, Lead etc. that the folder relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_msdyn_connector: DevKit.WebApi.LookupValue;
 		/** The regarding object such as Account, Contact, Lead etc. that the folder relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_territory: DevKit.WebApi.LookupValue;
 		/** Version number of the mailbox tracking folder. */
 		VersionNumber: DevKit.WebApi.BigIntValueReadonly;
 	}

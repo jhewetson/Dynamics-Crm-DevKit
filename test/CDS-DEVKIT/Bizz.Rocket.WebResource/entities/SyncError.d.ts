@@ -69,175 +69,175 @@ declare namespace Rocket {
 		/** Choose the record that the sync error relates to. */
 		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_activitymimeattachment_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_activityparty_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_annotation_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_appointment_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_attachment_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_businessdatalocalizedlabel_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_businessunit_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_category_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_channelaccessprofile_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_channelaccessprofilerule_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_channelaccessprofileruleitem_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_connection_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_connectionrole_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_contact_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_customeraddress_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_customactivity: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_processwebapi1: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_webapi: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_duplicaterule_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_duplicaterulecondition_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_email_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_emailserverprofile_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_ExpiredProcess_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_externalparty_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_externalpartyitem_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_fax_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_feedback_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_fieldpermission_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_fieldsecurityprofile_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_fileattachment_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_goal_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_goalrollupquery_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_holidaywrapper: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_importmap_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_internaladdress_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_kbarticle_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_kbarticletemplate_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgearticle_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgearticleviews_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgebaserecord_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_letter_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_mailbox_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_mailmergetemplate_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_metric_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_msdyn_connector: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_NewProcess_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_offlinecommanddefinition_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_organization_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_phonecall_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_position_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_postfollow_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_processsession_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_processstage_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_processtrigger_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_publisher_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_queue_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_queueitem_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_recurringappointmentmaster_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_report_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_reportcategory_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_role_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_rollupfield_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_savedquery_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_savedqueryvisualization_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_sharepointdocumentlocation_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_sharepointsite_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_sla_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_slaitem_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_slakpiinstance_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_socialactivity_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_socialprofile_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_solution_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_subject_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_syncerror_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_systemuser_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_task_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_team_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_teamtemplate_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_template_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_territory_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_transactioncurrency_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_TranslationProcess_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_userquery_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_userqueryvisualization_syncerror: DevKit.WebApi.LookupValue;
 		/** Choose the record that the sync error relates to. */
-		regardingobjectid_account_syncerror: DevKit.WebApi.LookupValue;
+		regardingobjectid_workflow_syncerror: DevKit.WebApi.LookupValue;
 		/** Request data for the entity that had the sync error. */
 		RequestData: DevKit.WebApi.StringValue;
 		/** Shows whether the sync error is active or resolved. */

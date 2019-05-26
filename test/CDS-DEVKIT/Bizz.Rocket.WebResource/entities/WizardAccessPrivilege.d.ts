@@ -33,7 +33,7 @@ declare namespace Rocket {
 		/** Unique identifier of the delegate user who created the wizardaccessprivilege. */
 		CreatedOnBehalfBy: DevKit.WebApi.LookupValueReadonly;
 		/** Logical name of the entity for which access privileges are required. */
-		EntityName: DevKit.WebApi.StringValue;
+		_EntityName: DevKit.WebApi.StringValue;
 		/** Unique identifier of the user who last modified the wizard access privilege record. */
 		ModifiedBy: DevKit.WebApi.LookupValueReadonly;
 		/** Date and time when the wizard access privilege record was modified. */

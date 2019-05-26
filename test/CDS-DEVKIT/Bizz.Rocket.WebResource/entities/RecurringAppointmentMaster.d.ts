@@ -135,13 +135,13 @@ declare namespace Rocket {
 		/** Choose the record that the recurring appointment series relates to. */
 		regardingobjectid_account_recurringappointmentmaster: DevKit.WebApi.LookupValue;
 		/** Choose the record that the recurring appointment series relates to. */
-		regardingobjectid_account_recurringappointmentmaster: DevKit.WebApi.LookupValue;
+		regardingobjectid_contact_recurringappointmentmaster: DevKit.WebApi.LookupValue;
 		/** Choose the record that the recurring appointment series relates to. */
-		regardingobjectid_account_recurringappointmentmaster: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_webapi_recurringappointmentmaster: DevKit.WebApi.LookupValue;
 		/** Choose the record that the recurring appointment series relates to. */
-		regardingobjectid_account_recurringappointmentmaster: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgearticle_recurringappointmentmaster: DevKit.WebApi.LookupValue;
 		/** Choose the record that the recurring appointment series relates to. */
-		regardingobjectid_account_recurringappointmentmaster: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgebaserecord_recurringappointmentmaster: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the recurrence rule that is associated with the recurring appointment series. */
 		RuleId: DevKit.WebApi.LookupValueReadonly;
 		/** Safe body text of the recurring appointment. */

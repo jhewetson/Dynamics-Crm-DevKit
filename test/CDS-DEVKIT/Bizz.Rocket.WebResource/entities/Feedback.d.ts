@@ -77,13 +77,13 @@ declare namespace Rocket {
 		/** Shows the record that the feedback is associated with. */
 		ContactId: DevKit.WebApi.LookupValue;
 		/** Shows the record that the feedback is associated with. */
-		ContactId: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_customactivity: DevKit.WebApi.LookupValue;
 		/** Shows the record that the feedback is associated with. */
-		ContactId: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_webapi: DevKit.WebApi.LookupValue;
 		/** Shows the record that the feedback is associated with. */
-		ContactId: DevKit.WebApi.LookupValue;
+		_FeedbackId: DevKit.WebApi.LookupValue;
 		/** Shows the record that the feedback is associated with. */
-		ContactId: DevKit.WebApi.LookupValue;
+		KnowledgeArticleId: DevKit.WebApi.LookupValue;
 		/** Shows where the feedback was submitted from. */
 		Source: DevKit.WebApi.OptionSetValue;
 		/** Shows whether the feedback is open, rejected or closed. */

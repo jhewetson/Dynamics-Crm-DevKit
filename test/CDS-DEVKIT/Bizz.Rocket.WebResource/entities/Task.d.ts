@@ -154,13 +154,13 @@ declare namespace Rocket {
 		/** Choose the record that the task relates to. */
 		regardingobjectid_account_task: DevKit.WebApi.LookupValue;
 		/** Choose the record that the task relates to. */
-		regardingobjectid_account_task: DevKit.WebApi.LookupValue;
+		regardingobjectid_contact_task: DevKit.WebApi.LookupValue;
 		/** Choose the record that the task relates to. */
-		regardingobjectid_account_task: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_webapi_task: DevKit.WebApi.LookupValue;
 		/** Choose the record that the task relates to. */
-		regardingobjectid_account_task: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgearticle_task: DevKit.WebApi.LookupValue;
 		/** Choose the record that the task relates to. */
-		regardingobjectid_account_task: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgebaserecord_task: DevKit.WebApi.LookupValue;
 		/** Scheduled duration of the task, specified in minutes. */
 		ScheduledDurationMinutes: DevKit.WebApi.IntegerValueReadonly;
 		/** Enter the expected due date and time. */

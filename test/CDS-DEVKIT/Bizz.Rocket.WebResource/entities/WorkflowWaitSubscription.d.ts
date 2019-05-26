@@ -33,7 +33,7 @@ declare namespace Rocket {
 		/** Id of entity to which workflow instance subscribes. */
 		EntityId: DevKit.WebApi.GuidValue;
 		/** Name of entity to which workflow instance subscribes. */
-		EntityName: DevKit.WebApi.StringValue;
+		_EntityName: DevKit.WebApi.StringValue;
 		/** Indicates whether the entity to which workflow instance subscribes is deleted after the subscription is created. */
 		IsDeleted: DevKit.WebApi.BooleanValueReadonly;
 		/** Indicates whether the entity to which workflow instance subscribes is modified after the subscription is created. */

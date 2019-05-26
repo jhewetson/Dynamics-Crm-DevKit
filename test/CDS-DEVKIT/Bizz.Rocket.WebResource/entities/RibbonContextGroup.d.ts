@@ -33,7 +33,7 @@ declare namespace Rocket {
 		/** Layout XML for a contextual group header */
 		ContextGroupXml: DevKit.WebApi.StringValue;
 		/** The entity this rule applies to, also the entity this rule was imported from, will be exported to. */
-		Entity: DevKit.WebApi.StringValue;
+		_Entity: DevKit.WebApi.StringValue;
 		IsManaged: DevKit.WebApi.BooleanValueReadonly;
 		/** Unique identifier of the organization. */
 		OrganizationId: DevKit.WebApi.LookupValueReadonly;

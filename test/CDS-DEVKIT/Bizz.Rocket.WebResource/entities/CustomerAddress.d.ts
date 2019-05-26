@@ -85,7 +85,7 @@ declare namespace Rocket {
 		/** Choose the customer's address. */
 		parentid_account: DevKit.WebApi.LookupValue;
 		/** Choose the customer's address. */
-		parentid_account: DevKit.WebApi.LookupValue;
+		parentid_contact: DevKit.WebApi.LookupValue;
 		/** Type the ZIP Code or postal code for the address. */
 		PostalCode: DevKit.WebApi.StringValue;
 		/** Type the post office box number of the customer's address. */

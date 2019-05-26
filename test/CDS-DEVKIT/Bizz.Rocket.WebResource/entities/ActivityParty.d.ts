@@ -61,15 +61,15 @@ declare namespace Rocket {
 		/** Unique identifier of the party associated with the activity. */
 		partyid_account: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the party associated with the activity. */
-		partyid_account: DevKit.WebApi.LookupValue;
+		partyid_contact: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the party associated with the activity. */
-		partyid_account: DevKit.WebApi.LookupValue;
+		partyid_devkit_webapi: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the party associated with the activity. */
-		partyid_account: DevKit.WebApi.LookupValue;
+		partyid_knowledgearticle: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the party associated with the activity. */
-		partyid_account: DevKit.WebApi.LookupValue;
+		partyid_queue: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the party associated with the activity. */
-		partyid_account: DevKit.WebApi.LookupValue;
+		partyid_systemuser: DevKit.WebApi.LookupValue;
 		/** Scheduled end time of the activity. */
 		ScheduledEnd_UtcDateOnly: DevKit.WebApi.UtcDateOnlyValueReadonly;
 		/** Scheduled start time of the activity. */

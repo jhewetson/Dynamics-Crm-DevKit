@@ -164,13 +164,13 @@ declare namespace Rocket {
 		/** Choose the record that the phone call relates to. */
 		regardingobjectid_account_phonecall: DevKit.WebApi.LookupValue;
 		/** Choose the record that the phone call relates to. */
-		regardingobjectid_account_phonecall: DevKit.WebApi.LookupValue;
+		regardingobjectid_contact_phonecall: DevKit.WebApi.LookupValue;
 		/** Choose the record that the phone call relates to. */
-		regardingobjectid_account_phonecall: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_webapi_phonecall: DevKit.WebApi.LookupValue;
 		/** Choose the record that the phone call relates to. */
-		regardingobjectid_account_phonecall: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgearticle_phonecall: DevKit.WebApi.LookupValue;
 		/** Choose the record that the phone call relates to. */
-		regardingobjectid_account_phonecall: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgebaserecord_phonecall: DevKit.WebApi.LookupValue;
 		/** Scheduled duration of the phone call activity, specified in minutes. */
 		ScheduledDurationMinutes: DevKit.WebApi.IntegerValueReadonly;
 		/** Enter the expected due date and time. */

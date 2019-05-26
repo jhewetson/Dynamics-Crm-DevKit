@@ -31,81 +31,81 @@ declare namespace Rocket {
 		/** Unique identifier of the entity instance with shared secured field */
 		objectid_account: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_appointment: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_businessunit: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		channelaccessprofile_principalobjectattributeaccess: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_connection: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_contact: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_customeraddress: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_devkit_customactivity: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_devkit_processwebapi1: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_devkit_webapi: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_email: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_fax: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_feedback: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_goal: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_holidaywrapper: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_kbarticle: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_knowledgearticle: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_knowledgearticleviews: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_knowledgebaserecord: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_letter: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_mailmergetemplate: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_msdyn_connector: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_phonecall: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_position: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_queue: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_queueitem: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_recurringappointmentmaster: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_reportcategory: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_sharepointdocumentlocation: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_sharepointsite: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_socialactivity: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_socialprofile: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_systemuser: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_task: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_team: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the entity instance with shared secured field */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_territory: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the associated organization. */
 		OrganizationId: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the principal to which secured field is shared */
 		principalid_systemuser: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the principal to which secured field is shared */
-		principalid_systemuser: DevKit.WebApi.LookupValue;
+		principalid_team: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the shared secured field instance */
 		PrincipalObjectAttributeAccessId: DevKit.WebApi.GuidValue;
 		/** Read permission for secured field instance */

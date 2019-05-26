@@ -171,15 +171,15 @@ declare namespace Rocket {
 		/** Unique identifier of the object with which the activity is associated. */
 		regardingobjectid_account_devkit_customactivity: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the activity is associated. */
-		regardingobjectid_account_devkit_customactivity: DevKit.WebApi.LookupValue;
+		regardingobjectid_contact_devkit_customactivity: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the activity is associated. */
-		regardingobjectid_account_devkit_customactivity: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_webapi_devkit_customactivity: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the activity is associated. */
-		regardingobjectid_account_devkit_customactivity: DevKit.WebApi.LookupValue;
+		regardingobjectid_new_interactionforemail_devkit_customactivity: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the activity is associated. */
-		regardingobjectid_account_devkit_customactivity: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgearticle_devkit_customactivity: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the activity is associated. */
-		regardingobjectid_account_devkit_customactivity: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgebaserecord_devkit_customactivity: DevKit.WebApi.LookupValue;
 		RegardingObjectIdYomiName: DevKit.WebApi.StringValue;
 		/** Scheduled duration of the activity, specified in minutes. */
 		ScheduledDurationMinutes: DevKit.WebApi.IntegerValue;

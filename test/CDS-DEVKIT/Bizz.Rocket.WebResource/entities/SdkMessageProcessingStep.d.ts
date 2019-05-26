@@ -49,7 +49,7 @@ declare namespace Rocket {
 		/** Unique identifier of the associated event handler. */
 		eventhandler_plugintype: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the associated event handler. */
-		eventhandler_plugintype: DevKit.WebApi.LookupValue;
+		eventhandler_serviceendpoint: DevKit.WebApi.LookupValue;
 		/** Comma-separated list of attributes. If at least one of these attributes is modified, the plug-in should execute. */
 		FilteringAttributes: DevKit.WebApi.StringValue;
 		/** Unique identifier of the user to impersonate context when step is executed. */

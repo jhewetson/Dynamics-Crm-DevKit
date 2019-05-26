@@ -62,65 +62,65 @@ declare namespace Rocket {
 		/** Unique identifier of the object with which the note is associated. */
 		objectid_account: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_appointment: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_calendar: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		channelaccessprofile_annotations: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		channelaccessprofileruleid: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_profileruleitem: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_contact: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_convertrule: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_devkit_customactivity: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_devkit_webapi: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_duplicaterule: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_email: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_emailserverprofile: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_fax: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_goal: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_kbarticle: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_knowledgearticle: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_knowledgebaserecord: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_letter: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_mailbox: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_msdyn_solutioncomponentdatasource: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_msdyn_solutionhistorydatasource: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_phonecall: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_recurringappointmentmaster: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_routingrule: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_routingruleitem: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_sharepointdocument: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_sla: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_socialactivity: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_task: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the note is associated. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_workflow: DevKit.WebApi.LookupValue;
 		/** Date and time that the record was migrated. */
 		OverriddenCreatedOn_UtcDateOnly: DevKit.WebApi.UtcDateOnlyValue;
 		/** Enter the user who is assigned to manage the record. This field is updated every time the record is assigned to a different user */

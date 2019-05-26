@@ -50,141 +50,141 @@ declare namespace Rocket {
 		/** Unique identifier of the record that can not be deleted. */
 		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_activitymimeattachment: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_activitypointer: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_annotation: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_annualfiscalcalendar: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_appointment: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_attributemap: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_businessunit: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_businessunitnewsarticle: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_calendar: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		channelaccessprofile_bulkdeletefailures: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		channelaccessprofileruleid: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_contact: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_customeraddress: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_customerrelationship: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_devkit_customactivity: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_devkit_processwebapi1: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_devkit_webapi: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_displaystring: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_email: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_emailserverprofile: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_entitymap: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		externalparty_bulkdeletefailures: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		externalpartyitem_bulkdeletefailures: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_fax: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_fixedmonthlyfiscalcalendar: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_holidaywrapper: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_import: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_importdata: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_importfile: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_importlog: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_importmap: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_isvconfig: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_kbarticle: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_kbarticlecomment: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_kbarticletemplate: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_knowledgearticle: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_knowledgebaserecord: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_letter: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_monthlyfiscalcalendar: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_msdyn_connector: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_organization: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_phonecall: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_post: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_privilege: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_quarterlyfiscalcalendar: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_queue: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_queueitem: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_recurringappointmentmaster: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_relationshiprole: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_relationshiprolemap: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_role: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_routingrule: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_routingruleitem: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_savedquery: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_semiannualfiscalcalendar: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_sla: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_socialactivity: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_subject: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_systemform: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_systemuser: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_task: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_team: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_template: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_territory: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_theme: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_userform: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_usermapping: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the record that can not be deleted. */
-		regardingobjectid_account: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid_userquery: DevKit.WebApi.LookupValueReadonly;
 		RegardingObjectIdYomiName: DevKit.WebApi.StringValue;
 	}
 }

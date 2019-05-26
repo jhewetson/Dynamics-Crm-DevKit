@@ -35,25 +35,25 @@ declare namespace Rocket {
 		/** Choose the record that the post role relates to. */
 		regardingobjectid_account: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post role relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_appointment: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post role relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_contact: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post role relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgearticle: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post role relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_phonecall: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post role relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_processsession: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post role relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_queue: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post role relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_recurringappointmentmaster: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post role relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_systemuser: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post role relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_task: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post role relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_team: DevKit.WebApi.LookupValue;
 		/** Select the role type for the post. */
 		Type: DevKit.WebApi.OptionSetValue;
 	}

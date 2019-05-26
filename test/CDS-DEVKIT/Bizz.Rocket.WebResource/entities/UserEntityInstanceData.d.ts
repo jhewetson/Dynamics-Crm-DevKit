@@ -41,335 +41,335 @@ declare namespace Rocket {
 		/** Unique identifier of the source record. */
 		objectid_account: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_activitymimeattachment: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_activityparty: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_annotation: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_appointment: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_asyncoperation: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_attachment: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_attributemap: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_audit: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_bulkdeletefailure: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_bulkdeleteoperation: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_businessunitmap: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_businessunitnewsarticle: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_calendar: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_calendarrule: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		channelaccessprofile_userentityinstancedatas: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		channelaccessprofileruleid: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_clientupdate: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_columnmapping: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_connection: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_connectionrole: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_connectionroleassociation: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_connectionroleobjecttypecode: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_contact: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_convertrule: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_customeraddress: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_customerrelationship: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_dependency: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_dependencynode: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_devkit_customactivity: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_devkit_processwebapi1: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_devkit_webapi: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_displaystring: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_displaystringmap: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_documentindex: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_duplicaterecord: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_duplicaterule: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_duplicaterulecondition: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_email: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_emailhash: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_emailsearch: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_entitymap: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		externalparty_userentityinstancedatas: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_fax: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_fieldpermission: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_fieldsecurityprofile: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_fileattachment: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_filtertemplate: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_goal: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_goalrollupquery: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_holidaywrapper: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_import: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_importdata: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_importentitymapping: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_importfile: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_importjob: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_importlog: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_importmap: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_internaladdress: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_invaliddependency: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_isvconfig: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_kbarticle: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_kbarticlecomment: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_kbarticletemplate: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_knowledgearticle: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_knowledgebaserecord: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_letter: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_license: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_lookupmapping: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_mailbox: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_mailmergetemplate: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_metric: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_msdyn_connector: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_notification: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_organization: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_organizationstatistic: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_ownermapping: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_phonecall: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_picklistmapping: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_pluginassembly: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_plugintype: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_plugintypestatistic: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_principalattributeaccessmap: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_principalentitymap: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_principalobjectaccess: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_principalobjectattributeaccess: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_privilege: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_processsession: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_publisher: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_publisheraddress: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_queue: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_queueitem: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_recurringappointmentmaster: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_relationshiprole: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_relationshiprolemap: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_report: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_reportcategory: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_reportentity: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_reportlink: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_reportvisibility: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_ribboncommand: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_ribboncontextgroup: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_ribboncustomization: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_ribbondiff: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_ribbonrule: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_ribbontabtocommandmap: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_role: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_roletemplate: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_rollupfield: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_routingrule: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_routingruleitem: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_savedquery: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_savedqueryvisualization: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_sdkmessage: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_sdkmessagefilter: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_sdkmessagepair: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_sdkmessageprocessingstep: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_sdkmessageprocessingstepimage: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_sdkmessageprocessingstepsecureconfig: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_sdkmessagerequest: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_sdkmessagerequestfield: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_sdkmessageresponse: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_sdkmessageresponsefield: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_serviceendpoint: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_sharepointdocumentlocation: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_sharepointsite: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_sitemap: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_sla: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_socialactivity: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_solution: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_solutioncomponent: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_statusmap: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_stringmap: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_subject: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_subscription: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_subscriptionmanuallytrackedobject: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_subscriptionsyncinfo: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_systemuser: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_systemuserbusinessunitentitymap: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_task: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_team: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_teammembership: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_template: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_territory: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_theme: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_timezonedefinition: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_timezonelocalizedname: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_timezonerule: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_transactioncurrency: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_transformationmapping: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_transformationparametermapping: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_unresolvedaddress: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_userentityuisettings: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_userfiscalcalendar: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_userform: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_usermapping: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_userquery: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_userqueryvisualization: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_webresource: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_webwizard: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_wizardaccessprivilege: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_wizardpage: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_workflow: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_workflowdependency: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_workflowlog: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the source record. */
-		objectid_account: DevKit.WebApi.LookupValue;
+		objectid_workflowwaitsubscription: DevKit.WebApi.LookupValue;
 		/** Object Type Code */
 		ObjectTypeCode: DevKit.WebApi.IntegerValue;
 		/** Enter the user who is assigned to manage the record. This field is updated every time the record is assigned to a different user */

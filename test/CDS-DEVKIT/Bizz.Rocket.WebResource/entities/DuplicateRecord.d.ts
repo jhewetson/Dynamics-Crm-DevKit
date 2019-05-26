@@ -31,57 +31,57 @@ declare namespace Rocket {
 		/** Unique identifier of the base record. */
 		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_appointment: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		channelaccessprofile_duplicatebaserecord: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_contact: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_email: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_emailserverprofile: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_fax: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_feedback: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_goal: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_goalrollupquery: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_kbarticle: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_knowledgearticle: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_knowledgebaserecord: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_letter: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_msdyn_connector: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_phonecall: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_publisher: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_queue: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_recurringappointmentmaster: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_sharepointdocumentlocation: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_sharepointsite: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_socialactivity: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_socialprofile: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_systemuser: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_task: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_team: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the base record. */
-		baserecordid_account: DevKit.WebApi.LookupValueReadonly;
+		baserecordid_transactioncurrency: DevKit.WebApi.LookupValueReadonly;
 		/** Date and time when the duplicate record was created. */
 		CreatedOn_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValueReadonly;
 		/** Unique identifier of the duplicate record. */
@@ -89,57 +89,57 @@ declare namespace Rocket {
 		/** Unique identifier of the potential duplicate record. */
 		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_appointment: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		channelaccessprofile_duplicatematchingrecord: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_contact: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_email: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_emailserverprofile: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_fax: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_feedback: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_goal: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_goalrollupquery: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_kbarticle: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_knowledgearticle: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_knowledgebaserecord: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_letter: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_msdyn_connector: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_phonecall: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_publisher: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_queue: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_recurringappointmentmaster: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_sharepointdocumentlocation: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_sharepointsite: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_socialactivity: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_socialprofile: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_systemuser: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_task: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_team: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the potential duplicate record. */
-		duplicaterecordid_account: DevKit.WebApi.LookupValueReadonly;
+		duplicaterecordid_transactioncurrency: DevKit.WebApi.LookupValueReadonly;
 		/** Unique identifier of the duplicate rule against which this duplicate was found. */
 		DuplicateRuleId: DevKit.WebApi.LookupValueReadonly;
 		/** Enter the user who is assigned to manage the record. This field is updated every time the record is assigned to a different user */

@@ -41,7 +41,7 @@ declare namespace Rocket {
 		/** For internal use only. */
 		EntityDataSourceIdUnique: DevKit.WebApi.GuidValueReadonly;
 		/** Entity Logical Name */
-		EntityName: DevKit.WebApi.StringValue;
+		_EntityName: DevKit.WebApi.StringValue;
 		/** Version in which the form is introduced. */
 		IntroducedVersion: DevKit.WebApi.StringValue;
 		/** Information that specifies whether this component can be customized. */

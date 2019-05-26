@@ -35,7 +35,7 @@ declare namespace Rocket {
 		/** Indicates the type of ribbon definition. */
 		DiffType: DevKit.WebApi.OptionSetValueReadonly;
 		/** The entity this rule applies to, also the entity this rule was imported from, will be exported to. */
-		Entity: DevKit.WebApi.StringValue;
+		_Entity: DevKit.WebApi.StringValue;
 		/** Information about whether the ribbondiff is associated with app module. */
 		IsAppAware: DevKit.WebApi.BooleanValueReadonly;
 		IsManaged: DevKit.WebApi.BooleanValueReadonly;

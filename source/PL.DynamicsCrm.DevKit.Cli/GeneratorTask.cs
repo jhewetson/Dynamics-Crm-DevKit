@@ -102,9 +102,9 @@ namespace PL.DynamicsCrm.DevKit.Cli
             var i = 1;
             foreach (var entity in entities)
             {
-//#if DEBUG
-//                if (entity != "Audit") continue;
-//#endif
+#if DEBUG
+                if (entity != "ImageDescriptor") continue;
+#endif
                 GeneratorJsWebApi(entity, i, entities.Count);
                 i++;
 //#if DEBUG

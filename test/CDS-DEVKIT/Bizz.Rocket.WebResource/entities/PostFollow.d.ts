@@ -49,23 +49,23 @@ declare namespace Rocket {
 		/** Choose the parent record for the followed post to identify the customer, opportunity, case, or other record type that the post most closely relates to. */
 		regardingobjectid_account: DevKit.WebApi.LookupValue;
 		/** Choose the parent record for the followed post to identify the customer, opportunity, case, or other record type that the post most closely relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_appointment: DevKit.WebApi.LookupValue;
 		/** Choose the parent record for the followed post to identify the customer, opportunity, case, or other record type that the post most closely relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_contact: DevKit.WebApi.LookupValue;
 		/** Choose the parent record for the followed post to identify the customer, opportunity, case, or other record type that the post most closely relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgearticle: DevKit.WebApi.LookupValue;
 		/** Choose the parent record for the followed post to identify the customer, opportunity, case, or other record type that the post most closely relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_phonecall: DevKit.WebApi.LookupValue;
 		/** Choose the parent record for the followed post to identify the customer, opportunity, case, or other record type that the post most closely relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_processsession: DevKit.WebApi.LookupValue;
 		/** Choose the parent record for the followed post to identify the customer, opportunity, case, or other record type that the post most closely relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_queue: DevKit.WebApi.LookupValue;
 		/** Choose the parent record for the followed post to identify the customer, opportunity, case, or other record type that the post most closely relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_recurringappointmentmaster: DevKit.WebApi.LookupValue;
 		/** Choose the parent record for the followed post to identify the customer, opportunity, case, or other record type that the post most closely relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_systemuser: DevKit.WebApi.LookupValue;
 		/** Choose the parent record for the followed post to identify the customer, opportunity, case, or other record type that the post most closely relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_task: DevKit.WebApi.LookupValue;
 		/** For internal use only. */
 		TimeZoneRuleVersionNumber: DevKit.WebApi.IntegerValue;
 		/** Time zone code that was in use when the record was created. */

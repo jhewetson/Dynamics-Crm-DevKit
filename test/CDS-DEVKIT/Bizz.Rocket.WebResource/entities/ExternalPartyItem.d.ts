@@ -69,7 +69,7 @@ declare namespace Rocket {
 		/** Choose the external party enabled record that is associated with this external party item. */
 		regardingobjectid_contact: DevKit.WebApi.LookupValue;
 		/** Choose the external party enabled record that is associated with this external party item. */
-		regardingobjectid_contact: DevKit.WebApi.LookupValue;
+		regardingobjectid_systemuser: DevKit.WebApi.LookupValue;
 		RegardingObjectIdDsc: DevKit.WebApi.IntegerValue;
 		/** Shows the name of the regarding object. */
 		RegardingObjectIdYomiName: DevKit.WebApi.StringValue;

@@ -833,6 +833,12 @@ declare namespace DevKit {
             /** The guid value. E.g.: f55a0d1e-286b-e911-a997-000d3a802135 */
             Value: string;
         }
+        interface ManagedPropertyValue{
+            Value: string;
+        }
+        interface ManagedPropertyValueReadonly{
+            Value: string;
+        }
         interface RetrieveMultipleResponse {
             /** An array of JSON objects, where each object represents the retrieved entity record containing attributes and their values as key: value pairs. The Id of the entity record is retrieved by default. */
             entities: Array<DevKit.Core.KeyValueObject>;

@@ -43,7 +43,7 @@ declare namespace Rocket {
 		/** Enter a description for the Advanced Similarity Rule */
 		Description: DevKit.WebApi.StringValue;
 		/** entity */
-		Entity: DevKit.WebApi.StringValue;
+		_Entity: DevKit.WebApi.StringValue;
 		/** For internal use only. */
 		ExactMatchList: DevKit.WebApi.StringValue;
 		/** For internal use only. */

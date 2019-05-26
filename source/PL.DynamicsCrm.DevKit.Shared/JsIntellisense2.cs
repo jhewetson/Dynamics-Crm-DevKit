@@ -122,11 +122,14 @@ namespace PL.DynamicsCrm.DevKit.Shared
             _d_ts += $"\t\t\"@odata.etag\": string;\r\n";
             foreach (var crmAttribute in Fields)
             {
+                if (crmAttribute.SchemaName == "Entity") crmAttribute.SchemaName = "_Entity";
+                else if (crmAttribute.SchemaName == "EntityName") crmAttribute.SchemaName = "_EntityName";
                 if (crmAttribute.IsDeprecated) continue;
                 if (crmAttribute.AttributeOf != null && crmAttribute.FieldType == AttributeTypeCode.Virtual && crmAttribute.LogicalName != "entityimage") continue;
                 if (crmAttribute.FieldType == AttributeTypeCode.EntityName || crmAttribute.FieldType == AttributeTypeCode.PartyList) continue;
                 if (crmAttribute.AttributeOf != null && crmAttribute.AttributeOf.ToLower() + "name" == crmAttribute.LogicalName) continue;
                 if (crmAttribute.AttributeOf != null && crmAttribute.LogicalName.EndsWith("yominame") && !crmAttribute.IsValidForCreate && !crmAttribute.IsValidForUpdate) continue;
+
                 var jdoc = string.Empty;
                 var Readonly = (!crmAttribute.IsValidForCreate && !crmAttribute.IsValidForUpdate) ? "Readonly" : string.Empty;
                 if (crmAttribute.FieldType != AttributeTypeCode.Customer && crmAttribute?.Description?.Length > 0)
@@ -159,12 +162,14 @@ namespace PL.DynamicsCrm.DevKit.Shared
                     {
                         var navigations = crmAttribute.NavigationPropertyName.Split(";".ToCharArray());
                         var j = 0;
-                        foreach(var entity in entities)
+                        foreach (var entity in entities)
                         {
                             if (crmAttribute.EntityName == "audit" && entity == "externalparty") continue;
+                            if (crmAttribute.EntityName == "feedback" && navigations[j] == "FeedbackId") navigations[j] = "_FeedbackId";
                             if (jdoc.Length > 0)
                                 _d_ts += $"\t\t/** {jdoc} */\r\n";
                             _d_ts += $"\t\t{navigations[j]}: DevKit.WebApi.LookupValue{Readonly};\r\n";
+                            j++;
                         }
                     }
                 }
@@ -288,7 +293,9 @@ namespace PL.DynamicsCrm.DevKit.Shared
                 }
                 else
                 {
-                    if (crmAttribute.LogicalName == "entityimage")
+                    if (crmAttribute.SchemaName == "EntityImage" ||
+                        crmAttribute.SchemaName == "FullImageData" ||
+                        crmAttribute.SchemaName == "ImageData")
                     {
                         if (jdoc.Length > 0)
                             _d_ts += $"\t\t/** {jdoc} */\r\n";

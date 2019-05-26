@@ -31,9 +31,9 @@ declare namespace Rocket {
 		FileName: DevKit.WebApi.StringValue;
 		FileSizeBytes: DevKit.WebApi.IntegerValue;
 		FileType: DevKit.WebApi.StringValue;
-		FullImageData: ??????????;
+		FullImageData: DevKit.WebApi.StringValue;
 		FullImageURL: DevKit.WebApi.StringValue;
-		ImageData: ??????????;
+		ImageData: DevKit.WebApi.StringValue;
 		ImageDescription: DevKit.WebApi.StringValue;
 		ImageDescriptorId: DevKit.WebApi.GuidValue;
 		ImagePixelHeight: DevKit.WebApi.IntegerValue;

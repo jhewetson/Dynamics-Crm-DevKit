@@ -31,11 +31,11 @@ declare namespace Rocket {
 		/** Unique identifier of the parent record. */
 		asyncoperationid_asyncoperation: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the parent record. */
-		asyncoperationid_asyncoperation: DevKit.WebApi.LookupValue;
+		asyncoperationid_processsession: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the system job. */
 		childworkflowinstanceid_asyncoperation: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the system job. */
-		childworkflowinstanceid_asyncoperation: DevKit.WebApi.LookupValue;
+		childworkflowinstanceid_processsession: DevKit.WebApi.LookupValue;
 		/** Date and time when the operation was completed. */
 		CompletedOn_UtcDateAndTime: DevKit.WebApi.UtcDateAndTimeValue;
 		/** Unique identifier of the user who created the process log entry. */

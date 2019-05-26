@@ -29,7 +29,7 @@ declare namespace Rocket {
 		/** For internal use only. */
 		ComponentState: DevKit.WebApi.OptionSetValueReadonly;
 		/** Specifies which entity's ribbons this customization applies to. If null, then the customizations apply to the global ribbons. */
-		Entity: DevKit.WebApi.StringValue;
+		_Entity: DevKit.WebApi.StringValue;
 		IsManaged: DevKit.WebApi.BooleanValueReadonly;
 		/** Unique identifier of the organization. */
 		OrganizationId: DevKit.WebApi.LookupValueReadonly;

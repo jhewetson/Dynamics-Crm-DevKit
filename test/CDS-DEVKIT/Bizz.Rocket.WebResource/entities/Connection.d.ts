@@ -75,49 +75,49 @@ declare namespace Rocket {
 		/** Choose the primary account, contact, or other record involved in the connection. */
 		record1id_account: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_activitypointer: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_appointment: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		profileruleid1: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_contact: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_devkit_customactivity: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_devkit_webapi: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_email: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_fax: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_goal: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_knowledgearticle: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_knowledgebaserecord: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_letter: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_phonecall: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_position: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_processsession: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_recurringappointmentmaster: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_socialactivity: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_socialprofile: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_systemuser: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_task: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_team: DevKit.WebApi.LookupValue;
 		/** Choose the primary account, contact, or other record involved in the connection. */
-		record1id_account: DevKit.WebApi.LookupValue;
+		record1id_territory: DevKit.WebApi.LookupValue;
 		/** Shows the record type of the source record. */
 		Record1ObjectTypeCode: DevKit.WebApi.OptionSetValueReadonly;
 		/** Choose the primary party's role or relationship with the second party. */
@@ -125,49 +125,49 @@ declare namespace Rocket {
 		/** Select the secondary account, contact, or other record involved in the connection. */
 		record2id_account: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_activitypointer: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_appointment: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		channelaccessprofileruleid: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_contact: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_devkit_customactivity: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_devkit_webapi: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_email: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_fax: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_goal: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_knowledgearticle: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_knowledgebaserecord: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_letter: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_phonecall: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_position: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_processsession: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_recurringappointmentmaster: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_socialactivity: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_socialprofile: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_systemuser: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_task: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_team: DevKit.WebApi.LookupValue;
 		/** Select the secondary account, contact, or other record involved in the connection. */
-		record2id_account: DevKit.WebApi.LookupValue;
+		record2id_territory: DevKit.WebApi.LookupValue;
 		/** Shows the record type of the target record. */
 		Record2ObjectTypeCode: DevKit.WebApi.OptionSetValueReadonly;
 		/** Choose the secondary party's role or relationship with the primary party. */
@@ -187,100 +187,100 @@ declare namespace Rocket {
 declare namespace OptionSet {
 	namespace Connection {
 		enum Record1ObjectTypeCode {
-			/** 2013 */
-			Territory,
-			/** 9400 */
-			Channel_Access_Profile_Rule,
-			/** 50 */
-			Position,
-			/** 4202 */
-			Email,
-			/** 9 */
-			Team,
+			/** 4212 */
+			Task,
 			/** 99 */
 			Social_Profile,
-			/** 4216 */
-			Social_Activity,
-			/** 10007 */
-			WebApi,
-			/** 4200 */
-			Activity,
-			/** 9930 */
-			Knowledge_Base_Record,
 			/** 4251 */
 			Recurring_Appointment,
+			/** 2 */
+			Contact,
+			/** 4204 */
+			Fax,
 			/** 4210 */
 			Phone_Call,
-			/** 9953 */
-			Knowledge_Article,
-			/** 4710 */
-			Process_Session,
-			/** 4207 */
-			Letter,
-			/** 10015 */
-			Custom_Activity,
-			/** 9600 */
-			Goal,
-			/** 8 */
-			User,
-			/** 4204 */
-			Fax,
-			/** 2 */
-			Contact,
-			/** 4212 */
-			Task,
-			/** 4201 */
-			Appointment,
-			/** 1 */
-			Account
-		}
-		enum Record2ObjectTypeCode {
-			/** 9 */
-			Team,
-			/** 4204 */
-			Fax,
-			/** 4251 */
-			Recurring_Appointment,
-			/** 1 */
-			Account,
-			/** 4207 */
-			Letter,
-			/** 4216 */
-			Social_Activity,
-			/** 4201 */
-			Appointment,
-			/** 10015 */
-			Custom_Activity,
-			/** 4200 */
-			Activity,
-			/** 2 */
-			Contact,
+			/** 10007 */
+			WebApi,
 			/** 2013 */
 			Territory,
-			/** 4212 */
-			Task,
-			/** 9953 */
-			Knowledge_Article,
 			/** 4710 */
 			Process_Session,
+			/** 9 */
+			Team,
+			/** 9400 */
+			Channel_Access_Profile_Rule,
 			/** 4202 */
 			Email,
 			/** 9600 */
 			Goal,
 			/** 8 */
 			User,
-			/** 10007 */
-			WebApi,
-			/** 9400 */
-			Channel_Access_Profile_Rule,
-			/** 4210 */
-			Phone_Call,
-			/** 9930 */
-			Knowledge_Base_Record,
+			/** 4200 */
+			Activity,
+			/** 9953 */
+			Knowledge_Article,
+			/** 4207 */
+			Letter,
+			/** 10015 */
+			Custom_Activity,
 			/** 50 */
 			Position,
+			/** 4201 */
+			Appointment,
+			/** 9930 */
+			Knowledge_Base_Record,
+			/** 1 */
+			Account,
+			/** 4216 */
+			Social_Activity
+		}
+		enum Record2ObjectTypeCode {
+			/** 2 */
+			Contact,
+			/** 9 */
+			Team,
+			/** 4210 */
+			Phone_Call,
+			/** 2013 */
+			Territory,
+			/** 4251 */
+			Recurring_Appointment,
+			/** 4207 */
+			Letter,
+			/** 4216 */
+			Social_Activity,
+			/** 10015 */
+			Custom_Activity,
+			/** 9953 */
+			Knowledge_Article,
+			/** 4202 */
+			Email,
+			/** 8 */
+			User,
+			/** 4204 */
+			Fax,
+			/** 10007 */
+			WebApi,
+			/** 4201 */
+			Appointment,
+			/** 4200 */
+			Activity,
 			/** 99 */
-			Social_Profile
+			Social_Profile,
+			/** 9600 */
+			Goal,
+			/** 1 */
+			Account,
+			/** 9400 */
+			Channel_Access_Profile_Rule,
+			/** 50 */
+			Position,
+			/** 4710 */
+			Process_Session,
+			/** 9930 */
+			Knowledge_Base_Record,
+			/** 4212 */
+			Task
 		}
 		enum StateCode {
 			/** 0 */

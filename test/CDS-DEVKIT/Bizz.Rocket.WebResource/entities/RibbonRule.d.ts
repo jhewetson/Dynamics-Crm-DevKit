@@ -35,7 +35,7 @@ declare namespace Rocket {
 		/** Unique identifier of the delegate user who created the record. */
 		CreatedOnBehalfBy: DevKit.WebApi.LookupValueReadonly;
 		/** The entity this rule applies to, also the entity this rule was imported from, will be exported to. */
-		Entity: DevKit.WebApi.StringValue;
+		_Entity: DevKit.WebApi.StringValue;
 		IsManaged: DevKit.WebApi.BooleanValueReadonly;
 		/** Shows who last updated the record. */
 		ModifiedBy: DevKit.WebApi.LookupValueReadonly;

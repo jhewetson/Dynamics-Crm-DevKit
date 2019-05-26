@@ -39,7 +39,7 @@ declare namespace Rocket {
 		/** Enter a description for the search configuration */
 		Description: DevKit.WebApi.StringValue;
 		/** entity */
-		Entity: DevKit.WebApi.StringValue;
+		_Entity: DevKit.WebApi.StringValue;
 		/** FetchXml. */
 		FetchXmlList: DevKit.WebApi.StringValue;
 		/** Is Manageed */

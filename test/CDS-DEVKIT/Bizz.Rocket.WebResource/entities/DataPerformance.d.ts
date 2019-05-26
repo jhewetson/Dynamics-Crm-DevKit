@@ -37,7 +37,7 @@ declare namespace Rocket {
 		/** Unique identifier of the performance suggestion. */
 		DataPerformanceId: DevKit.WebApi.GuidValue;
 		/** Primary entity */
-		Entity: DevKit.WebApi.StringValueReadonly;
+		_Entity: DevKit.WebApi.StringValueReadonly;
 		/** The expected average cost benefit of an optimization. */
 		EstimatedOptimizationImpact: DevKit.WebApi.DecimalValueReadonly;
 		/** The execution period for which the performance metrics are calculated. */

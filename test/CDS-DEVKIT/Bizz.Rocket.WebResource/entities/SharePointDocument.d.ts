@@ -109,9 +109,9 @@ declare namespace Rocket {
 		/** Choose the parent record that the SharePoint document record is associated with. */
 		regardingobjectid_account: DevKit.WebApi.LookupValue;
 		/** Choose the parent record that the SharePoint document record is associated with. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_kbarticle: DevKit.WebApi.LookupValue;
 		/** Choose the parent record that the SharePoint document record is associated with. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgearticle: DevKit.WebApi.LookupValue;
 		RegardingObjectIdYomiName: DevKit.WebApi.StringValue;
 		/** Relative location of Sharepoint Document */
 		RelativeLocation: DevKit.WebApi.StringValueReadonly;

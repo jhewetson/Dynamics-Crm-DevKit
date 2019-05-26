@@ -87,7 +87,7 @@ declare namespace Rocket {
 		/** Choose the user or team responsible for meeting the goal. */
 		goalownerid_systemuser: DevKit.WebApi.LookupValue;
 		/** Choose the user or team responsible for meeting the goal. */
-		goalownerid_systemuser: DevKit.WebApi.LookupValue;
+		goalownerid_team: DevKit.WebApi.LookupValue;
 		/** Enter the date and time when the period for tracking the goal begins. */
 		GoalStartDate_UtcDateOnly: DevKit.WebApi.UtcDateOnlyValue;
 		/** Unique identifier of the goal that caused an error in the rollup of the goal hierarchy. */

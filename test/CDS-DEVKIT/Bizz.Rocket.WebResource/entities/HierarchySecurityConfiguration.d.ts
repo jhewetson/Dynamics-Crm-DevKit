@@ -27,7 +27,7 @@ declare namespace Rocket {
 		/** The @odata.etag is then used to build a cache of the response that is dependant on the fields that are retrieved */
 		"@odata.etag": string;
 		/** Logical entity name of the entity that is configured for hierarchy security. */
-		EntityName: DevKit.WebApi.StringValue;
+		_EntityName: DevKit.WebApi.StringValue;
 		/** Shows the entity used for the Hierarchy Security Modeling Configuration. */
 		HierarchySecurityModelingSettingId: DevKit.WebApi.GuidValue;
 		VersionNumber: DevKit.WebApi.BigIntValue;

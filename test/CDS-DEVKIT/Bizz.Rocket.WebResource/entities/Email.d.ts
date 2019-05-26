@@ -163,11 +163,11 @@ declare namespace Rocket {
 		/** Shows the sender of the email. */
 		emailsender_account: DevKit.WebApi.LookupValueReadonly;
 		/** Shows the sender of the email. */
-		emailsender_account: DevKit.WebApi.LookupValueReadonly;
+		emailsender_contact: DevKit.WebApi.LookupValueReadonly;
 		/** Shows the sender of the email. */
-		emailsender_account: DevKit.WebApi.LookupValueReadonly;
+		emailsender_queue: DevKit.WebApi.LookupValueReadonly;
 		/** Shows the sender of the email. */
-		emailsender_account: DevKit.WebApi.LookupValueReadonly;
+		emailsender_systemuser: DevKit.WebApi.LookupValueReadonly;
 		/** Email Tracking Id. */
 		EmailTrackingId: DevKit.WebApi.GuidValue;
 		/** Shows the conversion rate of the record's currency. The exchange rate is used to convert all money fields in the record from the local currency to the system's default currency. */
@@ -237,15 +237,15 @@ declare namespace Rocket {
 		/** Choose the record that the email relates to. */
 		regardingobjectid_account_email: DevKit.WebApi.LookupValue;
 		/** Choose the record that the email relates to. */
-		regardingobjectid_account_email: DevKit.WebApi.LookupValue;
+		regardingobjectid_asyncoperation: DevKit.WebApi.LookupValue;
 		/** Choose the record that the email relates to. */
-		regardingobjectid_account_email: DevKit.WebApi.LookupValue;
+		regardingobjectid_contact_email: DevKit.WebApi.LookupValue;
 		/** Choose the record that the email relates to. */
-		regardingobjectid_account_email: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_webapi_email: DevKit.WebApi.LookupValue;
 		/** Choose the record that the email relates to. */
-		regardingobjectid_account_email: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgearticle_email: DevKit.WebApi.LookupValue;
 		/** Choose the record that the email relates to. */
-		regardingobjectid_account_email: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgebaserecord_email: DevKit.WebApi.LookupValue;
 		/** Reminder Action Card Id. */
 		ReminderActionCardId: DevKit.WebApi.GuidValue;
 		/** Shows the number of replies received for an email. */

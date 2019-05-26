@@ -106,15 +106,15 @@ declare namespace Rocket {
 		/** Shows the record that the social activity relates to. */
 		regardingobjectid_account_socialactivity: DevKit.WebApi.LookupValue;
 		/** Shows the record that the social activity relates to. */
-		regardingobjectid_account_socialactivity: DevKit.WebApi.LookupValue;
+		regardingobjectid_asyncoperation: DevKit.WebApi.LookupValue;
 		/** Shows the record that the social activity relates to. */
-		regardingobjectid_account_socialactivity: DevKit.WebApi.LookupValue;
+		regardingobjectid_contact_socialactivity: DevKit.WebApi.LookupValue;
 		/** Shows the record that the social activity relates to. */
-		regardingobjectid_account_socialactivity: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_webapi_socialactivity: DevKit.WebApi.LookupValue;
 		/** Shows the record that the social activity relates to. */
-		regardingobjectid_account_socialactivity: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgearticle_socialactivity: DevKit.WebApi.LookupValue;
 		/** Shows the record that the social activity relates to. */
-		regardingobjectid_account_socialactivity: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgebaserecord_socialactivity: DevKit.WebApi.LookupValue;
 		RegardingObjectIdYomiName: DevKit.WebApi.StringValue;
 		/** Scheduled duration of the activity, specified in minutes. */
 		ScheduledDurationMinutes: DevKit.WebApi.IntegerValue;

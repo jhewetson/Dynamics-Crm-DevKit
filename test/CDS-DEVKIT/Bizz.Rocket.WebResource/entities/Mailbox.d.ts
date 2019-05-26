@@ -186,7 +186,7 @@ declare namespace Rocket {
 		/** Choose the user associated to the mailbox. */
 		regardingobjectid_queue: DevKit.WebApi.LookupValueReadonly;
 		/** Choose the user associated to the mailbox. */
-		regardingobjectid_queue: DevKit.WebApi.LookupValueReadonly;
+		regardingobjectid: DevKit.WebApi.LookupValueReadonly;
 		/** Shows whether the mailbox is active or inactive. */
 		StateCode: DevKit.WebApi.OptionSetValue;
 		/** Select the mailbox's status. */

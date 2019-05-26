@@ -108,7 +108,7 @@ declare namespace Rocket {
 		/** Unique identifier of the record with which the attachment is associated */
 		objectid_activitypointer: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the record with which the attachment is associated */
-		objectid_activitypointer: DevKit.WebApi.LookupValue;
+		objectid_template: DevKit.WebApi.LookupValue;
 		/** For internal use only. */
 		OverwriteTime_UtcDateOnly: DevKit.WebApi.UtcDateOnlyValueReadonly;
 		/** Enter the user who is assigned to manage the record. This field is updated every time the record is assigned to a different user */

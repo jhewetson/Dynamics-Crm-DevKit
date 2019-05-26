@@ -109,13 +109,13 @@ declare namespace Rocket {
 		/** Choose the record that the appointment relates to. */
 		regardingobjectid_account_appointment: DevKit.WebApi.LookupValue;
 		/** Choose the record that the appointment relates to. */
-		regardingobjectid_account_appointment: DevKit.WebApi.LookupValue;
+		regardingobjectid_contact_appointment: DevKit.WebApi.LookupValue;
 		/** Choose the record that the appointment relates to. */
-		regardingobjectid_account_appointment: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_webapi_appointment: DevKit.WebApi.LookupValue;
 		/** Choose the record that the appointment relates to. */
-		regardingobjectid_account_appointment: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgearticle_appointment: DevKit.WebApi.LookupValue;
 		/** Choose the record that the appointment relates to. */
-		regardingobjectid_account_appointment: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgebaserecord_appointment: DevKit.WebApi.LookupValue;
 		/** Safe body text of the appointment. */
 		SafeDescription: DevKit.WebApi.StringValueReadonly;
 		/** Shows the expected duration of the appointment, in minutes. */

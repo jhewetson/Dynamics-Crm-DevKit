@@ -27,7 +27,7 @@ declare namespace Rocket {
 		/** The @odata.etag is then used to build a cache of the response that is dependant on the fields that are retrieved */
 		"@odata.etag": string;
 		/** Logical entity name of the entity participating in the multi entity search. */
-		EntityName: DevKit.WebApi.StringValueReadonly;
+		_EntityName: DevKit.WebApi.StringValueReadonly;
 		/** Order of the entity in the result collection. */
 		EntityOrder: DevKit.WebApi.IntegerValueReadonly;
 		/** Shows the entity used for the multiple entity search. */

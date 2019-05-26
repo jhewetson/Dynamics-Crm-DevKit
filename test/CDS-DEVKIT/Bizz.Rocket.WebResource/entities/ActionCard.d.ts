@@ -79,23 +79,23 @@ declare namespace Rocket {
 		/** Choose the record that the card relates to. */
 		regardingobjectid_account_actioncard: DevKit.WebApi.LookupValue;
 		/** Choose the record that the card relates to. */
-		regardingobjectid_account_actioncard: DevKit.WebApi.LookupValue;
+		regardingobjectid_appointment_actioncard: DevKit.WebApi.LookupValue;
 		/** Choose the record that the card relates to. */
-		regardingobjectid_account_actioncard: DevKit.WebApi.LookupValue;
+		regardingobjectid_contact_actioncard: DevKit.WebApi.LookupValue;
 		/** Choose the record that the card relates to. */
-		regardingobjectid_account_actioncard: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_customactivity: DevKit.WebApi.LookupValue;
 		/** Choose the record that the card relates to. */
-		regardingobjectid_account_actioncard: DevKit.WebApi.LookupValue;
+		regardingobjectid_email_actioncard: DevKit.WebApi.LookupValue;
 		/** Choose the record that the card relates to. */
-		regardingobjectid_account_actioncard: DevKit.WebApi.LookupValue;
+		regardingobjectid_fax_actioncard: DevKit.WebApi.LookupValue;
 		/** Choose the record that the card relates to. */
-		regardingobjectid_account_actioncard: DevKit.WebApi.LookupValue;
+		regardingobjectid_letter_actioncard: DevKit.WebApi.LookupValue;
 		/** Choose the record that the card relates to. */
-		regardingobjectid_account_actioncard: DevKit.WebApi.LookupValue;
+		regardingobjectid_phonecall_actioncard: DevKit.WebApi.LookupValue;
 		/** Choose the record that the card relates to. */
-		regardingobjectid_account_actioncard: DevKit.WebApi.LookupValue;
+		regardingobjectid_recurringappointmentmaster_actioncard: DevKit.WebApi.LookupValue;
 		/** Choose the record that the card relates to. */
-		regardingobjectid_account_actioncard: DevKit.WebApi.LookupValue;
+		regardingobjectid_task_actioncard: DevKit.WebApi.LookupValue;
 		/** Source for the Action Card */
 		Source: DevKit.WebApi.OptionSetValue;
 		/** Shows the Start Date */

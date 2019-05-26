@@ -92,177 +92,177 @@ declare namespace Rocket {
 		/** Unique identifier of the object with which the system job is associated. */
 		regardingobjectid_account: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_activitymimeattachment: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_activitypointer: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_annotation: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_annualfiscalcalendar: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_appointment: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_attributemap: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_businessunit: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_businessunitnewsarticle: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_calendar: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		channelaccessprofile_asyncoperations: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		channelaccessprofileruleid: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_connection: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_connectionrole: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_contact: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_convertrule: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_customeraddress: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_customerrelationship: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_customactivity: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_processwebapi1: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_devkit_webapi: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_displaystring: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_email: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_emailserverprofile: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_entitymap: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		externalparty_asyncoperations: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		externalpartyitem_asyncoperations: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_fax: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_fixedmonthlyfiscalcalendar: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_goal: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_goalrollupquery: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_holidaywrapper: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_import: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_importdata: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_importfile: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_importlog: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_importmap: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_new_interactionforemail: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_isvconfig: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_kbarticle: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_kbarticlecomment: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_kbarticletemplate: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgearticle: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgebaserecord: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_letter: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_mailbox: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_mailmergetemplate: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_metric: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_monthlyfiscalcalendar: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_msdyn_connector: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_organization: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_phonecall: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_position: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_post: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_postfollow: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_privilege: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_quarterlyfiscalcalendar: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_queue: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_queueitem: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_recurringappointmentmaster: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_relationshiprole: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_relationshiprolemap: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_report: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_role: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_rollupfield: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_routingrule: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_routingruleitem: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_savedquery: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_semiannualfiscalcalendar: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_sharepointdocumentlocation: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_sharepointsite: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_similarityrule: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_sla: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_socialactivity: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_socialprofile: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_subject: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_systemform: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_systemuser: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_task: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_team: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_template: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_territory: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_theme: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_transactioncurrency: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_userform: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_usermapping: DevKit.WebApi.LookupValue;
 		/** Unique identifier of the object with which the system job is associated. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_userquery: DevKit.WebApi.LookupValue;
 		RegardingObjectIdYomiName: DevKit.WebApi.StringValue;
 		/** Unique identifier of the request that generated the system job. */
 		RequestId: DevKit.WebApi.GuidValue;

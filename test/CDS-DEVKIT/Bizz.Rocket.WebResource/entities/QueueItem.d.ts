@@ -47,27 +47,27 @@ declare namespace Rocket {
 		/** Choose the activity, case, or article assigned to the queue. */
 		objectid_activitypointer: DevKit.WebApi.LookupValue;
 		/** Choose the activity, case, or article assigned to the queue. */
-		objectid_activitypointer: DevKit.WebApi.LookupValue;
+		objectid_appointment: DevKit.WebApi.LookupValue;
 		/** Choose the activity, case, or article assigned to the queue. */
-		objectid_activitypointer: DevKit.WebApi.LookupValue;
+		objectid_devkit_customactivity: DevKit.WebApi.LookupValue;
 		/** Choose the activity, case, or article assigned to the queue. */
-		objectid_activitypointer: DevKit.WebApi.LookupValue;
+		objectid_devkit_webapi: DevKit.WebApi.LookupValue;
 		/** Choose the activity, case, or article assigned to the queue. */
-		objectid_activitypointer: DevKit.WebApi.LookupValue;
+		objectid_email: DevKit.WebApi.LookupValue;
 		/** Choose the activity, case, or article assigned to the queue. */
-		objectid_activitypointer: DevKit.WebApi.LookupValue;
+		objectid_fax: DevKit.WebApi.LookupValue;
 		/** Choose the activity, case, or article assigned to the queue. */
-		objectid_activitypointer: DevKit.WebApi.LookupValue;
+		objectid_knowledgearticle: DevKit.WebApi.LookupValue;
 		/** Choose the activity, case, or article assigned to the queue. */
-		objectid_activitypointer: DevKit.WebApi.LookupValue;
+		objectid_letter: DevKit.WebApi.LookupValue;
 		/** Choose the activity, case, or article assigned to the queue. */
-		objectid_activitypointer: DevKit.WebApi.LookupValue;
+		objectid_phonecall: DevKit.WebApi.LookupValue;
 		/** Choose the activity, case, or article assigned to the queue. */
-		objectid_activitypointer: DevKit.WebApi.LookupValue;
+		objectid_recurringappointmentmaster: DevKit.WebApi.LookupValue;
 		/** Choose the activity, case, or article assigned to the queue. */
-		objectid_activitypointer: DevKit.WebApi.LookupValue;
+		objectid_socialactivity: DevKit.WebApi.LookupValue;
 		/** Choose the activity, case, or article assigned to the queue. */
-		objectid_activitypointer: DevKit.WebApi.LookupValue;
+		objectid_task: DevKit.WebApi.LookupValue;
 		/** Select the type of the queue item, such as activity, case, or appointment. */
 		ObjectTypeCode: DevKit.WebApi.OptionSetValueReadonly;
 		/** Unique identifier of the organization with which the queue item is associated. */
@@ -103,7 +103,7 @@ declare namespace Rocket {
 		/** Shows who is working on the queue item. */
 		workerid_systemuser: DevKit.WebApi.LookupValue;
 		/** Shows who is working on the queue item. */
-		workerid_systemuser: DevKit.WebApi.LookupValue;
+		workerid_team: DevKit.WebApi.LookupValue;
 		/** Shows the date and time when the queue item was last assigned to a user. */
 		WorkerIdModifiedOn_UtcDateOnly: DevKit.WebApi.UtcDateOnlyValueReadonly;
 	}
@@ -111,30 +111,30 @@ declare namespace Rocket {
 declare namespace OptionSet {
 	namespace QueueItem {
 		enum ObjectTypeCode {
-			/** 10007 */
-			WebApi,
-			/** 4204 */
-			Fax,
-			/** 9953 */
-			Knowledge_Article,
-			/** 10015 */
-			Custom_Activity,
-			/** 4207 */
-			Letter,
-			/** 4210 */
-			Phone_Call,
-			/** 4212 */
-			Task,
-			/** 4202 */
-			Email,
 			/** 4251 */
 			Recurring_Appointment,
-			/** 4201 */
-			Appointment,
 			/** 4200 */
 			Activity,
+			/** 4207 */
+			Letter,
+			/** 4202 */
+			Email,
+			/** 4212 */
+			Task,
+			/** 4210 */
+			Phone_Call,
+			/** 4204 */
+			Fax,
+			/** 10007 */
+			WebApi,
+			/** 10015 */
+			Custom_Activity,
+			/** 9953 */
+			Knowledge_Article,
 			/** 4216 */
-			Social_Activity
+			Social_Activity,
+			/** 4201 */
+			Appointment
 		}
 		enum StateCode {
 			/** 0 */

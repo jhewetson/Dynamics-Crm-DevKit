@@ -27,7 +27,7 @@ declare namespace Rocket {
 		/** The @odata.etag is then used to build a cache of the response that is dependant on the fields that are retrieved */
 		"@odata.etag": string;
 		AttributeName: DevKit.WebApi.StringValue;
-		EntityName: DevKit.WebApi.StringValue;
+		_EntityName: DevKit.WebApi.StringValue;
 		FacetOrder: DevKit.WebApi.IntegerValue;
 		SystemUserId: DevKit.WebApi.GuidValue;
 		UserSearchFacetId: DevKit.WebApi.GuidValue;

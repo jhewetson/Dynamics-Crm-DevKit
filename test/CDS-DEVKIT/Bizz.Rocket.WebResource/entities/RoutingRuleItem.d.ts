@@ -29,7 +29,7 @@ declare namespace Rocket {
 		/** Show who is assigned on item. */
 		assignobjectid_systemuser: DevKit.WebApi.LookupValue;
 		/** Show who is assigned on item. */
-		assignobjectid_systemuser: DevKit.WebApi.LookupValue;
+		assignobjectid_team: DevKit.WebApi.LookupValue;
 		/** Shows the date and time when the item was last assigned to a user. */
 		AssignObjectIdModifiedOn_UtcDateOnly: DevKit.WebApi.UtcDateOnlyValue;
 		/** Assign Object Yomi Name */

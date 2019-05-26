@@ -35,7 +35,7 @@ declare namespace Rocket {
 		/** Shows who created the record on behalfÂ of another user. */
 		CreatedOnBehalfBy: DevKit.WebApi.LookupValueReadonly;
 		/** Entity Name. */
-		EntityName: DevKit.WebApi.StringValue;
+		_EntityName: DevKit.WebApi.StringValue;
 		/** Comma-separated list of attributes. If at least one of these attributes is modified, the callback url should be called. */
 		FilteringAttributes: DevKit.WebApi.StringValue;
 		/** Specifies the message type */

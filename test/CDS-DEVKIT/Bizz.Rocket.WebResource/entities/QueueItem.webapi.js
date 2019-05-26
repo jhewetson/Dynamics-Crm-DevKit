@@ -132,18 +132,18 @@ var Rocket;
 				LoopDetected: 6
 			},
 			ObjectTypeCode: {
-				WebApi: 10007,
-				Fax: 4204,
-				Knowledge_Article: 9953,
-				Custom_Activity: 10015,
-				Letter: 4207,
-				Phone_Call: 4210,
-				Task: 4212,
-				Email: 4202,
 				Recurring_Appointment: 4251,
-				Appointment: 4201,
 				Activity: 4200,
-				Social_Activity: 4216
+				Letter: 4207,
+				Email: 4202,
+				Task: 4212,
+				Phone_Call: 4210,
+				Fax: 4204,
+				WebApi: 10007,
+				Custom_Activity: 10015,
+				Knowledge_Article: 9953,
+				Social_Activity: 4216,
+				Appointment: 4201
 			},
 			StateCode: {
 				Active: 0,

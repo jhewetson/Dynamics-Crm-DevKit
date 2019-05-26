@@ -35,27 +35,27 @@ declare namespace Rocket {
 		/** Choose the record that the post relates to. */
 		regardingobjectid_account: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_appointment: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_contact: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_externalparty: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_knowledgearticle: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_phonecall: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_processsession: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_queue: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_recurringappointmentmaster: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_systemuser: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_task: DevKit.WebApi.LookupValue;
 		/** Choose the record that the post relates to. */
-		regardingobjectid_account: DevKit.WebApi.LookupValue;
+		regardingobjectid_team: DevKit.WebApi.LookupValue;
 		/** Enter the user who is assigned to manage the record. This field is updated every time the record is assigned to a different user */
 		OwnerId_systemuser: DevKit.WebApi.LookupValue;
 		/** Enter the team who is assigned to manage the record. This field is updated every time the record is assigned to a different team */

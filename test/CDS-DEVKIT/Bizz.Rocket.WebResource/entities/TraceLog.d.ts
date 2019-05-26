@@ -56,7 +56,7 @@ declare namespace Rocket {
 		/** Regarding mailbox or email server profile. */
 		regardingobjectid_emailserverprofile: DevKit.WebApi.LookupValue;
 		/** Regarding mailbox or email server profile. */
-		regardingobjectid_emailserverprofile: DevKit.WebApi.LookupValue;
+		regardingobjectid_mailbox: DevKit.WebApi.LookupValue;
 		/** Enter the user who is assigned to manage the record. This field is updated every time the record is assigned to a different user */
 		OwnerId_systemuser: DevKit.WebApi.LookupValueReadonly;
 		/** Enter the team who is assigned to manage the record. This field is updated every time the record is assigned to a different team */

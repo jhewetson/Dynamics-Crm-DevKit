@@ -31,7 +31,7 @@ declare namespace Rocket {
 		/** For internal use only. */
 		ComponentState: DevKit.WebApi.OptionSetValueReadonly;
 		/** Entity */
-		Entity: DevKit.WebApi.StringValue;
+		_Entity: DevKit.WebApi.StringValue;
 		/** Entity Display Name */
 		EntityDisplayName: DevKit.WebApi.StringValue;
 		/** Select Entity */
