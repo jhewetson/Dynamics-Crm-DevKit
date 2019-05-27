@@ -42,14 +42,6 @@ declare namespace Rocket {
 			/** Enter the account, contact, lead, or user recipients of the phone call. */
 			to: DevKit.Form.Controls.ControlLookup;
 		}
-		interface Footer {
-
-		}
-		interface Navigation {
-
-		}
-		interface Process extends DevKit.Form.Controls.IControlProcess {
-		}
 	}
 	class FormPhoneCall extends DevKit.Form.IForm {
 		/**
@@ -64,14 +56,8 @@ declare namespace Rocket {
 		WebApi: DevKit.Form.WebApi;
 		/** The Body section of form PhoneCall */
 		Body: Rocket.FormPhoneCall.Body;
-		/** The Footer section of form PhoneCall */
-		Footer: Rocket.FormPhoneCall.Footer;
 		/** The Header section of form PhoneCall */
 		Header: Rocket.FormPhoneCall.Header;
-		/** The Navigation of form PhoneCall */
-		Navigation: Rocket.FormPhoneCall.Navigation;
-		/** The Process of form PhoneCall */
-		Process: Rocket.FormPhoneCall.Process;
 	}
 	class PhoneCallApi {
 		/**

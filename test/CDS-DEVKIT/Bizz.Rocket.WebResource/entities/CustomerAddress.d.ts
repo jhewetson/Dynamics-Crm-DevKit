@@ -1,5 +1,65 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormCustomerAddressInformation {
+		interface tab_general_Sections {
+			customeraddressinformation: DevKit.Form.Controls.ControlSection;
+			phonenumbers: DevKit.Form.Controls.ControlSection;
+			additionalinformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Select the address type, such as primary or billing. */
+			AddressTypeCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type the city for the customer's address to help identify the location. */
+			City: DevKit.Form.Controls.ControlString;
+			/** Type the country or region for the customer's address. */
+			Country: DevKit.Form.Controls.ControlString;
+			/** Type the fax number associated with the customer's address. */
+			Fax: DevKit.Form.Controls.ControlString;
+			/** Select the freight terms to make sure shipping charges are processed correctly. */
+			FreightTermsCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type the first line of the customer's address to help identify the location. */
+			Line1: DevKit.Form.Controls.ControlString;
+			/** Type the second line of the customer's address. */
+			Line2: DevKit.Form.Controls.ControlString;
+			/** Type the third line of the customer's address. */
+			Line3: DevKit.Form.Controls.ControlString;
+			/** Type a descriptive name for the customer's address, such as Corporate Headquarters. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Type the ZIP Code or postal code for the address. */
+			PostalCode: DevKit.Form.Controls.ControlString;
+			/** Type the name of the primary contact person for the customer's address. */
+			PrimaryContactName: DevKit.Form.Controls.ControlString;
+			/** Select a shipping method for deliveries sent to this address. */
+			ShippingMethodCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type the state or province of the customer's address. */
+			StateOrProvince: DevKit.Form.Controls.ControlString;
+			/** Type the primary phone number for the customer's address. */
+			Telephone1: DevKit.Form.Controls.ControlString;
+			/** Type a second phone number for the customer's address. */
+			Telephone2: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormCustomerAddressInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form CustomerAddressInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form CustomerAddressInformation */
+		Body: Rocket.FormCustomerAddressInformation.Body;
+	}
 	class CustomerAddressApi {
 		/**
 		* PL.DynamicsCrm.DevKit CustomerAddressApi
@@ -152,4 +212,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['CustomerAddress Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

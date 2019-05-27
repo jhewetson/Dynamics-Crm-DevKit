@@ -1,5 +1,43 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormKbArticleCommentInformation {
+		interface tab_general_Sections {
+			kbcomment: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Unique identifier of the user who created the knowledge base article comment. */
+			CreatedBy: DevKit.Form.Controls.ControlLookup;
+			/** Date and time when the knowledge base article comment was created. */
+			CreatedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Unique identifier of the user who last modified the knowledge base article comment. */
+			ModifiedBy: DevKit.Form.Controls.ControlLookup;
+			/** Date and time when the knowledge base article comment was last modified. */
+			ModifiedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Title of the knowledge base article comment. */
+			Title: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormKbArticleCommentInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form KbArticleCommentInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form KbArticleCommentInformation */
+		Body: Rocket.FormKbArticleCommentInformation.Body;
+	}
 	class KbArticleCommentApi {
 		/**
 		* PL.DynamicsCrm.DevKit KbArticleCommentApi
@@ -55,4 +93,4 @@ declare namespace OptionSet {
 	namespace KbArticleComment {
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['KbArticleComment Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

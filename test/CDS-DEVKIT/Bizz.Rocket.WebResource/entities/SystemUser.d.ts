@@ -1,9 +1,6 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
 	namespace FormUser {
-		interface Header {
-
-		}
 		interface tab_SUMMARY_TAB_Sections {
 			onpremise_account_information: DevKit.Form.Controls.ControlSection;
 			online_account_information: DevKit.Form.Controls.ControlSection;
@@ -109,11 +106,6 @@ declare namespace Rocket {
 			/** Information about whether the user is enabled. */
 			IsDisabled: DevKit.Form.Controls.ControlBoolean;
 		}
-		interface Navigation {
-
-		}
-		interface Process extends DevKit.Form.Controls.IControlProcess {
-		}
 	}
 	class FormUser extends DevKit.Form.IForm {
 		/**
@@ -130,12 +122,6 @@ declare namespace Rocket {
 		Body: Rocket.FormUser.Body;
 		/** The Footer section of form User */
 		Footer: Rocket.FormUser.Footer;
-		/** The Header section of form User */
-		Header: Rocket.FormUser.Header;
-		/** The Navigation of form User */
-		Navigation: Rocket.FormUser.Navigation;
-		/** The Process of form User */
-		Process: Rocket.FormUser.Process;
 	}
 	class SystemUserApi {
 		/**

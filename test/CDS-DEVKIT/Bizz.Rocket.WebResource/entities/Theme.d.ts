@@ -1,5 +1,73 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormTheme {
+		interface tab_general_Sections {
+			themeinformation: DevKit.Form.Controls.ControlSection;
+			themenavigation: DevKit.Form.Controls.ControlSection;
+			themeuielements: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Choose the Unified Interface secondary theme color to be used on the process control */
+			AccentColor: DevKit.Form.Controls.ControlString;
+			/** For internal use only. */
+			BackgroundColor: DevKit.Form.Controls.ControlString;
+			/** Choose the color that controls will use for borders */
+			ControlBorder: DevKit.Form.Controls.ControlString;
+			/** Choose the background color for controls to use to indicate when you hover over items */
+			ControlShade: DevKit.Form.Controls.ControlString;
+			/** Choose the default custom entity color if no color is assigned */
+			DefaultCustomEntityColor: DevKit.Form.Controls.ControlString;
+			/** Choose the default color for system entities if no color is assigned */
+			DefaultEntityColor: DevKit.Form.Controls.ControlString;
+			/** Choose the color for all links, such as e-mail address and lookup links, and for all buttons that are in focus */
+			GlobalLinkColor: DevKit.Form.Controls.ControlString;
+			/** Choose the color for title text, such as form tab labels */
+			HeaderColor: DevKit.Form.Controls.ControlString;
+			/** Choose the color that commands or lists will use to indicate hovered over items */
+			HoverLinkEffect: DevKit.Form.Controls.ControlString;
+			/** Upload a web resource to use as a logo. Recommended dimensions are a height of 50 pixels and a maximum width of 400 pixels. */
+			LogoId: DevKit.Form.Controls.ControlLookup;
+			/** Enter text that will be used as the tooltip and alt text for the logo. */
+			LogoToolTip: DevKit.Form.Controls.ControlString;
+			/** Choose the Unified Interface primary theme color to be used on main command bar, buttons and tabs */
+			MainColor: DevKit.Form.Controls.ControlString;
+			/** The name of the Theme Entity. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Choose the primary Navigation Bar background color */
+			NavBarBackgroundColor: DevKit.Form.Controls.ControlString;
+			/** Choose the secondary Navigation Bar background color */
+			NavBarShelfColor: DevKit.Form.Controls.ControlString;
+			/** Choose the page header background color */
+			PageHeaderBackgroundColor: DevKit.Form.Controls.ControlString;
+			/** Choose the panel header background color */
+			PanelHeaderBackgroundColor: DevKit.Form.Controls.ControlString;
+			/** Choose the primary background color for process controls */
+			ProcessControlColor: DevKit.Form.Controls.ControlString;
+			/** Choose the color that commands or lists will use to indicate selected items */
+			SelectedLinkEffect: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormTheme extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form Theme
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form Theme */
+		Body: Rocket.FormTheme.Body;
+	}
 	class ThemeApi {
 		/**
 		* PL.DynamicsCrm.DevKit ThemeApi
@@ -119,4 +187,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Theme'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

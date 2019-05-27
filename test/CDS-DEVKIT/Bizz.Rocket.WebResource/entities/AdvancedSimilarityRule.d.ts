@@ -1,5 +1,54 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormAdvancedSimilarityRuleInformation {
+		interface tab__67E8B341_A89A_4207_9BCC_4C1F9CC8B89D_Sections {
+			_89397326_037F_4A43_B362_6B9B04E7917B: DevKit.Form.Controls.ControlSection;
+			_29B6CE18_08E1_4B87_B532_B18A6987BBB2: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab__3D17A623_BFEB_49F9_83C4_B5A02B96CAC0_Sections {
+			_0CBFC71F_6EFF_4583_9B38_7A9AE69C3AE1: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab__67E8B341_A89A_4207_9BCC_4C1F9CC8B89D extends DevKit.Form.Controls.IControlTab {
+			Section: tab__67E8B341_A89A_4207_9BCC_4C1F9CC8B89D_Sections;
+		}
+		interface tab__3D17A623_BFEB_49F9_83C4_B5A02B96CAC0 extends DevKit.Form.Controls.IControlTab {
+			Section: tab__3D17A623_BFEB_49F9_83C4_B5A02B96CAC0_Sections;
+		}
+		interface Tabs {
+			_67E8B341_A89A_4207_9BCC_4C1F9CC8B89D: tab__67E8B341_A89A_4207_9BCC_4C1F9CC8B89D;
+			_3D17A623_BFEB_49F9_83C4_B5A02B96CAC0: tab__3D17A623_BFEB_49F9_83C4_B5A02B96CAC0;
+		}
+		interface Body {
+			Tab: Tabs;
+			textanalyticsentitymappings: DevKit.Form.Controls.ControlGrid;
+			/** Enter a description for the Advanced Similarity Rule */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Filter Result By Status */
+			FilterResultByStatus: DevKit.Form.Controls.ControlOptionSet;
+			/** Use Text Analytics for Target Match */
+			IsAzureMLRequired: DevKit.Form.Controls.ControlBoolean;
+			/** Enter the maximum number of keywords and key phrases to use with text analytics. */
+			MaxNumberKeyphrases: DevKit.Form.Controls.ControlInteger;
+			/** Type a logical name for the similarity configuration */
+			name: DevKit.Form.Controls.ControlString;
+			/** Enter an entity that similar records will be suggested for */
+			SourceEntity: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormAdvancedSimilarityRuleInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form AdvancedSimilarityRuleInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form AdvancedSimilarityRuleInformation */
+		Body: Rocket.FormAdvancedSimilarityRuleInformation.Body;
+	}
 	class AdvancedSimilarityRuleApi {
 		/**
 		* PL.DynamicsCrm.DevKit AdvancedSimilarityRuleApi
@@ -114,4 +163,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['AdvancedSimilarityRule Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

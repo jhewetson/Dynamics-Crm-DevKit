@@ -1,5 +1,53 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormDocumentTemplateInformation {
+		interface tab_general_Sections {
+			Details: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Associated Entity Type Code. */
+			AssociatedEntityTypeCode: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the user who created the document template. */
+			CreatedBy: DevKit.Form.Controls.ControlLookup;
+			/** Date and time when the document template was created. */
+			CreatedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Additional information to describe the Document Template */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Option set for selecting the type of the document template */
+			DocumentType: DevKit.Form.Controls.ControlOptionSet;
+			/** Language of Document Template. */
+			LanguageCode: DevKit.Form.Controls.ControlInteger;
+			/** Unique identifier of the user who last modified the document template. */
+			ModifiedBy: DevKit.Form.Controls.ControlLookup;
+			/** Date and time when the document template was last modified. */
+			ModifiedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Name of the document template. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Information about whether the document template is active. */
+			Status: DevKit.Form.Controls.ControlBoolean;
+		}
+	}
+	class FormDocumentTemplateInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form DocumentTemplateInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form DocumentTemplateInformation */
+		Body: Rocket.FormDocumentTemplateInformation.Body;
+	}
 	class DocumentTemplateApi {
 		/**
 		* PL.DynamicsCrm.DevKit DocumentTemplateApi
@@ -69,4 +117,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['DocumentTemplate Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

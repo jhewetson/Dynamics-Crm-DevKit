@@ -311,14 +311,19 @@ namespace PL.DynamicsCrm.DevKit.Shared
                 code += $"\t\t\t{tab.Name}: {{\r\n";
                 code += $"\t\t\t\tSection: {{\r\n";
                 var xdoc2 = XDocument.Parse(tab.InnerText);
-                var sections = from x2 in xdoc2.Descendants("columns").Descendants("column").Descendants("sections")
-                        .Elements("section")
+                var sections = from x2 in xdoc2
+                               .Descendants("columns")
+                               .Descendants("column")
+                               .Descendants("sections")
+                               .Elements("section")
                     select new
                     {
-                        Name = x2.Attribute("name")?.Value
+                        Name = x2?.Attribute("name")?.Value
                     };
                 foreach (var section in sections)
                 {
+                    if (section == null) continue;
+                    if (section.Name == null) continue;
                     if (section.Name.StartsWith("ref_pan")) continue;
                     code += $"\t\t\t\t\t{section.Name}: {{}},\r\n";
                 }
@@ -326,7 +331,6 @@ namespace PL.DynamicsCrm.DevKit.Shared
                 code += $"\t\t\t\t}}\r\n";
                 code += $"\t\t\t}},\r\n";
             }
-
             code = code.TrimEnd(",\r\n".ToCharArray()) + "\r\n";
             return code;
         }
@@ -593,15 +597,17 @@ namespace PL.DynamicsCrm.DevKit.Shared
             var entities = crmAttribute.EntityReferenceLogicalName.Split(";".ToCharArray());
             foreach (var entity in entities)
             {
-                var request = new RetrieveEntityRequest
+                if (entity.Length > 0)
                 {
-                    EntityFilters = EntityFilters.Attributes,
-                    LogicalName = entity
-                };
-                var response = (RetrieveEntityResponse)CrmService.Execute(request);
-                value += response.EntityMetadata.LogicalCollectionName + ";";
+                    var request = new RetrieveEntityRequest
+                    {
+                        EntityFilters = EntityFilters.Attributes,
+                        LogicalName = entity
+                    };
+                    var response = (RetrieveEntityResponse)CrmService.Execute(request);
+                    value += response.EntityMetadata.LogicalCollectionName + ";";
+                }
             }
-
             return value.TrimEnd(";".ToCharArray());
         }
         private string GetNavigationPropertyName(CrmAttribute crmAttribute)
@@ -701,15 +707,17 @@ namespace PL.DynamicsCrm.DevKit.Shared
         {
             var processForms = new List<SystemForm>();
             foreach (var form in Forms)
-                if (checkedItems.Contains($"{form.Name}"))
+                if (checkedItems.Contains($"{form.Name}") && !processForms.Any(a => a.Name == form.Name))
                     processForms.Add(form);
+
+            /*
             var message = IsValidFormData(processForms);
             if (message.Length > 0)
             {
                 Message = message;
                 return;
             }
-
+            */
             Form = GetForm(processForms);
             FormCode = GetFormCode(processForms, isDebugForm);
             FormCodeIntellisense = GetIntellisense(processForms, isDebugForm, isJsWebApi, isDebugWebApi);

@@ -1,5 +1,64 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormMetricInformation {
+		interface tab_general_Sections {
+			_379F3DB8_82DF_4E44_930A_C7A22C0E5206: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_RollupAttributes_Sections {
+			_CEBD8001_3DD4_4ABB_99DE_9A3F2FD250EB: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_description_Sections {
+			description: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface tab_RollupAttributes extends DevKit.Form.Controls.IControlTab {
+			Section: tab_RollupAttributes_Sections;
+		}
+		interface tab_description extends DevKit.Form.Controls.IControlTab {
+			Section: tab_description_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+			RollupAttributes: tab_RollupAttributes;
+			description: tab_description;
+		}
+		interface Body {
+			Tab: Tabs;
+			MetricLineItemSubGrid: DevKit.Form.Controls.ControlGrid;
+			/** Data type of the amount. */
+			AmountDataType: DevKit.Form.Controls.ControlOptionSet;
+			/** Description of the goal metric. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Information that indicates whether the metric type is Count or Amount. */
+			IsAmount: DevKit.Form.Controls.ControlBoolean;
+			/** Indicates whether the goal metric tracks stretch targets. */
+			IsStretchTracked: DevKit.Form.Controls.ControlBoolean;
+			/** Name of the goal metric. */
+			Name: DevKit.Form.Controls.ControlString;
+		}
+		interface Footer {
+			/** Status of the goal metric. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+	}
+	class FormMetricInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form MetricInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form MetricInformation */
+		Body: Rocket.FormMetricInformation.Body;
+		/** The Footer section of form MetricInformation */
+		Footer: Rocket.FormMetricInformation.Footer;
+	}
 	class MetricApi {
 		/**
 		* PL.DynamicsCrm.DevKit MetricApi
@@ -92,4 +151,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Metric Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

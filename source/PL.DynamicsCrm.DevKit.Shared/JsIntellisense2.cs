@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
@@ -12,13 +11,16 @@ namespace PL.DynamicsCrm.DevKit.Shared
 {
     public class JsIntellisense2
     {
+        public JsIntellisense2(OrganizationServiceProxy crmService)
+        {
+
+        }
         private class IdName
         {
             public string Id { get; set; }
             public string Name { get; set; }
             public string ClassId { get; set; }
         }
-
         public List<SystemForm> ProcessForms { get; internal set; }
         public bool IsDebugForm { get; internal set; }
         public string ProjectName { get; internal set; }
@@ -27,13 +29,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
         public DataCollection<Entity> Processes { get; internal set; }
         public bool IsJsWebApi { get; internal set; }
         public bool IsDebugWebApi { get; internal set; }
-
         private string Class { get { return EntityName; } }
-
-        public JsIntellisense2(OrganizationServiceProxy crmService)
-        {
-
-        }
         public string Intellisense
         {
             get
@@ -49,13 +45,12 @@ namespace PL.DynamicsCrm.DevKit.Shared
                 return _d_ts;
             }
         }
-
         private string GetSavedComment()
         {
             var _d_ts = string.Empty;
             var comment = new CommentIntellisense()
             {
-                JsForm = ProcessForms.Select(f => f.Name).ToList<string>(),
+                JsForm = ProcessForms.Select(f =>  f.Name.EndsWith(" Information") ? "Information":  f.Name).ToList<string>(),
                 JsWebApi = IsJsWebApi,
                 IsDebugForm = IsDebugForm,
                 IsDebugWebApi = IsDebugWebApi
@@ -330,9 +325,10 @@ namespace PL.DynamicsCrm.DevKit.Shared
                            {
                                Name = x?.Attribute("datafieldname")?.Value,
                                Id = x?.Attribute("id").Value,
-                               ClassId = x?.Attribute("classid")?.Value?.ToUpper()
+                               ClassId = Utility.TrimGuid(x?.Attribute("classid")?.Value?.ToUpper())
                            }).ToList();
             headers = headers.OrderBy(x => x.Name).ToList();
+            if (headers.Count() == 0) return string.Empty;
             var _d_ts = Get_d_ts_ForListFields(headers);
             if (_d_ts.EndsWith(",\r\n")) _d_ts = _d_ts.TrimEnd(",\r\n".ToCharArray()) + "\r\n";
             return _d_ts;
@@ -346,6 +342,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
                                .Descendants("NavBar")
                                .Descendants("NavBarByRelationshipItem")
                                select (string)x?.Attribute("Id")).ToList();
+            if (navigations.Count == 0) return string.Empty;
             foreach (var navigation in navigations)
                 _d_ts += $"\t\t\t{navigation}: DevKit.Form.Controls.ControlNavigationItem,\r\n";
             _d_ts = _d_ts.TrimEnd(",\r\n".ToCharArray()) + "\r\n";
@@ -363,15 +360,17 @@ namespace PL.DynamicsCrm.DevKit.Shared
                            {
                                Name = x?.Attribute("datafieldname")?.Value,
                                Id = x?.Attribute("id").Value,
-                               ClassId = x?.Attribute("classid")?.Value?.ToUpper()
+                               ClassId = Utility.TrimGuid(x?.Attribute("classid")?.Value?.ToUpper())
                            }).ToList();
             footers = footers.OrderBy(x => x.Name).ToList();
+            if (footers.Count() == 0) return string.Empty;
             var _d_ts = Get_d_ts_ForListFields(footers);
             if (_d_ts.EndsWith(",\r\n")) _d_ts = _d_ts.TrimEnd(",\r\n".ToCharArray()) + "\r\n";
             return _d_ts;
         }
         private string GetForm_d_ts_Process(string formXml)
         {
+            if (Processes.Count == 0) return string.Empty;
             var _d_ts = string.Empty;
             var part1 = string.Empty;
             foreach (var entity in Processes)
@@ -437,9 +436,20 @@ namespace PL.DynamicsCrm.DevKit.Shared
                            Name = x?.Attribute("name")?.Value,
                            InnerText = x?.ToString()
                        };
+            int j = 1;
             foreach (var row in rows)
             {
-                part1 += $"\t\tinterface tab_{row.Name}_Sections {{\r\n";
+                if (Utility.GetSafeName(row.Name).Length == 0) continue;
+                var tabName = row.Name;
+                //HOT FIXED for TAB
+                if (EntityName == "EmailServerProfile" && tabName == "tab_3")
+                {
+                    tabName = tabName + j.ToString();
+                    if (tabName == "tab_31") tabName = "tab_3";
+                    j++;
+                }
+
+                part1 += $"\t\tinterface tab_{Utility.GetSafeName(tabName)}_Sections {{\r\n";
                 var xdoc2 = XDocument.Parse(row.InnerText);
                 var rows2 = from x2 in xdoc2.Descendants("columns").Descendants("column").Descendants("sections")
                         .Elements("section")
@@ -447,22 +457,38 @@ namespace PL.DynamicsCrm.DevKit.Shared
                             {
                                 name = x2.Attribute("name")?.Value
                             };
+                int i = 1;
                 foreach (var row2 in rows2)
                 {
+                    if (row2 == null) continue;
+                    if (row2.name == null) continue;
                     if (row2.name.StartsWith("ref_pan")) continue;
-                    part1 += $"\t\t\t{row2.name}: DevKit.Form.Controls.ControlSection;\r\n";
+                    var sectionName = row2.name;
+                    //HOT FIXED!!!!
+                    if (EntityName == "Feedback" && sectionName == "Content")
+                    {
+                        sectionName = sectionName + i.ToString();
+                        if (sectionName == "Content1") sectionName = "Content";
+                        i++;
+                    }
+
+                    part1 += $"\t\t\t{Utility.GetSafeName(sectionName)}: DevKit.Form.Controls.ControlSection;\r\n";
                 }
                 part1 += $"\t\t}}\r\n";
-                part2 += $"\t\tinterface tab_{row.Name} extends DevKit.Form.Controls.IControlTab {{\r\n";
-                part2 += $"\t\t\tSection: tab_{row.Name}_Sections;\r\n";
+
+                part2 += $"\t\tinterface tab_{Utility.GetSafeName(tabName)} extends DevKit.Form.Controls.IControlTab {{\r\n";
+                part2 += $"\t\t\tSection: tab_{Utility.GetSafeName(tabName)}_Sections;\r\n";
                 part2 += $"\t\t}}\r\n";
-                part3 += $"\t\t\t{row.Name}: tab_{row.Name};\r\n";
+
+                part3 += $"\t\t\t{Utility.GetSafeName(tabName)}: tab_{Utility.GetSafeName(tabName)};\r\n";
+
             }
             part3 += $"\t\t}}\r\n";
             var _d_ts = string.Empty;
             _d_ts = $"{part1}{part2}{part3}";
             _d_ts += $"\t\tinterface Body {{\r\n";
-            _d_ts += $"\t\t\tTab: Tabs;\r\n";
+            if (part1.Length > 0 && part2.Length > 0)
+                _d_ts += $"\t\t\tTab: Tabs;\r\n";
             var body = (from x in xdoc
                           .Descendants("tabs")
                           .Descendants("tab")
@@ -478,7 +504,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
                         {
                             Name = x?.Attribute("datafieldname")?.Value,
                             Id = x?.Attribute("id").Value,
-                            ClassId = x?.Attribute("classid")?.Value?.ToUpper()
+                            ClassId = Utility.TrimGuid(x?.Attribute("classid")?.Value?.ToUpper())
                         }).Distinct().ToList();
             body = body.OrderBy(x => x.Name).ToList();
             _d_ts += Get_d_ts_ForListFields(body);
@@ -496,6 +522,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
                 if (item.Name != null && ControlClassId.CONTROLS.Contains(item.ClassId))
                 {
                     var crmAttribute = Fields.FirstOrDefault(x => x.LogicalName == item.Name);
+                    if (crmAttribute == null) continue;
                     var name = crmAttribute.SchemaName;
                     if (name == previousName)
                     {
@@ -564,6 +591,14 @@ namespace PL.DynamicsCrm.DevKit.Shared
                     {
                         _d_ts += $"{jsdoc}\t\t\t{name}: DevKit.Form.Controls.ControlDecimal;\r\n";
                     }
+                    else if (crmAttribute.FieldType == AttributeTypeCode.EntityName)
+                    {
+                        _d_ts += $"{jsdoc}\t\t\t{name}: DevKit.Form.Controls.ControlString;\r\n";
+                    }
+                    else if (crmAttribute.FieldType == AttributeTypeCode.Uniqueidentifier)
+                    {
+                        _d_ts += $"{jsdoc}\t\t\t{name}: DevKit.Form.Controls.ControlString;\r\n";
+                    }
                     else
                     {
                         _d_ts += $"\t\t\t{item.Name}: DevKit.Form.Controls.ELSE1???;//{item.Id} - {item.ClassId} -- FOR DEBUG \r\n";
@@ -622,21 +657,21 @@ namespace PL.DynamicsCrm.DevKit.Shared
                 }
                 else
                 {
-                    _d_ts += $"\t\t\t{item.Name}: DevKit.Form.Controls.ELSE3???;//{item.Id} - {item.ClassId} -- FOR DEBUG \r\n";
+                    if (item.Name != null)
+                        _d_ts += $"\t\t\t{item.Name}: DevKit.Form.Controls.ELSE3???;//{item.Id} - {item.ClassId} -- FOR DEBUG \r\n";
                 }
             }
             _d_ts = _d_ts.TrimEnd(",\r\n".ToCharArray()) + "\r\n";
             return _d_ts;
         }
-
         private string GetForm_d_ts()
         {
             var _d_ts = string.Empty;
             foreach (var form in ProcessForms)
             {
                 if (form.IsQuickCreate) continue;
+                if (form.Name.ToLower() == "information") form.Name = $"{Class} Information";
                 _d_ts += $"\tnamespace Form{Utility.GetSafeName(form.Name)} {{\r\n";
-
                 var form_d_ts_Header = GetForm_d_ts_Header(form.FormXml);
                 if (form_d_ts_Header.Length > 0)
                 {

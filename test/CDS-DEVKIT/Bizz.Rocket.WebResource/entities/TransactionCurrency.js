@@ -1,2 +1,11 @@
-﻿//@ts-check
-///<reference path="TransactionCurrency.d.ts" />
+﻿///<reference path='TransactionCurrency.d.ts' />
+var formInformation = (function () {
+	function onLoad(executionContext) {
+	}
+	function onSave(executionContext) {
+	}
+	return {
+		OnLoad: onLoad,
+		OnSave: onSave
+	};
+})();

@@ -223,7 +223,10 @@
       "rootfolder": "",
       "crmversion": "365",
       "type": "JsForm",
-      "usetypescriptdeclaration": "true"
+      "usetypescriptdeclaration": "true",
+      "entities": [
+        "All"
+      ]
     },
     {
       "profile": "JS-WEBAPI",

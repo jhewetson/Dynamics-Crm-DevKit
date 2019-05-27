@@ -1,9 +1,6 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
-	namespace FormInformation {
-		interface Header {
-
-		}
+	namespace FormActivityMimeAttachmentInformation {
 		interface tab_test_Sections {
 			test: DevKit.Form.Controls.ControlSection;
 		}
@@ -20,18 +17,10 @@ declare namespace Rocket {
 			/** File size of the attachment. */
 			FileSize: DevKit.Form.Controls.ControlInteger;
 		}
-		interface Footer {
-
-		}
-		interface Navigation {
-
-		}
-		interface Process extends DevKit.Form.Controls.IControlProcess {
-		}
 	}
-	class FormInformation extends DevKit.Form.IForm {
+	class FormActivityMimeAttachmentInformation extends DevKit.Form.IForm {
 		/**
-		* PL.DynamicsCrm.DevKit form Information
+		* PL.DynamicsCrm.DevKit form ActivityMimeAttachmentInformation
 		* @param executionContext the execution context
 		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
 		*/
@@ -40,16 +29,8 @@ declare namespace Rocket {
 		Utility: DevKit.Form.Utility;
 		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
 		WebApi: DevKit.Form.WebApi;
-		/** The Body section of form Information */
-		Body: Rocket.FormInformation.Body;
-		/** The Footer section of form Information */
-		Footer: Rocket.FormInformation.Footer;
-		/** The Header section of form Information */
-		Header: Rocket.FormInformation.Header;
-		/** The Navigation of form Information */
-		Navigation: Rocket.FormInformation.Navigation;
-		/** The Process of form Information */
-		Process: Rocket.FormInformation.Process;
+		/** The Body section of form ActivityMimeAttachmentInformation */
+		Body: Rocket.FormActivityMimeAttachmentInformation.Body;
 	}
 	class ActivityMimeAttachmentApi {
 		/**
@@ -143,4 +124,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['ActivityMimeAttachment Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

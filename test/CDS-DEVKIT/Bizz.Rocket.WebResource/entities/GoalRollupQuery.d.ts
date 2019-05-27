@@ -1,5 +1,46 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormGoalRollupQueryInformation {
+		interface tab_rule_Sections {
+			section1: DevKit.Form.Controls.ControlSection;
+			criteria: DevKit.Form.Controls.ControlSection;
+			RuleConditions: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_rule extends DevKit.Form.Controls.IControlTab {
+			Section: tab_rule_Sections;
+		}
+		interface Tabs {
+			rule: tab_rule;
+		}
+		interface Body {
+			Tab: Tabs;
+			ruleconditioncontrol: DevKit.Form.Controls.ControlIFrame;
+			queryeditor_uc: DevKit.Form.Controls.ControlActionCards;
+			/** Type a descriptive name for the goal rollup query. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Type a descriptive name for the goal rollup query. */
+			Name_1: DevKit.Form.Controls.ControlString;
+			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Enter the record type of the rollup query. */
+			QueryEntityType: DevKit.Form.Controls.ControlString;
+			queryentitytype_uc: DevKit.Form.Controls.ControlActionCards;
+		}
+	}
+	class FormGoalRollupQueryInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form GoalRollupQueryInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form GoalRollupQueryInformation */
+		Body: Rocket.FormGoalRollupQueryInformation.Body;
+	}
 	class GoalRollupQueryApi {
 		/**
 		* PL.DynamicsCrm.DevKit GoalRollupQueryApi
@@ -86,4 +127,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['GoalRollupQuery Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

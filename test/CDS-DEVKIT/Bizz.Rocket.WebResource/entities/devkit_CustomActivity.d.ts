@@ -39,14 +39,6 @@ declare namespace Rocket {
 			/** Person who is the receiver of the activity. */
 			To: DevKit.Form.Controls.ControlLookup;
 		}
-		interface Footer {
-
-		}
-		interface Navigation {
-
-		}
-		interface Process extends DevKit.Form.Controls.IControlProcess {
-		}
 	}
 	class FormCustomActivity extends DevKit.Form.IForm {
 		/**
@@ -61,14 +53,8 @@ declare namespace Rocket {
 		WebApi: DevKit.Form.WebApi;
 		/** The Body section of form CustomActivity */
 		Body: Rocket.FormCustomActivity.Body;
-		/** The Footer section of form CustomActivity */
-		Footer: Rocket.FormCustomActivity.Footer;
 		/** The Header section of form CustomActivity */
 		Header: Rocket.FormCustomActivity.Header;
-		/** The Navigation of form CustomActivity */
-		Navigation: Rocket.FormCustomActivity.Navigation;
-		/** The Process of form CustomActivity */
-		Process: Rocket.FormCustomActivity.Process;
 	}
 	class devkit_CustomActivityApi {
 		/**

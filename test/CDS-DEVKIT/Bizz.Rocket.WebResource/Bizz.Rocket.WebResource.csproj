@@ -103,9 +103,15 @@
     <Content Include="entities\ActivityPointer.webapi.js">
       <DependentUpon>ActivityPointer.js</DependentUpon>
     </Content>
+    <Content Include="entities\AdvancedSimilarityRule.form.js">
+      <DependentUpon>AdvancedSimilarityRule.js</DependentUpon>
+    </Content>
     <Content Include="entities\AdvancedSimilarityRule.js" />
     <Content Include="entities\AdvancedSimilarityRule.webapi.js">
       <DependentUpon>AdvancedSimilarityRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Annotation.form.js">
+      <DependentUpon>Annotation.js</DependentUpon>
     </Content>
     <Content Include="entities\Annotation.js" />
     <Content Include="entities\Annotation.webapi.js">
@@ -155,9 +161,15 @@
     <Content Include="entities\AppModuleRoles.webapi.js">
       <DependentUpon>AppModuleRoles.js</DependentUpon>
     </Content>
+    <Content Include="entities\Appointment.form.js">
+      <DependentUpon>Appointment.js</DependentUpon>
+    </Content>
     <Content Include="entities\Appointment.js" />
     <Content Include="entities\Appointment.webapi.js">
       <DependentUpon>Appointment.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AsyncOperation.form.js">
+      <DependentUpon>AsyncOperation.js</DependentUpon>
     </Content>
     <Content Include="entities\AsyncOperation.js" />
     <Content Include="entities\AsyncOperation.webapi.js">
@@ -179,6 +191,9 @@
     <Content Include="entities\AuthorizationServer.webapi.js">
       <DependentUpon>AuthorizationServer.js</DependentUpon>
     </Content>
+    <Content Include="entities\AzureServiceConnection.form.js">
+      <DependentUpon>AzureServiceConnection.js</DependentUpon>
+    </Content>
     <Content Include="entities\AzureServiceConnection.js" />
     <Content Include="entities\AzureServiceConnection.webapi.js">
       <DependentUpon>AzureServiceConnection.js</DependentUpon>
@@ -186,6 +201,9 @@
     <Content Include="entities\BulkDeleteFailure.js" />
     <Content Include="entities\BulkDeleteFailure.webapi.js">
       <DependentUpon>BulkDeleteFailure.js</DependentUpon>
+    </Content>
+    <Content Include="entities\BulkDeleteOperation.form.js">
+      <DependentUpon>BulkDeleteOperation.js</DependentUpon>
     </Content>
     <Content Include="entities\BulkDeleteOperation.js" />
     <Content Include="entities\BulkDeleteOperation.webapi.js">
@@ -199,6 +217,9 @@
     <Content Include="entities\BusinessProcessFlowInstance.webapi.js">
       <DependentUpon>BusinessProcessFlowInstance.js</DependentUpon>
     </Content>
+    <Content Include="entities\BusinessUnit.form.js">
+      <DependentUpon>BusinessUnit.js</DependentUpon>
+    </Content>
     <Content Include="entities\BusinessUnit.js" />
     <Content Include="entities\BusinessUnit.webapi.js">
       <DependentUpon>BusinessUnit.js</DependentUpon>
@@ -207,13 +228,22 @@
     <Content Include="entities\BusinessUnitMap.webapi.js">
       <DependentUpon>BusinessUnitMap.js</DependentUpon>
     </Content>
+    <Content Include="entities\BusinessUnitNewsArticle.form.js">
+      <DependentUpon>BusinessUnitNewsArticle.js</DependentUpon>
+    </Content>
     <Content Include="entities\BusinessUnitNewsArticle.js" />
     <Content Include="entities\BusinessUnitNewsArticle.webapi.js">
       <DependentUpon>BusinessUnitNewsArticle.js</DependentUpon>
     </Content>
+    <Content Include="entities\Calendar.form.js">
+      <DependentUpon>Calendar.js</DependentUpon>
+    </Content>
     <Content Include="entities\Calendar.js" />
     <Content Include="entities\Calendar.webapi.js">
       <DependentUpon>Calendar.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CalendarRule.form.js">
+      <DependentUpon>CalendarRule.js</DependentUpon>
     </Content>
     <Content Include="entities\CalendarRule.js" />
     <Content Include="entities\CalendarRule.webapi.js">
@@ -231,9 +261,15 @@
     <Content Include="entities\CardType.webapi.js">
       <DependentUpon>CardType.js</DependentUpon>
     </Content>
+    <Content Include="entities\Category.form.js">
+      <DependentUpon>Category.js</DependentUpon>
+    </Content>
     <Content Include="entities\Category.js" />
     <Content Include="entities\Category.webapi.js">
       <DependentUpon>Category.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelAccessProfile.form.js">
+      <DependentUpon>ChannelAccessProfile.js</DependentUpon>
     </Content>
     <Content Include="entities\ChannelAccessProfile.js" />
     <Content Include="entities\ChannelAccessProfile.webapi.js">
@@ -243,17 +279,29 @@
     <Content Include="entities\ChannelAccessProfileEntityAccessLevel.webapi.js">
       <DependentUpon>ChannelAccessProfileEntityAccessLevel.js</DependentUpon>
     </Content>
+    <Content Include="entities\ChannelAccessProfileRule.form.js">
+      <DependentUpon>ChannelAccessProfileRule.js</DependentUpon>
+    </Content>
     <Content Include="entities\ChannelAccessProfileRule.js" />
     <Content Include="entities\ChannelAccessProfileRule.webapi.js">
       <DependentUpon>ChannelAccessProfileRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelAccessProfileRuleItem.form.js">
+      <DependentUpon>ChannelAccessProfileRuleItem.js</DependentUpon>
     </Content>
     <Content Include="entities\ChannelAccessProfileRuleItem.js" />
     <Content Include="entities\ChannelAccessProfileRuleItem.webapi.js">
       <DependentUpon>ChannelAccessProfileRuleItem.js</DependentUpon>
     </Content>
+    <Content Include="entities\ChannelProperty.form.js">
+      <DependentUpon>ChannelProperty.js</DependentUpon>
+    </Content>
     <Content Include="entities\ChannelProperty.js" />
     <Content Include="entities\ChannelProperty.webapi.js">
       <DependentUpon>ChannelProperty.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelPropertyGroup.form.js">
+      <DependentUpon>ChannelPropertyGroup.js</DependentUpon>
     </Content>
     <Content Include="entities\ChannelPropertyGroup.js" />
     <Content Include="entities\ChannelPropertyGroup.webapi.js">
@@ -271,9 +319,15 @@
     <Content Include="entities\ComplexControl.webapi.js">
       <DependentUpon>ComplexControl.js</DependentUpon>
     </Content>
+    <Content Include="entities\Connection.form.js">
+      <DependentUpon>Connection.js</DependentUpon>
+    </Content>
     <Content Include="entities\Connection.js" />
     <Content Include="entities\Connection.webapi.js">
       <DependentUpon>Connection.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ConnectionRole.form.js">
+      <DependentUpon>ConnectionRole.js</DependentUpon>
     </Content>
     <Content Include="entities\ConnectionRole.js" />
     <Content Include="entities\ConnectionRole.webapi.js">
@@ -294,9 +348,15 @@
     <Content Include="entities\Contact.webapi.js">
       <DependentUpon>Contact.js</DependentUpon>
     </Content>
+    <Content Include="entities\ConvertRule.form.js">
+      <DependentUpon>ConvertRule.js</DependentUpon>
+    </Content>
     <Content Include="entities\ConvertRule.js" />
     <Content Include="entities\ConvertRule.webapi.js">
       <DependentUpon>ConvertRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ConvertRuleItem.form.js">
+      <DependentUpon>ConvertRuleItem.js</DependentUpon>
     </Content>
     <Content Include="entities\ConvertRuleItem.js" />
     <Content Include="entities\ConvertRuleItem.webapi.js">
@@ -314,13 +374,22 @@
     <Content Include="entities\CustomControlResource.webapi.js">
       <DependentUpon>CustomControlResource.js</DependentUpon>
     </Content>
+    <Content Include="entities\CustomerAddress.form.js">
+      <DependentUpon>CustomerAddress.js</DependentUpon>
+    </Content>
     <Content Include="entities\CustomerAddress.js" />
     <Content Include="entities\CustomerAddress.webapi.js">
       <DependentUpon>CustomerAddress.js</DependentUpon>
     </Content>
+    <Content Include="entities\CustomerRelationship.form.js">
+      <DependentUpon>CustomerRelationship.js</DependentUpon>
+    </Content>
     <Content Include="entities\CustomerRelationship.js" />
     <Content Include="entities\CustomerRelationship.webapi.js">
       <DependentUpon>CustomerRelationship.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DataPerformance.form.js">
+      <DependentUpon>DataPerformance.js</DependentUpon>
     </Content>
     <Content Include="entities\DataPerformance.js" />
     <Content Include="entities\DataPerformance.webapi.js">
@@ -357,6 +426,9 @@
     <Content Include="entities\devkit_processwebapi1.webapi.js">
       <DependentUpon>devkit_processwebapi1.js</DependentUpon>
     </Content>
+    <Content Include="entities\DisplayString.form.js">
+      <DependentUpon>DisplayString.js</DependentUpon>
+    </Content>
     <Content Include="entities\DisplayString.js" />
     <Content Include="entities\DisplayString.webapi.js">
       <DependentUpon>DisplayString.js</DependentUpon>
@@ -365,9 +437,15 @@
     <Content Include="entities\DisplayStringMap.webapi.js">
       <DependentUpon>DisplayStringMap.js</DependentUpon>
     </Content>
+    <Content Include="entities\DocumentIndex.form.js">
+      <DependentUpon>DocumentIndex.js</DependentUpon>
+    </Content>
     <Content Include="entities\DocumentIndex.js" />
     <Content Include="entities\DocumentIndex.webapi.js">
       <DependentUpon>DocumentIndex.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DocumentTemplate.form.js">
+      <DependentUpon>DocumentTemplate.js</DependentUpon>
     </Content>
     <Content Include="entities\DocumentTemplate.js" />
     <Content Include="entities\DocumentTemplate.webapi.js">
@@ -376,6 +454,9 @@
     <Content Include="entities\DuplicateRecord.js" />
     <Content Include="entities\DuplicateRecord.webapi.js">
       <DependentUpon>DuplicateRecord.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DuplicateRule.form.js">
+      <DependentUpon>DuplicateRule.js</DependentUpon>
     </Content>
     <Content Include="entities\DuplicateRule.js" />
     <Content Include="entities\DuplicateRule.webapi.js">
@@ -400,9 +481,15 @@
     <Content Include="entities\EmailSearch.webapi.js">
       <DependentUpon>EmailSearch.js</DependentUpon>
     </Content>
+    <Content Include="entities\EmailServerProfile.form.js">
+      <DependentUpon>EmailServerProfile.js</DependentUpon>
+    </Content>
     <Content Include="entities\EmailServerProfile.js" />
     <Content Include="entities\EmailServerProfile.webapi.js">
       <DependentUpon>EmailServerProfile.js</DependentUpon>
+    </Content>
+    <Content Include="entities\EmailSignature.form.js">
+      <DependentUpon>EmailSignature.js</DependentUpon>
     </Content>
     <Content Include="entities\EmailSignature.js" />
     <Content Include="entities\EmailSignature.webapi.js">
@@ -432,17 +519,29 @@
     <Content Include="entities\ExpiredProcess.webapi.js">
       <DependentUpon>ExpiredProcess.js</DependentUpon>
     </Content>
+    <Content Include="entities\ExternalParty.form.js">
+      <DependentUpon>ExternalParty.js</DependentUpon>
+    </Content>
     <Content Include="entities\ExternalParty.js" />
     <Content Include="entities\ExternalParty.webapi.js">
       <DependentUpon>ExternalParty.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ExternalPartyItem.form.js">
+      <DependentUpon>ExternalPartyItem.js</DependentUpon>
     </Content>
     <Content Include="entities\ExternalPartyItem.js" />
     <Content Include="entities\ExternalPartyItem.webapi.js">
       <DependentUpon>ExternalPartyItem.js</DependentUpon>
     </Content>
+    <Content Include="entities\Fax.form.js">
+      <DependentUpon>Fax.js</DependentUpon>
+    </Content>
     <Content Include="entities\Fax.js" />
     <Content Include="entities\Fax.webapi.js">
       <DependentUpon>Fax.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Feedback.form.js">
+      <DependentUpon>Feedback.js</DependentUpon>
     </Content>
     <Content Include="entities\Feedback.js" />
     <Content Include="entities\Feedback.webapi.js">
@@ -451,6 +550,9 @@
     <Content Include="entities\FieldPermission.js" />
     <Content Include="entities\FieldPermission.webapi.js">
       <DependentUpon>FieldPermission.js</DependentUpon>
+    </Content>
+    <Content Include="entities\FieldSecurityProfile.form.js">
+      <DependentUpon>FieldSecurityProfile.js</DependentUpon>
     </Content>
     <Content Include="entities\FieldSecurityProfile.js" />
     <Content Include="entities\FieldSecurityProfile.webapi.js">
@@ -472,9 +574,15 @@
     <Content Include="entities\GlobalSearchConfiguration.webapi.js">
       <DependentUpon>GlobalSearchConfiguration.js</DependentUpon>
     </Content>
+    <Content Include="entities\Goal.form.js">
+      <DependentUpon>Goal.js</DependentUpon>
+    </Content>
     <Content Include="entities\Goal.js" />
     <Content Include="entities\Goal.webapi.js">
       <DependentUpon>Goal.js</DependentUpon>
+    </Content>
+    <Content Include="entities\GoalRollupQuery.form.js">
+      <DependentUpon>GoalRollupQuery.js</DependentUpon>
     </Content>
     <Content Include="entities\GoalRollupQuery.js" />
     <Content Include="entities\GoalRollupQuery.webapi.js">
@@ -496,6 +604,9 @@
     <Content Include="entities\ImageDescriptor.webapi.js">
       <DependentUpon>ImageDescriptor.js</DependentUpon>
     </Content>
+    <Content Include="entities\Import.form.js">
+      <DependentUpon>Import.js</DependentUpon>
+    </Content>
     <Content Include="entities\Import.js" />
     <Content Include="entities\Import.webapi.js">
       <DependentUpon>Import.js</DependentUpon>
@@ -508,9 +619,15 @@
     <Content Include="entities\ImportEntityMapping.webapi.js">
       <DependentUpon>ImportEntityMapping.js</DependentUpon>
     </Content>
+    <Content Include="entities\ImportFile.form.js">
+      <DependentUpon>ImportFile.js</DependentUpon>
+    </Content>
     <Content Include="entities\ImportFile.js" />
     <Content Include="entities\ImportFile.webapi.js">
       <DependentUpon>ImportFile.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ImportJob.form.js">
+      <DependentUpon>ImportJob.js</DependentUpon>
     </Content>
     <Content Include="entities\ImportJob.js" />
     <Content Include="entities\ImportJob.webapi.js">
@@ -519,6 +636,9 @@
     <Content Include="entities\ImportLog.js" />
     <Content Include="entities\ImportLog.webapi.js">
       <DependentUpon>ImportLog.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ImportMap.form.js">
+      <DependentUpon>ImportMap.js</DependentUpon>
     </Content>
     <Content Include="entities\ImportMap.js" />
     <Content Include="entities\ImportMap.webapi.js">
@@ -548,17 +668,29 @@
     <Content Include="entities\IsvConfig.webapi.js">
       <DependentUpon>IsvConfig.js</DependentUpon>
     </Content>
+    <Content Include="entities\KbArticle.form.js">
+      <DependentUpon>KbArticle.js</DependentUpon>
+    </Content>
     <Content Include="entities\KbArticle.js" />
     <Content Include="entities\KbArticle.webapi.js">
       <DependentUpon>KbArticle.js</DependentUpon>
+    </Content>
+    <Content Include="entities\KbArticleComment.form.js">
+      <DependentUpon>KbArticleComment.js</DependentUpon>
     </Content>
     <Content Include="entities\KbArticleComment.js" />
     <Content Include="entities\KbArticleComment.webapi.js">
       <DependentUpon>KbArticleComment.js</DependentUpon>
     </Content>
+    <Content Include="entities\KbArticleTemplate.form.js">
+      <DependentUpon>KbArticleTemplate.js</DependentUpon>
+    </Content>
     <Content Include="entities\KbArticleTemplate.js" />
     <Content Include="entities\KbArticleTemplate.webapi.js">
       <DependentUpon>KbArticleTemplate.js</DependentUpon>
+    </Content>
+    <Content Include="entities\KnowledgeArticle.form.js">
+      <DependentUpon>KnowledgeArticle.js</DependentUpon>
     </Content>
     <Content Include="entities\KnowledgeArticle.js" />
     <Content Include="entities\KnowledgeArticle.webapi.js">
@@ -568,17 +700,29 @@
     <Content Include="entities\KnowledgeArticlesCategories.webapi.js">
       <DependentUpon>KnowledgeArticlesCategories.js</DependentUpon>
     </Content>
+    <Content Include="entities\KnowledgeArticleViews.form.js">
+      <DependentUpon>KnowledgeArticleViews.js</DependentUpon>
+    </Content>
     <Content Include="entities\KnowledgeArticleViews.js" />
     <Content Include="entities\KnowledgeArticleViews.webapi.js">
       <DependentUpon>KnowledgeArticleViews.js</DependentUpon>
+    </Content>
+    <Content Include="entities\KnowledgeBaseRecord.form.js">
+      <DependentUpon>KnowledgeBaseRecord.js</DependentUpon>
     </Content>
     <Content Include="entities\KnowledgeBaseRecord.js" />
     <Content Include="entities\KnowledgeBaseRecord.webapi.js">
       <DependentUpon>KnowledgeBaseRecord.js</DependentUpon>
     </Content>
+    <Content Include="entities\KnowledgeSearchModel.form.js">
+      <DependentUpon>KnowledgeSearchModel.js</DependentUpon>
+    </Content>
     <Content Include="entities\KnowledgeSearchModel.js" />
     <Content Include="entities\KnowledgeSearchModel.webapi.js">
       <DependentUpon>KnowledgeSearchModel.js</DependentUpon>
+    </Content>
+    <Content Include="entities\LanguageLocale.form.js">
+      <DependentUpon>LanguageLocale.js</DependentUpon>
     </Content>
     <Content Include="entities\LanguageLocale.js" />
     <Content Include="entities\LanguageLocale.webapi.js">
@@ -587,6 +731,9 @@
     <Content Include="entities\LanguageProvisioningState.js" />
     <Content Include="entities\LanguageProvisioningState.webapi.js">
       <DependentUpon>LanguageProvisioningState.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Letter.form.js">
+      <DependentUpon>Letter.js</DependentUpon>
     </Content>
     <Content Include="entities\Letter.js" />
     <Content Include="entities\Letter.webapi.js">
@@ -604,6 +751,9 @@
     <Content Include="entities\LookUpMapping.webapi.js">
       <DependentUpon>LookUpMapping.js</DependentUpon>
     </Content>
+    <Content Include="entities\Mailbox.form.js">
+      <DependentUpon>Mailbox.js</DependentUpon>
+    </Content>
     <Content Include="entities\Mailbox.js" />
     <Content Include="entities\Mailbox.webapi.js">
       <DependentUpon>Mailbox.js</DependentUpon>
@@ -620,6 +770,9 @@
     <Content Include="entities\MailboxTrackingFolder.webapi.js">
       <DependentUpon>MailboxTrackingFolder.js</DependentUpon>
     </Content>
+    <Content Include="entities\MailMergeTemplate.form.js">
+      <DependentUpon>MailMergeTemplate.js</DependentUpon>
+    </Content>
     <Content Include="entities\MailMergeTemplate.js" />
     <Content Include="entities\MailMergeTemplate.webapi.js">
       <DependentUpon>MailMergeTemplate.js</DependentUpon>
@@ -628,17 +781,29 @@
     <Content Include="entities\MetadataDifference.webapi.js">
       <DependentUpon>MetadataDifference.js</DependentUpon>
     </Content>
+    <Content Include="entities\Metric.form.js">
+      <DependentUpon>Metric.js</DependentUpon>
+    </Content>
     <Content Include="entities\Metric.js" />
     <Content Include="entities\Metric.webapi.js">
       <DependentUpon>Metric.js</DependentUpon>
+    </Content>
+    <Content Include="entities\MobileOfflineProfile.form.js">
+      <DependentUpon>MobileOfflineProfile.js</DependentUpon>
     </Content>
     <Content Include="entities\MobileOfflineProfile.js" />
     <Content Include="entities\MobileOfflineProfile.webapi.js">
       <DependentUpon>MobileOfflineProfile.js</DependentUpon>
     </Content>
+    <Content Include="entities\MobileOfflineProfileItem.form.js">
+      <DependentUpon>MobileOfflineProfileItem.js</DependentUpon>
+    </Content>
     <Content Include="entities\MobileOfflineProfileItem.js" />
     <Content Include="entities\MobileOfflineProfileItem.webapi.js">
       <DependentUpon>MobileOfflineProfileItem.js</DependentUpon>
+    </Content>
+    <Content Include="entities\MobileOfflineProfileItemAssociation.form.js">
+      <DependentUpon>MobileOfflineProfileItemAssociation.js</DependentUpon>
     </Content>
     <Content Include="entities\MobileOfflineProfileItemAssociation.js" />
     <Content Include="entities\MobileOfflineProfileItemAssociation.webapi.js">
@@ -648,33 +813,57 @@
     <Content Include="entities\MonthlyFiscalCalendar.webapi.js">
       <DependentUpon>MonthlyFiscalCalendar.js</DependentUpon>
     </Content>
+    <Content Include="entities\msdyn_componentlayer.form.js">
+      <DependentUpon>msdyn_componentlayer.js</DependentUpon>
+    </Content>
     <Content Include="entities\msdyn_componentlayer.js" />
     <Content Include="entities\msdyn_componentlayer.webapi.js">
       <DependentUpon>msdyn_componentlayer.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_componentlayerdatasource.form.js">
+      <DependentUpon>msdyn_componentlayerdatasource.js</DependentUpon>
     </Content>
     <Content Include="entities\msdyn_componentlayerdatasource.js" />
     <Content Include="entities\msdyn_componentlayerdatasource.webapi.js">
       <DependentUpon>msdyn_componentlayerdatasource.js</DependentUpon>
     </Content>
+    <Content Include="entities\msdyn_Connector.form.js">
+      <DependentUpon>msdyn_Connector.js</DependentUpon>
+    </Content>
     <Content Include="entities\msdyn_Connector.js" />
     <Content Include="entities\msdyn_Connector.webapi.js">
       <DependentUpon>msdyn_Connector.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_odatav4ds.form.js">
+      <DependentUpon>msdyn_odatav4ds.js</DependentUpon>
     </Content>
     <Content Include="entities\msdyn_odatav4ds.js" />
     <Content Include="entities\msdyn_odatav4ds.webapi.js">
       <DependentUpon>msdyn_odatav4ds.js</DependentUpon>
     </Content>
+    <Content Include="entities\msdyn_solutioncomponentdatasource.form.js">
+      <DependentUpon>msdyn_solutioncomponentdatasource.js</DependentUpon>
+    </Content>
     <Content Include="entities\msdyn_solutioncomponentdatasource.js" />
     <Content Include="entities\msdyn_solutioncomponentdatasource.webapi.js">
       <DependentUpon>msdyn_solutioncomponentdatasource.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_solutioncomponentsummary.form.js">
+      <DependentUpon>msdyn_solutioncomponentsummary.js</DependentUpon>
     </Content>
     <Content Include="entities\msdyn_solutioncomponentsummary.js" />
     <Content Include="entities\msdyn_solutioncomponentsummary.webapi.js">
       <DependentUpon>msdyn_solutioncomponentsummary.js</DependentUpon>
     </Content>
+    <Content Include="entities\msdyn_solutionhistory.form.js">
+      <DependentUpon>msdyn_solutionhistory.js</DependentUpon>
+    </Content>
     <Content Include="entities\msdyn_solutionhistory.js" />
     <Content Include="entities\msdyn_solutionhistory.webapi.js">
       <DependentUpon>msdyn_solutionhistory.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_solutionhistorydatasource.form.js">
+      <DependentUpon>msdyn_solutionhistorydatasource.js</DependentUpon>
     </Content>
     <Content Include="entities\msdyn_solutionhistorydatasource.js" />
     <Content Include="entities\msdyn_solutionhistorydatasource.webapi.js">
@@ -707,6 +896,9 @@
     <Content Include="entities\OfficeDocument.js" />
     <Content Include="entities\OfficeDocument.webapi.js">
       <DependentUpon>OfficeDocument.js</DependentUpon>
+    </Content>
+    <Content Include="entities\OfficeGraphDocument.form.js">
+      <DependentUpon>OfficeGraphDocument.js</DependentUpon>
     </Content>
     <Content Include="entities\OfficeGraphDocument.js" />
     <Content Include="entities\OfficeGraphDocument.webapi.js">
@@ -744,9 +936,15 @@
     <Content Include="entities\OwnerMapping.webapi.js">
       <DependentUpon>OwnerMapping.js</DependentUpon>
     </Content>
+    <Content Include="entities\PartnerApplication.form.js">
+      <DependentUpon>PartnerApplication.js</DependentUpon>
+    </Content>
     <Content Include="entities\PartnerApplication.js" />
     <Content Include="entities\PartnerApplication.webapi.js">
       <DependentUpon>PartnerApplication.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PersonalDocumentTemplate.form.js">
+      <DependentUpon>PersonalDocumentTemplate.js</DependentUpon>
     </Content>
     <Content Include="entities\PersonalDocumentTemplate.js" />
     <Content Include="entities\PersonalDocumentTemplate.webapi.js">
@@ -767,6 +965,9 @@
     <Content Include="entities\PluginAssembly.webapi.js">
       <DependentUpon>PluginAssembly.js</DependentUpon>
     </Content>
+    <Content Include="entities\PluginTraceLog.form.js">
+      <DependentUpon>PluginTraceLog.js</DependentUpon>
+    </Content>
     <Content Include="entities\PluginTraceLog.js" />
     <Content Include="entities\PluginTraceLog.webapi.js">
       <DependentUpon>PluginTraceLog.js</DependentUpon>
@@ -779,9 +980,15 @@
     <Content Include="entities\PluginTypeStatistic.webapi.js">
       <DependentUpon>PluginTypeStatistic.js</DependentUpon>
     </Content>
+    <Content Include="entities\Position.form.js">
+      <DependentUpon>Position.js</DependentUpon>
+    </Content>
     <Content Include="entities\Position.js" />
     <Content Include="entities\Position.webapi.js">
       <DependentUpon>Position.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Post.form.js">
+      <DependentUpon>Post.js</DependentUpon>
     </Content>
     <Content Include="entities\Post.js" />
     <Content Include="entities\Post.webapi.js">
@@ -790,6 +997,9 @@
     <Content Include="entities\PostComment.js" />
     <Content Include="entities\PostComment.webapi.js">
       <DependentUpon>PostComment.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PostFollow.form.js">
+      <DependentUpon>PostFollow.js</DependentUpon>
     </Content>
     <Content Include="entities\PostFollow.js" />
     <Content Include="entities\PostFollow.webapi.js">
@@ -839,6 +1049,9 @@
     <Content Include="entities\PrivilegeObjectTypeCodes.webapi.js">
       <DependentUpon>PrivilegeObjectTypeCodes.js</DependentUpon>
     </Content>
+    <Content Include="entities\ProcessSession.form.js">
+      <DependentUpon>ProcessSession.js</DependentUpon>
+    </Content>
     <Content Include="entities\ProcessSession.js" />
     <Content Include="entities\ProcessSession.webapi.js">
       <DependentUpon>ProcessSession.js</DependentUpon>
@@ -850,6 +1063,9 @@
     <Content Include="entities\ProcessTrigger.js" />
     <Content Include="entities\ProcessTrigger.webapi.js">
       <DependentUpon>ProcessTrigger.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Publisher.form.js">
+      <DependentUpon>Publisher.js</DependentUpon>
     </Content>
     <Content Include="entities\Publisher.js" />
     <Content Include="entities\Publisher.webapi.js">
@@ -863,9 +1079,15 @@
     <Content Include="entities\QuarterlyFiscalCalendar.webapi.js">
       <DependentUpon>QuarterlyFiscalCalendar.js</DependentUpon>
     </Content>
+    <Content Include="entities\Queue.form.js">
+      <DependentUpon>Queue.js</DependentUpon>
+    </Content>
     <Content Include="entities\Queue.js" />
     <Content Include="entities\Queue.webapi.js">
       <DependentUpon>Queue.js</DependentUpon>
+    </Content>
+    <Content Include="entities\QueueItem.form.js">
+      <DependentUpon>QueueItem.js</DependentUpon>
     </Content>
     <Content Include="entities\QueueItem.js" />
     <Content Include="entities\QueueItem.webapi.js">
@@ -883,6 +1105,9 @@
     <Content Include="entities\QueueMembership.webapi.js">
       <DependentUpon>QueueMembership.js</DependentUpon>
     </Content>
+    <Content Include="entities\RecommendedDocument.form.js">
+      <DependentUpon>RecommendedDocument.js</DependentUpon>
+    </Content>
     <Content Include="entities\RecommendedDocument.js" />
     <Content Include="entities\RecommendedDocument.webapi.js">
       <DependentUpon>RecommendedDocument.js</DependentUpon>
@@ -895,9 +1120,15 @@
     <Content Include="entities\RecurrenceRule.webapi.js">
       <DependentUpon>RecurrenceRule.js</DependentUpon>
     </Content>
+    <Content Include="entities\RecurringAppointmentMaster.form.js">
+      <DependentUpon>RecurringAppointmentMaster.js</DependentUpon>
+    </Content>
     <Content Include="entities\RecurringAppointmentMaster.js" />
     <Content Include="entities\RecurringAppointmentMaster.webapi.js">
       <DependentUpon>RecurringAppointmentMaster.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RelationshipRole.form.js">
+      <DependentUpon>RelationshipRole.js</DependentUpon>
     </Content>
     <Content Include="entities\RelationshipRole.js" />
     <Content Include="entities\RelationshipRole.webapi.js">
@@ -959,6 +1190,9 @@
     <Content Include="entities\RibbonTabToCommandMap.webapi.js">
       <DependentUpon>RibbonTabToCommandMap.js</DependentUpon>
     </Content>
+    <Content Include="entities\Role.form.js">
+      <DependentUpon>Role.js</DependentUpon>
+    </Content>
     <Content Include="entities\Role.js" />
     <Content Include="entities\Role.webapi.js">
       <DependentUpon>Role.js</DependentUpon>
@@ -975,6 +1209,9 @@
     <Content Include="entities\RoleTemplatePrivileges.webapi.js">
       <DependentUpon>RoleTemplatePrivileges.js</DependentUpon>
     </Content>
+    <Content Include="entities\RollupField.form.js">
+      <DependentUpon>RollupField.js</DependentUpon>
+    </Content>
     <Content Include="entities\RollupField.js" />
     <Content Include="entities\RollupField.webapi.js">
       <DependentUpon>RollupField.js</DependentUpon>
@@ -987,9 +1224,15 @@
     <Content Include="entities\RollupProperties.webapi.js">
       <DependentUpon>RollupProperties.js</DependentUpon>
     </Content>
+    <Content Include="entities\RoutingRule.form.js">
+      <DependentUpon>RoutingRule.js</DependentUpon>
+    </Content>
     <Content Include="entities\RoutingRule.js" />
     <Content Include="entities\RoutingRule.webapi.js">
       <DependentUpon>RoutingRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RoutingRuleItem.form.js">
+      <DependentUpon>RoutingRuleItem.js</DependentUpon>
     </Content>
     <Content Include="entities\RoutingRuleItem.js" />
     <Content Include="entities\RoutingRuleItem.webapi.js">
@@ -1002,6 +1245,9 @@
     <Content Include="entities\SavedOrgInsightsConfiguration.js" />
     <Content Include="entities\SavedOrgInsightsConfiguration.webapi.js">
       <DependentUpon>SavedOrgInsightsConfiguration.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SavedQuery.form.js">
+      <DependentUpon>SavedQuery.js</DependentUpon>
     </Content>
     <Content Include="entities\SavedQuery.js" />
     <Content Include="entities\SavedQuery.webapi.js">
@@ -1063,17 +1309,29 @@
     <Content Include="entities\SharedObjectsForRead.webapi.js">
       <DependentUpon>SharedObjectsForRead.js</DependentUpon>
     </Content>
+    <Content Include="entities\SharePointData.form.js">
+      <DependentUpon>SharePointData.js</DependentUpon>
+    </Content>
     <Content Include="entities\SharePointData.js" />
     <Content Include="entities\SharePointData.webapi.js">
       <DependentUpon>SharePointData.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SharePointDocument.form.js">
+      <DependentUpon>SharePointDocument.js</DependentUpon>
     </Content>
     <Content Include="entities\SharePointDocument.js" />
     <Content Include="entities\SharePointDocument.webapi.js">
       <DependentUpon>SharePointDocument.js</DependentUpon>
     </Content>
+    <Content Include="entities\SharePointDocumentLocation.form.js">
+      <DependentUpon>SharePointDocumentLocation.js</DependentUpon>
+    </Content>
     <Content Include="entities\SharePointDocumentLocation.js" />
     <Content Include="entities\SharePointDocumentLocation.webapi.js">
       <DependentUpon>SharePointDocumentLocation.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SharePointSite.form.js">
+      <DependentUpon>SharePointSite.js</DependentUpon>
     </Content>
     <Content Include="entities\SharePointSite.js" />
     <Content Include="entities\SharePointSite.webapi.js">
@@ -1087,17 +1345,29 @@
     <Content Include="entities\SiteMap.webapi.js">
       <DependentUpon>SiteMap.js</DependentUpon>
     </Content>
+    <Content Include="entities\SLA.form.js">
+      <DependentUpon>SLA.js</DependentUpon>
+    </Content>
     <Content Include="entities\SLA.js" />
     <Content Include="entities\SLA.webapi.js">
       <DependentUpon>SLA.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SLAItem.form.js">
+      <DependentUpon>SLAItem.js</DependentUpon>
     </Content>
     <Content Include="entities\SLAItem.js" />
     <Content Include="entities\SLAItem.webapi.js">
       <DependentUpon>SLAItem.js</DependentUpon>
     </Content>
+    <Content Include="entities\SLAKPIInstance.form.js">
+      <DependentUpon>SLAKPIInstance.js</DependentUpon>
+    </Content>
     <Content Include="entities\SLAKPIInstance.js" />
     <Content Include="entities\SLAKPIInstance.webapi.js">
       <DependentUpon>SLAKPIInstance.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SocialActivity.form.js">
+      <DependentUpon>SocialActivity.js</DependentUpon>
     </Content>
     <Content Include="entities\SocialActivity.js" />
     <Content Include="entities\SocialActivity.webapi.js">
@@ -1107,9 +1377,15 @@
     <Content Include="entities\SocialInsightsConfiguration.webapi.js">
       <DependentUpon>SocialInsightsConfiguration.js</DependentUpon>
     </Content>
+    <Content Include="entities\SocialProfile.form.js">
+      <DependentUpon>SocialProfile.js</DependentUpon>
+    </Content>
     <Content Include="entities\SocialProfile.js" />
     <Content Include="entities\SocialProfile.webapi.js">
       <DependentUpon>SocialProfile.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Solution.form.js">
+      <DependentUpon>Solution.js</DependentUpon>
     </Content>
     <Content Include="entities\Solution.js" />
     <Content Include="entities\Solution.webapi.js">
@@ -1191,6 +1467,9 @@
     <Content Include="entities\SyncAttributeMappingProfile.webapi.js">
       <DependentUpon>SyncAttributeMappingProfile.js</DependentUpon>
     </Content>
+    <Content Include="entities\SyncError.form.js">
+      <DependentUpon>SyncError.js</DependentUpon>
+    </Content>
     <Content Include="entities\SyncError.js" />
     <Content Include="entities\SyncError.webapi.js">
       <DependentUpon>SyncError.js</DependentUpon>
@@ -1245,6 +1524,9 @@
     <Content Include="entities\Task.webapi.js">
       <DependentUpon>Task.js</DependentUpon>
     </Content>
+    <Content Include="entities\Team.form.js">
+      <DependentUpon>Team.js</DependentUpon>
+    </Content>
     <Content Include="entities\Team.js" />
     <Content Include="entities\Team.webapi.js">
       <DependentUpon>Team.js</DependentUpon>
@@ -1265,21 +1547,36 @@
     <Content Include="entities\TeamSyncAttributeMappingProfiles.webapi.js">
       <DependentUpon>TeamSyncAttributeMappingProfiles.js</DependentUpon>
     </Content>
+    <Content Include="entities\TeamTemplate.form.js">
+      <DependentUpon>TeamTemplate.js</DependentUpon>
+    </Content>
     <Content Include="entities\TeamTemplate.js" />
     <Content Include="entities\TeamTemplate.webapi.js">
       <DependentUpon>TeamTemplate.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Template.form.js">
+      <DependentUpon>Template.js</DependentUpon>
     </Content>
     <Content Include="entities\Template.js" />
     <Content Include="entities\Template.webapi.js">
       <DependentUpon>Template.js</DependentUpon>
     </Content>
+    <Content Include="entities\Territory.form.js">
+      <DependentUpon>Territory.js</DependentUpon>
+    </Content>
     <Content Include="entities\Territory.js" />
     <Content Include="entities\Territory.webapi.js">
       <DependentUpon>Territory.js</DependentUpon>
     </Content>
+    <Content Include="entities\TextAnalyticsEntityMapping.form.js">
+      <DependentUpon>TextAnalyticsEntityMapping.js</DependentUpon>
+    </Content>
     <Content Include="entities\TextAnalyticsEntityMapping.js" />
     <Content Include="entities\TextAnalyticsEntityMapping.webapi.js">
       <DependentUpon>TextAnalyticsEntityMapping.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Theme.form.js">
+      <DependentUpon>Theme.js</DependentUpon>
     </Content>
     <Content Include="entities\Theme.js" />
     <Content Include="entities\Theme.webapi.js">
@@ -1312,6 +1609,9 @@
     <Content Include="entities\TraceRegarding.js" />
     <Content Include="entities\TraceRegarding.webapi.js">
       <DependentUpon>TraceRegarding.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TransactionCurrency.form.js">
+      <DependentUpon>TransactionCurrency.js</DependentUpon>
     </Content>
     <Content Include="entities\TransactionCurrency.js" />
     <Content Include="entities\TransactionCurrency.webapi.js">
@@ -1357,9 +1657,15 @@
     <Content Include="entities\UserForm.webapi.js">
       <DependentUpon>UserForm.js</DependentUpon>
     </Content>
+    <Content Include="entities\UserMapping.form.js">
+      <DependentUpon>UserMapping.js</DependentUpon>
+    </Content>
     <Content Include="entities\UserMapping.js" />
     <Content Include="entities\UserMapping.webapi.js">
       <DependentUpon>UserMapping.js</DependentUpon>
+    </Content>
+    <Content Include="entities\UserQuery.form.js">
+      <DependentUpon>UserQuery.js</DependentUpon>
     </Content>
     <Content Include="entities\UserQuery.js" />
     <Content Include="entities\UserQuery.webapi.js">
@@ -1392,6 +1698,9 @@
     <Content Include="entities\WizardPage.js" />
     <Content Include="entities\WizardPage.webapi.js">
       <DependentUpon>WizardPage.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Workflow.form.js">
+      <DependentUpon>Workflow.js</DependentUpon>
     </Content>
     <Content Include="entities\Workflow.js" />
     <Content Include="entities\Workflow.webapi.js">

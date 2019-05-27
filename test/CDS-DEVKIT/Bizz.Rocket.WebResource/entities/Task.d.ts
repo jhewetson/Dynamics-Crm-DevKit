@@ -34,14 +34,6 @@ declare namespace Rocket {
 			/** Type a short description about the objective or primary topic of the task. */
 			Subject: DevKit.Form.Controls.ControlString;
 		}
-		interface Footer {
-
-		}
-		interface Navigation {
-
-		}
-		interface Process extends DevKit.Form.Controls.IControlProcess {
-		}
 	}
 	class FormTask extends DevKit.Form.IForm {
 		/**
@@ -56,14 +48,8 @@ declare namespace Rocket {
 		WebApi: DevKit.Form.WebApi;
 		/** The Body section of form Task */
 		Body: Rocket.FormTask.Body;
-		/** The Footer section of form Task */
-		Footer: Rocket.FormTask.Footer;
 		/** The Header section of form Task */
 		Header: Rocket.FormTask.Header;
-		/** The Navigation of form Task */
-		Navigation: Rocket.FormTask.Navigation;
-		/** The Process of form Task */
-		Process: Rocket.FormTask.Process;
 	}
 	class TaskApi {
 		/**

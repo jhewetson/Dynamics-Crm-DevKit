@@ -9,8 +9,24 @@ namespace PL.DynamicsCrm.DevKit.Shared
 {
     public static class Utility
     {
+        public static string TrimGuid(string guid)
+        {
+            if (guid == null) return null;
+            if (Guid.TryParse(guid, out var guidType))
+                return guid.Replace("{", string.Empty).Replace("}", string.Empty);
+            return guid;
+        }
+
         public static string GetSafeName(string name)
         {
+            if (name == null) return string.Empty;
+            if(Guid.TryParse(name, out var outputGuid) || ( name.Length > 38 && Guid.TryParse(name.Substring(0, 38), out var outputGuid2))){
+                name = name.ToUpper()
+                    .Replace("-", "_")
+                    .Replace("{", string.Empty)
+                    .Replace("}", string.Empty);
+                return "_" + name;
+            }
             name = name.Replace(" ", "");
             name = name.Replace("'", string.Empty);
             name = name.Replace("-", "_");
@@ -29,6 +45,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
             name = name.Replace("=", string.Empty);
             name = name.Replace("+", string.Empty);
             name = name.Replace("-", string.Empty);
+            name = name.Replace("–", string.Empty);
             name = name.Replace(".", string.Empty);
             return name;
         }

@@ -98,9 +98,6 @@ declare namespace Rocket {
 			/** Type the phonetic spelling of the company name, if specified in Japanese, to make sure the name is pronounced correctly in phone calls and other communications. */
 			YomiName: DevKit.Form.Controls.ControlString;
 		}
-		interface Footer {
-
-		}
 		interface Navigation {
 			navRelationships: DevKit.Form.Controls.ControlNavigationItem,
 			navAddresses: DevKit.Form.Controls.ControlNavigationItem,
@@ -109,8 +106,6 @@ declare namespace Rocket {
 			navAsyncOperations: DevKit.Form.Controls.ControlNavigationItem,
 			navProcessSessions: DevKit.Form.Controls.ControlNavigationItem,
 			nav_devkit_account_devkit_webapi_Customer: DevKit.Form.Controls.ControlNavigationItem
-		}
-		interface Process extends DevKit.Form.Controls.IControlProcess {
 		}
 	}
 	class FormAccount extends DevKit.Form.IForm {
@@ -126,14 +121,10 @@ declare namespace Rocket {
 		WebApi: DevKit.Form.WebApi;
 		/** The Body section of form Account */
 		Body: Rocket.FormAccount.Body;
-		/** The Footer section of form Account */
-		Footer: Rocket.FormAccount.Footer;
 		/** The Header section of form Account */
 		Header: Rocket.FormAccount.Header;
 		/** The Navigation of form Account */
 		Navigation: Rocket.FormAccount.Navigation;
-		/** The Process of form Account */
-		Process: Rocket.FormAccount.Process;
 	}
 	class AccountApi {
 		/**

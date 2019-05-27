@@ -77,10 +77,10 @@ namespace PL.DynamicsCrm.DevKit.Cli
                 );
             CliLog.WriteLine(CliLog.ColorGreen, new string('*', CliLog.StarLength));
             Run(arguments);
-#if DEBUG
-            CliLog.WriteLine(CliLog.ColorRed, "!!! FINISHED !!!");
-            Console.ReadKey();
-#endif
+//#if DEBUG
+//            CliLog.WriteLine(CliLog.ColorRed, "!!! FINISHED !!!");
+//            Console.ReadKey();
+//#endif
 #if !DEBUG
             }
             catch (Exception e)

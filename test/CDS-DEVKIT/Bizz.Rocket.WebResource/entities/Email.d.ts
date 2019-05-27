@@ -54,11 +54,6 @@ declare namespace Rocket {
 			/** For internal use only. Shows whether this email Reminder is Set. */
 			IsEmailReminderSet: DevKit.Form.Controls.ControlBoolean;
 		}
-		interface Navigation {
-
-		}
-		interface Process extends DevKit.Form.Controls.IControlProcess {
-		}
 	}
 	class FormEmail extends DevKit.Form.IForm {
 		/**
@@ -77,10 +72,6 @@ declare namespace Rocket {
 		Footer: Rocket.FormEmail.Footer;
 		/** The Header section of form Email */
 		Header: Rocket.FormEmail.Header;
-		/** The Navigation of form Email */
-		Navigation: Rocket.FormEmail.Navigation;
-		/** The Process of form Email */
-		Process: Rocket.FormEmail.Process;
 	}
 	class EmailApi {
 		/**

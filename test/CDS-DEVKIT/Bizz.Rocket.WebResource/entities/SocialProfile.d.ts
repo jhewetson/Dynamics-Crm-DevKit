@@ -1,5 +1,95 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormSocialProfile {
+		interface Header {
+			/** Identifies where the social profile originated from, such as Twitter, or Facebook. */
+			Community: DevKit.Form.Controls.ControlOptionSet;
+			/** Shows the score that determines the online social influence of the social profile. */
+			InfluenceScore: DevKit.Form.Controls.ControlDouble;
+			/** Shows the user or team that is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+		}
+		interface Tabs {
+		}
+		interface Body {
+			/** Identifies if the social profile has been blocked. */
+			Blocked: DevKit.Form.Controls.ControlBoolean;
+			/** Shows the customer that this social profile belongs to. */
+			CustomerId: DevKit.Form.Controls.ControlLookup;
+			related_sp: DevKit.Form.Controls.ControlQuickView;
+			/** Shows the customer that this social profile belongs to. */
+			ProfileLink: DevKit.Form.Controls.ControlString;
+			/** Shows the name of the social profile on the corresponding social channel. */
+			ProfileName: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormSocialProfile extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form SocialProfile
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form SocialProfile */
+		Body: Rocket.FormSocialProfile.Body;
+		/** The Header section of form SocialProfile */
+		Header: Rocket.FormSocialProfile.Header;
+	}
+	namespace FormSocialProfileforInteractiveexperience {
+		interface Header {
+			/** Identifies where the social profile originated from, such as Twitter, or Facebook. */
+			Community: DevKit.Form.Controls.ControlOptionSet;
+			/** Shows the score that determines the online social influence of the social profile. */
+			InfluenceScore: DevKit.Form.Controls.ControlDouble;
+			/** Shows the user or team that is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+		}
+		interface tab_tab_2_Sections {
+			tab_2_section_1: DevKit.Form.Controls.ControlSection;
+			tab_2_section_2: DevKit.Form.Controls.ControlSection;
+			tab_2_section_3: DevKit.Form.Controls.ControlSection;
+			tab_2_section_4: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_tab_2 extends DevKit.Form.Controls.IControlTab {
+			Section: tab_tab_2_Sections;
+		}
+		interface Tabs {
+			tab_2: tab_tab_2;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Identifies if the social profile has been blocked. */
+			Blocked: DevKit.Form.Controls.ControlBoolean;
+			customer_qfc: DevKit.Form.Controls.ControlQuickView;
+			/** Shows the customer that this social profile belongs to. */
+			CustomerId: DevKit.Form.Controls.ControlLookup;
+			related_sp: DevKit.Form.Controls.ControlQuickView;
+			/** Shows the customer that this social profile belongs to. */
+			ProfileLink: DevKit.Form.Controls.ControlString;
+			/** Shows the name of the social profile on the corresponding social channel. */
+			ProfileName: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormSocialProfileforInteractiveexperience extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form SocialProfileforInteractiveexperience
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form SocialProfileforInteractiveexperience */
+		Body: Rocket.FormSocialProfileforInteractiveexperience.Body;
+		/** The Header section of form SocialProfileforInteractiveexperience */
+		Header: Rocket.FormSocialProfileforInteractiveexperience.Header;
+	}
 	class SocialProfileApi {
 		/**
 		* PL.DynamicsCrm.DevKit SocialProfileApi
@@ -110,4 +200,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Social Profile','Social Profile for Interactive experience'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

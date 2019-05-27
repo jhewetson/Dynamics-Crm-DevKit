@@ -1,5 +1,41 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormChannelProperty {
+		interface tab_general_Sections {
+			channelpropertyinformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Type the name of the application that the property is associated with. */
+			Applicationsource: DevKit.Form.Controls.ControlString;
+			/** Enter the data type for the property. */
+			DataType: DevKit.Form.Controls.ControlOptionSet;
+			/** Description of property */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Type the name of the property as received in the information provided by the external application. */
+			Name: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormChannelProperty extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form ChannelProperty
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form ChannelProperty */
+		Body: Rocket.FormChannelProperty.Body;
+	}
 	class ChannelPropertyApi {
 		/**
 		* PL.DynamicsCrm.DevKit ChannelPropertyApi
@@ -110,4 +146,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Channel Property'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

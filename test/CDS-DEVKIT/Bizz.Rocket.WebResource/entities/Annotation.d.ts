@@ -149,4 +149,4 @@ declare namespace OptionSet {
 	namespace Annotation {
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Note Quick Create Form'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

@@ -90,17 +90,12 @@ declare namespace Rocket {
 			/** Choose the local currency for the record to make sure budgets are reported in the correct currency. */
 			TransactionCurrencyId: DevKit.Form.Controls.ControlLookup;
 		}
-		interface Footer {
-
-		}
 		interface Navigation {
 			navAddresses: DevKit.Form.Controls.ControlNavigationItem,
 			navSubConts: DevKit.Form.Controls.ControlNavigationItem,
 			navRelationships: DevKit.Form.Controls.ControlNavigationItem,
 			navAsyncOperations: DevKit.Form.Controls.ControlNavigationItem,
 			navProcessSessions: DevKit.Form.Controls.ControlNavigationItem
-		}
-		interface Process extends DevKit.Form.Controls.IControlProcess {
 		}
 	}
 	class FormContact extends DevKit.Form.IForm {
@@ -116,14 +111,10 @@ declare namespace Rocket {
 		WebApi: DevKit.Form.WebApi;
 		/** The Body section of form Contact */
 		Body: Rocket.FormContact.Body;
-		/** The Footer section of form Contact */
-		Footer: Rocket.FormContact.Footer;
 		/** The Header section of form Contact */
 		Header: Rocket.FormContact.Header;
 		/** The Navigation of form Contact */
 		Navigation: Rocket.FormContact.Navigation;
-		/** The Process of form Contact */
-		Process: Rocket.FormContact.Process;
 	}
 	class ContactApi {
 		/**

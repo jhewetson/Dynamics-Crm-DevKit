@@ -394,6 +394,8 @@ namespace PL.DynamicsCrm.DevKit.Shared
                             };
                 foreach (var row2 in rows2)
                 {
+                    if (row2 == null) continue;
+                    if (row2.name == null) continue;
                     if (row2.name.StartsWith("ref_pan")) continue;
                     intellisense += $"\t\t\t{row2.name}: intellisense.FormSection,\r\n";
                 }

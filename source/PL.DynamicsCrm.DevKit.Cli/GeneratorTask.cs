@@ -24,7 +24,6 @@ namespace PL.DynamicsCrm.DevKit.Cli
             GeneratorJson = lateBoundJson;
             Version = version;
         }
-
         internal void Run()
         {
             CliLog.WriteLine(CliLog.ColorGreen, new string('*', CliLog.StarLength));
@@ -47,8 +46,7 @@ namespace PL.DynamicsCrm.DevKit.Cli
             CliLog.WriteLine(CliLog.ColorGreen, new string('*', CliLog.StarLength));
         }
 
-
-        public List<string> GetAllEntities()
+        private string[] GetAllEntities()
         {
             var request = new RetrieveAllEntitiesRequest
             {
@@ -56,35 +54,36 @@ namespace PL.DynamicsCrm.DevKit.Cli
                 RetrieveAsIfPublished = true
             };
             var response = (RetrieveAllEntitiesResponse)CrmServiceClient.Execute(request);
+            var metaDataEntities = response.EntityMetadata.OrderBy(a => a.SchemaName);
             var entities = new List<string>();
-            foreach (var entity in response.EntityMetadata)
+            foreach (var entity in metaDataEntities)
+            {
+                if (entity.IsBPFEntity.HasValue && entity.IsBPFEntity.Value) continue;
+                if (entity.IsIntersect.HasValue && entity.IsIntersect.Value) continue;
                 entities.Add(entity.SchemaName);
+            }
             entities.Sort();
-            return entities;
+            return entities.ToArray();
         }
 
         private void GeneratorWebApi()
         {
-            //var list = GetAllEntities();
-            //var a = string.Empty;
-            //foreach (var entity in list)
-            //{
-            //    a += $"\t\t\"{entity}\",\r\n";
-            //}
-
             CliLog.WriteLine(CliLog.ColorGreen, "START GENERATOR - JS WEBAPI - TASKS");
             CliLog.WriteLine(CliLog.ColorGreen, new string('*', CliLog.StarLength));
+
             var entities = new List<string>();
             string[] files;
             var folder = $"{CurrentDirectory}\\{GeneratorJson.rootfolder}";
             if (GeneratorJson.entities.Count == 0)            {
                 var pattern = "*.webapi.js";
-
                 files = Directory.GetFiles(folder, pattern);
             }
             else
             {
-                files = GeneratorJson.entities.Select(e => $"{folder}{e}.webapi.js").ToArray();
+                if (GeneratorJson.entities.Count == 1 && GeneratorJson.entities[0].ToLower() == "all")
+                    files = GetAllEntities();
+                else
+                    files = GeneratorJson.entities.Select(e => $"{folder}{e}.webapi.js").ToArray();
             }
 
             foreach (var file in files)
@@ -102,9 +101,9 @@ namespace PL.DynamicsCrm.DevKit.Cli
             var i = 1;
             foreach (var entity in entities)
             {
-#if DEBUG
-                if (entity != "ImageDescriptor") continue;
-#endif
+//#if DEBUG
+//                if (entity != "ImageDescriptor") continue;
+//#endif
                 GeneratorJsWebApi(entity, i, entities.Count);
                 i++;
 //#if DEBUG
@@ -134,11 +133,14 @@ namespace PL.DynamicsCrm.DevKit.Cli
                 if (File.Exists(fileTypeScriptDeclaration))
                 {
                     var lines = File.ReadAllLines(fileTypeScriptDeclaration);
-                    var json = lines[lines.Length - 1];
-                    var comment = SimpleJson.DeserializeObject<CommentIntellisense>(json.Substring("//".Length).Replace("'", "\""));
-                    isDebugWebApi = comment.IsDebugWebApi;
-                    jsForm = comment.JsForm;
-                    isDebugForm = comment.IsDebugForm;
+                    if (lines.Count() != 0)
+                    {
+                        var json = lines[lines.Length - 1];
+                        var comment = SimpleJson.DeserializeObject<CommentIntellisense>(json.Substring("//".Length).Replace("'", "\""));
+                        isDebugWebApi = comment.IsDebugWebApi;
+                        jsForm = comment.JsForm;
+                        isDebugForm = comment.IsDebugForm;
+                    }
                 }
                 var parts = GeneratorJson.rootnamespace.Split(".".ToCharArray());
                 var projectName = parts.Length > 1 ? parts[1] : parts[0];
@@ -216,10 +218,23 @@ namespace PL.DynamicsCrm.DevKit.Cli
         {
             CliLog.WriteLine(CliLog.ColorGreen, "START GENERATOR - JS FORM - TASKS");
             CliLog.WriteLine(CliLog.ColorGreen, new string('*', CliLog.StarLength));
+
             var entities = new List<string>();
-            const string pattern = "*.form.js";
+            string[] files;
             var folder = $"{CurrentDirectory}\\{GeneratorJson.rootfolder}";
-            var files = Directory.GetFiles(folder, pattern);
+            if (GeneratorJson.entities.Count == 0)
+            {
+                var pattern = "*.form.js";
+                files = Directory.GetFiles(folder, pattern);
+            }
+            else
+            {
+                if (GeneratorJson.entities.Count == 1 && GeneratorJson.entities[0].ToLower() == "all")
+                    files = GetAllEntities();
+                else
+                    files = GeneratorJson.entities.Select(e => $"{folder}{e}.webapi.js").ToArray();
+            }
+
             foreach (var file in files)
             {
                 var fInfo = new FileInfo(file);
@@ -236,8 +251,14 @@ namespace PL.DynamicsCrm.DevKit.Cli
             var i = 1;
             foreach (var entity in entities)
             {
+#if DEBUG
+                if (entity != "msdyn_odatav4ds") continue;
+#endif
                 GeneratorJsForm(entity, i, entities.Count);
                 i++;
+                //#if DEBUG
+                //if (i == 10) break;
+                //#endif
             }
             CliLog.WriteLine(CliLog.ColorGreen, new string('*', CliLog.StarLength));
             CliLog.WriteLine(CliLog.ColorGreen, "END GENERATOR - JS FORM - TASKS");
@@ -245,30 +266,72 @@ namespace PL.DynamicsCrm.DevKit.Cli
 
         private void GeneratorJsForm(string entity, int i, int count)
         {
+            var forms = new List<string>();
+            var isDebugForm = false;
+            var webApi = false;
+            var isDebugWebApi = false;
+
             if (GeneratorJson.usetypescriptdeclaration == "true")
             {
                 var fileTypeScriptDeclaration = $"{CurrentDirectory}\\{GeneratorJson.rootfolder}\\{entity}.d.ts";
-                var lines = File.ReadAllLines(fileTypeScriptDeclaration);
-                var json = lines[lines.Length - 1];
-                var comment = SimpleJson.DeserializeObject<CommentIntellisense>(json.Substring("//".Length).Replace("'", "\""));
+                if (File.Exists(fileTypeScriptDeclaration))
+                {
+                    var lines = File.ReadAllLines(fileTypeScriptDeclaration);
+                    if (lines.Count() != 0)
+                    {
+                        var json = lines[lines.Length - 1];
+                        var comment = SimpleJson.DeserializeObject<CommentIntellisense>(json.Substring("//".Length).Replace("'", "\""));
+                        forms = comment.JsForm;
+                        isDebugForm = comment.IsDebugForm;
+                        webApi = comment.JsWebApi;
+                        isDebugWebApi = comment.IsDebugWebApi;
+                    }
+                }
+                if (forms.Count == 0)
+                {
+                    var parts2 = GeneratorJson.rootnamespace.Split(".".ToCharArray());
+                    var projectName2 = parts2.Length > 1 ? parts2[1] : parts2[0];
+                    var jsForm2 = new JsForm(CrmServiceClient.OrganizationServiceProxy, projectName2, entity);
+                    forms = GetAllForms(entity, jsForm2);
+                }
+                if (forms.Count == 0) return;
+                if (File.Exists($"{CurrentDirectory}\\{GeneratorJson.rootfolder}\\{entity}.js"))
+                {
+                    var text = File.ReadAllText($"{CurrentDirectory}\\{GeneratorJson.rootfolder}\\{entity}.js");
+                    text = text.Replace("\r\n", string.Empty);
+                    if (text.Length == 0 || text == $"//@ts-check///<reference path=\"{entity}.d.ts\" />")
+                    {
+                        Utility.TryDeleteFile($"{CurrentDirectory}\\{GeneratorJson.rootfolder}\\{entity}.js");
+                    }
+                }
                 var parts = GeneratorJson.rootnamespace.Split(".".ToCharArray());
                 var projectName = parts.Length > 1 ? parts[1] : parts[0];
                 var jsForm = new JsForm(CrmServiceClient.OrganizationServiceProxy, projectName, entity);
-                jsForm.GeneratorCode(comment.JsForm, comment.IsDebugForm, comment.JsWebApi, comment.IsDebugWebApi);
-                var old = File.ReadAllText(fileTypeScriptDeclaration).Replace(" ", string.Empty).Replace("\r\n", string.Empty).Replace("\t", string.Empty);
+                jsForm.GeneratorCode(forms, isDebugForm, webApi, isDebugWebApi);
+                if (!File.Exists($"{CurrentDirectory}\\{GeneratorJson.rootfolder}\\{entity}.js"))
+                {
+                    var text = jsForm.Form;
+                    text = text.Replace($"[[{entity}]]", $"{entity}.d.ts");
+                    File.WriteAllText($"{CurrentDirectory}\\{GeneratorJson.rootfolder}\\{entity}.js", text, System.Text.Encoding.UTF8);
+                }
+                var old = string.Empty;
+                if (File.Exists(fileTypeScriptDeclaration))
+                    old = File.ReadAllText(fileTypeScriptDeclaration).Replace(" ", string.Empty).Replace("\r\n", string.Empty).Replace("\t", string.Empty);
                 var @new = jsForm.FormCodeIntellisense2.Replace(" ", string.Empty).Replace("\r\n", string.Empty).Replace("\t", string.Empty);
                 if (old != @new)
                 {
                     CliLog.WriteLine(CliLog.ColorCyan, string.Format("{0,0}|{1," + count.ToString().Length + "}", "", i) + ": Processing ", CliLog.ColorGreen, entity, ".d.ts");
                     if (Utility.CanWriteAllText(fileTypeScriptDeclaration))
                     {
-                        File.WriteAllText(fileTypeScriptDeclaration, jsForm.FormCodeIntellisense, System.Text.Encoding.UTF8);
+                        File.WriteAllText(fileTypeScriptDeclaration, jsForm.FormCodeIntellisense2, System.Text.Encoding.UTF8);
                     }
                 }
                 else
                     CliLog.WriteLine(CliLog.ColorCyan, string.Format("{0,0}|{1," + count.ToString().Length + "}", "", i) + ": No change ", CliLog.ColorGreen, entity, ".d.ts");
                 var fileForm = $"{CurrentDirectory}\\{GeneratorJson.rootfolder}\\{entity}.form.js";
-                old = File.ReadAllText(fileForm).Replace(" ", string.Empty).Replace("\r\n", string.Empty).Replace("\t", string.Empty);
+                old = string.Empty;
+                if (File.Exists(fileForm))
+                    old = File.ReadAllText(fileForm).Replace(" ", string.Empty).Replace("\r\n", string.Empty).Replace("\t", string.Empty);
                 @new = jsForm.FormCode.Replace(" ", string.Empty).Replace("\r\n", string.Empty).Replace("\t", string.Empty);
                 if (old != @new)
                 {
@@ -313,6 +376,14 @@ namespace PL.DynamicsCrm.DevKit.Cli
                 else
                     CliLog.WriteLine(CliLog.ColorCyan, string.Format("{0,0}|{1," + count.ToString().Length + "}", "", i) + ": No change ", CliLog.ColorGreen, entity, ".form.js");
             }
+        }
+
+        private List<string> GetAllForms(string entity, JsForm jsForm)
+        {
+            var forms = jsForm.GetForms().ToList();
+            if (forms.Count == 0) return new List<string>();
+            forms = forms.Distinct().ToList();
+            return forms;
         }
 
         private void GeneratorLateBound()
