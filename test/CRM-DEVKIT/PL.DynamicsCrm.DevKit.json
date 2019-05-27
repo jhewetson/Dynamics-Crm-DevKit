@@ -3,7 +3,8 @@
   "DefaultNetVersion": "4.6.2",
   "DefaultCrmName": "Dynamics 365",
   "DefaultCrmConnection": "devkit-071119",
-  "SolutionPrefix":null,
+  "SolutionPrefix": "az_",
+  "UseTypeScriptDeclaration": "true",
   "CrmConnections": [
     {
       "Name": "devkit-071119",

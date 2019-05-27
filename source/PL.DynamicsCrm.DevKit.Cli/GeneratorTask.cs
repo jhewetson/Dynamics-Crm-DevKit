@@ -120,7 +120,8 @@ namespace PL.DynamicsCrm.DevKit.Cli
             foreach (var entity in entities)
             {
 #if DEBUG
-                if (entity != "ImageDescriptor") continue;
+                //if (entity != "ListMember") continue;
+                //if (i<=409) { i++; continue; }
 #endif
                 GeneratorJsWebApi(entity, i, entities.Count);
                 i++;

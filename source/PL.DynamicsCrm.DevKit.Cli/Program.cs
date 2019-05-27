@@ -31,7 +31,7 @@ namespace PL.DynamicsCrm.DevKit.Cli
             get
             {
 #if DEBUG
-                return @"C:\src\github\phuocle\Dynamics-Crm-DevKit\test\CDS-DEVKIT\Bizz.Rocket.WebResource\entities";
+                return @"C:\src\github\phuocle\Dynamics-Crm-DevKit\test\CRM-DEVKIT\Rocket.Hsbc.WebResource\entities";
 #else
                 return Directory.GetCurrentDirectory();
 #endif

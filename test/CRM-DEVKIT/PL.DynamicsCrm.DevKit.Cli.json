@@ -52,8 +52,8 @@
   "webresources": [
     {
       "profile": "DEBUG",
-      "solution": "???",
-      "prefix": "???",
+      "solution": "DEVKIT",
+      "prefix": "az_",
       "rootfolder": "",
       "includefiles": [
         "css\\**.css",
@@ -71,19 +71,19 @@
       "dependencies": [
         {
           "webresources": [
-            "???_/entities/[entity].js"
+            "az_/entities/[entity].js"
           ],
           "dependencies": [
-            "???_/entities/[entity].form.js",
-            "???_/entities/[entity].webapi.js"
+            "az_/entities/[entity].form.js",
+            "az_/entities/[entity].webapi.js"
           ]
         },
         {
           "webresources": [
-            "???_/entities/[entity].webapi.js"
+            "az_/entities/[entity].webapi.js"
           ],
           "dependencies": [
-            "???_/lib/WebApiClient.js"
+            "az_/lib/WebApiClient.js"
           ]
         }
       ]
@@ -207,17 +207,25 @@
     },
     {
       "profile": "JS-FORM",
-      "rootnamespace": "???",
-      "rootfolder": "???",
+      "rootnamespace": "Rocket.Hsbc",
+      "rootfolder": "",
       "crmversion": "365",
-      "type": "JsForm"
+      "type": "JsForm",
+      "usetypescriptdeclaration": "true",
+      "entities": [
+        "All"
+      ]
     },
     {
       "profile": "JS-WEBAPI",
-      "rootnamespace": "???",
-      "rootfolder": "???",
+      "rootnamespace": "Rocket.Hsbc",
+      "rootfolder": "",
       "crmversion": "365",
-      "type": "JsWebApi"
+      "type": "JsWebApi",
+      "usetypescriptdeclaration": "true",
+      "entities": [
+        "All"
+      ]
     }
   ],
   "downloadwebresources": [

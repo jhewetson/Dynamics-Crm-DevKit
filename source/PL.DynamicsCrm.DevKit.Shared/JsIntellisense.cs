@@ -303,6 +303,9 @@ namespace PL.DynamicsCrm.DevKit.Shared
                     }
                     else
                     {
+                        if (entities.Length != collections.Length ||
+                            entities.Length != navigations.Length ||
+                            collections.Length != navigations.Length) continue;
                         var j = 0;
                         foreach (var e in entities)
                         {

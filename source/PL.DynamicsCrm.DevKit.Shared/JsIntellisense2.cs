@@ -159,6 +159,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
                     else
                     {
                         var navigations = crmAttribute.NavigationPropertyName.Split(";".ToCharArray());
+                        if (entities.Length != navigations.Length) continue;
                         var j = 0;
                         foreach (var entity in entities)
                         {
