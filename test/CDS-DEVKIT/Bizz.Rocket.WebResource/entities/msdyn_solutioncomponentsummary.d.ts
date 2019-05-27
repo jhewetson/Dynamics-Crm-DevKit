@@ -1,5 +1,26 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace Formmsdyn_solutioncomponentsummaryInformation {
+		interface Tabs {
+		}
+		interface Body {
+
+		}
+	}
+	class Formmsdyn_solutioncomponentsummaryInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form msdyn_solutioncomponentsummaryInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form msdyn_solutioncomponentsummaryInformation */
+		Body: Rocket.Formmsdyn_solutioncomponentsummaryInformation.Body;
+	}
 	class msdyn_solutioncomponentsummaryApi {
 		/**
 		* PL.DynamicsCrm.DevKit msdyn_solutioncomponentsummaryApi
@@ -86,4 +107,4 @@ declare namespace OptionSet {
 	namespace msdyn_solutioncomponentsummary {
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

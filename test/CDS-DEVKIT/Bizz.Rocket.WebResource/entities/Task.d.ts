@@ -1,5 +1,152 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormTask {
+		interface Header {
+			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Select the priority so that preferred customers or critical issues are handled quickly. */
+			PriorityCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Enter the expected due date and time. */
+			ScheduledEnd: DevKit.Form.Controls.ControlDateTime;
+			/** Shows whether the task is open, completed, or canceled. Completed and canceled tasks are read-only and can't be edited. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_TASK_TAB_Sections {
+			TASK: DevKit.Form.Controls.ControlSection;
+			Description: DevKit.Form.Controls.ControlSection;
+			task_details: DevKit.Form.Controls.ControlSection;
+			tab_2_section_2: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_TASK_TAB extends DevKit.Form.Controls.IControlTab {
+			Section: tab_TASK_TAB_Sections;
+		}
+		interface Tabs {
+			TASK_TAB: tab_TASK_TAB;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Type the number of minutes spent on the task. The duration is used in reporting. */
+			ActualDurationMinutes: DevKit.Form.Controls.ControlInteger;
+			/** Type additional information to describe the task. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Choose the record that the task relates to. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Type a short description about the objective or primary topic of the task. */
+			Subject: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormTask extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form Task
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form Task */
+		Body: Rocket.FormTask.Body;
+		/** The Header section of form Task */
+		Header: Rocket.FormTask.Header;
+	}
+	namespace FormTaskforInteractiveexperience {
+		interface Header {
+			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Select the priority so that preferred customers or critical issues are handled quickly. */
+			PriorityCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Enter the expected due date and time. */
+			ScheduledEnd: DevKit.Form.Controls.ControlDateTime;
+			/** Shows whether the task is open, completed, or canceled. Completed and canceled tasks are read-only and can't be edited. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_tab_4_Sections {
+			tab_4_section_4: DevKit.Form.Controls.ControlSection;
+			tab_4_section_2: DevKit.Form.Controls.ControlSection;
+			tab_3_section_3: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_tab_4 extends DevKit.Form.Controls.IControlTab {
+			Section: tab_tab_4_Sections;
+		}
+		interface Tabs {
+			tab_4: tab_tab_4;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Type the number of minutes spent on the task. The duration is used in reporting. */
+			ActualDurationMinutes: DevKit.Form.Controls.ControlInteger;
+			/** Type additional information to describe the task. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Choose the record that the task relates to. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Choose the record that the task relates to. */
+			RegardingObjectId_1: DevKit.Form.Controls.ControlLookup;
+			/** Type a short description about the objective or primary topic of the task. */
+			Subject: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormTaskforInteractiveexperience extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form TaskforInteractiveexperience
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form TaskforInteractiveexperience */
+		Body: Rocket.FormTaskforInteractiveexperience.Body;
+		/** The Header section of form TaskforInteractiveexperience */
+		Header: Rocket.FormTaskforInteractiveexperience.Header;
+	}
+	namespace FormTaskquickcreateform {
+		interface tab_createtask_Sections {
+			task: DevKit.Form.Controls.ControlSection;
+			task_2: DevKit.Form.Controls.ControlSection;
+			task_3: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_createtask extends DevKit.Form.Controls.IControlTab {
+			Section: tab_createtask_Sections;
+		}
+		interface Tabs {
+			createtask: tab_createtask;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Type the number of minutes spent on the task. The duration is used in reporting. */
+			ActualDurationMinutes: DevKit.Form.Controls.ControlInteger;
+			/** Type additional information to describe the task. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Select the priority so that preferred customers or critical issues are handled quickly. */
+			PriorityCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Choose the record that the task relates to. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Enter the expected due date and time. */
+			ScheduledEnd: DevKit.Form.Controls.ControlDateTime;
+			/** Type a short description about the objective or primary topic of the task. */
+			Subject: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormTaskquickcreateform extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form Taskquickcreateform
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form Taskquickcreateform */
+		Body: Rocket.FormTaskquickcreateform.Body;
+	}
 	class TaskApi {
 		/**
 		* PL.DynamicsCrm.DevKit TaskApi
@@ -167,4 +314,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Task','Task for Interactive experience','Task quick create form.'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

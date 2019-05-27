@@ -1,5 +1,44 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormExternalPartyInformation {
+		interface Header {
+			/** Unique identifier of the user or team who owns the record. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Select the external party status */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface Tabs {
+		}
+		interface Body {
+			externalPartyItemsGrid: DevKit.Form.Controls.ControlGrid;
+			/** Contains the value that is used to detect and avoid duplicate external party records. */
+			CorrelationKey: DevKit.Form.Controls.ControlString;
+			/** Shows the email address derived from the equivalent record that's enabled as the external party and shows the external user's email address. */
+			EmailAddress: DevKit.Form.Controls.ControlString;
+			/** Type the full name of the external party. */
+			FullName: DevKit.Form.Controls.ControlString;
+			/** Shows the date when the external party was last disabled on. */
+			LastDisabledOn: DevKit.Form.Controls.ControlDate;
+			/** Shows the date when the external party was last enabled on. */
+			LastEnabledOn: DevKit.Form.Controls.ControlDate;
+		}
+	}
+	class FormExternalPartyInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form ExternalPartyInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form ExternalPartyInformation */
+		Body: Rocket.FormExternalPartyInformation.Body;
+		/** The Header section of form ExternalPartyInformation */
+		Header: Rocket.FormExternalPartyInformation.Header;
+	}
 	class ExternalPartyApi {
 		/**
 		* PL.DynamicsCrm.DevKit ExternalPartyApi
@@ -113,4 +152,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

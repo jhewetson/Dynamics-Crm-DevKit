@@ -1,5 +1,45 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormCustomerRelationshipInformation {
+		interface tab_general_Sections {
+			information: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Select the primary account or contact involved in the customer relationship. */
+			CustomerId: DevKit.Form.Controls.ControlLookup;
+			/** Type additional information about the primary party's role in the customer relationship, such as the length or quality of the relationship. */
+			CustomerRoleDescription: DevKit.Form.Controls.ControlString;
+			/** Choose the primary party's role or nature of the relationship the customer has with the second party. The field is read-only until both parties have been selected. Administrators can configure role values under Business Management in the Settings area. */
+			CustomerRoleId: DevKit.Form.Controls.ControlLookup;
+			/** Select the secondary account or contact involved in the customer relationship. */
+			PartnerId: DevKit.Form.Controls.ControlLookup;
+			/** Type additional information about the secondary party's role in the customer relationship, such as the length or quality of the relationship. */
+			PartnerRoleDescription: DevKit.Form.Controls.ControlString;
+			/** Choose the secondary party's role or nature of the relationship the customer has with the primary party. The field is read-only until both parties have been selected. Administrators can configure role values under Business Management in the Settings area. */
+			PartnerRoleId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormCustomerRelationshipInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form CustomerRelationshipInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form CustomerRelationshipInformation */
+		Body: Rocket.FormCustomerRelationshipInformation.Body;
+	}
 	class CustomerRelationshipApi {
 		/**
 		* PL.DynamicsCrm.DevKit CustomerRelationshipApi
@@ -77,4 +117,4 @@ declare namespace OptionSet {
 	namespace CustomerRelationship {
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

@@ -1,5 +1,37 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormPostFollowInformation {
+		interface tab_general_Sections {
+			Followinformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Choose the parent record for the followed post to identify the customer, opportunity, case, or other record type that the post most closely relates to. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormPostFollowInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form PostFollowInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form PostFollowInformation */
+		Body: Rocket.FormPostFollowInformation.Body;
+	}
 	class PostFollowApi {
 		/**
 		* PL.DynamicsCrm.DevKit PostFollowApi
@@ -82,4 +114,4 @@ declare namespace OptionSet {
 	namespace PostFollow {
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

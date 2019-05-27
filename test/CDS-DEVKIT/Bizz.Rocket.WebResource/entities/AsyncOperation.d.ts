@@ -1,5 +1,43 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormAsyncOperationInformation {
+		interface Tabs {
+		}
+		interface Body {
+			/** Date and time when the system job was completed. */
+			CompletedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Date and time when the system job was created. */
+			CreatedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Message provided by the system job. */
+			FriendlyMessage: DevKit.Form.Controls.ControlString;
+			/** Message related to the system job. */
+			Message: DevKit.Form.Controls.ControlString;
+			/** Name of the system job. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Type of the system job. */
+			OperationType: DevKit.Form.Controls.ControlOptionSet;
+			/** Unique identifier of the user or team who owns the system job. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier of the object with which the system job is associated. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Number of times to retry the system job. */
+			RetryCount: DevKit.Form.Controls.ControlInteger;
+		}
+	}
+	class FormAsyncOperationInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form AsyncOperationInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form AsyncOperationInformation */
+		Body: Rocket.FormAsyncOperationInformation.Body;
+	}
 	class AsyncOperationApi {
 		/**
 		* PL.DynamicsCrm.DevKit AsyncOperationApi
@@ -462,4 +500,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

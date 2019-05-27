@@ -1,5 +1,110 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormCategory {
+		interface tab_AssociatedCategories_Sections {
+			AssociatedCategories: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_AssociatedCategories extends DevKit.Form.Controls.IControlTab {
+			Section: tab_AssociatedCategories_Sections;
+		}
+		interface Tabs {
+			AssociatedCategories: tab_AssociatedCategories;
+		}
+		interface Body {
+			Tab: Tabs;
+			AssociatedCategoriesGrid: DevKit.Form.Controls.ControlGrid;
+			/** Shows the category number for customer reference. */
+			CategoryNumber: DevKit.Form.Controls.ControlString;
+			/** Type a detailed description of the category */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Select an existing category article for the category. */
+			ParentCategoryId: DevKit.Form.Controls.ControlLookup;
+			/** Enter a number to define the display position of the category in the hierarchy. */
+			SequenceNumber: DevKit.Form.Controls.ControlInteger;
+			/** Type a title for the Category. */
+			Title: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormCategory extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form Category
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form Category */
+		Body: Rocket.FormCategory.Body;
+	}
+	namespace FormCategoryMainInteractive {
+		interface Tabs {
+		}
+		interface Body {
+			/** Type a detailed description of the category */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Select an existing category article for the category. */
+			ParentCategoryId: DevKit.Form.Controls.ControlLookup;
+			/** Enter a number to define the display position of the category in the hierarchy. */
+			SequenceNumber: DevKit.Form.Controls.ControlInteger;
+			/** Type a title for the Category. */
+			Title: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormCategoryMainInteractive extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form CategoryMainInteractive
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form CategoryMainInteractive */
+		Body: Rocket.FormCategoryMainInteractive.Body;
+	}
+	namespace FormCategoryQuickCreate {
+		interface tab_tab_1_Sections {
+			tab_1_column_1_section_1: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_tab_1 extends DevKit.Form.Controls.IControlTab {
+			Section: tab_tab_1_Sections;
+		}
+		interface Tabs {
+			tab_1: tab_tab_1;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Shows the category number for customer reference. */
+			CategoryNumber: DevKit.Form.Controls.ControlString;
+			/** Type a detailed description of the category */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Select an existing category article for the category. */
+			ParentCategoryId: DevKit.Form.Controls.ControlLookup;
+			/** Enter a number to define the display position of the category in the hierarchy. */
+			SequenceNumber: DevKit.Form.Controls.ControlInteger;
+			/** Type a title for the Category. */
+			Title: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormCategoryQuickCreate extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form CategoryQuickCreate
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form CategoryQuickCreate */
+		Body: Rocket.FormCategoryQuickCreate.Body;
+	}
 	class CategoryApi {
 		/**
 		* PL.DynamicsCrm.DevKit CategoryApi
@@ -75,4 +180,4 @@ declare namespace OptionSet {
 	namespace Category {
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Category','Category Main Interactive','Category Quick Create'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

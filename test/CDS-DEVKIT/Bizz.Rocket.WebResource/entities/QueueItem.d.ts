@@ -1,5 +1,49 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormQueueItemInformation {
+		interface tab_general_Sections {
+			information: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Shows the date the record was assigned to the queue. */
+			EnteredOn: DevKit.Form.Controls.ControlDateTime;
+			/** Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options. */
+			ModifiedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Choose the activity, case, or article assigned to the queue. */
+			ObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Choose the queue that the item is assigned to. */
+			QueueId: DevKit.Form.Controls.ControlLookup;
+			/** Shows who is working on the queue item. */
+			WorkerId: DevKit.Form.Controls.ControlLookup;
+		}
+		interface Footer {
+			/** Shows whether the queue record is active or inactive. Inactive queue records are read-only and can't be edited unless they are reactivated. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+	}
+	class FormQueueItemInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form QueueItemInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form QueueItemInformation */
+		Body: Rocket.FormQueueItemInformation.Body;
+		/** The Footer section of form QueueItemInformation */
+		Footer: Rocket.FormQueueItemInformation.Footer;
+	}
 	class QueueItemApi {
 		/**
 		* PL.DynamicsCrm.DevKit QueueItemApi
@@ -150,4 +194,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

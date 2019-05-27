@@ -1,5 +1,57 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormRuleItem {
+		interface tab_general_Sections {
+			ruleiteminformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_RuleCriteria_Sections {
+			ConditionControl: DevKit.Form.Controls.ControlSection;
+			rulethenconditions: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_notes_Sections {
+			notes: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface tab_RuleCriteria extends DevKit.Form.Controls.IControlTab {
+			Section: tab_RuleCriteria_Sections;
+		}
+		interface tab_notes extends DevKit.Form.Controls.IControlTab {
+			Section: tab_notes_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+			RuleCriteria: tab_RuleCriteria;
+			notes: tab_notes;
+		}
+		interface Body {
+			Tab: Tabs;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Show who is assigned on item. */
+			AssignObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Type additional information to describe the rule item. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Name of the Routing Rule Item. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Choose the Queue that the item is assigned to. */
+			RoutedQueueId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormRuleItem extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form RuleItem
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form RuleItem */
+		Body: Rocket.FormRuleItem.Body;
+	}
 	class RoutingRuleItemApi {
 		/**
 		* PL.DynamicsCrm.DevKit RoutingRuleItemApi
@@ -108,4 +160,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Rule Item'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

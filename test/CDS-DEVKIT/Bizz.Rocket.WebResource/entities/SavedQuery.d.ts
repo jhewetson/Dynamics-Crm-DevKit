@@ -1,5 +1,53 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormSavedQueryInformation {
+		interface tab_general_Sections {
+			accountinformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Shows who created the record. */
+			CreatedBy: DevKit.Form.Controls.ControlLookup;
+			/** Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options. */
+			CreatedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Type additional information to describe the view, such as the filter criteria or intended results set. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Tells whether the component can be customized. */
+			IsCustomizable: DevKit.Form.Controls.ControlString;
+			/** Tells whether the view is the default view for the specified record type (entity). */
+			IsDefault: DevKit.Form.Controls.ControlBoolean;
+			/** Choose whether the view is compatible with Quick Find. When users search for specific items, you define the fields that are searched in. */
+			IsQuickFindQuery: DevKit.Form.Controls.ControlBoolean;
+			/** Tells whether the view was created by a user. */
+			IsUserDefined: DevKit.Form.Controls.ControlBoolean;
+			/** Shows who last updated the record. */
+			ModifiedBy: DevKit.Form.Controls.ControlLookup;
+			/** Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options. */
+			ModifiedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Type a name for the view to describe what results the view will contain. This name is visible to users in the View list. */
+			Name: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormSavedQueryInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form SavedQueryInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form SavedQueryInformation */
+		Body: Rocket.FormSavedQueryInformation.Body;
+	}
 	class SavedQueryApi {
 		/**
 		* PL.DynamicsCrm.DevKit SavedQueryApi
@@ -128,4 +176,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

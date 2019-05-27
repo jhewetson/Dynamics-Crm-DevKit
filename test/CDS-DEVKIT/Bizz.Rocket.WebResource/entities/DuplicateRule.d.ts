@@ -1,5 +1,76 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormDuplicateRuleInformation {
+		interface tab_rule_Sections {
+			section1: DevKit.Form.Controls.ControlSection;
+			description: DevKit.Form.Controls.ControlSection;
+			criteria: DevKit.Form.Controls.ControlSection;
+			RuleConditions: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_administration_Sections {
+			section1_2: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_notes_Sections {
+			notes: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_rule extends DevKit.Form.Controls.IControlTab {
+			Section: tab_rule_Sections;
+		}
+		interface tab_administration extends DevKit.Form.Controls.IControlTab {
+			Section: tab_administration_Sections;
+		}
+		interface tab_notes extends DevKit.Form.Controls.IControlTab {
+			Section: tab_notes_Sections;
+		}
+		interface Tabs {
+			rule: tab_rule;
+			administration: tab_administration;
+			notes: tab_notes;
+		}
+		interface Body {
+			Tab: Tabs;
+			ruleconditioncontrol: DevKit.Form.Controls.ControlIFrame;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Record type of the record being evaluated for potential duplicates. */
+			BaseEntityTypeCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Unique identifier of the user who created the duplicate detection rule. */
+			CreatedBy: DevKit.Form.Controls.ControlLookup;
+			/** Date and time when the duplicate detection rule was created. */
+			CreatedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Description of the duplicate detection rule. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Determines whether to flag inactive records as duplicates */
+			ExcludeInactiveRecords: DevKit.Form.Controls.ControlBoolean;
+			/** Indicates if the operator is case-sensitive. */
+			IsCaseSensitive: DevKit.Form.Controls.ControlBoolean;
+			/** Record type of the records being evaluated as potential duplicates. */
+			MatchingEntityTypeCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Unique identifier of the user who last modified the duplicate detection rule. */
+			ModifiedBy: DevKit.Form.Controls.ControlLookup;
+			/** Date and time when the duplicate detection rule was last modified. */
+			ModifiedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Name of the duplicate detection rule. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the user or team who owns the duplicate detection rule. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Reason for the status of the duplicate detection rule. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+	}
+	class FormDuplicateRuleInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form DuplicateRuleInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form DuplicateRuleInformation */
+		Body: Rocket.FormDuplicateRuleInformation.Body;
+	}
 	class DuplicateRuleApi {
 		/**
 		* PL.DynamicsCrm.DevKit DuplicateRuleApi
@@ -1342,4 +1413,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

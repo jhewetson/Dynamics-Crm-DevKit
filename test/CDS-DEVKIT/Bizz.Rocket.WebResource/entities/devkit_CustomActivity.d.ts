@@ -1,5 +1,61 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormCustomActivity {
+		interface Header {
+			/** Unique identifier of the user or team who owns the activity. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Priority of the activity. */
+			PriorityCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Scheduled end time of the activity. */
+			ScheduledEnd: DevKit.Form.Controls.ControlDateTime;
+			/** Status of the activity. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_CCC_Sections {
+			AAA: DevKit.Form.Controls.ControlSection;
+			BBB: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_CCC extends DevKit.Form.Controls.IControlTab {
+			Section: tab_CCC_Sections;
+		}
+		interface Tabs {
+			CCC: tab_CCC;
+		}
+		interface Body {
+			Tab: Tabs;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Blind Carbon-copy (bcc) recipients of the activity. */
+			BCC: DevKit.Form.Controls.ControlLookup;
+			/** Carbon-copy (cc) recipients of the activity. */
+			CC: DevKit.Form.Controls.ControlLookup;
+			/** Person who the activity is from. */
+			From: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier of the user or team who owns the activity. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier of the object with which the activity is associated. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Subject associated with the activity. */
+			Subject: DevKit.Form.Controls.ControlString;
+			/** Person who is the receiver of the activity. */
+			To: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormCustomActivity extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form CustomActivity
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form CustomActivity */
+		Body: Rocket.FormCustomActivity.Body;
+		/** The Header section of form CustomActivity */
+		Header: Rocket.FormCustomActivity.Header;
+	}
 	class devkit_CustomActivityApi {
 		/**
 		* PL.DynamicsCrm.DevKit devkit_CustomActivityApi
@@ -212,4 +268,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Custom Activity'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

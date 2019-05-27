@@ -1,5 +1,26 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormSharePointDataInformation {
+		interface Tabs {
+		}
+		interface Body {
+
+		}
+	}
+	class FormSharePointDataInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form SharePointDataInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form SharePointDataInformation */
+		Body: Rocket.FormSharePointDataInformation.Body;
+	}
 	class SharePointDataApi {
 		/**
 		* PL.DynamicsCrm.DevKit SharePointDataApi
@@ -66,4 +87,4 @@ declare namespace OptionSet {
 	namespace SharePointData {
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

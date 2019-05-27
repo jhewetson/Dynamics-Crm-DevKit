@@ -1,5 +1,40 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormWorkflowInformation {
+		interface tab_notes_Sections {
+			notes: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_notes extends DevKit.Form.Controls.IControlTab {
+			Section: tab_notes_Sections;
+		}
+		interface Tabs {
+			notes: tab_notes;
+		}
+		interface Body {
+			Tab: Tabs;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Description of the process. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Name of the process. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the user or team who owns the process. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormWorkflowInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form WorkflowInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form WorkflowInformation */
+		Body: Rocket.FormWorkflowInformation.Body;
+	}
 	class WorkflowApi {
 		/**
 		* PL.DynamicsCrm.DevKit WorkflowApi
@@ -241,4 +276,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

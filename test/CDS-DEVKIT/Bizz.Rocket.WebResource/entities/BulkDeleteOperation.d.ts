@@ -1,5 +1,55 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormBulkDeleteOperationInformation {
+		interface tab_properties_Sections {
+			details: DevKit.Form.Controls.ControlSection;
+			querydetails: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_properties extends DevKit.Form.Controls.IControlTab {
+			Section: tab_properties_Sections;
+		}
+		interface Tabs {
+			properties: tab_properties;
+		}
+		interface Body {
+			Tab: Tabs;
+			advfindcontrol: DevKit.Form.Controls.ControlIFrame;
+			/** Unique identifier of the user who created the bulk deletion job. */
+			CreatedBy: DevKit.Form.Controls.ControlLookup;
+			/** Date and time when the bulk deletion job was created. */
+			CreatedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Number of records that could not be deleted by the bulk deletion job. */
+			FailureCount: DevKit.Form.Controls.ControlInteger;
+			/** Information about if recurrence is defined for the bulk deletion job. */
+			IsRecurring: DevKit.Form.Controls.ControlBoolean;
+			/** Unique identifier of the user who last modified the bulk deletion job. */
+			ModifiedBy: DevKit.Form.Controls.ControlLookup;
+			/** Date and time when the bulk deletion job record was last modified. */
+			ModifiedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Name of the bulk deletion job. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Next scheduled time for the bulk deletion job to run. */
+			NextRun: DevKit.Form.Controls.ControlDateTime;
+			/** Reason for the status of the bulk deletion job. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Number of records deleted by the bulk deletion job. */
+			SuccessCount: DevKit.Form.Controls.ControlInteger;
+		}
+	}
+	class FormBulkDeleteOperationInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form BulkDeleteOperationInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form BulkDeleteOperationInformation */
+		Body: Rocket.FormBulkDeleteOperationInformation.Body;
+	}
 	class BulkDeleteOperationApi {
 		/**
 		* PL.DynamicsCrm.DevKit BulkDeleteOperationApi
@@ -110,4 +160,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

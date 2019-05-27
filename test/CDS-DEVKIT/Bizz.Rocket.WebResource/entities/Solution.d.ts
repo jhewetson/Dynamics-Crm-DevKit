@@ -1,5 +1,58 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormSolutionInformation {
+		interface tab_general_Sections {
+			solutioninformation: DevKit.Form.Controls.ControlSection;
+			description: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab__9129B06A_8446_77D8_2BD2_027C5006BE41_Sections {
+			solutionmarketplacesection: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface tab__9129B06A_8446_77D8_2BD2_027C5006BE41 extends DevKit.Form.Controls.IControlTab {
+			Section: tab__9129B06A_8446_77D8_2BD2_027C5006BE41_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+			_9129B06A_8446_77D8_2BD2_027C5006BE41: tab__9129B06A_8446_77D8_2BD2_027C5006BE41;
+		}
+		interface Body {
+			Tab: Tabs;
+			IFRAME_SolutionsMarketplace: DevKit.Form.Controls.ControlIFrame;
+			/** A link to an optional configuration page for this solution. */
+			ConfigurationPageId: DevKit.Form.Controls.ControlLookup;
+			/** Description of the solution. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** User display name for the solution. */
+			FriendlyName: DevKit.Form.Controls.ControlString;
+			/** Date and time when the solution was installed/upgraded. */
+			InstalledOn: DevKit.Form.Controls.ControlDate;
+			/** Indicates whether the solution is managed or unmanaged. */
+			IsManaged: DevKit.Form.Controls.ControlBoolean;
+			/** Unique identifier of the publisher. */
+			PublisherId: DevKit.Form.Controls.ControlLookup;
+			/** The unique name of this solution */
+			UniqueName: DevKit.Form.Controls.ControlString;
+			/** Solution version, used to identify a solution for upgrades and hotfixes. */
+			Version: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormSolutionInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form SolutionInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form SolutionInformation */
+		Body: Rocket.FormSolutionInformation.Body;
+	}
 	class SolutionApi {
 		/**
 		* PL.DynamicsCrm.DevKit SolutionApi
@@ -94,4 +147,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

@@ -1,5 +1,69 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormSharePointSiteInformation {
+		interface tab_general_Sections {
+			section1: DevKit.Form.Controls.ControlSection;
+			urloption: DevKit.Form.Controls.ControlSection;
+			urlvalidation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Absolute URL of the SharePoint site. */
+			AbsoluteURL: DevKit.Form.Controls.ControlString;
+			/** Description of the SharePoint site record. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Indicates if SharePoint Grid is present or not. */
+			IsGridPresent: DevKit.Form.Controls.ControlBoolean;
+			/** Allows embedding of Power BI Reports available in this SharePoint site. */
+			IsPowerBISite: DevKit.Form.Controls.ControlBoolean;
+			/** Date and time when the SharePoint site URL was last validated. */
+			LastValidated: DevKit.Form.Controls.ControlDateTime;
+			/** Name of the SharePoint site record. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the user or team who owns the SharePoint site. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier of the parent SharePoint site. */
+			ParentSite: DevKit.Form.Controls.ControlLookup;
+			/** Relative URL of the SharePoint site. */
+			RelativeUrl: DevKit.Form.Controls.ControlString;
+			/** Validation status of the SharePoint site URL. */
+			ValidationStatus: DevKit.Form.Controls.ControlOptionSet;
+			/** Reason for validation status of the URL */
+			ValidationStatusErrorCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface Footer {
+			/** Status of the SharePoint site record. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface Navigation {
+			navSharePointSubSites: DevKit.Form.Controls.ControlNavigationItem,
+			navSubDocumentLocations: DevKit.Form.Controls.ControlNavigationItem
+		}
+	}
+	class FormSharePointSiteInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form SharePointSiteInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form SharePointSiteInformation */
+		Body: Rocket.FormSharePointSiteInformation.Body;
+		/** The Footer section of form SharePointSiteInformation */
+		Footer: Rocket.FormSharePointSiteInformation.Footer;
+		/** The Navigation of form SharePointSiteInformation */
+		Navigation: Rocket.FormSharePointSiteInformation.Navigation;
+	}
 	class SharePointSiteApi {
 		/**
 		* PL.DynamicsCrm.DevKit SharePointSiteApi
@@ -151,4 +215,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

@@ -1,5 +1,48 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormMailMergeTemplateInformation {
+		interface tab_general_Sections {
+			Details: DevKit.Form.Controls.ControlSection;
+			Categorization: DevKit.Form.Controls.ControlSection;
+			Ownership: DevKit.Form.Controls.ControlSection;
+			Language: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Description of the mail merge template. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Information about whether the mail merge template is personal or is available to all users. */
+			IsPersonal: DevKit.Form.Controls.ControlBoolean;
+			/** Language of the mail merge template. */
+			LanguageCode: DevKit.Form.Controls.ControlInteger;
+			/** Name of the mail merge template. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the user or team who owns the mail merge template. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Type of mail merge template. */
+			TemplateTypeCode: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormMailMergeTemplateInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form MailMergeTemplateInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form MailMergeTemplateInformation */
+		Body: Rocket.FormMailMergeTemplateInformation.Body;
+	}
 	class MailMergeTemplateApi {
 		/**
 		* PL.DynamicsCrm.DevKit MailMergeTemplateApi
@@ -152,4 +195,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

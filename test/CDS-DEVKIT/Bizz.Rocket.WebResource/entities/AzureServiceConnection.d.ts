@@ -1,5 +1,58 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormAzureServiceConnectionInformation {
+		interface Header {
+			/** Shows whether the Azure service connection is active or inactive. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_general_Sections {
+			connectioninfo: DevKit.Form.Controls.ControlSection;
+			connectiontestinfo: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Type the Azure account key. */
+			AccountKey: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the user who created the Azure service connection. */
+			CreatedBy: DevKit.Form.Controls.ControlLookup;
+			/** Enter a description of the Azure service connection. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Shows the status of the last connection to the Azure service. */
+			LastConnectionStatusCode: DevKit.Form.Controls.ControlOptionSet;
+			/** shows the time of the last connection to the Azure service. */
+			LastConnectionTime: DevKit.Form.Controls.ControlDateTime;
+			/** Unique identifier of the user who modified the Azure service connection. */
+			ModifiedBy: DevKit.Form.Controls.ControlLookup;
+			/** Date and time when the Azure service connection was last modified. */
+			ModifiedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Type a logical name for the connection. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Type the service URL for the Azure service. */
+			ServiceUri: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormAzureServiceConnectionInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form AzureServiceConnectionInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form AzureServiceConnectionInformation */
+		Body: Rocket.FormAzureServiceConnectionInformation.Body;
+		/** The Header section of form AzureServiceConnectionInformation */
+		Header: Rocket.FormAzureServiceConnectionInformation.Header;
+	}
 	class AzureServiceConnectionApi {
 		/**
 		* PL.DynamicsCrm.DevKit AzureServiceConnectionApi
@@ -90,4 +143,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

@@ -1,5 +1,99 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormProcessSessionInformation {
+		interface tab__474B8A52_CB22_4194_A5A6_F21FD40B7417_Sections {
+			Details: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_Summary_Sections {
+			Summary: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_Comments_Sections {
+			Comments: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_LinkedSessions_Sections {
+			LinkedSessions: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_Details_Sections {
+			Details_2: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab__474B8A52_CB22_4194_A5A6_F21FD40B7417 extends DevKit.Form.Controls.IControlTab {
+			Section: tab__474B8A52_CB22_4194_A5A6_F21FD40B7417_Sections;
+		}
+		interface tab_Summary extends DevKit.Form.Controls.IControlTab {
+			Section: tab_Summary_Sections;
+		}
+		interface tab_Comments extends DevKit.Form.Controls.IControlTab {
+			Section: tab_Comments_Sections;
+		}
+		interface tab_LinkedSessions extends DevKit.Form.Controls.IControlTab {
+			Section: tab_LinkedSessions_Sections;
+		}
+		interface tab_Details extends DevKit.Form.Controls.IControlTab {
+			Section: tab_Details_Sections;
+		}
+		interface Tabs {
+			_474B8A52_CB22_4194_A5A6_F21FD40B7417: tab__474B8A52_CB22_4194_A5A6_F21FD40B7417;
+			Summary: tab_Summary;
+			Comments: tab_Comments;
+			LinkedSessions: tab_LinkedSessions;
+			Details: tab_Details;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Unique identifier of the user who canceled the dialog session. */
+			CanceledBy: DevKit.Form.Controls.ControlLookup;
+			/** Date and time when the dialog session was canceled. */
+			CanceledOn: DevKit.Form.Controls.ControlDateTime;
+			/** User comments. */
+			Comments: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the user who completed the dialog session. */
+			CompletedBy: DevKit.Form.Controls.ControlLookup;
+			/** Date and time when the dialog session was completed. */
+			CompletedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Date and time when the dialog session was created. */
+			CreatedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Name of the dialog session. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the succeeding linked dialog session. */
+			NextLinkedSessionId: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier of the originating dialog session. */
+			OriginatingSessionId: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier of the user or team who owns the dialog session. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier of the preceding linked dialog session. */
+			PreviousLinkedSessionId: DevKit.Form.Controls.ControlLookup;
+			/** Select the process activation record that is related to the dialog session. */
+			ProcessId: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier of the object with which the dialog session is associated. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier of the user who started the dialog session. */
+			StartedBy: DevKit.Form.Controls.ControlLookup;
+			/** Date and time when the dialog session was started. */
+			StartedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Reason for the status of the dialog session. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface Footer {
+			/** Status of the dialog session. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+	}
+	class FormProcessSessionInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form ProcessSessionInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form ProcessSessionInformation */
+		Body: Rocket.FormProcessSessionInformation.Body;
+		/** The Footer section of form ProcessSessionInformation */
+		Footer: Rocket.FormProcessSessionInformation.Footer;
+	}
 	class ProcessSessionApi {
 		/**
 		* PL.DynamicsCrm.DevKit ProcessSessionApi
@@ -243,4 +337,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

@@ -1,5 +1,43 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormSLAKPIInstance {
+		interface Header {
+			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user or team. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Reason for the status of the service level agreement (SLA) key performance indicator (KPI) instance. For example, the SLA KPI could be Noncompliant or Succeeded. */
+			Status: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface Tabs {
+		}
+		interface Body {
+			/** Enter the date and time when the service level agreement (SLA) key performance indicator (KPI) will expire. */
+			FailureTime: DevKit.Form.Controls.ControlDateTime;
+			/** Type a descriptive name for the service level agreement (SLA) key performance indicator (KPI) instance. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the record that this service level agreement (SLA) key performance indicator (KPI) instance is associated with. */
+			Regarding: DevKit.Form.Controls.ControlLookup;
+			/** Shows the date and time when the service level agreement (SLA) key performance indicator (KPI) success criteria was met. */
+			SucceededOn: DevKit.Form.Controls.ControlDateTime;
+			/** Enter the date and time when the service level agreement (SLA) key performance indicator (KPI)will go to a warning state. */
+			WarningTime: DevKit.Form.Controls.ControlDateTime;
+		}
+	}
+	class FormSLAKPIInstance extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form SLAKPIInstance
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form SLAKPIInstance */
+		Body: Rocket.FormSLAKPIInstance.Body;
+		/** The Header section of form SLAKPIInstance */
+		Header: Rocket.FormSLAKPIInstance.Header;
+	}
 	class SLAKPIInstanceApi {
 		/**
 		* PL.DynamicsCrm.DevKit SLAKPIInstanceApi
@@ -122,4 +160,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['SLA KPI Instance'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

@@ -1,5 +1,83 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormAnnotationInformation {
+		interface tab_general_Sections {
+			accountinformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Unique identifier of the user who created the note. */
+			CreatedBy: DevKit.Form.Controls.ControlLookup;
+			/** Date and time when the note was created. */
+			CreatedOn: DevKit.Form.Controls.ControlDateTime;
+			/** File name of the note. */
+			FileName: DevKit.Form.Controls.ControlString;
+			/** File size of the note. */
+			FileSize: DevKit.Form.Controls.ControlInteger;
+			/** Specifies whether the note is an attachment. */
+			IsDocument: DevKit.Form.Controls.ControlBoolean;
+			/** Unique identifier of the user who last modified the note. */
+			ModifiedBy: DevKit.Form.Controls.ControlLookup;
+			/** Date and time when the note was last modified. */
+			ModifiedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Text of the note. */
+			NoteText: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the user or team who owns the note. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormAnnotationInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form AnnotationInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form AnnotationInformation */
+		Body: Rocket.FormAnnotationInformation.Body;
+	}
+	namespace FormNoteQuickCreateForm {
+		interface tab_general_Sections {
+			notesinformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Text of the note. */
+			NoteText: DevKit.Form.Controls.ControlString;
+			/** Subject associated with the note. */
+			Subject: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormNoteQuickCreateForm extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form NoteQuickCreateForm
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form NoteQuickCreateForm */
+		Body: Rocket.FormNoteQuickCreateForm.Body;
+	}
 	class AnnotationApi {
 		/**
 		* PL.DynamicsCrm.DevKit AnnotationApi
@@ -149,4 +227,4 @@ declare namespace OptionSet {
 	namespace Annotation {
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information','Note Quick Create Form'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

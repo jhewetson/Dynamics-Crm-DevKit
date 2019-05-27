@@ -1,5 +1,49 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormMobileOfflineProfileItem {
+		interface tab_GENERALINFORMATION_TAB_Sections {
+			EntitySelection: DevKit.Form.Controls.ControlSection;
+			MOBILEOFFLINEPROFILEITEMASSOCIATIONS: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_GENERALINFORMATION_TAB extends DevKit.Form.Controls.IControlTab {
+			Section: tab_GENERALINFORMATION_TAB_Sections;
+		}
+		interface Tabs {
+			GENERALINFORMATION_TAB: tab_GENERALINFORMATION_TAB;
+		}
+		interface Body {
+			Tab: Tabs;
+			profileassociationgrid: DevKit.Form.Controls.ControlGrid;
+			/** Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options. */
+			CreatedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Enter the name of the mobile offline profile item. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Specify data download filter for selected entity */
+			RecordDistributionCriteria: DevKit.Form.Controls.ControlOptionSet;
+			/** Download my records */
+			RecordsOwnedByMe: DevKit.Form.Controls.ControlBoolean;
+			/** Download my business unit's records */
+			RecordsOwnedByMyBusinessUnit: DevKit.Form.Controls.ControlBoolean;
+			/** Download my team's records */
+			RecordsOwnedByMyTeam: DevKit.Form.Controls.ControlBoolean;
+			/** Mobile offline enabled entity */
+			SelectedEntityTypeCode: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormMobileOfflineProfileItem extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form MobileOfflineProfileItem
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form MobileOfflineProfileItem */
+		Body: Rocket.FormMobileOfflineProfileItem.Body;
+	}
 	class MobileOfflineProfileItemApi {
 		/**
 		* PL.DynamicsCrm.DevKit MobileOfflineProfileItemApi
@@ -116,4 +160,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Mobile Offline Profile Item'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

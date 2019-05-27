@@ -1,5 +1,65 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormSyncError {
+		interface Header {
+			/** Unique identifier of the user or team who owns the sync error. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Select the sync error status. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_General_Tab_Sections {
+			SYNCERROR_INFORMATION: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_Details_Sections {
+		}
+		interface tab_General_Tab extends DevKit.Form.Controls.IControlTab {
+			Section: tab_General_Tab_Sections;
+		}
+		interface tab_Details extends DevKit.Form.Controls.IControlTab {
+			Section: tab_Details_Sections;
+		}
+		interface Tabs {
+			General_Tab: tab_General_Tab;
+			Details: tab_Details;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Action Name for which sync error has occurred */
+			Action: DevKit.Form.Controls.ControlString;
+			/** Enter a short description of the sync error. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Displays the error code. */
+			ErrorCode: DevKit.Form.Controls.ControlString;
+			/** Error description from the exception */
+			ErrorDetail: DevKit.Form.Controls.ControlString;
+			/** Error Message of the exception */
+			ErrorMessage: DevKit.Form.Controls.ControlString;
+			/** Date and time when the upsync request was executed on CRM server */
+			ErrorTime: DevKit.Form.Controls.ControlDateTime;
+			/** Select the preferred error type. */
+			ErrorType: DevKit.Form.Controls.ControlOptionSet;
+			/** Entity name of the record for which sync error has occurred */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Choose the record that the sync error relates to. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormSyncError extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form SyncError
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form SyncError */
+		Body: Rocket.FormSyncError.Body;
+		/** The Header section of form SyncError */
+		Header: Rocket.FormSyncError.Header;
+	}
 	class SyncErrorApi {
 		/**
 		* PL.DynamicsCrm.DevKit SyncErrorApi
@@ -276,4 +336,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Sync Error'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

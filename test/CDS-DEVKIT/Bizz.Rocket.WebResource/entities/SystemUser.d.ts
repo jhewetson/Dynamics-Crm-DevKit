@@ -1,5 +1,269 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormApplicationUser {
+		interface tab_SUMMARY_TAB_Sections {
+			onpremiseaccountinformation: DevKit.Form.Controls.ControlSection;
+			userinformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_SUMMARY_TAB extends DevKit.Form.Controls.IControlTab {
+			Section: tab_SUMMARY_TAB_Sections;
+		}
+		interface Tabs {
+			SUMMARY_TAB: tab_SUMMARY_TAB;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** The identifier for the application. This is used to access data in another application. */
+			ApplicationId: DevKit.Form.Controls.ControlString;
+			/** The URI used as a unique logical identifier for the external app. This can be used to validate the application. */
+			ApplicationIdUri: DevKit.Form.Controls.ControlString;
+			/** This is the application directory object Id. */
+			AzureActiveDirectoryObjectId: DevKit.Form.Controls.ControlString;
+			/** Active Directory domain of which the user is a member. */
+			DomainName: DevKit.Form.Controls.ControlString;
+			/** Full name of the user. */
+			FullName: DevKit.Form.Controls.ControlString;
+			/** Internal email address for the user. */
+			InternalEMailAddress: DevKit.Form.Controls.ControlString;
+		}
+		interface Footer {
+			/** Information about whether the user is enabled. */
+			IsDisabled: DevKit.Form.Controls.ControlBoolean;
+		}
+	}
+	class FormApplicationUser extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form ApplicationUser
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form ApplicationUser */
+		Body: Rocket.FormApplicationUser.Body;
+		/** The Footer section of form ApplicationUser */
+		Footer: Rocket.FormApplicationUser.Footer;
+	}
+	namespace FormUser {
+		interface tab_SUMMARY_TAB_Sections {
+			onpremise_account_information: DevKit.Form.Controls.ControlSection;
+			online_account_information: DevKit.Form.Controls.ControlSection;
+			user_information: DevKit.Form.Controls.ControlSection;
+			SOCIAL_PANE_TAB: DevKit.Form.Controls.ControlSection;
+			teams_information: DevKit.Form.Controls.ControlSection;
+			organization_information: DevKit.Form.Controls.ControlSection;
+			queue_selection: DevKit.Form.Controls.ControlSection;
+			queue_information: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_DETAILS_TAB_Sections {
+			user_information_2: DevKit.Form.Controls.ControlSection;
+			mailing_address: DevKit.Form.Controls.ControlSection;
+			DirectReports: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_ADMINISTRATION_TAB_Sections {
+			administration: DevKit.Form.Controls.ControlSection;
+			e_mail_configuration: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_MobileOfflineProfile_TAB_Sections {
+			mobileofflineaccessinfo: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_SUMMARY_TAB extends DevKit.Form.Controls.IControlTab {
+			Section: tab_SUMMARY_TAB_Sections;
+		}
+		interface tab_DETAILS_TAB extends DevKit.Form.Controls.IControlTab {
+			Section: tab_DETAILS_TAB_Sections;
+		}
+		interface tab_ADMINISTRATION_TAB extends DevKit.Form.Controls.IControlTab {
+			Section: tab_ADMINISTRATION_TAB_Sections;
+		}
+		interface tab_MobileOfflineProfile_TAB extends DevKit.Form.Controls.IControlTab {
+			Section: tab_MobileOfflineProfile_TAB_Sections;
+		}
+		interface Tabs {
+			SUMMARY_TAB: tab_SUMMARY_TAB;
+			DETAILS_TAB: tab_DETAILS_TAB;
+			ADMINISTRATION_TAB: tab_ADMINISTRATION_TAB;
+			MobileOfflineProfile_TAB: tab_MobileOfflineProfile_TAB;
+		}
+		interface Body {
+			Tab: Tabs;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			TeamsSubGrid: DevKit.Form.Controls.ControlGrid;
+			PrivateQueuesSubGrid: DevKit.Form.Controls.ControlGrid;
+			DirectReports: DevKit.Form.Controls.ControlGrid;
+			/** Type of user. */
+			AccessMode: DevKit.Form.Controls.ControlOptionSet;
+			/** Shows the complete primary address. */
+			Address1_Composite: DevKit.Form.Controls.ControlString;
+			/** Fax number for address 1. */
+			Address1_Fax: DevKit.Form.Controls.ControlString;
+			/** First telephone number associated with address 1. */
+			Address1_Telephone1: DevKit.Form.Controls.ControlString;
+			/** Second telephone number associated with address 1. */
+			Address1_Telephone2: DevKit.Form.Controls.ControlString;
+			/** Third telephone number associated with address 1. */
+			Address1_Telephone3: DevKit.Form.Controls.ControlString;
+			/** Shows the complete secondary address. */
+			Address2_Composite: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the business unit with which the user is associated. */
+			BusinessUnitId: DevKit.Form.Controls.ControlLookup;
+			/** License type of user. */
+			CALType: DevKit.Form.Controls.ControlOptionSet;
+			/** Select the mailbox associated with this user. */
+			DefaultMailbox: DevKit.Form.Controls.ControlLookup;
+			/** Active Directory domain of which the user is a member. */
+			DomainName: DevKit.Form.Controls.ControlString;
+			/** Full name of the user. */
+			FullName: DevKit.Form.Controls.ControlString;
+			/** Home phone number for the user. */
+			HomePhone: DevKit.Form.Controls.ControlString;
+			/** Internal email address for the user. */
+			InternalEMailAddress: DevKit.Form.Controls.ControlString;
+			/** User invitation status. */
+			InviteStatusCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Mobile alert email address for the user. */
+			MobileAlertEMail: DevKit.Form.Controls.ControlString;
+			/** Items contained with a particular SystemUser. */
+			MobileOfflineProfileId: DevKit.Form.Controls.ControlLookup;
+			/** Mobile phone number for the user. */
+			MobilePhone: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the manager of the user. */
+			ParentSystemUserId: DevKit.Form.Controls.ControlLookup;
+			/** Personal email address of the user. */
+			PersonalEMailAddress: DevKit.Form.Controls.ControlString;
+			/** User's position in hierarchical security model. */
+			PositionId: DevKit.Form.Controls.ControlLookup;
+			/** Preferred address for the user. */
+			PreferredAddressCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Preferred phone number for the user. */
+			PreferredPhoneCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Unique identifier of the default queue for the user. */
+			QueueId: DevKit.Form.Controls.ControlLookup;
+			/** Title of the user. */
+			Title: DevKit.Form.Controls.ControlString;
+			/** Windows Live ID */
+			WindowsLiveID: DevKit.Form.Controls.ControlString;
+			/** Pronunciation of the full name of the user, written in phonetic hiragana or katakana characters. */
+			YomiFullName: DevKit.Form.Controls.ControlString;
+		}
+		interface Footer {
+			/** Information about whether the user is enabled. */
+			IsDisabled: DevKit.Form.Controls.ControlBoolean;
+		}
+	}
+	class FormUser extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form User
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form User */
+		Body: Rocket.FormUser.Body;
+		/** The Footer section of form User */
+		Footer: Rocket.FormUser.Footer;
+	}
+	namespace FormUserformBusiness {
+		interface tab_SUMMARY_TAB_Sections {
+			onpremiseaccountinformation: DevKit.Form.Controls.ControlSection;
+			onlineaccountinformation: DevKit.Form.Controls.ControlSection;
+			userinformation: DevKit.Form.Controls.ControlSection;
+			organizationinformation: DevKit.Form.Controls.ControlSection;
+			mailingaddress: DevKit.Form.Controls.ControlSection;
+			TEAMS_TAB: DevKit.Form.Controls.ControlSection;
+			DirectReports: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_ADMINISTRATION_TAB_Sections {
+			administration: DevKit.Form.Controls.ControlSection;
+			e_mailconfiguration: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_SUMMARY_TAB extends DevKit.Form.Controls.IControlTab {
+			Section: tab_SUMMARY_TAB_Sections;
+		}
+		interface tab_ADMINISTRATION_TAB extends DevKit.Form.Controls.IControlTab {
+			Section: tab_ADMINISTRATION_TAB_Sections;
+		}
+		interface Tabs {
+			SUMMARY_TAB: tab_SUMMARY_TAB;
+			ADMINISTRATION_TAB: tab_ADMINISTRATION_TAB;
+		}
+		interface Body {
+			Tab: Tabs;
+			TeamsSubGrid: DevKit.Form.Controls.ControlGrid;
+			DirectReports: DevKit.Form.Controls.ControlGrid;
+			/** Type of user. */
+			AccessMode: DevKit.Form.Controls.ControlOptionSet;
+			/** Shows the complete primary address. */
+			Address1_Composite: DevKit.Form.Controls.ControlString;
+			/** First telephone number associated with address 1. */
+			Address1_Telephone1: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the business unit with which the user is associated. */
+			BusinessUnitId: DevKit.Form.Controls.ControlLookup;
+			/** License type of user. */
+			CALType: DevKit.Form.Controls.ControlOptionSet;
+			/** Select the mailbox associated with this user. */
+			DefaultMailbox: DevKit.Form.Controls.ControlLookup;
+			/** Active Directory domain of which the user is a member. */
+			DomainName: DevKit.Form.Controls.ControlString;
+			/** Full name of the user. */
+			FullName: DevKit.Form.Controls.ControlString;
+			/** Internal email address for the user. */
+			InternalEMailAddress: DevKit.Form.Controls.ControlString;
+			/** User invitation status. */
+			InviteStatusCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Mobile phone number for the user. */
+			MobilePhone: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the manager of the user. */
+			ParentSystemUserId: DevKit.Form.Controls.ControlLookup;
+			/** Preferred address for the user. */
+			PreferredAddressCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Title of the user. */
+			Title: DevKit.Form.Controls.ControlString;
+			/** Windows Live ID */
+			WindowsLiveID: DevKit.Form.Controls.ControlString;
+		}
+		interface Footer {
+			/** Information about whether the user is enabled. */
+			IsDisabled: DevKit.Form.Controls.ControlBoolean;
+		}
+		interface Navigation {
+			navTeams: DevKit.Form.Controls.ControlNavigationItem,
+			navRoles: DevKit.Form.Controls.ControlNavigationItem,
+			navFieldSecurityProfiles: DevKit.Form.Controls.ControlNavigationItem,
+			navServices: DevKit.Form.Controls.ControlNavigationItem,
+			navResourceGroups: DevKit.Form.Controls.ControlNavigationItem,
+			navMonthlyCalendar: DevKit.Form.Controls.ControlNavigationItem,
+			navConnections: DevKit.Form.Controls.ControlNavigationItem,
+			navAsyncOperations: DevKit.Form.Controls.ControlNavigationItem,
+			navAudit: DevKit.Form.Controls.ControlNavigationItem,
+			navProcessSessions: DevKit.Form.Controls.ControlNavigationItem
+		}
+	}
+	class FormUserformBusiness extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form UserformBusiness
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form UserformBusiness */
+		Body: Rocket.FormUserformBusiness.Body;
+		/** The Footer section of form UserformBusiness */
+		Footer: Rocket.FormUserformBusiness.Footer;
+		/** The Navigation of form UserformBusiness */
+		Navigation: Rocket.FormUserformBusiness.Navigation;
+	}
 	class SystemUserApi {
 		/**
 		* PL.DynamicsCrm.DevKit SystemUserApi
@@ -412,4 +676,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Application User','User','User form – Business'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

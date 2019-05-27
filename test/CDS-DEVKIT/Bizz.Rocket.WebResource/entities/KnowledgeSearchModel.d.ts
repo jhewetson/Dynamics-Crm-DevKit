@@ -1,5 +1,48 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormKnowledgeSearchModelInformation {
+		interface tab__5B6AE5E5_8F54_4363_B906_48722F438B65_Sections {
+		}
+		interface tab__6A04C119_906C_4D8D_84D6_A470E79CBFCC_Sections {
+			_87C466A2_37F3_4CDE_A484_C6C75EFF544D: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab__5B6AE5E5_8F54_4363_B906_48722F438B65 extends DevKit.Form.Controls.IControlTab {
+			Section: tab__5B6AE5E5_8F54_4363_B906_48722F438B65_Sections;
+		}
+		interface tab__6A04C119_906C_4D8D_84D6_A470E79CBFCC extends DevKit.Form.Controls.IControlTab {
+			Section: tab__6A04C119_906C_4D8D_84D6_A470E79CBFCC_Sections;
+		}
+		interface Tabs {
+			_5B6AE5E5_8F54_4363_B906_48722F438B65: tab__5B6AE5E5_8F54_4363_B906_48722F438B65;
+			_6A04C119_906C_4D8D_84D6_A470E79CBFCC: tab__6A04C119_906C_4D8D_84D6_A470E79CBFCC;
+		}
+		interface Body {
+			Tab: Tabs;
+			textanalyticsentitymappings: DevKit.Form.Controls.ControlGrid;
+			/** Enter a description for the search configuration */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Enter the maximum number of keywords or key phrases to be determined using text analytics. */
+			MaxKeyWords: DevKit.Form.Controls.ControlInteger;
+			/** Type a logical name for the search configuration. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Enter an entity that articles are suggested for. */
+			SourceEntity: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormKnowledgeSearchModelInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form KnowledgeSearchModelInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form KnowledgeSearchModelInformation */
+		Body: Rocket.FormKnowledgeSearchModelInformation.Body;
+	}
 	class KnowledgeSearchModelApi {
 		/**
 		* PL.DynamicsCrm.DevKit KnowledgeSearchModelApi
@@ -100,4 +143,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

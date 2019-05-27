@@ -1,5 +1,86 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormImportfile {
+		interface tab_failureTab_Sections {
+			failureSection: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_successTab_Sections {
+			successSection: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_partialFailureTab_Sections {
+			partialFailureSection: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_failureTab extends DevKit.Form.Controls.IControlTab {
+			Section: tab_failureTab_Sections;
+		}
+		interface tab_successTab extends DevKit.Form.Controls.IControlTab {
+			Section: tab_successTab_Sections;
+		}
+		interface tab_partialFailureTab extends DevKit.Form.Controls.IControlTab {
+			Section: tab_partialFailureTab_Sections;
+		}
+		interface Tabs {
+			failureTab: tab_failureTab;
+			successTab: tab_successTab;
+			partialFailureTab: tab_partialFailureTab;
+		}
+		interface Body {
+			Tab: Tabs;
+			FailureSubgrid: DevKit.Form.Controls.ControlGrid;
+			import_Logs_Succes: DevKit.Form.Controls.ControlActionCards;
+			import_Logs_Failure: DevKit.Form.Controls.ControlActionCards;
+			/** Shows the date and time when the import associated with the import file was completed. */
+			CompletedOn: DevKit.Form.Controls.ControlDate;
+			/** Shows who created the record. */
+			CreatedBy: DevKit.Form.Controls.ControlLookup;
+			/** Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options. */
+			CreatedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Select whether duplicate-detection rules should be run against the import job. */
+			EnableDuplicateDetection: DevKit.Form.Controls.ControlBoolean;
+			/** Shows the number of records in the import file that cannot be imported. */
+			FailureCount: DevKit.Form.Controls.ControlInteger;
+			/** Choose a data map to match the import file and its column headers with the record types and fields in Microsoft Dynamics 365. If the column headers in the file match the display names of the target fields in Microsoft Dynamics 365, we import the data automatically. If not, you can manually define matches during import. */
+			ImportMapId: DevKit.Form.Controls.ControlLookup;
+			/** Shows the name of the import file. This name is based on the name of the uploaded file. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Shows the number of records in this file that had failures during the import. */
+			PartialFailureCount: DevKit.Form.Controls.ControlInteger;
+			/** Choose the user that the records created during the import job should be assigned to. */
+			RecordsOwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Shows the size of the import file, in kilobytes. */
+			Size: DevKit.Form.Controls.ControlString;
+			/** Shows the name of the data source file uploaded in the import job. */
+			Source: DevKit.Form.Controls.ControlString;
+			/** Shows the reason code that explains the import file's status to identify the stage of the import process, from parsing the data to completed. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Shows the number of records in the import file that are imported successfully. */
+			SuccessCount: DevKit.Form.Controls.ControlInteger;
+			/** Select the target record type (entity) for the records that will be created during the import job. */
+			TargetEntityName: DevKit.Form.Controls.ControlString;
+			/** Shows the total number of records in the import file. */
+			TotalCount: DevKit.Form.Controls.ControlInteger;
+		}
+		interface Footer {
+			/** Shows the reason code that explains the import file's status to identify the stage of the import process, from parsing the data to completed. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+	}
+	class FormImportfile extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form Importfile
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form Importfile */
+		Body: Rocket.FormImportfile.Body;
+		/** The Footer section of form Importfile */
+		Footer: Rocket.FormImportfile.Footer;
+	}
 	class ImportFileApi {
 		/**
 		* PL.DynamicsCrm.DevKit ImportFileApi
@@ -216,4 +297,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Importfile'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

@@ -1,5 +1,39 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormCalendarInformation {
+		interface tab_general_Sections {
+			section1: DevKit.Form.Controls.ControlSection;
+			HolidaysList: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Calendar used by the scheduling system to define when an appointment or activity is to occur. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Name of the calendar. */
+			Name: DevKit.Form.Controls.ControlString;
+			holidayListcontrol_id: DevKit.Form.Controls.ControlActionCards;
+		}
+	}
+	class FormCalendarInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form CalendarInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form CalendarInformation */
+		Body: Rocket.FormCalendarInformation.Body;
+	}
 	class CalendarApi {
 		/**
 		* PL.DynamicsCrm.DevKit CalendarApi
@@ -73,4 +107,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

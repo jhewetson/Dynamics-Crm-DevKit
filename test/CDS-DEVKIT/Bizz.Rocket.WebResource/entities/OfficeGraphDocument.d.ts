@@ -1,5 +1,26 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormOfficeGraphDocumentInformation {
+		interface Tabs {
+		}
+		interface Body {
+
+		}
+	}
+	class FormOfficeGraphDocumentInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form OfficeGraphDocumentInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form OfficeGraphDocumentInformation */
+		Body: Rocket.FormOfficeGraphDocumentInformation.Body;
+	}
 	class OfficeGraphDocumentApi {
 		/**
 		* PL.DynamicsCrm.DevKit OfficeGraphDocumentApi
@@ -91,4 +112,4 @@ declare namespace OptionSet {
 	namespace OfficeGraphDocument {
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

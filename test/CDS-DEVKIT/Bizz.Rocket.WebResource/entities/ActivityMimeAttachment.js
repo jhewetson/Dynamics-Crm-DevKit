@@ -1,2 +1,11 @@
-﻿//@ts-check
-///<reference path="ActivityMimeAttachment.d.ts" />
+﻿///<reference path='ActivityMimeAttachment.d.ts' />
+var formInformation = (function () {
+	function onLoad(executionContext) {
+	}
+	function onSave(executionContext) {
+	}
+	return {
+		OnLoad: onLoad,
+		OnSave: onSave
+	};
+})();

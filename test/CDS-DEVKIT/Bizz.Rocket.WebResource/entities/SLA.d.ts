@@ -1,5 +1,49 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormSLA {
+		interface Header {
+			/** Enter the user or team who owns the SLA. This field is updated every time the item is assigned to a different user. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Select the status of the service level agreement (SLA). */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface Tabs {
+		}
+		interface Body {
+			SLADetails: DevKit.Form.Controls.ControlGrid;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Select whether this SLA will allow pausing and resuming during the time calculation. */
+			AllowPauseResume: DevKit.Form.Controls.ControlBoolean;
+			/** Select the field that specifies the date and time from which the SLA items will be calculated. For example, if you select the Case Created On field, SLA calculation will begin from the time the case is created. */
+			ApplicableFromPickList: DevKit.Form.Controls.ControlOptionSet;
+			/** Choose the business hours for calculating SLA item timelines. */
+			BusinessHoursId: DevKit.Form.Controls.ControlLookup;
+			/** Type additional information to describe the SLA */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Type a descriptive name of the service level agreement (SLA). */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Choose the entity type that the SLA is defined. */
+			ObjectTypeCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Select the type of service level agreement (SLA). */
+			SLAType: DevKit.Form.Controls.ControlOptionSet;
+		}
+	}
+	class FormSLA extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form SLA
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form SLA */
+		Body: Rocket.FormSLA.Body;
+		/** The Header section of form SLA */
+		Header: Rocket.FormSLA.Header;
+	}
 	class SLAApi {
 		/**
 		* PL.DynamicsCrm.DevKit SLAApi
@@ -758,4 +802,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['SLA'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

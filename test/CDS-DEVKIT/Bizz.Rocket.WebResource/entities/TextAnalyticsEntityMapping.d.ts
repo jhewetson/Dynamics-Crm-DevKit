@@ -1,5 +1,38 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormTextAnalyticsEntityMappingInformation {
+		interface tab__C01C55A7_B832_422F_B768_4BDA9674E00F_Sections {
+		}
+		interface tab__C01C55A7_B832_422F_B768_4BDA9674E00F extends DevKit.Form.Controls.IControlTab {
+			Section: tab__C01C55A7_B832_422F_B768_4BDA9674E00F_Sections;
+		}
+		interface Tabs {
+			_C01C55A7_B832_422F_B768_4BDA9674E00F: tab__C01C55A7_B832_422F_B768_4BDA9674E00F;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Select Entity */
+			EntityPickList: DevKit.Form.Controls.ControlOptionSet;
+			/** Select Field */
+			FieldPickList: DevKit.Form.Controls.ControlOptionSet;
+			/** Specify if the mapping is for text match or exact match */
+			IsTextMatchMapping: DevKit.Form.Controls.ControlBoolean;
+		}
+	}
+	class FormTextAnalyticsEntityMappingInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form TextAnalyticsEntityMappingInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form TextAnalyticsEntityMappingInformation */
+		Body: Rocket.FormTextAnalyticsEntityMappingInformation.Body;
+	}
 	class TextAnalyticsEntityMappingApi {
 		/**
 		* PL.DynamicsCrm.DevKit TextAnalyticsEntityMappingApi
@@ -94,4 +127,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

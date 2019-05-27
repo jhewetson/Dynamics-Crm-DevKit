@@ -1,5 +1,49 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
+	namespace FormConnectionRoleInformation {
+		interface tab_general_Sections {
+			step1: DevKit.Form.Controls.ControlSection;
+			step2: DevKit.Form.Controls.ControlSection;
+			_B0A70B0D_568C_10D3_1A3D_01C997A061C1: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_reciprocalroles_Sections {
+			roleGrid: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface tab_reciprocalroles extends DevKit.Form.Controls.IControlTab {
+			Section: tab_reciprocalroles_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+			reciprocalroles: tab_reciprocalroles;
+		}
+		interface Body {
+			Tab: Tabs;
+			reciprocalRoleGrid: DevKit.Form.Controls.ControlGrid;
+			/** Categories for connection roles. */
+			Category: DevKit.Form.Controls.ControlOptionSet;
+			/** Description of the connection role. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Name of the connection role. */
+			Name: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormConnectionRoleInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form ConnectionRoleInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form ConnectionRoleInformation */
+		Body: Rocket.FormConnectionRoleInformation.Body;
+	}
 	class ConnectionRoleApi {
 		/**
 		* PL.DynamicsCrm.DevKit ConnectionRoleApi
@@ -118,4 +162,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
