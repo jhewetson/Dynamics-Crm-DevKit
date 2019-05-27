@@ -1,5 +1,34 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormBookableResourceBookingHeaderInformation {
+		interface Tabs {
+		}
+		interface Body {
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Shows the aggregate duration of the linked bookings. */
+			Duration: DevKit.Form.Controls.ControlInteger;
+			/** Shows the end date and time of the booking summary. */
+			EndTime: DevKit.Form.Controls.ControlDateTime;
+			/** The name of the booking summary. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Shows the start date and time of the booking summary. */
+			StartTime: DevKit.Form.Controls.ControlDateTime;
+		}
+	}
+	class FormBookableResourceBookingHeaderInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form BookableResourceBookingHeaderInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form BookableResourceBookingHeaderInformation */
+		Body: Hsbc.FormBookableResourceBookingHeaderInformation.Body;
+	}
 	class BookableResourceBookingHeaderApi {
 		/**
 		* PL.DynamicsCrm.DevKit BookableResourceBookingHeaderApi
@@ -100,4 +129,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

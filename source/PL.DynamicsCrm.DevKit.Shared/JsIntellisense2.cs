@@ -48,12 +48,21 @@ namespace PL.DynamicsCrm.DevKit.Shared
                 return _d_ts;
             }
         }
+
+        private string GetFormName(string formName)
+        {
+            if (formName.EndsWith(" AI for Sales")) return "AI for Sales";
+            if (formName.EndsWith(" Wizard")) return "Wizard";
+            if (formName.EndsWith(" Information")) return "Information";
+            return formName;
+        }
+
         private string GetSavedComment()
         {
             var _d_ts = string.Empty;
             var comment = new CommentIntellisense()
             {
-                JsForm = ProcessForms.Select(f =>  (f.Name.EndsWith(" Information") ? "Information": (f.Name.EndsWith(" Wizard") ? "Wizard" : f.Name))).ToList<string>(),
+                JsForm = ProcessForms.Select(f => GetFormName(f.Name)).ToList<string>(),
                 JsWebApi = IsJsWebApi,
                 IsDebugForm = IsDebugForm,
                 IsDebugWebApi = IsDebugWebApi
@@ -685,6 +694,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
                 if (form.IsQuickCreate) continue;
                 if (form.Name.ToLower() == "information") form.Name = $"{Class} Information";
                 else if (form.Name.ToLower() == "wizard") form.Name = $"{Class} Wizard";
+                else if (form.Name.ToLower() == "ai for sales") form.Name = $"{Class} AI for Sales";
                 _d_ts += $"\tnamespace Form{Utility.GetSafeName(form.Name)} {{\r\n";
                 var form_d_ts_Header = GetForm_d_ts_Header(form.FormXml);
                 if (form_d_ts_Header.Length > 0)
@@ -791,6 +801,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
                 if (!form.IsQuickCreate) continue;
                 if (form.Name.ToLower() == "information") form.Name = $"{Class} Information";
                 else if (form.Name.ToLower() == "wizard") form.Name = $"{Class} Wizard";
+                else if (form.Name.ToLower() == "ai for sales") form.Name = $"{Class} AI for Sales";
 
                 _d_ts += $"\tnamespace Form{Utility.GetSafeName(form.Name)} {{\r\n";
                 var form_d_ts_Body_QuickCreate = GetForm_d_ts_Body(form.FormXml);

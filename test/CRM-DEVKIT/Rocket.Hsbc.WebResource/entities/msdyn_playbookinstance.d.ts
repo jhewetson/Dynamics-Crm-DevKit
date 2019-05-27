@@ -1,5 +1,64 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace Formmsdyn_playbookinstanceInformation {
+		interface Header {
+			/** Owner Id */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Status of the Playbook */
+			statecode: DevKit.Form.Controls.ControlOptionSet;
+			/** Playbook result */
+			statuscode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab__0A307C03_96BD_41F7_8800_EBF2860AAA98_Sections {
+			_547DCA32_5C99_4BF5_95D8_95AE479D4963: DevKit.Form.Controls.ControlSection;
+			_0A307C03_96BD_41F7_8800_EBF2860AAA98_SECTION_4: DevKit.Form.Controls.ControlSection;
+			_0A307C03_96BD_41F7_8800_EBF2860AAA98_SECTION_5: DevKit.Form.Controls.ControlSection;
+			_0A307C03_96BD_41F7_8800_EBF2860AAA98_SECTION_3: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab__0A307C03_96BD_41F7_8800_EBF2860AAA98 extends DevKit.Form.Controls.IControlTab {
+			Section: tab__0A307C03_96BD_41F7_8800_EBF2860AAA98_Sections;
+		}
+		interface Tabs {
+			_0A307C03_96BD_41F7_8800_EBF2860AAA98: tab__0A307C03_96BD_41F7_8800_EBF2860AAA98;
+		}
+		interface Body {
+			Tab: Tabs;
+			PlaybookActivities: DevKit.Form.Controls.ControlGrid;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Date and time when the playbook was started. */
+			CreatedOn: DevKit.Form.Controls.ControlDateTime;
+			msdyn_activitiesassociated: DevKit.Form.Controls.ControlInteger;
+			msdyn_activitiesclosed: DevKit.Form.Controls.ControlActionCards;
+			/** Select the playbook category for the playbook. */
+			msdyn_categoryid: DevKit.Form.Controls.ControlLookup;
+			/** Estimated close date for a playbook based on the estimated duration specified for the playbook template. */
+			msdyn_estimatedclose: DevKit.Form.Controls.ControlDate;
+			/** Type the name of the playbook. */
+			msdyn_name: DevKit.Form.Controls.ControlString;
+			/** Shows the unique ID of the playbook template associated with the playbook. */
+			msdyn_playbooktemplateid: DevKit.Form.Controls.ControlLookup;
+			/** Select whether or not to track the progress of the playbook by creating the activities under a playbook which is in turn linked to the record type the playbook applies to. */
+			msdyn_trackprogress: DevKit.Form.Controls.ControlBoolean;
+			/** Shows the entity the playbook is launched for. */
+			Regarding: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class Formmsdyn_playbookinstanceInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form msdyn_playbookinstanceInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form msdyn_playbookinstanceInformation */
+		Body: Hsbc.Formmsdyn_playbookinstanceInformation.Body;
+		/** The Header section of form msdyn_playbookinstanceInformation */
+		Header: Hsbc.Formmsdyn_playbookinstanceInformation.Header;
+	}
 	class msdyn_playbookinstanceApi {
 		/**
 		* PL.DynamicsCrm.DevKit msdyn_playbookinstanceApi
@@ -119,4 +178,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

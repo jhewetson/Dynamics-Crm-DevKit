@@ -1,5 +1,106 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormTeam {
+		interface Header {
+			/** Unique identifier of the default queue for the team. */
+			QueueId: DevKit.Form.Controls.ControlLookup;
+		}
+		interface tab_general_Sections {
+			General: DevKit.Form.Controls.ControlSection;
+			Description: DevKit.Form.Controls.ControlSection;
+			TeamMembers: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			Members: DevKit.Form.Controls.ControlGrid;
+			/** Unique identifier of the user primary responsible for the team. */
+			AdministratorId: DevKit.Form.Controls.ControlLookup;
+			/** The Azure active directory object Id for a group. */
+			AzureActiveDirectoryObjectId: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the business unit with which the team is associated. */
+			BusinessUnitId: DevKit.Form.Controls.ControlLookup;
+			/** Description of the team. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Name of the team. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Select the team type. */
+			TeamType: DevKit.Form.Controls.ControlOptionSet;
+		}
+	}
+	class FormTeam extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form Team
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form Team */
+		Body: Hsbc.FormTeam.Body;
+		/** The Header section of form Team */
+		Header: Hsbc.FormTeam.Header;
+	}
+	namespace FormTeamformBusiness {
+		interface tab_general_Sections {
+			General: DevKit.Form.Controls.ControlSection;
+			Description: DevKit.Form.Controls.ControlSection;
+			TeamMembers: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			Members: DevKit.Form.Controls.ControlGrid;
+			/** Unique identifier of the user primary responsible for the team. */
+			AdministratorId: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier of the business unit with which the team is associated. */
+			BusinessUnitId: DevKit.Form.Controls.ControlLookup;
+			/** Description of the team. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Name of the team. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Select the team type. */
+			TeamType: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface Navigation {
+			navMembers: DevKit.Form.Controls.ControlNavigationItem,
+			navRoles: DevKit.Form.Controls.ControlNavigationItem,
+			navFieldSecurityProfiles: DevKit.Form.Controls.ControlNavigationItem,
+			navConnections: DevKit.Form.Controls.ControlNavigationItem,
+			navAsyncOperations: DevKit.Form.Controls.ControlNavigationItem,
+			navAudit: DevKit.Form.Controls.ControlNavigationItem,
+			navProcessSessions: DevKit.Form.Controls.ControlNavigationItem
+		}
+	}
+	class FormTeamformBusiness extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form TeamformBusiness
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form TeamformBusiness */
+		Body: Hsbc.FormTeamformBusiness.Body;
+		/** The Navigation of form TeamformBusiness */
+		Navigation: Hsbc.FormTeamformBusiness.Navigation;
+	}
 	class TeamApi {
 		/**
 		* PL.DynamicsCrm.DevKit TeamApi
@@ -102,4 +203,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Team','Team form – Business'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

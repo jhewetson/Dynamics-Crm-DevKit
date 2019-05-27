@@ -1,5 +1,42 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormPosition {
+		interface tab_general_Sections {
+			General: DevKit.Form.Controls.ControlSection;
+			Description: DevKit.Form.Controls.ControlSection;
+			Users: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			Members: DevKit.Form.Controls.ControlGrid;
+			/** The description of the position. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** The name of the position. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Parent position. */
+			ParentPositionId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormPosition extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form Position
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form Position */
+		Body: Hsbc.FormPosition.Body;
+	}
 	class PositionApi {
 		/**
 		* PL.DynamicsCrm.DevKit PositionApi
@@ -83,4 +120,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Position'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

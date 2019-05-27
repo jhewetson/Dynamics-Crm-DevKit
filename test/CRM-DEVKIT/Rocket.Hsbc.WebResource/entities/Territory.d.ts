@@ -1,5 +1,40 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormTerritoryInformation {
+		interface tab_general_Sections {
+			territoryinformation: DevKit.Form.Controls.ControlSection;
+			description: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Description of the territory. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the manager of the territory. */
+			ManagerId: DevKit.Form.Controls.ControlLookup;
+			/** Name of the territory. */
+			Name: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormTerritoryInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form TerritoryInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form TerritoryInformation */
+		Body: Hsbc.FormTerritoryInformation.Body;
+	}
 	class TerritoryApi {
 		/**
 		* PL.DynamicsCrm.DevKit TerritoryApi
@@ -73,4 +108,4 @@ declare namespace OptionSet {
 	namespace Territory {
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

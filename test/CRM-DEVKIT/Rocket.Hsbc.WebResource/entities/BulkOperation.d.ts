@@ -1,5 +1,82 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormQuickCampaign {
+		interface Header {
+			/** Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options. */
+			CreatedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Choose the activity to create that determines how target prospects or customers in this quick campaign are contacted. */
+			CreatedRecordTypeCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Select the quick campaign's status. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Select the type of records targeted in the quick campaign to identify the target audience. */
+			TargetedRecordTypeCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_Summary_Sections {
+			Information: DevKit.Form.Controls.ControlSection;
+			RELATEDPANE: DevKit.Form.Controls.ControlSection;
+			selectedMembers: DevKit.Form.Controls.ControlSection;
+			excludedMembers: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_Responses_Sections {
+			Responses: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_Summary extends DevKit.Form.Controls.IControlTab {
+			Section: tab_Summary_Sections;
+		}
+		interface tab_Responses extends DevKit.Form.Controls.IControlTab {
+			Section: tab_Responses_Sections;
+		}
+		interface Tabs {
+			Summary: tab_Summary;
+			Responses: tab_Responses;
+		}
+		interface Body {
+			Tab: Tabs;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			accounts: DevKit.Form.Controls.ControlGrid;
+			contacts: DevKit.Form.Controls.ControlGrid;
+			leads: DevKit.Form.Controls.ControlGrid;
+			leads_uci: DevKit.Form.Controls.ControlGrid;
+			accounts_uci: DevKit.Form.Controls.ControlGrid;
+			contacts_uci: DevKit.Form.Controls.ControlGrid;
+			excluded_contacts_uci: DevKit.Form.Controls.ControlGrid;
+			excluded_accounts_uci: DevKit.Form.Controls.ControlGrid;
+			excluded_leads_uci: DevKit.Form.Controls.ControlGrid;
+			Responses: DevKit.Form.Controls.ControlGrid;
+			/** Type additional information to describe the quick campaign, such as the products or services offered. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Number of records which failed in the bulk operation. */
+			FailureCount: DevKit.Form.Controls.ControlInteger;
+			/** Unique identifier of the user or team who owns the activity. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Type a short description about the objective or primary topic of the quick campaign. */
+			Subject: DevKit.Form.Controls.ControlString;
+			/** Number of records which succeeded in the bulk operation. */
+			SuccessCount: DevKit.Form.Controls.ControlInteger;
+		}
+		interface Navigation {
+			navRelationshipActivities: DevKit.Form.Controls.ControlNavigationItem,
+			navRelationshipBulkOperationLogs: DevKit.Form.Controls.ControlNavigationItem
+		}
+	}
+	class FormQuickCampaign extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form QuickCampaign
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form QuickCampaign */
+		Body: Hsbc.FormQuickCampaign.Body;
+		/** The Header section of form QuickCampaign */
+		Header: Hsbc.FormQuickCampaign.Header;
+		/** The Navigation of form QuickCampaign */
+		Navigation: Hsbc.FormQuickCampaign.Navigation;
+	}
 	class BulkOperationApi {
 		/**
 		* PL.DynamicsCrm.DevKit BulkOperationApi
@@ -261,4 +338,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Quick Campaign'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

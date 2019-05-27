@@ -1,5 +1,48 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormDiscountTypeInformation {
+		interface tab_general_Sections {
+			discounttypeinformation: DevKit.Form.Controls.ControlSection;
+			description: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Description of the discount list. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Information about whether the discount list amounts are specified as monetary amounts or percentages. */
+			IsAmountType: DevKit.Form.Controls.ControlBoolean;
+			/** Name of the discount list. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the currency associated with the discount type. */
+			TransactionCurrencyId: DevKit.Form.Controls.ControlLookup;
+		}
+		interface Footer {
+			/** Status of the discount list. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+	}
+	class FormDiscountTypeInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form DiscountTypeInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form DiscountTypeInformation */
+		Body: Hsbc.FormDiscountTypeInformation.Body;
+		/** The Footer section of form DiscountTypeInformation */
+		Footer: Hsbc.FormDiscountTypeInformation.Footer;
+	}
 	class DiscountTypeApi {
 		/**
 		* PL.DynamicsCrm.DevKit DiscountTypeApi
@@ -82,4 +125,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

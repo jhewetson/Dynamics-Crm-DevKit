@@ -1,5 +1,52 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace Formmsdyn_forecastinstanceInformation {
+		interface tab_tab_Sections {
+			section_1: DevKit.Form.Controls.ControlSection;
+			tab_2_section_2: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_tab extends DevKit.Form.Controls.IControlTab {
+			Section: tab_tab_Sections;
+		}
+		interface Tabs {
+			tab: tab_tab;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Shows the actual value (money) achieved toward the target as of the last rollup date. */
+			msdyn_actualamount: DevKit.Form.Controls.ControlMoney;
+			/** Unique identifier for the forecast definition that is associated with the forecast. */
+			msdyn_forecastdefinitionid: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier for the forecast recurrence associated with the forecast. */
+			msdyn_forecastrecurrenceid: DevKit.Form.Controls.ControlLookup;
+			/** Shows the changed value of the best case rollup (Money type) as of the last rolled-up date. */
+			msdyn_manualbestcaseamount: DevKit.Form.Controls.ControlMoney;
+			/** Shows the changed value of the committed rollup (Money type) as of the last rolled-up date. */
+			msdyn_manualcommittedamount: DevKit.Form.Controls.ControlMoney;
+			/** Shows the changed value of the pipeline rollup (Money type) as of the last rolled-up date. */
+			msdyn_manualpipelineamount: DevKit.Form.Controls.ControlMoney;
+			/** Shows the percentage achieved against the target. */
+			msdyn_percentageachieved: DevKit.Form.Controls.ControlDecimal;
+			/** Select a target (Money type) to track a monetary amount, such as estimated revenue from an opportunity. */
+			msdyn_targetamount: DevKit.Form.Controls.ControlMoney;
+			/** Owner Id */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class Formmsdyn_forecastinstanceInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form msdyn_forecastinstanceInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form msdyn_forecastinstanceInformation */
+		Body: Hsbc.Formmsdyn_forecastinstanceInformation.Body;
+	}
 	class msdyn_forecastinstanceApi {
 		/**
 		* PL.DynamicsCrm.DevKit msdyn_forecastinstanceApi
@@ -144,4 +191,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

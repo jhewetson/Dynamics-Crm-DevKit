@@ -269,7 +269,7 @@ namespace PL.DynamicsCrm.DevKit.Cli
             foreach (var entity in entities)
             {
 #if DEBUG
-                //if (entity != "Account") continue;
+                if (entity != "Account") continue;
 #endif
                 GeneratorJsForm(entity, i, entities.Count);
                 i++;

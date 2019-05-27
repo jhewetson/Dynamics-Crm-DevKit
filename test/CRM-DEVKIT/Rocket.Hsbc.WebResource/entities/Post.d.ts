@@ -1,5 +1,39 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormPostInformation {
+		interface tab_general_Sections {
+			Postinformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Choose the parent record for the post to identify the customer, opportunity, case, or other record that the post most closely relates to. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Select whether the post was created manually or automatically. */
+			Source: DevKit.Form.Controls.ControlOptionSet;
+			/** Shows the text of a post. If this is a manual post, it appears in plain text. If this is an auto post, it appears in XML. */
+			Text: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormPostInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form PostInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form PostInformation */
+		Body: Hsbc.FormPostInformation.Body;
+	}
 	class PostApi {
 		/**
 		* PL.DynamicsCrm.DevKit PostApi
@@ -98,4 +132,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

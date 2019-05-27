@@ -1,5 +1,44 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace Formmsfp_surveyresponseInformation {
+		interface Header {
+			/** Unique identifier of the user or team who owns the activity. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Priority of the activity. */
+			PriorityCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Scheduled end time of the activity. */
+			ScheduledEnd: DevKit.Form.Controls.ControlDateTime;
+			/** Status of the activity. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface Tabs {
+		}
+		interface Body {
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Unique identifier of the user or team who owns the activity. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier of the object with which the activity is associated. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Subject associated with the activity. */
+			Subject: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class Formmsfp_surveyresponseInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form msfp_surveyresponseInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form msfp_surveyresponseInformation */
+		Body: Hsbc.Formmsfp_surveyresponseInformation.Body;
+		/** The Header section of form msfp_surveyresponseInformation */
+		Header: Hsbc.Formmsfp_surveyresponseInformation.Header;
+	}
 	class msfp_surveyresponseApi {
 		/**
 		* PL.DynamicsCrm.DevKit msfp_surveyresponseApi
@@ -284,4 +323,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

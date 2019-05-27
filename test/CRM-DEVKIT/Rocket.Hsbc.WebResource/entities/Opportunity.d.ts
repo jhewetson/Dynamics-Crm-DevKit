@@ -1,5 +1,218 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormOpportunityAIforSales {
+		interface Header {
+			/** Enter the expected closing date of the opportunity to help make accurate revenue forecasts. */
+			EstimatedCloseDate: DevKit.Form.Controls.ControlDate;
+			/** Type the estimated revenue amount to indicate the potential sale or value of the opportunity for revenue forecasting. This field can be either system-populated or editable based on the selection in the Revenue field. */
+			EstimatedValue: DevKit.Form.Controls.ControlMoney;
+			/** Owner Id */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Select the opportunity's status. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_Summary_Sections {
+			opportunity_information: DevKit.Form.Controls.ControlSection;
+			Opportunity_details: DevKit.Form.Controls.ControlSection;
+			Notes_pane: DevKit.Form.Controls.ControlSection;
+			Summary_section_6: DevKit.Form.Controls.ControlSection;
+			Social_pane: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_Product_Line_Items_Sections {
+			opportunityproducts: DevKit.Form.Controls.ControlSection;
+			suggestionsection: DevKit.Form.Controls.ControlSection;
+			DynamicProperties: DevKit.Form.Controls.ControlSection;
+			totals: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_QUOTES_Sections {
+			opportunityquotes: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_Summary extends DevKit.Form.Controls.IControlTab {
+			Section: tab_Summary_Sections;
+		}
+		interface tab_Product_Line_Items extends DevKit.Form.Controls.IControlTab {
+			Section: tab_Product_Line_Items_Sections;
+		}
+		interface tab_QUOTES extends DevKit.Form.Controls.IControlTab {
+			Section: tab_QUOTES_Sections;
+		}
+		interface Tabs {
+			Summary: tab_Summary;
+			Product_Line_Items: tab_Product_Line_Items;
+			QUOTES: tab_QUOTES;
+		}
+		interface Body {
+			Tab: Tabs;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			ActionCards: DevKit.Form.Controls.ControlActionCards;
+			Stakeholders: DevKit.Form.Controls.ControlGrid;
+			Pursuit_Team: DevKit.Form.Controls.ControlGrid;
+			Competitors: DevKit.Form.Controls.ControlGrid;
+			opportunityproductsGrid: DevKit.Form.Controls.ControlGrid;
+			quote: DevKit.Form.Controls.ControlGrid;
+			/** Type a value between 0 and 1,000,000,000,000 to indicate the lead's potential available budget. */
+			BudgetAmount: DevKit.Form.Controls.ControlMoney;
+			/** Type notes about the company or organization associated with the opportunity. */
+			CurrentSituation: DevKit.Form.Controls.ControlString;
+			/** Type some notes about the customer's requirements, to help the sales team identify products and services that could meet their requirements. */
+			CustomerNeed: DevKit.Form.Controls.ControlString;
+			/** Type additional information to describe the opportunity, such as possible products to sell or past purchases from the customer. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Type the discount amount for the opportunity if the customer is eligible for special savings. */
+			DiscountAmount: DevKit.Form.Controls.ControlMoney;
+			/** Type the discount rate that should be applied to the Product Totals field to include additional savings for the customer in the opportunity. */
+			DiscountPercentage: DevKit.Form.Controls.ControlDecimal;
+			/** Type the cost of freight or shipping for the products included in the opportunity for use in calculating the Total Amount field. */
+			FreightAmount: DevKit.Form.Controls.ControlMoney;
+			/** Select whether the estimated revenue for the opportunity is calculated automatically based on the products entered or entered manually by a user. */
+			IsRevenueSystemCalculated: DevKit.Form.Controls.ControlBoolean;
+			/** Type a subject or descriptive name, such as the expected order or company name, for the opportunity. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Choose an account to connect this opportunity to, so that the relationship is visible in reports and analytics, and to provide a quick link to additional details, such as financial information and activities. */
+			ParentAccountId: DevKit.Form.Controls.ControlLookup;
+			/** Choose a contact to connect this opportunity to, so that the relationship is visible in reports and analytics. */
+			ParentContactId: DevKit.Form.Controls.ControlLookup;
+			/** Choose the price list associated with this record to make sure the products associated with the campaign are offered at the correct prices. */
+			PriceLevelId: DevKit.Form.Controls.ControlLookup;
+			/** Type notes about the proposed solution for the opportunity. */
+			ProposedSolution: DevKit.Form.Controls.ControlString;
+			/** Choose whether an individual or a committee will be involved in the  purchase process for the lead. */
+			PurchaseProcess: DevKit.Form.Controls.ControlOptionSet;
+			/** Choose how long the lead will likely take to make the purchase. */
+			PurchaseTimeframe: DevKit.Form.Controls.ControlOptionSet;
+			/** Shows the total amount due, calculated as the sum of the products, discounts, freight, and taxes for the opportunity. */
+			TotalAmount: DevKit.Form.Controls.ControlMoney;
+			/** Shows the total product amount for the opportunity, minus any discounts. This value is added to freight and tax amounts in the calculation for the total amount of the opportunity. */
+			TotalAmountLessFreight: DevKit.Form.Controls.ControlMoney;
+			/** Shows the sum of all existing and write-in products included on the opportunity, based on the specified price list and quantities. */
+			TotalLineItemAmount: DevKit.Form.Controls.ControlMoney;
+			/** Shows the total of the Tax amounts specified on all products included in the opportunity, included in the Total Amount field calculation for the opportunity. */
+			TotalTax: DevKit.Form.Controls.ControlMoney;
+			/** Choose the local currency for the record to make sure budgets are reported in the correct currency. */
+			TransactionCurrencyId: DevKit.Form.Controls.ControlLookup;
+		}
+		interface Navigation {
+			navActivities: DevKit.Form.Controls.ControlNavigationItem,
+			navOrders: DevKit.Form.Controls.ControlNavigationItem,
+			navRelationship: DevKit.Form.Controls.ControlNavigationItem,
+			navInvoices: DevKit.Form.Controls.ControlNavigationItem,
+			navComp: DevKit.Form.Controls.ControlNavigationItem,
+			navDocument: DevKit.Form.Controls.ControlNavigationItem,
+			navAsyncOperations: DevKit.Form.Controls.ControlNavigationItem,
+			navConnections: DevKit.Form.Controls.ControlNavigationItem,
+			navAudit: DevKit.Form.Controls.ControlNavigationItem,
+			navProcessSessions: DevKit.Form.Controls.ControlNavigationItem
+		}
+		interface ProcessOpportunitySalesProcess {
+			/** Type a value between 0 and 1,000,000,000,000 to indicate the lead's potential available budget. */
+			BudgetAmount: DevKit.Form.Controls.ControlMoney;
+			/** Select whether a final proposal has been completed for the opportunity. */
+			CompleteFinalProposal: DevKit.Form.Controls.ControlBoolean;
+			/** Select whether an internal review has been completed for this opportunity. */
+			CompleteInternalReview: DevKit.Form.Controls.ControlBoolean;
+			/** Type some notes about the customer's requirements, to help the sales team identify products and services that could meet their requirements. */
+			CustomerNeed: DevKit.Form.Controls.ControlString;
+			/** Select whether your notes include information about who makes the purchase decisions at the lead's company. */
+			DecisionMaker: DevKit.Form.Controls.ControlBoolean;
+			/** Type additional information to describe the opportunity, such as possible products to sell or past purchases from the customer. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Select whether a proposal has been developed for the opportunity. */
+			DevelopProposal: DevKit.Form.Controls.ControlBoolean;
+			/** Choose whether the sales team has recorded detailed notes on the proposals and the account's responses. */
+			FileDebrief: DevKit.Form.Controls.ControlBoolean;
+			/** Enter the date and time when the final decision of the opportunity was made. */
+			FinalDecisionDate: DevKit.Form.Controls.ControlDate;
+			/** Select whether information about competitors is included. */
+			IdentifyCompetitors: DevKit.Form.Controls.ControlBoolean;
+			/** Select whether the customer contacts for this opportunity have been identified. */
+			IdentifyCustomerContacts: DevKit.Form.Controls.ControlBoolean;
+			/** Choose whether you have recorded who will pursue the opportunity. */
+			IdentifyPursuitTeam: DevKit.Form.Controls.ControlBoolean;
+			/** Choose an account to connect this opportunity to, so that the relationship is visible in reports and analytics, and to provide a quick link to additional details, such as financial information and activities. */
+			ParentAccountId: DevKit.Form.Controls.ControlLookup;
+			/** Choose a contact to connect this opportunity to, so that the relationship is visible in reports and analytics. */
+			ParentContactId: DevKit.Form.Controls.ControlLookup;
+			/** Select whether the final proposal has been presented to the account. */
+			PresentFinalProposal: DevKit.Form.Controls.ControlBoolean;
+			/** Select whether a proposal for the opportunity has been presented to the account. */
+			PresentProposal: DevKit.Form.Controls.ControlBoolean;
+			/** Type notes about the proposed solution for the opportunity. */
+			ProposedSolution: DevKit.Form.Controls.ControlString;
+			/** Choose whether an individual or a committee will be involved in the  purchase process for the lead. */
+			PurchaseProcess: DevKit.Form.Controls.ControlOptionSet;
+			/** Choose how long the lead will likely take to make the purchase. */
+			PurchaseTimeframe: DevKit.Form.Controls.ControlOptionSet;
+			/** Select whether a thank you note has been sent to the account for considering the proposal. */
+			SendThankYouNote: DevKit.Form.Controls.ControlBoolean;
+		}
+		interface Process extends DevKit.Form.Controls.IControlProcess {
+			OpportunitySalesProcess: ProcessOpportunitySalesProcess;
+		}
+	}
+	class FormOpportunityAIforSales extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form OpportunityAIforSales
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form OpportunityAIforSales */
+		Body: Hsbc.FormOpportunityAIforSales.Body;
+		/** The Header section of form OpportunityAIforSales */
+		Header: Hsbc.FormOpportunityAIforSales.Header;
+		/** The Navigation of form OpportunityAIforSales */
+		Navigation: Hsbc.FormOpportunityAIforSales.Navigation;
+		/** The Process of form OpportunityAIforSales */
+		Process: Hsbc.FormOpportunityAIforSales.Process;
+	}
+	namespace FormOpportunity {
+		interface tab_newOpportunity_Sections {
+			quickOpportunity_column1: DevKit.Form.Controls.ControlSection;
+			quickOpportunity_column2: DevKit.Form.Controls.ControlSection;
+			quickOpportunity_column3: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_newOpportunity extends DevKit.Form.Controls.IControlTab {
+			Section: tab_newOpportunity_Sections;
+		}
+		interface Tabs {
+			newOpportunity: tab_newOpportunity;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Type a value between 0 and 1,000,000,000,000 to indicate the lead's potential available budget. */
+			BudgetAmount: DevKit.Form.Controls.ControlMoney;
+			/** Type some notes about the customer's requirements, to help the sales team identify products and services that could meet their requirements. */
+			CustomerNeed: DevKit.Form.Controls.ControlString;
+			/** Enter the expected closing date of the opportunity to help make accurate revenue forecasts. */
+			EstimatedCloseDate: DevKit.Form.Controls.ControlDate;
+			/** Type the estimated revenue amount to indicate the potential sale or value of the opportunity for revenue forecasting. This field can be either system-populated or editable based on the selection in the Revenue field. */
+			EstimatedValue: DevKit.Form.Controls.ControlMoney;
+			/** Type a subject or descriptive name, such as the expected order or company name, for the opportunity. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Choose an account to connect this opportunity to, so that the relationship is visible in reports and analytics, and to provide a quick link to additional details, such as financial information and activities. */
+			ParentAccountId: DevKit.Form.Controls.ControlLookup;
+			/** Choose a contact to connect this opportunity to, so that the relationship is visible in reports and analytics. */
+			ParentContactId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormOpportunity extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form Opportunity
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form Opportunity */
+		Body: Hsbc.FormOpportunity.Body;
+	}
 	class OpportunityApi {
 		/**
 		* PL.DynamicsCrm.DevKit OpportunityApi
@@ -455,4 +668,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['AI for Sales','Opportunity'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

@@ -1,2 +1,11 @@
-﻿//@ts-check
-///<reference path="SharePointDocument.d.ts" />
+﻿///<reference path='SharePointDocument.d.ts' />
+var formInformation = (function () {
+	function onLoad(executionContext) {
+	}
+	function onSave(executionContext) {
+	}
+	return {
+		OnLoad: onLoad,
+		OnSave: onSave
+	};
+})();

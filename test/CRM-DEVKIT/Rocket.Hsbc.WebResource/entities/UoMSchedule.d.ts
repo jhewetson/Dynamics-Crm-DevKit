@@ -1,5 +1,39 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormUoMScheduleInformation {
+		interface tab_general_Sections {
+			uomscheduleinformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Name of the base unit. */
+			BaseUoMName: DevKit.Form.Controls.ControlString;
+			/** Description of the unit group. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Name of the unit group. */
+			Name: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormUoMScheduleInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form UoMScheduleInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form UoMScheduleInformation */
+		Body: Hsbc.FormUoMScheduleInformation.Body;
+	}
 	class UoMScheduleApi {
 		/**
 		* PL.DynamicsCrm.DevKit UoMScheduleApi
@@ -84,4 +118,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

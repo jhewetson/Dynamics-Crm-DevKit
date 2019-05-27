@@ -1,5 +1,5 @@
-﻿/** PL.DynamicsCrm.DevKit for namespace Rocket */
-declare namespace Rocket {
+﻿/** PL.DynamicsCrm.DevKit for namespace Hsbc */
+declare namespace Hsbc {
     namespace WebApi {
         class AlternateKey {
             /**
@@ -2712,64 +2712,64 @@ declare namespace WebApiClient {
     }
     /**
      * Retrieves records from CRM (async = true).
-     * @param request the Rocket.WebApi.RetrieveRequest object.
+     * @param request the Hsbc.WebApi.RetrieveRequest object.
      */
-    function Retrieve(request: Rocket.WebApi.RetrieveRequest): RetrieveResponse;
+    function Retrieve(request: Hsbc.WebApi.RetrieveRequest): RetrieveResponse;
     /**
      * Retrieves records from CRM (async = false).
-     * @param request the Rocket.WebApi.RetrieveRequest object.
+     * @param request the Hsbc.WebApi.RetrieveRequest object.
      */
-    function Retrieve(request: Rocket.WebApi.RetrieveRequest): void;
+    function Retrieve(request: Hsbc.WebApi.RetrieveRequest): void;
     /**
      * Creates a given record in CRM (async = true).
-     * @param request The Rocket.WebApi.CreateRequest object.
+     * @param request The Hsbc.WebApi.CreateRequest object.
      */
-    function Create(request: Rocket.WebApi.CreateRequest): CreateResponse;
+    function Create(request: Hsbc.WebApi.CreateRequest): CreateResponse;
     /**
      * Creates a given record in CRM (async = false).
-     * @param request The Rocket.WebApi.CreateRequest object.
+     * @param request The Hsbc.WebApi.CreateRequest object.
      */
-    function Create(request: Rocket.WebApi.CreateRequest): void;
+    function Create(request: Hsbc.WebApi.CreateRequest): void;
     /**
      * Updates a given record in CRM (async = true).
-     * @param request the Rocket.WebApi.UpdateRequest object.
+     * @param request the Hsbc.WebApi.UpdateRequest object.
      */
-    function Update(request: Rocket.WebApi.UpdateRequest): UpdateResponse;
+    function Update(request: Hsbc.WebApi.UpdateRequest): UpdateResponse;
     /**
      * Updates a given record in CRM (async = false).
-     * @param request the Rocket.WebApi.UpdateRequest object.
+     * @param request the Hsbc.WebApi.UpdateRequest object.
      */
-    function Update(request: Rocket.WebApi.UpdateRequest): void;
+    function Update(request: Hsbc.WebApi.UpdateRequest): void;
     /**
      * Deletes a given record in CRM (async = true).
-     * @param request the Rocket.WebApi.DeleteRequest object.
+     * @param request the Hsbc.WebApi.DeleteRequest object.
      */
-    function Delete(request: Rocket.WebApi.DeleteRequest): DeleteResponse;
+    function Delete(request: Hsbc.WebApi.DeleteRequest): DeleteResponse;
     /**
      * Deletes a given record in CRM (async = false).
-     * @param request the Rocket.WebApi.DeleteRequest object.
+     * @param request the Hsbc.WebApi.DeleteRequest object.
      */
-    function Delete(request: Rocket.WebApi.DeleteRequest): void;
+    function Delete(request: Hsbc.WebApi.DeleteRequest): void;
     /**
      * Associates given records in CRM (async = true).
-     * @param request the Rocket.WebApi.AssociateRequest object.
+     * @param request the Hsbc.WebApi.AssociateRequest object.
      */
-    function Associate(request: Rocket.WebApi.AssociateRequest): AssociateResponse;
+    function Associate(request: Hsbc.WebApi.AssociateRequest): AssociateResponse;
     /**
      * Associates given records in CRM (async = false).
-     * @param request the Rocket.WebApi.AssociateRequest object.
+     * @param request the Hsbc.WebApi.AssociateRequest object.
      */
-    function Associate(request: Rocket.WebApi.AssociateRequest): void;
+    function Associate(request: Hsbc.WebApi.AssociateRequest): void;
     /**
      * Disassociates given records in CRM (async = true).
-     * @param request the Rocket.WebApi.DisassociateRequest object.
+     * @param request the Hsbc.WebApi.DisassociateRequest object.
      */
-    function Disassociate(request: Rocket.WebApi.DisassociateRequest): DisassociateResponse;
+    function Disassociate(request: Hsbc.WebApi.DisassociateRequest): DisassociateResponse;
     /**
      * Disassociates given records in CRM (async = false).
-     * @param request the Rocket.WebApi.DisassociateRequest object.
+     * @param request the Hsbc.WebApi.DisassociateRequest object.
      */
-    function Disassociate(request: Rocket.WebApi.DisassociateRequest): void;
+    function Disassociate(request: Hsbc.WebApi.DisassociateRequest): void;
     /**
      * Executes the given request in CRM
      * @param request Request to send, must be in prototype chain of WebApiClient.Requests.Request

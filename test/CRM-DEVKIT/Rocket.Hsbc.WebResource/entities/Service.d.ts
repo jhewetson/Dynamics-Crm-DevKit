@@ -1,5 +1,51 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormServiceInformation {
+		interface tab_requiredresources_Sections {
+			resources: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_requiredresources extends DevKit.Form.Controls.IControlTab {
+			Section: tab_requiredresources_Sections;
+		}
+		interface Tabs {
+			requiredresources: tab_requiredresources;
+		}
+		interface Body {
+			Tab: Tabs;
+			IFRAME_Scheduling: DevKit.Form.Controls.ControlIFrame;
+			IFRAME_RuleTree: DevKit.Form.Controls.ControlIFrame;
+			/** Used in conjunction with granularity to describes when services can be performed in relation to midnight on a given day. */
+			AnchorOffset: DevKit.Form.Controls.ControlInteger;
+			/** Description of activity that represents work done to satisfy a customer's need. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Duration of the service. */
+			Duration: DevKit.Form.Controls.ControlInteger;
+			/** Describes how often the service is performed. */
+			Granularity: DevKit.Form.Controls.ControlString;
+			/** Initial status reason for the service activity. */
+			InitialStatusCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Information about whether the service can be scheduled. */
+			IsSchedulable: DevKit.Form.Controls.ControlBoolean;
+			/** Name of the service. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the resource specification with which the service is associated. */
+			ResourceSpecId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormServiceInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form ServiceInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form ServiceInformation */
+		Body: Hsbc.FormServiceInformation.Body;
+	}
 	class ServiceApi {
 		/**
 		* PL.DynamicsCrm.DevKit ServiceApi
@@ -102,4 +148,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

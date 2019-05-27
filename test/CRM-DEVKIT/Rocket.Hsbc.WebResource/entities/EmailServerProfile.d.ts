@@ -1,5 +1,122 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormEmailServerProfileInformation {
+		interface tab_tab_3_Sections {
+			_2EB17E5B_3A06_43BD_BB50_23F8630CD9F8_SECTION_1: DevKit.Form.Controls.ControlSection;
+			_2EB17E5B_3A06_43BD_BB50_23F8630CD9F8_SECTION_2: DevKit.Form.Controls.ControlSection;
+			_2EB17E5B_3A06_43BD_BB50_23F8630CD9F8_SECTION_3: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_tab_32_Sections {
+			tab_3_section_1: DevKit.Form.Controls.ControlSection;
+			tab_3_section_2: DevKit.Form.Controls.ControlSection;
+			tab_3_section_3: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_tab_4_Sections {
+			tab_4_section_1: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_tab_3 extends DevKit.Form.Controls.IControlTab {
+			Section: tab_tab_3_Sections;
+		}
+		interface tab_tab_32 extends DevKit.Form.Controls.IControlTab {
+			Section: tab_tab_32_Sections;
+		}
+		interface tab_tab_4 extends DevKit.Form.Controls.IControlTab {
+			Section: tab_tab_4_Sections;
+		}
+		interface Tabs {
+			tab_3: tab_tab_3;
+			tab_32: tab_tab_32;
+			tab_4: tab_tab_4;
+		}
+		interface Body {
+			Tab: Tabs;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Type additional information that describes the email server profile. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Email Server Type Name */
+			EmailServerTypeName: DevKit.Form.Controls.ControlString;
+			/** Type the tenant ID of Exchange Online. */
+			ExchangeOnlineTenantId: DevKit.Form.Controls.ControlString;
+			/** Select the incoming email authentication protocol that is used for connecting to the email server. */
+			IncomingAuthenticationProtocol: DevKit.Form.Controls.ControlOptionSet;
+			/** Select how credentials will be retrieved for incoming email. */
+			IncomingCredentialRetrieval: DevKit.Form.Controls.ControlOptionSet;
+			/** Type the password for incoming email. */
+			IncomingPassword: DevKit.Form.Controls.ControlString;
+			/** Type the Exchange port number for incoming mail. */
+			IncomingPortNumber: DevKit.Form.Controls.ControlInteger;
+			/** Type the location of the server for incoming email. */
+			IncomingServerLocation: DevKit.Form.Controls.ControlString;
+			/** Select whether to use impersonation to access the mailbox to process incoming emails. */
+			IncomingUseImpersonation: DevKit.Form.Controls.ControlBoolean;
+			/** Type the user name for incoming email. */
+			IncomingUserName: DevKit.Form.Controls.ControlString;
+			/** Select whether to use the Secure Sockets Layer (SSL) protocol for incoming email. */
+			IncomingUseSSL: DevKit.Form.Controls.ControlBoolean;
+			/** Maximum number of concurrent connections allowed to the email server per authenticated user. */
+			MaxConcurrentConnections: DevKit.Form.Controls.ControlInteger;
+			/** Minimum polling interval, in minutes, for mailboxes that are associated with this email server profile. */
+			MinPollingIntervalInMinutes: DevKit.Form.Controls.ControlInteger;
+			/** Indicates whether to move undelivered incoming emails to the Undeliverable folder in Microsoft Exchange. */
+			MoveUndeliveredEmails: DevKit.Form.Controls.ControlBoolean;
+			/** Type a meaningful name for the email server profile. This name is displayed when you need to select an email server profile. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Select the outgoing email authentication protocol that is used for connecting to the email server. */
+			OutgoingAuthenticationProtocol: DevKit.Form.Controls.ControlOptionSet;
+			/** Select how credentials will be retrieved for outgoing email. */
+			OutgoingCredentialRetrieval: DevKit.Form.Controls.ControlOptionSet;
+			/** Type the password for outgoing email. */
+			OutgoingPassword: DevKit.Form.Controls.ControlString;
+			/** Type the Exchange port number for outgoing mail. */
+			OutgoingPortNumber: DevKit.Form.Controls.ControlInteger;
+			/** Type the location of the server for outgoing email. */
+			OutgoingServerLocation: DevKit.Form.Controls.ControlString;
+			/** Select whether to use impersonation for accessing the mailbox to process outgoing emails. */
+			OutgoingUseImpersonation: DevKit.Form.Controls.ControlBoolean;
+			/** Type the user name for outgoing email. */
+			OutgoingUsername: DevKit.Form.Controls.ControlString;
+			/** Select whether to use the Secure Sockets Layer (SSL) protocol for outgoing email. */
+			OutgoingUseSSL: DevKit.Form.Controls.ControlBoolean;
+			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Shows the date and time after which email messages that are received will be processed for mailboxes associated with the email server profile. */
+			ProcessEmailsReceivedAfter: DevKit.Form.Controls.ControlDateTime;
+			/** Select whether to send an email alert if more than 50% of the mailboxes in this email server profile failed to synchronize in an hour period. */
+			SendEmailAlert: DevKit.Form.Controls.ControlBoolean;
+			/** Select the profile's email server type. */
+			ServerType: DevKit.Form.Controls.ControlOptionSet;
+			/** Select whether to timeout a single mailbox. */
+			TimeoutMailboxConnection: DevKit.Form.Controls.ControlBoolean;
+			/** Type the number of milliseconds to timeout a single mailbox. The upper limit is 100 seconds. */
+			TimeoutMailboxConnectionAfterAmount: DevKit.Form.Controls.ControlInteger;
+			/** Select whether to automatically discover the server location */
+			UseAutoDiscover: DevKit.Form.Controls.ControlBoolean;
+			/** Select whether to use the Exchange Online Tenant ID obtained from running Microsoft Azure PowerShell cmdlets (highly recommended). If you select No, you can edit this field manually */
+			UseDefaultTenantId: DevKit.Form.Controls.ControlBoolean;
+			/** Select whether to use the same settings for incoming and outgoing connections. */
+			UseSameSettingsForOutgoingConnections: DevKit.Form.Controls.ControlBoolean;
+		}
+		interface Footer {
+			/** Shows whether the email server profile is active or inactive. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+	}
+	class FormEmailServerProfileInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form EmailServerProfileInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form EmailServerProfileInformation */
+		Body: Hsbc.FormEmailServerProfileInformation.Body;
+		/** The Footer section of form EmailServerProfileInformation */
+		Footer: Hsbc.FormEmailServerProfileInformation.Footer;
+	}
 	class EmailServerProfileApi {
 		/**
 		* PL.DynamicsCrm.DevKit EmailServerProfileApi
@@ -270,4 +387,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

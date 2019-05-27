@@ -1,5 +1,81 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormServiceAppointmentInformation {
+		interface tab_service_Sections {
+			generalinformation: DevKit.Form.Controls.ControlSection;
+			schedulinginformation: DevKit.Form.Controls.ControlSection;
+			notes: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_details_Sections {
+			appointmentdetails: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_service extends DevKit.Form.Controls.IControlTab {
+			Section: tab_service_Sections;
+		}
+		interface tab_details extends DevKit.Form.Controls.IControlTab {
+			Section: tab_details_Sections;
+		}
+		interface Tabs {
+			service: tab_service;
+			details: tab_details;
+		}
+		interface Body {
+			Tab: Tabs;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Type a category to identify the service activity type, such as routine maintenance or service call, to tie the service activity to a business group or function. */
+			Category: DevKit.Form.Controls.ControlString;
+			/** Enter the accounts and contacts for whom the service activity is being performed. */
+			Customers: DevKit.Form.Controls.ControlLookup;
+			/** Select whether the service activity is an all-day event to make sure the required resources are scheduled for the full day. */
+			IsAllDayEvent: DevKit.Form.Controls.ControlBoolean;
+			/** Type the location where the service activity will take place, such as a conference room, customer office, or other venue. */
+			Location: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the user or team who owns the activity. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Select the priority so that preferred customers or critical issues are handled quickly. */
+			PriorityCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Choose the record that the service activity relates to. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Enter the user, facility, or equipment required to complete the service activity. */
+			Resources: DevKit.Form.Controls.ControlLookup;
+			/** Shows the expected duration of the service activity, in minutes. */
+			ScheduledDurationMinutes: DevKit.Form.Controls.ControlInteger;
+			/** Enter the expected due date and time. */
+			ScheduledEnd: DevKit.Form.Controls.ControlDateTime;
+			/** Enter the expected due date and time. */
+			ScheduledStart: DevKit.Form.Controls.ControlDateTime;
+			/** Choose the service scheduled to be performed during the service activity. */
+			ServiceId: DevKit.Form.Controls.ControlLookup;
+			/** Choose the site or location where the service activity will be performed. */
+			SiteId: DevKit.Form.Controls.ControlLookup;
+			/** Select the service activity's status. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type a subcategory to identify the service activity type and relate the activity to a specific product, service region, business group, or other function. */
+			Subcategory: DevKit.Form.Controls.ControlString;
+			/** Type a short description about the objective or primary topic of the service activity. */
+			Subject: DevKit.Form.Controls.ControlString;
+		}
+		interface Footer {
+			/** Shows whether the service activity is open, completed, or canceled. Completed and canceled service activities are read-only and can't be edited. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+	}
+	class FormServiceAppointmentInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form ServiceAppointmentInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form ServiceAppointmentInformation */
+		Body: Hsbc.FormServiceAppointmentInformation.Body;
+		/** The Footer section of form ServiceAppointmentInformation */
+		Footer: Hsbc.FormServiceAppointmentInformation.Footer;
+	}
 	class ServiceAppointmentApi {
 		/**
 		* PL.DynamicsCrm.DevKit ServiceAppointmentApi
@@ -267,4 +343,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

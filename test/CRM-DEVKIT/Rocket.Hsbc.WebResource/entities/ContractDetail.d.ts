@@ -1,5 +1,72 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormContractDetail {
+		interface tab_general_Sections {
+			contractdetailinformation: DevKit.Form.Controls.ControlSection;
+			pricing: DevKit.Form.Controls.ControlSection;
+			administration: DevKit.Form.Controls.ControlSection;
+			notes: DevKit.Form.Controls.ControlSection;
+			allotmentdetails: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Enter the date when the contract line becomes active. */
+			ActiveOn: DevKit.Form.Controls.ControlDate;
+			/** Shows the number of cases or minutes remaining, based on the resolved cases logged to the contract line. */
+			AllotmentsRemaining: DevKit.Form.Controls.ControlInteger;
+			/** Shows the number of cases or minutes used in the resolved cases on the contract line. */
+			AllotmentsUsed: DevKit.Form.Controls.ControlInteger;
+			/** Select the customer account or contact to provide a quick link to additional customer details, such as address, phone number, activities, and orders. */
+			CustomerId: DevKit.Form.Controls.ControlLookup;
+			/** Type the discount amount for the contract line to deduct any negotiated or other savings from the net amount due. */
+			Discount: DevKit.Form.Controls.ControlMoney;
+			/** Type the discount rate that should be applied to the Total Price, for use in calculating the net amount due for the contract line. */
+			DiscountPercentage: DevKit.Form.Controls.ControlDecimal;
+			/** Enter the date when the contract line expires. The date is automatically filled with the contract date, but you can change it if required. */
+			ExpiresOn: DevKit.Form.Controls.ControlDate;
+			/** Type the number of units of the specified product or service that are eligible for support on the contract line. */
+			InitialQuantity: DevKit.Form.Controls.ControlInteger;
+			/** Shows the total charge to the customer for the contract line, calculated as the Total Price minus any discounts. */
+			Net: DevKit.Form.Controls.ControlMoney;
+			/** Type the total service charge for the contract line before any discounts are credited. */
+			Price: DevKit.Form.Controls.ControlMoney;
+			/** Choose the product that is eligible for services on the contract line. */
+			ProductId: DevKit.Form.Controls.ControlLookup;
+			/** Type the serial number for the product that is eligible for services on the contract line. */
+			ProductSerialNumber: DevKit.Form.Controls.ControlString;
+			/** Shows the cost per case or minute, calculated by dividing the Total Price value by the total number of cases or minutes allocated to the contract line. */
+			Rate: DevKit.Form.Controls.ControlMoney;
+			/** Choose the address for the customer account or contact where the services are provided. */
+			ServiceAddress: DevKit.Form.Controls.ControlLookup;
+			/** Type a title or name that describes the contract line. */
+			Title: DevKit.Form.Controls.ControlString;
+			/** Type the total number of minutes or cases allowed for the contract line. */
+			TotalAllotments: DevKit.Form.Controls.ControlInteger;
+			/** Choose the unit of measurement for the base unit quantity for this purchase, such as each or dozen. */
+			UoMId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormContractDetail extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form ContractDetail
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form ContractDetail */
+		Body: Hsbc.FormContractDetail.Body;
+	}
 	class ContractDetailApi {
 		/**
 		* PL.DynamicsCrm.DevKit ContractDetailApi
@@ -160,4 +227,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Contract Detail'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

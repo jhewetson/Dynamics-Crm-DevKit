@@ -1,5 +1,30 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormBookableResourceCategoryInformation {
+		interface Tabs {
+		}
+		interface Body {
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Type a detailed description of what the categorization is about. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Type the name of the resource category. */
+			Name: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormBookableResourceCategoryInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form BookableResourceCategoryInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form BookableResourceCategoryInformation */
+		Body: Hsbc.FormBookableResourceCategoryInformation.Body;
+	}
 	class BookableResourceCategoryApi {
 		/**
 		* PL.DynamicsCrm.DevKit BookableResourceCategoryApi
@@ -90,4 +115,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

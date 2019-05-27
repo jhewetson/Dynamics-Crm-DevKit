@@ -1,5 +1,44 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormProductAssociation {
+		interface tab_product_association_dynamic_properties_Sections {
+			product_association_dynamic_properties_section: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_product_association_dynamic_properties extends DevKit.Form.Controls.IControlTab {
+			Section: tab_product_association_dynamic_properties_Sections;
+		}
+		interface Tabs {
+			product_association_dynamic_properties: tab_product_association_dynamic_properties;
+		}
+		interface Body {
+			Tab: Tabs;
+			product_association_dynamic_properties: DevKit.Form.Controls.ControlGrid;
+			/** Select a product to add to the bundle or kit. */
+			AssociatedProduct: DevKit.Form.Controls.ControlLookup;
+			/** Select a bundle or a kit. */
+			ProductId: DevKit.Form.Controls.ControlLookup;
+			/** Select whether the associated product is required or optional. */
+			ProductIsRequired: DevKit.Form.Controls.ControlOptionSet;
+			/** Type the quantity of the products added to the bundle or kit. */
+			Quantity: DevKit.Form.Controls.ControlDecimal;
+			/** Shows the unit of the product association. */
+			UoMId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormProductAssociation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form ProductAssociation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form ProductAssociation */
+		Body: Hsbc.FormProductAssociation.Body;
+	}
 	class ProductAssociationApi {
 		/**
 		* PL.DynamicsCrm.DevKit ProductAssociationApi
@@ -113,4 +152,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Product Association'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

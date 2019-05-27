@@ -1,5 +1,196 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormEmail {
+		interface Header {
+			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Select the priority so that preferred customers or critical issues are handled quickly. */
+			PriorityCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Enter the expected due date and time for the activity to be completed to provide details about when the email will be sent. */
+			ScheduledEnd: DevKit.Form.Controls.ControlDateTime;
+			/** Select the email's status. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_Email_Sections {
+			recipientinformation: DevKit.Form.Controls.ControlSection;
+			emaildescription: DevKit.Form.Controls.ControlSection;
+			Regardinginformation: DevKit.Form.Controls.ControlSection;
+			attachments: DevKit.Form.Controls.ControlSection;
+			emailengagementactions: DevKit.Form.Controls.ControlSection;
+			Emailrecipient_section_6: DevKit.Form.Controls.ControlSection;
+			tab_4_section_2: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_Email extends DevKit.Form.Controls.IControlTab {
+			Section: tab_Email_Sections;
+		}
+		interface Tabs {
+			Email: tab_Email;
+		}
+		interface Body {
+			Tab: Tabs;
+			attachmentsGrid: DevKit.Form.Controls.ControlGrid;
+			emailengagementactionscontrol: DevKit.Form.Controls.ControlEmailEngagement;
+			emailrecipientactivitycontrol: DevKit.Form.Controls.ControlEmailRecipient;
+			/** Type the number of minutes spent creating and sending the email. The duration is used in reporting. */
+			ActualDurationMinutes: DevKit.Form.Controls.ControlInteger;
+			/** Enter the recipients that are included on the email distribution, but are not displayed to other recipients. */
+			bcc: DevKit.Form.Controls.ControlLookup;
+			/** Enter the recipients that should be copied on the email. */
+			cc: DevKit.Form.Controls.ControlLookup;
+			/** Type the greeting and message text of the email. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Enter the sender of the email. */
+			from: DevKit.Form.Controls.ControlLookup;
+			/** Choose the record that the email relates to. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Type a short description about the objective or primary topic of the email. */
+			Subject: DevKit.Form.Controls.ControlString;
+			/** Enter the account, contact, lead, queue, or user recipients for the email. */
+			to: DevKit.Form.Controls.ControlLookup;
+		}
+		interface Footer {
+			/** For internal use only. Shows whether this email is followed. This is evaluated state which overrides user selection of follow email. */
+			IsEmailFollowed: DevKit.Form.Controls.ControlBoolean;
+			/** For internal use only. Shows whether this email Reminder is Set. */
+			IsEmailReminderSet: DevKit.Form.Controls.ControlBoolean;
+		}
+	}
+	class FormEmail extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form Email
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form Email */
+		Body: Hsbc.FormEmail.Body;
+		/** The Footer section of form Email */
+		Footer: Hsbc.FormEmail.Footer;
+		/** The Header section of form Email */
+		Header: Hsbc.FormEmail.Header;
+	}
+	namespace FormEmailforInteractiveexperience {
+		interface Header {
+			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Select the priority so that preferred customers or critical issues are handled quickly. */
+			PriorityCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Enter the expected due date and time for the activity to be completed to provide details about when the email will be sent. */
+			ScheduledEnd: DevKit.Form.Controls.ControlDateTime;
+			/** Select the email's status. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_tab_2_Sections {
+			tab_2_section_5: DevKit.Form.Controls.ControlSection;
+			tab_2_section_2: DevKit.Form.Controls.ControlSection;
+			tab_2_section_3: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_tab_2 extends DevKit.Form.Controls.IControlTab {
+			Section: tab_tab_2_Sections;
+		}
+		interface Tabs {
+			tab_2: tab_tab_2;
+		}
+		interface Body {
+			Tab: Tabs;
+			attachmentsGrid: DevKit.Form.Controls.ControlGrid;
+			/** Enter the recipients that are included on the email distribution, but are not displayed to other recipients. */
+			bcc: DevKit.Form.Controls.ControlLookup;
+			/** Enter the recipients that should be copied on the email. */
+			cc: DevKit.Form.Controls.ControlLookup;
+			/** Type the greeting and message text of the email. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Enter the sender of the email. */
+			from: DevKit.Form.Controls.ControlLookup;
+			/** Choose the record that the email relates to. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Type a short description about the objective or primary topic of the email. */
+			Subject: DevKit.Form.Controls.ControlString;
+			/** Enter the account, contact, lead, queue, or user recipients for the email. */
+			to: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormEmailforInteractiveexperience extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form EmailforInteractiveexperience
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form EmailforInteractiveexperience */
+		Body: Hsbc.FormEmailforInteractiveexperience.Body;
+		/** The Header section of form EmailforInteractiveexperience */
+		Header: Hsbc.FormEmailforInteractiveexperience.Header;
+	}
+	namespace FormEmailWizard {
+		interface Header {
+			/** Select the priority so that preferred customers or critical issues are handled quickly. */
+			PriorityCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Enter the expected due date and time for the activity to be completed to provide details about when the email will be sent. */
+			ScheduledEnd: DevKit.Form.Controls.ControlDateTime;
+		}
+		interface tab_Email_Sections {
+			recipientinformation: DevKit.Form.Controls.ControlSection;
+			HiddenSection: DevKit.Form.Controls.ControlSection;
+			attachments: DevKit.Form.Controls.ControlSection;
+			emaildescription: DevKit.Form.Controls.ControlSection;
+			Regardinginformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_Email extends DevKit.Form.Controls.IControlTab {
+			Section: tab_Email_Sections;
+		}
+		interface Tabs {
+			Email: tab_Email;
+		}
+		interface Body {
+			Tab: Tabs;
+			attachmentsGrid: DevKit.Form.Controls.ControlGrid;
+			/** Type the number of minutes spent creating and sending the email. The duration is used in reporting. */
+			ActualDurationMinutes: DevKit.Form.Controls.ControlInteger;
+			/** Enter the recipients that are included on the email distribution, but are not displayed to other recipients. */
+			bcc: DevKit.Form.Controls.ControlLookup;
+			/** Enter the recipients that should be copied on the email. */
+			cc: DevKit.Form.Controls.ControlLookup;
+			/** Type the greeting and message text of the email. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Enter the sender of the email. */
+			from: DevKit.Form.Controls.ControlLookup;
+			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Choose the record that the email relates to. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Select the email's status. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type a short description about the objective or primary topic of the email. */
+			Subject: DevKit.Form.Controls.ControlString;
+			/** Enter the account, contact, lead, queue, or user recipients for the email. */
+			to: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormEmailWizard extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form EmailWizard
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form EmailWizard */
+		Body: Hsbc.FormEmailWizard.Body;
+		/** The Header section of form EmailWizard */
+		Header: Hsbc.FormEmailWizard.Header;
+	}
 	class EmailApi {
 		/**
 		* PL.DynamicsCrm.DevKit EmailApi
@@ -351,4 +542,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Email','Email for Interactive experience','Wizard'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

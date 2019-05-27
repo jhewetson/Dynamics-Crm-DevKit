@@ -1,5 +1,41 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormContractTemplateInformation {
+		interface Tabs {
+		}
+		interface Body {
+			IFRAME_ContractTemplateCalendar: DevKit.Form.Controls.ControlIFrame;
+			/** Abbreviation of the contract template name. */
+			Abbreviation: DevKit.Form.Controls.ControlString;
+			/** Criteria for the contracts based on the template, such as number of cases, time, or coverage dates. */
+			AllotmentTypeCode: DevKit.Form.Controls.ControlOptionSet;
+			/** How often the customer or account is to be billed in contracts that are based on the template. */
+			BillingFrequencyCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Unique identifier of the level of service specified in contracts that are based on the template. */
+			ContractServiceLevelCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Description of the contract template. */
+			Description: DevKit.Form.Controls.ControlString;
+			effectivitycalendar: DevKit.Form.Controls.ControlActionCards;
+			/** Name of the contract template. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Specifies whether the discount is a percentage or a monetary amount in contracts based on the template. */
+			UseDiscountAsPercentage: DevKit.Form.Controls.ControlBoolean;
+		}
+	}
+	class FormContractTemplateInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form ContractTemplateInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form ContractTemplateInformation */
+		Body: Hsbc.FormContractTemplateInformation.Body;
+	}
 	class ContractTemplateApi {
 		/**
 		* PL.DynamicsCrm.DevKit ContractTemplateApi
@@ -128,4 +164,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

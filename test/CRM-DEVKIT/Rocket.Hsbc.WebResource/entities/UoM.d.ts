@@ -1,5 +1,75 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormUoMInformation {
+		interface tab_general_Sections {
+			unitofmeasureinformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Choose the base or primary unit on which the unit is based. */
+			BaseUoM: DevKit.Form.Controls.ControlLookup;
+			/** Type a descriptive title or name for the unit of measure. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Unit quantity for the product. */
+			Quantity: DevKit.Form.Controls.ControlDecimal;
+		}
+	}
+	class FormUoMInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form UoMInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form UoMInformation */
+		Body: Hsbc.FormUoMInformation.Body;
+	}
+	namespace FormUnitofMeasureQuickCreate {
+		interface tab_general_Sections {
+			unitofmeasureinformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Choose the base or primary unit on which the unit is based. */
+			BaseUoM: DevKit.Form.Controls.ControlLookup;
+			/** Type a descriptive title or name for the unit of measure. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Unit quantity for the product. */
+			Quantity: DevKit.Form.Controls.ControlDecimal;
+			/** Choose the ID of the unit group that the unit is associated with. */
+			UoMScheduleId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormUnitofMeasureQuickCreate extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form UnitofMeasureQuickCreate
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form UnitofMeasureQuickCreate */
+		Body: Hsbc.FormUnitofMeasureQuickCreate.Body;
+	}
 	class UoMApi {
 		/**
 		* PL.DynamicsCrm.DevKit UoMApi
@@ -72,4 +142,4 @@ declare namespace OptionSet {
 	namespace UoM {
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information','Unit of Measure Quick Create'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

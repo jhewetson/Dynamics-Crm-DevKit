@@ -1,5 +1,27 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace Formmsdyn_playbookactivityattributeInformation {
+		interface Tabs {
+		}
+		interface Body {
+			/** Owner Id */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class Formmsdyn_playbookactivityattributeInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form msdyn_playbookactivityattributeInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form msdyn_playbookactivityattributeInformation */
+		Body: Hsbc.Formmsdyn_playbookactivityattributeInformation.Body;
+	}
 	class msdyn_playbookactivityattributeApi {
 		/**
 		* PL.DynamicsCrm.DevKit msdyn_playbookactivityattributeApi
@@ -102,4 +124,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

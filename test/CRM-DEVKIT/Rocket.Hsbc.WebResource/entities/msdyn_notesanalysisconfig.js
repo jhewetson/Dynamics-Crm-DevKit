@@ -1,2 +1,11 @@
-﻿//@ts-check
-///<reference path="msdyn_notesanalysisconfig.d.ts" />
+﻿///<reference path='msdyn_notesanalysisconfig.d.ts' />
+var formInformation = (function () {
+	function onLoad(executionContext) {
+	}
+	function onSave(executionContext) {
+	}
+	return {
+		OnLoad: onLoad,
+		OnSave: onSave
+	};
+})();

@@ -1,5 +1,74 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormCompetitor {
+		interface Header {
+			/** Type the amount of revenue reported in the competitor's annual report or other source. */
+			ReportedRevenue: DevKit.Form.Controls.ControlMoney;
+			/** Type the stock exchange symbol for the competitor to track financial performance of the company. You can click the code entered in this field to access the latest trading information from MSN Money. */
+			TickerSymbol: DevKit.Form.Controls.ControlString;
+		}
+		interface tab_COMPETITOR_Sections {
+			CompetitorInformation: DevKit.Form.Controls.ControlSection;
+			notes: DevKit.Form.Controls.ControlSection;
+			analysis: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_opportunities_Sections {
+			Opportunity: DevKit.Form.Controls.ControlSection;
+			OpportunitiesChart: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_COMPETITOR extends DevKit.Form.Controls.IControlTab {
+			Section: tab_COMPETITOR_Sections;
+		}
+		interface tab_opportunities extends DevKit.Form.Controls.IControlTab {
+			Section: tab_opportunities_Sections;
+		}
+		interface Tabs {
+			COMPETITOR: tab_COMPETITOR;
+			opportunities: tab_opportunities;
+		}
+		interface Body {
+			Tab: Tabs;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			OpportunityCurrentFiscalYear: DevKit.Form.Controls.ControlGrid;
+			ChartTest: DevKit.Form.Controls.ControlGrid;
+			/** Shows the complete primary address. */
+			Address1_Composite: DevKit.Form.Controls.ControlString;
+			/** Type the company or business name used to identify the competitor in data views and related records. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Type notes or other information about the competitor's strengths, such as top-selling products and targeted industries or markets. */
+			Strengths: DevKit.Form.Controls.ControlString;
+			/** Choose the local currency for the record to make sure budgets are reported in the correct currency. */
+			TransactionCurrencyId: DevKit.Form.Controls.ControlLookup;
+			/** Type notes or other information about the competitor's weaknesses or areas in which your organization outperforms the competitor. */
+			Weaknesses: DevKit.Form.Controls.ControlString;
+			/** Type the website URL for the competitor. */
+			WebSiteUrl: DevKit.Form.Controls.ControlString;
+		}
+		interface Navigation {
+			navOpportunities: DevKit.Form.Controls.ControlNavigationItem,
+			navConnections: DevKit.Form.Controls.ControlNavigationItem,
+			navAsyncOperations: DevKit.Form.Controls.ControlNavigationItem,
+			navProcessSessions: DevKit.Form.Controls.ControlNavigationItem
+		}
+	}
+	class FormCompetitor extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form Competitor
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form Competitor */
+		Body: Hsbc.FormCompetitor.Body;
+		/** The Header section of form Competitor */
+		Header: Hsbc.FormCompetitor.Header;
+		/** The Navigation of form Competitor */
+		Navigation: Hsbc.FormCompetitor.Navigation;
+	}
 	class CompetitorApi {
 		/**
 		* PL.DynamicsCrm.DevKit CompetitorApi
@@ -211,4 +280,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Competitor'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

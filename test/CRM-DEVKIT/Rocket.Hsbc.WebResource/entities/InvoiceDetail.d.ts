@@ -1,5 +1,187 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormInvoiceDetailInformation {
+		interface tab_general_Sections {
+			invoicedetailinformation: DevKit.Form.Controls.ControlSection;
+			pricing: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_delivery_Sections {
+			deliveryinformation: DevKit.Form.Controls.ControlSection;
+			fulfillment: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_address_Sections {
+			shiptoaddress: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface tab_delivery extends DevKit.Form.Controls.IControlTab {
+			Section: tab_delivery_Sections;
+		}
+		interface tab_address extends DevKit.Form.Controls.IControlTab {
+			Section: tab_address_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+			delivery: tab_delivery;
+			address: tab_address;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Enter the date when the invoiced product was delivered to the customer. */
+			ActualDeliveryOn: DevKit.Form.Controls.ControlDate;
+			/** Shows the total price of the invoice product, based on the price per unit, volume discount, and quantity. */
+			BaseAmount: DevKit.Form.Controls.ControlMoney;
+			/** Shows the total amount due for the invoice product, based on the sum of the unit price, quantity, discounts, and tax. */
+			ExtendedAmount: DevKit.Form.Controls.ControlMoney;
+			/** Select whether the price per unit is fixed at the value in the specified price list or can be overridden by users who have edit rights to the invoice product. */
+			IsPriceOverridden: DevKit.Form.Controls.ControlBoolean;
+			/** Select whether the product exists in the Microsoft Dynamics 365 product catalog or is a write-in product specific to the parent invoice. */
+			IsProductOverridden: DevKit.Form.Controls.ControlBoolean;
+			/** Type the manual discount amount for the invoice product to deduct any negotiated or other savings from the product total. */
+			ManualDiscountAmount: DevKit.Form.Controls.ControlMoney;
+			/** Type the price per unit of the invoice product. The default is the value in the price list specified on the parent invoice for existing products. */
+			PricePerUnit: DevKit.Form.Controls.ControlMoney;
+			/** Type a name or description to identify the type of write-in product included in the invoice. */
+			ProductDescription: DevKit.Form.Controls.ControlString;
+			/** Choose the product to include on the invoice. */
+			ProductId: DevKit.Form.Controls.ControlLookup;
+			/** Type the amount or quantity of the product included in the invoice's total amount due. */
+			Quantity: DevKit.Form.Controls.ControlDecimal;
+			/** Type the amount or quantity of the product that is back ordered for the invoice. */
+			QuantityBackordered: DevKit.Form.Controls.ControlDecimal;
+			/** Type the amount or quantity of the product that was canceled for the invoice line item. */
+			QuantityCancelled: DevKit.Form.Controls.ControlDecimal;
+			/** Type the amount or quantity of the product that was shipped. */
+			QuantityShipped: DevKit.Form.Controls.ControlDecimal;
+			/** Choose the user responsible for the sale of the invoice product. */
+			SalesRepId: DevKit.Form.Controls.ControlLookup;
+			/** Type the city for the customer's shipping address. */
+			ShipTo_City: DevKit.Form.Controls.ControlString;
+			/** Type the country or region for the customer's shipping address. */
+			ShipTo_Country: DevKit.Form.Controls.ControlString;
+			/** Type the fax number for the customer's shipping address. */
+			ShipTo_Fax: DevKit.Form.Controls.ControlString;
+			/** Select the freight terms to make sure shipping orders are processed correctly. */
+			ShipTo_FreightTermsCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type the first line of the customer's shipping address. */
+			ShipTo_Line1: DevKit.Form.Controls.ControlString;
+			/** Type the second line of the customer's shipping address. */
+			ShipTo_Line2: DevKit.Form.Controls.ControlString;
+			/** Type the third line of the shipping address. */
+			ShipTo_Line3: DevKit.Form.Controls.ControlString;
+			/** Type a name for the customer's shipping address, such as "Headquarters" or "Field office",  to identify the address. */
+			ShipTo_Name: DevKit.Form.Controls.ControlString;
+			/** Type the ZIP Code or postal code for the shipping address. */
+			ShipTo_PostalCode: DevKit.Form.Controls.ControlString;
+			/** Type the state or province for the shipping address. */
+			ShipTo_StateOrProvince: DevKit.Form.Controls.ControlString;
+			/** Type the phone number for the customer's shipping address. */
+			ShipTo_Telephone: DevKit.Form.Controls.ControlString;
+			/** Type the tax amount for the invoice product. */
+			Tax: DevKit.Form.Controls.ControlMoney;
+			/** Choose the unit of measurement for the base unit quantity for this purchase, such as each or dozen. */
+			UoMId: DevKit.Form.Controls.ControlLookup;
+			/** Shows the discount amount per unit if a specified volume is purchased. Configure volume discounts in the Product Catalog in the Settings area. */
+			VolumeDiscountAmount: DevKit.Form.Controls.ControlMoney;
+			/** Select whether the invoice product should be shipped to the specified address or held until the customer calls with further pick up or delivery instructions. */
+			WillCall: DevKit.Form.Controls.ControlBoolean;
+		}
+	}
+	class FormInvoiceDetailInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form InvoiceDetailInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form InvoiceDetailInformation */
+		Body: Hsbc.FormInvoiceDetailInformation.Body;
+	}
+	namespace FormInvoiceDetail {
+		interface tab_general_Sections {
+			invoicedetailinformation: DevKit.Form.Controls.ControlSection;
+			pricing: DevKit.Form.Controls.ControlSection;
+			deliveryinformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Enter the date when the invoiced product was delivered to the customer. */
+			ActualDeliveryOn: DevKit.Form.Controls.ControlDate;
+			/** Unique identifier of the invoice associated with the invoice product line item. */
+			InvoiceId: DevKit.Form.Controls.ControlLookup;
+			/** Select whether the price per unit is fixed at the value in the specified price list or can be overridden by users who have edit rights to the invoice product. */
+			IsPriceOverridden: DevKit.Form.Controls.ControlBoolean;
+			/** Select whether the product exists in the Microsoft Dynamics 365 product catalog or is a write-in product specific to the parent invoice. */
+			IsProductOverridden: DevKit.Form.Controls.ControlBoolean;
+			/** Type the manual discount amount for the invoice product to deduct any negotiated or other savings from the product total. */
+			ManualDiscountAmount: DevKit.Form.Controls.ControlMoney;
+			/** Type the price per unit of the invoice product. The default is the value in the price list specified on the parent invoice for existing products. */
+			PricePerUnit: DevKit.Form.Controls.ControlMoney;
+			/** Type a name or description to identify the type of write-in product included in the invoice. */
+			ProductDescription: DevKit.Form.Controls.ControlString;
+			/** Choose the product to include on the invoice. */
+			ProductId: DevKit.Form.Controls.ControlLookup;
+			/** Type the amount or quantity of the product included in the invoice's total amount due. */
+			Quantity: DevKit.Form.Controls.ControlDecimal;
+			/** Type the amount or quantity of the product that is back ordered for the invoice. */
+			QuantityBackordered: DevKit.Form.Controls.ControlDecimal;
+			/** Type the amount or quantity of the product that was canceled for the invoice line item. */
+			QuantityCancelled: DevKit.Form.Controls.ControlDecimal;
+			/** Type the amount or quantity of the product that was shipped. */
+			QuantityShipped: DevKit.Form.Controls.ControlDecimal;
+			/** Choose the user responsible for the sale of the invoice product. */
+			SalesRepId: DevKit.Form.Controls.ControlLookup;
+			/** Type the city for the customer's shipping address. */
+			ShipTo_City: DevKit.Form.Controls.ControlString;
+			/** Type the country or region for the customer's shipping address. */
+			ShipTo_Country: DevKit.Form.Controls.ControlString;
+			/** Type the fax number for the customer's shipping address. */
+			ShipTo_Fax: DevKit.Form.Controls.ControlString;
+			/** Select the freight terms to make sure shipping orders are processed correctly. */
+			ShipTo_FreightTermsCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type the first line of the customer's shipping address. */
+			ShipTo_Line1: DevKit.Form.Controls.ControlString;
+			/** Type a name for the customer's shipping address, such as "Headquarters" or "Field office",  to identify the address. */
+			ShipTo_Name: DevKit.Form.Controls.ControlString;
+			/** Type the ZIP Code or postal code for the shipping address. */
+			ShipTo_PostalCode: DevKit.Form.Controls.ControlString;
+			/** Type the state or province for the shipping address. */
+			ShipTo_StateOrProvince: DevKit.Form.Controls.ControlString;
+			/** Type the phone number for the customer's shipping address. */
+			ShipTo_Telephone: DevKit.Form.Controls.ControlString;
+			/** Type the tax amount for the invoice product. */
+			Tax: DevKit.Form.Controls.ControlMoney;
+			/** Choose the unit of measurement for the base unit quantity for this purchase, such as each or dozen. */
+			UoMId: DevKit.Form.Controls.ControlLookup;
+			/** Select whether the invoice product should be shipped to the specified address or held until the customer calls with further pick up or delivery instructions. */
+			WillCall: DevKit.Form.Controls.ControlBoolean;
+		}
+	}
+	class FormInvoiceDetail extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form InvoiceDetail
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form InvoiceDetail */
+		Body: Hsbc.FormInvoiceDetail.Body;
+	}
 	class InvoiceDetailApi {
 		/**
 		* PL.DynamicsCrm.DevKit InvoiceDetailApi
@@ -292,4 +474,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information','InvoiceDetail'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

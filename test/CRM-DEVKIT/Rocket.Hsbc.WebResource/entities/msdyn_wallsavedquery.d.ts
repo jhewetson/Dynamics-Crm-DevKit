@@ -1,5 +1,39 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace Formmsdyn_wallsavedqueryInformation {
+		interface Tabs {
+		}
+		interface Body {
+			/** Indicates that corresponding system view should be displayed on personal wall */
+			msdyn_IsVisible: DevKit.Form.Controls.ControlBoolean;
+			/** Unique identifier for Post Configuration associated with Wall View. */
+			msdyn_postconfigurationid: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier of the view that should be displayed on the personal wall for all users. */
+			msdyn_SavedQueryId: DevKit.Form.Controls.ControlString;
+			/** Name of the corresponding view. */
+			msdyn_savedqueryname: DevKit.Form.Controls.ControlString;
+		}
+		interface Footer {
+			/** Status of the Wall View */
+			statecode: DevKit.Form.Controls.ControlOptionSet;
+		}
+	}
+	class Formmsdyn_wallsavedqueryInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form msdyn_wallsavedqueryInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form msdyn_wallsavedqueryInformation */
+		Body: Hsbc.Formmsdyn_wallsavedqueryInformation.Body;
+		/** The Footer section of form msdyn_wallsavedqueryInformation */
+		Footer: Hsbc.Formmsdyn_wallsavedqueryInformation.Footer;
+	}
 	class msdyn_wallsavedqueryApi {
 		/**
 		* PL.DynamicsCrm.DevKit msdyn_wallsavedqueryApi
@@ -92,4 +126,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

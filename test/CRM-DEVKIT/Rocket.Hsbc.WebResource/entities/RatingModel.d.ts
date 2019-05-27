@@ -1,5 +1,32 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormRatingModelInformation {
+		interface Tabs {
+		}
+		interface Body {
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Enter the maximum rating value. */
+			MaxRatingValue: DevKit.Form.Controls.ControlInteger;
+			/** Enter the minimum rating value. */
+			MinRatingValue: DevKit.Form.Controls.ControlInteger;
+			/** Type the name of the rating model. */
+			Name: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormRatingModelInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form RatingModelInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form RatingModelInformation */
+		Body: Hsbc.FormRatingModelInformation.Body;
+	}
 	class RatingModelApi {
 		/**
 		* PL.DynamicsCrm.DevKit RatingModelApi
@@ -92,4 +119,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

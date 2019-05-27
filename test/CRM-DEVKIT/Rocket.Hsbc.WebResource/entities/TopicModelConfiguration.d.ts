@@ -1,5 +1,50 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormTopicModelConfigurationInformation {
+		interface tab__29B1CFCB_A992_4BB4_B0E0_4A95C5D252B2_Sections {
+		}
+		interface tab__C9B62E5D_9925_479D_87BA_DBE9FA64B47B_Sections {
+			_5E0987A5_6DEC_4225_BBB4_7CC1F9DD8347: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab__29B1CFCB_A992_4BB4_B0E0_4A95C5D252B2 extends DevKit.Form.Controls.IControlTab {
+			Section: tab__29B1CFCB_A992_4BB4_B0E0_4A95C5D252B2_Sections;
+		}
+		interface tab__C9B62E5D_9925_479D_87BA_DBE9FA64B47B extends DevKit.Form.Controls.IControlTab {
+			Section: tab__C9B62E5D_9925_479D_87BA_DBE9FA64B47B_Sections;
+		}
+		interface Tabs {
+			_29B1CFCB_A992_4BB4_B0E0_4A95C5D252B2: tab__29B1CFCB_A992_4BB4_B0E0_4A95C5D252B2;
+			_C9B62E5D_9925_479D_87BA_DBE9FA64B47B: tab__C9B62E5D_9925_479D_87BA_DBE9FA64B47B;
+		}
+		interface Body {
+			Tab: Tabs;
+			textanalyticsentitymappings: DevKit.Form.Controls.ControlGrid;
+			/** Specify the data filter configured to filter records. */
+			DataFilter: DevKit.Form.Controls.ControlString;
+			/** Enter a description for the model */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Type a logical name for the model. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Select the time window to filter on for the last number of days or weeks. */
+			TimeFilter: DevKit.Form.Controls.ControlOptionSet;
+			/** Time Filter Duration */
+			TimeFilterDuration: DevKit.Form.Controls.ControlInteger;
+		}
+	}
+	class FormTopicModelConfigurationInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form TopicModelConfigurationInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form TopicModelConfigurationInformation */
+		Body: Hsbc.FormTopicModelConfigurationInformation.Body;
+	}
 	class TopicModelConfigurationApi {
 		/**
 		* PL.DynamicsCrm.DevKit TopicModelConfigurationApi
@@ -94,4 +139,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

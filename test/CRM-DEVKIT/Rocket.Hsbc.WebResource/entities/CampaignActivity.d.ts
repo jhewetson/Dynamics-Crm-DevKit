@@ -1,5 +1,95 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormCampaignActivity {
+		interface Header {
+			/** Unique identifier of the user or team who owns the activity. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Select the priority so that preferred customers or critical issues are handled quickly. */
+			PriorityCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Select the campaign activity's status. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_CampaignActivity_Sections {
+			Summary: DevKit.Form.Controls.ControlSection;
+			Financials: DevKit.Form.Controls.ControlSection;
+			AntiSpam: DevKit.Form.Controls.ControlSection;
+			Marketinglist: DevKit.Form.Controls.ControlSection;
+			SocialPane: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_FailuresActivities_Sections {
+			failures_activities_grid: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_CampaignActivity extends DevKit.Form.Controls.IControlTab {
+			Section: tab_CampaignActivity_Sections;
+		}
+		interface tab_FailuresActivities extends DevKit.Form.Controls.IControlTab {
+			Section: tab_FailuresActivities_Sections;
+		}
+		interface Tabs {
+			CampaignActivity: tab_CampaignActivity;
+			FailuresActivities: tab_FailuresActivities;
+		}
+		interface Body {
+			Tab: Tabs;
+			marketing_lists_grid: DevKit.Form.Controls.ControlGrid;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			failuresGrid: DevKit.Form.Controls.ControlGrid;
+			/** Type the actual cost of the campaign activity. The value entered is rolled up to the related campaign in the total cost calculations. */
+			ActualCost: DevKit.Form.Controls.ControlMoney;
+			/** Enter the date when the campaign activity was actually  completed. */
+			ActualEnd: DevKit.Form.Controls.ControlDate;
+			/** Enter the actual start date and time for the campaign activity to determine if the campaign activity started on the scheduled time. */
+			ActualStart: DevKit.Form.Controls.ControlDate;
+			/** Type the allocated budget of the campaign activity for estimated versus actual cost reporting. */
+			BudgetedCost: DevKit.Form.Controls.ControlMoney;
+			/** Select how communications for this activity will be sent, such as phone, letter, fax, or email. */
+			ChannelTypeCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type additional information to describe the campaign activity, such as key talking points, objectives, or details about the target audience. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Limits the frequency (in days) of marketing activities directed at any contact. Contacts that have been contacted more recently than this will be excluded from new campaign activity distributions. Enter a value of zero to disable the limit. */
+			ExcludeIfContactedInXDays: DevKit.Form.Controls.ControlInteger;
+			/** Outsource vendor with which activity is associated. */
+			Partners: DevKit.Form.Controls.ControlLookup;
+			/** Choose the parent campaign so that the campaign activity costs reflect in the correct campaign for reporting. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Enter the expected due date and time for the activity to be completed to provide details about the timing of the campaign activity. */
+			ScheduledEnd: DevKit.Form.Controls.ControlDate;
+			/** Enter the expected start date and time for the activity to provide details about timing of the campaign activity. */
+			ScheduledStart: DevKit.Form.Controls.ControlDate;
+			/** Select the campaign activity's status. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type a short description about the objective or primary topic of the campaign activity. */
+			Subject: DevKit.Form.Controls.ControlString;
+			/** Choose the local currency for the record to make sure budgets are reported in the correct currency. */
+			TransactionCurrencyId: DevKit.Form.Controls.ControlLookup;
+			/** Select the type of campaign activity to indicate the purpose of the activity. */
+			TypeCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface Navigation {
+			navTargetLists: DevKit.Form.Controls.ControlNavigationItem,
+			navActivities: DevKit.Form.Controls.ControlNavigationItem,
+			navAsyncOperations: DevKit.Form.Controls.ControlNavigationItem,
+			navProcessSessions: DevKit.Form.Controls.ControlNavigationItem
+		}
+	}
+	class FormCampaignActivity extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form CampaignActivity
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form CampaignActivity */
+		Body: Hsbc.FormCampaignActivity.Body;
+		/** The Header section of form CampaignActivity */
+		Header: Hsbc.FormCampaignActivity.Header;
+		/** The Navigation of form CampaignActivity */
+		Navigation: Hsbc.FormCampaignActivity.Navigation;
+	}
 	class CampaignActivityApi {
 		/**
 		* PL.DynamicsCrm.DevKit CampaignActivityApi
@@ -267,4 +357,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Campaign Activity'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

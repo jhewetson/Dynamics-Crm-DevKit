@@ -1,5 +1,67 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormSiteInformation {
+		interface tab_General_Sections {
+			section1: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_address_Sections {
+			primaryaddress: DevKit.Form.Controls.ControlSection;
+			timezone: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_General extends DevKit.Form.Controls.IControlTab {
+			Section: tab_General_Sections;
+		}
+		interface tab_address extends DevKit.Form.Controls.IControlTab {
+			Section: tab_address_Sections;
+		}
+		interface Tabs {
+			General: tab_General;
+			address: tab_address;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** City name for address 1. */
+			Address1_City: DevKit.Form.Controls.ControlString;
+			/** Country/region name for address 1. */
+			Address1_Country: DevKit.Form.Controls.ControlString;
+			/** Fax number for address 1. */
+			Address1_Fax: DevKit.Form.Controls.ControlString;
+			/** First line for entering address 1 information. */
+			Address1_Line1: DevKit.Form.Controls.ControlString;
+			/** Second line for entering address 1 information. */
+			Address1_Line2: DevKit.Form.Controls.ControlString;
+			/** Third line for entering address 1 information. */
+			Address1_Line3: DevKit.Form.Controls.ControlString;
+			/** ZIP Code or postal code for address 1. */
+			Address1_PostalCode: DevKit.Form.Controls.ControlString;
+			/** State or province for address 1. */
+			Address1_StateOrProvince: DevKit.Form.Controls.ControlString;
+			/** First telephone number associated with address 1. */
+			Address1_Telephone1: DevKit.Form.Controls.ControlString;
+			/** Second telephone number associated with address 1. */
+			Address1_Telephone2: DevKit.Form.Controls.ControlString;
+			/** Email address for the site. */
+			EMailAddress: DevKit.Form.Controls.ControlString;
+			/** Name of the site. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Local time zone for the site. */
+			TimeZoneCode: DevKit.Form.Controls.ControlInteger;
+		}
+	}
+	class FormSiteInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form SiteInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form SiteInformation */
+		Body: Hsbc.FormSiteInformation.Body;
+	}
 	class SiteApi {
 		/**
 		* PL.DynamicsCrm.DevKit SiteApi
@@ -164,4 +226,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

@@ -1,5 +1,48 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormQuote {
+		interface tab_newQuote_Sections {
+			quickQuote_summary: DevKit.Form.Controls.ControlSection;
+			quickQuote_salesinformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_newQuote extends DevKit.Form.Controls.IControlTab {
+			Section: tab_newQuote_Sections;
+		}
+		interface Tabs {
+			newQuote: tab_newQuote;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Select the customer account or contact to provide a quick link to additional customer details, such as account information, activities, and opportunities. */
+			CustomerId: DevKit.Form.Controls.ControlLookup;
+			/** Type additional information to describe the quote, such as the products or services offered or details about the customer's product preferences. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Type a descriptive name for the quote. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Choose the opportunity that the quote is related to for reporting and analytics. */
+			OpportunityId: DevKit.Form.Controls.ControlLookup;
+			/** Owner Id */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Choose the price list associated with this record to make sure the products associated with the campaign are offered at the correct prices. */
+			PriceLevelId: DevKit.Form.Controls.ControlLookup;
+			/** Choose the local currency for the record to make sure budgets are reported in the correct currency. */
+			TransactionCurrencyId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormQuote extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form Quote
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form Quote */
+		Body: Hsbc.FormQuote.Body;
+	}
 	class QuoteApi {
 		/**
 		* PL.DynamicsCrm.DevKit QuoteApi
@@ -369,4 +412,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Quote'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

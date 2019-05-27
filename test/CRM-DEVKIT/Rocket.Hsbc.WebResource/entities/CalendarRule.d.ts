@@ -1,5 +1,37 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormCalendarRuleInformation {
+		interface tab_general_Sections {
+			section1: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Defines free/busy times for a service and for resources or resource groups, such as working, non-working, vacation, and blocked. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Name of the calendar rule. */
+			Name: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormCalendarRuleInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form CalendarRuleInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form CalendarRuleInformation */
+		Body: Hsbc.FormCalendarRuleInformation.Body;
+	}
 	class CalendarRuleApi {
 		/**
 		* PL.DynamicsCrm.DevKit CalendarRuleApi
@@ -97,4 +129,4 @@ declare namespace OptionSet {
 	namespace CalendarRule {
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

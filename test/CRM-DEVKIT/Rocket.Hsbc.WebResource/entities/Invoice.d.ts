@@ -1,5 +1,115 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormInvoice {
+		interface Header {
+			/** Owner Id */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Shows whether the invoice is active, paid, or canceled. Paid and canceled invoices are read-only and can't be edited unless they are reactivated. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Select the invoice's status. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Shows the total amount due, calculated as the sum of the products, discount, freight, and taxes for the invoice. */
+			TotalAmount: DevKit.Form.Controls.ControlMoney;
+		}
+		interface tab_Summary_tab_Sections {
+			invoiceinformation: DevKit.Form.Controls.ControlSection;
+			dates: DevKit.Form.Controls.ControlSection;
+			shippinginformation: DevKit.Form.Controls.ControlSection;
+			addresses: DevKit.Form.Controls.ControlSection;
+			products: DevKit.Form.Controls.ControlSection;
+			suggestionsection: DevKit.Form.Controls.ControlSection;
+			DynamicProperties: DevKit.Form.Controls.ControlSection;
+			totals: DevKit.Form.Controls.ControlSection;
+			sales_information: DevKit.Form.Controls.ControlSection;
+			description_section: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_details_tab_Sections {
+			SocialPane: DevKit.Form.Controls.ControlSection;
+			tab_2_section_2: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_Summary_tab extends DevKit.Form.Controls.IControlTab {
+			Section: tab_Summary_tab_Sections;
+		}
+		interface tab_details_tab extends DevKit.Form.Controls.IControlTab {
+			Section: tab_details_tab_Sections;
+		}
+		interface Tabs {
+			Summary_tab: tab_Summary_tab;
+			details_tab: tab_details_tab;
+		}
+		interface Body {
+			Tab: Tabs;
+			invoicedetailsGrid: DevKit.Form.Controls.ControlActionCards;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Shows the complete Bill To address. */
+			BillTo_Composite: DevKit.Form.Controls.ControlString;
+			/** Select the customer account or contact to provide a quick link to additional customer details, such as account information, activities, and opportunities. */
+			CustomerId: DevKit.Form.Controls.ControlLookup;
+			/** Enter the date when the products included in the invoice were delivered. */
+			DateDelivered: DevKit.Form.Controls.ControlDate;
+			/** Type additional information to describe the invoice, such as shipping details or product substitutions. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Type the discount amount for the invoice if the customer is eligible for special savings. */
+			DiscountAmount: DevKit.Form.Controls.ControlMoney;
+			/** Type the discount rate that should be applied to the Detail Amount field, for use in calculating the Pre-Freight Amount and Total Amount values for the invoice. */
+			DiscountPercentage: DevKit.Form.Controls.ControlDecimal;
+			/** Enter the date by which the invoice should be paid by the customer. */
+			DueDate: DevKit.Form.Controls.ControlDate;
+			/** Type the cost of freight or shipping for the products included in the invoice for use in calculating the total amount due. */
+			FreightAmount: DevKit.Form.Controls.ControlMoney;
+			/** Shows the identifying number or code of the invoice. */
+			InvoiceNumber: DevKit.Form.Controls.ControlString;
+			/** Select whether prices specified on the invoice are locked from any further updates. */
+			IsPriceLocked: DevKit.Form.Controls.ControlBoolean;
+			/** Type a descriptive name for the invoice. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Choose the opportunity that the invoice is related to for reporting and analytics. */
+			OpportunityId: DevKit.Form.Controls.ControlLookup;
+			/** Select the payment terms to indicate when the customer needs to pay the total amount. */
+			PaymentTermsCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Choose the price list associated with this record to make sure the products associated with the campaign are offered at the correct prices. */
+			PriceLevelId: DevKit.Form.Controls.ControlLookup;
+			/** Choose the order related to the invoice to make sure the order is fulfilled and invoiced correctly. */
+			SalesOrderId: DevKit.Form.Controls.ControlLookup;
+			/** Select a shipping method for deliveries sent to this address. */
+			ShippingMethodCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Shows the complete Ship To address. */
+			ShipTo_Composite: DevKit.Form.Controls.ControlString;
+			/** Shows the total amount due, calculated as the sum of the products, discount, freight, and taxes for the invoice. */
+			TotalAmount: DevKit.Form.Controls.ControlMoney;
+			/** Shows the total product amount due, minus any discounts. This value is added to freight and tax amounts in the calculation for the total amount due for the invoice. */
+			TotalAmountLessFreight: DevKit.Form.Controls.ControlMoney;
+			/** Shows the sum of all existing and write-in products included on the invoice, based on the specified price list and quantities. */
+			TotalLineItemAmount: DevKit.Form.Controls.ControlMoney;
+			/** Shows the total of the Tax amounts specified on all products included in the invoice, included in the Total Amount due calculation for the invoice. */
+			TotalTax: DevKit.Form.Controls.ControlMoney;
+			/** Choose the local currency for the record to make sure budgets are reported in the correct currency. */
+			TransactionCurrencyId: DevKit.Form.Controls.ControlLookup;
+			/** Select whether the products included in the invoice should be shipped to the specified address or held until the customer calls with further pick up or delivery instructions. */
+			WillCall: DevKit.Form.Controls.ControlBoolean;
+		}
+		interface Navigation {
+			navProducts: DevKit.Form.Controls.ControlNavigationItem
+		}
+	}
+	class FormInvoice extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form Invoice
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form Invoice */
+		Body: Hsbc.FormInvoice.Body;
+		/** The Header section of form Invoice */
+		Header: Hsbc.FormInvoice.Header;
+		/** The Navigation of form Invoice */
+		Navigation: Hsbc.FormInvoice.Navigation;
+	}
 	class InvoiceApi {
 		/**
 		* PL.DynamicsCrm.DevKit InvoiceApi
@@ -366,4 +476,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Invoice'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

@@ -1,5 +1,67 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormKbArticleInformation {
+		interface tab_general_Sections {
+			articleinformation: DevKit.Form.Controls.ControlSection;
+			ArticleKeywords: DevKit.Form.Controls.ControlSection;
+			kb_articledescription: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_notes_Sections {
+			notes: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab__B641B7D4_753C_C99A_5978_977E6912E856_Sections {
+			_493D7206_6935_E73D_75CC_44DC53D021E8: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface tab_notes extends DevKit.Form.Controls.IControlTab {
+			Section: tab_notes_Sections;
+		}
+		interface tab__B641B7D4_753C_C99A_5978_977E6912E856 extends DevKit.Form.Controls.IControlTab {
+			Section: tab__B641B7D4_753C_C99A_5978_977E6912E856_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+			notes: tab_notes;
+			_B641B7D4_753C_C99A_5978_977E6912E856: tab__B641B7D4_753C_C99A_5978_977E6912E856;
+		}
+		interface Body {
+			Tab: Tabs;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			ArticleComments: DevKit.Form.Controls.ControlGrid;
+			/** Shows the article content and formatting, stored as XML. */
+			ArticleXml: DevKit.Form.Controls.ControlString;
+			/** Keywords to be used for searches in knowledge base articles. */
+			KeyWords: DevKit.Form.Controls.ControlString;
+			/** Select which language the article must be available in. This list is based on the list of language packs that are installed in your Microsoft Dynamics 365 environment. */
+			LanguageCode: DevKit.Form.Controls.ControlInteger;
+			/** Choose the subject of the article to assist with article searches. You can configure subjects under Business Management in the Settings area. */
+			SubjectId: DevKit.Form.Controls.ControlLookup;
+			/** Type a subject or descriptive name for the article to assist with article searches. */
+			Title: DevKit.Form.Controls.ControlString;
+		}
+		interface Footer {
+			/** Shows whether the knowledge base article is in draft, unapproved, or published status. Published articles are read-only and can't be edited unless they are unpublished. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+	}
+	class FormKbArticleInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form KbArticleInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form KbArticleInformation */
+		Body: Hsbc.FormKbArticleInformation.Body;
+		/** The Footer section of form KbArticleInformation */
+		Footer: Hsbc.FormKbArticleInformation.Footer;
+	}
 	class KbArticleApi {
 		/**
 		* PL.DynamicsCrm.DevKit KbArticleApi
@@ -106,4 +168,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

@@ -1,5 +1,57 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormKnowledgeArticleIncident {
+		interface Tabs {
+		}
+		interface Body {
+			/** Choose the Incident id for the knowledge article. */
+			IncidentId: DevKit.Form.Controls.ControlLookup;
+			/** This should be set to Yes when the user emails the article link to a customer.  */
+			IsSentToCustomer: DevKit.Form.Controls.ControlBoolean;
+			/** Knowledge Usage. */
+			KnowledgeUsage: DevKit.Form.Controls.ControlOptionSet;
+		}
+	}
+	class FormKnowledgeArticleIncident extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form KnowledgeArticleIncident
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form KnowledgeArticleIncident */
+		Body: Hsbc.FormKnowledgeArticleIncident.Body;
+	}
+	namespace FormKnowledgeArticleIncidentforInteractiveexperience {
+		interface Tabs {
+		}
+		interface Body {
+			/** Choose the Incident id for the knowledge article. */
+			IncidentId: DevKit.Form.Controls.ControlLookup;
+			/** This should be set to Yes when the user emails the article link to a customer.  */
+			IsSentToCustomer: DevKit.Form.Controls.ControlBoolean;
+			/** Knowledge Usage. */
+			KnowledgeUsage: DevKit.Form.Controls.ControlOptionSet;
+		}
+	}
+	class FormKnowledgeArticleIncidentforInteractiveexperience extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form KnowledgeArticleIncidentforInteractiveexperience
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form KnowledgeArticleIncidentforInteractiveexperience */
+		Body: Hsbc.FormKnowledgeArticleIncidentforInteractiveexperience.Body;
+	}
 	class KnowledgeArticleIncidentApi {
 		/**
 		* PL.DynamicsCrm.DevKit KnowledgeArticleIncidentApi
@@ -102,4 +154,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Knowledge Article Incident','Knowledge Article Incident for Interactive experience'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

@@ -1,5 +1,38 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace Formmsdyn_upgradestepInformation {
+		interface Tabs {
+		}
+		interface Body {
+			/** Date and time when the record was created. */
+			CreatedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Diagnostic output from an upgrade step */
+			msdyn_Details: DevKit.Form.Controls.ControlString;
+			/** Error text, if an error occurred during this step */
+			msdyn_Errors: DevKit.Form.Controls.ControlString;
+			/** Date/time when an upgrade step finished */
+			msdyn_FinishedDate: DevKit.Form.Controls.ControlDateTime;
+			/** Name of the method or stored procedure corresponding to an upgrade step */
+			msdyn_Name: DevKit.Form.Controls.ControlString;
+			/** Status/outcome of an upgrade step */
+			msdyn_Status: DevKit.Form.Controls.ControlOptionSet;
+			msdyn_StepID: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class Formmsdyn_upgradestepInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form msdyn_upgradestepInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form msdyn_upgradestepInformation */
+		Body: Hsbc.Formmsdyn_upgradestepInformation.Body;
+	}
 	class msdyn_upgradestepApi {
 		/**
 		* PL.DynamicsCrm.DevKit msdyn_upgradestepApi
@@ -97,4 +130,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

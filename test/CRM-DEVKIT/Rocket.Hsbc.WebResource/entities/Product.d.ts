@@ -1,5 +1,202 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormProduct {
+		interface Header {
+			/** Status of the product. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_product_details_Sections {
+			productinformation: DevKit.Form.Controls.ControlSection;
+			costs: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_productassocaition_items_Sections {
+			productassocaition_items_section: DevKit.Form.Controls.ControlSection;
+			DynamicProperties: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_product_dynamic_properties_Sections {
+			product_dynamic_properties_section: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_price_list_items_Sections {
+			price_list_items_section: DevKit.Form.Controls.ControlSection;
+			productsubstitute_items_section: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_notes_Sections {
+			notes: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_product_details extends DevKit.Form.Controls.IControlTab {
+			Section: tab_product_details_Sections;
+		}
+		interface tab_productassocaition_items extends DevKit.Form.Controls.IControlTab {
+			Section: tab_productassocaition_items_Sections;
+		}
+		interface tab_product_dynamic_properties extends DevKit.Form.Controls.IControlTab {
+			Section: tab_product_dynamic_properties_Sections;
+		}
+		interface tab_price_list_items extends DevKit.Form.Controls.IControlTab {
+			Section: tab_price_list_items_Sections;
+		}
+		interface tab_notes extends DevKit.Form.Controls.IControlTab {
+			Section: tab_notes_Sections;
+		}
+		interface Tabs {
+			product_details: tab_product_details;
+			productassocaition_items: tab_productassocaition_items;
+			product_dynamic_properties: tab_product_dynamic_properties;
+			price_list_items: tab_price_list_items;
+			notes: tab_notes;
+		}
+		interface Body {
+			Tab: Tabs;
+			productassocaition_items: DevKit.Form.Controls.ControlGrid;
+			product_dynamic_properties: DevKit.Form.Controls.ControlGrid;
+			Price_List_Items: DevKit.Form.Controls.ControlGrid;
+			productsubstitute_items: DevKit.Form.Controls.ControlGrid;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Default unit for the product. */
+			DefaultUoMId: DevKit.Form.Controls.ControlLookup;
+			/** Default unit group for the product. */
+			DefaultUoMScheduleId: DevKit.Form.Controls.ControlLookup;
+			/** Description of the product. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Name of the product. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Specifies the parent product family hierarchy. */
+			ParentProductId: DevKit.Form.Controls.ControlLookup;
+			/** Specifies the parent product family hierarchy. */
+			ParentProductId_1: DevKit.Form.Controls.ControlLookup;
+			/** Select the default price list for the product. */
+			PriceLevelId: DevKit.Form.Controls.ControlLookup;
+			/** User-defined product ID. */
+			ProductNumber: DevKit.Form.Controls.ControlString;
+			/** Number of decimal places that can be used in monetary amounts for the product. */
+			QuantityDecimal: DevKit.Form.Controls.ControlInteger;
+			/** Select a category for the product. */
+			SubjectId: DevKit.Form.Controls.ControlLookup;
+			/** Date from which this product is valid. */
+			ValidFromDate: DevKit.Form.Controls.ControlDate;
+			/** Date to which this product is valid. */
+			ValidToDate: DevKit.Form.Controls.ControlDate;
+		}
+		interface Navigation {
+			navPrices: DevKit.Form.Controls.ControlNavigationItem,
+			navDocument: DevKit.Form.Controls.ControlNavigationItem,
+			navAsyncOperations: DevKit.Form.Controls.ControlNavigationItem,
+			navProcessSessions: DevKit.Form.Controls.ControlNavigationItem
+		}
+	}
+	class FormProduct extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form Product
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form Product */
+		Body: Hsbc.FormProduct.Body;
+		/** The Header section of form Product */
+		Header: Hsbc.FormProduct.Header;
+		/** The Navigation of form Product */
+		Navigation: Hsbc.FormProduct.Navigation;
+	}
+	namespace FormProductfamilyQuickCreate {
+		interface tab_tab_1_Sections {
+			tab_1_column_1_section_1: DevKit.Form.Controls.ControlSection;
+			tab_1_column_2_section_1: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_tab_1 extends DevKit.Form.Controls.IControlTab {
+			Section: tab_tab_1_Sections;
+		}
+		interface Tabs {
+			tab_1: tab_tab_1;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Default unit for the product. */
+			DefaultUoMId: DevKit.Form.Controls.ControlLookup;
+			/** Default unit group for the product. */
+			DefaultUoMScheduleId: DevKit.Form.Controls.ControlLookup;
+			/** Name of the product. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Specifies the parent product family hierarchy. */
+			ParentProductId: DevKit.Form.Controls.ControlLookup;
+			/** User-defined product ID. */
+			ProductNumber: DevKit.Form.Controls.ControlString;
+			/** Number of decimal places that can be used in monetary amounts for the product. */
+			QuantityDecimal: DevKit.Form.Controls.ControlInteger;
+			/** Date from which this product is valid. */
+			ValidFromDate: DevKit.Form.Controls.ControlDate;
+			/** Date to which this product is valid. */
+			ValidToDate: DevKit.Form.Controls.ControlDate;
+		}
+	}
+	class FormProductfamilyQuickCreate extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form ProductfamilyQuickCreate
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form ProductfamilyQuickCreate */
+		Body: Hsbc.FormProductfamilyQuickCreate.Body;
+	}
+	namespace FormProductQuickCreate {
+		interface tab_tab_1_Sections {
+			tab_1_column_1_section_1: DevKit.Form.Controls.ControlSection;
+			tab_1_column_2_section_1: DevKit.Form.Controls.ControlSection;
+			tab_1_column_3_section_1: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_tab_1 extends DevKit.Form.Controls.IControlTab {
+			Section: tab_tab_1_Sections;
+		}
+		interface Tabs {
+			tab_1: tab_tab_1;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Default unit for the product. */
+			DefaultUoMId: DevKit.Form.Controls.ControlLookup;
+			/** Default unit group for the product. */
+			DefaultUoMScheduleId: DevKit.Form.Controls.ControlLookup;
+			/** Description of the product. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Name of the product. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Specifies the parent product family hierarchy. */
+			ParentProductId: DevKit.Form.Controls.ControlLookup;
+			/** User-defined product ID. */
+			ProductNumber: DevKit.Form.Controls.ControlString;
+			/** Number of decimal places that can be used in monetary amounts for the product. */
+			QuantityDecimal: DevKit.Form.Controls.ControlInteger;
+			/** Select a category for the product. */
+			SubjectId: DevKit.Form.Controls.ControlLookup;
+			/** Date from which this product is valid. */
+			ValidFromDate: DevKit.Form.Controls.ControlDate;
+			/** Date to which this product is valid. */
+			ValidToDate: DevKit.Form.Controls.ControlDate;
+		}
+	}
+	class FormProductQuickCreate extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form ProductQuickCreate
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form ProductQuickCreate */
+		Body: Hsbc.FormProductQuickCreate.Body;
+	}
 	class ProductApi {
 		/**
 		* PL.DynamicsCrm.DevKit ProductApi
@@ -184,4 +381,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Product','Product family Quick Create','Product Quick Create'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

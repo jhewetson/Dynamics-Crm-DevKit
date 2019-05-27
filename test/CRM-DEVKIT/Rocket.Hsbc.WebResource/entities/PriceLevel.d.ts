@@ -1,5 +1,66 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormPriceLevel {
+		interface Header {
+			/** Reason for the status of the price list. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_General_Sections {
+			pricelevelinformation: DevKit.Form.Controls.ControlSection;
+			Description: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_Price_List_Items_Sections {
+			pricelistbyproduct: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_TERRITORYRELATIONSHIP_TAB_Sections {
+			Territories: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_General extends DevKit.Form.Controls.IControlTab {
+			Section: tab_General_Sections;
+		}
+		interface tab_Price_List_Items extends DevKit.Form.Controls.IControlTab {
+			Section: tab_Price_List_Items_Sections;
+		}
+		interface tab_TERRITORYRELATIONSHIP_TAB extends DevKit.Form.Controls.IControlTab {
+			Section: tab_TERRITORYRELATIONSHIP_TAB_Sections;
+		}
+		interface Tabs {
+			General: tab_General;
+			Price_List_Items: tab_Price_List_Items;
+			TERRITORYRELATIONSHIP_TAB: tab_TERRITORYRELATIONSHIP_TAB;
+		}
+		interface Body {
+			Tab: Tabs;
+			pricelistitemsgrid: DevKit.Form.Controls.ControlGrid;
+			RelatedTerritoriesGrid: DevKit.Form.Controls.ControlGrid;
+			/** Date on which the price list becomes effective. */
+			BeginDate: DevKit.Form.Controls.ControlDate;
+			/** Description of the price list. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Date that is the last day the price list is valid. */
+			EndDate: DevKit.Form.Controls.ControlDate;
+			/** Name of the price list. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the currency associated with the price level. */
+			TransactionCurrencyId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormPriceLevel extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form PriceLevel
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form PriceLevel */
+		Body: Hsbc.FormPriceLevel.Body;
+		/** The Header section of form PriceLevel */
+		Header: Hsbc.FormPriceLevel.Header;
+	}
 	class PriceLevelApi {
 		/**
 		* PL.DynamicsCrm.DevKit PriceLevelApi
@@ -104,4 +165,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['PriceLevel'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

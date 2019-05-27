@@ -1,5 +1,40 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormBookableResourceBookingInformation {
+		interface Tabs {
+		}
+		interface Body {
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Select the status of the booking. */
+			BookingStatus: DevKit.Form.Controls.ControlLookup;
+			/** Select whether the booking is solid or liquid. Solid bookings are firm and cannot be changed whereas liquid bookings can be changed. */
+			BookingType: DevKit.Form.Controls.ControlOptionSet;
+			/** Enter the duration of the booking. */
+			Duration: DevKit.Form.Controls.ControlInteger;
+			/** Enter the end date and time of the booking. */
+			EndTime: DevKit.Form.Controls.ControlDateTime;
+			/** Type a name for the booking. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Shows the resource that is booked. */
+			Resource: DevKit.Form.Controls.ControlLookup;
+			/** Enter the start date and time of the booking. */
+			StartTime: DevKit.Form.Controls.ControlDateTime;
+		}
+	}
+	class FormBookableResourceBookingInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form BookableResourceBookingInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form BookableResourceBookingInformation */
+		Body: Hsbc.FormBookableResourceBookingInformation.Body;
+	}
 	class BookableResourceBookingApi {
 		/**
 		* PL.DynamicsCrm.DevKit BookableResourceBookingApi
@@ -114,4 +149,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

@@ -1,5 +1,41 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormMobileOfflineProfileItemAssociation {
+		interface tab_GENERALINFORMATION_TAB_Sections {
+			General: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_GENERALINFORMATION_TAB extends DevKit.Form.Controls.IControlTab {
+			Section: tab_GENERALINFORMATION_TAB_Sections;
+		}
+		interface Tabs {
+			GENERALINFORMATION_TAB: tab_GENERALINFORMATION_TAB;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options. */
+			CreatedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Enter the name of the mobile offline profile item association. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Display name of entity relationship */
+			RelationshipName: DevKit.Form.Controls.ControlString;
+			/** List of relationships of entity selected in parent profile item */
+			SelectedRelationShipsSchema: DevKit.Form.Controls.ControlOptionSet;
+		}
+	}
+	class FormMobileOfflineProfileItemAssociation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form MobileOfflineProfileItemAssociation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form MobileOfflineProfileItemAssociation */
+		Body: Hsbc.FormMobileOfflineProfileItemAssociation.Body;
+	}
 	class MobileOfflineProfileItemAssociationApi {
 		/**
 		* PL.DynamicsCrm.DevKit MobileOfflineProfileItemAssociationApi
@@ -102,4 +138,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Mobile Offline Profile Item Association'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

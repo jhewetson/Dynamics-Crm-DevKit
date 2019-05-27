@@ -1,5 +1,31 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormSLAItemInformation {
+		interface Tabs {
+		}
+		interface Body {
+			/** Select how soon the success criteria must be met until the SLA item is considered failed and failure actions are initiated. The actual duration is based on the business hours as specified in the associated SLA record. */
+			FailureAfter: DevKit.Form.Controls.ControlInteger;
+			/** Type a descriptive name of the service level agreement (SLA) item. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Select how soon the success criteria must be met before warning actions are initiated. The actual duration is based on the business hours as specified in the associated SLA record. */
+			WarnAfter: DevKit.Form.Controls.ControlInteger;
+		}
+	}
+	class FormSLAItemInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form SLAItemInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form SLAItemInformation */
+		Body: Hsbc.FormSLAItemInformation.Body;
+	}
 	class SLAItemApi {
 		/**
 		* PL.DynamicsCrm.DevKit SLAItemApi
@@ -102,4 +128,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

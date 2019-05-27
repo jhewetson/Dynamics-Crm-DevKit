@@ -1,5 +1,32 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormBookingStatusInformation {
+		interface Tabs {
+		}
+		interface Body {
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Type a detailed description for the booking status. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Type the name of the booking status. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Select whether the booking status should be proposed, committed or canceled. */
+			Status: DevKit.Form.Controls.ControlOptionSet;
+		}
+	}
+	class FormBookingStatusInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form BookingStatusInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form BookingStatusInformation */
+		Body: Hsbc.FormBookingStatusInformation.Body;
+	}
 	class BookingStatusApi {
 		/**
 		* PL.DynamicsCrm.DevKit BookingStatusApi
@@ -100,4 +127,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

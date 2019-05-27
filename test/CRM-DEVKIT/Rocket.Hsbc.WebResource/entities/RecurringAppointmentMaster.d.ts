@@ -1,5 +1,57 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormRecurringAppointment {
+		interface Header {
+			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Select the priority so that preferred customers or critical issues are handled quickly. */
+			PriorityCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Shows whether the recurring appointment is open, scheduled, completed, or canceled. Completed and canceled appointments are read-only and can't be edited. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_SUMMARY_TAB_Sections {
+			generalinformation: DevKit.Form.Controls.ControlSection;
+			appointmentdescription: DevKit.Form.Controls.ControlSection;
+			tab_2_section_2: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_SUMMARY_TAB extends DevKit.Form.Controls.IControlTab {
+			Section: tab_SUMMARY_TAB_Sections;
+		}
+		interface Tabs {
+			SUMMARY_TAB: tab_SUMMARY_TAB;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Type additional information to describe the recurring appointment, such as key talking points or objectives. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Type the location where the recurring appointment will take place, such as a conference room or customer office. */
+			Location: DevKit.Form.Controls.ControlString;
+			/** Enter the account, contact, lead, user, or other equipment resources that are not needed at the recurring appointment, but can optionally attend. */
+			OptionalAttendees: DevKit.Form.Controls.ControlLookup;
+			/** Choose the record that the recurring appointment series relates to. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Enter the account, contact, lead, user, or other equipment resources that are required to attend the recurring appointment. */
+			RequiredAttendees: DevKit.Form.Controls.ControlLookup;
+			/** Type a short description about the objective or primary topic of the recurring appointment. */
+			Subject: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormRecurringAppointment extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form RecurringAppointment
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form RecurringAppointment */
+		Body: Hsbc.FormRecurringAppointment.Body;
+		/** The Header section of form RecurringAppointment */
+		Header: Hsbc.FormRecurringAppointment.Header;
+	}
 	class RecurringAppointmentMasterApi {
 		/**
 		* PL.DynamicsCrm.DevKit RecurringAppointmentMasterApi
@@ -329,4 +381,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Recurring Appointment'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

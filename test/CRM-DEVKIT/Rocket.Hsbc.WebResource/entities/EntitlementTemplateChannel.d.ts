@@ -1,5 +1,37 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormEntitlementTemplateChannel {
+		interface tab_general_Sections {
+			entitlementtemplatechannelinformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Select a channel for which you are defining the entitlement terms. */
+			Channel: DevKit.Form.Controls.ControlOptionSet;
+			/** Type the total number of entitlement terms. */
+			TotalTerms: DevKit.Form.Controls.ControlDecimal;
+		}
+	}
+	class FormEntitlementTemplateChannel extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form EntitlementTemplateChannel
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form EntitlementTemplateChannel */
+		Body: Hsbc.FormEntitlementTemplateChannel.Body;
+	}
 	class EntitlementTemplateChannelApi {
 		/**
 		* PL.DynamicsCrm.DevKit EntitlementTemplateChannelApi
@@ -82,4 +114,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Entitlement Template Channel'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

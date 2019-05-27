@@ -1,5 +1,57 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormKnowledgeArticleViews {
+		interface Tabs {
+		}
+		interface Body {
+			/** Number of Knowledge Article Views visited per day */
+			KnowledgeArticleView: DevKit.Form.Controls.ControlInteger;
+			/** Shows where the knowledge was used */
+			Location: DevKit.Form.Controls.ControlOptionSet;
+			/** Information about the Day */
+			ViewDate: DevKit.Form.Controls.ControlDate;
+		}
+	}
+	class FormKnowledgeArticleViews extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form KnowledgeArticleViews
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form KnowledgeArticleViews */
+		Body: Hsbc.FormKnowledgeArticleViews.Body;
+	}
+	namespace FormKnowledgeArticleViewsMainInteractionCentric {
+		interface Tabs {
+		}
+		interface Body {
+			/** Number of Knowledge Article Views visited per day */
+			KnowledgeArticleView: DevKit.Form.Controls.ControlInteger;
+			/** Shows where the knowledge was used */
+			Location: DevKit.Form.Controls.ControlOptionSet;
+			/** Information about the Day */
+			ViewDate: DevKit.Form.Controls.ControlDate;
+		}
+	}
+	class FormKnowledgeArticleViewsMainInteractionCentric extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form KnowledgeArticleViewsMainInteractionCentric
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form KnowledgeArticleViewsMainInteractionCentric */
+		Body: Hsbc.FormKnowledgeArticleViewsMainInteractionCentric.Body;
+	}
 	class KnowledgeArticleViewsApi {
 		/**
 		* PL.DynamicsCrm.DevKit KnowledgeArticleViewsApi
@@ -97,4 +149,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['KnowledgeArticleViews','KnowledgeArticleViews MainInteractionCentric'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

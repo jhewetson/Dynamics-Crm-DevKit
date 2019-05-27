@@ -1,5 +1,49 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace Formmsdyn_upgraderunInformation {
+		interface tab__4A6546DD_DFC2_4A18_88D6_04661583D80E_Sections {
+		}
+		interface tab__4A6546DD_DFC2_4A18_88D6_04661583D80E extends DevKit.Form.Controls.IControlTab {
+			Section: tab__4A6546DD_DFC2_4A18_88D6_04661583D80E_Sections;
+		}
+		interface Tabs {
+			_4A6546DD_DFC2_4A18_88D6_04661583D80E: tab__4A6546DD_DFC2_4A18_88D6_04661583D80E;
+		}
+		interface Body {
+			Tab: Tabs;
+			UpgradeVersions: DevKit.Form.Controls.ControlGrid;
+			/** Date and time when the record was created. */
+			CreatedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Errors during upgrade or installation, if any */
+			msdyn_Error: DevKit.Form.Controls.ControlString;
+			/** Date/time when an upgrade run finished */
+			msdyn_FinishedDate: DevKit.Form.Controls.ControlDateTime;
+			/** Name of the Package Deployer package */
+			msdyn_Package: DevKit.Form.Controls.ControlString;
+			/** Name of the Solution that is upgraded */
+			msdyn_Solution: DevKit.Form.Controls.ControlString;
+			/** Version that was installed before upgrade run */
+			msdyn_StartingVersion: DevKit.Form.Controls.ControlString;
+			/** Status/outcome of an upgrade run */
+			msdyn_Status: DevKit.Form.Controls.ControlOptionSet;
+			/** Version that will be achieved by the upgrade run */
+			msdyn_TargetVersion: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class Formmsdyn_upgraderunInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form msdyn_upgraderunInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form msdyn_upgraderunInformation */
+		Body: Hsbc.Formmsdyn_upgraderunInformation.Body;
+	}
 	class msdyn_upgraderunApi {
 		/**
 		* PL.DynamicsCrm.DevKit msdyn_upgraderunApi
@@ -98,4 +142,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

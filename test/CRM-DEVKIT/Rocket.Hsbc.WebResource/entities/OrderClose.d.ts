@@ -1,5 +1,39 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormOrderCloseInformation {
+		interface tab_resolution_Sections {
+			information: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_resolution extends DevKit.Form.Controls.IControlTab {
+			Section: tab_resolution_Sections;
+		}
+		interface Tabs {
+			resolution: tab_resolution;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Actual end time of the order close activity. */
+			ActualEnd: DevKit.Form.Controls.ControlDate;
+			/** Activity generated automatically when an order is closed. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Subject associated with the order close activity. */
+			Subject: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormOrderCloseInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form OrderCloseInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form OrderCloseInformation */
+		Body: Hsbc.FormOrderCloseInformation.Body;
+	}
 	class OrderCloseApi {
 		/**
 		* PL.DynamicsCrm.DevKit OrderCloseApi
@@ -244,4 +278,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

@@ -1,5 +1,39 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormKbArticleTemplateInformation {
+		interface tab_general_Sections {
+			title: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Description of the knowledge base article template. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Language of the Article Template */
+			LanguageCode: DevKit.Form.Controls.ControlInteger;
+			/** Title of the knowledge base article template. */
+			Title: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormKbArticleTemplateInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form KbArticleTemplateInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form KbArticleTemplateInformation */
+		Body: Hsbc.FormKbArticleTemplateInformation.Body;
+	}
 	class KbArticleTemplateApi {
 		/**
 		* PL.DynamicsCrm.DevKit KbArticleTemplateApi
@@ -90,4 +124,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

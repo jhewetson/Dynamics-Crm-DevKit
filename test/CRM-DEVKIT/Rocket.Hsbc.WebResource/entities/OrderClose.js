@@ -1,2 +1,11 @@
-﻿//@ts-check
-///<reference path="OrderClose.d.ts" />
+﻿///<reference path='OrderClose.d.ts' />
+var formInformation = (function () {
+	function onLoad(executionContext) {
+	}
+	function onSave(executionContext) {
+	}
+	return {
+		OnLoad: onLoad,
+		OnSave: onSave
+	};
+})();

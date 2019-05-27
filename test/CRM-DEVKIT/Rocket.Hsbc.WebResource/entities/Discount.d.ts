@@ -1,5 +1,43 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormDiscountInformation {
+		interface tab_general_Sections {
+			discountinformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Amount of the discount, specified either as a percentage or as a monetary amount. */
+			Amount: DevKit.Form.Controls.ControlMoney;
+			/** Unique identifier of the discount list associated with the discount. */
+			DiscountTypeId: DevKit.Form.Controls.ControlLookup;
+			/** Upper boundary for the quantity range to which a particular discount can be applied. */
+			HighQuantity: DevKit.Form.Controls.ControlDecimal;
+			/** Lower boundary for the quantity range to which a particular discount is applied. */
+			LowQuantity: DevKit.Form.Controls.ControlDecimal;
+			/** Percentage discount value. */
+			Percentage: DevKit.Form.Controls.ControlDecimal;
+		}
+	}
+	class FormDiscountInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form DiscountInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form DiscountInformation */
+		Body: Hsbc.FormDiscountInformation.Body;
+	}
 	class DiscountApi {
 		/**
 		* PL.DynamicsCrm.DevKit DiscountApi
@@ -80,4 +118,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

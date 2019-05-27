@@ -1,5 +1,36 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace Formmsdyn_PostAlbumInformation {
+		interface Tabs {
+		}
+		interface Body {
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** The name of the custom entity. */
+			msdyn_name: DevKit.Form.Controls.ControlString;
+			/** Owner Id */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+		}
+		interface Footer {
+			/** Status of the Profile Album */
+			statecode: DevKit.Form.Controls.ControlOptionSet;
+		}
+	}
+	class Formmsdyn_PostAlbumInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form msdyn_PostAlbumInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form msdyn_PostAlbumInformation */
+		Body: Hsbc.Formmsdyn_PostAlbumInformation.Body;
+		/** The Footer section of form msdyn_PostAlbumInformation */
+		Footer: Hsbc.Formmsdyn_PostAlbumInformation.Footer;
+	}
 	class msdyn_PostAlbumApi {
 		/**
 		* PL.DynamicsCrm.DevKit msdyn_PostAlbumApi
@@ -84,4 +115,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

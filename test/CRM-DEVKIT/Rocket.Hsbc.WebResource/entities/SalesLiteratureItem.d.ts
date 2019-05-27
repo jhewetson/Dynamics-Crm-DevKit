@@ -1,5 +1,56 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormSalesLiteratureItemInformation {
+		interface tab_general_Sections {
+			documentinformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			documentbody: DevKit.Form.Controls.ControlActionCards;
+			/** Abstract of the document. */
+			Abstract: DevKit.Form.Controls.ControlString;
+			/** Author name for the document. */
+			AuthorName: DevKit.Form.Controls.ControlString;
+			/** Shows the encoded contents of the sales literature document attachment. */
+			DocumentBody: DevKit.Form.Controls.ControlString;
+			/** File name of the document. */
+			FileName: DevKit.Form.Controls.ControlString;
+			/** File size of the document. */
+			FileSize: DevKit.Form.Controls.ControlInteger;
+			/** Keywords to use for searches in documents. */
+			KeyWords: DevKit.Form.Controls.ControlString;
+			/** Shows the file type of the sales literature document attachment, such as text or document. */
+			MimeType: DevKit.Form.Controls.ControlString;
+			/** Defines the mode of the sales literature document attachment. */
+			Mode: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the sales literature that is associated with the individual item. */
+			SalesLiteratureId: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier for the document. */
+			SalesLiteratureItemId: DevKit.Form.Controls.ControlString;
+			/** Type the title or name that describes the document. */
+			Title: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormSalesLiteratureItemInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form SalesLiteratureItemInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form SalesLiteratureItemInformation */
+		Body: Hsbc.FormSalesLiteratureItemInformation.Body;
+	}
 	class SalesLiteratureItemApi {
 		/**
 		* PL.DynamicsCrm.DevKit SalesLiteratureItemApi
@@ -89,4 +140,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

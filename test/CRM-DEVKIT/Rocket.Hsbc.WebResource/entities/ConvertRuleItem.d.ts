@@ -1,5 +1,40 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormRecordCreationandUpdateRuleItem {
+		interface tab_general_Sections {
+			Name: DevKit.Form.Controls.ControlSection;
+			ConditionControl: DevKit.Form.Controls.ControlSection;
+			CaseProperties: DevKit.Form.Controls.ControlSection;
+			RegardingSettingsection: DevKit.Form.Controls.ControlSection;
+			primaryactionsection: DevKit.Form.Controls.ControlSection;
+			secondaryactionsection: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Type a name or title of the rule item that is used for automatic record creation and update. */
+			Name: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormRecordCreationandUpdateRuleItem extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form RecordCreationandUpdateRuleItem
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form RecordCreationandUpdateRuleItem */
+		Body: Hsbc.FormRecordCreationandUpdateRuleItem.Body;
+	}
 	class ConvertRuleItemApi {
 		/**
 		* PL.DynamicsCrm.DevKit ConvertRuleItemApi
@@ -100,4 +135,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Record Creation and Update Rule Item'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

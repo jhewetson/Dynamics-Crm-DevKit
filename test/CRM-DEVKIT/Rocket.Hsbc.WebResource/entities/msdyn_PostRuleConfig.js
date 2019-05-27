@@ -1,2 +1,11 @@
-﻿//@ts-check
-///<reference path="msdyn_PostRuleConfig.d.ts" />
+﻿///<reference path='msdyn_PostRuleConfig.d.ts' />
+var formInformation = (function () {
+	function onLoad(executionContext) {
+	}
+	function onSave(executionContext) {
+	}
+	return {
+		OnLoad: onLoad,
+		OnSave: onSave
+	};
+})();

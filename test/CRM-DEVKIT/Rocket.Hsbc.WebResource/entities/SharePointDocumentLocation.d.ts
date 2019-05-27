@@ -1,5 +1,61 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormSharePointDocumentLocationInformation {
+		interface tab_general_Sections {
+			_272EB814_0769_5EBE_3ED1_E95A0B16853E: DevKit.Form.Controls.ControlSection;
+			urloption: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Absolute URL of the SharePoint document location. */
+			AbsoluteURL: DevKit.Form.Controls.ControlString;
+			/** Description of the SharePoint document location record. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Location type of the SharePoint document location. */
+			LocationType: DevKit.Form.Controls.ControlOptionSet;
+			/** Name of the SharePoint document location record. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the user or team who owns the SharePoint document location record. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier of the parent site or location. */
+			ParentSiteOrLocation: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier of the object with which the SharePoint document location record is associated. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Relative URL of the SharePoint document location. */
+			RelativeUrl: DevKit.Form.Controls.ControlString;
+		}
+		interface Footer {
+			/** Status of the SharePoint document location record. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface Navigation {
+			navSubDocumentLocations: DevKit.Form.Controls.ControlNavigationItem
+		}
+	}
+	class FormSharePointDocumentLocationInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form SharePointDocumentLocationInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form SharePointDocumentLocationInformation */
+		Body: Hsbc.FormSharePointDocumentLocationInformation.Body;
+		/** The Footer section of form SharePointDocumentLocationInformation */
+		Footer: Hsbc.FormSharePointDocumentLocationInformation.Footer;
+		/** The Navigation of form SharePointDocumentLocationInformation */
+		Navigation: Hsbc.FormSharePointDocumentLocationInformation.Navigation;
+	}
 	class SharePointDocumentLocationApi {
 		/**
 		* PL.DynamicsCrm.DevKit SharePointDocumentLocationApi
@@ -140,4 +196,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

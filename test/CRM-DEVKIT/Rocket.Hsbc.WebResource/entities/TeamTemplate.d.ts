@@ -1,5 +1,43 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormTeamTemplate {
+		interface tab_general_Sections {
+			General: DevKit.Form.Controls.ControlSection;
+			Description: DevKit.Form.Controls.ControlSection;
+			AccessRights: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Default access rights mask for the access teams associated with entity instances. */
+			DefaultAccessRightsMask: DevKit.Form.Controls.ControlInteger;
+			/** Type additional information that describes the team. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Object type code of entity which is enabled for access teams */
+			ObjectTypeCode: DevKit.Form.Controls.ControlInteger;
+			/** Type the name of the team template. */
+			TeamTemplateName: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormTeamTemplate extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form TeamTemplate
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form TeamTemplate */
+		Body: Hsbc.FormTeamTemplate.Body;
+	}
 	class TeamTemplateApi {
 		/**
 		* PL.DynamicsCrm.DevKit TeamTemplateApi
@@ -56,4 +94,4 @@ declare namespace OptionSet {
 	namespace TeamTemplate {
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['TeamTemplate'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

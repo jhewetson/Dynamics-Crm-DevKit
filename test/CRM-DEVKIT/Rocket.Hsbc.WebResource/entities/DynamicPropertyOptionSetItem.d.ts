@@ -1,5 +1,41 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormPropertyOptionSetItem {
+		interface tab_general_Sections {
+			dynamicpropertyoptionsetiteminformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Shows the property that uses this option set item. */
+			DynamicPropertyId: DevKit.Form.Controls.ControlLookup;
+			/** Type additional information about the property option set item. */
+			DynamicPropertyOptionDescription: DevKit.Form.Controls.ControlString;
+			/** Type the name of the property option set item. */
+			DynamicPropertyOptionName: DevKit.Form.Controls.ControlString;
+			/** Shows the value of the property option set item. */
+			DynamicPropertyOptionValue: DevKit.Form.Controls.ControlInteger;
+		}
+	}
+	class FormPropertyOptionSetItem extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form PropertyOptionSetItem
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form PropertyOptionSetItem */
+		Body: Hsbc.FormPropertyOptionSetItem.Body;
+	}
 	class DynamicPropertyOptionSetItemApi {
 		/**
 		* PL.DynamicsCrm.DevKit DynamicPropertyOptionSetItemApi
@@ -74,4 +110,4 @@ declare namespace OptionSet {
 	namespace DynamicPropertyOptionSetItem {
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['PropertyOptionSetItem'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

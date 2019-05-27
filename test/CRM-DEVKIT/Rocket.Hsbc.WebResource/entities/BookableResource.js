@@ -1,2 +1,11 @@
-﻿//@ts-check
-///<reference path="BookableResource.d.ts" />
+﻿///<reference path='BookableResource.d.ts' />
+var formInformation = (function () {
+	function onLoad(executionContext) {
+	}
+	function onSave(executionContext) {
+	}
+	return {
+		OnLoad: onLoad,
+		OnSave: onSave
+	};
+})();

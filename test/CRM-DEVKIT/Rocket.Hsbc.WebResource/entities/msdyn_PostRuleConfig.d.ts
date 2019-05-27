@@ -1,5 +1,52 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace Formmsdyn_PostRuleConfigInformation {
+		interface Tabs {
+		}
+		interface Body {
+			/** Name of the rule. */
+			msdyn_name: DevKit.Form.Controls.ControlString;
+			/** Entity that is enabled for Activity feeds. */
+			msdyn_PostConfigId: DevKit.Form.Controls.ControlLookup;
+			/** Determine whether to post this message to the Yammer Activity Stream. Please do not check this box if this message contains sensitive information requiring Microsoft Dynamics 365 access. */
+			msdyn_PostToYammer: DevKit.Form.Controls.ControlBoolean;
+		}
+		interface Footer {
+			/** Unique identifier of the user who created the record. */
+			CreatedBy: DevKit.Form.Controls.ControlLookup;
+			/** Date and time when the record was created. */
+			CreatedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Unique identifier of the user who modified the record. */
+			ModifiedBy: DevKit.Form.Controls.ControlLookup;
+			/** Date and time when the record was modified. */
+			ModifiedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Status of the Post Rule Configuration */
+			statecode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface Navigation {
+			navAsyncOperations: DevKit.Form.Controls.ControlNavigationItem,
+			navAudit: DevKit.Form.Controls.ControlNavigationItem,
+			navProcessSessions: DevKit.Form.Controls.ControlNavigationItem
+		}
+	}
+	class Formmsdyn_PostRuleConfigInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form msdyn_PostRuleConfigInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form msdyn_PostRuleConfigInformation */
+		Body: Hsbc.Formmsdyn_PostRuleConfigInformation.Body;
+		/** The Footer section of form msdyn_PostRuleConfigInformation */
+		Footer: Hsbc.Formmsdyn_PostRuleConfigInformation.Footer;
+		/** The Navigation of form msdyn_PostRuleConfigInformation */
+		Navigation: Hsbc.Formmsdyn_PostRuleConfigInformation.Navigation;
+	}
 	class msdyn_PostRuleConfigApi {
 		/**
 		* PL.DynamicsCrm.DevKit msdyn_PostRuleConfigApi
@@ -88,4 +135,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

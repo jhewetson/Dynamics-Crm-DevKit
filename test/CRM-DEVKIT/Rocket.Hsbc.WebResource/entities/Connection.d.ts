@@ -1,5 +1,70 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormConnectionInformation {
+		interface Header {
+			/** Unique identifier of the source record. */
+			Record1Id: DevKit.Form.Controls.ControlLookup;
+		}
+		interface tab_info_Sections {
+			info_s: DevKit.Form.Controls.ControlSection;
+			description: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_details_Sections {
+			connect_from: DevKit.Form.Controls.ControlSection;
+			details: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_info extends DevKit.Form.Controls.IControlTab {
+			Section: tab_info_Sections;
+		}
+		interface tab_details extends DevKit.Form.Controls.IControlTab {
+			Section: tab_details_Sections;
+		}
+		interface Tabs {
+			info: tab_info;
+			details: tab_details;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Type additional information to describe the connection, such as the length or quality of the relationship. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Enter the end date of the connection. */
+			EffectiveEnd: DevKit.Form.Controls.ControlDate;
+			/** Enter the start date of the connection. */
+			EffectiveStart: DevKit.Form.Controls.ControlDate;
+			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier of the source record. */
+			Record1Id: DevKit.Form.Controls.ControlLookup;
+			/** Choose the primary party's role or relationship with the second party. */
+			Record1RoleId: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier of the target record. */
+			Record2Id: DevKit.Form.Controls.ControlLookup;
+			/** Choose the secondary party's role or relationship with the primary party. */
+			Record2RoleId: DevKit.Form.Controls.ControlLookup;
+		}
+		interface Footer {
+			/** Shows whether the connection is active or inactive. Inactive connections are read-only and can't be edited unless they are reactivated. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+	}
+	class FormConnectionInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form ConnectionInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form ConnectionInformation */
+		Body: Hsbc.FormConnectionInformation.Body;
+		/** The Footer section of form ConnectionInformation */
+		Footer: Hsbc.FormConnectionInformation.Footer;
+		/** The Header section of form ConnectionInformation */
+		Header: Hsbc.FormConnectionInformation.Header;
+	}
 	class ConnectionApi {
 		/**
 		* PL.DynamicsCrm.DevKit ConnectionApi
@@ -464,4 +529,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

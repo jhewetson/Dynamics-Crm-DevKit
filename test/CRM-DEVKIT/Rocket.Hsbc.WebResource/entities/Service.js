@@ -1,2 +1,11 @@
-﻿//@ts-check
-///<reference path="Service.d.ts" />
+﻿///<reference path='Service.d.ts' />
+var formInformation = (function () {
+	function onLoad(executionContext) {
+	}
+	function onSave(executionContext) {
+	}
+	return {
+		OnLoad: onLoad,
+		OnSave: onSave
+	};
+})();

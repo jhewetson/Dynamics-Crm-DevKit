@@ -1,5 +1,32 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormRatingValueInformation {
+		interface Tabs {
+		}
+		interface Body {
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Type a name that represents a rating value such as familiar, good, proficient etc. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Select the model that this rating value is associated with. */
+			RatingModel: DevKit.Form.Controls.ControlLookup;
+			/** Type a rating value which is unique to the rating model it is associated with and lies within the range specified on the model. */
+			Value: DevKit.Form.Controls.ControlInteger;
+		}
+	}
+	class FormRatingValueInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form RatingValueInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form RatingValueInformation */
+		Body: Hsbc.FormRatingValueInformation.Body;
+	}
 	class RatingValueApi {
 		/**
 		* PL.DynamicsCrm.DevKit RatingValueApi
@@ -92,4 +119,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

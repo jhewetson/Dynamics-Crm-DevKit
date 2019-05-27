@@ -1,5 +1,89 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormEntitlement {
+		interface Header {
+			/** Choose a contact or account for which this entitlement has been defined. */
+			CustomerId: DevKit.Form.Controls.ControlLookup;
+			/** Enter the date when the entitlement ends. */
+			EndDate: DevKit.Form.Controls.ControlDate;
+			/** Type the total number of entitlement terms that are left. */
+			RemainingTerms: DevKit.Form.Controls.ControlDecimal;
+			/** For internal use only. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_general_Sections {
+			information: DevKit.Form.Controls.ControlSection;
+			notes: DevKit.Form.Controls.ControlSection;
+			entitlementterms: DevKit.Form.Controls.ControlSection;
+			entitlementterms_2: DevKit.Form.Controls.ControlSection;
+			entitlementtermsInUCI: DevKit.Form.Controls.ControlSection;
+			products: DevKit.Form.Controls.ControlSection;
+			contacts: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			grid_EntitlementChannel: DevKit.Form.Controls.ControlGrid;
+			editableEntitlementChannelGridControl: DevKit.Form.Controls.ControlActionCards;
+			grid_EntitlementProducts: DevKit.Form.Controls.ControlGrid;
+			grid_EntitlementContacts: DevKit.Form.Controls.ControlGrid;
+			/** Select the type of entitlement terms. */
+			AllocationTypeCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Choose a contact or account for which this entitlement has been defined. */
+			CustomerId: DevKit.Form.Controls.ControlLookup;
+			/** Select whether to decrease the remaining terms when the case is created or when it is resolved. */
+			DecreaseRemainingOn: DevKit.Form.Controls.ControlOptionSet;
+			/** Type additional information to describe the Entitlement */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Enter the date when the entitlement ends. */
+			EndDate: DevKit.Form.Controls.ControlDate;
+			/** Entity type for which the entitlement applies */
+			entitytype: DevKit.Form.Controls.ControlOptionSet;
+			/** Shows whether this entitlement is the default one for the specified customer. */
+			IsDefault: DevKit.Form.Controls.ControlBoolean;
+			/** Type a meaningful name for the entitlement. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Owner Id */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Type the total number of entitlement terms that are left. */
+			RemainingTerms: DevKit.Form.Controls.ControlDecimal;
+			/** Tells whether case creation is restricted based on entitlement terms. */
+			RestrictCaseCreation: DevKit.Form.Controls.ControlBoolean;
+			/** Choose the service level agreement (SLA) associated with the entitlement. */
+			SLAId: DevKit.Form.Controls.ControlLookup;
+			/** Enter the date when the entitlement starts. */
+			StartDate: DevKit.Form.Controls.ControlDate;
+			/** Type the total number of entitlement terms. */
+			TotalTerms: DevKit.Form.Controls.ControlDecimal;
+		}
+		interface Navigation {
+			navCases: DevKit.Form.Controls.ControlNavigationItem
+		}
+	}
+	class FormEntitlement extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form Entitlement
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form Entitlement */
+		Body: Hsbc.FormEntitlement.Body;
+		/** The Header section of form Entitlement */
+		Header: Hsbc.FormEntitlement.Header;
+		/** The Navigation of form Entitlement */
+		Navigation: Hsbc.FormEntitlement.Navigation;
+	}
 	class EntitlementApi {
 		/**
 		* PL.DynamicsCrm.DevKit EntitlementApi
@@ -164,4 +248,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Entitlement'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

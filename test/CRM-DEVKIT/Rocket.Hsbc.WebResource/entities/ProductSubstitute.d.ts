@@ -1,5 +1,69 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormProductSubstitute {
+		interface Tabs {
+		}
+		interface Body {
+			/** Select whether the relationship is unidirectional or bidirectional. */
+			Direction: DevKit.Form.Controls.ControlOptionSet;
+			/** Shows the product that the relationship is defined for. */
+			ProductId: DevKit.Form.Controls.ControlLookup;
+			/** Select the type of the product relationship. */
+			SalesRelationshipType: DevKit.Form.Controls.ControlOptionSet;
+			/** Select the related product that the relationship needs to be defined for. */
+			SubstitutedProductId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormProductSubstitute extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form ProductSubstitute
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form ProductSubstitute */
+		Body: Hsbc.FormProductSubstitute.Body;
+	}
+	namespace FormProductSubstituteQuickCreate {
+		interface tab_tab_1_Sections {
+			tab_1_column_1_section_1: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_tab_1 extends DevKit.Form.Controls.IControlTab {
+			Section: tab_tab_1_Sections;
+		}
+		interface Tabs {
+			tab_1: tab_tab_1;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Select whether the relationship is unidirectional or bidirectional. */
+			Direction: DevKit.Form.Controls.ControlOptionSet;
+			/** Shows the product that the relationship is defined for. */
+			ProductId: DevKit.Form.Controls.ControlLookup;
+			/** Select the type of the product relationship. */
+			SalesRelationshipType: DevKit.Form.Controls.ControlOptionSet;
+			/** Select the related product that the relationship needs to be defined for. */
+			SubstitutedProductId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormProductSubstituteQuickCreate extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form ProductSubstituteQuickCreate
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form ProductSubstituteQuickCreate */
+		Body: Hsbc.FormProductSubstituteQuickCreate.Body;
+	}
 	class ProductSubstituteApi {
 		/**
 		* PL.DynamicsCrm.DevKit ProductSubstituteApi
@@ -104,4 +168,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['ProductSubstitute','ProductSubstitute Quick Create'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

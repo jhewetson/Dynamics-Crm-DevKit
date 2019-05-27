@@ -1,5 +1,58 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormOpportunityProduct {
+		interface tab_general_Sections {
+			opportunityproductinformation: DevKit.Form.Controls.ControlSection;
+			pricing: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Shows the total price of the opportunity product, based on the price per unit, volume discount, and quantity. */
+			BaseAmount: DevKit.Form.Controls.ControlMoney;
+			/** Shows the total amount due for the opportunity product, calculated on the Amount value minus the Manual Discount amount. */
+			ExtendedAmount: DevKit.Form.Controls.ControlMoney;
+			/** Select whether the pricing on the opportunity product reflects an override of the product catalog pricing. */
+			IsPriceOverridden: DevKit.Form.Controls.ControlBoolean;
+			/** For system use only. */
+			IsProductOverridden: DevKit.Form.Controls.ControlBoolean;
+			/** Type the manual discount amount for the opportunity product to deduct any negotiated or other savings from the product total. */
+			ManualDiscountAmount: DevKit.Form.Controls.ControlMoney;
+			/** Shows the price per unit of the opportunity product, based on the price list specified on the parent opportunity. */
+			PricePerUnit: DevKit.Form.Controls.ControlMoney;
+			/** Type a detailed product description or additional notes about the opportunity product, such as talking points or product updates, that will assist the sales team when they discuss the product with the customer. */
+			ProductDescription: DevKit.Form.Controls.ControlString;
+			/** Choose the product to include on the opportunity to link the product's pricing and other information to the opportunity. */
+			ProductId: DevKit.Form.Controls.ControlLookup;
+			/** Type the amount or quantity of the product the customer would like to purchase. */
+			Quantity: DevKit.Form.Controls.ControlDecimal;
+			/** Type the tax amount to be applied on the opportunity product. */
+			Tax: DevKit.Form.Controls.ControlMoney;
+			/** Choose the unit of measurement for the base unit quantity for this purchase, such as each or dozen. */
+			UoMId: DevKit.Form.Controls.ControlLookup;
+			/** Shows the discount amount per unit if a specified volume is purchased. Configure volume discounts in the Product Catalog in the Settings area. */
+			VolumeDiscountAmount: DevKit.Form.Controls.ControlMoney;
+		}
+	}
+	class FormOpportunityProduct extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form OpportunityProduct
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form OpportunityProduct */
+		Body: Hsbc.FormOpportunityProduct.Body;
+	}
 	class OpportunityProductApi {
 		/**
 		* PL.DynamicsCrm.DevKit OpportunityProductApi
@@ -249,4 +302,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['OpportunityProduct'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

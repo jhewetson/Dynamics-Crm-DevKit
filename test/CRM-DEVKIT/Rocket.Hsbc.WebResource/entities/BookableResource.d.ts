@@ -1,5 +1,56 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormBookableResourceInformation {
+		interface tab__E37F4524_4A66_42DC_974C_078756AEF3FB_Sections {
+			_9E7DEC57_2C62_4D5D_8B21_75D076C5D1A1: DevKit.Form.Controls.ControlSection;
+			_E37F4524_4A66_42DC_974C_078756AEF3FB_SECTION_6: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab__E37F4524_4A66_42DC_974C_078756AEF3FB extends DevKit.Form.Controls.IControlTab {
+			Section: tab__E37F4524_4A66_42DC_974C_078756AEF3FB_Sections;
+		}
+		interface Tabs {
+			_E37F4524_4A66_42DC_974C_078756AEF3FB: tab__E37F4524_4A66_42DC_974C_078756AEF3FB;
+		}
+		interface Body {
+			Tab: Tabs;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			ResourceCharacteristics: DevKit.Form.Controls.ControlGrid;
+			ResourceCategory: DevKit.Form.Controls.ControlGrid;
+			/** Select the account that represents this resource. */
+			AccountId: DevKit.Form.Controls.ControlLookup;
+			/** Select the contact that represents this resource. */
+			ContactId: DevKit.Form.Controls.ControlLookup;
+			/** Type the name of the resource. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Select whether the resource is a user, equipment, contact, account, generic resource or a group of resources. */
+			ResourceType: DevKit.Form.Controls.ControlOptionSet;
+			/** Specifies the timezone for the resource's working hours. */
+			TimeZone: DevKit.Form.Controls.ControlInteger;
+			/** Select the user who represents this resource. */
+			UserId: DevKit.Form.Controls.ControlLookup;
+		}
+		interface Navigation {
+			navParentGroups: DevKit.Form.Controls.ControlNavigationItem,
+			navChildGroups: DevKit.Form.Controls.ControlNavigationItem,
+			navAudit: DevKit.Form.Controls.ControlNavigationItem
+		}
+	}
+	class FormBookableResourceInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form BookableResourceInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form BookableResourceInformation */
+		Body: Hsbc.FormBookableResourceInformation.Body;
+		/** The Navigation of form BookableResourceInformation */
+		Navigation: Hsbc.FormBookableResourceInformation.Navigation;
+	}
 	class BookableResourceApi {
 		/**
 		* PL.DynamicsCrm.DevKit BookableResourceApi
@@ -124,4 +175,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

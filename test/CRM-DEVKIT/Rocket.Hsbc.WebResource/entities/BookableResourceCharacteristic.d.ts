@@ -1,5 +1,34 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormBookableResourceCharacteristicInformation {
+		interface Tabs {
+		}
+		interface Body {
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Choose the characteristic to associate with the resource. */
+			Characteristic: DevKit.Form.Controls.ControlLookup;
+			/** Type the name of the association between the resource and characteristic. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Select a rating value that represents the evaluation of a characteristic for a particular resource. */
+			RatingValue: DevKit.Form.Controls.ControlLookup;
+			/** Shows the resource associated with the characteristic. */
+			Resource: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormBookableResourceCharacteristicInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form BookableResourceCharacteristicInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form BookableResourceCharacteristicInformation */
+		Body: Hsbc.FormBookableResourceCharacteristicInformation.Body;
+	}
 	class BookableResourceCharacteristicApi {
 		/**
 		* PL.DynamicsCrm.DevKit BookableResourceCharacteristicApi
@@ -100,4 +129,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

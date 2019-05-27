@@ -1,2 +1,11 @@
-﻿//@ts-check
-///<reference path="msfp_unsubscribedrecipient.d.ts" />
+﻿///<reference path='msfp_unsubscribedrecipient.d.ts' />
+var formInformation = (function () {
+	function onLoad(executionContext) {
+	}
+	function onSave(executionContext) {
+	}
+	return {
+		OnLoad: onLoad,
+		OnSave: onSave
+	};
+})();

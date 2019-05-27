@@ -1,2 +1,11 @@
-﻿//@ts-check
-///<reference path="msdyn_callablecontext.d.ts" />
+﻿///<reference path='msdyn_callablecontext.d.ts' />
+var formInformation = (function () {
+	function onLoad(executionContext) {
+	}
+	function onSave(executionContext) {
+	}
+	return {
+		OnLoad: onLoad,
+		OnSave: onSave
+	};
+})();

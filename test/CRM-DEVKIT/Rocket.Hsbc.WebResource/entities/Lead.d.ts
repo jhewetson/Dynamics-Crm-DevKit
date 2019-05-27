@@ -1,5 +1,335 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormLeadAIforSales {
+		interface Header {
+			/** Select a rating value to indicate the lead's potential to become a customer. */
+			LeadQualityCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Select the primary marketing source that prompted the lead to contact you. */
+			LeadSourceCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Owner Id */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Select the lead's status. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_Summary_Sections {
+			Contact: DevKit.Form.Controls.ControlSection;
+			company: DevKit.Form.Controls.ControlSection;
+			MapSection: DevKit.Form.Controls.ControlSection;
+			SOCIAL_PANE: DevKit.Form.Controls.ControlSection;
+			Summary_section_6: DevKit.Form.Controls.ControlSection;
+			RELATED_TAB: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_details_tab_Sections {
+			lead_information: DevKit.Form.Controls.ControlSection;
+			marketing_information: DevKit.Form.Controls.ControlSection;
+			contact_methods: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_Summary extends DevKit.Form.Controls.IControlTab {
+			Section: tab_Summary_Sections;
+		}
+		interface tab_details_tab extends DevKit.Form.Controls.IControlTab {
+			Section: tab_details_tab_Sections;
+		}
+		interface Tabs {
+			Summary: tab_Summary;
+			details_tab: tab_details_tab;
+		}
+		interface Body {
+			Tab: Tabs;
+			mapcontrol: DevKit.Form.Controls.ControlMap;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			ActionCards: DevKit.Form.Controls.ControlActionCards;
+			Stakeholders: DevKit.Form.Controls.ControlGrid;
+			Competitors: DevKit.Form.Controls.ControlGrid;
+			/** Shows the complete primary address. */
+			Address1_Composite: DevKit.Form.Controls.ControlString;
+			/** Type the name of the company associated with the lead. This becomes the account name when the lead is qualified and converted to a customer account. */
+			CompanyName: DevKit.Form.Controls.ControlString;
+			/** Type additional information to describe the lead, such as an excerpt from the company's website. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Select whether the lead accepts bulk email sent through marketing campaigns or quick campaigns. If Do Not Allow is selected, the lead can be added to marketing lists, but will be excluded from the email. */
+			DoNotBulkEMail: DevKit.Form.Controls.ControlBoolean;
+			/** Select whether the lead allows direct email sent from Microsoft Dynamics 365. */
+			DoNotEMail: DevKit.Form.Controls.ControlBoolean;
+			/** Select whether the lead allows phone calls. */
+			DoNotPhone: DevKit.Form.Controls.ControlBoolean;
+			/** Select whether the lead allows direct mail. */
+			DoNotPostalMail: DevKit.Form.Controls.ControlBoolean;
+			/** Select whether the lead accepts marketing materials, such as brochures or catalogs. Leads that opt out can be excluded from marketing initiatives. */
+			DoNotSendMM: DevKit.Form.Controls.ControlBoolean;
+			/** Type the primary email address for the lead. */
+			EMailAddress1: DevKit.Form.Controls.ControlString;
+			/** Information about whether to allow following email activity like opens, attachment views and link clicks for emails sent to the lead. */
+			FollowEmail: DevKit.Form.Controls.ControlBoolean;
+			/** Combines and shows the lead's first and last names so the full name can be displayed in views and reports. */
+			FullName: DevKit.Form.Controls.ControlString;
+			/** Select the primary industry in which the lead's business is focused, for use in marketing segmentation and demographic analysis. */
+			IndustryCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type the job title of the primary contact for this lead to make sure the prospect is addressed correctly in sales calls, email, and marketing campaigns. */
+			JobTitle: DevKit.Form.Controls.ControlString;
+			/** Shows the date when the lead was last included in a marketing campaign or quick campaign. */
+			LastUsedInCampaign: DevKit.Form.Controls.ControlDate;
+			/** Type the mobile phone number for the primary contact for the lead. */
+			MobilePhone: DevKit.Form.Controls.ControlString;
+			/** Type the number of employees that work at the company associated with the lead, for use in marketing segmentation and demographic analysis. */
+			NumberOfEmployees: DevKit.Form.Controls.ControlInteger;
+			/** Select the preferred method of contact. */
+			PreferredContactMethodCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type the annual revenue of the company associated with the lead to provide an understanding of the prospect's business. */
+			Revenue: DevKit.Form.Controls.ControlMoney;
+			/** Type the Standard Industrial Classification (SIC) code that indicates the lead's primary industry of business for use in marketing segmentation and demographic analysis. */
+			SIC: DevKit.Form.Controls.ControlString;
+			/** Type a subject or descriptive name, such as the expected order, company name, or marketing source list, to identify the lead. */
+			Subject: DevKit.Form.Controls.ControlString;
+			/** Type the work phone number for the primary contact for the lead. */
+			Telephone1: DevKit.Form.Controls.ControlString;
+			/** Choose the local currency for the record to make sure budgets are reported in the correct currency. */
+			TransactionCurrencyId: DevKit.Form.Controls.ControlLookup;
+			/** Type the website URL for the company associated with this lead. */
+			WebSiteUrl: DevKit.Form.Controls.ControlString;
+		}
+		interface Navigation {
+			navActivities: DevKit.Form.Controls.ControlNavigationItem,
+			navCampaignsInSFA: DevKit.Form.Controls.ControlNavigationItem,
+			navLeadCompetitor: DevKit.Form.Controls.ControlNavigationItem,
+			navConnections: DevKit.Form.Controls.ControlNavigationItem,
+			navDocument: DevKit.Form.Controls.ControlNavigationItem,
+			navAsyncOperations: DevKit.Form.Controls.ControlNavigationItem,
+			navAudit: DevKit.Form.Controls.ControlNavigationItem,
+			navProcessSessions: DevKit.Form.Controls.ControlNavigationItem
+		}
+		interface ProcessLeadtoOpportunitySalesProcess {
+			/** Information about the budget amount of the lead's company or organization. */
+			BudgetAmount: DevKit.Form.Controls.ControlMoney;
+			/** Select whether your notes include information about who makes the purchase decisions at the lead's company. */
+			DecisionMaker: DevKit.Form.Controls.ControlBoolean;
+			/** Type additional information to describe the lead, such as an excerpt from the company's website. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Choose an account to connect this lead to, so that the relationship is visible in reports and analytics. */
+			ParentAccountId: DevKit.Form.Controls.ControlLookup;
+			/** Choose a contact to connect this lead to, so that the relationship is visible in reports and analytics. */
+			ParentContactId: DevKit.Form.Controls.ControlLookup;
+			/** Choose whether an individual or a committee will be involved in the  purchase process for the lead. */
+			PurchaseProcess: DevKit.Form.Controls.ControlOptionSet;
+			/** Choose how long the lead will likely take to make the purchase, so the sales team will be aware. */
+			PurchaseTimeFrame: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface Process extends DevKit.Form.Controls.IControlProcess {
+			LeadtoOpportunitySalesProcess: ProcessLeadtoOpportunitySalesProcess;
+		}
+	}
+	class FormLeadAIforSales extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form LeadAIforSales
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form LeadAIforSales */
+		Body: Hsbc.FormLeadAIforSales.Body;
+		/** The Header section of form LeadAIforSales */
+		Header: Hsbc.FormLeadAIforSales.Header;
+		/** The Navigation of form LeadAIforSales */
+		Navigation: Hsbc.FormLeadAIforSales.Navigation;
+		/** The Process of form LeadAIforSales */
+		Process: Hsbc.FormLeadAIforSales.Process;
+	}
+	namespace FormLead {
+		interface Header {
+			/** Select a rating value to indicate the lead's potential to become a customer. */
+			LeadQualityCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Select the primary marketing source that prompted the lead to contact you. */
+			LeadSourceCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Owner Id */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Select the lead's status. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_Summary_Sections {
+			Contact: DevKit.Form.Controls.ControlSection;
+			company: DevKit.Form.Controls.ControlSection;
+			MapSection: DevKit.Form.Controls.ControlSection;
+			SOCIAL_PANE: DevKit.Form.Controls.ControlSection;
+			Summary_section_6: DevKit.Form.Controls.ControlSection;
+			RELATED_TAB: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_details_tab_Sections {
+			lead_information: DevKit.Form.Controls.ControlSection;
+			marketing_information: DevKit.Form.Controls.ControlSection;
+			contact_methods: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_Summary extends DevKit.Form.Controls.IControlTab {
+			Section: tab_Summary_Sections;
+		}
+		interface tab_details_tab extends DevKit.Form.Controls.IControlTab {
+			Section: tab_details_tab_Sections;
+		}
+		interface Tabs {
+			Summary: tab_Summary;
+			details_tab: tab_details_tab;
+		}
+		interface Body {
+			Tab: Tabs;
+			mapcontrol: DevKit.Form.Controls.ControlMap;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			ActionCards: DevKit.Form.Controls.ControlActionCards;
+			Stakeholders: DevKit.Form.Controls.ControlGrid;
+			Competitors: DevKit.Form.Controls.ControlGrid;
+			/** Shows the complete primary address. */
+			Address1_Composite: DevKit.Form.Controls.ControlString;
+			/** Choose the campaign that the lead was generated from to track the effectiveness of marketing campaigns and identify  communications received by the lead. */
+			CampaignId: DevKit.Form.Controls.ControlLookup;
+			/** Type the name of the company associated with the lead. This becomes the account name when the lead is qualified and converted to a customer account. */
+			CompanyName: DevKit.Form.Controls.ControlString;
+			/** Type additional information to describe the lead, such as an excerpt from the company's website. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Select whether the lead accepts bulk email sent through marketing campaigns or quick campaigns. If Do Not Allow is selected, the lead can be added to marketing lists, but will be excluded from the email. */
+			DoNotBulkEMail: DevKit.Form.Controls.ControlBoolean;
+			/** Select whether the lead allows direct email sent from Microsoft Dynamics 365. */
+			DoNotEMail: DevKit.Form.Controls.ControlBoolean;
+			/** Select whether the lead allows phone calls. */
+			DoNotPhone: DevKit.Form.Controls.ControlBoolean;
+			/** Select whether the lead allows direct mail. */
+			DoNotPostalMail: DevKit.Form.Controls.ControlBoolean;
+			/** Select whether the lead accepts marketing materials, such as brochures or catalogs. Leads that opt out can be excluded from marketing initiatives. */
+			DoNotSendMM: DevKit.Form.Controls.ControlBoolean;
+			/** Type the primary email address for the lead. */
+			EMailAddress1: DevKit.Form.Controls.ControlString;
+			/** Information about whether to allow following email activity like opens, attachment views and link clicks for emails sent to the lead. */
+			FollowEmail: DevKit.Form.Controls.ControlBoolean;
+			/** Combines and shows the lead's first and last names so the full name can be displayed in views and reports. */
+			FullName: DevKit.Form.Controls.ControlString;
+			/** Select the primary industry in which the lead's business is focused, for use in marketing segmentation and demographic analysis. */
+			IndustryCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type the job title of the primary contact for this lead to make sure the prospect is addressed correctly in sales calls, email, and marketing campaigns. */
+			JobTitle: DevKit.Form.Controls.ControlString;
+			/** Shows the date when the lead was last included in a marketing campaign or quick campaign. */
+			LastUsedInCampaign: DevKit.Form.Controls.ControlDate;
+			/** Type the mobile phone number for the primary contact for the lead. */
+			MobilePhone: DevKit.Form.Controls.ControlString;
+			/** Type the number of employees that work at the company associated with the lead, for use in marketing segmentation and demographic analysis. */
+			NumberOfEmployees: DevKit.Form.Controls.ControlInteger;
+			/** Select the preferred method of contact. */
+			PreferredContactMethodCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type the annual revenue of the company associated with the lead to provide an understanding of the prospect's business. */
+			Revenue: DevKit.Form.Controls.ControlMoney;
+			/** Type the Standard Industrial Classification (SIC) code that indicates the lead's primary industry of business for use in marketing segmentation and demographic analysis. */
+			SIC: DevKit.Form.Controls.ControlString;
+			/** Type a subject or descriptive name, such as the expected order, company name, or marketing source list, to identify the lead. */
+			Subject: DevKit.Form.Controls.ControlString;
+			/** Type the work phone number for the primary contact for the lead. */
+			Telephone1: DevKit.Form.Controls.ControlString;
+			/** Choose the local currency for the record to make sure budgets are reported in the correct currency. */
+			TransactionCurrencyId: DevKit.Form.Controls.ControlLookup;
+			/** Type the website URL for the company associated with this lead. */
+			WebSiteUrl: DevKit.Form.Controls.ControlString;
+		}
+		interface Navigation {
+			navActivities: DevKit.Form.Controls.ControlNavigationItem,
+			navCampaignsInSFA: DevKit.Form.Controls.ControlNavigationItem,
+			navConnections: DevKit.Form.Controls.ControlNavigationItem,
+			navDocument: DevKit.Form.Controls.ControlNavigationItem,
+			navAsyncOperations: DevKit.Form.Controls.ControlNavigationItem,
+			navAudit: DevKit.Form.Controls.ControlNavigationItem,
+			navProcessSessions: DevKit.Form.Controls.ControlNavigationItem,
+			navLeadCompetitor: DevKit.Form.Controls.ControlNavigationItem
+		}
+		interface ProcessLeadtoOpportunitySalesProcess {
+			/** Information about the budget amount of the lead's company or organization. */
+			BudgetAmount: DevKit.Form.Controls.ControlMoney;
+			/** Select whether your notes include information about who makes the purchase decisions at the lead's company. */
+			DecisionMaker: DevKit.Form.Controls.ControlBoolean;
+			/** Type additional information to describe the lead, such as an excerpt from the company's website. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Choose an account to connect this lead to, so that the relationship is visible in reports and analytics. */
+			ParentAccountId: DevKit.Form.Controls.ControlLookup;
+			/** Choose a contact to connect this lead to, so that the relationship is visible in reports and analytics. */
+			ParentContactId: DevKit.Form.Controls.ControlLookup;
+			/** Choose whether an individual or a committee will be involved in the  purchase process for the lead. */
+			PurchaseProcess: DevKit.Form.Controls.ControlOptionSet;
+			/** Choose how long the lead will likely take to make the purchase, so the sales team will be aware. */
+			PurchaseTimeFrame: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface Process extends DevKit.Form.Controls.IControlProcess {
+			LeadtoOpportunitySalesProcess: ProcessLeadtoOpportunitySalesProcess;
+		}
+	}
+	class FormLead extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form Lead
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form Lead */
+		Body: Hsbc.FormLead.Body;
+		/** The Header section of form Lead */
+		Header: Hsbc.FormLead.Header;
+		/** The Navigation of form Lead */
+		Navigation: Hsbc.FormLead.Navigation;
+		/** The Process of form Lead */
+		Process: Hsbc.FormLead.Process;
+	}
+	namespace FormLeadQuickCreate {
+		interface tab_tab_1_Sections {
+			tab_1_column_1_section_1: DevKit.Form.Controls.ControlSection;
+			tab_1_column_2_section_1: DevKit.Form.Controls.ControlSection;
+			tab_1_column_3_section_1: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_tab_1 extends DevKit.Form.Controls.IControlTab {
+			Section: tab_tab_1_Sections;
+		}
+		interface Tabs {
+			tab_1: tab_tab_1;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Information about the budget amount of the lead's company or organization. */
+			BudgetAmount: DevKit.Form.Controls.ControlMoney;
+			/** Type the name of the company associated with the lead. This becomes the account name when the lead is qualified and converted to a customer account. */
+			CompanyName: DevKit.Form.Controls.ControlString;
+			/** Type additional information to describe the lead, such as an excerpt from the company's website. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Type the primary email address for the lead. */
+			EMailAddress1: DevKit.Form.Controls.ControlString;
+			/** Type the first name of the primary contact for the lead to make sure the prospect is addressed correctly in sales calls, email, and marketing campaigns. */
+			FirstName: DevKit.Form.Controls.ControlString;
+			/** Type the job title of the primary contact for this lead to make sure the prospect is addressed correctly in sales calls, email, and marketing campaigns. */
+			JobTitle: DevKit.Form.Controls.ControlString;
+			/** Type the last name of the primary contact for the lead to make sure the prospect is addressed correctly in sales calls, email, and marketing campaigns. */
+			LastName: DevKit.Form.Controls.ControlString;
+			/** Select the primary marketing source that prompted the lead to contact you. */
+			LeadSourceCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type the mobile phone number for the primary contact for the lead. */
+			MobilePhone: DevKit.Form.Controls.ControlString;
+			/** Choose how long the lead will likely take to make the purchase, so the sales team will be aware. */
+			PurchaseTimeFrame: DevKit.Form.Controls.ControlOptionSet;
+			/** Type a subject or descriptive name, such as the expected order, company name, or marketing source list, to identify the lead. */
+			Subject: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormLeadQuickCreate extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form LeadQuickCreate
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form LeadQuickCreate */
+		Body: Hsbc.FormLeadQuickCreate.Body;
+	}
 	class LeadApi {
 		/**
 		* PL.DynamicsCrm.DevKit LeadApi
@@ -545,4 +875,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['AI for Sales','Lead','Lead Quick Create'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

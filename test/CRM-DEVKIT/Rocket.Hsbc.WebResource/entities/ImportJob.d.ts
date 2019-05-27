@@ -1,5 +1,29 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormImportJobInformation {
+		interface Tabs {
+		}
+		interface Body {
+			/** Import Progress Percentage. */
+			Progress: DevKit.Form.Controls.ControlDouble;
+			/** Unique identifier of the solution. */
+			SolutionName: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormImportJobInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form ImportJobInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form ImportJobInformation */
+		Body: Hsbc.FormImportJobInformation.Body;
+	}
 	class ImportJobApi {
 		/**
 		* PL.DynamicsCrm.DevKit ImportJobApi
@@ -70,4 +94,4 @@ declare namespace OptionSet {
 	namespace ImportJob {
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

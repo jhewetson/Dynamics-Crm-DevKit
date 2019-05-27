@@ -1,5 +1,62 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormSalesLiterature {
+		interface Header {
+			/** Choose the user who is responsible for maintaining or updating the sales literature. */
+			EmployeeContactId: DevKit.Form.Controls.ControlLookup;
+			/** Enter the expiration date or last day the sales literature can be distributed. */
+			ExpirationDate: DevKit.Form.Controls.ControlDate;
+		}
+		interface tab_general_information_Sections {
+			salesliteratureinformation: DevKit.Form.Controls.ControlSection;
+			sales_attachments: DevKit.Form.Controls.ControlSection;
+			related: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general_information extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_information_Sections;
+		}
+		interface Tabs {
+			general_information: tab_general_information;
+		}
+		interface Body {
+			Tab: Tabs;
+			SalesAttachments: DevKit.Form.Controls.ControlGrid;
+			Products: DevKit.Form.Controls.ControlGrid;
+			Competitors: DevKit.Form.Controls.ControlGrid;
+			/** Type additional information to describe the sales literature, such as the intended audience or primary messages. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Select a category or type to help others identify the intended use of the sales literature. */
+			LiteratureTypeCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type a descriptive title for the sales literature. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Choose the subject for the sales literature to relate the item to a product or business group. Administrators can configure subjects under Business Management in the Settings area. */
+			SubjectId: DevKit.Form.Controls.ControlLookup;
+		}
+		interface Navigation {
+			navDoc: DevKit.Form.Controls.ControlNavigationItem,
+			navComp: DevKit.Form.Controls.ControlNavigationItem,
+			navProducts: DevKit.Form.Controls.ControlNavigationItem,
+			navDocument: DevKit.Form.Controls.ControlNavigationItem
+		}
+	}
+	class FormSalesLiterature extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form SalesLiterature
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form SalesLiterature */
+		Body: Hsbc.FormSalesLiterature.Body;
+		/** The Header section of form SalesLiterature */
+		Header: Hsbc.FormSalesLiterature.Header;
+		/** The Navigation of form SalesLiterature */
+		Navigation: Hsbc.FormSalesLiterature.Navigation;
+	}
 	class SalesLiteratureApi {
 		/**
 		* PL.DynamicsCrm.DevKit SalesLiteratureApi
@@ -115,4 +172,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Sales Literature'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

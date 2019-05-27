@@ -1,5 +1,52 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormOrder {
+		interface tab_newSalesOrder_Sections {
+			quickOrder_summary: DevKit.Form.Controls.ControlSection;
+			quickOrder_salesinformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_newSalesOrder extends DevKit.Form.Controls.IControlTab {
+			Section: tab_newSalesOrder_Sections;
+		}
+		interface Tabs {
+			newSalesOrder: tab_newSalesOrder;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Select the customer account or contact to provide a quick link to additional customer details, such as account information, activities, and opportunities. */
+			CustomerId: DevKit.Form.Controls.ControlLookup;
+			/** Type additional information to describe the order, such as the products or services offered or details about the customer's product preferences. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Type a descriptive name for the order. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Choose the related opportunity so that the data for the order and opportunity are linked for reporting and analytics. */
+			OpportunityId: DevKit.Form.Controls.ControlLookup;
+			/** Owner Id */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Choose the price list associated with this record to make sure the products associated with the campaign are offered at the correct prices. */
+			PriceLevelId: DevKit.Form.Controls.ControlLookup;
+			/** Choose the related quote so that order data and quote data are linked for reporting and analytics. */
+			QuoteId: DevKit.Form.Controls.ControlLookup;
+			/** Select the order's status. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Choose the local currency for the record to make sure budgets are reported in the correct currency. */
+			TransactionCurrencyId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormOrder extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form Order
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form Order */
+		Body: Hsbc.FormOrder.Body;
+	}
 	class SalesOrderApi {
 		/**
 		* PL.DynamicsCrm.DevKit SalesOrderApi
@@ -386,4 +433,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Order'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

@@ -1,5 +1,29 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace Formmsdyn_siconfigInformation {
+		interface Tabs {
+		}
+		interface Body {
+			/** The name of the custom entity. */
+			msdyn_version: DevKit.Form.Controls.ControlString;
+			/** Owner Id */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class Formmsdyn_siconfigInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form msdyn_siconfigInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form msdyn_siconfigInformation */
+		Body: Hsbc.Formmsdyn_siconfigInformation.Body;
+	}
 	class msdyn_siconfigApi {
 		/**
 		* PL.DynamicsCrm.DevKit msdyn_siconfigApi
@@ -84,4 +108,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

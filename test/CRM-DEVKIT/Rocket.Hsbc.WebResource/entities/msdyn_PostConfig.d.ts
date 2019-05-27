@@ -1,5 +1,56 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace Formmsdyn_PostConfigInformation {
+		interface tab_tab_notification_Sections {
+			tab_5_section_1: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_tab_notification extends DevKit.Form.Controls.IControlTab {
+			Section: tab_tab_notification_Sections;
+		}
+		interface Tabs {
+			tab_notification: tab_tab_notification;
+		}
+		interface Body {
+			Tab: Tabs;
+			ActivityFeedsRules: DevKit.Form.Controls.ControlGrid;
+			Views: DevKit.Form.Controls.ControlGrid;
+			/** Enables or disables the wall on the entity form. */
+			msdyn_ConfigureWall: DevKit.Form.Controls.ControlBoolean;
+			/** Logical name of the entity configured by this object. */
+			msdyn_EntityName: DevKit.Form.Controls.ControlString;
+			/** Information about the success or failure of the configuration. */
+			msdyn_Status: DevKit.Form.Controls.ControlString;
+		}
+		interface Footer {
+			/** Status of the Post Configuration */
+			statecode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface Navigation {
+			navAsyncOperations: DevKit.Form.Controls.ControlNavigationItem,
+			navAudit: DevKit.Form.Controls.ControlNavigationItem,
+			navProcessSessions: DevKit.Form.Controls.ControlNavigationItem,
+			nav_msdyn_postconfig_msdyn_postruleconfig: DevKit.Form.Controls.ControlNavigationItem,
+			nav_msdyn_postconfig_wallsavedquery: DevKit.Form.Controls.ControlNavigationItem
+		}
+	}
+	class Formmsdyn_PostConfigInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form msdyn_PostConfigInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form msdyn_PostConfigInformation */
+		Body: Hsbc.Formmsdyn_PostConfigInformation.Body;
+		/** The Footer section of form msdyn_PostConfigInformation */
+		Footer: Hsbc.Formmsdyn_PostConfigInformation.Footer;
+		/** The Navigation of form msdyn_PostConfigInformation */
+		Navigation: Hsbc.Formmsdyn_PostConfigInformation.Navigation;
+	}
 	class msdyn_PostConfigApi {
 		/**
 		* PL.DynamicsCrm.DevKit msdyn_PostConfigApi
@@ -88,4 +139,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

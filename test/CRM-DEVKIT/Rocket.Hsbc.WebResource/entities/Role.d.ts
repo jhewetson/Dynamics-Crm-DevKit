@@ -1,5 +1,45 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormRoleInformation {
+		interface tab_general_Sections {
+			roleinformation: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Unique identifier of the user who created the role. */
+			CreatedBy: DevKit.Form.Controls.ControlLookup;
+			/** Date and time when the role was created. */
+			CreatedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Unique identifier of the user who last modified the role. */
+			ModifiedBy: DevKit.Form.Controls.ControlLookup;
+			/** Date and time when the role was last modified. */
+			ModifiedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Name of the role. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Unique identifier of the parent role. */
+			ParentRoleId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormRoleInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form RoleInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form RoleInformation */
+		Body: Hsbc.FormRoleInformation.Body;
+	}
 	class RoleApi {
 		/**
 		* PL.DynamicsCrm.DevKit RoleApi
@@ -98,4 +138,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

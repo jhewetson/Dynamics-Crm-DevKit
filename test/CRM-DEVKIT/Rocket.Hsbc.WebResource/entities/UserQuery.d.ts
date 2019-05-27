@@ -1,5 +1,43 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormUserQueryInformation {
+		interface tab_general_Sections {
+			Information: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Type additional information to describe the saved view, such as the filter criteria or intended results set. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Shows who last updated the record. */
+			ModifiedBy: DevKit.Form.Controls.ControlLookup;
+			/** Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options. */
+			ModifiedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Type a descriptive name for the saved view. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormUserQueryInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form UserQueryInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form UserQueryInformation */
+		Body: Hsbc.FormUserQueryInformation.Body;
+	}
 	class UserQueryApi {
 		/**
 		* PL.DynamicsCrm.DevKit UserQueryApi
@@ -98,4 +136,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

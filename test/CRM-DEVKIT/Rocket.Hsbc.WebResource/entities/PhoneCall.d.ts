@@ -1,5 +1,176 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormPhoneCall {
+		interface Header {
+			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Select the priority so that preferred customers or critical issues are handled quickly. */
+			PriorityCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Enter the expected due date and time. */
+			ScheduledEnd: DevKit.Form.Controls.ControlDateTime;
+			/** Shows whether the phone call is open, completed, or canceled. Completed and canceled phone calls are read-only and can't be edited. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_phonecall_Sections {
+			generalinformation: DevKit.Form.Controls.ControlSection;
+			phonecalldescription: DevKit.Form.Controls.ControlSection;
+			phonecalldetails: DevKit.Form.Controls.ControlSection;
+			tab_2_section_2: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_phonecall extends DevKit.Form.Controls.IControlTab {
+			Section: tab_phonecall_Sections;
+		}
+		interface Tabs {
+			phonecall: tab_phonecall;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Type the number of minutes spent on the phone call. The duration is used in reporting. */
+			ActualDurationMinutes: DevKit.Form.Controls.ControlInteger;
+			/** Type additional information to describe the phone call, such as the primary message or the products and services discussed. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Select the direction of the phone call as incoming or outbound. */
+			DirectionCode: DevKit.Form.Controls.ControlBoolean;
+			/** Enter the account, contact, lead, or user who made the phone call. */
+			from: DevKit.Form.Controls.ControlLookup;
+			/** Type the phone number. */
+			PhoneNumber: DevKit.Form.Controls.ControlString;
+			/** Choose the record that the phone call relates to. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Type a short description about the objective or primary topic of the phone call. */
+			Subject: DevKit.Form.Controls.ControlString;
+			/** Enter the account, contact, lead, or user recipients of the phone call. */
+			to: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormPhoneCall extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form PhoneCall
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form PhoneCall */
+		Body: Hsbc.FormPhoneCall.Body;
+		/** The Header section of form PhoneCall */
+		Header: Hsbc.FormPhoneCall.Header;
+	}
+	namespace FormPhoneCallforInteractiveexperience {
+		interface Header {
+			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Select the priority so that preferred customers or critical issues are handled quickly. */
+			PriorityCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Enter the expected due date and time. */
+			ScheduledEnd: DevKit.Form.Controls.ControlDateTime;
+			/** Shows whether the phone call is open, completed, or canceled. Completed and canceled phone calls are read-only and can't be edited. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_tab_2_Sections {
+			tab_2_section_1: DevKit.Form.Controls.ControlSection;
+			tab_2_section_4: DevKit.Form.Controls.ControlSection;
+			tab_2_section_2: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_tab_2 extends DevKit.Form.Controls.IControlTab {
+			Section: tab_tab_2_Sections;
+		}
+		interface Tabs {
+			tab_2: tab_tab_2;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Type the number of minutes spent on the phone call. The duration is used in reporting. */
+			ActualDurationMinutes: DevKit.Form.Controls.ControlInteger;
+			/** Type additional information to describe the phone call, such as the primary message or the products and services discussed. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Select the direction of the phone call as incoming or outbound. */
+			DirectionCode: DevKit.Form.Controls.ControlBoolean;
+			/** Enter the account, contact, lead, or user who made the phone call. */
+			from: DevKit.Form.Controls.ControlLookup;
+			/** Type the phone number. */
+			PhoneNumber: DevKit.Form.Controls.ControlString;
+			/** Choose the record that the phone call relates to. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Choose the record that the phone call relates to. */
+			RegardingObjectId_1: DevKit.Form.Controls.ControlLookup;
+			/** Type a short description about the objective or primary topic of the phone call. */
+			Subject: DevKit.Form.Controls.ControlString;
+			/** Enter the account, contact, lead, or user recipients of the phone call. */
+			to: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormPhoneCallforInteractiveexperience extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form PhoneCallforInteractiveexperience
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form PhoneCallforInteractiveexperience */
+		Body: Hsbc.FormPhoneCallforInteractiveexperience.Body;
+		/** The Header section of form PhoneCallforInteractiveexperience */
+		Header: Hsbc.FormPhoneCallforInteractiveexperience.Header;
+	}
+	namespace FormPhonecallquickcreateform {
+		interface tab_PhoneCall_Tab_1_Sections {
+			PhoneCall_Description: DevKit.Form.Controls.ControlSection;
+			PhoneCall_Description_2: DevKit.Form.Controls.ControlSection;
+			PhoneCall_Description_3: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_PhoneCall_Tab_1 extends DevKit.Form.Controls.IControlTab {
+			Section: tab_PhoneCall_Tab_1_Sections;
+		}
+		interface Tabs {
+			PhoneCall_Tab_1: tab_PhoneCall_Tab_1;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Type the number of minutes spent on the phone call. The duration is used in reporting. */
+			ActualDurationMinutes: DevKit.Form.Controls.ControlInteger;
+			/** Type additional information to describe the phone call, such as the primary message or the products and services discussed. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Select the direction of the phone call as incoming or outbound. */
+			DirectionCode: DevKit.Form.Controls.ControlBoolean;
+			/** Enter the account, contact, lead, or user who made the phone call. */
+			from: DevKit.Form.Controls.ControlLookup;
+			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Type the phone number. */
+			PhoneNumber: DevKit.Form.Controls.ControlString;
+			/** Select the priority so that preferred customers or critical issues are handled quickly. */
+			PriorityCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Choose the record that the phone call relates to. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Enter the expected due date and time. */
+			ScheduledEnd: DevKit.Form.Controls.ControlDateTime;
+			/** Type a short description about the objective or primary topic of the phone call. */
+			Subject: DevKit.Form.Controls.ControlString;
+			/** Enter the account, contact, lead, or user recipients of the phone call. */
+			to: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormPhonecallquickcreateform extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form Phonecallquickcreateform
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form Phonecallquickcreateform */
+		Body: Hsbc.FormPhonecallquickcreateform.Body;
+	}
 	class PhoneCallApi {
 		/**
 		* PL.DynamicsCrm.DevKit PhoneCallApi
@@ -201,4 +372,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Phone Call','Phone Call for Interactive experience','Phone call quick create form.'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

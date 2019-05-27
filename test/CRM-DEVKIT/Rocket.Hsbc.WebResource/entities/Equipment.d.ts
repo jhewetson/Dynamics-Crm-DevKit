@@ -1,5 +1,45 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormEquipmentInformation {
+		interface tab_general_Sections {
+			section1: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Business Unit Id */
+			BusinessUnitId: DevKit.Form.Controls.ControlLookup;
+			/** Description of the facility/equipment. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Email address of person to contact about the use of the facility/equipment. */
+			EMailAddress: DevKit.Form.Controls.ControlString;
+			/** Name of the facility/equipment. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** Site where the facility/equipment is located. */
+			SiteId: DevKit.Form.Controls.ControlLookup;
+			/** Local time zone where the facility/equipment is located. */
+			TimeZoneCode: DevKit.Form.Controls.ControlInteger;
+		}
+	}
+	class FormEquipmentInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form EquipmentInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form EquipmentInformation */
+		Body: Hsbc.FormEquipmentInformation.Body;
+	}
 	class EquipmentApi {
 		/**
 		* PL.DynamicsCrm.DevKit EquipmentApi
@@ -82,4 +122,4 @@ declare namespace OptionSet {
 	namespace Equipment {
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

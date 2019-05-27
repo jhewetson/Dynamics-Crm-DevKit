@@ -1,5 +1,99 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormMarketingList {
+		interface Header {
+			/** Shows the date and time when the marketing list was last used in a campaign or in the creation of activities or opportunities. */
+			LastUsedOn: DevKit.Form.Controls.ControlDate;
+			/** Select whether the marketing list is locked. If Yes is selected, no additional members can be added to the marketing list. */
+			LockStatus: DevKit.Form.Controls.ControlBoolean;
+			/** Owner Id */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+		}
+		interface tab_Summary_Sections {
+			information: DevKit.Form.Controls.ControlSection;
+			campaigns: DevKit.Form.Controls.ControlSection;
+			quickcampaigns: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_members_Sections {
+			members: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_notes_Sections {
+			notes: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_Summary extends DevKit.Form.Controls.IControlTab {
+			Section: tab_Summary_Sections;
+		}
+		interface tab_members extends DevKit.Form.Controls.IControlTab {
+			Section: tab_members_Sections;
+		}
+		interface tab_notes extends DevKit.Form.Controls.IControlTab {
+			Section: tab_notes_Sections;
+		}
+		interface Tabs {
+			Summary: tab_Summary;
+			members: tab_members;
+			notes: tab_notes;
+		}
+		interface Body {
+			Tab: Tabs;
+			Campaigns: DevKit.Form.Controls.ControlGrid;
+			QuickCampaigns: DevKit.Form.Controls.ControlGrid;
+			contactsUCI: DevKit.Form.Controls.ControlGrid;
+			accountsUCI: DevKit.Form.Controls.ControlGrid;
+			leadsUCI: DevKit.Form.Controls.ControlGrid;
+			contacts: DevKit.Form.Controls.ControlGrid;
+			accounts: DevKit.Form.Controls.ControlGrid;
+			leads: DevKit.Form.Controls.ControlGrid;
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** Type the cost of obtaining the marketing list. */
+			Cost: DevKit.Form.Controls.ControlMoney;
+			/** Select the type of members that this marketing list will contain: accounts, contacts, or leads. Each list can have only one member type and this value can't be changed after the marketing list is created. */
+			CreatedFromCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type additional information to describe the marketing list, such as the intended use or date of the last update. */
+			Description: DevKit.Form.Controls.ControlString;
+			dynamic_ml_members: DevKit.Form.Controls.ControlActionCards;
+			/** Shows the date and time when the marketing list was last used in a campaign or in the creation of activities or opportunities. */
+			LastUsedOn: DevKit.Form.Controls.ControlDate;
+			/** Type a name for the marketing list so that it is identified correctly in lists. */
+			ListName: DevKit.Form.Controls.ControlString;
+			/** Select whether the marketing list is locked. If Yes is selected, no additional members can be added to the marketing list. */
+			LockStatus: DevKit.Form.Controls.ControlBoolean;
+			/** Type of the members that can be stored in the marketing list. */
+			MemberType: DevKit.Form.Controls.ControlInteger;
+			/** Date and time when the record was modified. */
+			ModifiedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Owner Id */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Type the intended use of the marketing list to identify its key segments, target offers, or business group. */
+			Purpose: DevKit.Form.Controls.ControlString;
+			/** Query used for retrieving members of marketing list. */
+			Query: DevKit.Form.Controls.ControlString;
+			/** Type the source of the marketing list, such as a third-party supplier or internal database. */
+			Source: DevKit.Form.Controls.ControlString;
+			/** Shows whether the marketing list is active or inactive. Inactive marketing lists are read-only and can't be edited unless they are reactivated. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Choose the local currency for the record to make sure budgets are reported in the correct currency. */
+			TransactionCurrencyId: DevKit.Form.Controls.ControlLookup;
+			/** Select whether you want the marketing list to be static or dynamic. The members in a static marketing list are unchanging. A dynamic marketing list is based on a dynamic query that retrieves the updated list of members */
+			Type: DevKit.Form.Controls.ControlBoolean;
+		}
+	}
+	class FormMarketingList extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form MarketingList
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form MarketingList */
+		Body: Hsbc.FormMarketingList.Body;
+		/** The Header section of form MarketingList */
+		Header: Hsbc.FormMarketingList.Header;
+	}
 	class ListApi {
 		/**
 		* PL.DynamicsCrm.DevKit ListApi
@@ -130,4 +224,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Marketing List'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

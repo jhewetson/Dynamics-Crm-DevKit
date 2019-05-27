@@ -1,5 +1,66 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormProductPriceList {
+		interface tab_general_Sections {
+			pricelistiteminformation: DevKit.Form.Controls.ControlSection;
+			Currency: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_Pricinginformation_Sections {
+			pricing: DevKit.Form.Controls.ControlSection;
+			rounding: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface tab_Pricinginformation extends DevKit.Form.Controls.IControlTab {
+			Section: tab_Pricinginformation_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+			Pricinginformation: tab_Pricinginformation;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Monetary amount for the price list. */
+			Amount: DevKit.Form.Controls.ControlMoney;
+			/** Unique identifier of the discount list associated with the price list. */
+			DiscountTypeId: DevKit.Form.Controls.ControlLookup;
+			/** Percentage for the price list. */
+			Percentage: DevKit.Form.Controls.ControlDecimal;
+			/** Unique identifier of the price level associated with this price list. */
+			PriceLevelId: DevKit.Form.Controls.ControlLookup;
+			/** Pricing method applied to the price list. */
+			PricingMethodCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Product associated with the price list. */
+			ProductId: DevKit.Form.Controls.ControlLookup;
+			/** Quantity of the product that must be sold for a given price level. */
+			QuantitySellingCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Rounding option amount for the price list. */
+			RoundingOptionAmount: DevKit.Form.Controls.ControlMoney;
+			/** Option for rounding the price list. */
+			RoundingOptionCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Policy for rounding the price list. */
+			RoundingPolicyCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Choose the local currency for the record to make sure budgets are reported in the correct currency. */
+			TransactionCurrencyId: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier of the unit for the price list. */
+			UoMId: DevKit.Form.Controls.ControlLookup;
+		}
+	}
+	class FormProductPriceList extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form ProductPriceList
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form ProductPriceList */
+		Body: Hsbc.FormProductPriceList.Body;
+	}
 	class ProductPriceLevelApi {
 		/**
 		* PL.DynamicsCrm.DevKit ProductPriceLevelApi
@@ -136,4 +197,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Product Price List'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

@@ -1,5 +1,45 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormCampaignResponse {
+		interface tab_newcampaignresponse_Sections {
+			summary: DevKit.Form.Controls.ControlSection;
+			details: DevKit.Form.Controls.ControlSection;
+			description: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_newcampaignresponse extends DevKit.Form.Controls.IControlTab {
+			Section: tab_newcampaignresponse_Sections;
+		}
+		interface Tabs {
+			newcampaignresponse: tab_newcampaignresponse;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Enter the account, contact, or lead that submitted the campaign response, if it was received from an existing prospect or customer. */
+			Customer: DevKit.Form.Controls.ControlLookup;
+			/** Type additional information to describe the campaign response, such as key discussion points or objectives. */
+			Description: DevKit.Form.Controls.ControlString;
+			/** Choose the parent campaign so that the campaign's response rate is tracked correctly. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Select the type of response from the prospect or customer to indicate their interest in the campaign. */
+			ResponseCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type a short description about the objective or primary topic of the campaign response. */
+			Subject: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormCampaignResponse extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form CampaignResponse
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form CampaignResponse */
+		Body: Hsbc.FormCampaignResponse.Body;
+	}
 	class CampaignResponseApi {
 		/**
 		* PL.DynamicsCrm.DevKit CampaignResponseApi
@@ -266,4 +306,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Campaign Response'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

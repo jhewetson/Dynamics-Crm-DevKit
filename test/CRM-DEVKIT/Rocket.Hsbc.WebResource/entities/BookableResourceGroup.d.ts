@@ -1,5 +1,36 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormBookableResourceGroupInformation {
+		interface Tabs {
+		}
+		interface Body {
+			notescontrol: DevKit.Form.Controls.ControlNote;
+			/** The child resource that is a part of the group. */
+			ChildResource: DevKit.Form.Controls.ControlLookup;
+			/** Enter the group membership start date. */
+			FromDate: DevKit.Form.Controls.ControlDateTime;
+			/** Type the name of the resource group. */
+			Name: DevKit.Form.Controls.ControlString;
+			/** The parent resource that is a part of the group. */
+			ParentResource: DevKit.Form.Controls.ControlLookup;
+			/** Enter the group membership end date. */
+			ToDate: DevKit.Form.Controls.ControlDateTime;
+		}
+	}
+	class FormBookableResourceGroupInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form BookableResourceGroupInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form BookableResourceGroupInformation */
+		Body: Hsbc.FormBookableResourceGroupInformation.Body;
+	}
 	class BookableResourceGroupApi {
 		/**
 		* PL.DynamicsCrm.DevKit BookableResourceGroupApi
@@ -96,4 +127,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

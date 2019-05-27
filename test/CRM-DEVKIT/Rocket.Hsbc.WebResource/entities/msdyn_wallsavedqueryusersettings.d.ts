@@ -1,5 +1,41 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace Formmsdyn_wallsavedqueryusersettingsInformation {
+		interface Tabs {
+		}
+		interface Body {
+			/** Information that indicates whether the corresponding view should be displayed on the personal wall for this user. */
+			msdyn_isvisible: DevKit.Form.Controls.ControlBoolean;
+			/** Name of the corresponding view. */
+			msdyn_savedqueryname: DevKit.Form.Controls.ControlString;
+			/** Unique identifier for User associated with Wall View User Setting. */
+			msdyn_userid: DevKit.Form.Controls.ControlLookup;
+			/** Unique identifier for Wall View associated with Wall View User Setting. */
+			msdyn_wallsavedqueryid: DevKit.Form.Controls.ControlLookup;
+			/** Owner Id */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+		}
+		interface Footer {
+			/** Status of the Wall View User Setting */
+			statecode: DevKit.Form.Controls.ControlOptionSet;
+		}
+	}
+	class Formmsdyn_wallsavedqueryusersettingsInformation extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form msdyn_wallsavedqueryusersettingsInformation
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form msdyn_wallsavedqueryusersettingsInformation */
+		Body: Hsbc.Formmsdyn_wallsavedqueryusersettingsInformation.Body;
+		/** The Footer section of form msdyn_wallsavedqueryusersettingsInformation */
+		Footer: Hsbc.Formmsdyn_wallsavedqueryusersettingsInformation.Footer;
+	}
 	class msdyn_wallsavedqueryusersettingsApi {
 		/**
 		* PL.DynamicsCrm.DevKit msdyn_wallsavedqueryusersettingsApi
@@ -112,4 +148,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

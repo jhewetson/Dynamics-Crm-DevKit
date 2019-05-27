@@ -1,5 +1,183 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Hsbc {
+	namespace FormFeedback {
+		interface Header {
+			/** Shows the rating scaled to a value between 0 and 1 based on minimum and maximum ratings. */
+			NormalizedRating: DevKit.Form.Controls.ControlDecimal;
+			/** Unique identifier of the user or team who owns the knowledge article views. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Select the feedback's status. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_general_Sections {
+			feedbackDetails: DevKit.Form.Controls.ControlSection;
+			feedbackContacts: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Shows who closed the record. */
+			ClosedBy: DevKit.Form.Controls.ControlLookup;
+			/** Shows the date and time when the record was closed. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options. */
+			ClosedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Type the feedback comments. */
+			Comments: DevKit.Form.Controls.ControlString;
+			/** Shows who created the record. */
+			CreatedBy: DevKit.Form.Controls.ControlLookup;
+			/** Shows the contact who created the record. */
+			CreatedByContact: DevKit.Form.Controls.ControlLookup;
+			/** Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options. */
+			CreatedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Enter the maximum rating value. */
+			MaxRating: DevKit.Form.Controls.ControlInteger;
+			/** Enter the minimum rating value. */
+			MinRating: DevKit.Form.Controls.ControlInteger;
+			/** Specifies how helpful the related record was. */
+			Rating: DevKit.Form.Controls.ControlInteger;
+			/** Shows the record that the feedback is associated with. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Shows where the feedback was submitted from. */
+			Source: DevKit.Form.Controls.ControlOptionSet;
+			/** Type a title for the feedback. */
+			Title: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormFeedback extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form Feedback
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form Feedback */
+		Body: Hsbc.FormFeedback.Body;
+		/** The Header section of form Feedback */
+		Header: Hsbc.FormFeedback.Header;
+	}
+	namespace FormFeedbackMainIC {
+		interface Header {
+			/** Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options. */
+			CreatedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Unique identifier of the user or team who owns the knowledge article views. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Shows whether the feedback is open, rejected or closed. */
+			StateCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Select the feedback's status. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+		}
+		interface tab_general_Sections {
+			GeneralInfo: DevKit.Form.Controls.ControlSection;
+			Content: DevKit.Form.Controls.ControlSection;
+			Content_2: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Shows who closed the record. */
+			ClosedBy: DevKit.Form.Controls.ControlLookup;
+			/** Shows the date and time when the record was closed. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options. */
+			ClosedOn: DevKit.Form.Controls.ControlDateTime;
+			/** Type the feedback comments. */
+			Comments: DevKit.Form.Controls.ControlString;
+			/** Shows who created the record. */
+			CreatedBy: DevKit.Form.Controls.ControlLookup;
+			/** Shows the contact who created the record. */
+			CreatedByContact: DevKit.Form.Controls.ControlLookup;
+			/** Enter the maximum rating value. */
+			MaxRating: DevKit.Form.Controls.ControlInteger;
+			/** Enter the minimum rating value. */
+			MinRating: DevKit.Form.Controls.ControlInteger;
+			/** Shows the rating scaled to a value between 0 and 1 based on minimum and maximum ratings. */
+			NormalizedRating: DevKit.Form.Controls.ControlDecimal;
+			/** Specifies how helpful the related record was. */
+			Rating: DevKit.Form.Controls.ControlInteger;
+			/** Shows the record that the feedback is associated with. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Shows where the feedback was submitted from. */
+			Source: DevKit.Form.Controls.ControlOptionSet;
+			/** Type a title for the feedback. */
+			Title: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormFeedbackMainIC extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form FeedbackMainIC
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form FeedbackMainIC */
+		Body: Hsbc.FormFeedbackMainIC.Body;
+		/** The Header section of form FeedbackMainIC */
+		Header: Hsbc.FormFeedbackMainIC.Header;
+	}
+	namespace FormFeedbackQuickCreate {
+		interface tab_general_Sections {
+			feedbackDetails: DevKit.Form.Controls.ControlSection;
+			feedbackContacts: DevKit.Form.Controls.ControlSection;
+		}
+		interface tab_general extends DevKit.Form.Controls.IControlTab {
+			Section: tab_general_Sections;
+		}
+		interface Tabs {
+			general: tab_general;
+		}
+		interface Body {
+			Tab: Tabs;
+			/** Type the feedback comments. */
+			Comments: DevKit.Form.Controls.ControlString;
+			/** Shows the contact who created the record. */
+			CreatedByContact: DevKit.Form.Controls.ControlLookup;
+			/** Enter the maximum rating value. */
+			MaxRating: DevKit.Form.Controls.ControlInteger;
+			/** Enter the minimum rating value. */
+			MinRating: DevKit.Form.Controls.ControlInteger;
+			/** Unique identifier of the user or team who owns the knowledge article views. */
+			OwnerId: DevKit.Form.Controls.ControlLookup;
+			/** Specifies how helpful the related record was. */
+			Rating: DevKit.Form.Controls.ControlInteger;
+			/** Shows the record that the feedback is associated with. */
+			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
+			/** Shows where the feedback was submitted from. */
+			Source: DevKit.Form.Controls.ControlOptionSet;
+			/** Select the feedback's status. */
+			StatusCode: DevKit.Form.Controls.ControlOptionSet;
+			/** Type a title for the feedback. */
+			Title: DevKit.Form.Controls.ControlString;
+		}
+	}
+	class FormFeedbackQuickCreate extends DevKit.Form.IForm {
+		/**
+		* PL.DynamicsCrm.DevKit form FeedbackQuickCreate
+		* @param executionContext the execution context
+		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
+		*/
+		constructor(executionContext: any, defaultWebResourceName?: string);
+		/** Utility functions/methods/objects for Dynamics 365 form */
+		Utility: DevKit.Form.Utility;
+		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
+		WebApi: DevKit.Form.WebApi;
+		/** The Body section of form FeedbackQuickCreate */
+		Body: Hsbc.FormFeedbackQuickCreate.Body;
+	}
 	class FeedbackApi {
 		/**
 		* PL.DynamicsCrm.DevKit FeedbackApi
@@ -124,4 +302,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Feedback','Feedback MainIC','Feedback Quick Create'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
