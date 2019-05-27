@@ -1,64 +1,5 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
-	namespace FormPhoneCall {
-		interface Header {
-			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
-			OwnerId: DevKit.Form.Controls.ControlLookup;
-			/** Select the priority so that preferred customers or critical issues are handled quickly. */
-			PriorityCode: DevKit.Form.Controls.ControlOptionSet;
-			/** Enter the expected due date and time. */
-			ScheduledEnd: DevKit.Form.Controls.ControlDateTime;
-			/** Shows whether the phone call is open, completed, or canceled. Completed and canceled phone calls are read-only and can't be edited. */
-			StateCode: DevKit.Form.Controls.ControlOptionSet;
-		}
-		interface tab_phonecall_Sections {
-			general_information: DevKit.Form.Controls.ControlSection;
-			phone_call_description: DevKit.Form.Controls.ControlSection;
-			phone_call_details: DevKit.Form.Controls.ControlSection;
-			tab_2_section_2: DevKit.Form.Controls.ControlSection;
-		}
-		interface tab_phonecall extends DevKit.Form.Controls.IControlTab {
-			Section: tab_phonecall_Sections;
-		}
-		interface Tabs {
-			phonecall: tab_phonecall;
-		}
-		interface Body {
-			Tab: Tabs;
-			/** Type the number of minutes spent on the phone call. The duration is used in reporting. */
-			ActualDurationMinutes: DevKit.Form.Controls.ControlInteger;
-			/** Type additional information to describe the phone call, such as the primary message or the products and services discussed. */
-			Description: DevKit.Form.Controls.ControlString;
-			/** Select the direction of the phone call as incoming or outbound. */
-			DirectionCode: DevKit.Form.Controls.ControlBoolean;
-			/** Enter the account, contact, lead, or user who made the phone call. */
-			from: DevKit.Form.Controls.ControlLookup;
-			/** Type the phone number. */
-			PhoneNumber: DevKit.Form.Controls.ControlString;
-			/** Choose the record that the phone call relates to. */
-			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
-			/** Type a short description about the objective or primary topic of the phone call. */
-			Subject: DevKit.Form.Controls.ControlString;
-			/** Enter the account, contact, lead, or user recipients of the phone call. */
-			to: DevKit.Form.Controls.ControlLookup;
-		}
-	}
-	class FormPhoneCall extends DevKit.Form.IForm {
-		/**
-		* PL.DynamicsCrm.DevKit form PhoneCall
-		* @param executionContext the execution context
-		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
-		*/
-		constructor(executionContext: any, defaultWebResourceName?: string);
-		/** Utility functions/methods/objects for Dynamics 365 form */
-		Utility: DevKit.Form.Utility;
-		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
-		WebApi: DevKit.Form.WebApi;
-		/** The Body section of form PhoneCall */
-		Body: Rocket.FormPhoneCall.Body;
-		/** The Header section of form PhoneCall */
-		Header: Rocket.FormPhoneCall.Header;
-	}
 	class PhoneCallApi {
 		/**
 		* PL.DynamicsCrm.DevKit PhoneCallApi
@@ -226,4 +167,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':['Phone Call'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

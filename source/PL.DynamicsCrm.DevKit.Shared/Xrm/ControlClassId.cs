@@ -25,6 +25,7 @@
         public const string MULTI_LINES_OF_TEXT = "E0DECE4B-6FC8-4A8F-A065-082708572369";
         public const string MULTI_LINES_OF_TEXT_MAX = "6F3FB987-393B-4D2D-859F-9D0F0349B6AD";
         public const string MULTI_LINES_OF_TEXT_MEMO = "F02EF977-2564-4B9A-B2F0-DF083D8A019B";
+        public const string MULTI_LINES_OF_TEXT_DESCRIPTION = "F94DB24F-263D-44A7-B38E-A35E9854812B";
         public const string DATE_TIME = "5B773807-9FB2-42DB-97C3-7A91EFF8ADFF";
         public const string LOOKUP = "270BD3DB-D9AF-4782-9025-509E298DEC0A";
         public const string LOOKUP_2 = "3246F906-1F71-45F7-B11F-D7BE0F9D04C9";
@@ -75,6 +76,7 @@
             MULTI_LINES_OF_TEXT,
             MULTI_LINES_OF_TEXT_MAX,
             MULTI_LINES_OF_TEXT_MEMO,
+            MULTI_LINES_OF_TEXT_DESCRIPTION,
             DATE_TIME,
             LOOKUP,
             LOOKUP_2,

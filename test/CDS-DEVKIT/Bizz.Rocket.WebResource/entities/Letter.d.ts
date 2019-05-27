@@ -1,64 +1,5 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
-	namespace FormLetter {
-		interface Header {
-			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
-			OwnerId: DevKit.Form.Controls.ControlLookup;
-			/** Select the priority so that preferred customers or critical issues are handled quickly. */
-			PriorityCode: DevKit.Form.Controls.ControlOptionSet;
-			/** Enter the expected due date and time. */
-			ScheduledEnd: DevKit.Form.Controls.ControlDateTime;
-			/** Shows whether the letter is open, completed, or canceled. Completed and canceled letters are read-only and can't be edited. */
-			StateCode: DevKit.Form.Controls.ControlOptionSet;
-		}
-		interface tab_SUMMARY_TAB_Sections {
-			generalinformation: DevKit.Form.Controls.ControlSection;
-			Letterdescription: DevKit.Form.Controls.ControlSection;
-			Letterdetails: DevKit.Form.Controls.ControlSection;
-			tab_2_section_2: DevKit.Form.Controls.ControlSection;
-		}
-		interface tab_SUMMARY_TAB extends DevKit.Form.Controls.IControlTab {
-			Section: tab_SUMMARY_TAB_Sections;
-		}
-		interface Tabs {
-			SUMMARY_TAB: tab_SUMMARY_TAB;
-		}
-		interface Body {
-			Tab: Tabs;
-			/** Type the number of minutes spent creating and sending the letter. The duration is used in reporting. */
-			ActualDurationMinutes: DevKit.Form.Controls.ControlInteger;
-			/** Type the complete recipient address for the letter to ensure timely delivery. */
-			Address: DevKit.Form.Controls.ControlString;
-			/** Type the letter body or additional information to describe the letter, such as the primary message or the products and services described. */
-			Description: DevKit.Form.Controls.ControlString;
-			/** Select the direction of the letter as incoming or outbound. */
-			DirectionCode: DevKit.Form.Controls.ControlBoolean;
-			/** Enter the account, contact, lead, or user who sent the letter. */
-			from: DevKit.Form.Controls.ControlLookup;
-			/** Choose the record that the letter relates to. */
-			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
-			/** Type a short description about the objective or primary topic of the letter. */
-			Subject: DevKit.Form.Controls.ControlString;
-			/** Enter the account, contact, lead, or user recipients for the letter. */
-			to: DevKit.Form.Controls.ControlLookup;
-		}
-	}
-	class FormLetter extends DevKit.Form.IForm {
-		/**
-		* PL.DynamicsCrm.DevKit form Letter
-		* @param executionContext the execution context
-		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
-		*/
-		constructor(executionContext: any, defaultWebResourceName?: string);
-		/** Utility functions/methods/objects for Dynamics 365 form */
-		Utility: DevKit.Form.Utility;
-		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
-		WebApi: DevKit.Form.WebApi;
-		/** The Body section of form Letter */
-		Body: Rocket.FormLetter.Body;
-		/** The Header section of form Letter */
-		Header: Rocket.FormLetter.Header;
-	}
 	class LetterApi {
 		/**
 		* PL.DynamicsCrm.DevKit LetterApi
@@ -224,4 +165,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':['Letter'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

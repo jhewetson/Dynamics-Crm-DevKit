@@ -1,0 +1,2775 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5DDA18B9-DEA0-47EF-8F4A-F52C414A318A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bizz.Rocket.WebResource</RootNamespace>
+    <AssemblyName>Bizz.Rocket.WebResource</AssemblyName>
+    <TargetFrameworkVersion>4.6.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.4</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptModuleKind>None</TypeScriptModuleKind>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\release\</OutputPath>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+    <NoWarn>CS8032</NoWarn>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="entities\Account.form.js">
+      <DependentUpon>Account.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Account.js" />
+    <Content Include="entities\Account.webapi.js">
+      <DependentUpon>Account.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ACIViewMapper.js" />
+    <Content Include="entities\ACIViewMapper.webapi.js">
+      <DependentUpon>ACIViewMapper.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ActionCard.js" />
+    <Content Include="entities\ActionCard.webapi.js">
+      <DependentUpon>ActionCard.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ActionCardUserSettings.js" />
+    <Content Include="entities\ActionCardUserSettings.webapi.js">
+      <DependentUpon>ActionCardUserSettings.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ActionCardUserState.js" />
+    <Content Include="entities\ActionCardUserState.webapi.js">
+      <DependentUpon>ActionCardUserState.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ActivityMimeAttachment.form.js">
+      <DependentUpon>ActivityMimeAttachment.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ActivityMimeAttachment.js" />
+    <Content Include="entities\ActivityMimeAttachment.webapi.js">
+      <DependentUpon>ActivityMimeAttachment.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ActivityParty.js" />
+    <Content Include="entities\ActivityParty.webapi.js">
+      <DependentUpon>ActivityParty.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ActivityPointer.js" />
+    <Content Include="entities\ActivityPointer.webapi.js">
+      <DependentUpon>ActivityPointer.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AdvancedSimilarityRule.form.js">
+      <DependentUpon>AdvancedSimilarityRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AdvancedSimilarityRule.js" />
+    <Content Include="entities\AdvancedSimilarityRule.webapi.js">
+      <DependentUpon>AdvancedSimilarityRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Annotation.form.js">
+      <DependentUpon>Annotation.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Annotation.js" />
+    <Content Include="entities\Annotation.webapi.js">
+      <DependentUpon>Annotation.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AnnualFiscalCalendar.js" />
+    <Content Include="entities\AnnualFiscalCalendar.webapi.js">
+      <DependentUpon>AnnualFiscalCalendar.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AppConfig.js" />
+    <Content Include="entities\AppConfig.webapi.js">
+      <DependentUpon>AppConfig.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AppConfigInstance.js" />
+    <Content Include="entities\AppConfigInstance.webapi.js">
+      <DependentUpon>AppConfigInstance.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AppConfigMaster.js" />
+    <Content Include="entities\AppConfigMaster.webapi.js">
+      <DependentUpon>AppConfigMaster.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ApplicationFile.js" />
+    <Content Include="entities\ApplicationFile.webapi.js">
+      <DependentUpon>ApplicationFile.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AppModule.js" />
+    <Content Include="entities\AppModule.webapi.js">
+      <DependentUpon>AppModule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AppModuleComponent.js" />
+    <Content Include="entities\AppModuleComponent.webapi.js">
+      <DependentUpon>AppModuleComponent.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AppModuleMetadata.js" />
+    <Content Include="entities\AppModuleMetadata.webapi.js">
+      <DependentUpon>AppModuleMetadata.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AppModuleMetadataDependency.js" />
+    <Content Include="entities\AppModuleMetadataDependency.webapi.js">
+      <DependentUpon>AppModuleMetadataDependency.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AppModuleMetadataOperationLog.js" />
+    <Content Include="entities\AppModuleMetadataOperationLog.webapi.js">
+      <DependentUpon>AppModuleMetadataOperationLog.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AppModuleRoles.js" />
+    <Content Include="entities\AppModuleRoles.webapi.js">
+      <DependentUpon>AppModuleRoles.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Appointment.form.js">
+      <DependentUpon>Appointment.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Appointment.js" />
+    <Content Include="entities\Appointment.webapi.js">
+      <DependentUpon>Appointment.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AsyncOperation.form.js">
+      <DependentUpon>AsyncOperation.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AsyncOperation.js" />
+    <Content Include="entities\AsyncOperation.webapi.js">
+      <DependentUpon>AsyncOperation.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Attachment.js" />
+    <Content Include="entities\Attachment.webapi.js">
+      <DependentUpon>Attachment.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AttributeMap.js" />
+    <Content Include="entities\AttributeMap.webapi.js">
+      <DependentUpon>AttributeMap.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Audit.js" />
+    <Content Include="entities\Audit.webapi.js">
+      <DependentUpon>Audit.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AuthorizationServer.js" />
+    <Content Include="entities\AuthorizationServer.webapi.js">
+      <DependentUpon>AuthorizationServer.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AzureServiceConnection.form.js">
+      <DependentUpon>AzureServiceConnection.js</DependentUpon>
+    </Content>
+    <Content Include="entities\AzureServiceConnection.js" />
+    <Content Include="entities\AzureServiceConnection.webapi.js">
+      <DependentUpon>AzureServiceConnection.js</DependentUpon>
+    </Content>
+    <Content Include="entities\BulkDeleteFailure.js" />
+    <Content Include="entities\BulkDeleteFailure.webapi.js">
+      <DependentUpon>BulkDeleteFailure.js</DependentUpon>
+    </Content>
+    <Content Include="entities\BulkDeleteOperation.form.js">
+      <DependentUpon>BulkDeleteOperation.js</DependentUpon>
+    </Content>
+    <Content Include="entities\BulkDeleteOperation.js" />
+    <Content Include="entities\BulkDeleteOperation.webapi.js">
+      <DependentUpon>BulkDeleteOperation.js</DependentUpon>
+    </Content>
+    <Content Include="entities\BusinessDataLocalizedLabel.js" />
+    <Content Include="entities\BusinessDataLocalizedLabel.webapi.js">
+      <DependentUpon>BusinessDataLocalizedLabel.js</DependentUpon>
+    </Content>
+    <Content Include="entities\BusinessProcessFlowInstance.js" />
+    <Content Include="entities\BusinessProcessFlowInstance.webapi.js">
+      <DependentUpon>BusinessProcessFlowInstance.js</DependentUpon>
+    </Content>
+    <Content Include="entities\BusinessUnit.form.js">
+      <DependentUpon>BusinessUnit.js</DependentUpon>
+    </Content>
+    <Content Include="entities\BusinessUnit.js" />
+    <Content Include="entities\BusinessUnit.webapi.js">
+      <DependentUpon>BusinessUnit.js</DependentUpon>
+    </Content>
+    <Content Include="entities\BusinessUnitMap.js" />
+    <Content Include="entities\BusinessUnitMap.webapi.js">
+      <DependentUpon>BusinessUnitMap.js</DependentUpon>
+    </Content>
+    <Content Include="entities\BusinessUnitNewsArticle.form.js">
+      <DependentUpon>BusinessUnitNewsArticle.js</DependentUpon>
+    </Content>
+    <Content Include="entities\BusinessUnitNewsArticle.js" />
+    <Content Include="entities\BusinessUnitNewsArticle.webapi.js">
+      <DependentUpon>BusinessUnitNewsArticle.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Calendar.form.js">
+      <DependentUpon>Calendar.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Calendar.js" />
+    <Content Include="entities\Calendar.webapi.js">
+      <DependentUpon>Calendar.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CalendarRule.form.js">
+      <DependentUpon>CalendarRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CalendarRule.js" />
+    <Content Include="entities\CalendarRule.webapi.js">
+      <DependentUpon>CalendarRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CallbackRegistration.js" />
+    <Content Include="entities\CallbackRegistration.webapi.js">
+      <DependentUpon>CallbackRegistration.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CanvasApp.js" />
+    <Content Include="entities\CanvasApp.webapi.js">
+      <DependentUpon>CanvasApp.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CardType.js" />
+    <Content Include="entities\CardType.webapi.js">
+      <DependentUpon>CardType.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Category.form.js">
+      <DependentUpon>Category.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Category.js" />
+    <Content Include="entities\Category.webapi.js">
+      <DependentUpon>Category.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelAccessProfile.form.js">
+      <DependentUpon>ChannelAccessProfile.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelAccessProfile.js" />
+    <Content Include="entities\ChannelAccessProfile.webapi.js">
+      <DependentUpon>ChannelAccessProfile.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelAccessProfileEntityAccessLevel.js" />
+    <Content Include="entities\ChannelAccessProfileEntityAccessLevel.webapi.js">
+      <DependentUpon>ChannelAccessProfileEntityAccessLevel.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelAccessProfileRule.form.js">
+      <DependentUpon>ChannelAccessProfileRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelAccessProfileRule.js" />
+    <Content Include="entities\ChannelAccessProfileRule.webapi.js">
+      <DependentUpon>ChannelAccessProfileRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelAccessProfileRuleItem.form.js">
+      <DependentUpon>ChannelAccessProfileRuleItem.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelAccessProfileRuleItem.js" />
+    <Content Include="entities\ChannelAccessProfileRuleItem.webapi.js">
+      <DependentUpon>ChannelAccessProfileRuleItem.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelProperty.form.js">
+      <DependentUpon>ChannelProperty.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelProperty.js" />
+    <Content Include="entities\ChannelProperty.webapi.js">
+      <DependentUpon>ChannelProperty.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelPropertyGroup.form.js">
+      <DependentUpon>ChannelPropertyGroup.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ChannelPropertyGroup.js" />
+    <Content Include="entities\ChannelPropertyGroup.webapi.js">
+      <DependentUpon>ChannelPropertyGroup.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ClientUpdate.js" />
+    <Content Include="entities\ClientUpdate.webapi.js">
+      <DependentUpon>ClientUpdate.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ColumnMapping.js" />
+    <Content Include="entities\ColumnMapping.webapi.js">
+      <DependentUpon>ColumnMapping.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ComplexControl.js" />
+    <Content Include="entities\ComplexControl.webapi.js">
+      <DependentUpon>ComplexControl.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Connection.form.js">
+      <DependentUpon>Connection.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Connection.js" />
+    <Content Include="entities\Connection.webapi.js">
+      <DependentUpon>Connection.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ConnectionRole.form.js">
+      <DependentUpon>ConnectionRole.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ConnectionRole.js" />
+    <Content Include="entities\ConnectionRole.webapi.js">
+      <DependentUpon>ConnectionRole.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ConnectionRoleAssociation.js" />
+    <Content Include="entities\ConnectionRoleAssociation.webapi.js">
+      <DependentUpon>ConnectionRoleAssociation.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ConnectionRoleObjectTypeCode.js" />
+    <Content Include="entities\ConnectionRoleObjectTypeCode.webapi.js">
+      <DependentUpon>ConnectionRoleObjectTypeCode.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Contact.form.js">
+      <DependentUpon>Contact.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Contact.js" />
+    <Content Include="entities\Contact.webapi.js">
+      <DependentUpon>Contact.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ConvertRule.form.js">
+      <DependentUpon>ConvertRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ConvertRule.js" />
+    <Content Include="entities\ConvertRule.webapi.js">
+      <DependentUpon>ConvertRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ConvertRuleItem.form.js">
+      <DependentUpon>ConvertRuleItem.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ConvertRuleItem.js" />
+    <Content Include="entities\ConvertRuleItem.webapi.js">
+      <DependentUpon>ConvertRuleItem.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CustomControl.js" />
+    <Content Include="entities\CustomControl.webapi.js">
+      <DependentUpon>CustomControl.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CustomControlDefaultConfig.js" />
+    <Content Include="entities\CustomControlDefaultConfig.webapi.js">
+      <DependentUpon>CustomControlDefaultConfig.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CustomControlResource.js" />
+    <Content Include="entities\CustomControlResource.webapi.js">
+      <DependentUpon>CustomControlResource.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CustomerAddress.form.js">
+      <DependentUpon>CustomerAddress.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CustomerAddress.js" />
+    <Content Include="entities\CustomerAddress.webapi.js">
+      <DependentUpon>CustomerAddress.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CustomerRelationship.form.js">
+      <DependentUpon>CustomerRelationship.js</DependentUpon>
+    </Content>
+    <Content Include="entities\CustomerRelationship.js" />
+    <Content Include="entities\CustomerRelationship.webapi.js">
+      <DependentUpon>CustomerRelationship.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DataPerformance.form.js">
+      <DependentUpon>DataPerformance.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DataPerformance.js" />
+    <Content Include="entities\DataPerformance.webapi.js">
+      <DependentUpon>DataPerformance.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DelveActionHub.js" />
+    <Content Include="entities\DelveActionHub.webapi.js">
+      <DependentUpon>DelveActionHub.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Dependency.js" />
+    <Content Include="entities\Dependency.webapi.js">
+      <DependentUpon>Dependency.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DependencyFeature.js" />
+    <Content Include="entities\DependencyFeature.webapi.js">
+      <DependentUpon>DependencyFeature.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DependencyNode.js" />
+    <Content Include="entities\DependencyNode.webapi.js">
+      <DependentUpon>DependencyNode.js</DependentUpon>
+    </Content>
+    <Content Include="entities\devkit_CustomActivity.form.js">
+      <DependentUpon>devkit_CustomActivity.js</DependentUpon>
+    </Content>
+    <Content Include="entities\devkit_CustomActivity.js" />
+    <Content Include="entities\devkit_CustomActivity.webapi.js">
+      <DependentUpon>devkit_CustomActivity.js</DependentUpon>
+    </Content>
+    <Content Include="entities\devkit_devkit_webapi_contact.js" />
+    <Content Include="entities\devkit_devkit_webapi_contact.webapi.js">
+      <DependentUpon>devkit_devkit_webapi_contact.js</DependentUpon>
+    </Content>
+    <Content Include="entities\devkit_processwebapi1.js" />
+    <Content Include="entities\devkit_processwebapi1.webapi.js">
+      <DependentUpon>devkit_processwebapi1.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DisplayString.form.js">
+      <DependentUpon>DisplayString.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DisplayString.js" />
+    <Content Include="entities\DisplayString.webapi.js">
+      <DependentUpon>DisplayString.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DisplayStringMap.js" />
+    <Content Include="entities\DisplayStringMap.webapi.js">
+      <DependentUpon>DisplayStringMap.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DocumentIndex.form.js">
+      <DependentUpon>DocumentIndex.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DocumentIndex.js" />
+    <Content Include="entities\DocumentIndex.webapi.js">
+      <DependentUpon>DocumentIndex.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DocumentTemplate.form.js">
+      <DependentUpon>DocumentTemplate.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DocumentTemplate.js" />
+    <Content Include="entities\DocumentTemplate.webapi.js">
+      <DependentUpon>DocumentTemplate.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DuplicateRecord.js" />
+    <Content Include="entities\DuplicateRecord.webapi.js">
+      <DependentUpon>DuplicateRecord.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DuplicateRule.form.js">
+      <DependentUpon>DuplicateRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DuplicateRule.js" />
+    <Content Include="entities\DuplicateRule.webapi.js">
+      <DependentUpon>DuplicateRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\DuplicateRuleCondition.js" />
+    <Content Include="entities\DuplicateRuleCondition.webapi.js">
+      <DependentUpon>DuplicateRuleCondition.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Email.form.js">
+      <DependentUpon>Email.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Email.js" />
+    <Content Include="entities\Email.webapi.js">
+      <DependentUpon>Email.js</DependentUpon>
+    </Content>
+    <Content Include="entities\EmailHash.js" />
+    <Content Include="entities\EmailHash.webapi.js">
+      <DependentUpon>EmailHash.js</DependentUpon>
+    </Content>
+    <Content Include="entities\EmailSearch.js" />
+    <Content Include="entities\EmailSearch.webapi.js">
+      <DependentUpon>EmailSearch.js</DependentUpon>
+    </Content>
+    <Content Include="entities\EmailServerProfile.form.js">
+      <DependentUpon>EmailServerProfile.js</DependentUpon>
+    </Content>
+    <Content Include="entities\EmailServerProfile.js" />
+    <Content Include="entities\EmailServerProfile.webapi.js">
+      <DependentUpon>EmailServerProfile.js</DependentUpon>
+    </Content>
+    <Content Include="entities\EmailSignature.form.js">
+      <DependentUpon>EmailSignature.js</DependentUpon>
+    </Content>
+    <Content Include="entities\EmailSignature.js" />
+    <Content Include="entities\EmailSignature.webapi.js">
+      <DependentUpon>EmailSignature.js</DependentUpon>
+    </Content>
+    <Content Include="entities\EntityDataProvider.js" />
+    <Content Include="entities\EntityDataProvider.webapi.js">
+      <DependentUpon>EntityDataProvider.js</DependentUpon>
+    </Content>
+    <Content Include="entities\EntityDataSource.js" />
+    <Content Include="entities\EntityDataSource.webapi.js">
+      <DependentUpon>EntityDataSource.js</DependentUpon>
+    </Content>
+    <Content Include="entities\EntityMap.js" />
+    <Content Include="entities\EntityMap.webapi.js">
+      <DependentUpon>EntityMap.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ExchangeSyncIdMapping.js" />
+    <Content Include="entities\ExchangeSyncIdMapping.webapi.js">
+      <DependentUpon>ExchangeSyncIdMapping.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ExpanderEvent.js" />
+    <Content Include="entities\ExpanderEvent.webapi.js">
+      <DependentUpon>ExpanderEvent.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ExpiredProcess.js" />
+    <Content Include="entities\ExpiredProcess.webapi.js">
+      <DependentUpon>ExpiredProcess.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ExternalParty.form.js">
+      <DependentUpon>ExternalParty.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ExternalParty.js" />
+    <Content Include="entities\ExternalParty.webapi.js">
+      <DependentUpon>ExternalParty.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ExternalPartyItem.form.js">
+      <DependentUpon>ExternalPartyItem.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ExternalPartyItem.js" />
+    <Content Include="entities\ExternalPartyItem.webapi.js">
+      <DependentUpon>ExternalPartyItem.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Fax.form.js">
+      <DependentUpon>Fax.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Fax.js" />
+    <Content Include="entities\Fax.webapi.js">
+      <DependentUpon>Fax.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Feedback.form.js">
+      <DependentUpon>Feedback.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Feedback.js" />
+    <Content Include="entities\Feedback.webapi.js">
+      <DependentUpon>Feedback.js</DependentUpon>
+    </Content>
+    <Content Include="entities\FieldPermission.js" />
+    <Content Include="entities\FieldPermission.webapi.js">
+      <DependentUpon>FieldPermission.js</DependentUpon>
+    </Content>
+    <Content Include="entities\FieldSecurityProfile.form.js">
+      <DependentUpon>FieldSecurityProfile.js</DependentUpon>
+    </Content>
+    <Content Include="entities\FieldSecurityProfile.js" />
+    <Content Include="entities\FieldSecurityProfile.webapi.js">
+      <DependentUpon>FieldSecurityProfile.js</DependentUpon>
+    </Content>
+    <Content Include="entities\FileAttachment.js" />
+    <Content Include="entities\FileAttachment.webapi.js">
+      <DependentUpon>FileAttachment.js</DependentUpon>
+    </Content>
+    <Content Include="entities\FilterTemplate.js" />
+    <Content Include="entities\FilterTemplate.webapi.js">
+      <DependentUpon>FilterTemplate.js</DependentUpon>
+    </Content>
+    <Content Include="entities\FixedMonthlyFiscalCalendar.js" />
+    <Content Include="entities\FixedMonthlyFiscalCalendar.webapi.js">
+      <DependentUpon>FixedMonthlyFiscalCalendar.js</DependentUpon>
+    </Content>
+    <Content Include="entities\GlobalSearchConfiguration.js" />
+    <Content Include="entities\GlobalSearchConfiguration.webapi.js">
+      <DependentUpon>GlobalSearchConfiguration.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Goal.form.js">
+      <DependentUpon>Goal.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Goal.js" />
+    <Content Include="entities\Goal.webapi.js">
+      <DependentUpon>Goal.js</DependentUpon>
+    </Content>
+    <Content Include="entities\GoalRollupQuery.form.js">
+      <DependentUpon>GoalRollupQuery.js</DependentUpon>
+    </Content>
+    <Content Include="entities\GoalRollupQuery.js" />
+    <Content Include="entities\GoalRollupQuery.webapi.js">
+      <DependentUpon>GoalRollupQuery.js</DependentUpon>
+    </Content>
+    <Content Include="entities\HierarchyRule.js" />
+    <Content Include="entities\HierarchyRule.webapi.js">
+      <DependentUpon>HierarchyRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\HierarchySecurityConfiguration.js" />
+    <Content Include="entities\HierarchySecurityConfiguration.webapi.js">
+      <DependentUpon>HierarchySecurityConfiguration.js</DependentUpon>
+    </Content>
+    <Content Include="entities\holidaywrapper.js" />
+    <Content Include="entities\holidaywrapper.webapi.js">
+      <DependentUpon>holidaywrapper.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ImageDescriptor.js" />
+    <Content Include="entities\ImageDescriptor.webapi.js">
+      <DependentUpon>ImageDescriptor.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Import.form.js">
+      <DependentUpon>Import.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Import.js" />
+    <Content Include="entities\Import.webapi.js">
+      <DependentUpon>Import.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ImportData.js" />
+    <Content Include="entities\ImportData.webapi.js">
+      <DependentUpon>ImportData.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ImportEntityMapping.js" />
+    <Content Include="entities\ImportEntityMapping.webapi.js">
+      <DependentUpon>ImportEntityMapping.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ImportFile.form.js">
+      <DependentUpon>ImportFile.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ImportFile.js" />
+    <Content Include="entities\ImportFile.webapi.js">
+      <DependentUpon>ImportFile.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ImportJob.form.js">
+      <DependentUpon>ImportJob.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ImportJob.js" />
+    <Content Include="entities\ImportJob.webapi.js">
+      <DependentUpon>ImportJob.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ImportLog.js" />
+    <Content Include="entities\ImportLog.webapi.js">
+      <DependentUpon>ImportLog.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ImportMap.form.js">
+      <DependentUpon>ImportMap.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ImportMap.js" />
+    <Content Include="entities\ImportMap.webapi.js">
+      <DependentUpon>ImportMap.js</DependentUpon>
+    </Content>
+    <Content Include="entities\IntegrationStatus.js" />
+    <Content Include="entities\IntegrationStatus.webapi.js">
+      <DependentUpon>IntegrationStatus.js</DependentUpon>
+    </Content>
+    <Content Include="entities\InteractionForEmail.js" />
+    <Content Include="entities\InteractionForEmail.webapi.js">
+      <DependentUpon>InteractionForEmail.js</DependentUpon>
+    </Content>
+    <Content Include="entities\InternalAddress.js" />
+    <Content Include="entities\InternalAddress.webapi.js">
+      <DependentUpon>InternalAddress.js</DependentUpon>
+    </Content>
+    <Content Include="entities\InterProcessLock.js" />
+    <Content Include="entities\InterProcessLock.webapi.js">
+      <DependentUpon>InterProcessLock.js</DependentUpon>
+    </Content>
+    <Content Include="entities\InvalidDependency.js" />
+    <Content Include="entities\InvalidDependency.webapi.js">
+      <DependentUpon>InvalidDependency.js</DependentUpon>
+    </Content>
+    <Content Include="entities\IsvConfig.js" />
+    <Content Include="entities\IsvConfig.webapi.js">
+      <DependentUpon>IsvConfig.js</DependentUpon>
+    </Content>
+    <Content Include="entities\KbArticle.form.js">
+      <DependentUpon>KbArticle.js</DependentUpon>
+    </Content>
+    <Content Include="entities\KbArticle.js" />
+    <Content Include="entities\KbArticle.webapi.js">
+      <DependentUpon>KbArticle.js</DependentUpon>
+    </Content>
+    <Content Include="entities\KbArticleComment.form.js">
+      <DependentUpon>KbArticleComment.js</DependentUpon>
+    </Content>
+    <Content Include="entities\KbArticleComment.js" />
+    <Content Include="entities\KbArticleComment.webapi.js">
+      <DependentUpon>KbArticleComment.js</DependentUpon>
+    </Content>
+    <Content Include="entities\KbArticleTemplate.form.js">
+      <DependentUpon>KbArticleTemplate.js</DependentUpon>
+    </Content>
+    <Content Include="entities\KbArticleTemplate.js" />
+    <Content Include="entities\KbArticleTemplate.webapi.js">
+      <DependentUpon>KbArticleTemplate.js</DependentUpon>
+    </Content>
+    <Content Include="entities\KnowledgeArticle.form.js">
+      <DependentUpon>KnowledgeArticle.js</DependentUpon>
+    </Content>
+    <Content Include="entities\KnowledgeArticle.js" />
+    <Content Include="entities\KnowledgeArticle.webapi.js">
+      <DependentUpon>KnowledgeArticle.js</DependentUpon>
+    </Content>
+    <Content Include="entities\KnowledgeArticlesCategories.js" />
+    <Content Include="entities\KnowledgeArticlesCategories.webapi.js">
+      <DependentUpon>KnowledgeArticlesCategories.js</DependentUpon>
+    </Content>
+    <Content Include="entities\KnowledgeArticleViews.form.js">
+      <DependentUpon>KnowledgeArticleViews.js</DependentUpon>
+    </Content>
+    <Content Include="entities\KnowledgeArticleViews.js" />
+    <Content Include="entities\KnowledgeArticleViews.webapi.js">
+      <DependentUpon>KnowledgeArticleViews.js</DependentUpon>
+    </Content>
+    <Content Include="entities\KnowledgeBaseRecord.form.js">
+      <DependentUpon>KnowledgeBaseRecord.js</DependentUpon>
+    </Content>
+    <Content Include="entities\KnowledgeBaseRecord.js" />
+    <Content Include="entities\KnowledgeBaseRecord.webapi.js">
+      <DependentUpon>KnowledgeBaseRecord.js</DependentUpon>
+    </Content>
+    <Content Include="entities\KnowledgeSearchModel.form.js">
+      <DependentUpon>KnowledgeSearchModel.js</DependentUpon>
+    </Content>
+    <Content Include="entities\KnowledgeSearchModel.js" />
+    <Content Include="entities\KnowledgeSearchModel.webapi.js">
+      <DependentUpon>KnowledgeSearchModel.js</DependentUpon>
+    </Content>
+    <Content Include="entities\LanguageLocale.form.js">
+      <DependentUpon>LanguageLocale.js</DependentUpon>
+    </Content>
+    <Content Include="entities\LanguageLocale.js" />
+    <Content Include="entities\LanguageLocale.webapi.js">
+      <DependentUpon>LanguageLocale.js</DependentUpon>
+    </Content>
+    <Content Include="entities\LanguageProvisioningState.js" />
+    <Content Include="entities\LanguageProvisioningState.webapi.js">
+      <DependentUpon>LanguageProvisioningState.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Letter.form.js">
+      <DependentUpon>Letter.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Letter.js" />
+    <Content Include="entities\Letter.webapi.js">
+      <DependentUpon>Letter.js</DependentUpon>
+    </Content>
+    <Content Include="entities\License.js" />
+    <Content Include="entities\License.webapi.js">
+      <DependentUpon>License.js</DependentUpon>
+    </Content>
+    <Content Include="entities\LocalConfigStore.js" />
+    <Content Include="entities\LocalConfigStore.webapi.js">
+      <DependentUpon>LocalConfigStore.js</DependentUpon>
+    </Content>
+    <Content Include="entities\LookUpMapping.js" />
+    <Content Include="entities\LookUpMapping.webapi.js">
+      <DependentUpon>LookUpMapping.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Mailbox.form.js">
+      <DependentUpon>Mailbox.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Mailbox.js" />
+    <Content Include="entities\Mailbox.webapi.js">
+      <DependentUpon>Mailbox.js</DependentUpon>
+    </Content>
+    <Content Include="entities\MailboxStatistics.js" />
+    <Content Include="entities\MailboxStatistics.webapi.js">
+      <DependentUpon>MailboxStatistics.js</DependentUpon>
+    </Content>
+    <Content Include="entities\MailboxTrackingCategory.js" />
+    <Content Include="entities\MailboxTrackingCategory.webapi.js">
+      <DependentUpon>MailboxTrackingCategory.js</DependentUpon>
+    </Content>
+    <Content Include="entities\MailboxTrackingFolder.js" />
+    <Content Include="entities\MailboxTrackingFolder.webapi.js">
+      <DependentUpon>MailboxTrackingFolder.js</DependentUpon>
+    </Content>
+    <Content Include="entities\MailMergeTemplate.form.js">
+      <DependentUpon>MailMergeTemplate.js</DependentUpon>
+    </Content>
+    <Content Include="entities\MailMergeTemplate.js" />
+    <Content Include="entities\MailMergeTemplate.webapi.js">
+      <DependentUpon>MailMergeTemplate.js</DependentUpon>
+    </Content>
+    <Content Include="entities\MetadataDifference.js" />
+    <Content Include="entities\MetadataDifference.webapi.js">
+      <DependentUpon>MetadataDifference.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Metric.form.js">
+      <DependentUpon>Metric.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Metric.js" />
+    <Content Include="entities\Metric.webapi.js">
+      <DependentUpon>Metric.js</DependentUpon>
+    </Content>
+    <Content Include="entities\MobileOfflineProfile.form.js">
+      <DependentUpon>MobileOfflineProfile.js</DependentUpon>
+    </Content>
+    <Content Include="entities\MobileOfflineProfile.js" />
+    <Content Include="entities\MobileOfflineProfile.webapi.js">
+      <DependentUpon>MobileOfflineProfile.js</DependentUpon>
+    </Content>
+    <Content Include="entities\MobileOfflineProfileItem.form.js">
+      <DependentUpon>MobileOfflineProfileItem.js</DependentUpon>
+    </Content>
+    <Content Include="entities\MobileOfflineProfileItem.js" />
+    <Content Include="entities\MobileOfflineProfileItem.webapi.js">
+      <DependentUpon>MobileOfflineProfileItem.js</DependentUpon>
+    </Content>
+    <Content Include="entities\MobileOfflineProfileItemAssociation.form.js">
+      <DependentUpon>MobileOfflineProfileItemAssociation.js</DependentUpon>
+    </Content>
+    <Content Include="entities\MobileOfflineProfileItemAssociation.js" />
+    <Content Include="entities\MobileOfflineProfileItemAssociation.webapi.js">
+      <DependentUpon>MobileOfflineProfileItemAssociation.js</DependentUpon>
+    </Content>
+    <Content Include="entities\MonthlyFiscalCalendar.js" />
+    <Content Include="entities\MonthlyFiscalCalendar.webapi.js">
+      <DependentUpon>MonthlyFiscalCalendar.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_componentlayer.form.js">
+      <DependentUpon>msdyn_componentlayer.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_componentlayer.js" />
+    <Content Include="entities\msdyn_componentlayer.webapi.js">
+      <DependentUpon>msdyn_componentlayer.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_componentlayerdatasource.form.js">
+      <DependentUpon>msdyn_componentlayerdatasource.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_componentlayerdatasource.js" />
+    <Content Include="entities\msdyn_componentlayerdatasource.webapi.js">
+      <DependentUpon>msdyn_componentlayerdatasource.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_Connector.form.js">
+      <DependentUpon>msdyn_Connector.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_Connector.js" />
+    <Content Include="entities\msdyn_Connector.webapi.js">
+      <DependentUpon>msdyn_Connector.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_odatav4ds.form.js">
+      <DependentUpon>msdyn_odatav4ds.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_odatav4ds.js" />
+    <Content Include="entities\msdyn_odatav4ds.webapi.js">
+      <DependentUpon>msdyn_odatav4ds.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_solutioncomponentdatasource.form.js">
+      <DependentUpon>msdyn_solutioncomponentdatasource.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_solutioncomponentdatasource.js" />
+    <Content Include="entities\msdyn_solutioncomponentdatasource.webapi.js">
+      <DependentUpon>msdyn_solutioncomponentdatasource.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_solutioncomponentsummary.form.js">
+      <DependentUpon>msdyn_solutioncomponentsummary.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_solutioncomponentsummary.js" />
+    <Content Include="entities\msdyn_solutioncomponentsummary.webapi.js">
+      <DependentUpon>msdyn_solutioncomponentsummary.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_solutionhistory.form.js">
+      <DependentUpon>msdyn_solutionhistory.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_solutionhistory.js" />
+    <Content Include="entities\msdyn_solutionhistory.webapi.js">
+      <DependentUpon>msdyn_solutionhistory.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_solutionhistorydatasource.form.js">
+      <DependentUpon>msdyn_solutionhistorydatasource.js</DependentUpon>
+    </Content>
+    <Content Include="entities\msdyn_solutionhistorydatasource.js" />
+    <Content Include="entities\msdyn_solutionhistorydatasource.webapi.js">
+      <DependentUpon>msdyn_solutionhistorydatasource.js</DependentUpon>
+    </Content>
+    <Content Include="entities\MultiEntitySearch.js" />
+    <Content Include="entities\MultiEntitySearch.webapi.js">
+      <DependentUpon>MultiEntitySearch.js</DependentUpon>
+    </Content>
+    <Content Include="entities\MultiEntitySearchEntities.js" />
+    <Content Include="entities\MultiEntitySearchEntities.webapi.js">
+      <DependentUpon>MultiEntitySearchEntities.js</DependentUpon>
+    </Content>
+    <Content Include="entities\MultiSelectAttributeOptionValues.js" />
+    <Content Include="entities\MultiSelectAttributeOptionValues.webapi.js">
+      <DependentUpon>MultiSelectAttributeOptionValues.js</DependentUpon>
+    </Content>
+    <Content Include="entities\NavigationSetting.js" />
+    <Content Include="entities\NavigationSetting.webapi.js">
+      <DependentUpon>NavigationSetting.js</DependentUpon>
+    </Content>
+    <Content Include="entities\NewProcess.js" />
+    <Content Include="entities\NewProcess.webapi.js">
+      <DependentUpon>NewProcess.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Notification.js" />
+    <Content Include="entities\Notification.webapi.js">
+      <DependentUpon>Notification.js</DependentUpon>
+    </Content>
+    <Content Include="entities\OfficeDocument.js" />
+    <Content Include="entities\OfficeDocument.webapi.js">
+      <DependentUpon>OfficeDocument.js</DependentUpon>
+    </Content>
+    <Content Include="entities\OfficeGraphDocument.form.js">
+      <DependentUpon>OfficeGraphDocument.js</DependentUpon>
+    </Content>
+    <Content Include="entities\OfficeGraphDocument.js" />
+    <Content Include="entities\OfficeGraphDocument.webapi.js">
+      <DependentUpon>OfficeGraphDocument.js</DependentUpon>
+    </Content>
+    <Content Include="entities\OfflineCommandDefinition.js" />
+    <Content Include="entities\OfflineCommandDefinition.webapi.js">
+      <DependentUpon>OfflineCommandDefinition.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Organization.js" />
+    <Content Include="entities\Organization.webapi.js">
+      <DependentUpon>Organization.js</DependentUpon>
+    </Content>
+    <Content Include="entities\OrganizationStatistic.js" />
+    <Content Include="entities\OrganizationStatistic.webapi.js">
+      <DependentUpon>OrganizationStatistic.js</DependentUpon>
+    </Content>
+    <Content Include="entities\OrganizationUI.js" />
+    <Content Include="entities\OrganizationUI.webapi.js">
+      <DependentUpon>OrganizationUI.js</DependentUpon>
+    </Content>
+    <Content Include="entities\OrgInsightsMetric.js" />
+    <Content Include="entities\OrgInsightsMetric.webapi.js">
+      <DependentUpon>OrgInsightsMetric.js</DependentUpon>
+    </Content>
+    <Content Include="entities\OrgInsightsNotification.js" />
+    <Content Include="entities\OrgInsightsNotification.webapi.js">
+      <DependentUpon>OrgInsightsNotification.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Owner.js" />
+    <Content Include="entities\Owner.webapi.js">
+      <DependentUpon>Owner.js</DependentUpon>
+    </Content>
+    <Content Include="entities\OwnerMapping.js" />
+    <Content Include="entities\OwnerMapping.webapi.js">
+      <DependentUpon>OwnerMapping.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PartnerApplication.form.js">
+      <DependentUpon>PartnerApplication.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PartnerApplication.js" />
+    <Content Include="entities\PartnerApplication.webapi.js">
+      <DependentUpon>PartnerApplication.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PersonalDocumentTemplate.form.js">
+      <DependentUpon>PersonalDocumentTemplate.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PersonalDocumentTemplate.js" />
+    <Content Include="entities\PersonalDocumentTemplate.webapi.js">
+      <DependentUpon>PersonalDocumentTemplate.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PhoneCall.form.js">
+      <DependentUpon>PhoneCall.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PhoneCall.js" />
+    <Content Include="entities\PhoneCall.webapi.js">
+      <DependentUpon>PhoneCall.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PickListMapping.js" />
+    <Content Include="entities\PickListMapping.webapi.js">
+      <DependentUpon>PickListMapping.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PluginAssembly.js" />
+    <Content Include="entities\PluginAssembly.webapi.js">
+      <DependentUpon>PluginAssembly.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PluginTraceLog.form.js">
+      <DependentUpon>PluginTraceLog.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PluginTraceLog.js" />
+    <Content Include="entities\PluginTraceLog.webapi.js">
+      <DependentUpon>PluginTraceLog.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PluginType.js" />
+    <Content Include="entities\PluginType.webapi.js">
+      <DependentUpon>PluginType.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PluginTypeStatistic.js" />
+    <Content Include="entities\PluginTypeStatistic.webapi.js">
+      <DependentUpon>PluginTypeStatistic.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Position.form.js">
+      <DependentUpon>Position.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Position.js" />
+    <Content Include="entities\Position.webapi.js">
+      <DependentUpon>Position.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Post.form.js">
+      <DependentUpon>Post.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Post.js" />
+    <Content Include="entities\Post.webapi.js">
+      <DependentUpon>Post.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PostComment.js" />
+    <Content Include="entities\PostComment.webapi.js">
+      <DependentUpon>PostComment.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PostFollow.form.js">
+      <DependentUpon>PostFollow.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PostFollow.js" />
+    <Content Include="entities\PostFollow.webapi.js">
+      <DependentUpon>PostFollow.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PostLike.js" />
+    <Content Include="entities\PostLike.webapi.js">
+      <DependentUpon>PostLike.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PostRegarding.js" />
+    <Content Include="entities\PostRegarding.webapi.js">
+      <DependentUpon>PostRegarding.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PostRole.js" />
+    <Content Include="entities\PostRole.webapi.js">
+      <DependentUpon>PostRole.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PrincipalAttributeAccessMap.js" />
+    <Content Include="entities\PrincipalAttributeAccessMap.webapi.js">
+      <DependentUpon>PrincipalAttributeAccessMap.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PrincipalEntityMap.js" />
+    <Content Include="entities\PrincipalEntityMap.webapi.js">
+      <DependentUpon>PrincipalEntityMap.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PrincipalObjectAccess.js" />
+    <Content Include="entities\PrincipalObjectAccess.webapi.js">
+      <DependentUpon>PrincipalObjectAccess.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PrincipalObjectAccessReadSnapshot.js" />
+    <Content Include="entities\PrincipalObjectAccessReadSnapshot.webapi.js">
+      <DependentUpon>PrincipalObjectAccessReadSnapshot.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PrincipalObjectAttributeAccess.js" />
+    <Content Include="entities\PrincipalObjectAttributeAccess.webapi.js">
+      <DependentUpon>PrincipalObjectAttributeAccess.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PrincipalSyncAttributeMap.js" />
+    <Content Include="entities\PrincipalSyncAttributeMap.webapi.js">
+      <DependentUpon>PrincipalSyncAttributeMap.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Privilege.js" />
+    <Content Include="entities\Privilege.webapi.js">
+      <DependentUpon>Privilege.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PrivilegeObjectTypeCodes.js" />
+    <Content Include="entities\PrivilegeObjectTypeCodes.webapi.js">
+      <DependentUpon>PrivilegeObjectTypeCodes.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ProcessSession.form.js">
+      <DependentUpon>ProcessSession.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ProcessSession.js" />
+    <Content Include="entities\ProcessSession.webapi.js">
+      <DependentUpon>ProcessSession.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ProcessStage.js" />
+    <Content Include="entities\ProcessStage.webapi.js">
+      <DependentUpon>ProcessStage.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ProcessTrigger.js" />
+    <Content Include="entities\ProcessTrigger.webapi.js">
+      <DependentUpon>ProcessTrigger.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Publisher.form.js">
+      <DependentUpon>Publisher.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Publisher.js" />
+    <Content Include="entities\Publisher.webapi.js">
+      <DependentUpon>Publisher.js</DependentUpon>
+    </Content>
+    <Content Include="entities\PublisherAddress.js" />
+    <Content Include="entities\PublisherAddress.webapi.js">
+      <DependentUpon>PublisherAddress.js</DependentUpon>
+    </Content>
+    <Content Include="entities\QuarterlyFiscalCalendar.js" />
+    <Content Include="entities\QuarterlyFiscalCalendar.webapi.js">
+      <DependentUpon>QuarterlyFiscalCalendar.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Queue.form.js">
+      <DependentUpon>Queue.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Queue.js" />
+    <Content Include="entities\Queue.webapi.js">
+      <DependentUpon>Queue.js</DependentUpon>
+    </Content>
+    <Content Include="entities\QueueItem.form.js">
+      <DependentUpon>QueueItem.js</DependentUpon>
+    </Content>
+    <Content Include="entities\QueueItem.js" />
+    <Content Include="entities\QueueItem.webapi.js">
+      <DependentUpon>QueueItem.js</DependentUpon>
+    </Content>
+    <Content Include="entities\QueueItemCount.js" />
+    <Content Include="entities\QueueItemCount.webapi.js">
+      <DependentUpon>QueueItemCount.js</DependentUpon>
+    </Content>
+    <Content Include="entities\QueueMemberCount.js" />
+    <Content Include="entities\QueueMemberCount.webapi.js">
+      <DependentUpon>QueueMemberCount.js</DependentUpon>
+    </Content>
+    <Content Include="entities\QueueMembership.js" />
+    <Content Include="entities\QueueMembership.webapi.js">
+      <DependentUpon>QueueMembership.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RecommendedDocument.form.js">
+      <DependentUpon>RecommendedDocument.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RecommendedDocument.js" />
+    <Content Include="entities\RecommendedDocument.webapi.js">
+      <DependentUpon>RecommendedDocument.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RecordCountSnapshot.js" />
+    <Content Include="entities\RecordCountSnapshot.webapi.js">
+      <DependentUpon>RecordCountSnapshot.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RecurrenceRule.js" />
+    <Content Include="entities\RecurrenceRule.webapi.js">
+      <DependentUpon>RecurrenceRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RecurringAppointmentMaster.form.js">
+      <DependentUpon>RecurringAppointmentMaster.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RecurringAppointmentMaster.js" />
+    <Content Include="entities\RecurringAppointmentMaster.webapi.js">
+      <DependentUpon>RecurringAppointmentMaster.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RelationshipRole.form.js">
+      <DependentUpon>RelationshipRole.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RelationshipRole.js" />
+    <Content Include="entities\RelationshipRole.webapi.js">
+      <DependentUpon>RelationshipRole.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RelationshipRoleMap.js" />
+    <Content Include="entities\RelationshipRoleMap.webapi.js">
+      <DependentUpon>RelationshipRoleMap.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ReplicationBacklog.js" />
+    <Content Include="entities\ReplicationBacklog.webapi.js">
+      <DependentUpon>ReplicationBacklog.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Report.js" />
+    <Content Include="entities\Report.webapi.js">
+      <DependentUpon>Report.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ReportCategory.js" />
+    <Content Include="entities\ReportCategory.webapi.js">
+      <DependentUpon>ReportCategory.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ReportEntity.js" />
+    <Content Include="entities\ReportEntity.webapi.js">
+      <DependentUpon>ReportEntity.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ReportLink.js" />
+    <Content Include="entities\ReportLink.webapi.js">
+      <DependentUpon>ReportLink.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ReportVisibility.js" />
+    <Content Include="entities\ReportVisibility.webapi.js">
+      <DependentUpon>ReportVisibility.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RibbonClientMetadata.js" />
+    <Content Include="entities\RibbonClientMetadata.webapi.js">
+      <DependentUpon>RibbonClientMetadata.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RibbonCommand.js" />
+    <Content Include="entities\RibbonCommand.webapi.js">
+      <DependentUpon>RibbonCommand.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RibbonContextGroup.js" />
+    <Content Include="entities\RibbonContextGroup.webapi.js">
+      <DependentUpon>RibbonContextGroup.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RibbonCustomization.js" />
+    <Content Include="entities\RibbonCustomization.webapi.js">
+      <DependentUpon>RibbonCustomization.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RibbonDiff.js" />
+    <Content Include="entities\RibbonDiff.webapi.js">
+      <DependentUpon>RibbonDiff.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RibbonRule.js" />
+    <Content Include="entities\RibbonRule.webapi.js">
+      <DependentUpon>RibbonRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RibbonTabToCommandMap.js" />
+    <Content Include="entities\RibbonTabToCommandMap.webapi.js">
+      <DependentUpon>RibbonTabToCommandMap.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Role.form.js">
+      <DependentUpon>Role.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Role.js" />
+    <Content Include="entities\Role.webapi.js">
+      <DependentUpon>Role.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RolePrivileges.js" />
+    <Content Include="entities\RolePrivileges.webapi.js">
+      <DependentUpon>RolePrivileges.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RoleTemplate.js" />
+    <Content Include="entities\RoleTemplate.webapi.js">
+      <DependentUpon>RoleTemplate.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RoleTemplatePrivileges.js" />
+    <Content Include="entities\RoleTemplatePrivileges.webapi.js">
+      <DependentUpon>RoleTemplatePrivileges.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RollupField.form.js">
+      <DependentUpon>RollupField.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RollupField.js" />
+    <Content Include="entities\RollupField.webapi.js">
+      <DependentUpon>RollupField.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RollupJob.js" />
+    <Content Include="entities\RollupJob.webapi.js">
+      <DependentUpon>RollupJob.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RollupProperties.js" />
+    <Content Include="entities\RollupProperties.webapi.js">
+      <DependentUpon>RollupProperties.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RoutingRule.form.js">
+      <DependentUpon>RoutingRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RoutingRule.js" />
+    <Content Include="entities\RoutingRule.webapi.js">
+      <DependentUpon>RoutingRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RoutingRuleItem.form.js">
+      <DependentUpon>RoutingRuleItem.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RoutingRuleItem.js" />
+    <Content Include="entities\RoutingRuleItem.webapi.js">
+      <DependentUpon>RoutingRuleItem.js</DependentUpon>
+    </Content>
+    <Content Include="entities\RuntimeDependency.js" />
+    <Content Include="entities\RuntimeDependency.webapi.js">
+      <DependentUpon>RuntimeDependency.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SavedOrgInsightsConfiguration.js" />
+    <Content Include="entities\SavedOrgInsightsConfiguration.webapi.js">
+      <DependentUpon>SavedOrgInsightsConfiguration.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SavedQuery.form.js">
+      <DependentUpon>SavedQuery.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SavedQuery.js" />
+    <Content Include="entities\SavedQuery.webapi.js">
+      <DependentUpon>SavedQuery.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SavedQueryVisualization.js" />
+    <Content Include="entities\SavedQueryVisualization.webapi.js">
+      <DependentUpon>SavedQueryVisualization.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SdkMessage.js" />
+    <Content Include="entities\SdkMessage.webapi.js">
+      <DependentUpon>SdkMessage.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SdkMessageFilter.js" />
+    <Content Include="entities\SdkMessageFilter.webapi.js">
+      <DependentUpon>SdkMessageFilter.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SdkMessagePair.js" />
+    <Content Include="entities\SdkMessagePair.webapi.js">
+      <DependentUpon>SdkMessagePair.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SdkMessageProcessingStep.js" />
+    <Content Include="entities\SdkMessageProcessingStep.webapi.js">
+      <DependentUpon>SdkMessageProcessingStep.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SdkMessageProcessingStepImage.js" />
+    <Content Include="entities\SdkMessageProcessingStepImage.webapi.js">
+      <DependentUpon>SdkMessageProcessingStepImage.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SdkMessageProcessingStepSecureConfig.js" />
+    <Content Include="entities\SdkMessageProcessingStepSecureConfig.webapi.js">
+      <DependentUpon>SdkMessageProcessingStepSecureConfig.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SdkMessageRequest.js" />
+    <Content Include="entities\SdkMessageRequest.webapi.js">
+      <DependentUpon>SdkMessageRequest.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SdkMessageRequestField.js" />
+    <Content Include="entities\SdkMessageRequestField.webapi.js">
+      <DependentUpon>SdkMessageRequestField.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SdkMessageResponse.js" />
+    <Content Include="entities\SdkMessageResponse.webapi.js">
+      <DependentUpon>SdkMessageResponse.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SdkMessageResponseField.js" />
+    <Content Include="entities\SdkMessageResponseField.webapi.js">
+      <DependentUpon>SdkMessageResponseField.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SemiAnnualFiscalCalendar.js" />
+    <Content Include="entities\SemiAnnualFiscalCalendar.webapi.js">
+      <DependentUpon>SemiAnnualFiscalCalendar.js</DependentUpon>
+    </Content>
+    <Content Include="entities\ServiceEndpoint.js" />
+    <Content Include="entities\ServiceEndpoint.webapi.js">
+      <DependentUpon>ServiceEndpoint.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SharedObjectsForRead.js" />
+    <Content Include="entities\SharedObjectsForRead.webapi.js">
+      <DependentUpon>SharedObjectsForRead.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SharePointData.form.js">
+      <DependentUpon>SharePointData.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SharePointData.js" />
+    <Content Include="entities\SharePointData.webapi.js">
+      <DependentUpon>SharePointData.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SharePointDocument.form.js">
+      <DependentUpon>SharePointDocument.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SharePointDocument.js" />
+    <Content Include="entities\SharePointDocument.webapi.js">
+      <DependentUpon>SharePointDocument.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SharePointDocumentLocation.form.js">
+      <DependentUpon>SharePointDocumentLocation.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SharePointDocumentLocation.js" />
+    <Content Include="entities\SharePointDocumentLocation.webapi.js">
+      <DependentUpon>SharePointDocumentLocation.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SharePointSite.form.js">
+      <DependentUpon>SharePointSite.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SharePointSite.js" />
+    <Content Include="entities\SharePointSite.webapi.js">
+      <DependentUpon>SharePointSite.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SimilarityRule.js" />
+    <Content Include="entities\SimilarityRule.webapi.js">
+      <DependentUpon>SimilarityRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SiteMap.js" />
+    <Content Include="entities\SiteMap.webapi.js">
+      <DependentUpon>SiteMap.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SLA.form.js">
+      <DependentUpon>SLA.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SLA.js" />
+    <Content Include="entities\SLA.webapi.js">
+      <DependentUpon>SLA.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SLAItem.form.js">
+      <DependentUpon>SLAItem.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SLAItem.js" />
+    <Content Include="entities\SLAItem.webapi.js">
+      <DependentUpon>SLAItem.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SLAKPIInstance.form.js">
+      <DependentUpon>SLAKPIInstance.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SLAKPIInstance.js" />
+    <Content Include="entities\SLAKPIInstance.webapi.js">
+      <DependentUpon>SLAKPIInstance.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SocialActivity.form.js">
+      <DependentUpon>SocialActivity.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SocialActivity.js" />
+    <Content Include="entities\SocialActivity.webapi.js">
+      <DependentUpon>SocialActivity.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SocialInsightsConfiguration.js" />
+    <Content Include="entities\SocialInsightsConfiguration.webapi.js">
+      <DependentUpon>SocialInsightsConfiguration.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SocialProfile.form.js">
+      <DependentUpon>SocialProfile.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SocialProfile.js" />
+    <Content Include="entities\SocialProfile.webapi.js">
+      <DependentUpon>SocialProfile.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Solution.form.js">
+      <DependentUpon>Solution.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Solution.js" />
+    <Content Include="entities\Solution.webapi.js">
+      <DependentUpon>Solution.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SolutionComponent.js" />
+    <Content Include="entities\SolutionComponent.webapi.js">
+      <DependentUpon>SolutionComponent.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SolutionComponentDefinition.js" />
+    <Content Include="entities\SolutionComponentDefinition.webapi.js">
+      <DependentUpon>SolutionComponentDefinition.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SolutionHistoryData.js" />
+    <Content Include="entities\SolutionHistoryData.webapi.js">
+      <DependentUpon>SolutionHistoryData.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SqlEncryptionAudit.js" />
+    <Content Include="entities\SqlEncryptionAudit.webapi.js">
+      <DependentUpon>SqlEncryptionAudit.js</DependentUpon>
+    </Content>
+    <Content Include="entities\StatusMap.js" />
+    <Content Include="entities\StatusMap.webapi.js">
+      <DependentUpon>StatusMap.js</DependentUpon>
+    </Content>
+    <Content Include="entities\StringMap.js" />
+    <Content Include="entities\StringMap.webapi.js">
+      <DependentUpon>StringMap.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Subject.js" />
+    <Content Include="entities\Subject.webapi.js">
+      <DependentUpon>Subject.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Subscription.js" />
+    <Content Include="entities\Subscription.webapi.js">
+      <DependentUpon>Subscription.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SubscriptionClients.js" />
+    <Content Include="entities\SubscriptionClients.webapi.js">
+      <DependentUpon>SubscriptionClients.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SubscriptionManuallyTrackedObject.js" />
+    <Content Include="entities\SubscriptionManuallyTrackedObject.webapi.js">
+      <DependentUpon>SubscriptionManuallyTrackedObject.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SubscriptionStatisticsOffline.js" />
+    <Content Include="entities\SubscriptionStatisticsOffline.webapi.js">
+      <DependentUpon>SubscriptionStatisticsOffline.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SubscriptionStatisticsOutlook.js" />
+    <Content Include="entities\SubscriptionStatisticsOutlook.webapi.js">
+      <DependentUpon>SubscriptionStatisticsOutlook.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SubscriptionSyncEntryOffline.js" />
+    <Content Include="entities\SubscriptionSyncEntryOffline.webapi.js">
+      <DependentUpon>SubscriptionSyncEntryOffline.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SubscriptionSyncEntryOutlook.js" />
+    <Content Include="entities\SubscriptionSyncEntryOutlook.webapi.js">
+      <DependentUpon>SubscriptionSyncEntryOutlook.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SubscriptionSyncInfo.js" />
+    <Content Include="entities\SubscriptionSyncInfo.webapi.js">
+      <DependentUpon>SubscriptionSyncInfo.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SubscriptionTrackingDeletedObject.js" />
+    <Content Include="entities\SubscriptionTrackingDeletedObject.webapi.js">
+      <DependentUpon>SubscriptionTrackingDeletedObject.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SuggestionCardTemplate.js" />
+    <Content Include="entities\SuggestionCardTemplate.webapi.js">
+      <DependentUpon>SuggestionCardTemplate.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SyncAttributeMapping.js" />
+    <Content Include="entities\SyncAttributeMapping.webapi.js">
+      <DependentUpon>SyncAttributeMapping.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SyncAttributeMappingProfile.js" />
+    <Content Include="entities\SyncAttributeMappingProfile.webapi.js">
+      <DependentUpon>SyncAttributeMappingProfile.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SyncError.form.js">
+      <DependentUpon>SyncError.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SyncError.js" />
+    <Content Include="entities\SyncError.webapi.js">
+      <DependentUpon>SyncError.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SystemApplicationMetadata.js" />
+    <Content Include="entities\SystemApplicationMetadata.webapi.js">
+      <DependentUpon>SystemApplicationMetadata.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SystemForm.js" />
+    <Content Include="entities\SystemForm.webapi.js">
+      <DependentUpon>SystemForm.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SystemUser.form.js">
+      <DependentUpon>SystemUser.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SystemUser.js" />
+    <Content Include="entities\SystemUser.webapi.js">
+      <DependentUpon>SystemUser.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SystemUserBusinessUnitEntityMap.js" />
+    <Content Include="entities\SystemUserBusinessUnitEntityMap.webapi.js">
+      <DependentUpon>SystemUserBusinessUnitEntityMap.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SystemUserLicenses.js" />
+    <Content Include="entities\SystemUserLicenses.webapi.js">
+      <DependentUpon>SystemUserLicenses.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SystemUserManagerMap.js" />
+    <Content Include="entities\SystemUserManagerMap.webapi.js">
+      <DependentUpon>SystemUserManagerMap.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SystemUserPrincipals.js" />
+    <Content Include="entities\SystemUserPrincipals.webapi.js">
+      <DependentUpon>SystemUserPrincipals.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SystemUserProfiles.js" />
+    <Content Include="entities\SystemUserProfiles.webapi.js">
+      <DependentUpon>SystemUserProfiles.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SystemUserRoles.js" />
+    <Content Include="entities\SystemUserRoles.webapi.js">
+      <DependentUpon>SystemUserRoles.js</DependentUpon>
+    </Content>
+    <Content Include="entities\SystemUserSyncMappingProfiles.js" />
+    <Content Include="entities\SystemUserSyncMappingProfiles.webapi.js">
+      <DependentUpon>SystemUserSyncMappingProfiles.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Task.form.js">
+      <DependentUpon>Task.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Task.js" />
+    <Content Include="entities\Task.webapi.js">
+      <DependentUpon>Task.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Team.form.js">
+      <DependentUpon>Team.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Team.js" />
+    <Content Include="entities\Team.webapi.js">
+      <DependentUpon>Team.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TeamMembership.js" />
+    <Content Include="entities\TeamMembership.webapi.js">
+      <DependentUpon>TeamMembership.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TeamProfiles.js" />
+    <Content Include="entities\TeamProfiles.webapi.js">
+      <DependentUpon>TeamProfiles.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TeamRoles.js" />
+    <Content Include="entities\TeamRoles.webapi.js">
+      <DependentUpon>TeamRoles.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TeamSyncAttributeMappingProfiles.js" />
+    <Content Include="entities\TeamSyncAttributeMappingProfiles.webapi.js">
+      <DependentUpon>TeamSyncAttributeMappingProfiles.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TeamTemplate.form.js">
+      <DependentUpon>TeamTemplate.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TeamTemplate.js" />
+    <Content Include="entities\TeamTemplate.webapi.js">
+      <DependentUpon>TeamTemplate.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Template.form.js">
+      <DependentUpon>Template.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Template.js" />
+    <Content Include="entities\Template.webapi.js">
+      <DependentUpon>Template.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Territory.form.js">
+      <DependentUpon>Territory.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Territory.js" />
+    <Content Include="entities\Territory.webapi.js">
+      <DependentUpon>Territory.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TextAnalyticsEntityMapping.form.js">
+      <DependentUpon>TextAnalyticsEntityMapping.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TextAnalyticsEntityMapping.js" />
+    <Content Include="entities\TextAnalyticsEntityMapping.webapi.js">
+      <DependentUpon>TextAnalyticsEntityMapping.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Theme.form.js">
+      <DependentUpon>Theme.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Theme.js" />
+    <Content Include="entities\Theme.webapi.js">
+      <DependentUpon>Theme.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TimeStampDateMapping.js" />
+    <Content Include="entities\TimeStampDateMapping.webapi.js">
+      <DependentUpon>TimeStampDateMapping.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TimeZoneDefinition.js" />
+    <Content Include="entities\TimeZoneDefinition.webapi.js">
+      <DependentUpon>TimeZoneDefinition.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TimeZoneLocalizedName.js" />
+    <Content Include="entities\TimeZoneLocalizedName.webapi.js">
+      <DependentUpon>TimeZoneLocalizedName.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TimeZoneRule.js" />
+    <Content Include="entities\TimeZoneRule.webapi.js">
+      <DependentUpon>TimeZoneRule.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TraceAssociation.js" />
+    <Content Include="entities\TraceAssociation.webapi.js">
+      <DependentUpon>TraceAssociation.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TraceLog.js" />
+    <Content Include="entities\TraceLog.webapi.js">
+      <DependentUpon>TraceLog.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TraceRegarding.js" />
+    <Content Include="entities\TraceRegarding.webapi.js">
+      <DependentUpon>TraceRegarding.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TransactionCurrency.form.js">
+      <DependentUpon>TransactionCurrency.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TransactionCurrency.js" />
+    <Content Include="entities\TransactionCurrency.webapi.js">
+      <DependentUpon>TransactionCurrency.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TransformationMapping.js" />
+    <Content Include="entities\TransformationMapping.webapi.js">
+      <DependentUpon>TransformationMapping.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TransformationParameterMapping.js" />
+    <Content Include="entities\TransformationParameterMapping.webapi.js">
+      <DependentUpon>TransformationParameterMapping.js</DependentUpon>
+    </Content>
+    <Content Include="entities\TranslationProcess.js" />
+    <Content Include="entities\TranslationProcess.webapi.js">
+      <DependentUpon>TranslationProcess.js</DependentUpon>
+    </Content>
+    <Content Include="entities\UnresolvedAddress.js" />
+    <Content Include="entities\UnresolvedAddress.webapi.js">
+      <DependentUpon>UnresolvedAddress.js</DependentUpon>
+    </Content>
+    <Content Include="entities\UntrackedEmail.js" />
+    <Content Include="entities\UntrackedEmail.webapi.js">
+      <DependentUpon>UntrackedEmail.js</DependentUpon>
+    </Content>
+    <Content Include="entities\UserApplicationMetadata.js" />
+    <Content Include="entities\UserApplicationMetadata.webapi.js">
+      <DependentUpon>UserApplicationMetadata.js</DependentUpon>
+    </Content>
+    <Content Include="entities\UserEntityInstanceData.js" />
+    <Content Include="entities\UserEntityInstanceData.webapi.js">
+      <DependentUpon>UserEntityInstanceData.js</DependentUpon>
+    </Content>
+    <Content Include="entities\UserEntityUISettings.js" />
+    <Content Include="entities\UserEntityUISettings.webapi.js">
+      <DependentUpon>UserEntityUISettings.js</DependentUpon>
+    </Content>
+    <Content Include="entities\UserFiscalCalendar.js" />
+    <Content Include="entities\UserFiscalCalendar.webapi.js">
+      <DependentUpon>UserFiscalCalendar.js</DependentUpon>
+    </Content>
+    <Content Include="entities\UserForm.js" />
+    <Content Include="entities\UserForm.webapi.js">
+      <DependentUpon>UserForm.js</DependentUpon>
+    </Content>
+    <Content Include="entities\UserMapping.form.js">
+      <DependentUpon>UserMapping.js</DependentUpon>
+    </Content>
+    <Content Include="entities\UserMapping.js" />
+    <Content Include="entities\UserMapping.webapi.js">
+      <DependentUpon>UserMapping.js</DependentUpon>
+    </Content>
+    <Content Include="entities\UserQuery.form.js">
+      <DependentUpon>UserQuery.js</DependentUpon>
+    </Content>
+    <Content Include="entities\UserQuery.js" />
+    <Content Include="entities\UserQuery.webapi.js">
+      <DependentUpon>UserQuery.js</DependentUpon>
+    </Content>
+    <Content Include="entities\UserQueryVisualization.js" />
+    <Content Include="entities\UserQueryVisualization.webapi.js">
+      <DependentUpon>UserQueryVisualization.js</DependentUpon>
+    </Content>
+    <Content Include="entities\UserSearchFacet.js" />
+    <Content Include="entities\UserSearchFacet.webapi.js">
+      <DependentUpon>UserSearchFacet.js</DependentUpon>
+    </Content>
+    <Content Include="entities\UserSettings.js" />
+    <Content Include="entities\UserSettings.webapi.js">
+      <DependentUpon>UserSettings.js</DependentUpon>
+    </Content>
+    <Content Include="entities\WebResource.js" />
+    <Content Include="entities\WebResource.webapi.js">
+      <DependentUpon>WebResource.js</DependentUpon>
+    </Content>
+    <Content Include="entities\WebWizard.js" />
+    <Content Include="entities\WebWizard.webapi.js">
+      <DependentUpon>WebWizard.js</DependentUpon>
+    </Content>
+    <Content Include="entities\WizardAccessPrivilege.js" />
+    <Content Include="entities\WizardAccessPrivilege.webapi.js">
+      <DependentUpon>WizardAccessPrivilege.js</DependentUpon>
+    </Content>
+    <Content Include="entities\WizardPage.js" />
+    <Content Include="entities\WizardPage.webapi.js">
+      <DependentUpon>WizardPage.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Workflow.form.js">
+      <DependentUpon>Workflow.js</DependentUpon>
+    </Content>
+    <Content Include="entities\Workflow.js" />
+    <Content Include="entities\Workflow.webapi.js">
+      <DependentUpon>Workflow.js</DependentUpon>
+    </Content>
+    <Content Include="entities\WorkflowDependency.js" />
+    <Content Include="entities\WorkflowDependency.webapi.js">
+      <DependentUpon>WorkflowDependency.js</DependentUpon>
+    </Content>
+    <Content Include="entities\WorkflowLog.js" />
+    <Content Include="entities\WorkflowLog.webapi.js">
+      <DependentUpon>WorkflowLog.js</DependentUpon>
+    </Content>
+    <Content Include="entities\WorkflowWaitSubscription.js" />
+    <Content Include="entities\WorkflowWaitSubscription.webapi.js">
+      <DependentUpon>WorkflowWaitSubscription.js</DependentUpon>
+    </Content>
+    <Content Include="html\HelloWorld.html" />
+    <Content Include="test\devkit_WebApi.test.js">
+      <DependentUpon>devkit_WebApi.test.html</DependentUpon>
+    </Content>
+    <Content Include="test\SpecExtensions.js" />
+    <Content Include="test\devkit_WebApi.test.html" />
+    <Content Include="xml\Account.form.xml" />
+    <Content Include="xml\devkit_WebApi.form.xml" />
+    <Content Include="xml\Email.form.xml" />
+    <None Include="deploy.debug.bat" />
+    <None Include="download.webresources.bat" />
+    <Content Include="entities\devkit_WebApi.form.js">
+      <DependentUpon>devkit_WebApi.js</DependentUpon>
+    </Content>
+    <Content Include="entities\devkit_WebApi.js" />
+    <Content Include="entities\devkit_WebApi.webapi.js">
+      <DependentUpon>devkit_WebApi.js</DependentUpon>
+    </Content>
+    <Content Include="lib\WebApiClient.js" />
+    <None Include="entities\generator.form.bat" />
+    <None Include="entities\generator.webapi.bat" />
+    <Content Include="test\package.json" />
+    <Content Include="test\package-lock.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="css\" />
+    <Folder Include="images\" />
+    <Folder Include="js\" />
+    <Folder Include="resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="entities\Account.d.ts">
+      <DependentUpon>Account.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ACIViewMapper.d.ts">
+      <DependentUpon>ACIViewMapper.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ActionCard.d.ts">
+      <DependentUpon>ActionCard.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ActionCardUserSettings.d.ts">
+      <DependentUpon>ActionCardUserSettings.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ActionCardUserState.d.ts">
+      <DependentUpon>ActionCardUserState.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ActivityMimeAttachment.d.ts">
+      <DependentUpon>ActivityMimeAttachment.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ActivityParty.d.ts">
+      <DependentUpon>ActivityParty.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ActivityPointer.d.ts">
+      <DependentUpon>ActivityPointer.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AdvancedSimilarityRule.d.ts">
+      <DependentUpon>AdvancedSimilarityRule.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Annotation.d.ts">
+      <DependentUpon>Annotation.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AnnualFiscalCalendar.d.ts">
+      <DependentUpon>AnnualFiscalCalendar.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AppConfig.d.ts">
+      <DependentUpon>AppConfig.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AppConfigInstance.d.ts">
+      <DependentUpon>AppConfigInstance.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AppConfigMaster.d.ts">
+      <DependentUpon>AppConfigMaster.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ApplicationFile.d.ts">
+      <DependentUpon>ApplicationFile.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AppModule.d.ts">
+      <DependentUpon>AppModule.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AppModuleComponent.d.ts">
+      <DependentUpon>AppModuleComponent.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AppModuleMetadata.d.ts">
+      <DependentUpon>AppModuleMetadata.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AppModuleMetadataDependency.d.ts">
+      <DependentUpon>AppModuleMetadataDependency.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AppModuleMetadataOperationLog.d.ts">
+      <DependentUpon>AppModuleMetadataOperationLog.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AppModuleRoles.d.ts">
+      <DependentUpon>AppModuleRoles.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Appointment.d.ts">
+      <DependentUpon>Appointment.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AsyncOperation.d.ts">
+      <DependentUpon>AsyncOperation.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Attachment.d.ts">
+      <DependentUpon>Attachment.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AttributeMap.d.ts">
+      <DependentUpon>AttributeMap.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Audit.d.ts">
+      <DependentUpon>Audit.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AuthorizationServer.d.ts">
+      <DependentUpon>AuthorizationServer.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\AzureServiceConnection.d.ts">
+      <DependentUpon>AzureServiceConnection.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\BulkDeleteFailure.d.ts">
+      <DependentUpon>BulkDeleteFailure.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\BulkDeleteOperation.d.ts">
+      <DependentUpon>BulkDeleteOperation.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\BusinessDataLocalizedLabel.d.ts">
+      <DependentUpon>BusinessDataLocalizedLabel.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\BusinessProcessFlowInstance.d.ts">
+      <DependentUpon>BusinessProcessFlowInstance.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\BusinessUnit.d.ts">
+      <DependentUpon>BusinessUnit.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\BusinessUnitMap.d.ts">
+      <DependentUpon>BusinessUnitMap.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\BusinessUnitNewsArticle.d.ts">
+      <DependentUpon>BusinessUnitNewsArticle.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Calendar.d.ts">
+      <DependentUpon>Calendar.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\CalendarRule.d.ts">
+      <DependentUpon>CalendarRule.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\CallbackRegistration.d.ts">
+      <DependentUpon>CallbackRegistration.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\CanvasApp.d.ts">
+      <DependentUpon>CanvasApp.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\CardType.d.ts">
+      <DependentUpon>CardType.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Category.d.ts">
+      <DependentUpon>Category.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ChannelAccessProfile.d.ts">
+      <DependentUpon>ChannelAccessProfile.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ChannelAccessProfileEntityAccessLevel.d.ts">
+      <DependentUpon>ChannelAccessProfileEntityAccessLevel.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ChannelAccessProfileRule.d.ts">
+      <DependentUpon>ChannelAccessProfileRule.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ChannelAccessProfileRuleItem.d.ts">
+      <DependentUpon>ChannelAccessProfileRuleItem.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ChannelProperty.d.ts">
+      <DependentUpon>ChannelProperty.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ChannelPropertyGroup.d.ts">
+      <DependentUpon>ChannelPropertyGroup.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ClientUpdate.d.ts">
+      <DependentUpon>ClientUpdate.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ColumnMapping.d.ts">
+      <DependentUpon>ColumnMapping.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ComplexControl.d.ts">
+      <DependentUpon>ComplexControl.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Connection.d.ts">
+      <DependentUpon>Connection.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ConnectionRole.d.ts">
+      <DependentUpon>ConnectionRole.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ConnectionRoleAssociation.d.ts">
+      <DependentUpon>ConnectionRoleAssociation.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ConnectionRoleObjectTypeCode.d.ts">
+      <DependentUpon>ConnectionRoleObjectTypeCode.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Contact.d.ts">
+      <DependentUpon>Contact.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ConvertRule.d.ts">
+      <DependentUpon>ConvertRule.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ConvertRuleItem.d.ts">
+      <DependentUpon>ConvertRuleItem.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\CustomControl.d.ts">
+      <DependentUpon>CustomControl.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\CustomControlDefaultConfig.d.ts">
+      <DependentUpon>CustomControlDefaultConfig.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\CustomControlResource.d.ts">
+      <DependentUpon>CustomControlResource.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\CustomerAddress.d.ts">
+      <DependentUpon>CustomerAddress.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\CustomerRelationship.d.ts">
+      <DependentUpon>CustomerRelationship.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DataPerformance.d.ts">
+      <DependentUpon>DataPerformance.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DelveActionHub.d.ts">
+      <DependentUpon>DelveActionHub.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Dependency.d.ts">
+      <DependentUpon>Dependency.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DependencyFeature.d.ts">
+      <DependentUpon>DependencyFeature.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DependencyNode.d.ts">
+      <DependentUpon>DependencyNode.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\devkit.d.ts" />
+    <TypeScriptCompile Include="entities\devkit_CustomActivity.d.ts">
+      <DependentUpon>devkit_CustomActivity.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\devkit_devkit_webapi_contact.d.ts">
+      <DependentUpon>devkit_devkit_webapi_contact.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\devkit_processwebapi1.d.ts">
+      <DependentUpon>devkit_processwebapi1.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\devkit_WebApi.d.ts">
+      <DependentUpon>devkit_WebApi.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DisplayString.d.ts">
+      <DependentUpon>DisplayString.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DisplayStringMap.d.ts">
+      <DependentUpon>DisplayStringMap.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DocumentIndex.d.ts">
+      <DependentUpon>DocumentIndex.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DocumentTemplate.d.ts">
+      <DependentUpon>DocumentTemplate.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DuplicateRecord.d.ts">
+      <DependentUpon>DuplicateRecord.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DuplicateRule.d.ts">
+      <DependentUpon>DuplicateRule.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\DuplicateRuleCondition.d.ts">
+      <DependentUpon>DuplicateRuleCondition.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Email.d.ts">
+      <DependentUpon>Email.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\EmailHash.d.ts">
+      <DependentUpon>EmailHash.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\EmailSearch.d.ts">
+      <DependentUpon>EmailSearch.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\EmailServerProfile.d.ts">
+      <DependentUpon>EmailServerProfile.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\EmailSignature.d.ts">
+      <DependentUpon>EmailSignature.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\EntityDataProvider.d.ts">
+      <DependentUpon>EntityDataProvider.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\EntityDataSource.d.ts">
+      <DependentUpon>EntityDataSource.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\EntityMap.d.ts">
+      <DependentUpon>EntityMap.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ExchangeSyncIdMapping.d.ts">
+      <DependentUpon>ExchangeSyncIdMapping.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ExpanderEvent.d.ts">
+      <DependentUpon>ExpanderEvent.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ExpiredProcess.d.ts">
+      <DependentUpon>ExpiredProcess.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ExternalParty.d.ts">
+      <DependentUpon>ExternalParty.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ExternalPartyItem.d.ts">
+      <DependentUpon>ExternalPartyItem.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Fax.d.ts">
+      <DependentUpon>Fax.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Feedback.d.ts">
+      <DependentUpon>Feedback.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\FieldPermission.d.ts">
+      <DependentUpon>FieldPermission.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\FieldSecurityProfile.d.ts">
+      <DependentUpon>FieldSecurityProfile.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\FileAttachment.d.ts">
+      <DependentUpon>FileAttachment.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\FilterTemplate.d.ts">
+      <DependentUpon>FilterTemplate.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\FixedMonthlyFiscalCalendar.d.ts">
+      <DependentUpon>FixedMonthlyFiscalCalendar.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\GlobalSearchConfiguration.d.ts">
+      <DependentUpon>GlobalSearchConfiguration.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Goal.d.ts">
+      <DependentUpon>Goal.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\GoalRollupQuery.d.ts">
+      <DependentUpon>GoalRollupQuery.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\HierarchyRule.d.ts">
+      <DependentUpon>HierarchyRule.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\HierarchySecurityConfiguration.d.ts">
+      <DependentUpon>HierarchySecurityConfiguration.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\holidaywrapper.d.ts">
+      <DependentUpon>holidaywrapper.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ImageDescriptor.d.ts">
+      <DependentUpon>ImageDescriptor.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Import.d.ts">
+      <DependentUpon>Import.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ImportData.d.ts">
+      <DependentUpon>ImportData.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ImportEntityMapping.d.ts">
+      <DependentUpon>ImportEntityMapping.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ImportFile.d.ts">
+      <DependentUpon>ImportFile.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ImportJob.d.ts">
+      <DependentUpon>ImportJob.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ImportLog.d.ts">
+      <DependentUpon>ImportLog.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ImportMap.d.ts">
+      <DependentUpon>ImportMap.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\IntegrationStatus.d.ts">
+      <DependentUpon>IntegrationStatus.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\InteractionForEmail.d.ts">
+      <DependentUpon>InteractionForEmail.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\InternalAddress.d.ts">
+      <DependentUpon>InternalAddress.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\InterProcessLock.d.ts">
+      <DependentUpon>InterProcessLock.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\InvalidDependency.d.ts">
+      <DependentUpon>InvalidDependency.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\IsvConfig.d.ts">
+      <DependentUpon>IsvConfig.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\KbArticle.d.ts">
+      <DependentUpon>KbArticle.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\KbArticleComment.d.ts">
+      <DependentUpon>KbArticleComment.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\KbArticleTemplate.d.ts">
+      <DependentUpon>KbArticleTemplate.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\KnowledgeArticle.d.ts">
+      <DependentUpon>KnowledgeArticle.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\KnowledgeArticlesCategories.d.ts">
+      <DependentUpon>KnowledgeArticlesCategories.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\KnowledgeArticleViews.d.ts">
+      <DependentUpon>KnowledgeArticleViews.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\KnowledgeBaseRecord.d.ts">
+      <DependentUpon>KnowledgeBaseRecord.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\KnowledgeSearchModel.d.ts">
+      <DependentUpon>KnowledgeSearchModel.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\LanguageLocale.d.ts">
+      <DependentUpon>LanguageLocale.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\LanguageProvisioningState.d.ts">
+      <DependentUpon>LanguageProvisioningState.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Letter.d.ts">
+      <DependentUpon>Letter.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\License.d.ts">
+      <DependentUpon>License.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\LocalConfigStore.d.ts">
+      <DependentUpon>LocalConfigStore.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\LookUpMapping.d.ts">
+      <DependentUpon>LookUpMapping.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Mailbox.d.ts">
+      <DependentUpon>Mailbox.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\MailboxStatistics.d.ts">
+      <DependentUpon>MailboxStatistics.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\MailboxTrackingCategory.d.ts">
+      <DependentUpon>MailboxTrackingCategory.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\MailboxTrackingFolder.d.ts">
+      <DependentUpon>MailboxTrackingFolder.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\MailMergeTemplate.d.ts">
+      <DependentUpon>MailMergeTemplate.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\MetadataDifference.d.ts">
+      <DependentUpon>MetadataDifference.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Metric.d.ts">
+      <DependentUpon>Metric.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\MobileOfflineProfile.d.ts">
+      <DependentUpon>MobileOfflineProfile.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\MobileOfflineProfileItem.d.ts">
+      <DependentUpon>MobileOfflineProfileItem.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\MobileOfflineProfileItemAssociation.d.ts">
+      <DependentUpon>MobileOfflineProfileItemAssociation.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\MonthlyFiscalCalendar.d.ts">
+      <DependentUpon>MonthlyFiscalCalendar.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\msdyn_componentlayer.d.ts">
+      <DependentUpon>msdyn_componentlayer.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\msdyn_componentlayerdatasource.d.ts">
+      <DependentUpon>msdyn_componentlayerdatasource.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\msdyn_Connector.d.ts">
+      <DependentUpon>msdyn_Connector.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\msdyn_odatav4ds.d.ts">
+      <DependentUpon>msdyn_odatav4ds.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\msdyn_solutioncomponentdatasource.d.ts">
+      <DependentUpon>msdyn_solutioncomponentdatasource.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\msdyn_solutioncomponentsummary.d.ts">
+      <DependentUpon>msdyn_solutioncomponentsummary.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\msdyn_solutionhistory.d.ts">
+      <DependentUpon>msdyn_solutionhistory.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\msdyn_solutionhistorydatasource.d.ts">
+      <DependentUpon>msdyn_solutionhistorydatasource.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\MultiEntitySearch.d.ts">
+      <DependentUpon>MultiEntitySearch.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\MultiEntitySearchEntities.d.ts">
+      <DependentUpon>MultiEntitySearchEntities.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\MultiSelectAttributeOptionValues.d.ts">
+      <DependentUpon>MultiSelectAttributeOptionValues.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\NavigationSetting.d.ts">
+      <DependentUpon>NavigationSetting.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\NewProcess.d.ts">
+      <DependentUpon>NewProcess.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Notification.d.ts">
+      <DependentUpon>Notification.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\OfficeDocument.d.ts">
+      <DependentUpon>OfficeDocument.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\OfficeGraphDocument.d.ts">
+      <DependentUpon>OfficeGraphDocument.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\OfflineCommandDefinition.d.ts">
+      <DependentUpon>OfflineCommandDefinition.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Organization.d.ts">
+      <DependentUpon>Organization.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\OrganizationStatistic.d.ts">
+      <DependentUpon>OrganizationStatistic.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\OrganizationUI.d.ts">
+      <DependentUpon>OrganizationUI.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\OrgInsightsMetric.d.ts">
+      <DependentUpon>OrgInsightsMetric.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\OrgInsightsNotification.d.ts">
+      <DependentUpon>OrgInsightsNotification.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Owner.d.ts">
+      <DependentUpon>Owner.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\OwnerMapping.d.ts">
+      <DependentUpon>OwnerMapping.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PartnerApplication.d.ts">
+      <DependentUpon>PartnerApplication.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PersonalDocumentTemplate.d.ts">
+      <DependentUpon>PersonalDocumentTemplate.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PhoneCall.d.ts">
+      <DependentUpon>PhoneCall.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PickListMapping.d.ts">
+      <DependentUpon>PickListMapping.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PluginAssembly.d.ts">
+      <DependentUpon>PluginAssembly.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PluginTraceLog.d.ts">
+      <DependentUpon>PluginTraceLog.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PluginType.d.ts">
+      <DependentUpon>PluginType.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PluginTypeStatistic.d.ts">
+      <DependentUpon>PluginTypeStatistic.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Position.d.ts">
+      <DependentUpon>Position.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Post.d.ts">
+      <DependentUpon>Post.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PostComment.d.ts">
+      <DependentUpon>PostComment.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PostFollow.d.ts">
+      <DependentUpon>PostFollow.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PostLike.d.ts">
+      <DependentUpon>PostLike.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PostRegarding.d.ts">
+      <DependentUpon>PostRegarding.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PostRole.d.ts">
+      <DependentUpon>PostRole.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PrincipalAttributeAccessMap.d.ts">
+      <DependentUpon>PrincipalAttributeAccessMap.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PrincipalEntityMap.d.ts">
+      <DependentUpon>PrincipalEntityMap.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PrincipalObjectAccess.d.ts">
+      <DependentUpon>PrincipalObjectAccess.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PrincipalObjectAccessReadSnapshot.d.ts">
+      <DependentUpon>PrincipalObjectAccessReadSnapshot.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PrincipalObjectAttributeAccess.d.ts">
+      <DependentUpon>PrincipalObjectAttributeAccess.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PrincipalSyncAttributeMap.d.ts">
+      <DependentUpon>PrincipalSyncAttributeMap.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Privilege.d.ts">
+      <DependentUpon>Privilege.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PrivilegeObjectTypeCodes.d.ts">
+      <DependentUpon>PrivilegeObjectTypeCodes.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ProcessSession.d.ts">
+      <DependentUpon>ProcessSession.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ProcessStage.d.ts">
+      <DependentUpon>ProcessStage.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ProcessTrigger.d.ts">
+      <DependentUpon>ProcessTrigger.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Publisher.d.ts">
+      <DependentUpon>Publisher.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\PublisherAddress.d.ts">
+      <DependentUpon>PublisherAddress.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\QuarterlyFiscalCalendar.d.ts">
+      <DependentUpon>QuarterlyFiscalCalendar.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Queue.d.ts">
+      <DependentUpon>Queue.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\QueueItem.d.ts">
+      <DependentUpon>QueueItem.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\QueueItemCount.d.ts">
+      <DependentUpon>QueueItemCount.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\QueueMemberCount.d.ts">
+      <DependentUpon>QueueMemberCount.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\QueueMembership.d.ts">
+      <DependentUpon>QueueMembership.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RecommendedDocument.d.ts">
+      <DependentUpon>RecommendedDocument.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RecordCountSnapshot.d.ts">
+      <DependentUpon>RecordCountSnapshot.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RecurrenceRule.d.ts">
+      <DependentUpon>RecurrenceRule.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RecurringAppointmentMaster.d.ts">
+      <DependentUpon>RecurringAppointmentMaster.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RelationshipRole.d.ts">
+      <DependentUpon>RelationshipRole.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RelationshipRoleMap.d.ts">
+      <DependentUpon>RelationshipRoleMap.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ReplicationBacklog.d.ts">
+      <DependentUpon>ReplicationBacklog.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Report.d.ts">
+      <DependentUpon>Report.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ReportCategory.d.ts">
+      <DependentUpon>ReportCategory.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ReportEntity.d.ts">
+      <DependentUpon>ReportEntity.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ReportLink.d.ts">
+      <DependentUpon>ReportLink.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ReportVisibility.d.ts">
+      <DependentUpon>ReportVisibility.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RibbonClientMetadata.d.ts">
+      <DependentUpon>RibbonClientMetadata.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RibbonCommand.d.ts">
+      <DependentUpon>RibbonCommand.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RibbonContextGroup.d.ts">
+      <DependentUpon>RibbonContextGroup.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RibbonCustomization.d.ts">
+      <DependentUpon>RibbonCustomization.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RibbonDiff.d.ts">
+      <DependentUpon>RibbonDiff.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RibbonRule.d.ts">
+      <DependentUpon>RibbonRule.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RibbonTabToCommandMap.d.ts">
+      <DependentUpon>RibbonTabToCommandMap.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Role.d.ts">
+      <DependentUpon>Role.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RolePrivileges.d.ts">
+      <DependentUpon>RolePrivileges.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RoleTemplate.d.ts">
+      <DependentUpon>RoleTemplate.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RoleTemplatePrivileges.d.ts">
+      <DependentUpon>RoleTemplatePrivileges.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RollupField.d.ts">
+      <DependentUpon>RollupField.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RollupJob.d.ts">
+      <DependentUpon>RollupJob.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RollupProperties.d.ts">
+      <DependentUpon>RollupProperties.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RoutingRule.d.ts">
+      <DependentUpon>RoutingRule.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RoutingRuleItem.d.ts">
+      <DependentUpon>RoutingRuleItem.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\RuntimeDependency.d.ts">
+      <DependentUpon>RuntimeDependency.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SavedOrgInsightsConfiguration.d.ts">
+      <DependentUpon>SavedOrgInsightsConfiguration.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SavedQuery.d.ts">
+      <DependentUpon>SavedQuery.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SavedQueryVisualization.d.ts">
+      <DependentUpon>SavedQueryVisualization.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SdkMessage.d.ts">
+      <DependentUpon>SdkMessage.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SdkMessageFilter.d.ts">
+      <DependentUpon>SdkMessageFilter.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SdkMessagePair.d.ts">
+      <DependentUpon>SdkMessagePair.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SdkMessageProcessingStep.d.ts">
+      <DependentUpon>SdkMessageProcessingStep.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SdkMessageProcessingStepImage.d.ts">
+      <DependentUpon>SdkMessageProcessingStepImage.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SdkMessageProcessingStepSecureConfig.d.ts">
+      <DependentUpon>SdkMessageProcessingStepSecureConfig.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SdkMessageRequest.d.ts">
+      <DependentUpon>SdkMessageRequest.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SdkMessageRequestField.d.ts">
+      <DependentUpon>SdkMessageRequestField.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SdkMessageResponse.d.ts">
+      <DependentUpon>SdkMessageResponse.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SdkMessageResponseField.d.ts">
+      <DependentUpon>SdkMessageResponseField.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SemiAnnualFiscalCalendar.d.ts">
+      <DependentUpon>SemiAnnualFiscalCalendar.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\ServiceEndpoint.d.ts">
+      <DependentUpon>ServiceEndpoint.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SharedObjectsForRead.d.ts">
+      <DependentUpon>SharedObjectsForRead.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SharePointData.d.ts">
+      <DependentUpon>SharePointData.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SharePointDocument.d.ts">
+      <DependentUpon>SharePointDocument.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SharePointDocumentLocation.d.ts">
+      <DependentUpon>SharePointDocumentLocation.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SharePointSite.d.ts">
+      <DependentUpon>SharePointSite.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SimilarityRule.d.ts">
+      <DependentUpon>SimilarityRule.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SiteMap.d.ts">
+      <DependentUpon>SiteMap.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SLA.d.ts">
+      <DependentUpon>SLA.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SLAItem.d.ts">
+      <DependentUpon>SLAItem.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SLAKPIInstance.d.ts">
+      <DependentUpon>SLAKPIInstance.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SocialActivity.d.ts">
+      <DependentUpon>SocialActivity.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SocialInsightsConfiguration.d.ts">
+      <DependentUpon>SocialInsightsConfiguration.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SocialProfile.d.ts">
+      <DependentUpon>SocialProfile.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Solution.d.ts">
+      <DependentUpon>Solution.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SolutionComponent.d.ts">
+      <DependentUpon>SolutionComponent.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SolutionComponentDefinition.d.ts">
+      <DependentUpon>SolutionComponentDefinition.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SolutionHistoryData.d.ts">
+      <DependentUpon>SolutionHistoryData.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SqlEncryptionAudit.d.ts">
+      <DependentUpon>SqlEncryptionAudit.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\StatusMap.d.ts">
+      <DependentUpon>StatusMap.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\StringMap.d.ts">
+      <DependentUpon>StringMap.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Subject.d.ts">
+      <DependentUpon>Subject.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Subscription.d.ts">
+      <DependentUpon>Subscription.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SubscriptionClients.d.ts">
+      <DependentUpon>SubscriptionClients.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SubscriptionManuallyTrackedObject.d.ts">
+      <DependentUpon>SubscriptionManuallyTrackedObject.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SubscriptionStatisticsOffline.d.ts">
+      <DependentUpon>SubscriptionStatisticsOffline.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SubscriptionStatisticsOutlook.d.ts">
+      <DependentUpon>SubscriptionStatisticsOutlook.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SubscriptionSyncEntryOffline.d.ts">
+      <DependentUpon>SubscriptionSyncEntryOffline.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SubscriptionSyncEntryOutlook.d.ts">
+      <DependentUpon>SubscriptionSyncEntryOutlook.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SubscriptionSyncInfo.d.ts">
+      <DependentUpon>SubscriptionSyncInfo.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SubscriptionTrackingDeletedObject.d.ts">
+      <DependentUpon>SubscriptionTrackingDeletedObject.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SuggestionCardTemplate.d.ts">
+      <DependentUpon>SuggestionCardTemplate.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SyncAttributeMapping.d.ts">
+      <DependentUpon>SyncAttributeMapping.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SyncAttributeMappingProfile.d.ts">
+      <DependentUpon>SyncAttributeMappingProfile.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SyncError.d.ts">
+      <DependentUpon>SyncError.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SystemApplicationMetadata.d.ts">
+      <DependentUpon>SystemApplicationMetadata.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SystemForm.d.ts">
+      <DependentUpon>SystemForm.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SystemUser.d.ts">
+      <DependentUpon>SystemUser.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SystemUserBusinessUnitEntityMap.d.ts">
+      <DependentUpon>SystemUserBusinessUnitEntityMap.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SystemUserLicenses.d.ts">
+      <DependentUpon>SystemUserLicenses.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SystemUserManagerMap.d.ts">
+      <DependentUpon>SystemUserManagerMap.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SystemUserPrincipals.d.ts">
+      <DependentUpon>SystemUserPrincipals.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SystemUserProfiles.d.ts">
+      <DependentUpon>SystemUserProfiles.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SystemUserRoles.d.ts">
+      <DependentUpon>SystemUserRoles.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\SystemUserSyncMappingProfiles.d.ts">
+      <DependentUpon>SystemUserSyncMappingProfiles.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Task.d.ts">
+      <DependentUpon>Task.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Team.d.ts">
+      <DependentUpon>Team.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\TeamMembership.d.ts">
+      <DependentUpon>TeamMembership.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\TeamProfiles.d.ts">
+      <DependentUpon>TeamProfiles.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\TeamRoles.d.ts">
+      <DependentUpon>TeamRoles.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\TeamSyncAttributeMappingProfiles.d.ts">
+      <DependentUpon>TeamSyncAttributeMappingProfiles.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\TeamTemplate.d.ts">
+      <DependentUpon>TeamTemplate.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Template.d.ts">
+      <DependentUpon>Template.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Territory.d.ts">
+      <DependentUpon>Territory.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\TextAnalyticsEntityMapping.d.ts">
+      <DependentUpon>TextAnalyticsEntityMapping.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Theme.d.ts">
+      <DependentUpon>Theme.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\TimeStampDateMapping.d.ts">
+      <DependentUpon>TimeStampDateMapping.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\TimeZoneDefinition.d.ts">
+      <DependentUpon>TimeZoneDefinition.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\TimeZoneLocalizedName.d.ts">
+      <DependentUpon>TimeZoneLocalizedName.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\TimeZoneRule.d.ts">
+      <DependentUpon>TimeZoneRule.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\TraceAssociation.d.ts">
+      <DependentUpon>TraceAssociation.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\TraceLog.d.ts">
+      <DependentUpon>TraceLog.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\TraceRegarding.d.ts">
+      <DependentUpon>TraceRegarding.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\TransactionCurrency.d.ts">
+      <DependentUpon>TransactionCurrency.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\TransformationMapping.d.ts">
+      <DependentUpon>TransformationMapping.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\TransformationParameterMapping.d.ts">
+      <DependentUpon>TransformationParameterMapping.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\TranslationProcess.d.ts">
+      <DependentUpon>TranslationProcess.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\UnresolvedAddress.d.ts">
+      <DependentUpon>UnresolvedAddress.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\UntrackedEmail.d.ts">
+      <DependentUpon>UntrackedEmail.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\UserApplicationMetadata.d.ts">
+      <DependentUpon>UserApplicationMetadata.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\UserEntityInstanceData.d.ts">
+      <DependentUpon>UserEntityInstanceData.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\UserEntityUISettings.d.ts">
+      <DependentUpon>UserEntityUISettings.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\UserFiscalCalendar.d.ts">
+      <DependentUpon>UserFiscalCalendar.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\UserForm.d.ts">
+      <DependentUpon>UserForm.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\UserMapping.d.ts">
+      <DependentUpon>UserMapping.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\UserQuery.d.ts">
+      <DependentUpon>UserQuery.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\UserQueryVisualization.d.ts">
+      <DependentUpon>UserQueryVisualization.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\UserSearchFacet.d.ts">
+      <DependentUpon>UserSearchFacet.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\UserSettings.d.ts">
+      <DependentUpon>UserSettings.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\WebResource.d.ts">
+      <DependentUpon>WebResource.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\WebWizard.d.ts">
+      <DependentUpon>WebWizard.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\WizardAccessPrivilege.d.ts">
+      <DependentUpon>WizardAccessPrivilege.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\WizardPage.d.ts">
+      <DependentUpon>WizardPage.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\Workflow.d.ts">
+      <DependentUpon>Workflow.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\WorkflowDependency.d.ts">
+      <DependentUpon>WorkflowDependency.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\WorkflowLog.d.ts">
+      <DependentUpon>WorkflowLog.js</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="entities\WorkflowWaitSubscription.d.ts">
+      <DependentUpon>WorkflowWaitSubscription.js</DependentUpon>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\PL.DynamicsCrm.DevKit.Analyzers.1.5.0\analyzers\dotnet\cs\PL.DynamicsCrm.DevKit.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>23645</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:23645/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v15.0\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

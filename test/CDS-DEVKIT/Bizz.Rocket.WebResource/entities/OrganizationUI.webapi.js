@@ -71,7 +71,7 @@ var Rocket;
 			FormIdUnique: { a: 'formidunique', r: true },
 			FormXml: { a: 'formxml' },
 			GridIcon: { a: 'gridicon' },
-			IsCustomizable: { a: ?????????? },
+			IsCustomizable: { a: 'iscustomizable' },
 			IsManaged: { a: 'ismanaged', r: true },
 			LargeEntityIcon: { a: 'largeentityicon' },
 			OrganizationId: { b: 'organizationid', a: '_organizationid_value', c: 'organizations', d: 'organization', r: true },

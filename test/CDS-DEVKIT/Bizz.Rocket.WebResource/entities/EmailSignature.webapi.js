@@ -76,7 +76,7 @@ var Rocket;
 			EmailSignatureId: { a: 'emailsignatureid' },
 			GenerationTypeCode: { a: 'generationtypecode' },
 			ImportSequenceNumber: { a: 'importsequencenumber' },
-			IsCustomizable: { a: ?????????? },
+			IsCustomizable: { a: 'iscustomizable' },
 			IsDefault: { a: 'isdefault' },
 			IsPersonal: { a: 'ispersonal' },
 			LanguageCode: { a: 'languagecode' },

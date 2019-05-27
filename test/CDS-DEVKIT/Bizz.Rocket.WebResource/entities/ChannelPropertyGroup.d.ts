@@ -1,41 +1,5 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
-	namespace FormChannelPropertyGroup {
-		interface tab_property_bag_summary_Sections {
-			property_bag_properties_1: DevKit.Form.Controls.ControlSection;
-			property_bag_items_1: DevKit.Form.Controls.ControlSection;
-		}
-		interface tab_property_bag_summary extends DevKit.Form.Controls.IControlTab {
-			Section: tab_property_bag_summary_Sections;
-		}
-		interface Tabs {
-			property_bag_summary: tab_property_bag_summary;
-		}
-		interface Body {
-			Tab: Tabs;
-			propertiesGrid: DevKit.Form.Controls.ControlGrid;
-			/** Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options. */
-			CreatedOn: DevKit.Form.Controls.ControlDateTime;
-			/** Type the name of the channel property group. */
-			Name: DevKit.Form.Controls.ControlString;
-			/** Select the activity that the property group is associated with. */
-			RegardingTypeCode: DevKit.Form.Controls.ControlOptionSet;
-		}
-	}
-	class FormChannelPropertyGroup extends DevKit.Form.IForm {
-		/**
-		* PL.DynamicsCrm.DevKit form ChannelPropertyGroup
-		* @param executionContext the execution context
-		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
-		*/
-		constructor(executionContext: any, defaultWebResourceName?: string);
-		/** Utility functions/methods/objects for Dynamics 365 form */
-		Utility: DevKit.Form.Utility;
-		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
-		WebApi: DevKit.Form.WebApi;
-		/** The Body section of form ChannelPropertyGroup */
-		Body: Rocket.FormChannelPropertyGroup.Body;
-	}
 	class ChannelPropertyGroupApi {
 		/**
 		* PL.DynamicsCrm.DevKit ChannelPropertyGroupApi
@@ -148,4 +112,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':['Channel Property Group'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

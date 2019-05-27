@@ -1,41 +1,5 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
-	namespace FormMobileOfflineProfile {
-		interface tab_GENERALINFORMATION_TAB_Sections {
-			property_bag_properties_1: DevKit.Form.Controls.ControlSection;
-			MOBILEOFFLINEPROFILEITEMS: DevKit.Form.Controls.ControlSection;
-			profile_users: DevKit.Form.Controls.ControlSection;
-		}
-		interface tab_GENERALINFORMATION_TAB extends DevKit.Form.Controls.IControlTab {
-			Section: tab_GENERALINFORMATION_TAB_Sections;
-		}
-		interface Tabs {
-			GENERALINFORMATION_TAB: tab_GENERALINFORMATION_TAB;
-		}
-		interface Body {
-			Tab: Tabs;
-			profileitemgrid: DevKit.Form.Controls.ControlGrid;
-			SystemUserGrid: DevKit.Form.Controls.ControlGrid;
-			/** Enter a description of the mobile offline profile. */
-			Description: DevKit.Form.Controls.ControlString;
-			/** Enter the name of the mobile offline profile. */
-			Name: DevKit.Form.Controls.ControlString;
-		}
-	}
-	class FormMobileOfflineProfile extends DevKit.Form.IForm {
-		/**
-		* PL.DynamicsCrm.DevKit form MobileOfflineProfile
-		* @param executionContext the execution context
-		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
-		*/
-		constructor(executionContext: any, defaultWebResourceName?: string);
-		/** Utility functions/methods/objects for Dynamics 365 form */
-		Utility: DevKit.Form.Utility;
-		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
-		WebApi: DevKit.Form.WebApi;
-		/** The Body section of form MobileOfflineProfile */
-		Body: Rocket.FormMobileOfflineProfile.Body;
-	}
 	class MobileOfflineProfileApi {
 		/**
 		* PL.DynamicsCrm.DevKit MobileOfflineProfileApi
@@ -126,4 +90,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':['Mobile Offline Profile'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

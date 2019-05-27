@@ -73,7 +73,7 @@ var Rocket;
 			CreatedOnBehalfBy: { b: 'createdonbehalfby', a: '_createdonbehalfby_value', c: 'systemusers', d: 'systemuser', r: true },
 			Event: { a: 'event' },
 			FormId: { b: 'formid', a: '_formid_value', c: 'systemforms', d: 'systemform' },
-			IsCustomizable: { a: ?????????? },
+			IsCustomizable: { a: 'iscustomizable' },
 			IsManaged: { a: 'ismanaged', r: true },
 			MethodId: { a: 'methodid' },
 			ModifiedBy: { b: 'modifiedby', a: '_modifiedby_value', c: 'systemusers', d: 'systemuser', r: true },

@@ -69,7 +69,7 @@ var Rocket;
 			DependencyId: { a: 'dependencyid', r: true },
 			DependentComponentNodeId: { a: 'dependentcomponentnodeid' },
 			DependentComponentType: { a: 'dependentcomponenttype' },
-			IsPublished: { a: ?????????? },
+			IsPublished: { a: 'ispublished' },
 			RequiredComponentModifiedTime_UtcDateAndTime: { a: 'requiredcomponentmodifiedtime', r: true },
 			RequiredComponentNodeId: { a: 'requiredcomponentnodeid' },
 			RequiredComponentType: { a: 'requiredcomponenttype' }

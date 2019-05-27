@@ -77,7 +77,7 @@ var Rocket;
 			FileName: { a: 'filename' },
 			FileSize: { a: 'filesize', r: true },
 			IntroducedVersion: { a: 'introducedversion' },
-			IsCustomizable: { a: ?????????? },
+			IsCustomizable: { a: 'iscustomizable' },
 			IsManaged: { a: 'ismanaged', r: true },
 			IsPersonal: { a: 'ispersonal' },
 			LanguageCode: { a: 'languagecode' },

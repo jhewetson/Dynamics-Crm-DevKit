@@ -213,9 +213,15 @@ namespace PL.DynamicsCrm.DevKit.Shared
                     webApiCode += $"\t\t\tOwnerId_systemuser: {{ b: \"ownerid\", a: \"_ownerid_value\", c: \"systemusers\", d: \"systemuser\" }},\r\n";
                     webApiCode += $"\t\t\tOwnerId_team: {{ b: \"ownerid\", a: \"_ownerid_value\", c: \"teams\", d: \"team\" }},\r\n";
                 }
+                else if (crmAttribute.FieldType == AttributeTypeCode.ManagedProperty)
+                {
+                    webApiCode += $"\t\t\t{crmAttribute.SchemaName}: {{ a: \"{crmAttribute.LogicalName}\" }},\r\n";
+                }
                 else
                 {
-                    if (crmAttribute.LogicalName == "entityimage")
+                    if (crmAttribute.SchemaName == "EntityImage" ||
+                        crmAttribute.SchemaName == "FullImageData" ||
+                        crmAttribute.SchemaName == "ImageData")
                     {
                         webApiCode += $"\t\t\t{crmAttribute.SchemaName}: {{ a: \"{crmAttribute.LogicalName}\" }},\r\n";
                     }

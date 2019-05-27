@@ -74,7 +74,7 @@ var Rocket;
 			ImportSequenceNumber: { a: 'importsequencenumber' },
 			IntroducedVersion: { a: 'introducedversion' },
 			IsActive: { a: 'isactive' },
-			IsCustomizable: { a: ?????????? },
+			IsCustomizable: { a: 'iscustomizable' },
 			IsManaged: { a: 'ismanaged', r: true },
 			KbArticleTemplateId: { a: 'kbarticletemplateid' },
 			KbArticleTemplateIdUnique: { a: 'kbarticletemplateidunique', r: true },

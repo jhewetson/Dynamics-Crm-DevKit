@@ -70,7 +70,7 @@ var Rocket;
 			HierarchyRuleID: { a: 'hierarchyruleid' },
 			HierarchyRuleIDUnique: { a: 'hierarchyruleidunique', r: true },
 			IntroducedVersion: { a: 'introducedversion' },
-			IsCustomizable: { a: ?????????? },
+			IsCustomizable: { a: 'iscustomizable' },
 			IsManaged: { a: 'ismanaged', r: true },
 			Name: { a: 'name' },
 			OrganizationId: { b: 'organizationid', a: '_organizationid_value', c: 'organizations', d: 'organization', r: true },

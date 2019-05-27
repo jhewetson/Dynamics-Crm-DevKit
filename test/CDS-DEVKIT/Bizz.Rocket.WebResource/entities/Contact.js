@@ -1,3 +1,2 @@
-﻿///<reference path='Contact.d.ts' />
-function A() {
-}
+﻿//@ts-check
+///<reference path="Contact.d.ts" />

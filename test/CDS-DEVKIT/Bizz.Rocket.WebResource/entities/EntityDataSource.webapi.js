@@ -74,7 +74,7 @@ var Rocket;
 			EntityDataSourceIdUnique: { a: 'entitydatasourceidunique', r: true },
 			EntityName: { a: 'entityname' },
 			IntroducedVersion: { a: 'introducedversion' },
-			IsCustomizable: { a: ?????????? },
+			IsCustomizable: { a: 'iscustomizable' },
 			IsManaged: { a: 'ismanaged', r: true },
 			Name: { a: 'name' },
 			OrganizationId: { a: 'organizationid', r: true },

@@ -37,8 +37,11 @@ namespace PL.DynamicsCrm.DevKit.Shared
                 var _d_ts = string.Empty;
                 _d_ts += $"///<reference path='devkit.d.ts' />\r\n";
                 _d_ts += $"declare namespace {ProjectName} {{\r\n";
-                _d_ts += GetForm_d_ts();
-                _d_ts += GetWebApi_d_ts();
+                if (ProcessForms.Count > 0)
+                    _d_ts += GetForm_d_ts();
+                if (IsJsWebApi)
+                    _d_ts += GetWebApi_d_ts();
+
                 _d_ts += $"}}\r\n";
                 _d_ts += GetOptionSet_d_ts();
                 _d_ts += GetSavedComment();
@@ -50,7 +53,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
             var _d_ts = string.Empty;
             var comment = new CommentIntellisense()
             {
-                JsForm = ProcessForms.Select(f =>  f.Name.EndsWith(" Information") ? "Information":  f.Name).ToList<string>(),
+                JsForm = ProcessForms.Select(f =>  (f.Name.EndsWith(" Information") ? "Information": (f.Name.EndsWith(" Wizard") ? "Wizard" : f.Name))).ToList<string>(),
                 JsWebApi = IsJsWebApi,
                 IsDebugForm = IsDebugForm,
                 IsDebugWebApi = IsDebugWebApi
@@ -424,6 +427,10 @@ namespace PL.DynamicsCrm.DevKit.Shared
         {
             return string.Empty;
         }
+        private string GetForm_d_ts_Body_QuickCreate(string formXml)
+        {
+            return string.Empty;
+        }
         private string GetForm_d_ts_Body(string formXml)
         {
             var part1 = string.Empty;
@@ -599,6 +606,10 @@ namespace PL.DynamicsCrm.DevKit.Shared
                     {
                         _d_ts += $"{jsdoc}\t\t\t{name}: DevKit.Form.Controls.ControlString;\r\n";
                     }
+                    else if (crmAttribute.FieldType == AttributeTypeCode.ManagedProperty)
+                    {
+                        _d_ts += $"{jsdoc}\t\t\t{name}: DevKit.Form.Controls.ControlString;\r\n";
+                    }
                     else
                     {
                         _d_ts += $"\t\t\t{item.Name}: DevKit.Form.Controls.ELSE1???;//{item.Id} - {item.ClassId} -- FOR DEBUG \r\n";
@@ -667,10 +678,12 @@ namespace PL.DynamicsCrm.DevKit.Shared
         private string GetForm_d_ts()
         {
             var _d_ts = string.Empty;
+
             foreach (var form in ProcessForms)
             {
                 if (form.IsQuickCreate) continue;
                 if (form.Name.ToLower() == "information") form.Name = $"{Class} Information";
+                else if (form.Name.ToLower() == "wizard") form.Name = $"{Class} Wizard";
                 _d_ts += $"\tnamespace Form{Utility.GetSafeName(form.Name)} {{\r\n";
                 var form_d_ts_Header = GetForm_d_ts_Header(form.FormXml);
                 if (form_d_ts_Header.Length > 0)
@@ -708,11 +721,11 @@ namespace PL.DynamicsCrm.DevKit.Shared
                     _d_ts += $"\t\t}}\r\n";
                 }
 
-                var form_d_ts_Composite = GetForm_d_ts_Composite(form.FormXml);
-                if (form_d_ts_Composite.Length > 0)
-                {
-                    _d_ts += form_d_ts_Composite;
-                }
+                //var form_d_ts_Composite = GetForm_d_ts_Composite(form.FormXml);
+                //if (form_d_ts_Composite.Length > 0)
+                //{
+                //    _d_ts += form_d_ts_Composite;
+                //}
 
                 var form_d_ts_Process = GetForm_d_ts_Process(form.FormXml);
                 if (form_d_ts_Process.Length > 0)
@@ -758,16 +771,62 @@ namespace PL.DynamicsCrm.DevKit.Shared
                     formBase += $"\t\t/** The QuickForm of form {formName} */\r\n";
                     formBase += $"\t\tQuickForm: {ProjectName}.Form{formName}.QuickForm;\r\n";
                 }
-                if(form_d_ts_Composite.Length > 0)
-                {
-                    formBase += $"\t\t/** The Composite of form {formName} */\r\n";
-                    formBase += $"\t\tComposite: {ProjectName}.Form{formName}.Composite;\r\n";
-                }
+                //if(form_d_ts_Composite.Length > 0)
+                //{
+                //    formBase += $"\t\t/** The Composite of form {formName} */\r\n";
+                //    formBase += $"\t\tComposite: {ProjectName}.Form{formName}.Composite;\r\n";
+                //}
                 if (form_d_ts_Process.Length > 0)
                 {
                     formBase += $"\t\t/** The Process of form {formName} */\r\n";
                     formBase += $"\t\tProcess: {ProjectName}.Form{formName}.Process;\r\n";
                 }
+                formBase += $"\t}}\r\n";
+                _d_ts += formBase;
+            }
+
+            foreach (var form in ProcessForms)
+            {
+                if (!form.IsQuickCreate) continue;
+                if (form.Name.ToLower() == "information") form.Name = $"{Class} Information";
+                else if (form.Name.ToLower() == "wizard") form.Name = $"{Class} Wizard";
+
+                _d_ts += $"\tnamespace Form{Utility.GetSafeName(form.Name)} {{\r\n";
+                var form_d_ts_Body_QuickCreate = GetForm_d_ts_Body(form.FormXml);
+                if (form_d_ts_Body_QuickCreate.Length > 0)
+                {
+                    _d_ts += form_d_ts_Body_QuickCreate;
+                }
+                //var form_d_ts_Composite = GetForm_d_ts_Composite(form.FormXml);
+                //if (form_d_ts_Composite.Length > 0)
+                //{
+                //    _d_ts += form_d_ts_Composite;
+                //}
+                //}
+                _d_ts += $"\t}}\r\n";
+                var formBase = string.Empty;
+                var formName = Utility.GetSafeName(form.Name);
+                formBase += $"\tclass Form{formName} extends DevKit.Form.IForm {{\r\n";
+                formBase += $"\t\t/**\r\n";
+                formBase += $"\t\t* PL.DynamicsCrm.DevKit form {formName}\r\n";
+                formBase += $"\t\t* @param executionContext the execution context\r\n";
+                formBase += $"\t\t* @param defaultWebResourceName default resource name. E.g.: \"devkit_/resources/Resource\"\r\n";
+                formBase += $"\t\t*/\r\n";
+                formBase += $"\t\tconstructor(executionContext: any, defaultWebResourceName?: string);\r\n";
+                formBase += $"\t\t/** Utility functions/methods/objects for Dynamics 365 form */\r\n";
+                formBase += $"\t\tUtility: DevKit.Form.Utility;\r\n";
+                formBase += $"\t\t/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */\r\n";
+                formBase += $"\t\tWebApi: DevKit.Form.WebApi;\r\n";
+                if (form_d_ts_Body_QuickCreate.Length > 0)
+                {
+                    formBase += $"\t\t/** The Body section of form {formName} */\r\n";
+                    formBase += $"\t\tBody: {ProjectName}.Form{formName}.Body;\r\n";
+                }
+                //if (form_d_ts_Composite.Length > 0)
+                //{
+                //    formBase += $"\t\t/** The Composite of form {formName} */\r\n";
+                //    formBase += $"\t\tComposite: {ProjectName}.Form{formName}.Composite;\r\n";
+                //}
                 formBase += $"\t}}\r\n";
                 _d_ts += formBase;
             }

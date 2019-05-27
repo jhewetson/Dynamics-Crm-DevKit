@@ -1,56 +1,5 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
-	namespace FormTask {
-		interface Header {
-			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
-			OwnerId: DevKit.Form.Controls.ControlLookup;
-			/** Select the priority so that preferred customers or critical issues are handled quickly. */
-			PriorityCode: DevKit.Form.Controls.ControlOptionSet;
-			/** Enter the expected due date and time. */
-			ScheduledEnd: DevKit.Form.Controls.ControlDateTime;
-			/** Shows whether the task is open, completed, or canceled. Completed and canceled tasks are read-only and can't be edited. */
-			StateCode: DevKit.Form.Controls.ControlOptionSet;
-		}
-		interface tab_TASK_TAB_Sections {
-			TASK: DevKit.Form.Controls.ControlSection;
-			Description: DevKit.Form.Controls.ControlSection;
-			task_details: DevKit.Form.Controls.ControlSection;
-			tab_2_section_2: DevKit.Form.Controls.ControlSection;
-		}
-		interface tab_TASK_TAB extends DevKit.Form.Controls.IControlTab {
-			Section: tab_TASK_TAB_Sections;
-		}
-		interface Tabs {
-			TASK_TAB: tab_TASK_TAB;
-		}
-		interface Body {
-			Tab: Tabs;
-			/** Type the number of minutes spent on the task. The duration is used in reporting. */
-			ActualDurationMinutes: DevKit.Form.Controls.ControlInteger;
-			/** Type additional information to describe the task. */
-			Description: DevKit.Form.Controls.ControlString;
-			/** Choose the record that the task relates to. */
-			RegardingObjectId: DevKit.Form.Controls.ControlLookup;
-			/** Type a short description about the objective or primary topic of the task. */
-			Subject: DevKit.Form.Controls.ControlString;
-		}
-	}
-	class FormTask extends DevKit.Form.IForm {
-		/**
-		* PL.DynamicsCrm.DevKit form Task
-		* @param executionContext the execution context
-		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
-		*/
-		constructor(executionContext: any, defaultWebResourceName?: string);
-		/** Utility functions/methods/objects for Dynamics 365 form */
-		Utility: DevKit.Form.Utility;
-		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
-		WebApi: DevKit.Form.WebApi;
-		/** The Body section of form Task */
-		Body: Rocket.FormTask.Body;
-		/** The Header section of form Task */
-		Header: Rocket.FormTask.Header;
-	}
 	class TaskApi {
 		/**
 		* PL.DynamicsCrm.DevKit TaskApi
@@ -218,4 +167,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':['Task'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

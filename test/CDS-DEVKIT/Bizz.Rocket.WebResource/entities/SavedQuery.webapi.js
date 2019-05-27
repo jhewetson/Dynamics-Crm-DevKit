@@ -66,7 +66,7 @@ var Rocket;
         }
 		var savedquery = {
 			AdvancedGroupBy: { a: 'advancedgroupby' },
-			CanBeDeleted: { a: ?????????? },
+			CanBeDeleted: { a: 'canbedeleted' },
 			ColumnSetXml: { a: 'columnsetxml' },
 			ComponentState: { a: 'componentstate', r: true },
 			ConditionalFormatting: { a: 'conditionalformatting' },
@@ -77,7 +77,7 @@ var Rocket;
 			FetchXml: { a: 'fetchxml' },
 			IntroducedVersion: { a: 'introducedversion' },
 			IsCustom: { a: 'iscustom', r: true },
-			IsCustomizable: { a: ?????????? },
+			IsCustomizable: { a: 'iscustomizable' },
 			IsDefault: { a: 'isdefault' },
 			IsManaged: { a: 'ismanaged', r: true },
 			IsQuickFindQuery: { a: 'isquickfindquery' },

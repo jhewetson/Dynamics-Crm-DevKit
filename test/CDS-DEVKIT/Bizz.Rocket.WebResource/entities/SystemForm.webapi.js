@@ -66,7 +66,7 @@ var Rocket;
         }
 		var systemform = {
 			AncestorFormId: { b: 'ancestorformid', a: '_ancestorformid_value', c: 'systemforms', d: 'systemform' },
-			CanBeDeleted: { a: ?????????? },
+			CanBeDeleted: { a: 'canbedeleted' },
 			ComponentState: { a: 'componentstate', r: true },
 			Description: { a: 'description' },
 			FormActivationState: { a: 'formactivationstate' },
@@ -78,7 +78,7 @@ var Rocket;
 			FormXmlManaged: { a: 'formxmlmanaged', r: true },
 			IntroducedVersion: { a: 'introducedversion' },
 			IsAIRMerged: { a: 'isairmerged' },
-			IsCustomizable: { a: ?????????? },
+			IsCustomizable: { a: 'iscustomizable' },
 			IsDefault: { a: 'isdefault' },
 			IsDesktopEnabled: { a: 'isdesktopenabled' },
 			IsManaged: { a: 'ismanaged', r: true },

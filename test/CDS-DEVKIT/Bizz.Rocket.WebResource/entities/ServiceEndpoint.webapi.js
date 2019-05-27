@@ -76,7 +76,7 @@ var Rocket;
 			Description: { a: 'description' },
 			IntroducedVersion: { a: 'introducedversion' },
 			IsAuthValueSet: { a: 'isauthvalueset', r: true },
-			IsCustomizable: { a: ?????????? },
+			IsCustomizable: { a: 'iscustomizable' },
 			IsManaged: { a: 'ismanaged', r: true },
 			IsSASKeySet: { a: 'issaskeyset', r: true },
 			IsSASTokenSet: { a: 'issastokenset', r: true },

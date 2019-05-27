@@ -65,7 +65,7 @@ var Rocket;
             return property;
         }
 		var roleprivileges = {
-			CanBeDeleted: { a: ?????????? },
+			CanBeDeleted: { a: 'canbedeleted' },
 			ComponentState: { a: 'componentstate', r: true },
 			IsManaged: { a: 'ismanaged', r: true },
 			OverwriteTime_UtcDateOnly: { a: 'overwritetime', r: true },

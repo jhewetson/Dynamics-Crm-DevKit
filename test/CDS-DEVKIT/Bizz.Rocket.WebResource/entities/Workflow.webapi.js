@@ -85,7 +85,7 @@ var Rocket;
 			InputParameters: { a: 'inputparameters' },
 			IntroducedVersion: { a: 'introducedversion' },
 			IsCrmUIWorkflow: { a: 'iscrmuiworkflow', r: true },
-			IsCustomizable: { a: ?????????? },
+			IsCustomizable: { a: 'iscustomizable' },
 			IsManaged: { a: 'ismanaged', r: true },
 			IsTransacted: { a: 'istransacted' },
 			LanguageCode: { a: 'languagecode' },

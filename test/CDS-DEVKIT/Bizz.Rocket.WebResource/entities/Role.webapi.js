@@ -66,13 +66,13 @@ var Rocket;
         }
 		var role = {
 			BusinessUnitId: { b: 'businessunitid', a: '_businessunitid_value', c: 'businessunits', d: 'businessunit' },
-			CanBeDeleted: { a: ?????????? },
+			CanBeDeleted: { a: 'canbedeleted' },
 			ComponentState: { a: 'componentstate', r: true },
 			CreatedBy: { b: 'createdby', a: '_createdby_value', c: 'systemusers', d: 'systemuser', r: true },
 			CreatedOn_UtcDateAndTime: { a: 'createdon', r: true },
 			CreatedOnBehalfBy: { b: 'createdonbehalfby', a: '_createdonbehalfby_value', c: 'systemusers', d: 'systemuser', r: true },
 			ImportSequenceNumber: { a: 'importsequencenumber' },
-			IsCustomizable: { a: ?????????? },
+			IsCustomizable: { a: 'iscustomizable' },
 			IsInherited: { a: 'isinherited' },
 			IsManaged: { a: 'ismanaged', r: true },
 			ModifiedBy: { b: 'modifiedby', a: '_modifiedby_value', c: 'systemusers', d: 'systemuser', r: true },

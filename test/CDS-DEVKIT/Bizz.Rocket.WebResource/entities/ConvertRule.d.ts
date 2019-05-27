@@ -1,67 +1,5 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
-	namespace FormRecordCreationandUpdateRule {
-		interface tab_general_Sections {
-			ConvertToCaseSettings: DevKit.Form.Controls.ControlSection;
-			ChannelProperties: DevKit.Form.Controls.ControlSection;
-			SocialMonitoringCaseConditions: DevKit.Form.Controls.ControlSection;
-			EmailCaseConditions: DevKit.Form.Controls.ControlSection;
-			AutoResponseSettings: DevKit.Form.Controls.ControlSection;
-			CaseDetails: DevKit.Form.Controls.ControlSection;
-		}
-		interface tab_general extends DevKit.Form.Controls.IControlTab {
-			Section: tab_general_Sections;
-		}
-		interface Tabs {
-			general: tab_general;
-		}
-		interface Body {
-			Tab: Tabs;
-			ConvertRuleItemsGrid: DevKit.Form.Controls.ControlGrid;
-			/** Choose whether items from unknown senders should be converted to records. */
-			AllowUnknownSender: DevKit.Form.Controls.ControlBoolean;
-			/** channel property group associated with the convert rule. */
-			ChannelPropertyGroupId: DevKit.Form.Controls.ControlLookup;
-			/** Choose whether cases should be created for customers with active entitlements. */
-			CheckActiveEntitlement: DevKit.Form.Controls.ControlBoolean;
-			/** Information whether record needs to be created for black listed social profiles. */
-			CheckBlockedSocialProfile: DevKit.Form.Controls.ControlBoolean;
-			/** Information whether record needs to be created for direct messages. */
-			CheckDirectMessages: DevKit.Form.Controls.ControlBoolean;
-			/** Choose whether an item related to a resolved case should be converted to a case. */
-			CheckIfResolved: DevKit.Form.Controls.ControlBoolean;
-			/** Type a title or name of the queue for which the setting is defined. */
-			Name: DevKit.Form.Controls.ControlString;
-			/** Owner Id */
-			OwnerId: DevKit.Form.Controls.ControlLookup;
-			/** Choose the queue that the rule is assigned to. */
-			QueueId: DevKit.Form.Controls.ControlLookup;
-			/** If you want to create a new case for an item associated with a resolved case, type how long a case must remain resolved before a new case is created for the associated item. */
-			ResolvedSince: DevKit.Form.Controls.ControlInteger;
-			/** Choose the email template to use to create an automatic response to the customer. */
-			ResponseTemplateId: DevKit.Form.Controls.ControlLookup;
-			/** Choose whether to send an automatic email response to the customer after a record is created. */
-			SendAutomaticResponse: DevKit.Form.Controls.ControlBoolean;
-			/** Identifies the Dynamics 365 activity that's the source of the record. */
-			SourceChannelTypeCode: DevKit.Form.Controls.ControlString;
-			/** Source of the record. */
-			SourceTypeCode: DevKit.Form.Controls.ControlOptionSet;
-		}
-	}
-	class FormRecordCreationandUpdateRule extends DevKit.Form.IForm {
-		/**
-		* PL.DynamicsCrm.DevKit form RecordCreationandUpdateRule
-		* @param executionContext the execution context
-		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
-		*/
-		constructor(executionContext: any, defaultWebResourceName?: string);
-		/** Utility functions/methods/objects for Dynamics 365 form */
-		Utility: DevKit.Form.Utility;
-		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
-		WebApi: DevKit.Form.WebApi;
-		/** The Body section of form RecordCreationandUpdateRule */
-		Body: Rocket.FormRecordCreationandUpdateRule.Body;
-	}
 	class ConvertRuleApi {
 		/**
 		* PL.DynamicsCrm.DevKit ConvertRuleApi
@@ -198,4 +136,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':['Record Creation and Update Rule'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

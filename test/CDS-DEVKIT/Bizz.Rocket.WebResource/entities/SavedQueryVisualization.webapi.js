@@ -65,7 +65,7 @@ var Rocket;
             return property;
         }
 		var savedqueryvisualization = {
-			CanBeDeleted: { a: ?????????? },
+			CanBeDeleted: { a: 'canbedeleted' },
 			ChartType: { a: 'charttype' },
 			ComponentState: { a: 'componentstate', r: true },
 			CreatedBy: { b: 'createdby', a: '_createdby_value', c: 'systemusers', d: 'systemuser', r: true },
@@ -74,7 +74,7 @@ var Rocket;
 			DataDescription: { a: 'datadescription' },
 			Description: { a: 'description' },
 			IntroducedVersion: { a: 'introducedversion' },
-			IsCustomizable: { a: ?????????? },
+			IsCustomizable: { a: 'iscustomizable' },
 			IsDefault: { a: 'isdefault' },
 			IsManaged: { a: 'ismanaged', r: true },
 			ModifiedBy: { b: 'modifiedby', a: '_modifiedby_value', c: 'systemusers', d: 'systemuser', r: true },

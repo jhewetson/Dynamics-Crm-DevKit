@@ -1,1 +1,2 @@
-﻿///<reference path='Task.d.ts' />
+﻿//@ts-check
+///<reference path="Task.d.ts" />

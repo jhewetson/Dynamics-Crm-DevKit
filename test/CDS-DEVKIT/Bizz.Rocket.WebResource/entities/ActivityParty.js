@@ -1,1 +1,2 @@
-﻿///<reference path='ActivityParty.d.ts' />
+﻿//@ts-check
+///<reference path="ActivityParty.d.ts" />

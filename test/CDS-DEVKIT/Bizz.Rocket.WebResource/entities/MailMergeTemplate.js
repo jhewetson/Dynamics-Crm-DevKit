@@ -1,11 +1,2 @@
-﻿///<reference path='MailMergeTemplate.d.ts' />
-var formInformation = (function () {
-	function onLoad(executionContext) {
-	}
-	function onSave(executionContext) {
-	}
-	return {
-		OnLoad: onLoad,
-		OnSave: onSave
-	};
-})();
+﻿//@ts-check
+///<reference path="MailMergeTemplate.d.ts" />

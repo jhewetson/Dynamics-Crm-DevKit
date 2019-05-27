@@ -1,55 +1,5 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
-	namespace FormDataPerformanceInformation {
-		interface tab_PerformanceImprovement_Sections {
-			PerformanceImprovement: DevKit.Form.Controls.ControlSection;
-		}
-		interface tab_PerformanceImprovement extends DevKit.Form.Controls.IControlTab {
-			Section: tab_PerformanceImprovement_Sections;
-		}
-		interface Tabs {
-			PerformanceImprovement: tab_PerformanceImprovement;
-		}
-		interface Body {
-			Tab: Tabs;
-			/** An internal state which indicates whether at least one optimization is applied. */
-			AnyOptimizationApplied: DevKit.Form.Controls.ControlBoolean;
-			/** An internal state which indicates whether at least one optimization is available for this record. */
-			AnyOptimizationAvailable: DevKit.Form.Controls.ControlBoolean;
-			/** Number of times a queries were executed (Aggregated) */
-			Count: DevKit.Form.Controls.ControlInteger;
-			/** Primary entity */
-			Entity: DevKit.Form.Controls.ControlString;
-			/** An internal state which shows the result of the last action that was taken on this record. */
-			LastActionResult: DevKit.Form.Controls.ControlString;
-			/** Maximum execution time in seconds. (Aggregated) */
-			MaxTime: DevKit.Form.Controls.ControlDecimal;
-			/** Average execution time in seconds. (Aggregated) */
-			MedianTime: DevKit.Form.Controls.ControlDecimal;
-			/** Minimum execution time in seconds. (Aggregated) */
-			MinTime: DevKit.Form.Controls.ControlDecimal;
-			/** Data operation that triggered the query (Retrieve Multiple, etc.) */
-			Operation: DevKit.Form.Controls.ControlString;
-			/** Current optimization status of the record, showed to the customer. */
-			OptimizationStatus: DevKit.Form.Controls.ControlString;
-			/** Query Weight of the component. Factored with the Optimization Impact to determine the overall importance of applying an optimization. (P2) */
-			Weight: DevKit.Form.Controls.ControlDecimal;
-		}
-	}
-	class FormDataPerformanceInformation extends DevKit.Form.IForm {
-		/**
-		* PL.DynamicsCrm.DevKit form DataPerformanceInformation
-		* @param executionContext the execution context
-		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
-		*/
-		constructor(executionContext: any, defaultWebResourceName?: string);
-		/** Utility functions/methods/objects for Dynamics 365 form */
-		Utility: DevKit.Form.Utility;
-		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
-		WebApi: DevKit.Form.WebApi;
-		/** The Body section of form DataPerformanceInformation */
-		Body: Rocket.FormDataPerformanceInformation.Body;
-	}
 	class DataPerformanceApi {
 		/**
 		* PL.DynamicsCrm.DevKit DataPerformanceApi
@@ -122,4 +72,4 @@ declare namespace OptionSet {
 	namespace DataPerformance {
 	}
 }
-//{'JsForm':['DataPerformance Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

@@ -1,39 +1,5 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
-	namespace FormImportMapInformation {
-		interface Tabs {
-		}
-		interface Body {
-			/** Shows who created the record. */
-			CreatedBy: DevKit.Form.Controls.ControlLookup;
-			/** Shows the date and time when the record was created. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options. */
-			CreatedOn: DevKit.Form.Controls.ControlDateTime;
-			/** Type additional information to describe the data map, such as the intended use or data source. */
-			Description: DevKit.Form.Controls.ControlString;
-			/** Shows who last updated the record. */
-			ModifiedBy: DevKit.Form.Controls.ControlLookup;
-			/** Shows the date and time when the record was last updated. The date and time are displayed in the time zone selected in Microsoft Dynamics 365 options. */
-			ModifiedOn: DevKit.Form.Controls.ControlDateTime;
-			/** Type a descriptive name for the data map. */
-			Name: DevKit.Form.Controls.ControlString;
-			/** Enter the user or team who is assigned to manage the record. This field is updated every time the record is assigned to a different user. */
-			OwnerId: DevKit.Form.Controls.ControlLookup;
-		}
-	}
-	class FormImportMapInformation extends DevKit.Form.IForm {
-		/**
-		* PL.DynamicsCrm.DevKit form ImportMapInformation
-		* @param executionContext the execution context
-		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
-		*/
-		constructor(executionContext: any, defaultWebResourceName?: string);
-		/** Utility functions/methods/objects for Dynamics 365 form */
-		Utility: DevKit.Form.Utility;
-		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
-		WebApi: DevKit.Form.WebApi;
-		/** The Body section of form ImportMapInformation */
-		Body: Rocket.FormImportMapInformation.Body;
-	}
 	class ImportMapApi {
 		/**
 		* PL.DynamicsCrm.DevKit ImportMapApi
@@ -804,4 +770,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':['ImportMap Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

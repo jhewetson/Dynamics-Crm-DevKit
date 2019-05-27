@@ -1,11 +1,2 @@
-﻿///<reference path='ChannelAccessProfileRuleItem.d.ts' />
-var formInformation = (function () {
-	function onLoad(executionContext) {
-	}
-	function onSave(executionContext) {
-	}
-	return {
-		OnLoad: onLoad,
-		OnSave: onSave
-	};
-})();
+﻿//@ts-check
+///<reference path="ChannelAccessProfileRuleItem.d.ts" />

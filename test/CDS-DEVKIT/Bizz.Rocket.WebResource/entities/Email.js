@@ -1,1 +1,2 @@
-﻿///<reference path='Email.d.ts' />
+﻿//@ts-check
+///<reference path="Email.d.ts" />

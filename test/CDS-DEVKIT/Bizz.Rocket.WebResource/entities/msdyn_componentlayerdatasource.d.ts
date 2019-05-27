@@ -1,26 +1,5 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
-	namespace Formmsdyn_componentlayerdatasourceInformation {
-		interface Tabs {
-		}
-		interface Body {
-			msdyn_name: DevKit.Form.Controls.ControlString;
-		}
-	}
-	class Formmsdyn_componentlayerdatasourceInformation extends DevKit.Form.IForm {
-		/**
-		* PL.DynamicsCrm.DevKit form msdyn_componentlayerdatasourceInformation
-		* @param executionContext the execution context
-		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
-		*/
-		constructor(executionContext: any, defaultWebResourceName?: string);
-		/** Utility functions/methods/objects for Dynamics 365 form */
-		Utility: DevKit.Form.Utility;
-		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
-		WebApi: DevKit.Form.WebApi;
-		/** The Body section of form msdyn_componentlayerdatasourceInformation */
-		Body: Rocket.Formmsdyn_componentlayerdatasourceInformation.Body;
-	}
 	class msdyn_componentlayerdatasourceApi {
 		/**
 		* PL.DynamicsCrm.DevKit msdyn_componentlayerdatasourceApi
@@ -56,4 +35,4 @@ declare namespace OptionSet {
 	namespace msdyn_componentlayerdatasource {
 	}
 }
-//{'JsForm':['msdyn_componentlayerdatasource Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

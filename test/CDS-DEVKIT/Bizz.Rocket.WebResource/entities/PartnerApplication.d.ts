@@ -1,40 +1,5 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
-	namespace FormPartnerApplicationMainForm {
-		interface Tabs {
-		}
-		interface Body {
-			notescontrol: DevKit.Form.Controls.ControlNote;
-			/** Indicates the application role. */
-			ApplicationRole: DevKit.Form.Controls.ControlOptionSet;
-			/** Name of Partner Application. */
-			Name: DevKit.Form.Controls.ControlString;
-			/** Principal ID of the partner application. */
-			PrincipalId: DevKit.Form.Controls.ControlString;
-			/** Select whether the partner application uses an authorization server. */
-			UseAuthorizationServer: DevKit.Form.Controls.ControlBoolean;
-		}
-		interface Footer {
-			/** Shows the status of the partner application. */
-			StateCode: DevKit.Form.Controls.ControlOptionSet;
-		}
-	}
-	class FormPartnerApplicationMainForm extends DevKit.Form.IForm {
-		/**
-		* PL.DynamicsCrm.DevKit form PartnerApplicationMainForm
-		* @param executionContext the execution context
-		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
-		*/
-		constructor(executionContext: any, defaultWebResourceName?: string);
-		/** Utility functions/methods/objects for Dynamics 365 form */
-		Utility: DevKit.Form.Utility;
-		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
-		WebApi: DevKit.Form.WebApi;
-		/** The Body section of form PartnerApplicationMainForm */
-		Body: Rocket.FormPartnerApplicationMainForm.Body;
-		/** The Footer section of form PartnerApplicationMainForm */
-		Footer: Rocket.FormPartnerApplicationMainForm.Footer;
-	}
 	class PartnerApplicationApi {
 		/**
 		* PL.DynamicsCrm.DevKit PartnerApplicationApi
@@ -125,4 +90,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':['Partner Application Main Form'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

@@ -66,6 +66,24 @@ namespace PL.DynamicsCrm.DevKit.Cli
             return entities.ToArray();
         }
 
+        private string[] GetAllEntitiesForWebApi()
+        {
+            var request = new RetrieveAllEntitiesRequest
+            {
+                EntityFilters = EntityFilters.Entity,
+                RetrieveAsIfPublished = true
+            };
+            var response = (RetrieveAllEntitiesResponse)CrmServiceClient.Execute(request);
+            var metaDataEntities = response.EntityMetadata.OrderBy(a => a.SchemaName);
+            var entities = new List<string>();
+            foreach (var entity in metaDataEntities)
+            {
+                entities.Add(entity.SchemaName);
+            }
+            entities.Sort();
+            return entities.ToArray();
+        }
+
         private void GeneratorWebApi()
         {
             CliLog.WriteLine(CliLog.ColorGreen, "START GENERATOR - JS WEBAPI - TASKS");
@@ -81,7 +99,7 @@ namespace PL.DynamicsCrm.DevKit.Cli
             else
             {
                 if (GeneratorJson.entities.Count == 1 && GeneratorJson.entities[0].ToLower() == "all")
-                    files = GetAllEntities();
+                    files = GetAllEntitiesForWebApi();
                 else
                     files = GeneratorJson.entities.Select(e => $"{folder}{e}.webapi.js").ToArray();
             }
@@ -101,14 +119,11 @@ namespace PL.DynamicsCrm.DevKit.Cli
             var i = 1;
             foreach (var entity in entities)
             {
-//#if DEBUG
-//                if (entity != "ImageDescriptor") continue;
-//#endif
+#if DEBUG
+                if (entity != "ImageDescriptor") continue;
+#endif
                 GeneratorJsWebApi(entity, i, entities.Count);
                 i++;
-//#if DEBUG
-//                if (i == 50) break;
-//#endif
             }
             CliLog.WriteLine(CliLog.ColorGreen, new string('*', CliLog.StarLength));
             CliLog.WriteLine(CliLog.ColorGreen, "END GENERATOR - JS WEBAPI - TASKS");
@@ -116,9 +131,10 @@ namespace PL.DynamicsCrm.DevKit.Cli
 
         private void GeneratorJsWebApi(string entity, int i, int count)
         {
-            var isDebugWebApi = true;
+
             var jsForm = new List<string>();
             var isDebugForm = true;
+            var isDebugWebApi = true;
 
             if (GeneratorJson.usetypescriptdeclaration == "true")
             {
@@ -252,7 +268,7 @@ namespace PL.DynamicsCrm.DevKit.Cli
             foreach (var entity in entities)
             {
 #if DEBUG
-                if (entity != "msdyn_odatav4ds") continue;
+                //if (entity != "Account") continue;
 #endif
                 GeneratorJsForm(entity, i, entities.Count);
                 i++;
@@ -267,9 +283,9 @@ namespace PL.DynamicsCrm.DevKit.Cli
         private void GeneratorJsForm(string entity, int i, int count)
         {
             var forms = new List<string>();
-            var isDebugForm = false;
-            var webApi = false;
-            var isDebugWebApi = false;
+            var isDebugForm = true;
+            var webApi = true;
+            var isDebugWebApi = true;
 
             if (GeneratorJson.usetypescriptdeclaration == "true")
             {

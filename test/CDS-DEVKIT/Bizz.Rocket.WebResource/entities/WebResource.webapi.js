@@ -65,7 +65,7 @@ var Rocket;
             return property;
         }
 		var webresource = {
-			CanBeDeleted: { a: ?????????? },
+			CanBeDeleted: { a: 'canbedeleted' },
 			ComponentState: { a: 'componentstate', r: true },
 			Content: { a: 'content' },
 			ContentJson: { a: 'contentjson' },
@@ -77,9 +77,9 @@ var Rocket;
 			DisplayName: { a: 'displayname' },
 			IntroducedVersion: { a: 'introducedversion' },
 			IsAvailableForMobileOffline: { a: 'isavailableformobileoffline' },
-			IsCustomizable: { a: ?????????? },
+			IsCustomizable: { a: 'iscustomizable' },
 			IsEnabledForMobileClient: { a: 'isenabledformobileclient' },
-			IsHidden: { a: ?????????? },
+			IsHidden: { a: 'ishidden' },
 			IsManaged: { a: 'ismanaged', r: true },
 			LanguageCode: { a: 'languagecode' },
 			ModifiedBy: { b: 'modifiedby', a: '_modifiedby_value', c: 'systemusers', d: 'systemuser', r: true },

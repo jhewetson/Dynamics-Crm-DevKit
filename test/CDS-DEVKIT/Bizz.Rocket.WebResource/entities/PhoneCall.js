@@ -1,1 +1,2 @@
-﻿///<reference path='PhoneCall.d.ts' />
+﻿//@ts-check
+///<reference path="PhoneCall.d.ts" />

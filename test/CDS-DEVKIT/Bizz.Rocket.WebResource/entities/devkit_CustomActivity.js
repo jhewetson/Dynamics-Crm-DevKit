@@ -1,1 +1,2 @@
-﻿///<reference path='devkit_CustomActivity.d.ts' />
+﻿//@ts-check
+///<reference path="devkit_CustomActivity.d.ts" />

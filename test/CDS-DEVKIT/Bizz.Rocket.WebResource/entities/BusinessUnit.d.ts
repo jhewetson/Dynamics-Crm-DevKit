@@ -1,85 +1,5 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
-	namespace FormBusinessUnitInformation {
-		interface tab_general_Sections {
-			section1: DevKit.Form.Controls.ControlSection;
-		}
-		interface tab_addresses_Sections {
-			billtoaddress: DevKit.Form.Controls.ControlSection;
-			shiptoaddress: DevKit.Form.Controls.ControlSection;
-		}
-		interface tab_general extends DevKit.Form.Controls.IControlTab {
-			Section: tab_general_Sections;
-		}
-		interface tab_addresses extends DevKit.Form.Controls.IControlTab {
-			Section: tab_addresses_Sections;
-		}
-		interface Tabs {
-			general: tab_general;
-			addresses: tab_addresses;
-		}
-		interface Body {
-			Tab: Tabs;
-			/** City name for address 1. */
-			Address1_City: DevKit.Form.Controls.ControlString;
-			/** Country/region name for address 1. */
-			Address1_Country: DevKit.Form.Controls.ControlString;
-			/** First line for entering address 1 information. */
-			Address1_Line1: DevKit.Form.Controls.ControlString;
-			/** Second line for entering address 1 information. */
-			Address1_Line2: DevKit.Form.Controls.ControlString;
-			/** Third line for entering address 1 information. */
-			Address1_Line3: DevKit.Form.Controls.ControlString;
-			/** ZIP Code or postal code for address 1. */
-			Address1_PostalCode: DevKit.Form.Controls.ControlString;
-			/** State or province for address 1. */
-			Address1_StateOrProvince: DevKit.Form.Controls.ControlString;
-			/** First telephone number associated with address 1. */
-			Address1_Telephone1: DevKit.Form.Controls.ControlString;
-			/** Second telephone number associated with address 1. */
-			Address1_Telephone2: DevKit.Form.Controls.ControlString;
-			/** Third telephone number associated with address 1. */
-			Address1_Telephone3: DevKit.Form.Controls.ControlString;
-			/** City name for address 2. */
-			Address2_City: DevKit.Form.Controls.ControlString;
-			/** Country/region name for address 2. */
-			Address2_Country: DevKit.Form.Controls.ControlString;
-			/** First line for entering address 2 information. */
-			Address2_Line1: DevKit.Form.Controls.ControlString;
-			/** Second line for entering address 2 information. */
-			Address2_Line2: DevKit.Form.Controls.ControlString;
-			/** Third line for entering address 2 information. */
-			Address2_Line3: DevKit.Form.Controls.ControlString;
-			/** ZIP Code or postal code for address 2. */
-			Address2_PostalCode: DevKit.Form.Controls.ControlString;
-			/** State or province for address 2. */
-			Address2_StateOrProvince: DevKit.Form.Controls.ControlString;
-			/** Name of the division to which the business unit belongs. */
-			DivisionName: DevKit.Form.Controls.ControlString;
-			/** Email address for the business unit. */
-			EMailAddress: DevKit.Form.Controls.ControlString;
-			/** Name of the business unit. */
-			Name: DevKit.Form.Controls.ControlString;
-			/** Unique identifier for the parent business unit. */
-			ParentBusinessUnitId: DevKit.Form.Controls.ControlLookup;
-			/** Website URL for the business unit. */
-			WebSiteUrl: DevKit.Form.Controls.ControlString;
-		}
-	}
-	class FormBusinessUnitInformation extends DevKit.Form.IForm {
-		/**
-		* PL.DynamicsCrm.DevKit form BusinessUnitInformation
-		* @param executionContext the execution context
-		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
-		*/
-		constructor(executionContext: any, defaultWebResourceName?: string);
-		/** Utility functions/methods/objects for Dynamics 365 form */
-		Utility: DevKit.Form.Utility;
-		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
-		WebApi: DevKit.Form.WebApi;
-		/** The Body section of form BusinessUnitInformation */
-		Body: Rocket.FormBusinessUnitInformation.Body;
-	}
 	class BusinessUnitApi {
 		/**
 		* PL.DynamicsCrm.DevKit BusinessUnitApi
@@ -277,4 +197,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':['BusinessUnit Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

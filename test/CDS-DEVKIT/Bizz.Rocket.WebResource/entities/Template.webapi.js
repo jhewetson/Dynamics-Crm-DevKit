@@ -74,7 +74,7 @@ var Rocket;
 			GenerationTypeCode: { a: 'generationtypecode' },
 			ImportSequenceNumber: { a: 'importsequencenumber' },
 			IntroducedVersion: { a: 'introducedversion' },
-			IsCustomizable: { a: ?????????? },
+			IsCustomizable: { a: 'iscustomizable' },
 			IsManaged: { a: 'ismanaged', r: true },
 			IsPersonal: { a: 'ispersonal' },
 			IsRecommended: { a: 'isrecommended', r: true },

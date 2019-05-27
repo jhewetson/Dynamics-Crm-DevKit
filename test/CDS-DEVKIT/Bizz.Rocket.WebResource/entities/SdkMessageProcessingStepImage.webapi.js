@@ -75,7 +75,7 @@ var Rocket;
 			EntityAlias: { a: 'entityalias' },
 			ImageType: { a: 'imagetype' },
 			IntroducedVersion: { a: 'introducedversion' },
-			IsCustomizable: { a: ?????????? },
+			IsCustomizable: { a: 'iscustomizable' },
 			IsManaged: { a: 'ismanaged', r: true },
 			MessagePropertyName: { a: 'messagepropertyname' },
 			ModifiedBy: { b: 'modifiedby', a: '_modifiedby_value', c: 'systemusers', d: 'systemuser', r: true },

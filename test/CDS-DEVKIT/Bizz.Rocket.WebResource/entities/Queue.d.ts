@@ -1,55 +1,5 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
-	namespace FormQueue {
-		interface tab_general_Sections {
-			queueinformation: DevKit.Form.Controls.ControlSection;
-			incomingemail: DevKit.Form.Controls.ControlSection;
-			RecordCreationAndUpdateRule: DevKit.Form.Controls.ControlSection;
-			QueueItems: DevKit.Form.Controls.ControlSection;
-			QueueMembers: DevKit.Form.Controls.ControlSection;
-			QueueMembersNoRecord: DevKit.Form.Controls.ControlSection;
-		}
-		interface tab_general extends DevKit.Form.Controls.IControlTab {
-			Section: tab_general_Sections;
-		}
-		interface Tabs {
-			general: tab_general;
-		}
-		interface Body {
-			Tab: Tabs;
-			RecordCreationAndUpdateRuleGrid: DevKit.Form.Controls.ControlGrid;
-			QueueItemsGrid: DevKit.Form.Controls.ControlGrid;
-			queuemembersgrid: DevKit.Form.Controls.ControlGrid;
-			/** Select the mailbox associated with this queue. */
-			DefaultMailbox: DevKit.Form.Controls.ControlLookup;
-			/** Description of the queue. */
-			Description: DevKit.Form.Controls.ControlString;
-			/** Email address that is associated with the queue. */
-			EMailAddress: DevKit.Form.Controls.ControlString;
-			/** Convert Incoming Email To Activities */
-			IncomingEmailFilteringMethod: DevKit.Form.Controls.ControlOptionSet;
-			/** Name of the queue. */
-			Name: DevKit.Form.Controls.ControlString;
-			/** Unique identifier of the user or team who owns the queue. */
-			OwnerId: DevKit.Form.Controls.ControlLookup;
-			/** Select whether the queue is public or private. A public queue can be viewed by all. A private queue can be viewed only by the members added to the queue. */
-			QueueViewType: DevKit.Form.Controls.ControlOptionSet;
-		}
-	}
-	class FormQueue extends DevKit.Form.IForm {
-		/**
-		* PL.DynamicsCrm.DevKit form Queue
-		* @param executionContext the execution context
-		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
-		*/
-		constructor(executionContext: any, defaultWebResourceName?: string);
-		/** Utility functions/methods/objects for Dynamics 365 form */
-		Utility: DevKit.Form.Utility;
-		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
-		WebApi: DevKit.Form.WebApi;
-		/** The Body section of form Queue */
-		Body: Rocket.FormQueue.Body;
-	}
 	class QueueApi {
 		/**
 		* PL.DynamicsCrm.DevKit QueueApi
@@ -212,4 +162,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':['Queue'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

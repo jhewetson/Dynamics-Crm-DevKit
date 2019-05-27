@@ -1,48 +1,5 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
-	namespace FormChannelAccessProfileRuleItemInformation {
-		interface tab_RuleCriteria_Sections {
-			ConditionControl: DevKit.Form.Controls.ControlSection;
-			rulethenconditions: DevKit.Form.Controls.ControlSection;
-		}
-		interface tab_notes_Sections {
-			notes: DevKit.Form.Controls.ControlSection;
-		}
-		interface tab_RuleCriteria extends DevKit.Form.Controls.IControlTab {
-			Section: tab_RuleCriteria_Sections;
-		}
-		interface tab_notes extends DevKit.Form.Controls.IControlTab {
-			Section: tab_notes_Sections;
-		}
-		interface Tabs {
-			RuleCriteria: tab_RuleCriteria;
-			notes: tab_notes;
-		}
-		interface Body {
-			Tab: Tabs;
-			notescontrol: DevKit.Form.Controls.ControlNote;
-			/** Choose the channel access profile that the item is assigned to. */
-			AssociatedChannelAccessProfile: DevKit.Form.Controls.ControlLookup;
-			/** Type additional information to describe the channel access profile rule item. */
-			Description: DevKit.Form.Controls.ControlString;
-			/** Type a descriptive name for the channel access profile rule item. */
-			Name: DevKit.Form.Controls.ControlString;
-		}
-	}
-	class FormChannelAccessProfileRuleItemInformation extends DevKit.Form.IForm {
-		/**
-		* PL.DynamicsCrm.DevKit form ChannelAccessProfileRuleItemInformation
-		* @param executionContext the execution context
-		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
-		*/
-		constructor(executionContext: any, defaultWebResourceName?: string);
-		/** Utility functions/methods/objects for Dynamics 365 form */
-		Utility: DevKit.Form.Utility;
-		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
-		WebApi: DevKit.Form.WebApi;
-		/** The Body section of form ChannelAccessProfileRuleItemInformation */
-		Body: Rocket.FormChannelAccessProfileRuleItemInformation.Body;
-	}
 	class ChannelAccessProfileRuleItemApi {
 		/**
 		* PL.DynamicsCrm.DevKit ChannelAccessProfileRuleItemApi
@@ -142,4 +99,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':['ChannelAccessProfileRuleItem Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

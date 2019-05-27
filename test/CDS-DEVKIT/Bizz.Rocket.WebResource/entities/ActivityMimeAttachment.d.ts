@@ -1,37 +1,5 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
-	namespace FormActivityMimeAttachmentInformation {
-		interface tab_test_Sections {
-			test: DevKit.Form.Controls.ControlSection;
-		}
-		interface tab_test extends DevKit.Form.Controls.IControlTab {
-			Section: tab_test_Sections;
-		}
-		interface Tabs {
-			test: tab_test;
-		}
-		interface Body {
-			Tab: Tabs;
-			/** File name of the attachment. */
-			FileName: DevKit.Form.Controls.ControlString;
-			/** File size of the attachment. */
-			FileSize: DevKit.Form.Controls.ControlInteger;
-		}
-	}
-	class FormActivityMimeAttachmentInformation extends DevKit.Form.IForm {
-		/**
-		* PL.DynamicsCrm.DevKit form ActivityMimeAttachmentInformation
-		* @param executionContext the execution context
-		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
-		*/
-		constructor(executionContext: any, defaultWebResourceName?: string);
-		/** Utility functions/methods/objects for Dynamics 365 form */
-		Utility: DevKit.Form.Utility;
-		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
-		WebApi: DevKit.Form.WebApi;
-		/** The Body section of form ActivityMimeAttachmentInformation */
-		Body: Rocket.FormActivityMimeAttachmentInformation.Body;
-	}
 	class ActivityMimeAttachmentApi {
 		/**
 		* PL.DynamicsCrm.DevKit ActivityMimeAttachmentApi
@@ -124,4 +92,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':['ActivityMimeAttachment Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

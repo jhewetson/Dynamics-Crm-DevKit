@@ -1,39 +1,5 @@
 ﻿///<reference path='devkit.d.ts' />
 declare namespace Rocket {
-	namespace FormChannelAccessProfileRuleInformation {
-		interface Header {
-			/** Enter the user or team that owns the channel access profile rule. */
-			OwnerId: DevKit.Form.Controls.ControlLookup;
-			/** Select the channel access profile rule's status. */
-			StatusCode: DevKit.Form.Controls.ControlOptionSet;
-		}
-		interface Tabs {
-		}
-		interface Body {
-			ProfileRuleItems: DevKit.Form.Controls.ControlGrid;
-			notescontrol: DevKit.Form.Controls.ControlNote;
-			/** Type a short description for the channel access profile rule. */
-			Description: DevKit.Form.Controls.ControlString;
-			/** Type a descriptive name for the channel access profile rule. */
-			Name: DevKit.Form.Controls.ControlString;
-		}
-	}
-	class FormChannelAccessProfileRuleInformation extends DevKit.Form.IForm {
-		/**
-		* PL.DynamicsCrm.DevKit form ChannelAccessProfileRuleInformation
-		* @param executionContext the execution context
-		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
-		*/
-		constructor(executionContext: any, defaultWebResourceName?: string);
-		/** Utility functions/methods/objects for Dynamics 365 form */
-		Utility: DevKit.Form.Utility;
-		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
-		WebApi: DevKit.Form.WebApi;
-		/** The Body section of form ChannelAccessProfileRuleInformation */
-		Body: Rocket.FormChannelAccessProfileRuleInformation.Body;
-		/** The Header section of form ChannelAccessProfileRuleInformation */
-		Header: Rocket.FormChannelAccessProfileRuleInformation.Header;
-	}
 	class ChannelAccessProfileRuleApi {
 		/**
 		* PL.DynamicsCrm.DevKit ChannelAccessProfileRuleApi
@@ -145,4 +111,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':['ChannelAccessProfileRule Information'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':[],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

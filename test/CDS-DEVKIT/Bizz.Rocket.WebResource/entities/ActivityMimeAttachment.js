@@ -1,1 +1,2 @@
-﻿///<reference path='ActivityMimeAttachment.d.ts' />
+﻿//@ts-check
+///<reference path="ActivityMimeAttachment.d.ts" />
