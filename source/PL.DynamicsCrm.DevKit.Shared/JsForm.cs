@@ -459,7 +459,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
         private string GetFormCode(List<SystemForm> processForms, bool isDebug)
         {
             var formCode = string.Empty;
-            formCode += $"'use strict';\r\n";
+            //formCode += $"'use strict';\r\n";
             formCode += $"var {ProjectName};\r\n";
             formCode += $"(function ({ProjectName}) {{\r\n";
             formCode += $"\t'use strict';\r\n";
@@ -581,14 +581,52 @@ namespace PL.DynamicsCrm.DevKit.Shared
                 formCode += $"\t}}\r\n";
             }
             formCode += $"}})({ProjectName} || ({ProjectName} = {{}}));\r\n";
-            var optionSet = Utility.ReadEmbeddedResource("PL.DynamicsCrm.DevKit.Wizard.data.OptionSet.js");
-            formCode += optionSet;
+            //== GO !!!!!
+
+            isDebug = false;
+
+            var code = string.Empty;
+            code += $"'use strict';\r\n";
+            code += $"/** @type {ProjectName} */\r\n";
+            var formCodeMin = formCode;
             if (!isDebug)
             {
-                formCode = Uglify.Js(formCode).Code;
-                formCode = formCode.Replace("\"", "'");
+                formCodeMin = Uglify.Js(formCode).Code;
             }
-            return formCode;
+            code += formCodeMin;
+            if (!isDebug) code += "\r\n";
+            var optionSet = Utility.ReadEmbeddedResource("PL.DynamicsCrm.DevKit.Wizard.data.OptionSet.js");
+            optionSet = optionSet.Replace("[[EntityOptionSet]]", OptionSet_For_d_ts);
+            var optionSetMin = optionSet;
+            if (!isDebug)
+            {
+                optionSetMin = Uglify.Js(optionSet).Code;
+            }
+            code += $"/** @type OptionSet */\r\n";
+            code += optionSetMin;
+            return code;
+        }
+
+        private string OptionSet_For_d_ts
+        {
+            get
+            {
+                var _d_ts = string.Empty;
+                _d_ts += $"\tOptionSet.{EntityName} = {{\r\n";
+                foreach (var crmAttribute in Fields)
+                {
+                    if (!crmAttribute.IsValidForRead) continue;
+                    if (crmAttribute.FieldType != AttributeTypeCode.Picklist && crmAttribute.FieldType != AttributeTypeCode.State && crmAttribute.FieldType != AttributeTypeCode.Status) continue;
+                    _d_ts += $"\t\t{crmAttribute.SchemaName} : {{\r\n";
+                    foreach (string nvc in crmAttribute.OptionSetValues)
+                        _d_ts += $"\t\t\t{nvc}: {crmAttribute.OptionSetValues[nvc]},\r\n";
+                    _d_ts = _d_ts.TrimEnd(",\r\n".ToCharArray()) + "\r\n";
+                    _d_ts += $"\t\t}},\r\n";
+                }
+                _d_ts = _d_ts.TrimEnd(",\r\n".ToCharArray());
+                _d_ts += $"\r\n\t}};";
+                return _d_ts;
+            }
         }
 
         private string GetLogicalCollectionName(CrmAttribute crmAttribute)

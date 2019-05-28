@@ -35,7 +35,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
             get
             {
                 var _d_ts = string.Empty;
-                _d_ts += $"///<reference path='devkit.d.ts' />\r\n";
+                _d_ts += $"///<reference path='DevKit.d.ts' />\r\n";
                 _d_ts += $"declare namespace {ProjectName} {{\r\n";
                 if (ProcessForms.Count > 0)
                     _d_ts += GetForm_d_ts();
@@ -54,6 +54,8 @@ namespace PL.DynamicsCrm.DevKit.Shared
             if (formName.EndsWith(" AI for Sales")) return "AI for Sales";
             if (formName.EndsWith(" Wizard")) return "Wizard";
             if (formName.EndsWith(" Information")) return "Information";
+            if (formName.EndsWith(" Quick Create")) return "Quick Create";
+            if (formName.EndsWith(" QuickCreate")) return "QuickCreate";
             return formName;
         }
 
@@ -695,6 +697,8 @@ namespace PL.DynamicsCrm.DevKit.Shared
                 if (form.Name.ToLower() == "information") form.Name = $"{Class} Information";
                 else if (form.Name.ToLower() == "wizard") form.Name = $"{Class} Wizard";
                 else if (form.Name.ToLower() == "ai for sales") form.Name = $"{Class} AI for Sales";
+                else if (form.Name.ToLower() == "quick create") form.Name = $"{Class} Quick Create";
+                else if (form.Name.ToLower() == "quickcreate") form.Name = $"{Class} QuickCreate";
                 _d_ts += $"\tnamespace Form{Utility.GetSafeName(form.Name)} {{\r\n";
                 var form_d_ts_Header = GetForm_d_ts_Header(form.FormXml);
                 if (form_d_ts_Header.Length > 0)
@@ -802,6 +806,8 @@ namespace PL.DynamicsCrm.DevKit.Shared
                 if (form.Name.ToLower() == "information") form.Name = $"{Class} Information";
                 else if (form.Name.ToLower() == "wizard") form.Name = $"{Class} Wizard";
                 else if (form.Name.ToLower() == "ai for sales") form.Name = $"{Class} AI for Sales";
+                else if (form.Name.ToLower() == "quick create") form.Name = $"{Class} Quick Create";
+                else if (form.Name.ToLower() == "quickcreate") form.Name = $"{Class} QuickCreate";
 
                 _d_ts += $"\tnamespace Form{Utility.GetSafeName(form.Name)} {{\r\n";
                 var form_d_ts_Body_QuickCreate = GetForm_d_ts_Body(form.FormXml);

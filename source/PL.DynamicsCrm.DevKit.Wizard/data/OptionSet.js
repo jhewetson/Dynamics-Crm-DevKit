@@ -1,17 +1,18 @@
-var OptionSet = {
-    FormType: {
+var OptionSet;
+(function (OptionSet) {
+    OptionSet.FormType = {
         Undefined: 0,
         Create: 1,
         Update: 2,
         ReadOnly: 3,
         Disabled: 4,
         BulkEdit: 5
-    },
-    SaveOption: {
+    };
+    OptionSet.SaveOption = {
         SaveAndClose: 'saveandclose',
         SaveAndNew: 'saveandnew'
-    },
-    SaveMode: {
+    };
+    OptionSet.SaveMode = {
         Save: 1,
         SaveAndClose: 2,
         Deactivate: 5,
@@ -23,27 +24,27 @@ var OptionSet = {
         SaveAsCompleted: 58,
         SaveAndNew: 59,
         AutoSave: 70
-    },
-    FormNotificationLevel: {
+    };
+    OptionSet.FormNotificationLevel = {
         Error: 'ERROR',
         Warning: 'WARNING',
         Info: 'INFO'
-    },
-    TabDisplayState: {
+    };
+    OptionSet.TabDisplayState = {
         Expanded: 'expanded',
         Collapsed: 'collapsed'
-    },
-    ProcessDisplayState: {
+    };
+    OptionSet.ProcessDisplayState = {
         Expanded: 'expanded',
         Collapsed: 'collapsed',
         Floating: 'floating'
-    },
-    ProcessStatus: {
+    };
+    OptionSet.ProcessStatus = {
         Active: 'active',
         Aborted: 'aborted',
         Finished: 'finished'
-    },
-    FieldAttributeType: {
+    };
+    OptionSet.FieldAttributeType = {
         Boolean: 'boolean',
         DateTime: 'datetime',
         Decimal: 'decimal',
@@ -55,8 +56,8 @@ var OptionSet = {
         MultiOptionSet: 'multioptionset',
         OptionSet: 'optionset',
         String: 'string'
-    },
-    FieldFormat: {
+    };
+    OptionSet.FieldFormat = {
         Date: 'date',
         DateTime: 'datetime',
         Duration: 'duration',
@@ -69,18 +70,18 @@ var OptionSet = {
         Phone: 'phone',
         TimeZone: 'timezone',
         Url: 'url'
-    },
-    FieldRequiredLevel: {
+    };
+    OptionSet.FieldRequiredLevel = {
         None: 'none',
         Required: 'required',
         Recommended: 'recommended'
-    },
-    FieldSubmitMode: {
+    };
+    OptionSet.FieldSubmitMode = {
         Always: 'always',
         Never: 'never',
         Dirty: 'dirty'
-    },
-    FieldControlType: {
+    };
+    OptionSet.FieldControlType = {
         Standard: 'standard',
         Iframe: 'iframe',
         KbSearch: 'kbsearch',
@@ -93,12 +94,12 @@ var OptionSet = {
         TimerControl: 'TimerControl',
         TimelineWall: 'timelinewall',
         WebResource: 'webresource'
-    },
-    FieldNotificationLevel: {
+    };
+    OptionSet.FieldNotificationLevel = {
         Error: 'ERROR',
         Recommendation: 'RECOMMENDATION'
-    },
-    ProcessCategory: {
+    };
+    OptionSet.ProcessCategory = {
         Qualify: 0,
         Develop: 1,
         Propose: 2,
@@ -106,8 +107,8 @@ var OptionSet = {
         Identify: 4,
         Research: 5,
         Resolve: 6
-    },
-    TimerState: {
+    };
+    OptionSet.TimerState = {
         NotSet: 1,
         InProgress: 2,
         Warning: 3,
@@ -116,28 +117,29 @@ var OptionSet = {
         Expired: 6,
         Canceled: 7,
         Paused: 8
-    },
-    ClientName: {
+    };
+    OptionSet.ClientName = {
         Web: 'Web',
         Outlook: 'Outlook',
         Mobile: 'Mobile'
-    },
-    ClientState: {
+    };
+    OptionSet.ClientState = {
         Online: 'Online',
         Offline: 'Offline'
-    },
-    FormFactor: {
+    };
+    OptionSet.FormFactor = {
         Unknown: 0,
         Desktop: 1,
         Tablet: 2,
         Phone: 3
-    },
-    AdvancedConfigSetting: {
+    };
+    OptionSet.AdvancedConfigSetting = {
         MaxChildIncidentNumber: 'MaxChildIncidentNumber',
         MaxIncidentMergeNumber: 'MaxIncidentMergeNumber'
-    },
-    OpenFileOption: {
+    };
+    OptionSet.OpenFileOption = {
         Open: 1,
         Save: 2
-    }
-};
+    };
+[[EntityOptionSet]]
+})(OptionSet || (OptionSet = {}));

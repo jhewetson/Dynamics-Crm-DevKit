@@ -33,9 +33,11 @@ namespace PL.DynamicsCrm.DevKit.Cli
                 throw new Exception("No rootfolder found. Please check PL.DynamicsCrm.DevKit.Cli.json file !!!");
             if (GeneratorJson.crmversion.Length == 0 || GeneratorJson.crmversion == "???")
                 throw new Exception("No crmversion found. Please check PL.DynamicsCrm.DevKit.Cli.json file !!!");
-            if (GeneratorJson.usetypescriptdeclaration != "true" && GeneratorJson.usetypescriptdeclaration != "false")
-                throw new Exception("No usetypescriptdeclaration found. Please check PL.DynamicsCrm.DevKit.Cli.json file !!!");
-
+            if (GeneratorJson.usetypescriptdeclaration != null)
+            {
+                if (GeneratorJson.usetypescriptdeclaration != "true" && GeneratorJson.usetypescriptdeclaration != "false")
+                    throw new Exception("No usetypescriptdeclaration found. Please check PL.DynamicsCrm.DevKit.Cli.json file !!!");
+            }
             if (GeneratorJson.type.ToLower() == "csharp" || GeneratorJson.type.ToLower() == "c#")
                 GeneratorLateBound();
             else if (GeneratorJson.type.ToLower() == "jsform")
@@ -92,7 +94,7 @@ namespace PL.DynamicsCrm.DevKit.Cli
             var entities = new List<string>();
             string[] files;
             var folder = $"{CurrentDirectory}\\{GeneratorJson.rootfolder}";
-            if (GeneratorJson.entities.Count == 0)            {
+            if (GeneratorJson.entities == null || GeneratorJson.entities.Count == 0) {
                 var pattern = "*.webapi.js";
                 files = Directory.GetFiles(folder, pattern);
             }
@@ -121,7 +123,6 @@ namespace PL.DynamicsCrm.DevKit.Cli
             {
 #if DEBUG
                 //if (entity != "ListMember") continue;
-                //if (i<=409) { i++; continue; }
 #endif
                 GeneratorJsWebApi(entity, i, entities.Count);
                 i++;
@@ -239,7 +240,7 @@ namespace PL.DynamicsCrm.DevKit.Cli
             var entities = new List<string>();
             string[] files;
             var folder = $"{CurrentDirectory}\\{GeneratorJson.rootfolder}";
-            if (GeneratorJson.entities.Count == 0)
+            if (GeneratorJson.entities == null || GeneratorJson.entities.Count == 0)
             {
                 var pattern = "*.form.js";
                 files = Directory.GetFiles(folder, pattern);
@@ -269,13 +270,10 @@ namespace PL.DynamicsCrm.DevKit.Cli
             foreach (var entity in entities)
             {
 #if DEBUG
-                if (entity != "Account") continue;
+                if (entity != "abiz_Sla") continue;
 #endif
                 GeneratorJsForm(entity, i, entities.Count);
                 i++;
-                //#if DEBUG
-                //if (i == 10) break;
-                //#endif
             }
             CliLog.WriteLine(CliLog.ColorGreen, new string('*', CliLog.StarLength));
             CliLog.WriteLine(CliLog.ColorGreen, "END GENERATOR - JS FORM - TASKS");
@@ -283,13 +281,12 @@ namespace PL.DynamicsCrm.DevKit.Cli
 
         private void GeneratorJsForm(string entity, int i, int count)
         {
-            var forms = new List<string>();
-            var isDebugForm = true;
-            var webApi = true;
-            var isDebugWebApi = true;
-
             if (GeneratorJson.usetypescriptdeclaration == "true")
             {
+                var forms = new List<string>();
+                var isDebugForm = true;
+                var webApi = true;
+                var isDebugWebApi = true;
                 var fileTypeScriptDeclaration = $"{CurrentDirectory}\\{GeneratorJson.rootfolder}\\{entity}.d.ts";
                 if (File.Exists(fileTypeScriptDeclaration))
                 {
