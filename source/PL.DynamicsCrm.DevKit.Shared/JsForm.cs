@@ -587,11 +587,14 @@ namespace PL.DynamicsCrm.DevKit.Shared
 
             var code = string.Empty;
             code += $"'use strict';\r\n";
-            code += $"/** @type {ProjectName} */\r\n";
+            code += $"/** @namespace {ProjectName} */\r\n";
             var formCodeMin = formCode;
             if (!isDebug)
             {
+                formCode = formCode.Replace("else { throw new Error(", "//else { throw new Error(");
                 formCodeMin = Uglify.Js(formCode).Code;
+                formCodeMin = formCodeMin.Replace("\"", "'");
+                formCodeMin = formCodeMin.Replace("'*'", "\"*\"");
             }
             code += formCodeMin;
             if (!isDebug) code += "\r\n";
@@ -602,7 +605,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
             {
                 optionSetMin = Uglify.Js(optionSet).Code;
             }
-            code += $"/** @type OptionSet */\r\n";
+            code += $"/** @namespace OptionSet */\r\n";
             code += optionSetMin;
             return code;
         }

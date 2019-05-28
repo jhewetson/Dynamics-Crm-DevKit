@@ -69,7 +69,7 @@ namespace PL.DynamicsCrm.DevKit.Cli
             var jsonFile = Path.Combine(CurrentDirectory, arguments.Json);
             CliLog.WriteLine(CliLog.ColorGreen, "PL.DynamicsCrm.DevKit.Cli.json path: ", CliLog.ColorWhite, jsonFile);
             CliLog.WriteLine(CliLog.ColorGreen, "Arguments: ",
-                CliLog.ColorMagenta, "/conn:", CliLog.ColorCyan, arguments.Connection, " ",
+                CliLog.ColorMagenta, "/conn:", CliLog.ColorCyan, HidePassword(arguments.Connection), " ",
                 CliLog.ColorMagenta, "/json:", CliLog.ColorCyan, arguments.Json, " ",
                 CliLog.ColorMagenta, "/type:", CliLog.ColorCyan, arguments.Type, " ",
                 CliLog.ColorMagenta, "/profile:", CliLog.ColorCyan, arguments.Profile, " ",
@@ -95,6 +95,13 @@ namespace PL.DynamicsCrm.DevKit.Cli
         {
             var assembly = Assembly.GetExecutingAssembly();
             return assembly.Location;
+        }
+
+        private static string HidePassword(string connection)
+        {
+            var parts = connection.Split(";".ToCharArray());
+            parts[parts.Length - 2] = "Password:******";
+            return string.Join(";", parts);
         }
 
         private static void Run(CommandLineArgs arguments)

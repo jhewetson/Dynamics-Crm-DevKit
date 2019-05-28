@@ -122,7 +122,7 @@ namespace PL.DynamicsCrm.DevKit.Cli
             foreach (var entity in entities)
             {
 #if DEBUG
-                //if (entity != "ListMember") continue;
+                if (entity != "abiz_Sla") continue;
 #endif
                 GeneratorJsWebApi(entity, i, entities.Count);
                 i++;
@@ -270,7 +270,7 @@ namespace PL.DynamicsCrm.DevKit.Cli
             foreach (var entity in entities)
             {
 #if DEBUG
-                if (entity != "abiz_Sla") continue;
+                //if (entity != "abiz_Sla") continue;
 #endif
                 GeneratorJsForm(entity, i, entities.Count);
                 i++;

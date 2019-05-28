@@ -126,7 +126,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
             var webApiCode = string.Empty;
             var @class = EntityName.ToLower();
             var Class = EntityName;
-            webApiCode += $"'use strict';\r\n";
+
             webApiCode += $"var {ProjectName};\r\n";
             webApiCode += $"(function ({ProjectName}) {{\r\n";
             webApiCode += $"\t'use strict';\r\n";
@@ -294,13 +294,22 @@ namespace PL.DynamicsCrm.DevKit.Shared
             webApiCode += $"}})({ProjectName} || ({ProjectName} = {{}}));";
             webApiCode = webApiCode.Replace("\"", "'");
             webApiCode = webApiCode.Replace("'*'", "\"*\"");
-            if (!IsDebugWebApi)
-            {
+
+            //IsDebugWebApi = false;
+
+            //if (!IsDebugWebApi)
+            //{
                 webApiCode = Uglify.Js(webApiCode).Code;
                 webApiCode = webApiCode.Replace("\"", "'");
                 webApiCode = webApiCode.Replace("'*'", "\"*\"");
-            }
-            WebApiCode = webApiCode;
+            //}
+
+            var code = string.Empty;
+            code += $"'use strict';\r\n";
+            code += $"/** @namespace {ProjectName} */\r\n";
+            code += webApiCode;
+
+            WebApiCode = code;
             var processForms = new List<SystemForm>();
             foreach (var form in Forms)
                 if (CheckedItems.Contains($"{form.Name}"))
