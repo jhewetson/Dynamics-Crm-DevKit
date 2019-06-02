@@ -1,4 +1,4 @@
-﻿///<reference path='devkit.d.ts' />
+﻿///<reference path='DevKit.d.ts' />
 declare namespace Rocket {
 	namespace FormBulkDeleteOperationInformation {
 		interface tab_properties_Sections {

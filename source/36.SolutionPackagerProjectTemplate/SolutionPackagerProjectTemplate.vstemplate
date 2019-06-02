@@ -16,7 +16,6 @@
     <CreateInPlace>true</CreateInPlace>
     <LanguageTag>CSharp</LanguageTag>
     <PlatformTag>Windows</PlatformTag>
-    <ProjectTypeTag>Web</ProjectTypeTag>
     <ProjectTypeTag>PL.DynamicsCrm.DevKit</ProjectTypeTag>
   </TemplateData>
   <TemplateContent>

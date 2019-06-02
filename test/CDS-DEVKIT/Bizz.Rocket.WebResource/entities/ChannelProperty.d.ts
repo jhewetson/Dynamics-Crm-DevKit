@@ -1,4 +1,4 @@
-﻿///<reference path='devkit.d.ts' />
+﻿///<reference path='DevKit.d.ts' />
 declare namespace Rocket {
 	namespace FormChannelProperty {
 		interface tab_general_Sections {

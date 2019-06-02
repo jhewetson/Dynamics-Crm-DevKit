@@ -5,9 +5,9 @@
     <Description>C# Workflow Project Template</Description>
     <Icon>icon.png</Icon>
     <ProjectType>CSharp</ProjectType>
-    <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+    <RequiredFrameworkVersion>4.5.2</RequiredFrameworkVersion>
     <TemplateID>81716eca-ac92-4ef6-9728-592c2b9edd19</TemplateID>
-    <CreateNewFolder>true</CreateNewFolder>
+    <CreateNewFolder>false</CreateNewFolder>
     <DefaultName>WorkflowProject</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Disabled</LocationField>
@@ -16,7 +16,6 @@
     <CreateInPlace>true</CreateInPlace>
     <LanguageTag>CSharp</LanguageTag>
     <PlatformTag>Windows</PlatformTag>
-    <ProjectTypeTag>Library</ProjectTypeTag>
     <ProjectTypeTag>PL.DynamicsCrm.DevKit</ProjectTypeTag>
   </TemplateData>
   <TemplateContent>

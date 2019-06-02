@@ -1,4 +1,4 @@
-﻿///<reference path='devkit.d.ts' />
+﻿///<reference path='DevKit.d.ts' />
 declare namespace Rocket {
 	namespace FormKnowledgeSearchModelInformation {
 		interface tab__5B6AE5E5_8F54_4363_B906_48722F438B65_Sections {

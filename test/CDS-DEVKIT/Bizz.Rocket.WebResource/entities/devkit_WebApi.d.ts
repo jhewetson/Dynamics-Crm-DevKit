@@ -1,4 +1,4 @@
-﻿///<reference path='devkit.d.ts' />
+﻿///<reference path='DevKit.d.ts' />
 declare namespace Rocket {
 	namespace FormWebApi {
 		interface Header {
@@ -626,7 +626,7 @@ declare namespace Rocket {
 		/** The Process of form WebApi2 */
 		Process: Rocket.FormWebApi2.Process;
 	}
-	namespace FormQuickCreate {
+	namespace Formdevkit_WebApiQuickCreate {
 		interface tab_tab_1_Sections {
 			tab_1_column_1_section_1: DevKit.Form.Controls.ControlSection;
 			tab_1_column_2_section_1: DevKit.Form.Controls.ControlSection;
@@ -646,9 +646,9 @@ declare namespace Rocket {
 			TransactionCurrencyId: DevKit.Form.Controls.ControlLookup;
 		}
 	}
-	class FormQuickCreate extends DevKit.Form.IForm {
+	class Formdevkit_WebApiQuickCreate extends DevKit.Form.IForm {
 		/**
-		* PL.DynamicsCrm.DevKit form QuickCreate
+		* PL.DynamicsCrm.DevKit form devkit_WebApiQuickCreate
 		* @param executionContext the execution context
 		* @param defaultWebResourceName default resource name. E.g.: "devkit_/resources/Resource"
 		*/
@@ -657,8 +657,8 @@ declare namespace Rocket {
 		Utility: DevKit.Form.Utility;
 		/** Provides properties and methods to use Web API to create and manage records and execute Web API actions and functions in Customer Engagement */
 		WebApi: DevKit.Form.WebApi;
-		/** The Body section of form QuickCreate */
-		Body: Rocket.FormQuickCreate.Body;
+		/** The Body section of form devkit_WebApiQuickCreate */
+		Body: Rocket.Formdevkit_WebApiQuickCreate.Body;
 	}
 	class devkit_WebApiApi {
 		/**

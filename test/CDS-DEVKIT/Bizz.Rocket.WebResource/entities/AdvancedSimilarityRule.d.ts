@@ -1,4 +1,4 @@
-﻿///<reference path='devkit.d.ts' />
+﻿///<reference path='DevKit.d.ts' />
 declare namespace Rocket {
 	namespace FormAdvancedSimilarityRuleInformation {
 		interface tab__67E8B341_A89A_4207_9BCC_4C1F9CC8B89D_Sections {

@@ -31,7 +31,7 @@ namespace PL.DynamicsCrm.DevKit.Cli
             get
             {
 #if DEBUG
-                return @"C:\src\azure\abiz\git\ABIZ_VIAGS\src\Abiz.Viags.WebResource\entities";
+                return @"C:\src\azure\abiz\git\ABIZ_VIAGS\src\Abiz.Viags.WebResource";
 #else
                 return Directory.GetCurrentDirectory();
 #endif

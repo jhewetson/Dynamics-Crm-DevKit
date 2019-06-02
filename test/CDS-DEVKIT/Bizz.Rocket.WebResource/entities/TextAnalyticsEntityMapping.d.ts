@@ -1,4 +1,4 @@
-﻿///<reference path='devkit.d.ts' />
+﻿///<reference path='DevKit.d.ts' />
 declare namespace Rocket {
 	namespace FormTextAnalyticsEntityMappingInformation {
 		interface tab__C01C55A7_B832_422F_B768_4BDA9674E00F_Sections {

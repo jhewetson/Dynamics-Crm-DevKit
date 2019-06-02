@@ -1,4 +1,4 @@
-﻿///<reference path='devkit.d.ts' />
+﻿///<reference path='DevKit.d.ts' />
 declare namespace Rocket {
 	namespace FormKnowledgeArticle {
 		interface Header {
@@ -549,4 +549,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':['Knowledge Article','Knowledge Article for Interactive experience','Knowledge Article Quick Create'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Knowledge Article','Knowledge Article for Interactive experience','Quick Create'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

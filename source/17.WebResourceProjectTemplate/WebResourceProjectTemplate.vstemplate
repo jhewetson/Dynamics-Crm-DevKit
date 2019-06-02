@@ -5,9 +5,9 @@
     <Description>C# WebResource Project Template</Description>
     <Icon>icon.png</Icon>
     <ProjectType>CSharp</ProjectType>
-    <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+    <RequiredFrameworkVersion>4.5.2</RequiredFrameworkVersion>
     <TemplateID>6e4fe9bc-0c96-4081-a92e-6f55961b2599</TemplateID>
-    <CreateNewFolder>true</CreateNewFolder>
+    <CreateNewFolder>false</CreateNewFolder>
     <DefaultName>WebResourceProject</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Disabled</LocationField>
@@ -16,7 +16,6 @@
     <CreateInPlace>true</CreateInPlace>
     <LanguageTag>CSharp</LanguageTag>
     <PlatformTag>Windows</PlatformTag>
-    <ProjectTypeTag>Web</ProjectTypeTag>
     <ProjectTypeTag>PL.DynamicsCrm.DevKit</ProjectTypeTag>
   </TemplateData>
   <TemplateContent>
@@ -24,8 +23,8 @@
       <Folder Name="lib" TargetFolderName="lib" />
       <Folder Name="entities" TargetFolderName="entities" />
       <Folder Name="images" TargetFolderName="images" />
-      <Folder Name="test" TargetFolderName="test" />$if$($CrmName$==365)
-      <Folder Name="resources" TargetFolderName="resources" />$endif$
+      <Folder Name="test" TargetFolderName="test" />
+      <Folder Name="resources" TargetFolderName="resources" />
       <Folder Name="html" TargetFolderName="html" />
       <Folder Name="css" TargetFolderName="css" />
       <Folder Name="js" TargetFolderName="js" />

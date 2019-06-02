@@ -1,4 +1,4 @@
-﻿///<reference path='devkit.d.ts' />
+﻿///<reference path='DevKit.d.ts' />
 declare namespace Rocket {
 	namespace Formmsdyn_odatav4dsInformation {
 		interface tab_tab_Request_Parameters_Sections {

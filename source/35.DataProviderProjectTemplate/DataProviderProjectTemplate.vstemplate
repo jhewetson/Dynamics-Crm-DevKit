@@ -3,12 +3,12 @@
   <TemplateData>
     <Name>11. C# Data Provider Project</Name>
     <Description>C# Data Provider Project Template</Description>
+    <DefaultName>DataProviderProject</DefaultName>
+    <TemplateID>29713a86-d360-4c15-83f1-12120aab43dd</TemplateID>
     <Icon>icon.png</Icon>
     <ProjectType>CSharp</ProjectType>
-    <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
-    <TemplateID>29714d87-d360-4c15-83f1-12120aab43dd</TemplateID>
-    <CreateNewFolder>true</CreateNewFolder>
-    <DefaultName>DataProviderProject</DefaultName>
+    <RequiredFrameworkVersion>4.5.2</RequiredFrameworkVersion>
+    <CreateNewFolder>false</CreateNewFolder>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Disabled</LocationField>
     <EnableLocationBrowseButton>false</EnableLocationBrowseButton>
@@ -16,7 +16,6 @@
     <CreateInPlace>true</CreateInPlace>
     <LanguageTag>CSharp</LanguageTag>
     <PlatformTag>Windows</PlatformTag>
-    <ProjectTypeTag>Library</ProjectTypeTag>
     <ProjectTypeTag>PL.DynamicsCrm.DevKit</ProjectTypeTag>
   </TemplateData>
   <TemplateContent>

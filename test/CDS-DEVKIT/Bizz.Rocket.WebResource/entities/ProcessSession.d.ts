@@ -1,4 +1,4 @@
-﻿///<reference path='devkit.d.ts' />
+﻿///<reference path='DevKit.d.ts' />
 declare namespace Rocket {
 	namespace FormProcessSessionInformation {
 		interface tab__474B8A52_CB22_4194_A5A6_F21FD40B7417_Sections {

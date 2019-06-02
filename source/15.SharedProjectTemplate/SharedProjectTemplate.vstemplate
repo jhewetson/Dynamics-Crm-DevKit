@@ -3,12 +3,12 @@
   <TemplateData>
     <Name>10. C# Shared Project</Name>
     <Description>C# Shared Project Template</Description>
+    <DefaultName>SharedProject</DefaultName>
+    <TemplateID>6e4fe9bc-0c96-4081-a92f-6f65962b2599</TemplateID>
     <Icon>icon.png</Icon>
     <ProjectType>CSharp</ProjectType>
-    <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
-    <TemplateID>6e4fe9bc-0c96-4081-a92e-6f55961b2599</TemplateID>
-    <CreateNewFolder>true</CreateNewFolder>
-    <DefaultName>SharedProject</DefaultName>
+    <RequiredFrameworkVersion>4.5.2</RequiredFrameworkVersion>
+    <CreateNewFolder>false</CreateNewFolder>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Disabled</LocationField>
     <EnableLocationBrowseButton>false</EnableLocationBrowseButton>
@@ -16,7 +16,6 @@
     <CreateInPlace>true</CreateInPlace>
     <LanguageTag>CSharp</LanguageTag>
     <PlatformTag>Windows</PlatformTag>
-    <ProjectTypeTag>Library</ProjectTypeTag>
     <ProjectTypeTag>PL.DynamicsCrm.DevKit</ProjectTypeTag>
   </TemplateData>
   <TemplateContent>

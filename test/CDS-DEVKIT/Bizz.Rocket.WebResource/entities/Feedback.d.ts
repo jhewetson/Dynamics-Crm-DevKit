@@ -1,4 +1,4 @@
-﻿///<reference path='devkit.d.ts' />
+﻿///<reference path='DevKit.d.ts' />
 declare namespace Rocket {
 	namespace FormFeedback {
 		interface Header {
@@ -302,4 +302,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':['Feedback','Feedback MainIC','Feedback Quick Create'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Feedback','Feedback MainIC','Quick Create'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

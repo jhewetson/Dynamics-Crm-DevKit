@@ -1,4 +1,4 @@
-﻿///<reference path='devkit.d.ts' />
+﻿///<reference path='DevKit.d.ts' />
 declare namespace Rocket {
 	namespace FormCategory {
 		interface tab_AssociatedCategories_Sections {
@@ -180,4 +180,4 @@ declare namespace OptionSet {
 	namespace Category {
 	}
 }
-//{'JsForm':['Category','Category Main Interactive','Category Quick Create'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Category','Category Main Interactive','Quick Create'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

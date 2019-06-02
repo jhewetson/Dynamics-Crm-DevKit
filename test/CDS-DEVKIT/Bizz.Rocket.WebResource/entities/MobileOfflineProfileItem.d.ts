@@ -1,4 +1,4 @@
-﻿///<reference path='devkit.d.ts' />
+﻿///<reference path='DevKit.d.ts' />
 declare namespace Rocket {
 	namespace FormMobileOfflineProfileItem {
 		interface tab_GENERALINFORMATION_TAB_Sections {

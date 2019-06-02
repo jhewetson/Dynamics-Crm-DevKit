@@ -1,4 +1,4 @@
-﻿///<reference path='devkit.d.ts' />
+﻿///<reference path='DevKit.d.ts' />
 declare namespace Rocket {
 	namespace FormAccount {
 		interface Header {
@@ -846,4 +846,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':['Account','Account for Interactive experience','Account Quick Create'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Account','Account for Interactive experience','Quick Create'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

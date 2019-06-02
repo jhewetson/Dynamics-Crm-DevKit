@@ -1,4 +1,4 @@
-﻿///<reference path='devkit.d.ts' />
+﻿///<reference path='DevKit.d.ts' />
 declare namespace Rocket {
 	namespace FormPublisherInformation {
 		interface tab__70098AD5_4956_11DD_982E_00188B01DCE6_Sections {

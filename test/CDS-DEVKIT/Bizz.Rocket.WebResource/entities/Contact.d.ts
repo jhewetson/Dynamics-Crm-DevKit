@@ -1,4 +1,4 @@
-﻿///<reference path='devkit.d.ts' />
+﻿///<reference path='DevKit.d.ts' />
 declare namespace Rocket {
 	namespace FormContact {
 		interface Header {
@@ -755,4 +755,4 @@ declare namespace OptionSet {
 		}
 	}
 }
-//{'JsForm':['Contact','Contact Quick Create'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}
+//{'JsForm':['Contact','Quick Create'],'JsWebApi':true,'IsDebugForm':true,'IsDebugWebApi':true}

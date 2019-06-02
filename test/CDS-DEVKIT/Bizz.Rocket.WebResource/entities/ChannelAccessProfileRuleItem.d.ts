@@ -1,4 +1,4 @@
-﻿///<reference path='devkit.d.ts' />
+﻿///<reference path='DevKit.d.ts' />
 declare namespace Rocket {
 	namespace FormChannelAccessProfileRuleItemInformation {
 		interface tab_RuleCriteria_Sections {

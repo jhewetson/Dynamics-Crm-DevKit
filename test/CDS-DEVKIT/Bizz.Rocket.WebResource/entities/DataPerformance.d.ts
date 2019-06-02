@@ -1,4 +1,4 @@
-﻿///<reference path='devkit.d.ts' />
+﻿///<reference path='DevKit.d.ts' />
 declare namespace Rocket {
 	namespace FormDataPerformanceInformation {
 		interface tab_PerformanceImprovement_Sections {
