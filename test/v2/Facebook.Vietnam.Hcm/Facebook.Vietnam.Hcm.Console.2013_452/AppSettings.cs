@@ -6,7 +6,7 @@ using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Client;
 
-namespace Facebook.Vietnam.Hcm.Console._2013_45
+namespace Facebook.Vietnam.Hcm.Console._2013_452
 {
     public class AppSettings
     {

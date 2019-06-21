@@ -43,9 +43,10 @@ namespace PL.DynamicsCrm.DevKit.Shared
             var parts = comboboxCrmName.Split("-".ToCharArray());
             var crmName = parts[0].Trim();
             var crmVersion = parts[1].Trim();
+            if (crmName.StartsWith(Const.DynamicsCrm2013) || crmName.StartsWith(Const.DynamicsCrm2015)) crmVersion = "4.5";
             var packages = GetPackages(packageId);
             var package = (from p in packages
-                           where crmName == Utility.GetCrmName(p.Version.Version) && crmVersion == p?.GetSupportedFrameworks()?.LastOrDefault()?.Version.ToString()
+                           where crmName == Utility.GetCrmName(p.Version.Version) && crmVersion == p?.GetSupportedFrameworks()?.FirstOrDefault()?.Version.ToString()
                            orderby p.Version descending
                            select p
                            ).FirstOrDefault();

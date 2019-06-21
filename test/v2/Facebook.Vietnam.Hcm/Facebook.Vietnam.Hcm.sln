@@ -5,14 +5,22 @@ VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Facebook.Vietnam.Hcm.Shared", "Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.shproj", "{6648CC9E-D8F5-42DB-AD73-C605B047CD32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Console.2011_40", "Facebook.Vietnam.Hcm.Console.2011_40\Facebook.Vietnam.Hcm.Console.2011_40.csproj", "{A120B73D-B600-4CBD-B1D1-F4CD1F990B65}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Console.2011_40", "Facebook.Vietnam.Hcm.Console.2011_40\Facebook.Vietnam.Hcm.Console.2011_40.csproj", "{51249619-FBAE-4385-A2FE-81E62DEC1041}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Console.2013_40", "Facebook.Vietnam.Hcm.Console.2013_40\Facebook.Vietnam.Hcm.Console.2013_40.csproj", "{DD066E05-0E54-4C3A-98A5-A7E31571494D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Console.2013_452", "Facebook.Vietnam.Hcm.Console.2013_452\Facebook.Vietnam.Hcm.Console.2013_452.csproj", "{731AE437-3BAE-495B-9D39-FA98694C28DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Console.2013_45", "Facebook.Vietnam.Hcm.Console.2013_45\Facebook.Vietnam.Hcm.Console.2013_45.csproj", "{9832B857-2F47-4E1A-8446-6815056859B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Console.2015_452", "Facebook.Vietnam.Hcm.Console.2015_452\Facebook.Vietnam.Hcm.Console.2015_452.csproj", "{47D4C279-BEEB-40FB-B52C-C76921070EC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Console.2016_452", "Facebook.Vietnam.Hcm.Console.2016_452\Facebook.Vietnam.Hcm.Console.2016_452.csproj", "{00E808CC-EF5E-4DA7-8C59-7F873CA9A20E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Console.365_452", "Facebook.Vietnam.Hcm.Console.365_452\Facebook.Vietnam.Hcm.Console.365_452.csproj", "{41DCBDDB-D4EF-46F7-A76F-9DB1F57903D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Console.365_462", "Facebook.Vietnam.Hcm.Console.365_462\Facebook.Vietnam.Hcm.Console.365_462.csproj", "{1687614C-1060-4713-B3FE-B2B96E5F95FA}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{1687614c-1060-4713-b3fe-b2b96e5f95fa}*SharedItemsImports = 4
+		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{41dcbddb-d4ef-46f7-a76f-9db1f57903d9}*SharedItemsImports = 4
 		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{6648cc9e-d8f5-42db-ad73-c605b047cd32}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,18 +28,30 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A120B73D-B600-4CBD-B1D1-F4CD1F990B65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A120B73D-B600-4CBD-B1D1-F4CD1F990B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A120B73D-B600-4CBD-B1D1-F4CD1F990B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A120B73D-B600-4CBD-B1D1-F4CD1F990B65}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DD066E05-0E54-4C3A-98A5-A7E31571494D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD066E05-0E54-4C3A-98A5-A7E31571494D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD066E05-0E54-4C3A-98A5-A7E31571494D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD066E05-0E54-4C3A-98A5-A7E31571494D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9832B857-2F47-4E1A-8446-6815056859B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9832B857-2F47-4E1A-8446-6815056859B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9832B857-2F47-4E1A-8446-6815056859B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9832B857-2F47-4E1A-8446-6815056859B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51249619-FBAE-4385-A2FE-81E62DEC1041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51249619-FBAE-4385-A2FE-81E62DEC1041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51249619-FBAE-4385-A2FE-81E62DEC1041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51249619-FBAE-4385-A2FE-81E62DEC1041}.Release|Any CPU.Build.0 = Release|Any CPU
+		{731AE437-3BAE-495B-9D39-FA98694C28DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{731AE437-3BAE-495B-9D39-FA98694C28DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{731AE437-3BAE-495B-9D39-FA98694C28DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{731AE437-3BAE-495B-9D39-FA98694C28DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47D4C279-BEEB-40FB-B52C-C76921070EC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47D4C279-BEEB-40FB-B52C-C76921070EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47D4C279-BEEB-40FB-B52C-C76921070EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47D4C279-BEEB-40FB-B52C-C76921070EC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00E808CC-EF5E-4DA7-8C59-7F873CA9A20E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00E808CC-EF5E-4DA7-8C59-7F873CA9A20E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00E808CC-EF5E-4DA7-8C59-7F873CA9A20E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00E808CC-EF5E-4DA7-8C59-7F873CA9A20E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41DCBDDB-D4EF-46F7-A76F-9DB1F57903D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41DCBDDB-D4EF-46F7-A76F-9DB1F57903D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41DCBDDB-D4EF-46F7-A76F-9DB1F57903D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41DCBDDB-D4EF-46F7-A76F-9DB1F57903D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1687614C-1060-4713-B3FE-B2B96E5F95FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1687614C-1060-4713-B3FE-B2B96E5F95FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1687614C-1060-4713-B3FE-B2B96E5F95FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1687614C-1060-4713-B3FE-B2B96E5F95FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

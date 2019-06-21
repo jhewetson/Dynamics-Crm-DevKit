@@ -22,6 +22,8 @@ namespace PL.DynamicsCrm.DevKit.Wizard
             replacementsDictionary.Add("$PL.DynamicsCrm.DevKit.Analyzers.Version$", NugetHelper.GetLatestPackageVersion(Const.PLDynamicsCrmDevKitAnalyzers));
             var CoreAssemblies = NugetHelper.GetLatestPackageVersion(Const.MicrosoftCrmSdkCoreAssemblies, form.CrmName);
             replacementsDictionary.Add("$Microsoft.CrmSdk.CoreAssemblies.Version$", CoreAssemblies.Version);
+            if (form.CrmName.StartsWith(Const.DynamicsCrm2013) || form.CrmName.StartsWith(Const.DynamicsCrm2015))
+                CoreAssemblies.TargetFramework = "45";
             replacementsDictionary.Add("$Microsoft.CrmSdk.CoreAssemblies.TargetFramework$", CoreAssemblies.TargetFramework);
         }
     }

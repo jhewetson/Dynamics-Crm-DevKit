@@ -101,7 +101,7 @@ namespace PL.DynamicsCrm.DevKit.Shared
             if (version.Major == 5) return Const.DynamicsCrm2011;
             if (version.Major == 6) return Const.DynamicsCrm2013;
             if (version.Major == 7) return Const.DynamicsCrm2015;
-            if (version.Major == 8 && version < new Version("8.2.0")) return Const.DynamicsCrm2016;
+            if (version.Major == 8) return Const.DynamicsCrm2016;
             return Const.Dynamics365;
         }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using EnvDTE;
@@ -79,18 +80,7 @@ namespace PL.DynamicsCrm.DevKit.Wizard
 
         private void LoadCombobox()
         {
-            var packages = NugetHelper.GetPackages(Const.MicrosoftCrmSdkCoreAssemblies);
-            var items = (from i in packages
-                         select new DataSourceCrm
-                         {
-                             Name = Utility.GetCrmName(i.Version.Version) + " - " + i?.GetSupportedFrameworks()?.LastOrDefault()?.Version?.ToString(),
-                             Version = i?.GetSupportedFrameworks()?.LastOrDefault()?.Version?.ToString()
-                         }).ToList();
-            var dataSource = items
-                .GroupBy(x => new { x.Name, x.Version })
-                .Select(x => x.First())
-                .ToList();
-            ComboboxCrmName.DataSource = dataSource;
+            ComboboxCrmName.DataSource = Const.DataSourceCrm;
             ComboboxCrmName.ValueMember = "Version";
             ComboboxCrmName.DisplayMember = "Name";
         }
