@@ -114,10 +114,73 @@ namespace PL.DynamicsCrm.DevKit.Shared
 
         public static void FixCorrectProjectFolder(DTE dte, Project Project, string oldProjectFolder, string newProjectFolder)
         {
+            var projectFullName = Project.FullName;
             dte.Solution.Remove(Project);
             Directory.Move(oldProjectFolder, newProjectFolder);
-            dte.Solution.AddFromFile(newProjectFolder + "\\" + Path.GetFileName(Project.FullName));
+            dte.Solution.AddFromFile(newProjectFolder + "\\" + Path.GetFileName(projectFullName));
             dte.Solution.SaveAs(dte?.Solution?.FullName);
+        }
+
+        public static bool SharedProjectExist(DTE dte)
+        {
+            var sharedProjectName = Utility.GetSharedProject(dte);
+            return Utility.ExistProject(dte, sharedProjectName);
+        }
+
+        public static string GetSharedProject(DTE dte)
+        {
+            var solutionFullName = dte?.Solution?.FullName;
+            var fInfo = new FileInfo(solutionFullName);
+            var parts = fInfo.Name.Split(".".ToCharArray());
+            var value = string.Empty;
+            for (var i = 0; i < parts.Length - 1; i++)
+                value += parts[i] + ".";
+            return value + $"{FormType.Shared.ToString()}";
+        }
+
+
+        public static void ForceWriteAllText(string file, string content)
+        {
+            if (!File.Exists(file))
+            {
+                File.WriteAllText(file, content, System.Text.Encoding.UTF8);
+            }
+            else
+            {
+                var attributes = File.GetAttributes(file);
+                if ((attributes & FileAttributes.ReadOnly) == FileAttributes.ReadOnly)
+                {
+                    File.SetAttributes(file, attributes & ~FileAttributes.ReadOnly);
+                }
+                File.WriteAllText(file, content, System.Text.Encoding.UTF8);
+            }
+        }
+
+        public static string GetProjectNetVersion(string comboboxCrmName)
+        {
+            return comboboxCrmName.Split("-".ToCharArray())[1].Trim();
+        }
+
+        public static string GetCrmName(string comboboxCrmName)
+        {
+            return comboboxCrmName.Split("-".ToCharArray())[0].Trim();
+        }
+
+        public static string SafeNamespace(string @namespace)
+        {
+            var items = @namespace.Split('.');
+            for (var i = 0; i < items.Length; i++)
+            {
+                if (int.TryParse(items[i], out _))
+                {
+                    items[i] = $"_{items[i]}";
+                }
+                else if (int.TryParse(items[i].Substring(0, 1), out _))
+                {
+                    items[i] = $"_{items[i]}";
+                }
+            }
+            return string.Join(".", items);
         }
     }
 }

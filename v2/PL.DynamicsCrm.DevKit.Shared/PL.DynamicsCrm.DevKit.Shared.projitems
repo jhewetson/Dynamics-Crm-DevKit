@@ -22,8 +22,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Enum.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FormHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\CrmConnection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\CrmNuget.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\DataSourceCrm.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\DevKitCrmConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\NugetPackage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NugetHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SimpleJson.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tfs.cs" />

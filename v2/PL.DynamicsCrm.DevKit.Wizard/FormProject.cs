@@ -42,7 +42,7 @@ namespace PL.DynamicsCrm.DevKit.Wizard
         public string ProjectName => lblProjectName.Text;
         public string CrmName => ComboboxCrmName.Text;
 
-        private DTE DTE { get; }
+        public DTE DTE { get; }
         private FormType _formType;
         public FormType FormType
         {
@@ -55,6 +55,12 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                     link.Text = @"Add New Shared Project";
                     link.Tag = "https://github.com/phuocle/Dynamics-Crm-DevKit/wiki/Shared-Project-Template";
                 }
+                else if (_formType == FormType.Console)
+                {
+                    link.Text = @"Add New Console Project";
+                    link.Tag = "https://github.com/phuocle/Dynamics-Crm-DevKit/wiki/Console-Project-Template";
+                }
+
                 lblProjectName.Text = $"{FormHelper.GetProjectName(DTE, _formType)}";
                 lblProjectName.Tag = lblProjectName.Text;
             }
@@ -77,8 +83,8 @@ namespace PL.DynamicsCrm.DevKit.Wizard
             var items = (from i in packages
                          select new DataSourceCrm
                          {
-                             Name = Utility.GetCrmName(i.Version.Version) + " - " + i?.GetSupportedFrameworks()?.FirstOrDefault()?.Version?.ToString(),
-                             Version = i?.GetSupportedFrameworks()?.FirstOrDefault()?.Version?.ToString()
+                             Name = Utility.GetCrmName(i.Version.Version) + " - " + i?.GetSupportedFrameworks()?.LastOrDefault()?.Version?.ToString(),
+                             Version = i?.GetSupportedFrameworks()?.LastOrDefault()?.Version?.ToString()
                          }).ToList();
             var dataSource = items
                 .GroupBy(x => new { x.Name, x.Version })

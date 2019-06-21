@@ -25,6 +25,7 @@
         <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="01.SharedProjectTemplate" d:TargetPath="|01.SharedProjectTemplate;TemplateProjectOutputGroup|" Path="ProjectTemplates" d:VsixSubPath="ProjectTemplates" />
         <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="%CurrentProject%.Wizard" Path="|PL.DynamicsCrm.DevKit.Wizard|" AssemblyName="|PL.DynamicsCrm.DevKit.Wizard;AssemblyName|" />
         <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="%CurrentProject%.Resources" Path="|PL.DynamicsCrm.DevKit.Resources|" AssemblyName="|PL.DynamicsCrm.DevKit.Resources;AssemblyName|" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="02.ConsoleProjectTemplate" d:TargetPath="|02.ConsoleProjectTemplate;TemplateProjectOutputGroup|" Path="ProjectTemplates" d:VsixSubPath="ProjectTemplates" />
 
     </Assets>
     <Prerequisites>

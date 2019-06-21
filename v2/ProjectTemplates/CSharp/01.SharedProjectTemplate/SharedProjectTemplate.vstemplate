@@ -3,11 +3,11 @@
   <TemplateData>
     <Name>10. C# Shared Project</Name>
     <Description>C# Shared Project Template</Description>
-    <DefaultName>SharedProject</DefaultName>
-    <TemplateID>6e4fe9bc-0c96-4081-a92f-6f65962b2599</TemplateID>
     <Icon>icon.png</Icon>
     <ProjectType>CSharp</ProjectType>
-    <RequiredFrameworkVersion>4.5.2</RequiredFrameworkVersion>
+    <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+    <DefaultName>SharedProject</DefaultName>
+    <TemplateID>6e4fe9bc-0c96-4081-a92f-6f65962b2599</TemplateID>
     <CreateNewFolder>false</CreateNewFolder>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Disabled</LocationField>

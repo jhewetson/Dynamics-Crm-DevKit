@@ -44,8 +44,13 @@ namespace PL.DynamicsCrm.DevKit.Wizard.ProjectTemplates
                 var form = new FormProject(FormType.Shared, DTE);
                 if (form.ShowDialog() == DialogResult.Cancel) throw new WizardCancelledException();
                 //Creating project ...
-                Wizard.ProcessProjectReplacementsDictionary(replacementsDictionary, form);
                 ProjectName = form.ProjectName;
+                if(Utility.ExistProject(DTE, ProjectName))
+                {
+                    MessageBox.Show($@"{ProjectName} project exist!", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw new WizardCancelledException();
+                }
+                Wizard.ProcessProjectReplacementsDictionary(replacementsDictionary, form);
                 var file = Utility.GetDevKitCliJsonFile(DTE);
                 if (!File.Exists(file))
                 {
@@ -58,7 +63,7 @@ namespace PL.DynamicsCrm.DevKit.Wizard.ProjectTemplates
                         .Replace("???.DataProvider.*.dll", $"{solutionName}.DataProvider.*.dll")
                         .Replace("???.*.Test.dll", $"{solutionName}.*.Test.dll")
                         ;
-                    File.WriteAllText(file, json);
+                    Utility.ForceWriteAllText(file, json);
                 }
             }
             catch
