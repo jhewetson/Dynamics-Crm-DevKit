@@ -31,7 +31,8 @@ namespace PL.DynamicsCrm.DevKit.Wizard
         {
             get
             {
-                return CrmName.Substring(CrmName.LastIndexOf(" ")).Trim();
+                var crmName = Utility.GetCrmName(comboBoxCrmName.Text);
+                return crmName.Substring(crmName.LastIndexOf(" ")).Trim();
             }
         }
 
@@ -43,7 +44,7 @@ namespace PL.DynamicsCrm.DevKit.Wizard
         public OrganizationServiceProxy CrmService { get; set; }
         public CrmConnection CrmConnection { get; set; }
         public string ProjectName => labelProjectName.Text;
-        public string CrmName => comboBoxCrmName.Text;
+        public string ComboBoxCrmName => comboBoxCrmName.Text;
 
         public DTE DTE { get; }
         private FormType _formType;
@@ -70,6 +71,11 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                     textProjectName.Visible = false;
                     comboBoxEntity.Visible = true;
                 }
+                else if (_formType == FormType.ProxyTypes)
+                {
+                    link.Text = @"Add New Proxy Types Project";
+                    link.Tag = "https://github.com/phuocle/Dynamics-Crm-DevKit/wiki/ProxyTypes-Project-Template";
+                }
 
                 labelProjectName.Text = $"{FormHelper.GetProjectName(DTE, _formType)}";
                 labelProjectName.Tag = labelProjectName.Text;
@@ -83,8 +89,9 @@ namespace PL.DynamicsCrm.DevKit.Wizard
             Text += Const.Version;
 
             DTE = dte;
-            FormType = formType;
             LoadComboBoxCrmName();
+
+            FormType = formType;
         }
 
         private void LoadComboBoxCrmName()
@@ -167,6 +174,11 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                     buttonConnection.Enabled = true;
                     buttonCancel.Enabled = true;
                     progressBar.Style = ProgressBarStyle.Blocks;
+                    progressBar.Value = 100;
+                    break;
+                case FormType.ProxyTypes:
+                    textProjectName.Enabled = true;
+                    textProjectName.Focus();
                     progressBar.Value = 100;
                     break;
             }

@@ -4,7 +4,7 @@
 		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
 		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<SchemaVersion>2.0</SchemaVersion>
-		<ProjectGuid>8e79c67d-5835-4b45-8d24-bbba261ef697</ProjectGuid>
+		<ProjectGuid>a222d78f-070d-488f-b261-a1630518ce09</ProjectGuid>
 		<OutputType>Library</OutputType>
 		<AppDesignerFolder>Properties</AppDesignerFolder>
 		<RootNamespace>Facebook.Vietnam.Hcm.Plugin.Account._365._462</RootNamespace>

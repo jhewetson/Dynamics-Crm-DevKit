@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Consol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Console.2016.452", "Facebook.Vietnam.Hcm.Console.2016.452\Facebook.Vietnam.Hcm.Console.2016.452.csproj", "{A77BFC71-0A16-40E3-8A6C-AF11A3F95D36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Console.365.462", "Facebook.Vietnam.Hcm.Console.365.462\Facebook.Vietnam.Hcm.Console.365.462.csproj", "{2A0D04D2-E08E-4CF8-9E92-035B630BC452}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Plugin.Account.2011.40", "Facebook.Vietnam.Hcm.Plugin.Account.2011.40\Facebook.Vietnam.Hcm.Plugin.Account.2011.40.csproj", "{E37425FB-5485-458F-A810-DC668FB6CD59}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Plugin.Account.2013.452", "Facebook.Vietnam.Hcm.Plugin.Account.2013.452\Facebook.Vietnam.Hcm.Plugin.Account.2013.452.csproj", "{E5B06EFB-93A2-474E-B5C4-DF9BB927360D}"
@@ -23,13 +21,31 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Plugin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Plugin.Account.2016.452", "Facebook.Vietnam.Hcm.Plugin.Account.2016.452\Facebook.Vietnam.Hcm.Plugin.Account.2016.452.csproj", "{33011E3B-C00B-40E5-AD62-FD00F4A2A7B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Plugin.Account.365.462", "Facebook.Vietnam.Hcm.Plugin.Account.365.462\Facebook.Vietnam.Hcm.Plugin.Account.365.462.csproj", "{8E79C67D-5835-4B45-8D24-BBBA261EF697}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.ProxyTypes.2011.40", "Facebook.Vietnam.Hcm.ProxyTypes.2011.40\Facebook.Vietnam.Hcm.ProxyTypes.2011.40.csproj", "{24F931D0-A884-4354-B3C5-47AC3A575D6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.ProxyTypes.2013.452", "Facebook.Vietnam.Hcm.ProxyTypes.2013.452\Facebook.Vietnam.Hcm.ProxyTypes.2013.452.csproj", "{3AEF9717-EE6A-473A-93F0-F41F2EF78E07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.ProxyTypes.2015.452", "Facebook.Vietnam.Hcm.ProxyTypes.2015.452\Facebook.Vietnam.Hcm.ProxyTypes.2015.452.csproj", "{80E6C305-04CD-459F-BB6E-0AB8C960557A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.ProxyTypes.2016.452", "Facebook.Vietnam.Hcm.ProxyTypes.2016.452\Facebook.Vietnam.Hcm.ProxyTypes.2016.452.csproj", "{B3045EFC-EBDB-477E-AD99-CFFE2273BA8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Console.365.462", "Facebook.Vietnam.Hcm.Console.365.462\Facebook.Vietnam.Hcm.Console.365.462.csproj", "{54A2875C-80FE-421B-8F94-87B4B65E769F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Plugin.Account.365.462", "Facebook.Vietnam.Hcm.Plugin.Account.365.462\Facebook.Vietnam.Hcm.Plugin.Account.365.462.csproj", "{A222D78F-070D-488F-B261-A1630518CE09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.ProxyTypes.365.462", "Facebook.Vietnam.Hcm.ProxyTypes.365.462\Facebook.Vietnam.Hcm.ProxyTypes.365.462.csproj", "{9D932F7A-A527-4B7B-B478-714975EDFB81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{36299F3B-78D4-4A39-BB29-CE7FCD7B2451}"
+	ProjectSection(SolutionItems) = preProject
+		PL.DynamicsCrm.DevKit.Cli.json = PL.DynamicsCrm.DevKit.Cli.json
+		PL.DynamicsCrm.DevKit.json = PL.DynamicsCrm.DevKit.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{2a0d04d2-e08e-4cf8-9e92-035b630bc452}*SharedItemsImports = 4
 		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{33011e3b-c00b-40e5-ad62-fd00f4a2a7b4}*SharedItemsImports = 4
-		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{8e79c67d-5835-4b45-8d24-bbba261ef697}*SharedItemsImports = 4
+		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{54a2875c-80fe-421b-8f94-87b4b65e769f}*SharedItemsImports = 4
+		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{a222d78f-070d-488f-b261-a1630518ce09}*SharedItemsImports = 4
 		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{a77bfc71-0a16-40e3-8a6c-af11a3f95d36}*SharedItemsImports = 4
 		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{c6e789f1-489a-4e38-b061-e91dff3e4f71}*SharedItemsImports = 13
 		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{e37425fb-5485-458f-a810-dc668fb6cd59}*SharedItemsImports = 4
@@ -60,10 +76,6 @@ Global
 		{A77BFC71-0A16-40E3-8A6C-AF11A3F95D36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A77BFC71-0A16-40E3-8A6C-AF11A3F95D36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A77BFC71-0A16-40E3-8A6C-AF11A3F95D36}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2A0D04D2-E08E-4CF8-9E92-035B630BC452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A0D04D2-E08E-4CF8-9E92-035B630BC452}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2A0D04D2-E08E-4CF8-9E92-035B630BC452}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2A0D04D2-E08E-4CF8-9E92-035B630BC452}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E37425FB-5485-458F-A810-DC668FB6CD59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E37425FB-5485-458F-A810-DC668FB6CD59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E37425FB-5485-458F-A810-DC668FB6CD59}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -80,10 +92,34 @@ Global
 		{33011E3B-C00B-40E5-AD62-FD00F4A2A7B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33011E3B-C00B-40E5-AD62-FD00F4A2A7B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33011E3B-C00B-40E5-AD62-FD00F4A2A7B4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8E79C67D-5835-4B45-8D24-BBBA261EF697}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E79C67D-5835-4B45-8D24-BBBA261EF697}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E79C67D-5835-4B45-8D24-BBBA261EF697}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E79C67D-5835-4B45-8D24-BBBA261EF697}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24F931D0-A884-4354-B3C5-47AC3A575D6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24F931D0-A884-4354-B3C5-47AC3A575D6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24F931D0-A884-4354-B3C5-47AC3A575D6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24F931D0-A884-4354-B3C5-47AC3A575D6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AEF9717-EE6A-473A-93F0-F41F2EF78E07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AEF9717-EE6A-473A-93F0-F41F2EF78E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AEF9717-EE6A-473A-93F0-F41F2EF78E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AEF9717-EE6A-473A-93F0-F41F2EF78E07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80E6C305-04CD-459F-BB6E-0AB8C960557A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80E6C305-04CD-459F-BB6E-0AB8C960557A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80E6C305-04CD-459F-BB6E-0AB8C960557A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80E6C305-04CD-459F-BB6E-0AB8C960557A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3045EFC-EBDB-477E-AD99-CFFE2273BA8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3045EFC-EBDB-477E-AD99-CFFE2273BA8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3045EFC-EBDB-477E-AD99-CFFE2273BA8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3045EFC-EBDB-477E-AD99-CFFE2273BA8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54A2875C-80FE-421B-8F94-87B4B65E769F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54A2875C-80FE-421B-8F94-87B4B65E769F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54A2875C-80FE-421B-8F94-87B4B65E769F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54A2875C-80FE-421B-8F94-87B4B65E769F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A222D78F-070D-488F-B261-A1630518CE09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A222D78F-070D-488F-B261-A1630518CE09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A222D78F-070D-488F-B261-A1630518CE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A222D78F-070D-488F-B261-A1630518CE09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D932F7A-A527-4B7B-B478-714975EDFB81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D932F7A-A527-4B7B-B478-714975EDFB81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D932F7A-A527-4B7B-B478-714975EDFB81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D932F7A-A527-4B7B-B478-714975EDFB81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

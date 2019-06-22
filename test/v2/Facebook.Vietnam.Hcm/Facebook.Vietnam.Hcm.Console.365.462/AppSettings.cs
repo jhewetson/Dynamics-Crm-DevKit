@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Specialized;
 using System.Configuration;
+using System.Net;
 using System.ServiceModel.Description;
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
@@ -18,6 +19,7 @@ namespace Facebook.Vietnam.Hcm.Console._365._462
             var clientCredentials = new ClientCredentials();
             clientCredentials.UserName.UserName = UserName;
             clientCredentials.UserName.Password = Password;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             CrmService = new OrganizationServiceProxy(uri, null, clientCredentials, null);
             CurrentUserId = new EntityReference
             {
