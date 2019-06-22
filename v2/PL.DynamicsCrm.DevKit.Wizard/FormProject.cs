@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using EnvDTE;
 using Microsoft.Xrm.Sdk.Client;
 using PL.DynamicsCrm.DevKit.Shared;
+using PL.DynamicsCrm.DevKit.Shared.Helper;
 using PL.DynamicsCrm.DevKit.Shared.Models;
 
 namespace PL.DynamicsCrm.DevKit.Wizard
@@ -33,15 +35,15 @@ namespace PL.DynamicsCrm.DevKit.Wizard
             }
         }
 
-        public string WizardNameSpace => lblProjectName.Text;
+        public string WizardNameSpace => labelProjectName.Text;
 
         //================================================================================================================================================
 
 
         public OrganizationServiceProxy CrmService { get; set; }
         public CrmConnection CrmConnection { get; set; }
-        public string ProjectName => lblProjectName.Text;
-        public string CrmName => ComboboxCrmName.Text;
+        public string ProjectName => labelProjectName.Text;
+        public string CrmName => comboBoxCrmName.Text;
 
         public DTE DTE { get; }
         private FormType _formType;
@@ -61,9 +63,16 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                     link.Text = @"Add New Console Project";
                     link.Tag = "https://github.com/phuocle/Dynamics-Crm-DevKit/wiki/Console-Project-Template";
                 }
+                else if (_formType == FormType.Plugin)
+                {
+                    link.Text = @"Add New Plugin Project";
+                    link.Tag = "https://github.com/phuocle/Dynamics-Crm-DevKit/wiki/Plugin-Project-Template";
+                    textProjectName.Visible = false;
+                    comboBoxEntity.Visible = true;
+                }
 
-                lblProjectName.Text = $"{FormHelper.GetProjectName(DTE, _formType)}";
-                lblProjectName.Tag = lblProjectName.Text;
+                labelProjectName.Text = $"{FormHelper.GetProjectName(DTE, _formType)}";
+                labelProjectName.Tag = labelProjectName.Text;
             }
         }
 
@@ -75,45 +84,53 @@ namespace PL.DynamicsCrm.DevKit.Wizard
 
             DTE = dte;
             FormType = formType;
-            LoadCombobox();
+            LoadComboBoxCrmName();
         }
 
-        private void LoadCombobox()
+        private void LoadComboBoxCrmName()
         {
-            ComboboxCrmName.DataSource = Const.DataSourceCrm;
-            ComboboxCrmName.ValueMember = "Version";
-            ComboboxCrmName.DisplayMember = "Name";
+            comboBoxCrmName.DataSource = Const.DataSourceCrm;
+            comboBoxCrmName.ValueMember = "Version";
+            comboBoxCrmName.DisplayMember = "Name";
         }
 
-        private void ButtonOk_Click(object sender, EventArgs e)
+        private void LoadComboBoxEntity(List<XrmEntity> entities)
         {
-            if (Utility.ExistProject(DTE, txtProjectName.Text))
+            comboBoxEntity.DataSource = entities;
+            comboBoxEntity.ValueMember = "LogicalName";
+            comboBoxEntity.DisplayMember = "Name";
+        }
+
+        private void buttonOk_Click(object sender, EventArgs e)
+        {
+            if (Utility.ExistProject(DTE, textProjectName.Text))
             {
                 MessageBox.Show($@"{FormType.ToString()} project exist!", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (Utility.ExistProject(DTE, ProjectName))
+            {
+                MessageBox.Show($@"{ProjectName} project exist!", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             DialogResult = DialogResult.OK;
         }
 
-        private void Buttonancel_Click(object sender, EventArgs e)
+        private void buttonancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
         }
 
-        private void ButtonConnection_Click(object sender, EventArgs e)
+        private void buttonConnection_Click(object sender, EventArgs e)
         {
             var form = new FormConnection(DTE);
             if (form.ShowDialog() == DialogResult.Cancel) return;
 
-            ButtonOk.Enabled = true;
-            txtProjectName.Enabled = true;
-            txtProjectName.Focus();
-            ComboboxCrmName.Enabled = true;
-            progressBar.Value = 100;
-
             CrmConnection = form.CrmConnection;
             CrmService = form.CrmService;
 
+            buttonOk.Enabled = true;
+            comboBoxCrmName.Enabled = true;
             CheckFormByFormType();
         }
 
@@ -122,27 +139,75 @@ namespace PL.DynamicsCrm.DevKit.Wizard
             switch (FormType)
             {
                 case FormType.Shared:
-                    txtProjectName.Enabled = false;
+                    textProjectName.Enabled = false;
+                    comboBoxCrmName.Enabled = false;
+                    progressBar.Value = 100;
+                    break;
+                case FormType.Console:
+                    textProjectName.Enabled = true;
+                    textProjectName.Focus();
+                    progressBar.Value = 100;
+                    break;
+                case FormType.Plugin:
+                    EnabledAll(false);
+                    List<XrmEntity> entities = null;
+                    progressBar.Style = ProgressBarStyle.Marquee;
+                    Task task = Task.Factory.StartNew(() =>
+                    {
+                        entities = XrmHelper.GetAllEntities(CrmService);
+                    });
+                    while (!task.IsCompleted)
+                    {
+                        Application.DoEvents();
+                    }
+                    LoadComboBoxEntity(entities);
+                    comboBoxEntity.Enabled = comboBoxEntity.Items.Count > 0;
+                    buttonOk.Enabled = comboBoxEntity.Enabled;
+                    comboBoxCrmName.Enabled = comboBoxEntity.Enabled;
+                    buttonConnection.Enabled = true;
+                    buttonCancel.Enabled = true;
+                    progressBar.Style = ProgressBarStyle.Blocks;
+                    progressBar.Value = 100;
                     break;
             }
         }
 
-        private void Link_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void EnabledAll(bool value)
+        {
+            buttonConnection.Enabled = value;
+            buttonOk.Enabled = value;
+            buttonCancel.Enabled = value;
+            comboBoxCrmName.Enabled = value;
+            textProjectName.Enabled = value;
+            comboBoxEntity.Enabled = value;
+        }
+
+        private void link_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             link.LinkVisited = true;
             System.Diagnostics.Process.Start((string)link.Tag);
         }
 
-        private void TxtProjectName_TextChanged(object sender, EventArgs e)
+        private void textProjectName_TextChanged(object sender, EventArgs e)
         {
-            if (txtProjectName.Text.Length == 0)
+            if (textProjectName.Text.Length == 0)
             {
-                lblProjectName.Text = $@"{lblProjectName?.Tag}";
+                labelProjectName.Text = $@"{labelProjectName?.Tag}";
             }
             else
             {
-                lblProjectName.Text = $@"{lblProjectName.Tag}.{txtProjectName.Text}";
+                labelProjectName.Text = $@"{labelProjectName.Tag}.{textProjectName.Text}";
             }
+        }
+
+        private void comboBoxEntity_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            labelProjectName.Text = $@"{labelProjectName.Tag}.{comboBoxEntity.Text}";
+        }
+
+        private void comboBoxEntity_TextUpdate(object sender, EventArgs e)
+        {
+            labelProjectName.Text = $@"{labelProjectName.Tag}.{comboBoxEntity.Text}";
         }
     }
 }

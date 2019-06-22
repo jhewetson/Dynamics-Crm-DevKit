@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using PL.DynamicsCrm.DevKit.Shared;
+using PL.DynamicsCrm.DevKit.Shared.Helper;
 
 namespace PL.DynamicsCrm.DevKit.Wizard
 {

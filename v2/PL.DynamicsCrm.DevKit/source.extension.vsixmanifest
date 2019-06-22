@@ -26,12 +26,12 @@
         <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="%CurrentProject%.Wizard" Path="|PL.DynamicsCrm.DevKit.Wizard|" AssemblyName="|PL.DynamicsCrm.DevKit.Wizard;AssemblyName|" />
         <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="%CurrentProject%.Resources" Path="|PL.DynamicsCrm.DevKit.Resources|" AssemblyName="|PL.DynamicsCrm.DevKit.Resources;AssemblyName|" />
         <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="02.ConsoleProjectTemplate" d:TargetPath="|02.ConsoleProjectTemplate;TemplateProjectOutputGroup|" Path="ProjectTemplates" d:VsixSubPath="ProjectTemplates" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="03.PluginProjectTemplate" d:TargetPath="|03.PluginProjectTemplate;TemplateProjectOutputGroup|" Path="ProjectTemplates" d:VsixSubPath="ProjectTemplates" />
 
     </Assets>
     <Prerequisites>
-        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[14.0,17.0]" DisplayName="Visual Studio core editor" />
         <Prerequisite Id="Microsoft.Net.Component.4.5.2.TargetingPack" Version="[14.0,17.0]" DisplayName=".NET Framework 4.5.2 targeting pack" />
-        <Prerequisite Id="Microsoft.VisualStudio.Component.Roslyn.LanguageServices" Version="[14.0,17.0]" DisplayName="C# and Visual Basic" />
         <Prerequisite Id="Microsoft.Net.Component.4.6.2.TargetingPack" Version="[14.0,17.0]" DisplayName=".NET Framework 4.6.2 targeting pack" />
+        <Prerequisite Id="Microsoft.Net.Component.4.TargetingPack" Version="[14.0,17.0]" DisplayName=".NET Framework 4 targeting pack" />
     </Prerequisites>
 </PackageManifest>

@@ -6,6 +6,7 @@ using EnvDTE;
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Client;
 using PL.DynamicsCrm.DevKit.Shared;
+using PL.DynamicsCrm.DevKit.Shared.Helper;
 using PL.DynamicsCrm.DevKit.Shared.Models;
 
 namespace PL.DynamicsCrm.DevKit.Wizard

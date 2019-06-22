@@ -3,7 +3,7 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>6648cc9e-d8f5-42db-ad73-c605b047cd32</SharedGUID>
+    <SharedGUID>c6e789f1-489a-4e38-b061-e91dff3e4f71</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
     <Import_RootNamespace>Facebook.Vietnam.Hcm.Shared</Import_RootNamespace>

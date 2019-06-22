@@ -3,7 +3,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using EnvDTE;
-using PL.DynamicsCrm.DevKit.Resources;
 
 namespace PL.DynamicsCrm.DevKit.Shared
 {
