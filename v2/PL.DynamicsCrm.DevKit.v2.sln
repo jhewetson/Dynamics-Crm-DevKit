@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.PluginProjectTemplate", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.ProxyTypesProjectTemplate", "ProjectTemplates\CSharp\04.ProxyTypesProjectTemplate\04.ProxyTypesProjectTemplate.csproj", "{9172E6AA-6AD5-409E-81AF-37C7D03D4A3D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.WorkflowProjectTemplate", "ProjectTemplates\CSharp\05.WorkflowProjectTemplate\05.WorkflowProjectTemplate.csproj", "{13291ECF-23B1-4E4A-B9DF-1585EA9560A0}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		PL.DynamicsCrm.DevKit.Shared\PL.DynamicsCrm.DevKit.Shared.projitems*{aa712c45-5dec-46e5-9e02-497b2ebf9cab}*SharedItemsImports = 4
@@ -69,6 +71,10 @@ Global
 		{9172E6AA-6AD5-409E-81AF-37C7D03D4A3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9172E6AA-6AD5-409E-81AF-37C7D03D4A3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9172E6AA-6AD5-409E-81AF-37C7D03D4A3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13291ECF-23B1-4E4A-B9DF-1585EA9560A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13291ECF-23B1-4E4A-B9DF-1585EA9560A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13291ECF-23B1-4E4A-B9DF-1585EA9560A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13291ECF-23B1-4E4A-B9DF-1585EA9560A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +85,7 @@ Global
 		{2C597B0B-F648-486D-BC45-593F584B8BCC} = {BB9A9980-2BCB-4AD4-9271-97115EC06297}
 		{0B6D03EF-0D6A-4DDD-93F4-F68BE1410996} = {BB9A9980-2BCB-4AD4-9271-97115EC06297}
 		{9172E6AA-6AD5-409E-81AF-37C7D03D4A3D} = {BB9A9980-2BCB-4AD4-9271-97115EC06297}
+		{13291ECF-23B1-4E4A-B9DF-1585EA9560A0} = {BB9A9980-2BCB-4AD4-9271-97115EC06297}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {04C975FA-0E86-4259-8245-7DFA47D873BB}

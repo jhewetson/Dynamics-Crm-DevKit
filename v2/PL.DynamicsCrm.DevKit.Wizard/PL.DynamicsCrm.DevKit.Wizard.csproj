@@ -89,6 +89,7 @@
     <Compile Include="ProjectTemplates\Plugin.cs" />
     <Compile Include="ProjectTemplates\ProxyTypes.cs" />
     <Compile Include="ProjectTemplates\Shared.cs" />
+    <Compile Include="ProjectTemplates\Workflow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wizard.cs" />
   </ItemGroup>

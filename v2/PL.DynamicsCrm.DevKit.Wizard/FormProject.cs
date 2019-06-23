@@ -76,6 +76,13 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                     link.Text = @"Add New Proxy Types Project";
                     link.Tag = "https://github.com/phuocle/Dynamics-Crm-DevKit/wiki/ProxyTypes-Project-Template";
                 }
+                else if (_formType == FormType.Workflow)
+                {
+                    link.Text = @"Add New Workflow Project";
+                    link.Tag = "https://github.com/phuocle/Dynamics-Crm-DevKit/wiki/Workflow-Project-Template";
+                    textProjectName.Visible = false;
+                    comboBoxEntity.Visible = true;
+                }
 
                 labelProjectName.Text = $"{FormHelper.GetProjectName(DTE, _formType)}";
                 labelProjectName.Tag = labelProjectName.Text;
@@ -157,17 +164,17 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                     break;
                 case FormType.Plugin:
                     EnabledAll(false);
-                    List<XrmEntity> entities = null;
+                    List<XrmEntity> entitiesPlugin = null;
                     progressBar.Style = ProgressBarStyle.Marquee;
-                    Task task = Task.Factory.StartNew(() =>
+                    Task taskPlugin = Task.Factory.StartNew(() =>
                     {
-                        entities = XrmHelper.GetAllEntities(CrmService);
+                        entitiesPlugin = XrmHelper.GetAllEntities(CrmService);
                     });
-                    while (!task.IsCompleted)
+                    while (!taskPlugin.IsCompleted)
                     {
                         Application.DoEvents();
                     }
-                    LoadComboBoxEntity(entities);
+                    LoadComboBoxEntity(entitiesPlugin);
                     comboBoxEntity.Enabled = comboBoxEntity.Items.Count > 0;
                     buttonOk.Enabled = comboBoxEntity.Enabled;
                     comboBoxCrmName.Enabled = comboBoxEntity.Enabled;
@@ -179,6 +186,27 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                 case FormType.ProxyTypes:
                     textProjectName.Enabled = true;
                     textProjectName.Focus();
+                    progressBar.Value = 100;
+                    break;
+                case FormType.Workflow:
+                    EnabledAll(false);
+                    List<XrmEntity> entitiesWorkflow = null;
+                    progressBar.Style = ProgressBarStyle.Marquee;
+                    Task taskWorkflow = Task.Factory.StartNew(() =>
+                    {
+                        entitiesWorkflow = XrmHelper.GetAllEntities(CrmService);
+                    });
+                    while (!taskWorkflow.IsCompleted)
+                    {
+                        Application.DoEvents();
+                    }
+                    LoadComboBoxEntity(entitiesWorkflow);
+                    comboBoxEntity.Enabled = comboBoxEntity.Items.Count > 0;
+                    buttonOk.Enabled = comboBoxEntity.Enabled;
+                    comboBoxCrmName.Enabled = comboBoxEntity.Enabled;
+                    buttonConnection.Enabled = true;
+                    buttonCancel.Enabled = true;
+                    progressBar.Style = ProgressBarStyle.Blocks;
                     progressBar.Value = 100;
                     break;
             }
