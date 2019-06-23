@@ -86,6 +86,7 @@
       <DependentUpon>FormProject.cs</DependentUpon>
     </Compile>
     <Compile Include="ProjectTemplates\Console.cs" />
+    <Compile Include="ProjectTemplates\CustomAction.cs" />
     <Compile Include="ProjectTemplates\Plugin.cs" />
     <Compile Include="ProjectTemplates\ProxyTypes.cs" />
     <Compile Include="ProjectTemplates\Shared.cs" />

@@ -83,6 +83,13 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                     textProjectName.Visible = false;
                     comboBoxEntity.Visible = true;
                 }
+                else if (_formType == FormType.CustomAction)
+                {
+                    link.Text = @"Add new Custom Action Project";
+                    link.Tag = "https://github.com/phuocle/Dynamics-Crm-DevKit/wiki/Custom-Action-Project-Template";
+                    textProjectName.Visible = false;
+                    comboBoxEntity.Visible = true;
+                }
 
                 labelProjectName.Text = $"{FormHelper.GetProjectName(DTE, _formType)}";
                 labelProjectName.Tag = labelProjectName.Text;
@@ -201,6 +208,27 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                         Application.DoEvents();
                     }
                     LoadComboBoxEntity(entitiesWorkflow);
+                    comboBoxEntity.Enabled = comboBoxEntity.Items.Count > 0;
+                    buttonOk.Enabled = comboBoxEntity.Enabled;
+                    comboBoxCrmName.Enabled = comboBoxEntity.Enabled;
+                    buttonConnection.Enabled = true;
+                    buttonCancel.Enabled = true;
+                    progressBar.Style = ProgressBarStyle.Blocks;
+                    progressBar.Value = 100;
+                    break;
+                case FormType.CustomAction:
+                    EnabledAll(false);
+                    List<XrmEntity> entitiesCustomAction = null;
+                    progressBar.Style = ProgressBarStyle.Marquee;
+                    Task taskCustomAction = Task.Factory.StartNew(() =>
+                    {
+                        entitiesCustomAction = XrmHelper.GetAllEntities(CrmService);
+                    });
+                    while (!taskCustomAction.IsCompleted)
+                    {
+                        Application.DoEvents();
+                    }
+                    LoadComboBoxEntity(entitiesCustomAction);
                     comboBoxEntity.Enabled = comboBoxEntity.Items.Count > 0;
                     buttonOk.Enabled = comboBoxEntity.Enabled;
                     comboBoxCrmName.Enabled = comboBoxEntity.Enabled;
