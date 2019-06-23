@@ -61,6 +61,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.Custom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.CustomAction.Account.365.462", "Facebook.Vietnam.Hcm.CustomAction.Account.365.462\Facebook.Vietnam.Hcm.CustomAction.Account.365.462.csproj", "{1836F491-F68B-4FEB-888D-EDC78D3FE37A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.DataProvider", "Facebook.Vietnam.Hcm.DataProvider\Facebook.Vietnam.Hcm.DataProvider.csproj", "{B7196858-2124-40EE-B237-C55FE6CA1CFA}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{10f2e99b-3507-48ef-bae3-9d59cabd36ce}*SharedItemsImports = 4
@@ -74,6 +76,7 @@ Global
 		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{a39201c4-fcc8-4299-a9db-c46a8740eeb1}*SharedItemsImports = 4
 		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{a77bfc71-0a16-40e3-8a6c-af11a3f95d36}*SharedItemsImports = 4
 		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{b6ab5582-1569-4ddf-9552-9887ba490715}*SharedItemsImports = 4
+		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{b7196858-2124-40ee-b237-c55fe6ca1cfa}*SharedItemsImports = 4
 		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{c6e789f1-489a-4e38-b061-e91dff3e4f71}*SharedItemsImports = 13
 		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{d61870a1-51b4-4437-a41f-ac5da5c9a6c6}*SharedItemsImports = 4
 		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{dd7816be-9894-4021-b3a8-4f1269701435}*SharedItemsImports = 4
@@ -190,6 +193,10 @@ Global
 		{1836F491-F68B-4FEB-888D-EDC78D3FE37A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1836F491-F68B-4FEB-888D-EDC78D3FE37A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1836F491-F68B-4FEB-888D-EDC78D3FE37A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7196858-2124-40EE-B237-C55FE6CA1CFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7196858-2124-40EE-B237-C55FE6CA1CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7196858-2124-40EE-B237-C55FE6CA1CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7196858-2124-40EE-B237-C55FE6CA1CFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

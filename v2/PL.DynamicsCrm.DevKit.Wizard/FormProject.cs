@@ -90,6 +90,13 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                     textProjectName.Visible = false;
                     comboBoxEntity.Visible = true;
                 }
+                else if (_formType == FormType.DataProvider)
+                {
+                    link.Text = @"Add New Data Provider Project";
+                    link.Tag = "https://github.com/phuocle/Dynamics-Crm-DevKit/wiki/Data-Provider-Project-Template";
+                    textProjectName.Visible = false;
+                    comboBoxEntity.Visible = true;
+                }
 
                 labelProjectName.Text = $"{FormHelper.GetProjectName(DTE, _formType)}";
                 labelProjectName.Tag = labelProjectName.Text;
@@ -103,14 +110,18 @@ namespace PL.DynamicsCrm.DevKit.Wizard
             Text += Const.Version;
 
             DTE = dte;
-            LoadComboBoxCrmName();
-
             FormType = formType;
+            LoadComboBoxCrmName();
         }
 
         private void LoadComboBoxCrmName()
         {
-            comboBoxCrmName.DataSource = Const.DataSourceCrm;
+            var dataSource = Const.DataSourceCrm;
+            if (_formType == FormType.DataProvider)
+            {
+                dataSource = Const.DataSourceCrm.Where(x => x.Name.StartsWith(Const.Dynamics365)).ToList();
+            }
+            comboBoxCrmName.DataSource = dataSource;
             comboBoxCrmName.ValueMember = "Version";
             comboBoxCrmName.DisplayMember = "Name";
         }
@@ -237,6 +248,27 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                     progressBar.Style = ProgressBarStyle.Blocks;
                     progressBar.Value = 100;
                     break;
+                case FormType.DataProvider:
+                    EnabledAll(false);
+                    List<XrmEntity> entitiesDataProvider = null;
+                    progressBar.Style = ProgressBarStyle.Marquee;
+                    Task taskDataProvider = Task.Factory.StartNew(() =>
+                    {
+                        entitiesDataProvider = XrmHelper.GetAllEntities(CrmService);
+                    });
+                    while (!taskDataProvider.IsCompleted)
+                    {
+                        Application.DoEvents();
+                    }
+                    LoadComboBoxEntity(entitiesDataProvider);
+                    comboBoxEntity.Enabled = comboBoxEntity.Items.Count > 0;
+                    buttonOk.Enabled = comboBoxEntity.Enabled;
+                    comboBoxCrmName.Enabled = comboBoxEntity.Enabled;
+                    buttonConnection.Enabled = true;
+                    buttonCancel.Enabled = true;
+                    progressBar.Style = ProgressBarStyle.Blocks;
+                    progressBar.Value = 100;
+                    break;
             }
         }
 
@@ -258,24 +290,26 @@ namespace PL.DynamicsCrm.DevKit.Wizard
 
         private void textProjectName_TextChanged(object sender, EventArgs e)
         {
-            if (textProjectName.Text.Length == 0)
-            {
-                labelProjectName.Text = $@"{labelProjectName?.Tag}";
-            }
-            else
-            {
-                labelProjectName.Text = $@"{labelProjectName.Tag}.{textProjectName.Text}";
-            }
+            var temp = $@"{labelProjectName.Tag}.{textProjectName.Text}";
+            if (temp.EndsWith("."))
+                temp = temp.Substring(0, temp.Length - 1);
+            labelProjectName.Text = temp;
         }
 
         private void comboBoxEntity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            labelProjectName.Text = $@"{labelProjectName.Tag}.{comboBoxEntity.Text}";
+            var temp = $@"{labelProjectName.Tag}.{comboBoxEntity.Text}";
+            if (temp.EndsWith("."))
+                temp = temp.Substring(0, temp.Length - 1);
+            labelProjectName.Text = temp;
         }
 
         private void comboBoxEntity_TextUpdate(object sender, EventArgs e)
         {
-            labelProjectName.Text = $@"{labelProjectName.Tag}.{comboBoxEntity.Text}";
+            var temp = $@"{labelProjectName.Tag}.{comboBoxEntity.Text}";
+            if (temp.EndsWith("."))
+                temp = temp.Substring(0, temp.Length - 1);
+            labelProjectName.Text = temp;
         }
     }
 }

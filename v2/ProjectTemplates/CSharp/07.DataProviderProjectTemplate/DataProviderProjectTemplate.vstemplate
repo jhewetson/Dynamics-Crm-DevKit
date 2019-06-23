@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>11. C# Data Provider Project</Name>
+    <Description>C# Data Provider Project Template</Description>
+    <Icon>icon.png</Icon>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+    <DefaultName>DataProviderProject</DefaultName>
+    <TemplateID>29713a86-d360-4c15-83f1-12120aab43dd</TemplateID>
+    <CreateNewFolder>false</CreateNewFolder>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Disabled</LocationField>
+    <EnableLocationBrowseButton>false</EnableLocationBrowseButton>
+    <EnableEditOfLocationField>false</EnableEditOfLocationField>
+    <CreateInPlace>true</CreateInPlace>
+    <LanguageTag>CSharp</LanguageTag>
+    <PlatformTag>Windows</PlatformTag>
+    <ProjectTypeTag>PL.DynamicsCrm.DevKit</ProjectTypeTag>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">_packages.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="deploy.debug.bat">deploy.debug.bat</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Retrieve.cs">Retrieve.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="RetrieveMultiple.cs">RetrieveMultiple.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="$ProjectName$.snk">key.snk</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>PL.DynamicsCrm.DevKit.Wizard, Version=2.0.0.0, Culture=en, PublicKeyToken=98cbb7bd3db31604</Assembly>
+    <FullClassName>PL.DynamicsCrm.DevKit.Wizard.ProjectTemplates.DataProvider</FullClassName>
+  </WizardExtension>
+</VSTemplate>
