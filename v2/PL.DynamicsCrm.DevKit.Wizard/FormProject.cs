@@ -125,6 +125,11 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                     link.Text = @"Add New WebResource Project";
                     link.Tag = "https://github.com/phuocle/Dynamics-Crm-DevKit/wiki/WebResource-Project-Template";
                 }
+                else if (_formType == FormType.SolutionPackager)
+                {
+                    link.Text = @"Add New Solution Packager Project";
+                    link.Tag = "https://github.com/phuocle/Dynamics-Crm-DevKit/wiki/Solution-Packager-Project-Template";
+                }
 
                 labelProjectName.Text = $"{FormHelper.GetProjectName(DTE, _formType)}";
                 labelProjectName.Tag = labelProjectName.Text;
@@ -298,6 +303,11 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                     progressBar.Value = 100;
                     break;
                 case FormType.WebResource:
+                    textProjectName.Enabled = true;
+                    textProjectName.Focus();
+                    progressBar.Value = 100;
+                    break;
+                case FormType.SolutionPackager:
                     textProjectName.Enabled = true;
                     textProjectName.Focus();
                     progressBar.Value = 100;

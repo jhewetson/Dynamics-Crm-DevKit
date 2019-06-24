@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.DataProviderProjectTempl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.WebResourceProjectTemplate", "ProjectTemplates\CSharp\08.WebResourceProjectTemplate\08.WebResourceProjectTemplate.csproj", "{AE2C2285-298E-47CD-80EB-11F44B9F3D42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.SolutionPackagerProjectTemplate", "ProjectTemplates\CSharp\09.SolutionPackagerProjectTemplate\09.SolutionPackagerProjectTemplate.csproj", "{C555420B-02D8-4388-AADF-375A9809ACDA}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		PL.DynamicsCrm.DevKit.Shared\PL.DynamicsCrm.DevKit.Shared.projitems*{aa712c45-5dec-46e5-9e02-497b2ebf9cab}*SharedItemsImports = 4
@@ -93,6 +95,10 @@ Global
 		{AE2C2285-298E-47CD-80EB-11F44B9F3D42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE2C2285-298E-47CD-80EB-11F44B9F3D42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE2C2285-298E-47CD-80EB-11F44B9F3D42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C555420B-02D8-4388-AADF-375A9809ACDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C555420B-02D8-4388-AADF-375A9809ACDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C555420B-02D8-4388-AADF-375A9809ACDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C555420B-02D8-4388-AADF-375A9809ACDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,6 +113,7 @@ Global
 		{1C97EFE1-D106-42A3-97FF-FC22779C70F0} = {BB9A9980-2BCB-4AD4-9271-97115EC06297}
 		{7FCFE909-E28F-40A2-A7C3-0BD6F9A431E8} = {BB9A9980-2BCB-4AD4-9271-97115EC06297}
 		{AE2C2285-298E-47CD-80EB-11F44B9F3D42} = {BB9A9980-2BCB-4AD4-9271-97115EC06297}
+		{C555420B-02D8-4388-AADF-375A9809ACDA} = {BB9A9980-2BCB-4AD4-9271-97115EC06297}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {04C975FA-0E86-4259-8245-7DFA47D873BB}

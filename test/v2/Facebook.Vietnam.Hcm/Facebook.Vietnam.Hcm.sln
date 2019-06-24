@@ -73,6 +73,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.WebRes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.WebResource.2016.452", "Facebook.Vietnam.Hcm.WebResource.2016.452\Facebook.Vietnam.Hcm.WebResource.2016.452.csproj", "{898DBE07-71BF-4661-AF46-49285ED127CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facebook.Vietnam.Hcm.SolutionPackager.365.462", "Facebook.Vietnam.Hcm.SolutionPackager.365.462\Facebook.Vietnam.Hcm.SolutionPackager.365.462.csproj", "{E4955611-CFBA-4C3B-8B18-3EA20E01C091}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Facebook.Vietnam.Hcm.Shared\Facebook.Vietnam.Hcm.Shared.projitems*{10f2e99b-3507-48ef-bae3-9d59cabd36ce}*SharedItemsImports = 4
@@ -227,6 +229,10 @@ Global
 		{898DBE07-71BF-4661-AF46-49285ED127CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{898DBE07-71BF-4661-AF46-49285ED127CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{898DBE07-71BF-4661-AF46-49285ED127CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4955611-CFBA-4C3B-8B18-3EA20E01C091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4955611-CFBA-4C3B-8B18-3EA20E01C091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4955611-CFBA-4C3B-8B18-3EA20E01C091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4955611-CFBA-4C3B-8B18-3EA20E01C091}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
