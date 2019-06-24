@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>05. C# WebResource Project</Name>
+    <Description>C# WebResource Project Template</Description>
+    <Icon>icon.png</Icon>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+    <DefaultName>WebResourceProject</DefaultName>
+    <TemplateID>6e4fe9bc-0c96-4081-a92e-6f55961b2599</TemplateID>
+    <CreateNewFolder>false</CreateNewFolder>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Disabled</LocationField>
+    <EnableLocationBrowseButton>false</EnableLocationBrowseButton>
+    <EnableEditOfLocationField>false</EnableEditOfLocationField>
+    <CreateInPlace>true</CreateInPlace>
+    <LanguageTag>CSharp</LanguageTag>
+    <PlatformTag>Windows</PlatformTag>
+    <ProjectTypeTag>PL.DynamicsCrm.DevKit</ProjectTypeTag>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
+      <Folder Name="lib" TargetFolderName="lib" />
+      <Folder Name="entities" TargetFolderName="entities" />
+      <Folder Name="images" TargetFolderName="images" />
+      <Folder Name="test" TargetFolderName="test" />
+      <Folder Name="resources" TargetFolderName="resources" />
+      <Folder Name="html" TargetFolderName="html" />
+      <Folder Name="css" TargetFolderName="css" />
+      <Folder Name="js" TargetFolderName="js" />
+      <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="deploy.debug.bat">deploy.debug.bat</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="download.webresources.bat">download.webresources.bat</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">_packages.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="entities\DevKit.d.ts">DevKit.d.ts</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="lib\WebApiClient.js">WebApiClient.js</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="entities\generator.form.bat">generator.form.bat</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="entities\generator.webapi.bat">generator.webapi.bat</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>PL.DynamicsCrm.DevKit.Wizard, Version=2.0.0.0, Culture=en, PublicKeyToken=98cbb7bd3db31604</Assembly>
+    <FullClassName>PL.DynamicsCrm.DevKit.Wizard.ProjectTemplates.WebResource</FullClassName>
+  </WizardExtension>
+</VSTemplate>

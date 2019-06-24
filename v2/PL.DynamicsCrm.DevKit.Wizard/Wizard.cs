@@ -32,6 +32,9 @@ namespace PL.DynamicsCrm.DevKit.Wizard
 
             var coreToolsVersion = NugetHelper.GetLatestPackageVersion(Const.MicrosoftCrmSdkCoreTools);
             replacementsDictionary.Add("$Microsoft.CrmSdk.CoreTools.Version$", coreToolsVersion);
+
+            replacementsDictionary.Add("$WebApiClientMin$", Utility.GetWebApiClientMin(form.ProjectJsName));
+            replacementsDictionary.Add("$ProjectJsName$", form.ProjectJsName);
         }
     }
 }

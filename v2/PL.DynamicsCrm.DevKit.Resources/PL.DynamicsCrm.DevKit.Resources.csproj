@@ -43,5 +43,9 @@
   <ItemGroup>
     <EmbeddedResource Include="PL.DynamicsCrm.DevKit.Cli.json" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WebApiClient.js" />
+    <EmbeddedResource Include="WebApiClient.min.js" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

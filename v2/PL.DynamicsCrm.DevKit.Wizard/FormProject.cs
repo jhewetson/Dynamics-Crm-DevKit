@@ -44,6 +44,29 @@ namespace PL.DynamicsCrm.DevKit.Wizard
         public OrganizationServiceProxy CrmService { get; set; }
         public CrmConnection CrmConnection { get; set; }
         public string ProjectName => labelProjectName.Text;
+        public string ProjectJsName
+        {
+            get
+            {
+                var parts = ProjectName.Split(".".ToCharArray());
+                for(var i=0; i<parts.Length; i++)
+                {
+                    if (parts[i].ToLower() == FormType.WebResource.ToString().ToLower())
+                    {
+                        if (i > 1)
+                        {
+                            var projectJsName = parts[i - 1];
+                            if (int.TryParse(projectJsName.Substring(0, 1), out _))
+                            {
+                                projectJsName = $"_{projectJsName}";
+                            }
+                            return projectJsName;
+                        }
+                    }
+                }
+                return FormType.WebResource.ToString();
+            }
+        }
         public string ComboBoxCrmName => comboBoxCrmName.Text;
 
         public DTE DTE { get; }
@@ -96,6 +119,11 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                     link.Tag = "https://github.com/phuocle/Dynamics-Crm-DevKit/wiki/Data-Provider-Project-Template";
                     textProjectName.Visible = false;
                     comboBoxEntity.Visible = true;
+                }
+                else if (_formType == FormType.WebResource)
+                {
+                    link.Text = @"Add New WebResource Project";
+                    link.Tag = "https://github.com/phuocle/Dynamics-Crm-DevKit/wiki/WebResource-Project-Template";
                 }
 
                 labelProjectName.Text = $"{FormHelper.GetProjectName(DTE, _formType)}";
@@ -267,6 +295,11 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                     buttonConnection.Enabled = true;
                     buttonCancel.Enabled = true;
                     progressBar.Style = ProgressBarStyle.Blocks;
+                    progressBar.Value = 100;
+                    break;
+                case FormType.WebResource:
+                    textProjectName.Enabled = true;
+                    textProjectName.Focus();
                     progressBar.Value = 100;
                     break;
             }

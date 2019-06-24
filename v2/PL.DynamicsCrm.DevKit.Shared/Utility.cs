@@ -3,13 +3,13 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using EnvDTE;
+using NUglify;
 
 namespace PL.DynamicsCrm.DevKit.Shared
 {
     public static class Utility
     {
         private const string IndentString = "  ";
-
 
         public static void TryDeleteDirectory(string directory)
         {
@@ -58,6 +58,17 @@ namespace PL.DynamicsCrm.DevKit.Shared
             {
             }
             return string.Empty;
+        }
+
+
+        public static string GetWebApiClientMin(string projectJsName)
+        {
+            var code = Utility.ReadEmbeddedResource("PL.DynamicsCrm.DevKit.Resources.WebApiClient.min.js");
+            code += "\r\n";
+            var devKit = Utility.ReadEmbeddedResource("PL.DynamicsCrm.DevKit.Resources.WebApiClient.js");
+            devKit = devKit.Replace("DevKit", projectJsName);
+            devKit = Uglify.Js(devKit).Code;
+            return code + devKit;
         }
 
         public static string FormatJson(string json)
