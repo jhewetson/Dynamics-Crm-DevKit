@@ -130,6 +130,14 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                     link.Text = @"Add New Solution Packager Project";
                     link.Tag = "https://github.com/phuocle/Dynamics-Crm-DevKit/wiki/Solution-Packager-Project-Template";
                 }
+                else if (_formType == FormType.Test)
+                {
+                    link.Text = @"Add New Test Project";
+                    link.Tag = "https://github.com/phuocle/Dynamics-Crm-DevKit/wiki/Test-Project-Template";
+                    textProjectName.Visible = false;
+                    comboBoxEntity.Visible = true;
+                }
+
 
                 labelProjectName.Text = $"{FormHelper.GetProjectName(DTE, _formType)}";
                 labelProjectName.Tag = labelProjectName.Text;
@@ -164,6 +172,11 @@ namespace PL.DynamicsCrm.DevKit.Wizard
             comboBoxEntity.DataSource = entities;
             comboBoxEntity.ValueMember = "LogicalName";
             comboBoxEntity.DisplayMember = "Name";
+        }
+
+        private void LoadComboBoxEntity(List<string> projects)
+        {
+            comboBoxEntity.DataSource = projects;
         }
 
         private void buttonOk_Click(object sender, EventArgs e)
@@ -312,6 +325,27 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                     textProjectName.Focus();
                     progressBar.Value = 100;
                     break;
+                case FormType.Test:
+                    EnabledAll(false);
+                    List<string> projects = new List<string>();
+                    progressBar.Style = ProgressBarStyle.Marquee;
+                    Task taskTest = Task.Factory.StartNew(() =>
+                    {
+                        projects = Utility.GetAllProjectForTesting(DTE);
+                    });
+                    while (!taskTest.IsCompleted)
+                    {
+                        Application.DoEvents();
+                    }
+                    LoadComboBoxEntity(projects);
+                    comboBoxEntity.Enabled = comboBoxEntity.Items.Count > 0;
+                    buttonOk.Enabled = comboBoxEntity.Enabled;
+                    comboBoxCrmName.Enabled = comboBoxEntity.Enabled;
+                    buttonConnection.Enabled = true;
+                    buttonCancel.Enabled = true;
+                    progressBar.Style = ProgressBarStyle.Blocks;
+                    progressBar.Value = 100;
+                    break;
             }
         }
 
@@ -333,26 +367,35 @@ namespace PL.DynamicsCrm.DevKit.Wizard
 
         private void textProjectName_TextChanged(object sender, EventArgs e)
         {
-            var temp = $@"{labelProjectName.Tag}.{textProjectName.Text}";
-            if (temp.EndsWith("."))
-                temp = temp.Substring(0, temp.Length - 1);
-            labelProjectName.Text = temp;
+            ComboBoxEntityChange(textProjectName.Text);
         }
 
         private void comboBoxEntity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var temp = $@"{labelProjectName.Tag}.{comboBoxEntity.Text}";
-            if (temp.EndsWith("."))
-                temp = temp.Substring(0, temp.Length - 1);
-            labelProjectName.Text = temp;
+            ComboBoxEntityChange(comboBoxEntity.Text);
         }
 
         private void comboBoxEntity_TextUpdate(object sender, EventArgs e)
         {
-            var temp = $@"{labelProjectName.Tag}.{comboBoxEntity.Text}";
-            if (temp.EndsWith("."))
-                temp = temp.Substring(0, temp.Length - 1);
-            labelProjectName.Text = temp;
+            ComboBoxEntityChange(comboBoxEntity.Text);
+        }
+
+        private void ComboBoxEntityChange(string text)
+        {
+            if (_formType == FormType.Test)
+            {
+                var temp = $@"{text}.Test";
+                if (temp.StartsWith("."))
+                    temp = temp.Substring(1);
+                labelProjectName.Text = temp;
+            }
+            else
+            {
+                var temp = $@"{labelProjectName.Tag}.{text}";
+                if (temp.EndsWith("."))
+                    temp = temp.Substring(0, temp.Length - 1);
+                labelProjectName.Text = temp;
+            }
         }
     }
 }

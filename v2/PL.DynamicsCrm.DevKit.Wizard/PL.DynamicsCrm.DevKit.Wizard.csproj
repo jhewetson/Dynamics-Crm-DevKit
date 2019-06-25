@@ -92,6 +92,7 @@
     <Compile Include="ProjectTemplates\ProxyTypes.cs" />
     <Compile Include="ProjectTemplates\Shared.cs" />
     <Compile Include="ProjectTemplates\SolutionPackager.cs" />
+    <Compile Include="ProjectTemplates\Test.cs" />
     <Compile Include="ProjectTemplates\WebResource.cs" />
     <Compile Include="ProjectTemplates\Workflow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

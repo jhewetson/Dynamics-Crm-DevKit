@@ -19,6 +19,8 @@ namespace PL.DynamicsCrm.DevKit.Wizard
             replacementsDictionary.Add("$CrmUserName$", form.CrmConnection.UserName);
             replacementsDictionary.Add("$PL.DynamicsCrm.DevKit.Cli.Version$", NugetHelper.GetLatestPackageVersion(Const.PLDynamicsCrmDevKitCli));
             replacementsDictionary.Add("$PL.DynamicsCrm.DevKit.Analyzers.Version$", NugetHelper.GetLatestPackageVersion(Const.PLDynamicsCrmDevKitAnalyzers));
+            replacementsDictionary.Add("$WebApiClientMin$", Utility.GetWebApiClientMin(form.ProjectJsName));
+            replacementsDictionary.Add("$ProjectJsName$", form.ProjectJsName);
 
             var CoreAssemblies = NugetHelper.GetLatestPackageVersion(Const.MicrosoftCrmSdkCoreAssemblies, form.ComboBoxCrmName);
             replacementsDictionary.Add("$Microsoft.CrmSdk.CoreAssemblies.Version$", CoreAssemblies.Version);
@@ -33,8 +35,29 @@ namespace PL.DynamicsCrm.DevKit.Wizard
             var coreToolsVersion = NugetHelper.GetLatestPackageVersion(Const.MicrosoftCrmSdkCoreTools);
             replacementsDictionary.Add("$Microsoft.CrmSdk.CoreTools.Version$", coreToolsVersion);
 
-            replacementsDictionary.Add("$WebApiClientMin$", Utility.GetWebApiClientMin(form.ProjectJsName));
-            replacementsDictionary.Add("$ProjectJsName$", form.ProjectJsName);
+            if (form.FormType == FormType.Test)
+            {
+                var Deployment = NugetHelper.GetLatestPackageVersion(Const.MicrosoftCrmSdkDeployment, form.ComboBoxCrmName);
+                replacementsDictionary.Add("$Microsoft.CrmSdk.Deployment.Version$", Deployment.Version);
+                replacementsDictionary.Add("$Microsoft.CrmSdk.Deployment.TargetFramework$", Deployment.TargetFramework);
+                if (form.ComboBoxCrmName != Const.DynamicsCrm2011)
+                {
+                    var CoreAssembly = NugetHelper.GetLatestPackageVersion(Const.MicrosoftCrmSdkXrmToolingCoreAssembly, form.ComboBoxCrmName);
+                    replacementsDictionary.Add("$Microsoft.CrmSdk.XrmTooling.CoreAssembly.Version$", CoreAssembly.Version);
+                    replacementsDictionary.Add("$Microsoft.CrmSdk.XrmTooling.CoreAssembly.TargetFramework$", CoreAssembly.TargetFramework);
+                }
+
+                var shortPackage = "." + form.WizardShortCrmName;
+                if (shortPackage == ".365") shortPackage = ".9";
+                else if (shortPackage == ".2011") shortPackage = string.Empty;
+                var fakeXrmEasyPackage = "FakeXrmEasy" + shortPackage;
+
+                replacementsDictionary.Add("$FakeXrmEasy.Package$", fakeXrmEasyPackage);
+                var fakeXrmEasyVersion = NugetHelper.GetLatestPackageVersion(fakeXrmEasyPackage);
+                replacementsDictionary.Add("$FakeXrmEasy.Version$", fakeXrmEasyVersion);
+                var fakeXrmEasyTargetFramework = NugetHelper.GetLatestPackageTargetFramework(fakeXrmEasyPackage);
+                replacementsDictionary.Add("$FakeXrmEasy.TargetFramework$", fakeXrmEasyTargetFramework);
+            }
         }
     }
 }

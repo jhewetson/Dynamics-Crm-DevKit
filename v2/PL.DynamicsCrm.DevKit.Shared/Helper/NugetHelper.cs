@@ -38,6 +38,18 @@ namespace PL.DynamicsCrm.DevKit.Shared.Helper
             return package.Version.ToOriginalString();
         }
 
+        public static string GetLatestPackageTargetFramework(string packageId)
+        {
+            var packages = GetPackages(packageId);
+            if (packages == null) return DefaultPackageTargetFramework(packageId);
+            var package = (from p in packages
+                           orderby p.Version descending
+                           select p
+                           ).FirstOrDefault();
+            if (package == null) return DefaultPackageTargetFramework(packageId);
+            return package.GetSupportedFrameworks().OrderBy(x => x.Version).FirstOrDefault().Version.ToString().Replace(".", "");
+        }
+
         public static CrmNuget GetLatestPackageVersion(string packageId, string comboboxCrmName)
         {
             var parts = comboboxCrmName.Split("-".ToCharArray());
@@ -67,7 +79,21 @@ namespace PL.DynamicsCrm.DevKit.Shared.Helper
             };
         }
 
-
+        private static string DefaultPackageTargetFramework(string packageId)
+        {
+            switch(packageId)
+            {
+                case "FakeXrmEasy.9":
+                    return "462";
+                case "FakeXrmEasy.2016":
+                case "FakeXrmEasy.2015":
+                case "FakeXrmEasy.2013":
+                    return "452";
+                case "FakeXrmEasy.2011":
+                    return "40";
+            }
+            return "000";
+        }
 
         private static string DefaultPackageVersion(string packageId)
         {

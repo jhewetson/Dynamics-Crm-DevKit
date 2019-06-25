@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -191,6 +192,36 @@ namespace PL.DynamicsCrm.DevKit.Shared
                 }
             }
             return string.Join(".", items);
+        }
+
+        private static bool IsAddedTestProject(Projects projects, string projectName)
+        {
+            foreach (Project project in projects)
+                if (project.Name == projectName)
+                    return true;
+            return false;
+        }
+
+        public static List<string> GetAllProjectForTesting(DTE dte)
+        {
+            var projects = new List<string>();
+            foreach (Project project in dte.Solution.Projects)
+            {
+                if (project.ProjectItems == null || project.FileName.Length == 0) continue;
+                if (project.Name.Contains($".{FormType.Plugin.ToString()}.") ||
+                    project.Name.Contains($".{FormType.Workflow.ToString()}.") ||
+                    project.Name.EndsWith($".{FormType.Workflow.ToString()}") ||
+                    project.Name.Contains($".{FormType.CustomAction.ToString()}.") ||
+                    project.Name.EndsWith($".{FormType.CustomAction.ToString()}") ||
+                    project.Name.Contains($".{FormType.DataProvider.ToString()}.") ||
+                    project.Name.EndsWith($".{FormType.DataProvider.ToString()}"))
+                {
+                    if (project.Name.EndsWith(".Test")) continue;
+                    if (IsAddedTestProject(dte.Solution.Projects, $"{project.Name}.Test")) continue;
+                    projects.Add(project.Name);
+                }
+            }
+            return projects;
         }
     }
 }
