@@ -137,7 +137,11 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                     textProjectName.Visible = false;
                     comboBoxEntity.Visible = true;
                 }
-
+                else if (_formType == FormType.UiTest)
+                {
+                    link.Text = @"Add New UI Test Project";
+                    link.Tag = "https://github.com/phuocle/Dynamics-Crm-DevKit/wiki/Ui-Test-Project-Template";
+                }
 
                 labelProjectName.Text = $"{FormHelper.GetProjectName(DTE, _formType)}";
                 labelProjectName.Tag = labelProjectName.Text;
@@ -161,6 +165,10 @@ namespace PL.DynamicsCrm.DevKit.Wizard
             if (_formType == FormType.DataProvider)
             {
                 dataSource = Const.DataSourceCrm.Where(x => x.Name.StartsWith(Const.Dynamics365)).ToList();
+            }
+            else if (_formType == FormType.UiTest)
+            {
+                dataSource = Const.DataSourceCrm.Where(x => x.Name.StartsWith(Const.Dynamics365) || x.Name.StartsWith(Const.DynamicsCrm2016)).ToList();
             }
             comboBoxCrmName.DataSource = dataSource;
             comboBoxCrmName.ValueMember = "Version";
@@ -346,6 +354,11 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                     progressBar.Style = ProgressBarStyle.Blocks;
                     progressBar.Value = 100;
                     break;
+                case FormType.UiTest:
+                    textProjectName.Enabled = true;
+                    textProjectName.Focus();
+                    progressBar.Value = 100;
+                    break;
             }
         }
 
@@ -382,7 +395,7 @@ namespace PL.DynamicsCrm.DevKit.Wizard
 
         private void ComboBoxEntityChange(string text)
         {
-            if (_formType == FormType.Test)
+            if (_formType == FormType.Test || _formType == FormType.UiTest)
             {
                 var temp = $@"{text}.Test";
                 if (temp.StartsWith("."))

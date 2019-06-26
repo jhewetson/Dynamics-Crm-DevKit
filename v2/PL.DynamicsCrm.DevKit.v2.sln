@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.SolutionPackagerProjectT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.TestProjectTemplate", "ProjectTemplates\CSharp\10.TestProjectTemplate\10.TestProjectTemplate.csproj", "{547D1385-E9AA-47E5-A94B-D0B50719BBAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.UiTestProjectTemplate", "ProjectTemplates\CSharp\11.UiTestProjectTemplate\11.UiTestProjectTemplate.csproj", "{5259082A-3733-4FBE-B50B-C9BBA22D95AA}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		PL.DynamicsCrm.DevKit.Shared\PL.DynamicsCrm.DevKit.Shared.projitems*{aa712c45-5dec-46e5-9e02-497b2ebf9cab}*SharedItemsImports = 4
@@ -105,6 +107,10 @@ Global
 		{547D1385-E9AA-47E5-A94B-D0B50719BBAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{547D1385-E9AA-47E5-A94B-D0B50719BBAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{547D1385-E9AA-47E5-A94B-D0B50719BBAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5259082A-3733-4FBE-B50B-C9BBA22D95AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5259082A-3733-4FBE-B50B-C9BBA22D95AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5259082A-3733-4FBE-B50B-C9BBA22D95AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5259082A-3733-4FBE-B50B-C9BBA22D95AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,6 +127,7 @@ Global
 		{AE2C2285-298E-47CD-80EB-11F44B9F3D42} = {BB9A9980-2BCB-4AD4-9271-97115EC06297}
 		{C555420B-02D8-4388-AADF-375A9809ACDA} = {BB9A9980-2BCB-4AD4-9271-97115EC06297}
 		{547D1385-E9AA-47E5-A94B-D0B50719BBAB} = {BB9A9980-2BCB-4AD4-9271-97115EC06297}
+		{5259082A-3733-4FBE-B50B-C9BBA22D95AA} = {BB9A9980-2BCB-4AD4-9271-97115EC06297}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {04C975FA-0E86-4259-8245-7DFA47D873BB}

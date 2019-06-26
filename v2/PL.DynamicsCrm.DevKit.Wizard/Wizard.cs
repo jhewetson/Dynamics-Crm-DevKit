@@ -58,6 +58,17 @@ namespace PL.DynamicsCrm.DevKit.Wizard
                 var fakeXrmEasyTargetFramework = NugetHelper.GetLatestPackageTargetFramework(fakeXrmEasyPackage);
                 replacementsDictionary.Add("$FakeXrmEasy.TargetFramework$", fakeXrmEasyTargetFramework);
             }
+            else if (form.FormType == FormType.UiTest)
+            {
+                replacementsDictionary.Add("$Dynamics365.UIAutomation.Api.Version$", NugetHelper.GetLatestPackageVersion(Const.Dynamics365UIAutomationApi));
+                replacementsDictionary.Add("$Dynamics365.UIAutomation.Api.TargetFramework$", NugetHelper.GetLatestPackageTargetFramework(Const.Dynamics365UIAutomationApi));
+                replacementsDictionary.Add("$Selenium.Chrome.WebDriver.Version$", NugetHelper.GetLatestPackageVersion(Const.SeleniumChromeWebDriver));
+                //replacementsDictionary.Add("$Selenium.Chrome.WebDriver.TargetFramework$", NugetHelper.GetLatestPackageTargetFramework(Const.SeleniumChromeWebDriver));
+                replacementsDictionary.Add("$Selenium.Support.Version$", NugetHelper.GetLatestPackageVersion(Const.SeleniumSupport));
+                replacementsDictionary.Add("$Selenium.Support.TargetFramework$", NugetHelper.GetLatestPackageTargetFramework(Const.SeleniumSupport));
+                replacementsDictionary.Add("$Selenium.WebDriver.Version$", NugetHelper.GetLatestPackageVersion(Const.SeleniumWebDriver));
+                replacementsDictionary.Add("$Selenium.WebDriver.TargetFramework$", NugetHelper.GetLatestPackageTargetFramework(Const.SeleniumWebDriver));
+            }
         }
     }
 }

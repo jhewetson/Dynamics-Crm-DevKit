@@ -26,6 +26,11 @@ namespace PL.DynamicsCrm.DevKit.Shared
         public const string MicrosoftCrmSdkWorkflow = "Microsoft.CrmSdk.Workflow";
         public const string MicrosoftCrmSdkXrmToolingCoreAssembly = "Microsoft.CrmSdk.XrmTooling.CoreAssembly";
         public const string PLDynamicsCrmDevKitAnalyzers = "PL.DynamicsCrm.DevKit.Analyzers";
+        public const string Dynamics365UIAutomationApi = "Dynamics365.UIAutomation.Api";
+        public const string SeleniumChromeWebDriver = "Selenium.Chrome.WebDriver";
+        public const string SeleniumSupport = "Selenium.Support";
+        public const string SeleniumWebDriver = "Selenium.WebDriver";
+
 
         public const string DynamicsCrm2011 = "Dynamics Crm 2011";
         public const string DynamicsCrm2013 = "Dynamics Crm 2013";

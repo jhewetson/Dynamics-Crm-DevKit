@@ -31,6 +31,7 @@ namespace PL.DynamicsCrm.DevKit.Shared.Helper
             var packages = GetPackages(packageId);
             if (packages == null) return DefaultPackageVersion(packageId);
             var package = (from p in packages
+                           where p.IsLatestVersion
                            orderby p.Version descending
                            select p
                            ).FirstOrDefault();
@@ -43,11 +44,12 @@ namespace PL.DynamicsCrm.DevKit.Shared.Helper
             var packages = GetPackages(packageId);
             if (packages == null) return DefaultPackageTargetFramework(packageId);
             var package = (from p in packages
+                           where p.IsLatestVersion
                            orderby p.Version descending
                            select p
                            ).FirstOrDefault();
             if (package == null) return DefaultPackageTargetFramework(packageId);
-            return package.GetSupportedFrameworks().OrderBy(x => x.Version).FirstOrDefault().Version.ToString().Replace(".", "");
+            return package?.GetSupportedFrameworks()?.OrderByDescending(x => x.Version)?.FirstOrDefault()?.Version?.ToString().Replace(".", "");
         }
 
         public static CrmNuget GetLatestPackageVersion(string packageId, string comboboxCrmName)
