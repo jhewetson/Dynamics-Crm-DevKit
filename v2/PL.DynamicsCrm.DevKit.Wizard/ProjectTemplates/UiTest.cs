@@ -38,8 +38,8 @@ namespace PL.DynamicsCrm.DevKit.Wizard.ProjectTemplates
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
             var destinationDirectory = replacementsDictionary["$destinationdirectory$"];
-            //try
-            //{
+            try
+            {
                 DTE = (DTE)automationObject;
                 if (!Utility.SharedProjectExist(DTE))
                 {
@@ -51,15 +51,15 @@ namespace PL.DynamicsCrm.DevKit.Wizard.ProjectTemplates
                 //Creating project ...
                 ProjectName = form.ProjectName;
                 Wizard.ProcessProjectReplacementsDictionary(replacementsDictionary, form);
-            //}
-            //catch
-            //{
-            //    if (Directory.Exists(destinationDirectory))
-            //    {
-            //        Utility.TryDeleteDirectory(destinationDirectory);
-            //    }
-            //    throw;
-            //}
+            }
+            catch
+            {
+                if (Directory.Exists(destinationDirectory))
+                {
+                    Utility.TryDeleteDirectory(destinationDirectory);
+                }
+                throw;
+            }
         }
 
         public bool ShouldAddProjectItem(string filePath)
